@@ -1,0 +1,23 @@
+---
+
+- code: "epiccccc"
+  rewards:
+  - name: coins
+    amount: 1500000
+  - name: youtube mystery box
+    amount: 1
+  - id: 2528 # lamp
+    amount: 1
+  - id: 11937
+    amount: 100
+
+- code: "sniper"
+  rewards:
+    - name: coins
+      amount: 1500000
+    - name: youtube mystery box
+      amount: 1
+    - id: 2528 # lamp
+      amount: 1
+    - id: 11937
+      amount: 100

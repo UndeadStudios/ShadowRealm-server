@@ -1,0 +1,131 @@
+---
+npc_id: 11278
+constant:
+  accessibility: 0
+  items:
+    - name: "Dragon bones"
+      minimum: 1
+      maximum: 1
+common:
+  accessibility: 1
+  items:
+    - name: "nature rune"
+      minimum: 23
+      maximum: 121
+    - name: "dragonstone bolts e"
+      minimum: 100
+      maximum: 200
+    - name: "adamantite ore noted"
+      minimum: 120
+      maximum: 150
+    - name: "gold ore noted"
+      minimum: 40
+      maximum: 125
+    - name: "coal noted"
+      minimum: 125
+      maximum: 250
+    - name: "pure essence noted"
+      minimum: 500
+      maximum: 1500
+    - name: "rune arrow"
+      minimum: 150
+      maximum: 300
+    - name: "uncut emerald noted"
+      minimum: 50
+      maximum: 150
+    - name: "runite bar noted"
+      minimum: 15
+      maximum: 150
+    - name: "mithril ore noted"
+      minimum: 130
+      maximum: 220
+    - name: "coins"
+      minimum: 300000
+      maximum: 10000000
+uncommon:
+  accessibility: 10
+  items:
+    - name: "rune arrow"
+      minimum: 300
+      maximum: 600
+    - name: "cosmic rune"
+      minimum: 300
+      maximum: 400
+    - name: "death rune"
+      minimum: 250
+      maximum: 1000
+    - name: "dragon dart"
+      minimum: 150
+      maximum: 350
+    - name: "blood rune"
+      minimum: 250
+      maximum: 1000
+    - name: "soul rune"
+      minimum: 50
+      maximum: 123
+    - name: "pure essence noted"
+      minimum: 1000
+      maximum: 3000
+    - name: "yew logs noted"
+      minimum: 200
+      maximum: 250
+    - name: "magic logs noted"
+      minimum: 150
+      maximum: 450
+    - name: "grimy cadantine noted"
+      minimum: 80
+      maximum: 250
+    - name: "grimy torstol noted"
+      minimum: 80
+      maximum: 250
+    - name: "shark noted"
+      minimum: 200
+      maximum: 350
+    - name: "prayer potion3 noted"
+      minimum: 50
+      maximum: 75
+    - name: "saradomin brew3 noted"
+      minimum: 20
+      maximum: 50
+    - name: "zamorak brew3 noted"
+      minimum: 4
+      maximum: 20
+    - name: "sanfew serum3 noted"
+      minimum: 4
+      maximum: 20
+    - name: "runite bar noted"
+      minimum: 15
+      maximum: 200
+    - name: "clue scroll master"
+      minimum: 1
+      maximum: 1
+    - name: "magic seed"
+      minimum: 8
+      maximum: 15
+    - name: "super restore4 noted"
+      minimum: 2
+      maximum: 2
+    - name: "onyx bolts e"
+      minimum: 350
+      maximum: 500
+    - name: "runite bar noted"
+      minimum: 150
+      maximum: 400
+very_rare:
+  accessibility: 100
+  items:
+  - name: "torva platebody"
+    minimum: 1
+    maximum: 1
+  - name: "torva fullhelm"
+    minimum: 1
+    maximum: 1
+  - name: "torva platebody"
+    minimum: 1
+    maximum: 1
+  - name: "zaryte crossbow"
+    minimum: 1
+    maximum: 1
+  - name: "zaryte vambraces"
+    minimum: 1
+    maximum: 1
