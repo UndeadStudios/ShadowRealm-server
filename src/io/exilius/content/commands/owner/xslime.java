@@ -24,9 +24,9 @@ public class xslime extends Command {
             }
         }
         c2.npcId2 = Npcs.PIGLET;
-        c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getStandIndex();
-        c2.playerWalkIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkIndex();
-        c2.playerRunIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkIndex();
+        c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getStandAnim();
+        c2.playerWalkIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkAnim();
+        c2.playerRunIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkAnim();
         c2.isNpc = true;
         c2.setUpdateRequired(true);
         c2.appearanceUpdateRequired = true;

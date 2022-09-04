@@ -32,6 +32,7 @@ import io.exilius.content.worldevent.WorldEventContainer;
 import io.exilius.model.Npcs;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.collisionmap.Region;
+import io.exilius.model.entity.npc.NPCCacheDefinition;
 import io.exilius.model.collisionmap.doors.DoorDefinition;
 import io.exilius.model.cycleevent.impl.BonusApplianceEvent;
 import io.exilius.model.cycleevent.impl.DidYouKnowEvent;
@@ -112,6 +113,7 @@ public class ServerStartup {
         AnimationLength.startup();
         PresetManager.getSingleton().init();
         ObjectDef.loadConfig();
+        NPCCacheDefinition.unpackConfig();
         CollectionLog.init();
         Region.load();
         Server.getGlobalObjects().loadGlobalObjectFile();

@@ -9,6 +9,8 @@ import java.util.function.Consumer;
 
 import com.google.common.collect.Lists;
 //import io.exilius.content.skills.construction.RoomDialogue;
+import io.exilius.content.skills.construction.House;
+import io.exilius.content.skills.construction.Room;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFutureListener;
@@ -5689,5 +5691,24 @@ public class Player extends Entity {
 
     public void setMigrationVersion(int migrationVersion) {
         this.migrationVersion = migrationVersion;
+    }
+    public Room toReplace;
+    public Room replaceWith;
+    public boolean getHouse;
+    public boolean inHouse;
+    private House house;
+    public int RoomClicked;
+    public House getHouse() {
+        return house;
+    }
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public boolean inConstruction() {
+        if ((absX >= 16 && absX <= 55 && absY >= 16 && absY <= 55)) {
+            return true;
+        }
+        return false;
     }
 }

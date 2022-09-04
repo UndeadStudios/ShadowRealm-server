@@ -2641,4 +2641,20 @@ public class ItemAssistant {
 			player.flushOutStream();
 		}
 	}
+
+	/**
+	 * Gets the item slot.
+	 *
+	 * @param ItemID
+	 * @return
+	 */
+	public int getItemSlot(int ItemID) {
+		for (int i = 0; i < player.playerItems.length; i++) {
+			if ((player.playerItems[i] - 1) == ItemID) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 }

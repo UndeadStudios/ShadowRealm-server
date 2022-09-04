@@ -460,4 +460,9 @@ public class Stream {
 
 	public ISAACCipher packetEncryption;
 
+	public void writeWord(int i) {
+		ensureCapacity(2);
+		buffer[currentOffset++] = (byte) (i >> 8);
+		buffer[currentOffset++] = (byte) i;
+	}
 }

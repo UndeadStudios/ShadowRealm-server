@@ -21,9 +21,9 @@ public class Pnpc extends Command {
 			return;
 		}
 		c.npcId2 = npc;
-		c.playerStandIndex = NPCCacheDefinition.forID(npc).getStandIndex();
-		c.playerWalkIndex = NPCCacheDefinition.forID(npc).getWalkIndex();
-		c.playerRunIndex = NPCCacheDefinition.forID(npc).getWalkIndex();
+		c.playerStandIndex = NPCCacheDefinition.forID(npc).getStandAnim();
+		c.playerWalkIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
+		c.playerRunIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
 		c.isNpc = true;
 		c.setUpdateRequired(true);
 		c.appearanceUpdateRequired = true;
