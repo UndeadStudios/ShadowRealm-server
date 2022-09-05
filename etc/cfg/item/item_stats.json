@@ -25123,17 +25123,17 @@
   "8817": {
     "name": "Scythe of Osiris",
     "equipable": true,
-    "weight": 1.175,
+    "weight": 3.175,
     "equipment": {
       "slot": 3,
-      "astab": 185,
-      "aslash": 180,
-      "acrush": 70,
+      "astab": 175,
+      "aslash": 150,
+      "acrush": 30,
       "amagic": -6,
       "dstab": -2,
-      "dslash": 18,
-      "dcrush": 20,
-      "str": 255,
+      "dslash": 8,
+      "dcrush": 10,
+      "str": 205,
       "aspeed": 4
     }
     },

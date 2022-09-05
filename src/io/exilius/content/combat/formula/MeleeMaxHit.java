@@ -186,6 +186,9 @@ public class MeleeMaxHit {
 		if (c.playerEquipment[Player.playerWeapon] == Items.SCYTHE_OF_VITUR) {
 			attackLevel += c.getLevelForXP(c.playerXP[Player.playerAttack]) * 1.4;
 		}
+		if (c.playerEquipment[Player.playerWeapon] == 8817) {
+			attackLevel += c.getLevelForXP(c.playerXP[Player.playerAttack]) * 1.4;
+		}
 		if (c.npcAttackingIndex > 0 && c.getItems().isWearingItem(19675, Player.playerWeapon) && c.getArcLightCharge() > 0) {
 			if (c.debugMessage)
 					c.sendMessage("Accuracy on reg: "+ attackLevel +"");
