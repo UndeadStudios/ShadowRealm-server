@@ -47,7 +47,7 @@ public class WeaponDataConstants {
     };
 
     public static final int[] SCYTHE = {
-            Items.SCYTHE, Items.SCYTHE_OF_VITUR,
+            Items.SCYTHE, Items.SCYTHE_OF_VITUR,Items.SCYTHE_OF_OSIRIS,
     };
 
     // [[accurate, stab], [aggressive, stab], [aggressive, slash], [defensive, stab]]

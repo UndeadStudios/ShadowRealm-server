@@ -32255,9 +32255,10 @@
   name: "Mogre"
   description: "A slayer monster."
   shopValue: 1
-- id: 6662
-  name: "Broken fishing rod"
-  description: "This fishing rod seems to have been bitten in half..."
+- id: 8817
+  name: "Scythe of Osiris"
+  description: "Scythe of vitur."
+  shopValue: 12800000
 - id: 6663
   name: "Forlorn boot"
   description: "It seems someone vacated this boot in a hurry..."
@@ -41941,10 +41942,6 @@
   description: "Null"
   shopValue: 1
 - id: 8816
-  name: "Null"
-  description: "Null"
-  shopValue: 1
-- id: 8817
   name: "Null"
   description: "Null"
   shopValue: 1

@@ -5777,9 +5777,9 @@ public class Items {
     public static final int CAMO_HELMET_2 = 6_659;
     public static final int FISHING_EXPLOSIVE = 6_660;
     public static final int MOGRE = 6_661;
-    public static final int BROKEN_FISHING_ROD = 6_662;
+    public static final int SCYTHE_OF_OSIRIS = 6_662;
     public static final int FORLORN_BOOT = 6_663;
-    public static final int FISHING_EXPLOSIVE_2 = 6_664;
+    public static final int SCYTHE_OF_OSIRIS= 6_664;
     public static final int MUDSKIPPER_HAT = 6_665;
     public static final int FLIPPERS = 6_666;
     public static final int EMPTY_FISHBOWL = 6_667;

@@ -2,6 +2,7 @@ package io.exilius.content.combat.formula.rework;
 
 import io.exilius.content.combat.CombatConfigs;
 import io.exilius.content.combat.effects.damageeffect.impl.amuletofthedamned.impl.ToragsEffect;
+import io.exilius.content.combat.effects.special.impl.ScytheOfOsiris;
 import io.exilius.content.combat.effects.special.impl.ScytheOfVitur;
 import io.exilius.content.combat.formula.MeleeMaxHit;
 import io.exilius.content.combat.melee.CombatPrayer;
@@ -294,6 +295,9 @@ public class MeleeCombatFormula implements CombatFormula {
 
             if (ScytheOfVitur.usingScythe(attacker.asPlayer())) {
                 effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
+            }
+                if (ScytheOfOsiris.usingScythe(attacker.asPlayer())) {
+                    effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
             }
         }
 

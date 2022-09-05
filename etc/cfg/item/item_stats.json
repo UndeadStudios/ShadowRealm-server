@@ -25120,10 +25120,23 @@
       "slot": 0
     }
   },
-  "6662": {
-    "name": "Broken fishing rod",
-    "weight": 0.907
-  },
+  "8817": {
+    "name": "Scythe of Osiris",
+    "equipable": true,
+    "weight": 1.175,
+    "equipment": {
+      "slot": 3,
+      "astab": 185,
+      "aslash": 180,
+      "acrush": 70,
+      "amagic": -6,
+      "dstab": -2,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 255,
+      "aspeed": 4
+    }
+    },
   "6663": {
     "name": "Forlorn boot"
   },

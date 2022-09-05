@@ -109,9 +109,9 @@ public class NexChest implements Lootable {
     @Override
     public void roll(Player c) {
         int random = Misc.random(3000);
-        int rareChance = 2950;
+        int rareChance = 2970;
         if (c.getItems().playerHasItem(21046)) {
-            rareChance = 2920;
+            rareChance = 2940;
             c.getItems().deleteItem(21046, 1);
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);

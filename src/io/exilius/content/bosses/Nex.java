@@ -150,7 +150,7 @@ public class Nex extends NPC {
                                             } while(!p.getPosition().equals(pos));
                                         } while(p == null && (p.isDead || wrathTimer.isFinished()));
 
-                                        p.appendDamage(45, Hitmark.HIT);
+                                        p.appendDamage(25, Hitmark.HIT);
                                     }
                                 }
 
@@ -162,7 +162,7 @@ public class Nex extends NPC {
                     } while(!finishedShadows);
                 } while(p == null && p.isDead);
 
-                p.appendDamage(Misc.random(10, 35), Hitmark.HIT);
+                p.appendDamage(Misc.random(10, 30), Hitmark.HIT);
             }
         });
         if (finishedShadows) {
@@ -219,7 +219,7 @@ public class Nex extends NPC {
                 phase = 2;
             }
 
-            n.forceChat("attack " + currentAttack + ", phase: " + phase);
+            //n.forceChat("attack " + currentAttack + ", phase: " + phase);
             if (currentAttack == 0) {
                 switch(phase) {
                     case 0:
@@ -245,7 +245,7 @@ public class Nex extends NPC {
                                             return Boundary.isIn(p, Boundary.Nex);
                                         }).forEach((p) -> {
                                             if (p.getPosition().deepCopy().withinDistance(n.getPosition().deepCopy(), 5)) {
-                                                p.appendDamage(25, Hitmark.HIT);
+                                                p.appendDamage(15, Hitmark.HIT);
                                             }
 
                                         });

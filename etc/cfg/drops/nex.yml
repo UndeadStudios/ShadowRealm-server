@@ -112,7 +112,7 @@ uncommon:
       minimum: 150
       maximum: 400
 very_rare:
-  accessibility: 100
+  accessibility: 87
   items:
   - name: "torva platebody"
     minimum: 1
