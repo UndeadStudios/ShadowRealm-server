@@ -28,7 +28,7 @@ public class WeaponDataConstants {
             Items.MITHRIL_LONGSWORD, Items.ADAMANT_LONGSWORD, Items.RUNE_LONGSWORD,
             Items.WOODEN_SPOON, Items.BLURITE_SWORD, Items.SILVERLIGHT, Items.DARKLIGHT, Items.EXCALIBUR, Items.FREMENNIK_BLADE, Items.SKEWER,
             Items.KATANA, Items.THIRD_AGE_LONGSWORD, Items.VESTAS_LONGSWORD,
-            Items.DECORATIVE_SWORD, Items.ARCLIGHT // ...
+            Items.DECORATIVE_SWORD, Items.ARCLIGHT, 26219 // ...
     };
 
     // [[accurate, slash], [aggressive, slash], [aggressive, crush], [defensive, slash]]
@@ -136,7 +136,7 @@ public class WeaponDataConstants {
             //Crossbows
             Items.CROSSBOW, Items.BRONZE_CROSSBOW, Items.IRON_CROSSBOW, Items.STEEL_CROSSBOW,  Items.MITH_CROSSBOW, Items.ADAMANT_CROSSBOW,
             Items.RUNE_CROSSBOW, Items.DRAGON_CROSSBOW, Items.ARMADYL_CROSSBOW,  Items.KARILS_CROSSBOW,
-            Items.BLURITE_CROSSBOW,
+            Items.BLURITE_CROSSBOW, 25916,
             //Special Crossbows
             Items.PHOENIX_CROSSBOW, Items.LIGHT_BALLISTA, Items.HEAVY_BALLISTA, Items.DRAGON_HUNTER_CROSSBOW, Items.DORGESHUUN_CROSSBOW, Items.HUNTERS_CROSSBOW,
             //Shortbows
