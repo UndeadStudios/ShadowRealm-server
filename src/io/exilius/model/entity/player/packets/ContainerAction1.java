@@ -90,6 +90,9 @@ public class ContainerAction1 implements PacketType {
 		}
 
 		switch (interfaceId) {
+			case 25928:
+				c.getItemUpgradeSystem().selectItem(removeId);
+				break;
 		case GroupIronmanBank.INTERFACE_ITEM_CONTAINER_ID:
 			GroupIronmanBank.processContainerAction(c, action);
 			break;

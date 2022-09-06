@@ -1524,6 +1524,28 @@ public class PlayerAssistant {
 		c.outStream.endFrameVarSizeWord();
 		System.out.println("itemtoslotwithopactiy");
 	}
+	public void itemOnInterface2(int frame, int item, int slot, int amount) {
+		c.outStream.createFrameVarSizeWord(34);
+		c.outStream.writeWord(frame);
+		c.outStream.writeByte(slot);
+		c.outStream.writeWord(item + 1);
+		c.outStream.writeByte(255);
+		c.outStream.writeDWord(amount);
+		c.outStream.endFrameVarSizeWord();
+	}
+	public void sendItemsOnInterface(int frame, int item, int slot, int amount) {
+		c.getOutStream().createFrameVarSizeWord(34);
+		c.getOutStream().writeUnsignedWord(frame);
+		c.getOutStream().writeByte(slot);
+		c.getOutStream().writeWord(item + 1);
+		if (amount > 254) {
+			c.getOutStream().writeByte(255);
+			c.getOutStream().writeDWord(amount);
+		} else {
+			c.getOutStream().writeByte(amount);
+		}
+		c.getOutStream().endFrameVarSizeWord();
+	}
 
 	public void sendStringContainer(int containerInterfaceId, List<String> strings) {
 		String[] stringArray = new String[strings.size()];

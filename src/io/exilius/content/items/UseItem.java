@@ -42,6 +42,7 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerAssistant;
 import io.exilius.model.entity.player.packets.objectoptions.impl.DarkAltar;
 import io.exilius.model.items.GameItem;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.items.ItemCombination;
 import io.exilius.util.Misc;
 import io.exilius.util.logging.player.ItemOnItemLog;
@@ -172,6 +173,58 @@ public class UseItem {
 			}
 		}
 		switch (objectID) {
+			case 42966:
+				switch(itemId){
+					case 11832:
+						c.getItems().deleteItem(11832, 1);
+						c.getItems().addItem(26394, 3);
+						c.startAnimation(899);
+						c.sendMessage("You put your "+ ItemCacheDefinition.forID(11832).getName()+" in the Ancient Forge and got 3 "+ItemCacheDefinition.forID(26394).getName()+".");
+						break;
+					case 11834:
+						c.getItems().deleteItem(11834, 1);
+						c.getItems().addItem(26394, 2);
+						c.startAnimation(899);
+						c.sendMessage("You put your "+ ItemCacheDefinition.forID(11834).getName()+" in the Ancient Forge and got 2 "+ItemCacheDefinition.forID(26394).getName()+".");
+						break;
+					case 26376:
+						if(c.playerLevel[c.playerSmithing] >= 90) {
+							if (c.getItems().playerHasItem(26394, 1)) {
+								c.getItems().deleteItem2(26394, 1);
+								c.getItems().deleteItem2(26376, 1);
+								c.getPA().addSkillXP(2250, c.playerSmithing, false);
+								c.startAnimation(899);
+								c.sendMessage("You fix your torva full helm.");
+								c.getItems().addItem(26382, 1);
+							}
+						}
+						break;
+					case 26378:
+						if(c.playerLevel[c.playerSmithing] >= 90) {
+							if (c.getItems().playerHasItem(26394, 2)) {
+								c.getItems().deleteItem2(26394, 2);
+								c.getItems().deleteItem2(26378, 1);
+								c.getPA().addSkillXP(2250, c.playerSmithing, false);
+								c.startAnimation(899);
+								c.sendMessage("You fix your torva platebody.");
+								c.getItems().addItem(26384, 1);
+							}
+						}
+						break;
+					case 26380:
+						if(c.playerLevel[c.playerSmithing] >= 90) {
+							if (c.getItems().playerHasItem(26394, 2)) {
+								c.getItems().deleteItem2(26394, 2);
+								c.getItems().deleteItem2(26380, 1);
+								c.getPA().addSkillXP(2250, c.playerSmithing, false);
+								c.startAnimation(899);
+								c.sendMessage("You fix your torva platelegs.");
+								c.getItems().addItem(26386, 1);
+							}
+						}
+						break;
+				}
+				break;
 			case 33311:
 				c.objectYOffset = 5;
 				c.objectXOffset = 5;

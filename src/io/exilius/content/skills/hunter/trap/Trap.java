@@ -102,7 +102,7 @@ public abstract class Trap {
 		if(player == null) {
 			return 0;
 		}
-		int hunterLevel = player.playerLevel[21];
+		int hunterLevel = player.playerLevel[22];
 		int chance = 70;
 		if (this.hasLarupiaSetEquipped()) {
 			chance = chance + 10;

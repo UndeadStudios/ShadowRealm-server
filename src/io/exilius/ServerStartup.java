@@ -49,6 +49,7 @@ import io.exilius.model.entity.npc.NpcSpawnLoader;
 import io.exilius.model.entity.npc.stats.NpcCombatDefinition;
 import io.exilius.model.entity.player.PlayerFactory;
 import io.exilius.model.entity.player.save.PlayerSave;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.lobby.LobbyManager;
 import io.exilius.model.world.ShopHandler;
 import io.exilius.punishments.PunishmentCycleEvent;
@@ -114,6 +115,7 @@ public class ServerStartup {
         PresetManager.getSingleton().init();
         ObjectDef.loadConfig();
         NPCCacheDefinition.unpackConfig();
+        ItemCacheDefinition.unpackConfig();
         CollectionLog.init();
         Region.load();
         Server.getGlobalObjects().loadGlobalObjectFile();

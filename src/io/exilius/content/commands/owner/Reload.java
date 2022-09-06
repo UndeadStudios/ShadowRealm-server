@@ -10,6 +10,7 @@ import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.referral.ReferralCode;
 import io.exilius.model.collisionmap.doors.DoorDefinition;
 import io.exilius.model.definitions.ItemDef;
+import io.exilius.model.definitions.ItemStats;
 import io.exilius.model.definitions.ShopDef;
 import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Player;
@@ -75,6 +76,7 @@ public class Reload extends Command {
 		case "items":
 			try {
 				ItemDef.load();
+				ItemStats.load();
 				player.sendMessage("@blu@Reloaded Items.");
 			} catch (Exception e) {
 				player.sendMessage("@blu@Unable to reload items, check console.");

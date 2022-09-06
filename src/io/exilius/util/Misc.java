@@ -699,7 +699,10 @@ public class Misc {
 		}
 		return temp;
 	}
-
+	private static final RandomGen RANDOM = new RandomGen();
+	public static boolean percentChance(double chance) {
+		return RANDOM.get().nextDouble(0.0, 100.0) <= chance;
+	}
 	public static String basicEncrypt(String s) {
 		String toReturn = "";
 		for (int j = 0; j < s.length(); j++) {

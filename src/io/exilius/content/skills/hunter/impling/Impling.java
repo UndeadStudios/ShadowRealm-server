@@ -44,11 +44,11 @@ public class Impling {
 		if (npc == null)
 			return;
 
-		if (player.playerLevel[21] < data.requirement) {
+		if (player.playerLevel[22] < data.requirement) {
 			player.sendMessage("You need a hunter level of at least " + data.requirement + " to catch this impling.");
 			return;
 		}
-		boolean bareHanded = player.playerLevel[21] > data.requirement + 10;
+		boolean bareHanded = player.playerLevel[22] > data.requirement + 10;
 		if (!(player.amDonated > 0) && !bareHanded && !player.getItems().playerHasItem(10010) && !player.getItems().isWearingItem(10010)) {
 			player.sendMessage("You need to be a donator to use your bare-hands or 10 levels above the requirement.");
 			return;

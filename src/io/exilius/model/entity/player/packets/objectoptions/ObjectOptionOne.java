@@ -193,8 +193,20 @@ public class ObjectOptionOne {
 		}
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
+			case 591:
+				c.getItemUpgradeSystem().openInterface(1);
+				break;
 			case 42967:
 				c.getPA().movePlayer(2910, 5203, 0);
+				break;
+			case 42934:
+				if(c.getX() == 2900 && c.getY() == 5203){
+					c.getPA().movePlayer(2898, 5203, 0);
+				} else if(c.getX() == 2898 && c.getY() == 5203){
+					c.getPA().movePlayer(2900, 5203, 0);
+				}
+				break;
+			case 42966:
 				break;
 			case 11726:// Open Door @ Magic Hut
 				if (c.getItems().hasItemOnOrInventory(Items.LOCKPICK)) {

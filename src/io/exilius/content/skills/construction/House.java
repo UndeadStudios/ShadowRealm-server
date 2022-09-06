@@ -3,6 +3,7 @@ package io.exilius.content.skills.construction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
+import io.exilius.Server;
 import io.exilius.content.skills.construction.rooms.Default;
 import io.exilius.content.skills.construction.rooms.Garden;
 import io.exilius.content.skills.construction.rooms.Parlour;
@@ -238,7 +239,7 @@ public class House {
 		
 		PrintWriter writer;
 		try {
-			writer = new PrintWriter("./save_files/public/houses/" + owner.getLoginName() + ".json", "UTF-8");
+			writer = new PrintWriter(Server.getSaveDirectory() + "houses/" + owner.getLoginName() + ".json", "UTF-8");
 			writer.println(gson.toJson(this));
 			writer.close();
 		} catch (Exception e) {
@@ -252,7 +253,7 @@ public class House {
 		Gson gson = builder.create();
 		
 		try {
-			House house = gson.fromJson(Misc.loadFile("./save_files/public/houses/" + client.getLoginName() + ".json"), House.class);
+			House house = gson.fromJson(Misc.loadFile(Server.getSaveDirectory() + "houses/" + client.getLoginName() + ".json"), House.class);
 			
 			if (house == null) {
 				return new House(client);
@@ -284,7 +285,7 @@ public class House {
 	}
 	
 	public static boolean hasHouse(Player client) {
-		File file = new File("./save_files/public/houses/" + client.getLoginName() + ".json");
+		File file = new File(Server.getSaveDirectory() + "houses/" + client.getLoginName() + ".json");
 		return file.exists();
 	}
 	

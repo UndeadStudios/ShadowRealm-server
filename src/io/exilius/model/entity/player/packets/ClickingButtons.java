@@ -154,6 +154,9 @@ public class ClickingButtons implements PacketType {
 		if (c.getNotificationsTab().clickButton(actionButtonId)) {
 			return;
 		}
+		if (c.getItemUpgradeSystem().handleButtons(actionButtonId)) {
+			return;
+		}
 
 //		if (LeaderboardInterface.handleButtons(c, realButtonId)) {
 //			return;

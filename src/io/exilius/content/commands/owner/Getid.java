@@ -3,6 +3,7 @@ package io.exilius.content.commands.owner;
 import io.exilius.content.commands.Command;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.items.ItemCacheDefinition;
 
 /**
  * Send the item IDs of all matching items to the player.
