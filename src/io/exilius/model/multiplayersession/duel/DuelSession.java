@@ -399,7 +399,7 @@ public class DuelSession extends MultiplayerSession {
 				for (int i = 0; i < c.playerEquipment.length; i++) {
 					c.getOutStream().createFrameVarSizeWord(34);
 					c.getOutStream().writeUnsignedWord(13824);
-					c.getOutStream().writeByte(i);
+					c.getOutStream().writeDWord(i);
 					c.getOutStream().writeUnsignedWord(c.playerEquipment[i] + 1);
 					if (c.playerEquipment[i] > -1) {
 						if (c.playerEquipmentN[i] > 254) {

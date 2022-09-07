@@ -32,7 +32,7 @@ public final class Hunter {
 	 * @return a numerical value determining the amount a player can lay.
 	 */
 	private static int getMaximumTraps(Player player) {
-		int level = player.playerLevel[22];
+		int level = player.playerLevel[21];
 		return player.getPosition().inWild() ? level / 20 + 2 : level / 20 + 1;
 
 	}
