@@ -1,11 +1,11 @@
 package io.exilius.model.entity.player.mode;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.google.common.collect.ImmutableList;
 import io.exilius.content.minigames.pest_control.PestControlRewards;
 import io.exilius.model.entity.player.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class Mode {
 
@@ -237,12 +237,15 @@ public abstract class Mode {
 	}
 
 	public int getTotalLevelNeededForRaids() {
-		return 500;
+		return 1250;
 	}
 
 	public int getTotalLevelForTob() {
-		return 500;
+		return 1500;
 	}
+	public int getTotalLevelNeededForNex() {
+			return 2000;
+		}
 
     public boolean isGroupIronman() {
 		return type == ModeType.GROUP_IRONMAN;

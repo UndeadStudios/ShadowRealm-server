@@ -105978,7 +105978,7 @@
   },
   {
     "id": 11278,
-    "attackSpeed": 4,
+    "attackSpeed": 3,
     "attackStyle": "Melee",
     "aggressive": true,
     "isPoisonous": true,
@@ -105989,7 +105989,7 @@
     "levels": {
       "MAGIC": 230,
       "ATTACK": 315,
-      "DEFENCE": 260,
+      "DEFENCE": 560,
       "RANGE": 350,
       "STRENGTH": 200,
       "HITPOINTS": 1001
@@ -106000,14 +106000,14 @@
       "STRENGTH_BONUS": 20,
       "MAGIC_STRENGTH_BONUS": 22,
       "ATTACK_RANGE_BONUS": 150,
-      "RANGE_STRENGTH_BONUS": 5
+      "RANGE_STRENGTH_BONUS": 50
     },
     "defensiveBonuses": {
       "SLASH_BONUS": 140,
       "STAB_BONUS": 40,
-      "RANGE_BONUS": 190,
-      "MAGIC_BONUS": 300,
-      "CRUSH_BONUS": 60
+      "RANGE_BONUS": 2600,
+      "MAGIC_BONUS": 2600,
+      "CRUSH_BONUS": 260
     }
   },
   {

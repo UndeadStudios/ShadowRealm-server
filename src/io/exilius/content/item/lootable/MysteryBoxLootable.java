@@ -3,6 +3,7 @@ package io.exilius.content.item.lootable;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
 
@@ -196,9 +197,11 @@ public abstract class MysteryBoxLootable implements Lootable {
         if (random > 85) {
             String name = ItemDef.forId(mysteryPrize).getName();
             String itemName = ItemDef.forId(getItemId()).getName();
-            PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
-                    + player.getDisplayName()
-                    + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
+            if (player.getRights().isNotAdmin() && !player.getRights().isOrInherits(Right.ADMINISTRATOR)) {
+                PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
+                        + player.getDisplayName()
+                        + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
+            }
         }
         active = false;
         player.inDonatorBox = true;

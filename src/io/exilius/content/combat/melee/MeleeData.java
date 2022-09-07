@@ -294,6 +294,15 @@ public class MeleeData {
 					return 8056;
 			}
 		}
+		if (weaponName.contains("scythe of Osiris")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:
+				case AGGRESSIVE:
+				case CONTROLLED:
+				case DEFENSIVE:
+					return 8056;
+			}
+		}
 		if (weaponName.contains("ghrazi rapier")) {
 			return 8145;
 		}
@@ -475,7 +484,7 @@ public class MeleeData {
 		switch (c.playerEquipment[Player.playerWeapon]) {
 			case Items.SCYTHE_OF_VITUR:
 				return 435;
-				case 8817:
+			case Items.SCYTHE_OF_OSIRIS:
 				return 435;
 		case Items.DRAGON_HUNTER_LANCE:
 			return 420;

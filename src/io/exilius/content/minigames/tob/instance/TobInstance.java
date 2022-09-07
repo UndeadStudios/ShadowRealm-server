@@ -1,10 +1,5 @@
 package io.exilius.content.minigames.tob.instance;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.dialogue.DialogueBuilder;
@@ -21,6 +16,11 @@ import io.exilius.model.items.GameItem;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import io.exilius.util.logging.player.DiedAtTobLog;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 
 public class TobInstance extends InstancedArea {
 
@@ -178,6 +178,7 @@ public class TobInstance extends InstancedArea {
         TobRoom room = TobConstants.ROOM_LIST.get(getPlayerRoomIndex(player));
         player.moveTo(resolve(room.getDeathPosition()));
         player.sendMessage("Oh dear, you have died!");
+        player.getItems().sendEquipmentContainer();
         player.getAttributes().setBoolean(TOB_DEAD_ATTR_KEY, true);
         Server.getLogging().write(new DiedAtTobLog(player, this));
 

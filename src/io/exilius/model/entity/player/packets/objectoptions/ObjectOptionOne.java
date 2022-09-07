@@ -1,24 +1,13 @@
 package io.exilius.model.entity.player.packets.objectoptions;
 
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.IntStream;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.Obelisks;
 import io.exilius.content.SkillcapePerks;
-import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
-import io.exilius.content.achievement_diary.impl.DesertDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.Cerberus;
 import io.exilius.content.bosses.Kraken;
+import io.exilius.content.bosses.Nex;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.godwars.God;
 import io.exilius.content.bosses.hespori.Hespori;
@@ -32,7 +21,6 @@ import io.exilius.content.dialogue.impl.OutlastLeaderboard;
 import io.exilius.content.dialogue.impl.SkillingPortalDialogue;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.impl.*;
-//import io.exilius.content.leaderboards.LeaderboardInterface;
 import io.exilius.content.minigames.pest_control.PestControl;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
@@ -82,6 +70,10 @@ import io.exilius.model.multiplayersession.duel.DuelSessionRules.Rule;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
+
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.IntStream;
 
 /*
  * @author Matt
@@ -194,7 +186,15 @@ public class ObjectOptionOne {
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
 			case 42967:
-				c.getPA().movePlayer(2910, 5203, 0);
+				if (Nex.isMissingRequirements(c)) {
+					return;
+				}
+				if (c.absX == 2908) {
+					c.getPA().movePlayer(2910, 5203, 0);
+				}
+				if (c.absX == 2910) {
+					c.getPA().movePlayer(2908, 5203, 0);
+				}
 				break;
 			case 11726:// Open Door @ Magic Hut
 				if (c.getItems().hasItemOnOrInventory(Items.LOCKPICK)) {
@@ -298,6 +298,7 @@ public class ObjectOptionOne {
 				break;
 			case 10060:
 			case 10061:
+			case 42854:
 				c.getPA().c.itemAssistant.openUpBank();
 				break;
 			case 29333:
@@ -2683,6 +2684,7 @@ public class ObjectOptionOne {
 			/**
 			 * c.setSidebarInterface(6, 1151); Recharing prayer points.
 			 */
+			case 42965:
 			case 20377:
 				if (c.getPosition().inWild()) {
 					return;

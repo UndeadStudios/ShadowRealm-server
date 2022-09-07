@@ -3,11 +3,7 @@ package io.exilius.content.bosses;
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.achievement.AchievementType;
-import io.exilius.content.achievement.Achievements;
 import io.exilius.content.combat.Hitmark;
-import io.exilius.content.event.eventcalendar.EventChallenge;
-import io.exilius.content.events.monsterhunt.MonsterHunt;
 import io.exilius.model.ForceMovement;
 import io.exilius.model.StillGraphic;
 import io.exilius.model.cycleevent.CycleEvent;
@@ -22,12 +18,10 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.timers.TickTimer;
-import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.Range;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Nex extends NPC {
     private final List<NPC> npcs = Lists.newArrayList();
@@ -54,7 +48,14 @@ public class Nex extends NPC {
         super(npcId, position);
         nex = this;
     }
+    public static boolean isMissingRequirements(Player c) {
+        if (c.totalLevel < c.getMode().getTotalLevelNeededForNex()) {
+            c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForNex() + " to join this raid!");
+            return true;
+        }
 
+        return false;
+    }
     public static void rewardPlayers() {
         NEX = System.currentTimeMillis();
         spawned = false;
