@@ -302,7 +302,7 @@ public class NPCProcess {
                         && npc.getNpcId() != 1635 && npc.getNpcId() != 1636 && npc.getNpcId() != 1637
                         && npc.getNpcId() != 1638 && npc.getNpcId() != 1639 && npc.getNpcId() != 1640
                         && npc.getNpcId() != 1641 && npc.getNpcId() != 1642 && npc.getNpcId() != 1643
-                        && npc.getNpcId() != 1654 && npc.getNpcId() != 7302) {
+                        && npc.getNpcId() != 1654 && npc.getNpcId() != 7302 && npc.getNpcId() != 8748) {
                     npc.walkingHome = true;
                 }
             }
@@ -330,7 +330,7 @@ public class NPCProcess {
                     int movingToX = npc.getX() + NPCClipping.DIR[direction][0];
                     int movingToY = npc.getY() + NPCClipping.DIR[direction][1];
                     if (npc.getNpcId() >= 1635 && npc.getNpcId() <= 1643 || npc.getNpcId() == 1654
-                            || npc.getNpcId() == 7302) {
+                            || npc.getNpcId() == 7302 || npc.getNpcId() == 8748) {
                         NPCDumbPathFinder.walkTowards(npc, npc.getX() - 1 + Misc.random(8),
                                 npc.getY() - 1 + Misc.random(8));
                     } else {

@@ -202,6 +202,7 @@ public class DeathAnimation extends NPCHandler {
             case 1643:
             case 1654:
             case 7302:
+            case 8748:
                 return 6615;
             case 6604:
                 return 307;

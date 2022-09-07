@@ -14,7 +14,7 @@ import io.exilius.util.Misc;
 public class Impling {
 
 	public static boolean isImp(int id) {
-		List<Integer> imps = Arrays.asList(1635, 1636, 1637, 1638, 1639, 1640, 1641, 1642, 1643, 1654, 7302);
+		List<Integer> imps = Arrays.asList(1635, 1636, 1637, 1638, 1639, 1640, 1641, 1642, 1643, 1654, 7302, 8748);
 		return imps.stream().anyMatch(i -> i.intValue() == id);
 	}
 	
@@ -145,6 +145,11 @@ public class Impling {
 			{535, 51, 100}, {1216, 3}, {11230, 10, 15}, {5316, 1}, {537, 10, 20},
 			{1616, 3, 6}, {1705, 2, 4}, {5300, 6}, {7219, 5, 15}, {4093, 1}, 
 			{5547, 1}, {1701, 2, 4} 
+		}),
+		CRYSTAL(23768, new int[][] {
+				{1732, 5, 7}, {23661, 1}, {23962, 5, 10}, {1702, 1},
+				{1616, 2}, {9191, 50, 125}, {9194, 6, 10}, {44, 150, 250}, {892, 400, 750}, {19580, 20, 60}, {824, 25, 75},
+				{811, 50, 100}, {11232, 10, 15}, {1216, 2}, {1334, 3, 6}, {535, 75, 125}, {5295, 3, 8}, {5315, 1}
 		});
 
 		public static HashMap<Integer, ImpRewards> impReward = new HashMap<>();
