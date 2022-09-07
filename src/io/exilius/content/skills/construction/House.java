@@ -121,7 +121,7 @@ public class House {
 					}
 				}
 				client.getOutStream().finishBitAccess();
-				client.getOutStream().writeWord(client.mapRegionX + 6);
+				client.getOutStream().writeUnsignedWord(client.mapRegionX + 6);
 				client.getOutStream().endFrameVarSizeWord();
 				client.flushOutStream();
 				
@@ -177,7 +177,7 @@ public class House {
 					}
 				}
 				client.getOutStream().finishBitAccess();
-				client.getOutStream().writeWord(client.mapRegionX + 6);
+				client.getOutStream().writeUnsignedWord(client.mapRegionX + 6);
 				client.getOutStream().endFrameVarSizeWord();
 				client.flushOutStream();
 				

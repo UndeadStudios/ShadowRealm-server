@@ -19,7 +19,6 @@ public class ObjectOptionFour {
 
 		if (OutlastLeaderboard.handleInteraction(c, objectType, 4))
 			return;
-		Construction.handleConstructionClick(c, objectType, obX, obY);
 		switch (objectType) {
 		case 31858:
 		case 29150:

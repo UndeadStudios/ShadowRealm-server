@@ -141,7 +141,7 @@ public class Room {
 		}
 
 		int newX = newCoords[0], newY = newCoords[1];
-		client.getPA().object(new GlobalObject(object.getId(), (((getPosition()[0] - 2) * 8) + newX), (((getPosition()[1] - 2) * 8) + newY), client.getIndex() * 4, defaultObjectRotation + rotation & 3, object.getType()));
+		Server.getGlobalObjects().add(new GlobalObject(object.getId(), (((getPosition()[0] - 2) * 8) + newX), (((getPosition()[1] - 2) * 8) + newY), client.getIndex() * 4, defaultObjectRotation + rotation & 3, object.getType()));
 	}
 
 	public void removeObject(Player client, RoomObject object) {		
@@ -168,7 +168,7 @@ public class Room {
 
 		int newX = newCoords[0], newY = newCoords[1];
 
-		client.getPA().object(new GlobalObject(-1, (((getPosition()[0] - 2) * 8) + newX), (((getPosition()[1] - 2) * 8) + newY), client.getIndex() * 4, defaultObjectRotation + rotation & 3, object.getType()));
+		Server.getGlobalObjects().add(new GlobalObject(-1, (((getPosition()[0] - 2) * 8) + newX), (((getPosition()[1] - 2) * 8) + newY), client.getIndex() * 4, defaultObjectRotation + rotation & 3, object.getType()));
 	}
 
 	/**

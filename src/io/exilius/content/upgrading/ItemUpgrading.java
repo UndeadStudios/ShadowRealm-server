@@ -58,12 +58,12 @@ public class ItemUpgrading {
 
     private void clearCategoryData() {
         for (int i = 0; i < 28; i++) {
-            player.getPA().itemOnInterface2(25928, -1, i, -1);
+            player.getPA().sendItemsOnInterface(25928, -1, i, -1);
         }
     }
 
     private void resetInterface() {
-        player.getPA().itemOnInterface2(26007, -1, 0, -1);
+        player.getPA().sendItemsOnInterface(26007, -1, 0, -1);
         player.getPA().sendString("", 26005);
         player.getPA().sendString("0", 26011);
         player.getPA().sendString("0", 26012);
@@ -76,7 +76,7 @@ public class ItemUpgrading {
         int nextinterfaceid = 0;
         for (int i = 0; i < ItemUpgradeData.getCategorySize(category); i++) {
             //if (nextinterfaceid <= 24535) {
-            player.getPA().itemOnInterface2(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
+            player.getPA().sendItemsOnInterface(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
         	/*} else if (nextinterfaceid > 24535) {
         		player.getPA().itemOnInterface2(24530, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
         	}*/
@@ -93,7 +93,7 @@ public class ItemUpgrading {
         setCategorySelected(category);
 
         for (int i = 0; i < ItemUpgradeData.getCategorySize(category); i++) {
-            player.getPA().itemOnInterface2(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
+            player.getPA().sendItemsOnInterface(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
         }
     }
 
