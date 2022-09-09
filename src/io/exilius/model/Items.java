@@ -20715,9 +20715,9 @@ public class Items {
     public static final int STAR_FACE_2 = 22_714;
     public static final int TREE_TOP = 22_715;
     public static final int TREE_TOP_2 = 22_716;
-    public static final int TREE_SKIRT = 22_717;
+    public static final int TREE_SKIRT   = 22_717;
     public static final int TREE_SKIRT_2 = 22_718;
-    public static final int CANDY_CANE = 22_719;
+    public static final int CANDY_CANE = 22_719;    
     public static final int CANDY_CANE_2 = 22_720;
     public static final int ATTACKER_ICON_6 = 22_721;
     public static final int ATTACKER_ICON_7 = 22_722;
