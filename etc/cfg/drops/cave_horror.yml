@@ -85,7 +85,7 @@ rare:
     minimum: 2
     maximum: 2
 very_rare:
-  accessibility: 110
+  accessibility: 80
   items:
   - name: "black mask 10"
     minimum: 1

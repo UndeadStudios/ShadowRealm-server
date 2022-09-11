@@ -13,6 +13,7 @@ items:
 - name: "champions cape"
 - name: "music cape"
 - name: "ranger boots"
+  price: 100
 - name: "rangers tunic"
 - name: "dwarven rock cake"
 - name: "fire cape"

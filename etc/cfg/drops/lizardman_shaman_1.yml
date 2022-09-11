@@ -9,3 +9,9 @@ constant:
   - name: "overload 1 4"
     minimum: 1
     maximum: 1
+very_rare:
+  accessibility: 5000
+  items:
+    - name: "dragon warhammer"
+      minimum: 1
+      maximum: 1

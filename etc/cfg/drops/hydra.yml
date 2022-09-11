@@ -112,7 +112,7 @@ rare:
     minimum: 200
     maximum: 350
 very_rare:
-  accessibility: 1100
+  accessibility: 800
   items:
   - name: "hydras eye"
     minimum: 1

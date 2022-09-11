@@ -1,10 +1,5 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -16,6 +11,11 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class VoteChest implements Lootable {
 
@@ -90,7 +90,9 @@ public class VoteChest implements Lootable {
         if (petchance >= 1499) {
             c.getItems().addItem(21262, 1);
             c.getCollectionLog().handleDrop(c, 5, 21262, 1);
-            PlayerHandler.executeGlobalMessage("@red@- "+ c.getDisplayName() +"@blu@ has just received the @red@Vote Genie Pet");
+            if (c.getRights().isNotAdmin()) {
+                PlayerHandler.executeGlobalMessage("@red@- " + c.getDisplayName() + "@blu@ has just received the @red@Vote Genie Pet");
+            }
             c.sendMessage("@red@@cr10@You pet genie is waiting in your bank, waiting to serve you as his master.");
             c.gfx100(1028);
         }
@@ -112,7 +114,9 @@ public class VoteChest implements Lootable {
             if (!c.getItems().addItem(reward.getId(), reward.getAmount())) {
                 Server.itemHandler.createGroundItem(c, reward.getId(), c.getX(), c.getY(), c.heightLevel, reward.getAmount());
             }
-            PlayerHandler.executeGlobalMessage("@pur@["+ c.getDisplayName() +"]@blu@ has just opened the vote chest and received a " + name + "!");
+            if (c.getRights().isNotAdmin()) {
+                PlayerHandler.executeGlobalMessage("@pur@[" + c.getDisplayName() + "]@blu@ has just opened the vote chest and received a " + name + "!");
+            }
             int random = 1 + Misc.random(5);
             c.votePoints+= random;
             c.sendMessage("You have received an extra "+random+" vote points from the chest.");

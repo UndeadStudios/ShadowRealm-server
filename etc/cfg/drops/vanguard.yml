@@ -10,7 +10,7 @@ constant:
     minimum: 3
     maximum: 5
 very_rare:
-  accessibility: 1000
+  accessibility: 800
   items:
   - name: "vanguard"
     minimum: 1

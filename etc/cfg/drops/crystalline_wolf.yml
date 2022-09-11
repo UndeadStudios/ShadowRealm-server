@@ -79,7 +79,7 @@ common:
     minimum: 5
     maximum: 10
 rare:
-  accessibility: 200
+  accessibility: 120
   items:
   - name: "crystalline key"
     minimum: 1

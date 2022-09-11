@@ -61,7 +61,7 @@ rare:
     minimum: 1
     maximum: 1
 very_rare:
-  accessibility: 600
+  accessibility: 350
   items:
   - name: "drakes claw"
     minimum: 1

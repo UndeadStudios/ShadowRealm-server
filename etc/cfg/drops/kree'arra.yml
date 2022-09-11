@@ -49,7 +49,7 @@ uncommon:
     minimum: 3
     maximum: 3
 rare:
-  accessibility: 65
+  accessibility: 45
   items:
   - name: "godsword shard 1"
     minimum: 1
@@ -64,7 +64,7 @@ rare:
     minimum: 1
     maximum: 1
 very_rare:
-  accessibility: 100
+  accessibility: 80
   items:
   - name: "armadyl hilt"
     minimum: 1

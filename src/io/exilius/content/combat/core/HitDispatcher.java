@@ -13,6 +13,7 @@ import io.exilius.content.combat.effects.damageeffect.DamageEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.ToxicBlowpipeEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.ToxicStaffOfTheDeadEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.amuletofthedamned.impl.GuthanEffect;
+import io.exilius.content.combat.effects.special.impl.ScytheOfOsiris;
 import io.exilius.content.combat.effects.special.impl.ScytheOfVitur;
 import io.exilius.content.combat.formula.rework.MagicCombatFormula;
 import io.exilius.content.combat.formula.rework.MeleeCombatFormula;
@@ -109,6 +110,7 @@ public abstract class HitDispatcher {
          */
 
         boolean usingSythe = false;
+        boolean usingScythe = false;
 
         if (combatType.equals(CombatType.MELEE)) {
 
@@ -136,11 +138,24 @@ public abstract class HitDispatcher {
             beforeDamageCalculated(combatType);
 
             usingSythe = ScytheOfVitur.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
+            usingScythe = ScytheOfOsiris.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
 
             damage = isMaxHitDummy ? maximumDamage : Misc.random((int) maximumDamage);
             boolean isAccurate = isMaxHitDummy || maximumAccuracy >= rand.nextDouble();
 
             if (usingSythe) {
+
+                double roll = rand.nextDouble();
+                double roll2 = rand.nextDouble();
+
+                if (defender.getEntitySize() > 1 || isMaxHitDummy) {
+                    if (maximumAccuracy >= roll || isMaxHitDummy)
+                        damage2 = (isMaxHitDummy ? damage / 2 : Misc.random(maximumDamage / 3));
+                    if (maximumAccuracy >= roll2 || isMaxHitDummy)
+                        damage3 = (isMaxHitDummy ? damage / 4 : Misc.random(maximumDamage / 5));
+                }
+            }
+            if (usingScythe) {
 
                 double roll = rand.nextDouble();
                 double roll2 = rand.nextDouble();
@@ -476,9 +491,17 @@ public abstract class HitDispatcher {
             attacker.getDamageQueue().add(new Damage(defender, usingSythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
                     hitmark2, combatType));
         }
+        if (damage2 > -1 || usingScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
+                    hitmark2, combatType));
+        }
 
         if (damage3 > -1 || usingSythe && defender.getEntitySize() > 1) {
             attacker.getDamageQueue().add(new Damage(defender, usingSythe ? damage3 : Math.max(0, damage3), delay + 1,
+                    attacker.playerEquipment, hitmark3, combatType));
+        }
+        if (damage3 > -1 || usingScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingScythe ? damage3 : Math.max(0, damage3), delay + 1,
                     attacker.playerEquipment, hitmark3, combatType));
         }
 
@@ -496,6 +519,7 @@ public abstract class HitDispatcher {
         if (!(special instanceof VolatileNightmareStaff)) {
             if (!applyingMultiHitAttack && usingMultiAttack(combatType) && attacker.getPosition().inMulti()) {
                 List<Entity> multiHitEntities = getMultiHitEntities(MeleeData.usingSytheOfVitur(attacker));
+                List<Entity> multiHitEntities2 = getMultiHitEntities(MeleeData.usingScytheOfOsiris(attacker));
                 if (attacker.isPrintAttackStats()) {
                     attacker.sendMessage("Using multi-attack, " + multiHitEntities.size() + " possible targets.");
                 }
@@ -516,8 +540,29 @@ public abstract class HitDispatcher {
                     }
                     getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
                 });
+                multiHitEntities2.forEach(entity -> {
+                    if (defender.isNPC()) {
+                        if (entity.isPlayer()) {
+                            Player target = entity.asPlayer();
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                                if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
+                                    attacker.attackedPlayers.add(target.getIndex());
+                                    attacker.isSkulled = true;
+                                    attacker.skullTimer = Configuration.SKULL_TIMER;
+                                    attacker.headIconPk = 0;
+                                    attacker.getPA().requestUpdates();
+                                }
+                            }
+                        }
+                        getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
+
+                    }
+                });
             }
         }
+
+
+
 
         if (attacker.rubyBoltSpecial)
             attacker.rubyBoltSpecial = false;
@@ -667,6 +712,8 @@ public abstract class HitDispatcher {
         } else if (combatType == CombatType.RANGE && Arrays.stream(RangeData.MULTI_WEAPONS).anyMatch(weapon -> weapon == attacker.playerEquipment[Player.playerWeapon])) {
             return true;
         } else if (MeleeData.usingSytheOfVitur(attacker)) {
+            return true;
+        }else if (MeleeData.usingScytheOfOsiris(attacker)) {
             return true;
         }
 

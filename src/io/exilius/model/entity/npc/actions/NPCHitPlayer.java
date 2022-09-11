@@ -416,15 +416,11 @@ public class NPCHitPlayer {
                             }
                             if (c.protectingRange() && !protectionIgnored) {
                                 if (npc.getNpcId() == 7554 || npc.getNpcId() == 11278)
-                                    damage /= 1.2;
-                            }
-                            if (c.protectingMagic() && !protectionIgnored) {
-                                if (npc.getNpcId() == 11278)
-                                    damage /= 1.2;
+                                    damage /= 2;
                             }
                             if (c.protectingMagic() && protectionIgnored) {
-                            if (npc.getNpcId() == 11278)
-                                damage /= 1.2;
+                                if (npc.getNpcId() == 11278)
+                                    damage /= 2;
                         }
                             /**
                              * Specials and defenders

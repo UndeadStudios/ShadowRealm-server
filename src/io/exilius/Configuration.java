@@ -141,7 +141,7 @@ public class Configuration {
 	/**
 	 * How many accounts are allowed to be online at once from the same computer.
 	 */
-	public static final int SAME_COMPUTER_CONNECTIONS_ALLOWED = 3;
+	public static final int SAME_COMPUTER_CONNECTIONS_ALLOWED = 5;
 
 	public static final int IN_COMBAT_TIMER = 10_000;
 

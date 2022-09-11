@@ -32,7 +32,8 @@ public class Cannon {
     private static final Logger logger = LoggerFactory.getLogger(Cannon.class);
 
     private static HashSet<Boundary> BLOCKED_BOUNDARIES = new HashSet<>(Arrays.asList(
-            Boundary.MAGE_ARENA
+            Boundary.MAGE_ARENA,
+            Boundary.Nex
     ));
 
     public static void attemptPlace(Player player) {

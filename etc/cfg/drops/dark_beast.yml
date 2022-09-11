@@ -73,7 +73,7 @@ uncommon:
     minimum: 15
     maximum: 25
 rare:
-  accessibility: 328
+  accessibility: 155
   items:
   - name: "dark bow"
     minimum: 1

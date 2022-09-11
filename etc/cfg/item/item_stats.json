@@ -25120,10 +25120,23 @@
       "slot": 0
     }
   },
-  "6662": {
-    "name": "Broken fishing rod",
-    "weight": 0.907
-  },
+  "8817": {
+    "name": "Scythe of Osiris",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 3,
+      "astab": 175,
+      "aslash": 150,
+      "acrush": 30,
+      "amagic": -6,
+      "dstab": -2,
+      "dslash": 8,
+      "dcrush": 10,
+      "str": 205,
+      "aspeed": 5
+    }
+    },
   "6663": {
     "name": "Forlorn boot"
   },
@@ -60020,7 +60033,7 @@
       "dslash": 8,
       "dcrush": 10,
       "str": 205,
-      "aspeed": 4
+      "aspeed": 5
     }
   },
   "22326": {
@@ -66921,12 +66934,12 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "astab": 52,
+      "astab": 152,
       "aslash": -4,
-      "acrush": 95,
-      "str": 89,
+      "acrush": 295,
+      "str": 159,
       "prayer": 2,
-      "aspeed": 4
+      "aspeed": 3
     }
   },
   "24419": {
@@ -67927,8 +67940,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 140,
-      "rstr": 40,
+      "arange": 340,
+      "rstr": 200,
       "prayer": 14,
       "aspeed": 5
     }

@@ -14,6 +14,9 @@ public class MeleeData {
 	public static boolean usingSytheOfVitur(Player player) {
 		return player.attacking.getCombatType() == CombatType.MELEE && player.getItems().isWearingItem(Items.SCYTHE_OF_VITUR);
 	}
+	public static boolean usingScytheOfOsiris(Player player) {
+		return player.attacking.getCombatType() == CombatType.MELEE && player.getItems().isWearingItem(8817);
+	}
 
 	public static boolean usingHally(Player c) {
 		switch (c.playerEquipment[Player.playerWeapon]) {
@@ -291,6 +294,15 @@ public class MeleeData {
 					return 8056;
 			}
 		}
+		if (weaponName.contains("scythe of Osiris")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:
+				case AGGRESSIVE:
+				case CONTROLLED:
+				case DEFENSIVE:
+					return 8056;
+			}
+		}
 		if (weaponName.contains("ghrazi rapier")) {
 			return 8145;
 		}
@@ -471,6 +483,8 @@ public class MeleeData {
 			return 7517;
 		switch (c.playerEquipment[Player.playerWeapon]) {
 			case Items.SCYTHE_OF_VITUR:
+				return 435;
+			case Items.SCYTHE_OF_OSIRIS:
 				return 435;
 		case Items.DRAGON_HUNTER_LANCE:
 			return 420;

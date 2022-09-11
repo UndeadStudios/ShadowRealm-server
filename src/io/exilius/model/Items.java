@@ -5777,9 +5777,9 @@ public class Items {
     public static final int CAMO_HELMET_2 = 6_659;
     public static final int FISHING_EXPLOSIVE = 6_660;
     public static final int MOGRE = 6_661;
-    public static final int BROKEN_FISHING_ROD = 6_662;
+    public static final int SCYTHE_OF_OSIRIS = 8_817;
     public static final int FORLORN_BOOT = 6_663;
-    public static final int FISHING_EXPLOSIVE_2 = 6_664;
+    //public static final int SCYTHE_OF_OSIRIS= 6_664;
     public static final int MUDSKIPPER_HAT = 6_665;
     public static final int FLIPPERS = 6_666;
     public static final int EMPTY_FISHBOWL = 6_667;
@@ -20715,9 +20715,9 @@ public class Items {
     public static final int STAR_FACE_2 = 22_714;
     public static final int TREE_TOP = 22_715;
     public static final int TREE_TOP_2 = 22_716;
-    public static final int TREE_SKIRT = 22_717;
+    public static final int TREE_SKIRT   = 22_717;
     public static final int TREE_SKIRT_2 = 22_718;
-    public static final int CANDY_CANE = 22_719;
+    public static final int CANDY_CANE = 22_719;    
     public static final int CANDY_CANE_2 = 22_720;
     public static final int ATTACKER_ICON_6 = 22_721;
     public static final int ATTACKER_ICON_7 = 22_722;

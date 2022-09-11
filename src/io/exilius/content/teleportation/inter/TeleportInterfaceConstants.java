@@ -149,6 +149,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Vorkath", new Position(2272, 4050, 0)),
             new TeleportButtonStandard("Alchemical hydra", new Position(1354, 10259, 0)),
             new TeleportButtonStandard("The Nightmare", new Position(3808, 9755, 1)),
+            new TeleportButtonStandard("Nex", new Position(2903, 5203, 0)),
             new TeleportButtonStandard("King Black Dragon @red@(42 Wild)", new Position(3005, 3849, 0), true),
             new TeleportButtonStandard("Vet'ion @red@(40 Wild)", new Position(3200, 3794, 0), true),
             new TeleportButtonStandard("Callisto @red@(43 Wild)", new Position(3325, 3845, 0), true),
@@ -156,8 +157,8 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Venenatis @red@(28 Wild)", new Position(3345, 3754, 0), true),
             new TeleportButtonStandard("Chaos Elemental @red@(50 Wild)", new Position(3285, 3925, 0), true),
             new TeleportButtonStandard("Chaos Fanatic @red@(41 Wild)", new Position(2978, 3833, 0), true),
-            new TeleportButtonStandard("Crazy Archaeologist @red@(23 Wild)", new Position(2984, 3713, 0), true),
-          new TeleportButtonStandard("Nex", new Position(2903, 5203, 0), false)
+            new TeleportButtonStandard("Crazy Archaeologist @red@(23 Wild)", new Position(2984, 3713, 0), true)
+
             ));
 
     private static final TeleportContainer MINIGAMES = new TeleportContainer(Lists.newArrayList(

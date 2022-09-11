@@ -78,7 +78,7 @@ public class CannonConstants {
      */
     static final int MAX_DAMAGE = 30;
 
-    static final int MAX_GRANITE_DAMAGE = 35;
+    static final int MAX_GRANITE_DAMAGE = 40;
 
     public static final int CANNON_SIZE = 3;
 

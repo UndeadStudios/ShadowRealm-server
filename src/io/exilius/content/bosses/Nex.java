@@ -3,11 +3,7 @@ package io.exilius.content.bosses;
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.achievement.AchievementType;
-import io.exilius.content.achievement.Achievements;
 import io.exilius.content.combat.Hitmark;
-import io.exilius.content.event.eventcalendar.EventChallenge;
-import io.exilius.content.events.monsterhunt.MonsterHunt;
 import io.exilius.model.ForceMovement;
 import io.exilius.model.StillGraphic;
 import io.exilius.model.cycleevent.CycleEvent;
@@ -22,12 +18,10 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.timers.TickTimer;
-import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.Range;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Nex extends NPC {
     private final List<NPC> npcs = Lists.newArrayList();
@@ -54,7 +48,14 @@ public class Nex extends NPC {
         super(npcId, position);
         nex = this;
     }
+    public static boolean isMissingRequirements(Player c) {
+        if (c.totalLevel < c.getMode().getTotalLevelNeededForNex()) {
+            c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForNex() + " to join this raid!");
+            return true;
+        }
 
+        return false;
+    }
     public static void rewardPlayers() {
         NEX = System.currentTimeMillis();
         spawned = false;
@@ -150,7 +151,7 @@ public class Nex extends NPC {
                                             } while(!p.getPosition().equals(pos));
                                         } while(p == null && (p.isDead || wrathTimer.isFinished()));
 
-                                        p.appendDamage(45, Hitmark.HIT);
+                                        p.appendDamage(25, Hitmark.HIT);
                                     }
                                 }
 
@@ -162,7 +163,7 @@ public class Nex extends NPC {
                     } while(!finishedShadows);
                 } while(p == null && p.isDead);
 
-                p.appendDamage(Misc.random(10, 35), Hitmark.HIT);
+                p.appendDamage(Misc.random(10, 30), Hitmark.HIT);
             }
         });
         if (finishedShadows) {
@@ -219,7 +220,7 @@ public class Nex extends NPC {
                 phase = 2;
             }
 
-            n.forceChat("attack " + currentAttack + ", phase: " + phase);
+            //n.forceChat("attack " + currentAttack + ", phase: " + phase);
             if (currentAttack == 0) {
                 switch(phase) {
                     case 0:
@@ -245,7 +246,7 @@ public class Nex extends NPC {
                                             return Boundary.isIn(p, Boundary.Nex);
                                         }).forEach((p) -> {
                                             if (p.getPosition().deepCopy().withinDistance(n.getPosition().deepCopy(), 5)) {
-                                                p.appendDamage(25, Hitmark.HIT);
+                                                p.appendDamage(15, Hitmark.HIT);
                                             }
 
                                         });

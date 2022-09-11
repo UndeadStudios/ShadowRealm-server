@@ -811,7 +811,7 @@ public class NPCHandler {
                                 damage *= 0.6;
                                 break;
                                 case 11278:
-                                    if (c.protectingMagic()) damage /= 1.5;
+                                    if (c.protectingMagic()) damage /= 2;
                                     break;
                             case 319: 
                                 if (c.protectingMagic()) damage /= 2;
@@ -1937,8 +1937,8 @@ public class NPCHandler {
     public boolean retaliates(int npcType) {
         return npcType < 3777 || npcType > 3780;
     }
-
     public boolean prayerProtectionIgnored(NPC npc) {
+
         switch (npc.getNpcId()) {
             case 11278:
         case 1610: 

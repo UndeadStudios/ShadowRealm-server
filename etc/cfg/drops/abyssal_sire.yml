@@ -97,7 +97,7 @@ uncommon:
     minimum: 5
     maximum: 5
 rare:
-  accessibility: 100
+  accessibility: 50
   items:
   - name: "unsired"
     minimum: 1

@@ -1,15 +1,15 @@
 package io.exilius.content.skills.hunter.impling;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-
 import io.exilius.content.skills.Skill;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 public class Impling {
 
@@ -141,8 +141,8 @@ public class Impling {
 			{5938,4}, {6156, 3}, {9194, 4}, {6313,1}, {805, 50} 
 		}),
 		DRAGON(11256, new int[][] { 
-			{11212, 10, 15}, {9341, 3, 40}, {1305,1}, {11237, 10, 150}, {9193, 10, 49},
-			{535, 51, 100}, {1216, 3}, {11230, 10, 15}, {5316, 1}, {537, 10, 20},
+			{11212, 50, 100}, {9341, 3, 40}, {1305,1}, {11237, 10, 150}, {9193, 10, 49},
+			{535, 51, 100}, {1216, 3}, {11230, 50, 100}, {5316, 1}, {537, 60, 120},
 			{1616, 3, 6}, {1705, 2, 4}, {5300, 6}, {7219, 5, 15}, {4093, 1}, 
 			{5547, 1}, {1701, 2, 4} 
 		}),

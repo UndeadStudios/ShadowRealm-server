@@ -301,7 +301,7 @@ public class FireOfExchangeBurnPrice {
             case 24517://eldritch orb
             case 24511://harmonised orb
             case 24514://volatile orb
-                return 50_000;
+                return 500_000;
             case 24417://inquisitor mace
             case Items.RING_OF_WEALTH_I:
             case 23995://crystal blade
@@ -326,14 +326,13 @@ public class FireOfExchangeBurnPrice {
             case Items.STATIUSS_WARHAMMER:
                 return 200_000;
             case 12817://ely
+
                 return 250_000;
             case 20997://t bow
             case 26374://zaryte cbow
+            case 26235://zaryte vambraces
                 return 750_000;
             case 22325://scythe
-            case 26382://torva helm
-            case 26384://torva platebody
-            case 26386://torva platebody
                 return 1_200_000;
             case 2399: // FOE KEY
                 return 5_000;
@@ -415,7 +414,10 @@ public class FireOfExchangeBurnPrice {
             case 30021://roc pet
                 return 325000;
             case 30022://yama pet
-                return 975000;
+            case 26382://torva helm
+            case 26384://torva platebody
+            case 26386://torva platebody
+                return 500000;
             case 23939://seren
                 return 65000;
             //dark pets

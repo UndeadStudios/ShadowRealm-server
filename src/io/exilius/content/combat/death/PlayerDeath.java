@@ -1,11 +1,5 @@
 package io.exilius.content.combat.death;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.Server;
@@ -19,7 +13,6 @@ import io.exilius.content.minigames.pest_control.PestControl;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
 import io.exilius.content.minigames.raids.Raids;
-
 import io.exilius.content.tournaments.TourneyManager;
 import io.exilius.model.Items;
 import io.exilius.model.collisionmap.doors.Location;
@@ -41,6 +34,12 @@ import io.exilius.util.logging.player.DeathItemsHeld;
 import io.exilius.util.logging.player.DeathItemsKept;
 import io.exilius.util.logging.player.DeathItemsLost;
 import io.exilius.util.logging.player.DeathLog;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class PlayerDeath {
 
@@ -286,6 +285,7 @@ public class PlayerDeath {
         c.startAnimation(65535);
         PlayerSave.saveGame(c);
         c.resetOnDeath();
+        c.getItems().sendEquipmentContainer();
     }
 
     private static void handleAreaBasedDeath(Player c) {
@@ -319,6 +319,8 @@ public class PlayerDeath {
                     lostItems.add(new GameItem(Items.COINS, coins));
             }
 
+            c.getItems().sendEquipmentContainer();
+
             lostItems.removeAll(untradeables);
             untradeables.forEach(item -> c.getPerduLostPropertyShop().add(c, item));
 
@@ -339,45 +341,59 @@ public class PlayerDeath {
         } else if (TourneyManager.getSingleton().isInArena(c)) {
             Entity tourneyKiller = c.calculateTourneyKiller();
 
+            c.getItems().sendEquipmentContainer();
             c.outlastDeaths++;
             TourneyManager.getSingleton().handleDeath(c.getLoginName(), false);
             TourneyManager.getSingleton().handleKill(tourneyKiller);
         } else if (TourneyManager.getSingleton().isInLobbyBounds(c)) {
             TourneyManager.getSingleton().leaveLobby(c, false);
+            c.getItems().sendEquipmentContainer();
         }
 
         if (Boundary.isIn(c, Boundary.PEST_CONTROL_AREA)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2657, 2639, 0);
         } else if (Boundary.isIn(c, PestControl.GAME_BOUNDARY)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2656 + Misc.random(2), 2614 - Misc.random(3), 0);
         } else if (Boundary.isIn(c, Boundary.ZULRAH)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2202, 3056, 0);
         } else if (Boundary.isIn(c, Boundary.KRAKEN_CAVE)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2280, 10016, 0);
         }
         if (Boundary.isIn(c, Boundary.CERBERUS_BOSSROOMS)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(1309, 1250, 0);
         } else if (Boundary.isIn(c, Boundary.SKOTIZO_BOSSROOM)) {
+            c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(1665, 10045, 0);
         } else if (Boundary.isIn(c, Boundary.DUEL_ARENA)) {
             DuelSession duelSession = (DuelSession) Server.getMultiplayerSessionListener().getMultiplayerSession(c, MultiplayerSessionType.DUEL);
             if (Objects.nonNull(duelSession) && duelSession.getStage().getStage() == MultiplayerSessionStage.FURTHER_INTERATION) {
                 duelSession.finish(MultiplayerSessionFinalizeType.GIVE_ITEMS);
+                c.getItems().sendEquipmentContainer();
             }
         } else if (Boundary.isIn(c, Boundary.HYDRA_BOSS_ROOM)) {
             c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
+            c.getItems().sendEquipmentContainer();
         } else if (Boundary.isIn(c, Boundary.FIGHT_CAVE)) {
             c.getFightCave().handleDeath();
+            c.getItems().sendEquipmentContainer();
         } else if (Boundary.isIn(c, Boundary.INFERNO) && c.getInferno() != null) {
             c.getInferno().handleDeath();
+            c.getItems().sendEquipmentContainer();
         } else if (Boundary.isIn(c, Boundary.XERIC)) {
             c.getXeric().leaveGame(c, true);
+            c.getItems().sendEquipmentContainer();
         } else if (Boundary.isIn(c, Boundary.OLM)) {
             Raids raidInstance = c.getRaidsInstance();
             if (raidInstance != null) {
                 Location olmWait = raidInstance.getOlmWaitLocation();
                 c.getPA().movePlayer(olmWait.getX(), olmWait.getY(), raidInstance.currentHeight);
                 raidInstance.resetOlmRoom(c);
+                c.getItems().sendEquipmentContainer();
             }
         } else if (Boundary.isIn(c, Boundary.RAIDS)) {
             Raids raidInstance = c.getRaidsInstance();
@@ -385,20 +401,27 @@ public class PlayerDeath {
                 Location startRoom = raidInstance.getStartLocation();
                 c.getPA().movePlayer(startRoom.getX(), startRoom.getY(), raidInstance.currentHeight);
                 raidInstance.resetRoom(c);
+                c.getItems().sendEquipmentContainer();
             }
         } else if (Highpkarena.getState(c) != null) {
             Highpkarena.handleDeath(c);
+            c.getItems().sendEquipmentContainer();
         } else if (Lowpkarena.getState(c) != null) {
             Lowpkarena.handleDeath(c);
+            c.getItems().sendEquipmentContainer();
         } else if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
             c.getPA().movePlayer(c.absX, 4759, 0);
+            c.getItems().sendEquipmentContainer();
         } else if (Boundary.isIn(c, Boundary.SAFEPKSAFE)) {
             c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
             onRespawn(c);
+            c.getItems().sendEquipmentContainer();
         } else {
             if (Boundary.isIn(c, Boundary.OUTLAST)) {
+                c.getItems().sendEquipmentContainer();
                 c.getPA().movePlayer(new Coordinate(3080, 3510));
             } else {
+                c.getItems().sendEquipmentContainer();
                 c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
             }
 
@@ -434,6 +457,7 @@ public class PlayerDeath {
         c.resetDamageTaken();
         c.setKiller(null);
         c.killerId = 0;
+        c.getItems().sendEquipmentContainer();
     }
 
 }
