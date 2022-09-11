@@ -23,10 +23,10 @@ public class xslime extends Command {
                 return;
             }
         }
-        c2.npcId2 = Npcs.PIGLET;
-        c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getStandIndex();
-        c2.playerWalkIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkIndex();
-        c2.playerRunIndex = NPCCacheDefinition.forID(Npcs.PIGLET).getWalkIndex();
+        c2.npcId2 = Npcs.PIG;
+        c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIG).getStandAnim();
+        c2.playerWalkIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.playerRunIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
         c2.isNpc = true;
         c2.setUpdateRequired(true);
         c2.appearanceUpdateRequired = true;

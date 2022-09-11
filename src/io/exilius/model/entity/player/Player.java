@@ -1,6 +1,13 @@
 package io.exilius.model.entity.player;
 
 import com.google.common.collect.Lists;
+//import io.exilius.content.skills.construction.RoomDialogue;
+import io.exilius.content.skills.construction.House;
+import io.exilius.content.skills.construction.Room;
+import io.exilius.content.upgrading.ItemUpgrading;
+import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFutureListener;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.*;
@@ -361,6 +368,10 @@ public class Player extends Entity {
             return false;
         }
         return System.currentTimeMillis() - aggressionTimer >= TimeUnit.MINUTES.toMillis(15);
+    }
+    private final ItemUpgrading itemUpgradeSystem = new ItemUpgrading(this);
+    public ItemUpgrading getItemUpgradeSystem() {
+        return itemUpgradeSystem;
     }
 
     private boolean receivedCalendarCosmeticJune2021;
@@ -1565,7 +1576,9 @@ public class Player extends Entity {
             sendMessage("You can't logout at the moment.");
             return;
         }
-
+        if (getHouse() != null) {
+            getHouse().save();
+        }
         if (!isDisconnected() && System.currentTimeMillis() - logoutDelay > 1000) {
             properLogout = true;
             setDisconnected(true);
@@ -1617,7 +1630,9 @@ public class Player extends Entity {
         if (this.clan != null) {
             this.clan.removeMember(this);
         }
-
+        if (getHouse() != null) {
+            getHouse().save();
+        }
         getFriendsList().onLogout();
         GroupIronmanRepository.onLogout(this);
 
@@ -1868,7 +1883,7 @@ public class Player extends Entity {
         getPA().resetScreenShake(); // reset screen
         PollTab.updatePollTabDisplay(this);
         setSidebarInterface(0, 2423);
-        setSidebarInterface(1, 13917); // Skilltab > 3917
+        setSidebarInterface(1, 25402); // Skilltab > 3917
         setSidebarInterface(2, QuestTab.INTERFACE_ID);
         setSidebarInterface(3, 3213);
         setSidebarInterface(4, 1644);
@@ -1952,8 +1967,7 @@ public class Player extends Entity {
          */
         getQuestTab().updateInformationTab();
         getPA().sendFrame126("Combat Level: " + combatLevel + "", 3983);
-        getPA().sendFrame126("Total level:", 19209);
-        getPA().sendFrame126(totalLevel + "", 3984);
+        getPA().sendFrame126("Total Level: "+totalLevel + "", 25544);
         getPA().resetFollow();
         getPA().clearClanChat();
         getPA().resetFollow();
@@ -5664,5 +5678,24 @@ public class Player extends Entity {
 
     public void setMigrationVersion(int migrationVersion) {
         this.migrationVersion = migrationVersion;
+    }
+    public Room toReplace;
+    public Room replaceWith;
+    public boolean getHouse;
+    public boolean inHouse;
+    private House house;
+    public int RoomClicked;
+    public House getHouse() {
+        return house;
+    }
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+    public boolean inConstruction() {
+        if ((absX >= 16 && absX <= 55 && absY >= 16 && absY <= 55)) {
+            return true;
+        }
+        return false;
     }
 }

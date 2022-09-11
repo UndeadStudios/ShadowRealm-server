@@ -67997,6 +67997,92 @@
       "aspeed": 6
     }
   },
+  "26219": {
+    "name": "Osmumten's fang",
+    "equipable": true,
+    "weight": 1.814,
+    "equipment": {
+      "slot": 3,
+      "astab": 105,
+      "aslash": 75,
+      "acrush": 0,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0,
+      "str": 103,
+      "aspeed": 5
+    }
+  },
+  "25985": {
+    "name": "Elidinis' ward",
+    "equipable": true,
+    "weight": 4,
+    "equipment": {
+      "slot": 5,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": 5,
+      "arange": 0,
+      "dstab": 5,
+      "dslash": 3,
+      "dcrush": 9,
+      "dmagic": 0,
+      "drange": 6,
+      "prayer": 1,
+      "str": 0,
+      "mdmg": 3,
+      "aspeed": 5
+    }
+  },
+  "25975": {
+    "name": "Lightbearer",
+    "equipable": true,
+    "weight": 0.08,
+    "equipment": {
+      "slot": 12,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0,
+      "str": 0,
+      "mdmg": 0,
+      "aspeed": 5
+    }
+  },
+  "27277": {
+    "name": "Tumeken's shadow (uncharged)",
+    "equipable": true,
+    "weight": 4,
+    "equipment": {
+      "slot": 3,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": 35,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 20,
+      "drange": 0,
+      "prayer": 1,
+      "str": 0,
+      "aspeed": 5
+    }
+  },
   "26233": {
     "name": "Ancient godsword",
     "equipable": true,

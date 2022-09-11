@@ -154,6 +154,9 @@ public class ClickingButtons implements PacketType {
 		if (c.getNotificationsTab().clickButton(actionButtonId)) {
 			return;
 		}
+		if (c.getItemUpgradeSystem().handleButtons(actionButtonId)) {
+			return;
+		}
 
 //		if (LeaderboardInterface.handleButtons(c, realButtonId)) {
 //			return;
@@ -1487,7 +1490,7 @@ public class ClickingButtons implements PacketType {
 		case 53149:
 			Cooking.getAmount(c, 28);
 			break;
-		case 33206:
+		case 99182:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.attackSkill = true;
@@ -1496,7 +1499,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 0;
 			}
 			break;
-		case 33209:
+		case 99185:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.strengthSkill = true;
@@ -1505,7 +1508,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 1;
 			}
 			break;
-		case 33212:
+		case 99188:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.defenceSkill = true;
@@ -1514,7 +1517,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 2;
 			}
 			break;
-		case 33215:
+		case 99191:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.rangeSkill = true;
@@ -1523,7 +1526,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 3;
 			}
 			break;
-		case 33218:
+		case 99194:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.prayerSkill = true;
@@ -1532,7 +1535,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 4;
 			}
 			break;
-		case 33221:
+		case 99201:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.mageSkill = true;
@@ -1541,7 +1544,7 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 5;
 			}
 			break;
-		case 33207:
+		case 99183:
 			if (c.getPosition().inClanWarsSafe()) {
 				c.getPA().sendEnterAmount(0);
 				c.healthSkill = true;
@@ -1550,63 +1553,63 @@ public class ClickingButtons implements PacketType {
 				c.getSI().selected = 7;
 			}
 			break;
-		case 33224: // runecrafting
+		case 99204: // runecrafting
 			c.getSI().runecraftingComplex(1);
 			c.getSI().selected = 6;
 			break;
-		case 33210: // agility
+		case 99186: // agility
 			c.getSI().agilityComplex(1);
 			c.getSI().selected = 8;
 			break;
-		case 33213: // herblore
+		case 99189: // herblore
 			c.getSI().herbloreComplex(1);
 			c.getSI().selected = 9;
 			break;
-		case 33216: // theiving
+		case 99192: // theiving
 			c.getSI().thievingComplex(1);
 			c.getSI().selected = 10;
 			break;
-		case 33219: // crafting
+		case 99195: // crafting
 			c.getSI().craftingComplex(1);
 			c.getSI().selected = 11;
 			break;
-		case 33222: // fletching
+		case 99202: // fletching
 			c.getSI().fletchingComplex(1);
 			c.getSI().selected = 12;
 			break;
-		case 47130:// slayer
+		case 99205:// slayer
 			c.getSI().slayerComplex(1);
 			c.getSI().selected = 13;
 			break;
-		case 33208:// mining
+		case 99184:// mining
 			c.getSI().miningComplex(1);
 			c.getSI().selected = 14;
 			break;
-		case 33211: // smithing
+		case 99187: // smithing
 			c.getSI().smithingComplex(1);
 			c.getSI().selected = 15;
 			break;
-		case 33214: // fishing
+		case 99190: // fishing
 			c.getSI().fishingComplex(1);
 			c.getSI().selected = 16;
 			break;
-		case 33217: // cooking
+		case 99193: // cooking
 			c.getSI().cookingComplex(1);
 			c.getSI().selected = 17;
 			break;
-		case 33220: // firemaking
+		case 99196: // firemaking
 			c.getSI().firemakingComplex(1);
 			c.getSI().selected = 18;
 			break;
-		case 33223: // woodcut
+		case 99203: // woodcut
 			c.getSI().woodcuttingComplex(1);
 			c.getSI().selected = 19;
 			break;
-		case 54104: // farming
+		case 99206: // farming
 			c.getSI().farmingComplex(1);
 			c.getSI().selected = 20;
 			break;
-		case 73141: // farming
+		case 99207: // hunter
 			c.getSI().hunterComplex(1);
 			c.getSI().selected = 21;
 			break;
@@ -1672,6 +1675,7 @@ public class ClickingButtons implements PacketType {
 		case 93233:
 		case 93209:
 		case 93240:
+			case 6226:
 			if (c.autoRet == 0) {
 				c.autoRet = 1;
 			} else {

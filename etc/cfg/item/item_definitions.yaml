@@ -71882,9 +71882,7 @@
   equipmentModelType: "FULL_MASK"
   requirements:
     - skill: "DEFENCE"
-      level: 50
-    - skill: "STRENGTH"
-      level: 70
+      level: 80
 - id: 26384
   name: "Torva Platebody"
   description: "Torva Platebody."
@@ -71893,9 +71891,7 @@
   equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
-      level: 50
-    - skill: "STRENGTH"
-      level: 70
+      level: 80
 - id: 26386
   name: "Torva PlateLegs"
   description: "Torva Platebody."
@@ -71904,9 +71900,38 @@
   equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
-      level: 50
-    - skill: "STRENGTH"
-      level: 70
+      level: 80
+- id: 26376
+  name: "Torva Full helm (damaged)"
+  description: "Torva Full helm (damaged)."
+  shopValue: 51200000
+  noteId: 26376
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
+- id: 26378
+  name: "Torva Platebody (damaged)"
+  description: "Torva Platebody (damaged)."
+  shopValue: 32400000
+  noteId: 26378
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
+- id: 26380
+  name: "Torva PlateLegs (damaged)"
+  description: "Torva Platebody (damaged)."
+  shopValue: 32400000
+  noteId: 26380
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
+- id: 26394
+  name: "Bandosian components"
+  description: "High grade material."
+  shopValue: 100000
 - id: 26233
   name: "Ancient godsword"
   description: "A beautiful, heavy ancient sword."
@@ -71923,6 +71948,70 @@
   requirements:
     - skill: "RANGED"
       level: 85
+- id: 26219
+  name: "Osmumten's fang"
+  description: "A deadly sword created long ago."
+  shopValue: 1000000
+  noteId: 27245
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+- id: 27245
+  name: "Osmumten's fang"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 26219
+  noted: true
+  stackable: true
+- id: 27277
+  name: "Tumeken's shadow (uncharged)"
+  description: "An ancient staff created using a higher power.."
+  shopValue: 7000000
+  noteId: 27278
+  requirements:
+    - skill: "MAGIC"
+      level: 85
+- id: 27278
+  name: "Tumeken's shadow (uncharged)"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27277
+  noted: true
+  stackable: true
+- id: 25985
+  name: "Elidinis' ward"
+  description: "A ward once used by Elidinis herself."
+  shopValue: 5000000
+  noteId: 27250
+  requirements:
+    - skill: "MAGIC"
+      level: 80
+    - skill: "DEFENCE"
+      level: 80
+    - skill: "PRAYER"
+      level: 80
+- id: 27250
+  name: "Elidinis' ward"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25985
+  noted: true
+  stackable: true
+- id: 25975
+  name: "Lightbearer"
+  description: "A heavy ring that glimmers with a strange power."
+  shopValue: 1000000
+  noteId: 27244
+  requirements:
+    - skill: "MAGIC"
+      level: 1
+    - skill: "DEFENCE"
+      level: 1
+    - skill: "PRAYER"
+      level: 1
+- id: 27244
+  name: "Lightbearer"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25975
+  noted: true
+  stackable: true
 - id: 25916
   name: "Dragon Hunter Crossbow (t)"
   description: "A dragon Hunter Crossbow(t)."

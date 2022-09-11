@@ -252,6 +252,7 @@ public class ItemOptionTwo implements PacketType {
 		case 11254:
 		case 11256:
 		case 19732:
+			case 23768:
 			Impling.getReward(player, itemId);
 			break;
 		case 20164: //Spade

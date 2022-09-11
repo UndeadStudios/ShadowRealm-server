@@ -23,6 +23,7 @@ import io.exilius.content.item.lootable.impl.SerenChest;
 import io.exilius.content.item.lootable.impl.UnbearableChest;
 import io.exilius.content.skills.Cooking;
 import io.exilius.content.skills.agility.AgilityHandler;
+import io.exilius.content.skills.construction.Construction;
 import io.exilius.content.skills.hunter.impling.PuroPuro;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaAltar;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaBanker;

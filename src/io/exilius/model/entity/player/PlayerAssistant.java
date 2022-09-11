@@ -1126,16 +1126,16 @@ public class PlayerAssistant {
 	}
 
 	public void sendFrame34(int id, int slot, int column, int amount) {
-		c.getOutStream().createFrameVarSizeWord(34);
-		c.getOutStream().writeUnsignedWord(column);
-		c.getOutStream().writeDWord(slot);
-		c.getOutStream().writeUnsignedWord(id + 1);
-		c.getOutStream().writeByte(255);
-		c.getOutStream().writeDWord(amount);
-		c.getOutStream().endFrameVarSizeWord();
-		System.out.println("id = " + id + ", slot = " + slot + ", column = " + column + ", amount = " + amount );
+		// synchronized(c) {
+		if (c.getOutStream() != null && c != null) {
+			c.outStream.createFrameVarSizeWord(34); // init item to smith screen
+			c.outStream.writeUnsignedWord(column); // Column Across Smith Screen
+			c.outStream.writeDWord(slot); // Row Down The Smith Screen
+			c.outStream.writeUnsignedWord(id + 1); // item
+			c.outStream.writeByte(amount); // how many there are?
+			c.outStream.endFrameVarSizeWord();
+		}
 	}
-
 	private int currentWalkableInterface;
 
 	public boolean hasWalkableInterface() {
@@ -1318,9 +1318,7 @@ public class PlayerAssistant {
 		}
 	}
 	public void mysteryBoxItemOnInterface(int item, int amount , int frame, int slot) {
-		if (item == -1) {
-			amount = 0;
-		}
+		if (c.getOutStream() != null && c != null) {
 			c.getOutStream().createFrameVarSizeWord(34);
 			c.getOutStream().writeUnsignedWord(frame);
 			c.getOutStream().writeDWord(slot);
@@ -1328,6 +1326,7 @@ public class PlayerAssistant {
 			c.getOutStream().writeByte(255);
 			c.getOutStream().writeDWord(amount);
 			c.getOutStream().endFrameVarSizeWord();
+		}
 	}
 
 	/**
@@ -1517,12 +1516,34 @@ public class PlayerAssistant {
 		final int bitpackedValue = opaque ? setBit(15, item + 1) : item + 1;
 		c.outStream.createFrameVarSizeWord(34);
 		c.outStream.writeUnsignedWord(frame);
-		c.outStream.writeByte(slot);
+		c.outStream.writeDWord(slot);
 		c.outStream.writeUnsignedWord(bitpackedValue);
 		c.outStream.writeByte(255);
 		c.outStream.writeDWord(amount);
 		c.outStream.endFrameVarSizeWord();
-		System.out.println("itemtoslotwithopactiy");
+	}
+
+	public void itemOnInterface2(int frame, int item, int slot, int amount) {
+		c.outStream.createFrameVarSizeWord(34);
+		c.outStream.writeWord(frame);
+		c.outStream.writeDWord(slot);
+		c.outStream.writeWord(item + 1);
+		c.outStream.writeByte(255);
+		c.outStream.writeDWord(amount);
+		c.outStream.endFrameVarSizeWord();
+	}
+	public void sendItemsOnInterface(int frame, int item, int slot, int amount) {
+		c.getOutStream().createFrameVarSizeWord(34);
+		c.getOutStream().writeUnsignedWord(frame);
+		c.getOutStream().writeDWord(slot);
+		c.getOutStream().writeWord(item + 1);
+		if (amount > 254) {
+			c.getOutStream().writeByte(255);
+			c.getOutStream().writeDWord(amount);
+		} else {
+			c.getOutStream().writeByte(amount);
+		}
+		c.getOutStream().endFrameVarSizeWord();
 	}
 
 	public void sendStringContainer(int containerInterfaceId, List<String> strings) {
@@ -4228,6 +4249,7 @@ public class PlayerAssistant {
 			c.getOutStream().endFrameVarSizeWord();
 		}
 	}
+
 
 	public Map<Integer, String> getPlayerOptions() {
 		return playerOptions;

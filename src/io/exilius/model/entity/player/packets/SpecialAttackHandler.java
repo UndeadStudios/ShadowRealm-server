@@ -71,6 +71,8 @@ public class SpecialAttackHandler implements PacketType {
             case 30007:
                 /* Whip */
             case 48034:
+                /* Crossbows*/
+            case 101165:
                 /* Warhammer & Mauls */
             case 29049:
                 /* Pickaxe */

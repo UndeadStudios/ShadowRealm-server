@@ -699,7 +699,10 @@ public class Misc {
 		}
 		return temp;
 	}
-
+	private static final RandomGen RANDOM = new RandomGen();
+	public static boolean percentChance(double chance) {
+		return RANDOM.get().nextDouble(0.0, 100.0) <= chance;
+	}
 	public static String basicEncrypt(String s) {
 		String toReturn = "";
 		for (int j = 0; j < s.length(); j++) {
@@ -716,7 +719,23 @@ public class Misc {
 
 	long seed = System.nanoTime();
 
-	public long randomLong() {
+	public static String loadFile(String path) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(path));
+		try {
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+
+			while (line != null) {
+				sb.append(line);
+				sb.append("\n");
+				line = br.readLine();
+			}
+			return sb.toString();
+		} finally {
+			br.close();
+		}
+	}
+    public long randomLong() {
 		seed ^= (seed << 21);
 		seed ^= (seed >>> 35);
 		seed ^= (seed << 4);

@@ -1417,7 +1417,7 @@ public class ItemAssistant {
 			if (player.getOutStream() != null) {
 				player.getOutStream().createFrameVarSizeWord(34);
 				player.getOutStream().writeUnsignedWord(1688);
-				player.getOutStream().writeByte(targetSlot);
+				player.getOutStream().writeDWord(targetSlot);
 				player.getOutStream().writeUnsignedWord(wearID + 1);
 
 				if (player.playerEquipmentN[targetSlot] > 254) {
@@ -1472,7 +1472,7 @@ public class ItemAssistant {
 		if (player.getOutStream() != null) {
 			player.getOutStream().createFrameVarSizeWord(34);
 			player.getOutStream().writeUnsignedWord(1688);
-			player.getOutStream().writeByte(targetSlot);
+			player.getOutStream().writeDWord(targetSlot);
 			player.getOutStream().writeUnsignedWord(wearID + 1);
 			if (wearAmount > 254) {
 				player.getOutStream().writeByte(255);
@@ -1510,7 +1510,7 @@ public class ItemAssistant {
 		if (player.getOutStream() != null) {
 			player.getOutStream().createFrameVarSizeWord(34);
 			player.getOutStream().writeUnsignedWord(1688);
-			player.getOutStream().writeByte(slot);
+			player.getOutStream().writeDWord(slot);
 			player.getOutStream().writeUnsignedWord(player.playerEquipment[slot] + 1);
 			if (player.playerEquipmentN[slot] > 254) {
 				player.getOutStream().writeByte(255);
@@ -1987,7 +1987,7 @@ public class ItemAssistant {
 		if (player.getOutStream() != null) {
 			player.getOutStream().createFrameVarSizeWord(34);
 			player.getOutStream().writeUnsignedWord(1688);
-			player.getOutStream().writeByte(targetSlot);
+			player.getOutStream().writeDWord(targetSlot);
 			player.getOutStream().writeUnsignedWord(wearID + 1);
 			if (amount > 254) {
 				player.getOutStream().writeByte(255);
@@ -2641,4 +2641,20 @@ public class ItemAssistant {
 			player.flushOutStream();
 		}
 	}
+
+	/**
+	 * Gets the item slot.
+	 *
+	 * @param ItemID
+	 * @return
+	 */
+	public int getItemSlot(int ItemID) {
+		for (int i = 0; i < player.playerItems.length; i++) {
+			if ((player.playerItems[i] - 1) == ItemID) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 }

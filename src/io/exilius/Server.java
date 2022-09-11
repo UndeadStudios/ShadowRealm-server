@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import io.exilius.model.entity.npc.NPCCacheDefinition;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -139,7 +138,6 @@ public class Server {
                     .load()
                     .migrate();
         }
-        NPCCacheDefinition.unpackConfig();
         ServerStartup.load();
         loaded = true;
     }

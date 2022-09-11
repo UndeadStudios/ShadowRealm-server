@@ -98,6 +98,11 @@ public enum WeaponData {
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.RANGE),
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.RANGE)),
 
+    CROSSBOW(WeaponDataConstants.CROSSBOWS, WeaponInterface.CROSSBOW,
+            new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.RANGE),
+            new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.RANGE),
+            new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.RANGE)),
+
     THROWN(WeaponDataConstants.THROWN, WeaponInterface.THROWN_RANGED,
             new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.RANGE),
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.RANGE),

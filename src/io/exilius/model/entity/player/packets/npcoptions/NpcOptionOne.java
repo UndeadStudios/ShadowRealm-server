@@ -370,6 +370,7 @@ public class NpcOptionOne {
 		case 1643:
 		case 1654:
 		case 7302:
+			case 8748:
 			Impling.catchImpling(player, npc);
 			break;
 

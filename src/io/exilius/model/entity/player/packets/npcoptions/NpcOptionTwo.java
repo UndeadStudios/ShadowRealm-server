@@ -80,6 +80,9 @@ public class NpcOptionTwo {
 		case 327:
 			   player.gfx100(1028);
 			break;
+			case 11289:
+				player.getItems().openUpBank();
+				break;
 		case 1306:
 			if (player.getItems().isWearingItems()) {
 				player.sendMessage("You must remove your equipment before changing your appearance.");

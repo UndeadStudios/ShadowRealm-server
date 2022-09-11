@@ -45,7 +45,8 @@ public enum ImplingData {
 	/**
 	 * Dragon Impling.
 	 */
-	LUCKY("Lucky Impling", 19732, 80, 89, 7302);
+	LUCKY("Lucky Impling", 19732, 80, 89, 7302),
+	CRYSTAL("Crystal Impling", 23768, 280, 80, 8748);
 	
 	/**
 	 * Variables.

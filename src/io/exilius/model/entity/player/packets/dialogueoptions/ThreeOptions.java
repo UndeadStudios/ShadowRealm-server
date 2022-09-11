@@ -6,6 +6,7 @@ import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
 import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.items.TomeOfFire;
+import io.exilius.content.skills.construction.Room;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
@@ -29,6 +30,9 @@ public class ThreeOptions {
 		case 152:
 			c.getDH().sendDialogues(153, 1603);
 			break;
+			case 903:
+				c.getDH().sendDialogues(904, 0);
+				break;
 		case 1428:
 			c.getPrestige().openPrestige();
 			break;
@@ -129,6 +133,16 @@ public class ThreeOptions {
 	public static void handleOption2(Player c) {
 
 		switch (c.dialogueAction) {
+			case 903:
+				try {
+					c.replaceWith = (Room) Class.forName(c.toReplace.getClassName()).newInstance();
+					c.replaceWith.setCustomObjects(c.toReplace.getCustomObjects());
+				} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+					e.printStackTrace();
+					return;
+				}
+				c.getDH().sendDialogues(907, 0);
+				break;
 		case 265:
 			TomeOfFire.remove(c);
 		    break;
@@ -238,6 +252,10 @@ public class ThreeOptions {
 	 */
 	public static void handleOption3(Player c) {
 		switch (c.dialogueAction) {
+			case 903:
+				c.getPA().closeAllWindows();
+				c.toReplace = c.replaceWith = null;
+				break;
 		case 265:
 			c.getPA().removeAllWindows();
 			break;

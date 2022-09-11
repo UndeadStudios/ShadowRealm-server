@@ -2,6 +2,7 @@ package io.exilius.model.entity.player.packets.objectoptions;
 
 import io.exilius.Server;
 import io.exilius.content.dialogue.impl.OutlastLeaderboard;
+import io.exilius.content.skills.construction.Construction;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
 
@@ -18,7 +19,6 @@ public class ObjectOptionFour {
 
 		if (OutlastLeaderboard.handleInteraction(c, objectType, 4))
 			return;
-
 		switch (objectType) {
 		case 31858:
 		case 29150:
