@@ -8,11 +8,12 @@ import io.exilius.model.entity.player.Player;
 public class Pohdump extends Command {
     @Override
     public void execute(Player c, String commandName, String input) {
-        GsonBuilder builder = new GsonBuilder();
-        builder.excludeFieldsWithoutExposeAnnotation();
-        Gson gson = builder.create();
+       // GsonBuilder builder = new GsonBuilder();
+        //builder.excludeFieldsWithoutExposeAnnotation();
+        //Gson gson = builder.create();
+        c.sendMessage("This command is disabled.");
 
-        System.out.println(gson.toJson(c.getHouse()));
+      //  System.out.println(gson.toJson(c.getHouse()));
 
     }
 }

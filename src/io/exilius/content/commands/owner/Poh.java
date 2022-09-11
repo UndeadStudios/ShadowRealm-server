@@ -8,8 +8,9 @@ public class Poh extends Command {
 
     @Override
     public void execute(Player c, String commandName, String input) {
-        House house = new House(c);
-        house.enter(c);
+       // House house = new House(c);
+       // house.enter(c);
+        c.sendMessage("This command is disabled.");
 
     }
 

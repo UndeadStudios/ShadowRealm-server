@@ -11,7 +11,7 @@ import java.util.Optional;
 public class Pohjoin extends Command {
     @Override
     public void execute(Player c, String commandName, String input) {
-        Player toJoin = null;
+        /*Player toJoin = null;
 
 
         String[] args = input.split(" ");
@@ -39,8 +39,8 @@ public class Pohjoin extends Command {
 
         House house = toJoin.getHouse();
         c.setHouse(house);
-        house.enter(c);
+        house.enter(c);*/
+        c.sendMessage("This command is disabled.");
 
-    }
     }
 }

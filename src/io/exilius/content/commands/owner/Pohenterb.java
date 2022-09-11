@@ -7,14 +7,15 @@ import io.exilius.model.entity.player.Player;
 public class Pohenterb extends Command {
     @Override
     public void execute(Player c, String commandName, String input) {
-        if (c.getHouse() == null) {
+       /* if (c.getHouse() == null) {
             c.sendMessage("You do not have a house loaded.");
             return;
         }
 
         House house = c.getHouse();
         house.setBuildMode(true);
-        house.enter(c);
+        house.enter(c);*/
+        c.sendMessage("This command is disabled.");
 
     }
 }

@@ -6,7 +6,8 @@ import io.exilius.model.entity.player.Player;
 
 public class Pohload extends Command {
     @Override
-    public void execute(Player player, String commandName, String input) {
-        player.setHouse(House.load(player));
+    public void execute(Player c, String commandName, String input) {
+        c.sendMessage("This command is disabled.");
+       // c.setHouse(House.load(c));
     }
 }
