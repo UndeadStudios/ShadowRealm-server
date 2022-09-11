@@ -1,9 +1,5 @@
 package io.exilius.model.entity.player;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.content.dialogue.DialogueExpression;
 import io.exilius.content.items.Degrade;
@@ -20,6 +16,10 @@ import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.text.WordUtils;
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
 
 public class DialogueHandler {
 
@@ -1748,7 +1748,7 @@ public class DialogueHandler {
 			break;
 
 		case 500:
-			sendOption2("Vote Crystal", "PKP tickets");
+			sendOption2("Vote Crystal & Tickets", "PKP tickets");
 			c.dialogueAction = 201;
 			c.nextChat = 0;
 			break;

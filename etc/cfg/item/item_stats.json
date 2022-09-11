@@ -55567,13 +55567,18 @@
     "weight": 2.0,
     "equipment": {
       "slot": 0,
-      "amagic": -6,
-      "arange": -2,
-      "dstab": 6,
-      "dslash": 7,
-      "dcrush": 5,
-      "dmagic": -1,
-      "drange": 6
+      "astab": -5,
+      "aslash": -5,
+      "acrush": -5,
+      "amagic": -5,
+      "arange": 26,
+      "dstab": 9,
+      "dslash": 18,
+      "dcrush": 18,
+      "dmagic": 19,
+      "drange": 19,
+      "rstr": 15,
+      "prayer": 3
     }
   },
   "20840": {
@@ -64100,18 +64105,18 @@
     "weight": 9.5,
     "equipment": {
       "slot": 4,
-      "astab": 3,
-      "aslash": 3,
-      "acrush": 1,
-      "amagic": -5,
-      "arange": 33,
-      "str": 1,
-      "dstab": 82,
-      "dslash": 76,
-      "dcrush": 80,
-      "dmagic": 86,
-      "drange": 69,
-      "prayer": 4
+      "astab": -7,
+      "aslash": -7,
+      "acrush": -7,
+      "amagic": -15,
+      "arange": 51,
+      "dstab": 56,
+      "dslash": 48,
+      "dcrush": 61,
+      "dmagic": 70,
+      "drange": 57,
+      "rstr": 25,
+      "prayer": 5
     }
   },
   "23846": {
@@ -64158,21 +64163,21 @@
     "weight": 9.5,
     "equipment": {
       "slot": 7,
-      "astab": 2,
-      "aslash": 2,
-      "acrush": 1,
-      "amagic": -3,
-      "arange": 21,
-      "str": 1,
-      "dstab": 50,
-      "dslash": 39,
-      "dcrush": 56,
-      "dmagic": 54,
-      "drange": 44,
-      "prayer": 3
+      "astab": -6,
+      "aslash": -6,
+      "acrush": -6,
+      "amagic": -10,
+      "arange": 51,
+      "dstab": 34,
+      "dslash": 30,
+      "dcrush": 38,
+      "dmagic": 45,
+      "drange": 36,
+      "rstr": 25,
+      "prayer": 5
     }
   },
-  "23849": {
+   "23849": {
     "name": "Corrupted halberd (basic)",
     "equipable": true,
     "weight": 1.5,
@@ -64851,14 +64856,18 @@
     "weight": 2.0,
     "equipment": {
       "slot": 0,
-      "amagic": -10,
-      "arange": 8,
-      "dstab": 12,
-      "dslash": 8,
-      "dcrush": 14,
-      "dmagic": 26,
-      "drange": 18,
-      "prayer": 2
+      "astab": -5,
+      "aslash": -5,
+      "acrush": -5,
+      "amagic": -5,
+      "arange": 16,
+      "dstab": 9,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 13,
+      "drange": 13,
+      "rstr": 10,
+      "prayer": 1
     }
   },
   "23973": {
@@ -64875,14 +64884,18 @@
     "weight": 9.0,
     "equipment": {
       "slot": 4,
-      "amagic": -18,
-      "arange": 30,
-      "dstab": 34,
-      "dslash": 24,
-      "dcrush": 32,
-      "dmagic": 44,
-      "drange": 53,
-      "prayer": 3
+      "astab": -7,
+      "aslash": -7,
+      "acrush": -7,
+      "amagic": -15,
+      "arange": 44,
+      "dstab": 56,
+      "dslash": 48,
+      "dcrush": 61,
+      "dmagic": 70,
+      "drange": 57,
+      "rstr": 10,
+      "prayer": 1
     }
   },
   "23977": {
@@ -64899,14 +64912,18 @@
     "weight": 9.0,
     "equipment": {
       "slot": 7,
-      "amagic": -12,
-      "arange": 17,
-      "dstab": 20,
-      "dslash": 16,
-      "dcrush": 24,
-      "dmagic": 34,
-      "drange": 29,
-      "prayer": 2
+      "astab": -6,
+      "aslash": -6,
+      "acrush": -6,
+      "amagic": -10,
+      "arange": 40,
+      "dstab": 32,
+      "dslash": 26,
+      "dcrush": 34,
+      "dmagic": 40,
+      "drange": 33,
+      "rstr": 10,
+      "prayer": 1
     }
   },
   "23981": {

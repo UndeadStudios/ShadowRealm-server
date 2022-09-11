@@ -61,17 +61,17 @@ public class Votes implements Runnable  {
                         String message2 = "Vote System:" + player.getDisplayName() + " has got the voting pet!";
                         int petroll = Misc.random(150);
                      //   player.getInventory().addToInventory(new ImmutableItem(6758, 1));
-                        player.getInventory().addToInventory(new ImmutableItem(1464, 5));
-                        player.getInventory().addToInventory(new ImmutableItem(995, 200_000));
+                        player.getInventory().addAnywhere(new ImmutableItem(1464, 5));
+                        player.getInventory().addAnywhere(new ImmutableItem(995, 200_000));
                         if (petroll < 2) {
                             Discord.writeannounceMessage(message2);
-                            player.getInventory().addToInventory(new ImmutableItem(21262, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(21262, 1));
                         }
                         if (petroll < 65) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         if (petroll < 25) {
-                        player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                        player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                     }
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         Discord.writeannounceMessage(message);
@@ -80,13 +80,13 @@ public class Votes implements Runnable  {
                         String message3 = "Vote System:" + player.getDisplayName() + " has just voted on Top 100";
                         int petroll2 = Misc.random(100);
                      //   player.getInventory().addToInventory(new ImmutableItem(6758, 1));
-                        player.getInventory().addToInventory(new ImmutableItem(1464, 3));
-                        player.getInventory().addToInventory(new ImmutableItem(995, 150_000));
+                        player.getInventory().addAnywhere(new ImmutableItem(1464, 3));
+                        player.getInventory().addAnywhere(new ImmutableItem(995, 150_000));
                         if (petroll2 < 65) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         if (petroll2 < 25) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         Discord.writeannounceMessage(message3);
                         Achievements.increase(player, AchievementType.VOTER, 1);
@@ -95,13 +95,13 @@ public class Votes implements Runnable  {
                         String message4 = "Vote System:" + player.getDisplayName() + " has just voted on RSPS-List";
                         int petroll3 = Misc.random(100);
                        // player.getInventory().addToInventory(new ImmutableItem(6758, 1));
-                        player.getInventory().addToInventory(new ImmutableItem(1464, 3));
-                        player.getInventory().addToInventory(new ImmutableItem(995, 100_000));
+                        player.getInventory().addAnywhere(new ImmutableItem(1464, 3));
+                        player.getInventory().addAnywhere(new ImmutableItem(995, 100_000));
                         if (petroll3 < 65) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         if (petroll3 < 25) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         Discord.writeannounceMessage(message4);
                         Achievements.increase(player, AchievementType.VOTER, 1);
@@ -110,13 +110,13 @@ public class Votes implements Runnable  {
                         String message5 = "Vote System:" + player.getDisplayName() + " has just voted on TopG";
                         int petroll4 = Misc.random(100);
                        // player.getInventory().addToInventory(new ImmutableItem(6758, 1));
-                        player.getInventory().addToInventory(new ImmutableItem(1464, 4));
-                        player.getInventory().addToInventory(new ImmutableItem(995, 120_000));
+                        player.getInventory().addAnywhere(new ImmutableItem(1464, 4));
+                        player.getInventory().addAnywhere(new ImmutableItem(995, 120_000));
                         if (petroll4 < 65) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         if (petroll4 < 25) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         Discord.writeannounceMessage(message5);
                         Achievements.increase(player, AchievementType.VOTER, 1);
@@ -126,13 +126,13 @@ public class Votes implements Runnable  {
                         String message6 = "Vote System:" + player.getDisplayName() + " has just voted on Runelist";
                         int petroll5 = Misc.random(100);
                       //  player.getInventory().addToInventory(new ImmutableItem(6758, 1));
-                        player.getInventory().addToInventory(new ImmutableItem(1464, 5));
-                        player.getInventory().addToInventory(new ImmutableItem(995, 110_000));
+                        player.getInventory().addAnywhere(new ImmutableItem(1464, 5));
+                        player.getInventory().addAnywhere(new ImmutableItem(995, 110_000));
                         if (petroll5 < 65) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         if (petroll5 < 25) {
-                            player.getInventory().addToInventory(new ImmutableItem(11739, 1));
+                            player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         Discord.writeannounceMessage(message6);
                         Achievements.increase(player, AchievementType.VOTER, 1);
