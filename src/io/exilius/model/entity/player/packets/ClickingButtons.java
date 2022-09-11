@@ -522,7 +522,7 @@ public class ClickingButtons implements PacketType {
 			break;
 
 		case 23132:
-			c.setSidebarInterface(1, 3917); // Skilltab > 3917
+			c.setSidebarInterface(1, 25402); // Skilltab > 3917
 			//c.setSidebarInterface(2, 638); // 638
 			c.setSidebarInterface(2, QuestTab.INTERFACE_ID);
 			c.setSidebarInterface(3, 3213);
