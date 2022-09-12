@@ -1516,7 +1516,7 @@ public class PlayerAssistant {
 		final int bitpackedValue = opaque ? setBit(15, item + 1) : item + 1;
 		c.outStream.createFrameVarSizeWord(34);
 		c.outStream.writeUnsignedWord(frame);
-		c.outStream.writeDWord(slot);
+		c.outStream.writeByte(slot);
 		c.outStream.writeUnsignedWord(bitpackedValue);
 		c.outStream.writeByte(255);
 		c.outStream.writeDWord(amount);
