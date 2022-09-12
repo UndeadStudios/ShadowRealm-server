@@ -70,7 +70,7 @@ rare:
     minimum: 1
     maximum: 1
 very_rare:
-  accessibility: 2050
+  accessibility: 2250
   items:
   - name: "draconic visage"
     minimum: 1

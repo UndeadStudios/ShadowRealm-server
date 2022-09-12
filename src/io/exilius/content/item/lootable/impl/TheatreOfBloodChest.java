@@ -1,5 +1,11 @@
 package io.exilius.content.item.lootable.impl;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.google.common.collect.Lists;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -8,6 +14,8 @@ import io.exilius.content.bosspoints.BossPoints;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.LootRarity;
 import io.exilius.content.item.lootable.Lootable;
+//import io.exilius.content.leaderboards.LeaderboardType;
+//import io.exilius.content.leaderboards.LeaderboardUtils;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
 import io.exilius.model.definitions.ItemDef;
@@ -17,8 +25,6 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.items.ImmutableItem;
 import io.exilius.util.Misc;
-
-import java.util.*;
 
 public class TheatreOfBloodChest implements Lootable {
 
@@ -78,7 +84,8 @@ public class TheatreOfBloodChest implements Lootable {
                 new GameItem(Items.AVERNIC_DEFENDER_HILT),
 
                 new GameItem(Items.SCYTHE_OF_VITUR),
-                new GameItem(Items.SCYTHE_OF_VITUR)
+         new GameItem(Items.SCYTHE_OF_VITUR),
+        new GameItem(Items.SCYTHE_OF_VITUR)
 
         ));
     }

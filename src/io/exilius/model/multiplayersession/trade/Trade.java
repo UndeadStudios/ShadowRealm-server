@@ -1,5 +1,8 @@
 package io.exilius.model.multiplayersession.trade;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.DiceHandler;
@@ -11,9 +14,6 @@ import io.exilius.model.multiplayersession.Multiplayer;
 import io.exilius.model.multiplayersession.MultiplayerSession;
 import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
-
-import java.util.Arrays;
-import java.util.Objects;
 
 public class Trade extends Multiplayer {
 
@@ -36,10 +36,6 @@ public class Trade extends Multiplayer {
 		}
 		if (Boundary.HESPORI.in(player) || Boundary.HESPORI.in(requested)) {
 			player.sendMessage("You can't trade inside Hespori.");
-			return false;
-		}
-		if (player.getLoginName().equals("kms")) {
-			player.sendMessage("You arent able to trade.");
 			return false;
 		}
 		if (Boundary.RAIDS_LOBBY.in(player) || Boundary.LOBBY.in(requested)) {

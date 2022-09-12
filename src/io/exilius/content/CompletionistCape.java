@@ -20,24 +20,22 @@ public class CompletionistCape {
             // Line break
             new Requirement("", null),
 
-            kc("chambers of xeric", 1000),
-            kc("theatre of blood", 250),
+            kc("chambers of xeric", 100),
+            kc("theatre of blood", 100),
 
-            kc("the nightmare", 150),
+            kc("the nightmare", 50),
             kc("corporeal beast", 50),
-            kc("alchemical hydra", 150),
+            kc("alchemical hydra", 50),
 
             kc("cerberus", 100),
             kc("zulrah", 100),
             kc("kraken", 100),
             kc("daggannoth kings", 100, "dagannoth supreme", "dagannoth prime", "dagannoth rex"),
 
-            kc("general graardor", 1000),
-            kc("k'ril tsutsaroth", 1000),
-            kc("kree'arra", 1000),
-            kc("commander zilyana", 1000),
-            kc("kraken", 1000),
-            kc("giant mole", 1000),
+            kc("general graardor", 100),
+            kc("k'ril tsutsaroth", 100),
+            kc("kree'arra", 100),
+            kc("commander zilyana", 100),
 
     };
 
