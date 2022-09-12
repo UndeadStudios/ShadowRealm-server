@@ -196,6 +196,8 @@ public class UseItem {
 								c.startAnimation(899);
 								c.sendMessage("You fix your torva full helm.");
 								c.getItems().addItem(26382, 1);
+							} else {
+								c.sendMessage("You need a level of 90 smithing to do this.");
 							}
 						}
 						break;
@@ -208,6 +210,8 @@ public class UseItem {
 								c.startAnimation(899);
 								c.sendMessage("You fix your torva platebody.");
 								c.getItems().addItem(26384, 1);
+							} else {
+								c.sendMessage("You need a level of 90 smithing to do this.");
 							}
 						}
 						break;
@@ -220,6 +224,8 @@ public class UseItem {
 								c.startAnimation(899);
 								c.sendMessage("You fix your torva platelegs.");
 								c.getItems().addItem(26386, 1);
+							} else {
+								c.sendMessage("You need a level of 90 smithing to do this.");
 							}
 						}
 						break;

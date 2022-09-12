@@ -72593,6 +72593,62 @@
       level: 30
     - skill: "MAGIC"
       level: 30
+- id: 28213
+  name: "Orange abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28214
+  name: "Purple abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28215
+  name: "Unknown Color abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28216
+  name: "Red abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28217
+  name: "Blue abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28218
+  name: "Barrows abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28219
+  name: "Gold abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28220
+  name: "White abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
 - id: 22369
   name: "Bryophyta's staff (uncharged)"
   noted: true
