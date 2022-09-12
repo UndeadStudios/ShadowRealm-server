@@ -1516,7 +1516,7 @@ public class PlayerAssistant {
 		final int bitpackedValue = opaque ? setBit(15, item + 1) : item + 1;
 		c.outStream.createFrameVarSizeWord(34);
 		c.outStream.writeUnsignedWord(frame);
-		c.outStream.writeDWord(slot);
+		c.outStream.writeByte(slot);
 		c.outStream.writeUnsignedWord(bitpackedValue);
 		c.outStream.writeByte(255);
 		c.outStream.writeDWord(amount);
@@ -1535,7 +1535,7 @@ public class PlayerAssistant {
 	public void sendItemsOnInterface(int frame, int item, int slot, int amount) {
 		c.getOutStream().createFrameVarSizeWord(34);
 		c.getOutStream().writeUnsignedWord(frame);
-		c.getOutStream().writeDWord(slot);
+		c.getOutStream().writeByte(slot);
 		c.getOutStream().writeWord(item + 1);
 		if (amount > 254) {
 			c.getOutStream().writeByte(255);

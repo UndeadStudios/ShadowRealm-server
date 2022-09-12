@@ -78,9 +78,11 @@ public class NexChest implements Lootable {
 
         items.put(LootRarity.RARE, Arrays.asList(
                 // UPDATE HESPORICHESTITEMS TOO
-                new GameItem(Items.TORVA_FULLHELM, 1),
-                new GameItem(Items.TORVA_PLATEBODY, 1),
-                new GameItem(Items.TORVA_PLATELEGS, 1),
+                new GameItem(26376, 1),
+                new GameItem(26378, 1),
+                new GameItem(26380, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
                 new GameItem(Items.ZARYTE_CROSSBOW, 1),
                 new GameItem(Items.ZARYTE_VAMBRACES, 1),
                 new GameItem(Items.TORVA_FULLHELM, 1),

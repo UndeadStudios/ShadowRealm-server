@@ -24,7 +24,7 @@ public class Configuration {
 	public static final String VOTE_LINK = "https://exilius-osrs.com/vote";
 	public static final String HISCORES_LINK = "https://exiliusosrs.everythingrs.com/services/hiscores";
 	public static final String STORE_LINK = "https://exiliusosrsps.everythingrs.com/services/store";
-	public static final String DISCORD_INVITE = "https://discord.gg/f8xb3bC";
+	public static final String DISCORD_INVITE = "https://discord.gg/exiliusrsps";
 	public static final String RULES_LINK = "https://www.exilius-osrs.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
 	public static final String GUIDES_LINK = "https://www.exilius-osrs.com/index.php?/forum/11-guides/";
 	public static final String DONATOR_BENEFITS_LINK = "https://www.exilius-osrs.com/index.php?/topic/14-donator-benefits-guide/";

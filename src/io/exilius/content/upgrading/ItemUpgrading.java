@@ -152,7 +152,7 @@ public class ItemUpgrading {
         SANG_STAFF(0, 22323, 175_000_000, new GameItem(6613, 1), 10.0),
         HOLY_SANG_STAFF(0, 6613, 275_000_000, new GameItem(8807, 1), 10.0),
         GHRAZI_RAPIER(0, 22324, 100_000_000, new GameItem(8806, 1), 25.0),
-        //PH_KNIFE(0, 8806, 100_000_000, new GameItem(8804, 1), 15.0),
+        //PH_KNIFE(0,8806, 100_000_000, new GameItem(8804, 1), 15.0),
 
 
         BANDOS_CHESTPLATE(1, 11832, 150_000_000, new GameItem(22327, 1), 20.0),

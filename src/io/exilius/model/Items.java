@@ -20373,6 +20373,9 @@ public class Items {
     public static final int TORVA_FULLHELM = 26_382;
     public static final int ZARYTE_VAMBRACES = 26_235;
     public static final int ZARYTE_CROSSBOW = 26_374;
+    public static final int TORVA_HELM_BROKEN = 26_376;
+    public static final int TORVA_PLATEBODY_BROKEN = 26_378;
+    public static final int TORVA_PLATELEGS_BROKEN = 26_380;
     public static final int TORVA_PLATEBODY = 26_384;
     public static final int TORVA_PLATELEGS = 26_386;
     public static final int DEADMAN_STARTER_PACK = 22_330;

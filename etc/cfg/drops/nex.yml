@@ -114,13 +114,13 @@ uncommon:
 very_rare:
   accessibility: 87
   items:
-  - name: "torva platebody"
+  - name: "torva platebody broken"
     minimum: 1
     maximum: 1
-  - name: "torva fullhelm"
+  - name: "torva helm broken"
     minimum: 1
     maximum: 1
-  - name: "torva platebody"
+  - name: "torva platelegs broken"
     minimum: 1
     maximum: 1
   - name: "zaryte crossbow"
