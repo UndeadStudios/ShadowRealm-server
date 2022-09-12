@@ -4,8 +4,6 @@ name: "Crafting Shop"
 items:
 - name: "chisel"
 - name: "necklace mould"
-- name: "anno mould"
-  price: 5000000
 - name: "ring mould"
 - name: "amulet mould"
 - name: "bracelet mould"

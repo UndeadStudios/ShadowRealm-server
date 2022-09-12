@@ -25134,7 +25134,7 @@
       "dslash": 8,
       "dcrush": 10,
       "str": 205,
-      "aspeed": 4
+      "aspeed": 5
     }
     },
   "6663": {
@@ -60038,7 +60038,7 @@
       "dslash": 8,
       "dcrush": 10,
       "str": 205,
-      "aspeed": 4
+      "aspeed": 5
     }
   },
   "22326": {
@@ -66951,12 +66951,12 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "astab": 52,
+      "astab": 152,
       "aslash": -4,
-      "acrush": 95,
-      "str": 89,
+      "acrush": 295,
+      "str": 159,
       "prayer": 2,
-      "aspeed": 4
+      "aspeed": 3
     }
   },
   "24419": {
@@ -67957,8 +67957,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 140,
-      "rstr": 40,
+      "arange": 340,
+      "rstr": 200,
       "prayer": 14,
       "aspeed": 5
     }
