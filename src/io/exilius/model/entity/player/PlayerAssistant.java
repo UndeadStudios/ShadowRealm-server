@@ -1515,13 +1515,15 @@ public class PlayerAssistant {
 	public void sendItemToSlotWithOpacity(int frame, int item, int slot, int amount, boolean opaque) {
 		final int bitpackedValue = opaque ? setBit(15, item + 1) : item + 1;
 		c.outStream.createFrameVarSizeWord(34);
-		c.outStream.writeUnsignedWord(frame);
-		c.outStream.writeByte(slot);
-		c.outStream.writeUnsignedWord(bitpackedValue);
+		c.outStream.writeWord(frame);
+		c.outStream.writeDWord(slot);
+		c.outStream.writeWord(bitpackedValue);
 		c.outStream.writeByte(255);
 		c.outStream.writeDWord(amount);
 		c.outStream.endFrameVarSizeWord();
+		System.out.println("itemtoslotwithopactiy");
 	}
+
 
 	public void itemOnInterface2(int frame, int item, int slot, int amount) {
 		c.outStream.createFrameVarSizeWord(34);
