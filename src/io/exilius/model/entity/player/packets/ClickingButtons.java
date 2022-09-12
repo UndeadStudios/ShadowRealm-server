@@ -522,7 +522,7 @@ public class ClickingButtons implements PacketType {
 			break;
 
 		case 23132:
-			c.setSidebarInterface(1, 25402); // Skilltab > 3917
+			c.setSidebarInterface(1, 13917); // Skilltab > 3917
 			//c.setSidebarInterface(2, 638); // 638
 			c.setSidebarInterface(2, QuestTab.INTERFACE_ID);
 			c.setSidebarInterface(3, 3213);
@@ -1490,129 +1490,129 @@ public class ClickingButtons implements PacketType {
 		case 53149:
 			Cooking.getAmount(c, 28);
 			break;
-		case 99182:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.attackSkill = true;
-			} else {
-				c.getSI().attackComplex(1);
-				c.getSI().selected = 0;
-			}
-			break;
-		case 99185:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.strengthSkill = true;
-			} else {
-				c.getSI().strengthComplex(1);
-				c.getSI().selected = 1;
-			}
-			break;
-		case 99188:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.defenceSkill = true;
-			} else {
-				c.getSI().defenceComplex(1);
-				c.getSI().selected = 2;
-			}
-			break;
-		case 99191:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.rangeSkill = true;
-			} else {
-				c.getSI().rangedComplex(1);
-				c.getSI().selected = 3;
-			}
-			break;
-		case 99194:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.prayerSkill = true;
-			} else {
-				c.getSI().prayerComplex(1);
-				c.getSI().selected = 4;
-			}
-			break;
-		case 99201:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.mageSkill = true;
-			} else {
-				c.getSI().magicComplex(1);
-				c.getSI().selected = 5;
-			}
-			break;
-		case 99183:
-			if (c.getPosition().inClanWarsSafe()) {
-				c.getPA().sendEnterAmount(0);
-				c.healthSkill = true;
-			} else {
-				c.getSI().hitpointsComplex(1);
-				c.getSI().selected = 7;
-			}
-			break;
-		case 99204: // runecrafting
-			c.getSI().runecraftingComplex(1);
-			c.getSI().selected = 6;
-			break;
-		case 99186: // agility
-			c.getSI().agilityComplex(1);
-			c.getSI().selected = 8;
-			break;
-		case 99189: // herblore
-			c.getSI().herbloreComplex(1);
-			c.getSI().selected = 9;
-			break;
-		case 99192: // theiving
-			c.getSI().thievingComplex(1);
-			c.getSI().selected = 10;
-			break;
-		case 99195: // crafting
-			c.getSI().craftingComplex(1);
-			c.getSI().selected = 11;
-			break;
-		case 99202: // fletching
-			c.getSI().fletchingComplex(1);
-			c.getSI().selected = 12;
-			break;
-		case 99205:// slayer
-			c.getSI().slayerComplex(1);
-			c.getSI().selected = 13;
-			break;
-		case 99184:// mining
-			c.getSI().miningComplex(1);
-			c.getSI().selected = 14;
-			break;
-		case 99187: // smithing
-			c.getSI().smithingComplex(1);
-			c.getSI().selected = 15;
-			break;
-		case 99190: // fishing
-			c.getSI().fishingComplex(1);
-			c.getSI().selected = 16;
-			break;
-		case 99193: // cooking
-			c.getSI().cookingComplex(1);
-			c.getSI().selected = 17;
-			break;
-		case 99196: // firemaking
-			c.getSI().firemakingComplex(1);
-			c.getSI().selected = 18;
-			break;
-		case 99203: // woodcut
-			c.getSI().woodcuttingComplex(1);
-			c.getSI().selected = 19;
-			break;
-		case 99206: // farming
-			c.getSI().farmingComplex(1);
-			c.getSI().selected = 20;
-			break;
-		case 99207: // hunter
-			c.getSI().hunterComplex(1);
-			c.getSI().selected = 21;
-			break;
+			case 33206:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.attackSkill = true;
+				} else {
+					c.getSI().attackComplex(1);
+					c.getSI().selected = 0;
+				}
+				break;
+			case 33209:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.strengthSkill = true;
+				} else {
+					c.getSI().strengthComplex(1);
+					c.getSI().selected = 1;
+				}
+				break;
+			case 33212:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.defenceSkill = true;
+				} else {
+					c.getSI().defenceComplex(1);
+					c.getSI().selected = 2;
+				}
+				break;
+			case 33215:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.rangeSkill = true;
+				} else {
+					c.getSI().rangedComplex(1);
+					c.getSI().selected = 3;
+				}
+				break;
+			case 33218:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.prayerSkill = true;
+				} else {
+					c.getSI().prayerComplex(1);
+					c.getSI().selected = 4;
+				}
+				break;
+			case 33221:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.mageSkill = true;
+				} else {
+					c.getSI().magicComplex(1);
+					c.getSI().selected = 5;
+				}
+				break;
+			case 33207:
+				if (c.getPosition().inClanWarsSafe()) {
+					c.getPA().sendEnterAmount(0);
+					c.healthSkill = true;
+				} else {
+					c.getSI().hitpointsComplex(1);
+					c.getSI().selected = 7;
+				}
+				break;
+			case 33224: // runecrafting
+				c.getSI().runecraftingComplex(1);
+				c.getSI().selected = 6;
+				break;
+			case 33210: // agility
+				c.getSI().agilityComplex(1);
+				c.getSI().selected = 8;
+				break;
+			case 33213: // herblore
+				c.getSI().herbloreComplex(1);
+				c.getSI().selected = 9;
+				break;
+			case 33216: // theiving
+				c.getSI().thievingComplex(1);
+				c.getSI().selected = 10;
+				break;
+			case 33219: // crafting
+				c.getSI().craftingComplex(1);
+				c.getSI().selected = 11;
+				break;
+			case 33222: // fletching
+				c.getSI().fletchingComplex(1);
+				c.getSI().selected = 12;
+				break;
+			case 47130:// slayer
+				c.getSI().slayerComplex(1);
+				c.getSI().selected = 13;
+				break;
+			case 33208:// mining
+				c.getSI().miningComplex(1);
+				c.getSI().selected = 14;
+				break;
+			case 33211: // smithing
+				c.getSI().smithingComplex(1);
+				c.getSI().selected = 15;
+				break;
+			case 33214: // fishing
+				c.getSI().fishingComplex(1);
+				c.getSI().selected = 16;
+				break;
+			case 33217: // cooking
+				c.getSI().cookingComplex(1);
+				c.getSI().selected = 17;
+				break;
+			case 33220: // firemaking
+				c.getSI().firemakingComplex(1);
+				c.getSI().selected = 18;
+				break;
+			case 33223: // woodcut
+				c.getSI().woodcuttingComplex(1);
+				c.getSI().selected = 19;
+				break;
+			case 54104: // farming
+				c.getSI().farmingComplex(1);
+				c.getSI().selected = 20;
+				break;
+			case 73141: // farming
+				c.getSI().hunterComplex(1);
+				c.getSI().selected = 21;
+				break;
 
 		case 34142: // tab 1
 			c.getSI().menuCompilation(1);

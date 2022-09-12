@@ -1883,7 +1883,7 @@ public class Player extends Entity {
         getPA().resetScreenShake(); // reset screen
         PollTab.updatePollTabDisplay(this);
         setSidebarInterface(0, 2423);
-        setSidebarInterface(1, 25402); // Skilltab > 3917
+        setSidebarInterface(1, 13917); // Skilltab > 3917
         setSidebarInterface(2, QuestTab.INTERFACE_ID);
         setSidebarInterface(3, 3213);
         setSidebarInterface(4, 1644);
@@ -1967,7 +1967,8 @@ public class Player extends Entity {
          */
         getQuestTab().updateInformationTab();
         getPA().sendFrame126("Combat Level: " + combatLevel + "", 3983);
-        getPA().sendFrame126("Total\\nLevel: "+totalLevel + "", 25544);
+        getPA().sendFrame126("Total level:", 19209);
+        getPA().sendFrame126(totalLevel + "", 3984);
         getPA().resetFollow();
         getPA().clearClanChat();
         getPA().resetFollow();
