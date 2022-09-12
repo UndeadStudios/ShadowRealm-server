@@ -173,6 +173,10 @@ public class FireOfExchangeBurnPrice {
             case Items.RING_OF_THIRD_AGE:
             case Items.BONECRUSHER_NECKLACE:
                 return 5000;
+            case 23975://crystal body
+            case 23971://crystal helm
+            case 23979://crystal legs
+                return 25_000;
             case 11785://arma crossbow
             case 11770://seers i
             case 11771://archer i
@@ -185,9 +189,6 @@ public class FireOfExchangeBurnPrice {
             case 13271://abby dagger poison
             case 21633://ancient wyvern shield
             case 21000://twisted shield
-            case 23975://crystal body
-            case 23971://crystal helm
-            case 23979://crystal legs
             case 22547://craws bow u
             case 22550://craws bow
             case 22542://viggs mace u
@@ -250,11 +251,12 @@ public class FireOfExchangeBurnPrice {
             case 12924://blowpipe
             case 12926://blowpipe
                 return 15_000;
-            case 13576://d warhammer
-            case 21034://dex scroll
             case 23848://crystal corrupt legs
             case 23842://crystal corrupt helm
             case 23845://crystal corrupt plate
+                return 200_000;
+            case 13576://d warhammer
+            case 21034://dex scroll
             case Items.NEITIZNOT_FACEGUARD:
             case Items.RING_OF_SUFFERING_I:
             case Items.SLED:

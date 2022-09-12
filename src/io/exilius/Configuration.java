@@ -22,7 +22,7 @@ public class Configuration {
 	public static final String WEBSITE = "https://www.exilius-osrs.com/";
 	public static final String FORUM_TOPIC_URL = "https://www.exilius-osrs.com/index.php?/topic/";
 	public static final String VOTE_LINK = "https://exilius-osrs.com/vote";
-	public static final String HISCORES_LINK = "https://exiliusosrsps.everythingrs.com/services/hiscores";
+	public static final String HISCORES_LINK = "https://exiliusosrs.everythingrs.com/services/hiscores";
 	public static final String STORE_LINK = "https://exiliusosrsps.everythingrs.com/services/store";
 	public static final String DISCORD_INVITE = "https://discord.gg/f8xb3bC";
 	public static final String RULES_LINK = "https://www.exilius-osrs.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
