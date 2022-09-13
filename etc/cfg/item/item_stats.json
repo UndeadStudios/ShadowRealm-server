@@ -68338,5 +68338,122 @@
       "drange": 12,
       "str": 12
     }
+  },
+  "26724": {
+    "name": "Wristbands of the arena (i)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+
+  "26725": {
+    "name": "Wristbands of the arena (c)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+
+  "26726": {
+    "name": "Wristbands of the arena (cl)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26727": {
+    "name": "Wristbands of the arena (i)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26728": {
+    "name": "Wristbands of the arena (i1)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+
+  "26729": {
+    "name": "Wristbands of the arena (ic)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
   }
 }

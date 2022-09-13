@@ -72734,3 +72734,51 @@
   requirements:
     - skill: "DEFENCE"
       level: 20
+- id: 26724
+  name: "Wristbands of the arena (i)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 26725
+  name: "Wristbands of the arena (c)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 26726
+  name: "Wristbands of the arena (cl)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 26727
+  name: "Wristbands of the arena (i)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 26728
+  name: "Wristbands of the arena (i1)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 26729
+  name: "Wristbands of the arena (ic)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
