@@ -72790,3 +72790,65 @@
   requirements:
     - skill: "DEFENCE"
       level: 20
+- id: 26731
+  name: "Saika's hood"
+  description: "Saika the puppet master's hood."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "MAGIC"
+      level: 70
+- id: 26732
+  name: "Saika's hood (l)"
+  description: "Saika the puppet master's hood."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "MAGIC"
+      level: 70
+- id: 26733
+  name: "Saika's veil"
+  description: "Saika the puppet master's veil."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
+    - skill: "MAGIC"
+      level: 70
+- id: 26734
+  name: "Saika's veil (l)"
+  description: "Saika the puppet master's veil."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
+    - skill: "MAGIC"
+      level: 70
+- id: 26735
+  name: "Saika's shroud"
+  description: "Saika the puppet master's shroud."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "MAGIC"
+      level: 70
+- id: 26736
+  name: "Saika's shroud (l)"
+  description: "Saika the puppet master's shroud."
+  shopValue: 11500
+  equipmentModelType: "FULL_HELMET"
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "MAGIC"
+      level: 70

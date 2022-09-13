@@ -68474,5 +68474,120 @@
       "drange": 12,
       "str": 12
     }
-  },,
+  },
+  "26731": {
+    "name": "Saika's hood",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -20,
+      "aslash": -20,
+      "acrush": -20,
+      "amagic": 10,
+      "arange": -2,
+      "dstab": 10,
+      "dslash": 19,
+      "dcrush": 10,
+      "dmagic": 0,
+      "drange": -10,
+      "str": 0
+    }
+  },
+  "26732": {
+    "name": "Saika's hood (l)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -20,
+      "aslash": -20,
+      "acrush": -20,
+      "amagic": 10,
+      "arange": -2,
+      "dstab": 10,
+      "dslash": 19,
+      "dcrush": 10,
+      "dmagic": 0,
+      "drange": -10,
+      "str": 0
+    }
+  },
+  "26733": {
+    "name": "Saika's veil",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -40,
+      "aslash": -40,
+      "acrush": -40,
+      "amagic": 14,
+      "arange": -40,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 0,
+      "drange": -15,
+      "str": 0
+    }
+  },
+  "26734": {
+    "name": "Saika's veil (l)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -40,
+      "aslash": -40,
+      "acrush": -40,
+      "amagic": 14,
+      "arange": -40,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 0,
+      "drange": -15,
+      "str": 0
+    }
+  },
+  "26735": {
+    "name": "Saika's shroud",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -60,
+      "aslash": -60,
+      "acrush": -60,
+      "amagic": 18,
+      "arange": -60,
+      "dstab": 20,
+      "dslash": 20,
+      "dcrush": 20,
+      "dmagic": 0,
+      "drange": -25,
+      "str": 0
+    },
+
+    "26736": {
+      "name": "Saika's shroud (l)",
+      "equipable": true,
+      "weight": 0.2,
+      "equipment": {
+        "slot": 0,
+        "astab": -60,
+        "aslash": -60,
+        "acrush": -60,
+        "amagic": 18,
+        "arange": -60,
+        "dstab": 20,
+        "dslash": 20,
+        "dcrush": 20,
+        "dmagic": 0,
+        "drange": -25,
+        "str": 0
+      }
+    }
+  }
 }
