@@ -72714,7 +72714,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 65
-- id: 26718
+- id: 26719
   name: "Bandos tassets (or)"
   description: "A sturdy pair of tassets."
   shopValue: 10290000
