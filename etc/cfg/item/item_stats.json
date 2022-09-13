@@ -68213,5 +68213,111 @@
       "str": 82,
       "aspeed": 4
     }
+  },
+  "26714": {
+    "name": "Armadyl helmet (or)",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 0,
+      "astab": -5,
+      "aslash": -5,
+      "acrush": -5,
+      "amagic": -5,
+      "arange": 10,
+      "dstab": 6,
+      "dslash": 8,
+      "dcrush": 10,
+      "dmagic": 10,
+      "drange": 8,
+      "prayer": 1
+    }
+  },
+  "26715": {
+    "name": "Armadyl chestplate (or)",
+    "equipable": true,
+    "weight": 4.0,
+    "equipment": {
+      "slot": 4,
+      "astab": -7,
+      "aslash": -7,
+      "acrush": -7,
+      "amagic": -15,
+      "arange": 33,
+      "dstab": 56,
+      "dslash": 48,
+      "dcrush": 61,
+      "dmagic": 70,
+      "drange": 57,
+      "prayer": 1
+    }
+  },
+  "26716": {
+    "name": "Armadyl chainskirt (or)",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7,
+      "astab": -6,
+      "aslash": -6,
+      "acrush": -6,
+      "amagic": -10,
+      "arange": 20,
+      "dstab": 32,
+      "dslash": 26,
+      "dcrush": 34,
+      "dmagic": 40,
+      "drange": 33,
+      "prayer": 1
+    }
+  },
+  "26718": {
+    "name": "Bandos chestplate (or)",
+    "equipable": true,
+    "weight": 12.0,
+    "equipment": {
+      "slot": 4,
+      "amagic": -15,
+      "arange": -10,
+      "dstab": 98,
+      "dslash": 93,
+      "dcrush": 105,
+      "dmagic": -6,
+      "drange": 133,
+      "str": 4,
+      "prayer": 1
+    }
+  },
+  "26719": {
+    "name": "Bandos tassets (or)",
+    "equipable": true,
+    "weight": 8.0,
+    "equipment": {
+      "slot": 7,
+      "amagic": -21,
+      "arange": -7,
+      "dstab": 71,
+      "dslash": 63,
+      "dcrush": 66,
+      "dmagic": -4,
+      "drange": 93,
+      "str": 2,
+      "prayer": 1
+    }
+  },
+  "26720": {
+    "name": "Bandos boots (or)",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 10,
+      "amagic": -5,
+      "arange": -3,
+      "dstab": 17,
+      "dslash": 18,
+      "dcrush": 19,
+      "drange": 15,
+      "prayer": 1
+    }
   }
 }
