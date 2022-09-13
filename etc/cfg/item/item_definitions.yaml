@@ -72668,3 +72668,54 @@
   description: "You really don't want to wear it inside-out."
   untradeable: true
   parent: 11864
+- id: 26714
+  name: "Armadyl helmet (or)"
+  description: "A helmet of great craftsmanship."
+  shopValue: 1600000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 26715
+  name: "Armadyl chestplate (or)"
+  description: "A chestplate of great craftsmanship."
+  shopValue: 1600000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 26716
+  name: "Armadyl chainskirt (or)"
+  description: "A plateskirt of great craftsmanship."
+  shopValue: 1600000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 26718
+  name: "Bandos chestplate (or)"
+  description: "A sturdy chest plate."
+  shopValue: 10020000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+- id: 26718
+  name: "Bandos tassets (or)"
+  description: "A sturdy pair of tassets."
+  shopValue: 10290000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+- id: 26720
+  name: "Bandos boots (or)"
+  description: "Some sturdy boots."
+  shopValue: 500000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
