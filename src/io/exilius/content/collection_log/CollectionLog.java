@@ -1,14 +1,5 @@
 package io.exilius.content.collection_log;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.lang.reflect.Type;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
-
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
@@ -22,9 +13,9 @@ import io.exilius.content.achievement.Achievements;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.item.lootable.impl.RaidsChestRare;
 import io.exilius.content.item.lootable.impl.TheatreOfBloodChest;
+import io.exilius.content.trails.RewardLevel;
 import io.exilius.content.trails.TreasureTrailsRewardItem;
 import io.exilius.content.trails.TreasureTrailsRewards;
-import io.exilius.content.trails.RewardLevel;
 import io.exilius.model.Npcs;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.definitions.NpcDef;
@@ -35,6 +26,15 @@ import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.lang.reflect.Type;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 /**
  * 
@@ -305,7 +305,7 @@ public class CollectionLog {
 				}
 			}
 			if (!found) {
-				player.getPA().sendItemToSlotWithOpacity(23231, player.dropItems.get(i).getId(), i, 0, true);
+				player.getPA().sendItemToSlotWithOpacity(23231, player.dropItems.get(i).getId(), i, 0, false);
 			}
 		}
 		player.getPA().sendFrame126("Obtained: " + (foundCount == player.dropItems.size() ? "@gre@" : "@red@") + foundCount + "/" + player.dropItems.size(), 23119);
