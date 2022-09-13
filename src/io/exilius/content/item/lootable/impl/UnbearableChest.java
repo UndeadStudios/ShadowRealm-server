@@ -1,10 +1,5 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.Server;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.LootRarity;
@@ -15,6 +10,11 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class UnbearableChest implements Lootable {
 
@@ -91,6 +91,7 @@ public class UnbearableChest implements Lootable {
                 new GameItem(22653, 1), //zuriel robe top
                 new GameItem(22656, 1), //zuriel robe bottoms
                 new GameItem(22625, 1), //statius fullhelm
+                new GameItem(28347, 1), //Death Cape
                 new GameItem(22628, 1), //statius fullbody
                 new GameItem(22631, 1), //statius legs
                 new GameItem(22638, 1), //morrigans coif
@@ -102,9 +103,14 @@ public class UnbearableChest implements Lootable {
         int random = Misc.random(chance);
         int rareChance = 980;
         if (c.getItems().playerHasItem(21046)) {
-            rareChance = 975;
+            rareChance = 950;
             c.getItems().deleteItem(21046, 1);
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
+            c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
+        }
+        if (c.getItems().playerHasItem(28347)) {
+            rareChance = 930;
+            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
         List<GameItem> itemList = random <= rareChance ? items.get(LootRarity.COMMON) : items.get(LootRarity.RARE);
@@ -113,11 +119,16 @@ public class UnbearableChest implements Lootable {
 
     private static GameItem randomChestRewards(Player c, int chance) {
         int random = Misc.random(chance);
-        int rareChance = 997;
+        int rareChance = 980;
         if (c.getItems().playerHasItem(21046)) {
-            rareChance = 996;
+            rareChance = 950;
             c.getItems().deleteItem(21046, 1);
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
+            c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
+        }
+        if (c.getItems().isWearingItem(28347)) {
+            rareChance = 945;
+            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
         List<GameItem> itemList;

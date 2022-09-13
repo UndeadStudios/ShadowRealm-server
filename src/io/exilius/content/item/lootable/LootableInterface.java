@@ -35,6 +35,8 @@ public class LootableInterface {
             175232, 175235, 175238, 175241, 175244, 175247, 175250, 175253, 176_000, 176_003};
 
     private enum LootableView {
+
+        //Nex_CHEST(new NexChest()),
         VOTE_KEY(new VoteChest()),
         UNBEARABLE_KEY(new UnbearableChest()),
         HUNNLEFS_KEY(new HunllefChest()),

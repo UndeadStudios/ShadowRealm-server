@@ -93,7 +93,7 @@ public class ItemUpgrading {
         setCategorySelected(category);
 
         for (int i = 0; i < ItemUpgradeData.getCategorySize(category); i++) {
-            player.getPA().sendItemsOnInterface(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1);
+            player.getPA().sendItemToSlotWithOpacity(25928, ItemUpgradeData.forCategoryId(category).get(i).getStartingId(), i, 1, false);
         }
     }
 

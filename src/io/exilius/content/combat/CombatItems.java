@@ -1,9 +1,5 @@
 package io.exilius.content.combat;
 
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.Set;
-
 import io.exilius.content.combat.melee.MeleeExtras;
 import io.exilius.content.combat.weapon.CombatStyle;
 import io.exilius.content.items.OrnamentedItem;
@@ -21,6 +17,10 @@ import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.Set;
 
 public class CombatItems {
 
@@ -238,7 +238,7 @@ public class CombatItems {
 		return c.getItems().isWearingItem(Items.AVAS_ACCUMULATOR)
 				|| c.getItems().isWearingItem(Items.ACCUMULATOR_MAX_CAPE)
 				|| c.getItems().isWearingItem(Items.RANGING_CAPE)
-				|| c.getItems().isWearingItem(Items.RANGE_MASTER_CAPE);
+				|| c.getItems().isWearingItem(Items.RANGE_MASTER_CAPE) || c.getItems().isWearingItem(Items.DEATH_CAPE);
 	}
 
 	public boolean consumeDart() {

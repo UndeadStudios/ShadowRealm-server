@@ -15823,25 +15823,25 @@
     }
   },
   "4371": {
-    "name": "Team-29 cape",
+    "name": "Cape of osiris",
     "equipable": true,
     "weight": 0.453,
     "equipment": {
       "slot": 1,
-      "astab": 10,
-      "aslash": 10,
-      "acrush": 10,
-      "amagic": 19,
-      "arange": 12,
-      "dstab": 16,
-      "dslash": 16,
-      "dcrush": 16,
-      "dmagic": 20,
-      "drange": 16,
-      "str": 12,
-      "rstr": 6,
-      "mdmg": 6,
-      "prayer": 6
+      "astab": 7,
+      "aslash": 7,
+      "acrush": 7,
+      "amagic": 9,
+      "arange": 8,
+      "dstab": 10,
+      "dslash": 10,
+      "dcrush": 10,
+      "dmagic": 10,
+      "drange": 10,
+      "str": 4,
+      "rstr": 3,
+      "mdmg": 3,
+      "prayer": 2
     }
   },
   "4373": {
@@ -65237,6 +65237,28 @@
       "prayer": 2
     }
   },
+  "28347": {
+  "name": "Death Cape",
+  "equipable": true,
+  "weight": 0.453,
+  "equipment": {
+    "slot": 1,
+    "astab": 24,
+    "aslash": 24,
+    "acrush": 24,
+    "amagic": 21,
+    "arange": 21,
+    "dstab": 22,
+    "dslash": 22,
+    "dcrush": 22,
+    "dmagic": 22,
+    "drange": 22,
+    "str": 17,
+    "rstr": 17,
+    "mdmg": 17,
+    "prayer": 10
+  }
+},
   "24134": {
     "name": "Fire max cape (l)",
     "equipable": true,

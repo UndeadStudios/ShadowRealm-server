@@ -1,7 +1,5 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Arrays;
-
 import io.exilius.content.combat.magic.CombatSpellData;
 import io.exilius.content.combat.magic.MagicRequirements;
 import io.exilius.content.combat.weapon.WeaponData;
@@ -10,6 +8,8 @@ import io.exilius.model.SpellBook;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
+
+import java.util.Arrays;
 
 public class AutocastSpell implements PacketType {
 
@@ -43,7 +43,7 @@ public class AutocastSpell implements PacketType {
             c.sendMessage("You can't autocast this spell.");
             return false;
         } else {
-            if (c.getCombatConfigs().getWeaponData() == WeaponData.STAFF || c.getCombatConfigs().getWeaponData() == WeaponData.SOTD) {
+            if (c.getCombatConfigs().getWeaponData() == WeaponData.STAFF || c.getCombatConfigs().getWeaponData() == WeaponData.SOTD || c.getCombatConfigs().getWeaponData() == WeaponData.TS ) {
                 if (c.getSpellBook() != spell.getSpellBook()) {
                     c.sendMessage("You have to be using " + spell.getSpellBook() + " magics to autocast that spell.");
                 } else {

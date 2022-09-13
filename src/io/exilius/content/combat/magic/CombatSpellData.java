@@ -15,7 +15,7 @@ public class CombatSpellData {
 
 	public static final int[] ANCIENT_AUTOCAST_STAFFS = {
 			4675, 6914, 21006, 4710, 11907, 12904,
-			22296, 24422, 24424, 24425, 8841
+			22296, 24422, 24424, 24425, 8841, 27277
 	};
 
 	public static final int[] DISABLE_AUTOCAST_STAFFS = {

@@ -1,11 +1,11 @@
 package io.exilius.content.combat.weapon;
 
+import io.exilius.content.skills.herblore.PoisonedWeapon;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
-import io.exilius.content.skills.herblore.PoisonedWeapon;
 
 public enum WeaponData {
     SPEAR(WeaponDataConstants.SPEARS, WeaponInterface.SPEAR,
@@ -67,6 +67,10 @@ public enum WeaponData {
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.CRUSH)),
 
     SOTD(WeaponDataConstants.SOTD, WeaponInterface.STAFF,
+            new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.STAB),
+            new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.SLASH),
+            new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.CRUSH)),
+    TS(WeaponDataConstants.TS, WeaponInterface.STAFF,
             new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.STAB),
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.SLASH),
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.CRUSH)),

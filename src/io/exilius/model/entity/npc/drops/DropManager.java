@@ -1,18 +1,5 @@
 package io.exilius.model.entity.npc.drops;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,6 +41,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class DropManager {
 
@@ -628,6 +622,9 @@ public class DropManager {
         }
         if (Hespori.KRONOS_TIMER > 0) {
             modifier += 10;
+        }
+        if (player.getItems().isWearingItem(28347)) {
+            modifier += 5;
         }
         if (player.isSkulled == true && Boundary.isIn(player, Boundary.REV_CAVE)) {
             modifier += 10;

@@ -619,7 +619,7 @@ public abstract class HitDispatcher {
         }
         if (attacker.playerEquipment[Player.playerCape] == 10499 || attacker.getItems().isWearingItem(22109,
                 Player.playerCape)
-                || attacker.getItems().isWearingItem(33037, Player.playerCape)
+                || attacker.getItems().isWearingItem(33037, Player.playerCape) || attacker.getItems().isWearingItem(28347, Player.playerCape)
                 || SkillcapePerks.RANGING.isWearing(attacker) || SkillcapePerks.isWearingMaxCape(attacker)) {
             return;
         }

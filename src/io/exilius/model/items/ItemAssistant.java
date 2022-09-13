@@ -2186,7 +2186,7 @@ public class ItemAssistant {
 		if (player.getItems().isWearingItem(12926)) {
 			return;
 		}
-		if (player.getItems().isWearingItem(10499, player.playerCape) || player.getItems().isWearingItem(22109, player.playerCape) ||SkillcapePerks.RANGING.isWearing(player)
+		if (player.getItems().isWearingItem(10499, player.playerCape) || player.getItems().isWearingItem(22109, player.playerCape) || player.getItems().isWearingItem(28347, player.playerCape) ||SkillcapePerks.RANGING.isWearing(player)
 				|| player.getItems().isWearingItem(33037, player.playerCape)|| SkillcapePerks.isWearingMaxCape(player) && !player.getItems().isWearingItem(4734) &&
 				!player.getItems().isWearingItem(10033) && !player.getItems().isWearingItem(10034) && !player.getItems().isWearingItem(11959)) {
 			if (RandomUtils.nextInt(0, 15) > 1) {
@@ -2220,7 +2220,7 @@ public class ItemAssistant {
 			return;
 		}
 		if ( (Arrays.stream(WeaponDataConstants.THROWN).anyMatch(id -> id == thrownweapons) || player.usingOtherRangeWeapons) && !player.getItems().isWearingItem(Items.TOXIC_BLOWPIPE)) {
-			if (player.getItems().isWearingItem(10499, player.playerCape) || player.getItems().isWearingItem(22109, player.playerCape)
+			if (player.getItems().isWearingItem(10499, player.playerCape) || player.getItems().isWearingItem(28347, player.playerCape) || player.getItems().isWearingItem(22109, player.playerCape)
 					|| player.getItems().isWearingItem(33037, player.playerCape) || SkillcapePerks.RANGING.isWearing(player)
 					|| SkillcapePerks.isWearingMaxCape(player) && !player.getItems().isWearingItem(4734)) {
 				if (RandomUtils.nextInt(0, 15) > 1) {

@@ -11234,6 +11234,7 @@ public class Items {
     public static final int UNCHARGED_TOXIC_TRIDENT = 12_900;
     public static final int UNCHARGED_TOXIC_TRIDENT_NOTED = 12_901;
     public static final int TOXIC_STAFF_UNCHARGED = 12_902;
+    public static final int TUMEKENS_SHADOW = 27277;
     public static final int TOXIC_STAFF_UNCHARGED_NOTED = 12_903;
     public static final int TOXIC_STAFF_OF_THE_DEAD = 12_904;
     public static final int ANTI_VENOM4 = 12_905;
@@ -20151,6 +20152,7 @@ public class Items {
     public static final int JAR_OF_DECAY_NOTED = 22_107;
     public static final int JAR_OF_DECAY_2 = 22_108;
     public static final int AVAS_ASSEMBLER = 22_109;
+    public static final int DEATH_CAPE = 28_347;
     public static final int AVAS_ASSEMBLER_2 = 22_110;
     public static final int DRAGONBONE_NECKLACE = 22_111;
     public static final int DRAGONBONE_NECKLACE_NOTED = 22_112;

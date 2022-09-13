@@ -119,6 +119,9 @@ public class WeaponDataConstants {
             Items.STAFF_OF_THE_DEAD,
             Items.TOXIC_STAFF_OF_THE_DEAD, Items.TOXIC_STAFF_UNCHARGED
     };
+    public static final int[] TS = {
+            Items.TUMEKENS_SHADOW
+    };
 
     // [[accurate, slash], [aggressive, slash], [shared, stab], [defensive, slash]]
     public static final int[] CLAWS = {

@@ -71874,6 +71874,15 @@
       level: 30
     - skill: "STRENGTH"
       level: 70
+- id: 28347
+  name: "Death Cape"
+  description: "It's a Death Cape."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
 - id: 26382
   name: "Torva Full helm"
   description: "Torva Full helm."
