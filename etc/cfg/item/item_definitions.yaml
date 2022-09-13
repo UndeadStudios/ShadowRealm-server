@@ -72782,3 +72782,11 @@
   requirements:
     - skill: "DEFENCE"
       level: 20
+- id: 26730
+  name: "Wristbands of the arena (ilc)"
+  description: "A pair of wristbands to protect your hands in combat."
+  shopValue: 85000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
