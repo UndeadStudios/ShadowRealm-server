@@ -1,4 +1,4 @@
-{
+﻿{
   "0": {
     "name": "Dwarf remains",
     "quest": true
@@ -15828,20 +15828,20 @@
     "weight": 0.453,
     "equipment": {
       "slot": 1,
-      "astab": 7,
-      "aslash": 7,
-      "acrush": 7,
-      "amagic": 9,
-      "arange": 8,
-      "dstab": 10,
-      "dslash": 10,
-      "dcrush": 10,
-      "dmagic": 10,
-      "drange": 10,
-      "str": 4,
-      "rstr": 3,
-      "mdmg": 3,
-      "prayer": 2
+      "astab": 15,
+      "aslash": 15,
+      "acrush": 15,
+      "amagic": 19,
+      "arange": 18,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 15,
+      "drange": 15,
+      "str": 14,
+      "rstr": 13,
+      "mdmg": 13,
+      "prayer": 12
     }
   },
   "4373": {

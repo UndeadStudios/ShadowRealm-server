@@ -71903,10 +71903,9 @@
       level: 80
 - id: 26386
   name: "Torva PlateLegs"
-  description: "Torva Platebody."
+  description: "Torva Platelegs."
   shopValue: 32400000
   noteId: 26386
-  equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
       level: 80
@@ -72710,7 +72709,6 @@
   name: "Bandos chestplate (or)"
   description: "A sturdy chest plate."
   shopValue: 10020000
-  equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
       level: 65
