@@ -68319,5 +68319,24 @@
       "drange": 15,
       "prayer": 1
     }
+  },
+  "26723": {
+    "name": "Wristbands of the arena",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
   }
 }
