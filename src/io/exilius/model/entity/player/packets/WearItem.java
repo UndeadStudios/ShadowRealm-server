@@ -100,6 +100,13 @@ public class WearItem implements PacketType {
 			return;
 			
 		}
+		if(wearId == 8817) {
+			if(!c.getLoginName().equalsIgnoreCase("Osiris")) {
+				c.sendMessage("Only Osiris can wear this.");
+				c.getItems().deleteItem(8817, 1);
+				return;
+			}
+		}
 		if (wearId == 23351) {
 			c.isSkulled = true;
 			c.skullTimer = Configuration.SKULL_TIMER;
