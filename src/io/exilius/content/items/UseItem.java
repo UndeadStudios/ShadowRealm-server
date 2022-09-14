@@ -1,8 +1,5 @@
 package io.exilius.content.items;
 
-import java.util.List;
-import java.util.Optional;
-
 import io.exilius.Server;
 import io.exilius.content.PetCollector;
 import io.exilius.content.PlatinumTokens;
@@ -26,7 +23,10 @@ import io.exilius.content.skills.Cooking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.firemake.Firemaking;
-import io.exilius.content.skills.herblore.*;
+import io.exilius.content.skills.herblore.Crushable;
+import io.exilius.content.skills.herblore.HerbloreDecantCleanUnfNpc;
+import io.exilius.content.skills.herblore.PoisonedWeapon;
+import io.exilius.content.skills.herblore.PotionDecanting;
 import io.exilius.content.skills.prayer.Bone;
 import io.exilius.content.skills.prayer.Prayer;
 import io.exilius.content.skills.slayer.SlayerUnlock;
@@ -46,6 +46,9 @@ import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.items.ItemCombination;
 import io.exilius.util.Misc;
 import io.exilius.util.logging.player.ItemOnItemLog;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Sanity
@@ -507,6 +510,81 @@ public class UseItem {
 			return;
 		if (OrnamentedItem.ornament(c, itemUsed, useWith))
 			return;
+		//ornament kits start
+		if (itemUsed == 26713 && useWith == 11828 || itemUsed == 11828 && useWith == 26713) {
+			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11828)) {
+				c.getItems().deleteItem(26713, 1);
+				c.getItems().deleteItem(11828, 1);
+				c.getItems().addItem(26715, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
+			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
+				c.getItems().deleteItem(26713, 1);
+				c.getItems().deleteItem(11826, 1);
+				c.getItems().addItem(26714, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 26713 && useWith == 11830 || itemUsed == 11830 && useWith == 26713) {
+			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11830)) {
+				c.getItems().deleteItem(26713, 1);
+				c.getItems().deleteItem(11830, 1);
+				c.getItems().addItem(26716, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 26717 && useWith == 11832 || itemUsed == 11832 && useWith == 26717) {
+			if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11832)) {
+				c.getItems().deleteItem(26717, 1);
+				c.getItems().deleteItem(11832, 1);
+				c.getItems().addItem(26718, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 26717 && useWith == 11834 || itemUsed == 11834 && useWith == 26717) {
+			if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11834)) {
+				c.getItems().deleteItem(26717, 1);
+				c.getItems().deleteItem(11834, 1);
+				c.getItems().addItem(26719, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 26717 && useWith == 11836 || itemUsed == 11836 && useWith == 26717) {
+			if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11836)) {
+				c.getItems().deleteItem(26717, 1);
+				c.getItems().deleteItem(11836, 1);
+				c.getItems().addItem(26720, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 20798 && useWith == 21003 || itemUsed == 21003 && useWith == 20798) {
+			if (c.getItems().playerHasItem(20798) && c.getItems().playerHasItem(21003)) {
+				c.getItems().deleteItem(20798, 1);
+				c.getItems().deleteItem(21003, 1);
+				c.getItems().addItem(27100, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+		if (itemUsed == 20143 && useWith == 19722 || itemUsed == 19722 && useWith == 20143) {
+			if (c.getItems().playerHasItem(20143) && c.getItems().playerHasItem(19722)) {
+				c.getItems().deleteItem(20143, 1);
+				c.getItems().deleteItem(19722, 1);
+				c.getItems().addItem(27100, 1);
+			}else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
+
+		//ornament kits end
 
 		if (itemUsed == 2 && useWith == 21726 || itemUsed == 21726 && useWith == 2) {
 			if (c.getItems().playerHasItem(2) && c.getItems().playerHasItem(21726)) {

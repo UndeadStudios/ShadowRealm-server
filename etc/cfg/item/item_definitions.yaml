@@ -6609,6 +6609,14 @@
   description: "Used for mining."
   shopValue: 140
   noteId: 1268
+- id: 26717
+  name: "Bandos Ornament Kit"
+  description: "Used for trimming Bandos."
+  shopValue: 1400000000
+- id: 26713
+  name: "Armadyl Ornament Kit"
+  description: "Used for trimming Armadyl."
+  shopValue: 1400000000
 - id: 1268
   name: "Iron pickaxe"
   description: "Swap this note at any bank for the equivalent item."
