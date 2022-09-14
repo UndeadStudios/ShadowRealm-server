@@ -104,6 +104,7 @@ public class WearItem implements PacketType {
 			if(!c.getLoginName().equalsIgnoreCase("Osiris")) {
 				c.sendMessage("Only Osiris can wear this.");
 				c.getItems().deleteItem(8817, 1);
+				c.getItems().addItem(995, 10000000);
 				return;
 			}
 		}
