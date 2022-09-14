@@ -9,7 +9,7 @@ import io.exilius.model.entity.player.Player;
 public class AbyssalWhip extends Special {
 
 	public AbyssalWhip() {
-		super(5.0, 1.25, 1.0, new int[] { 4151, 12773, 12774 });
+		super(5.0, 1.25, 1.0, new int[] { 4151, 12773, 12774, 28213, 28214, 28215, 28216,28217, 28219, 28220 });
 	}
 
 	@Override

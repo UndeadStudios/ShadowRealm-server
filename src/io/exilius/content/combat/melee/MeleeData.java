@@ -448,6 +448,14 @@ public class MeleeData {
 		case 4734: // karil
 			return 2075;
 		case 4151:
+			case 28213:
+			case 28214:
+			case 28215:
+			case 28216:
+			case 28217:
+			case 28218:
+			case 28219:
+			case 28220:
 		case 12773:
 		case 12774:
 		case 12006:
@@ -518,6 +526,14 @@ public class MeleeData {
 		case 7158:
 			return 410;
 		case 4151:
+			case 28213:
+			case 28214:
+			case 28215:
+			case 28216:
+			case 28217:
+			case 28218:
+			case 28219:
+			case 28220:
 		case 12773:
 		case 12774:
 		case 12006:

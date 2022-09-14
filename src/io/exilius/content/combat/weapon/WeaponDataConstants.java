@@ -83,7 +83,7 @@ public class WeaponDataConstants {
 
     // [[accurate, slash], [shared, slash], [defensive, slash]]
     public static final int[] WHIPS = {
-            Items.ABYSSAL_WHIP, Items.FROZEN_ABYSSAL_WHIP, Items.VOLCANIC_ABYSSAL_WHIP, Items.ABYSSAL_TENTACLE,
+            Items.ABYSSAL_WHIP, Items.FROZEN_ABYSSAL_WHIP, Items.VOLCANIC_ABYSSAL_WHIP, Items.ABYSSAL_TENTACLE, 28213, 28214, 28215, 28216, 28217, 28218, 28219, 28220
     };
 
     // [[accurate, slash], [aggressive, slash], [aggressive, crush], [defensive, slash]]

@@ -1537,7 +1537,7 @@ public class PlayerAssistant {
 	public void sendItemsOnInterface(int frame, int item, int slot, int amount) {
 		c.getOutStream().createFrameVarSizeWord(34);
 		c.getOutStream().writeUnsignedWord(frame);
-		c.getOutStream().writeByte(slot);
+		c.getOutStream().writeDWord(slot);
 		c.getOutStream().writeWord(item + 1);
 		if (amount > 254) {
 			c.getOutStream().writeByte(255);
