@@ -72806,7 +72806,7 @@
     - skill: "DEFENCE"
       level: 20
 - id: 26728
-  name: "Wristbands of the arena (i1)"
+  name: "Wristbands of the arena (il)"
   description: "A pair of wristbands to protect your hands in combat."
   shopValue: 85000
   untradeable: true
@@ -72833,7 +72833,7 @@
   name: "Saika's hood"
   description: "Saika the puppet master's hood."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "MAGIC"
@@ -72842,7 +72842,7 @@
   name: "Saika's hood (l)"
   description: "Saika the puppet master's hood."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "MAGIC"
@@ -72851,7 +72851,7 @@
   name: "Saika's veil"
   description: "Saika the puppet master's veil."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "DEFENCE"
@@ -72862,7 +72862,7 @@
   name: "Saika's veil (l)"
   description: "Saika the puppet master's veil."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "DEFENCE"
@@ -72873,7 +72873,7 @@
   name: "Saika's shroud"
   description: "Saika the puppet master's shroud."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "DEFENCE"
@@ -72884,10 +72884,64 @@
   name: "Saika's shroud (l)"
   description: "Saika the puppet master's shroud."
   shopValue: 11500
-  equipmentModelType: "FULL_HELMET"
+  equipmentModelType: "FULL_MASK"
   untradeable: true
   requirements:
     - skill: "DEFENCE"
       level: 70
     - skill: "MAGIC"
       level: 70
+- id: 28715
+  name: "Dr Cape"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
+- id: 28716
+  name: "Dr Cape (Blue)"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
+- id: 28717
+  name: "Dr Cape (Red)"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
+- id: 28718
+  name: "Dr Cape (Purple)"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
+- id: 28719
+  name: "Dr Cape (Green)"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
+- id: 28720
+  name: "Dr Cape (Gold)"
+  description: "Trust me im a doctor."
+  shopValue: 51200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 85
+    - skill: "PRAYER"
+      level: 85
