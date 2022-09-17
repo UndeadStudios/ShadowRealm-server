@@ -1,13 +1,6 @@
 package io.exilius.model.entity.player;
 
 import com.google.common.collect.Lists;
-//import io.exilius.content.skills.construction.RoomDialogue;
-import io.exilius.content.skills.construction.House;
-import io.exilius.content.skills.construction.Room;
-import io.exilius.content.upgrading.ItemUpgrading;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFutureListener;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.*;
@@ -62,6 +55,9 @@ import io.exilius.content.items.pouch.HerbSack;
 import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.itemskeptondeath.perdu.PerduLostPropertyShop;
 import io.exilius.content.lootbag.LootingBag;
+import io.exilius.content.minigames.TBD.TBDConstants;
+import io.exilius.content.minigames.TBD.TBDContainer;
+import io.exilius.content.minigames.TBD.instance.TBDInstance;
 import io.exilius.content.minigames.bounty_hunter.BountyHunter;
 import io.exilius.content.minigames.fight_cave.FightCave;
 import io.exilius.content.minigames.inferno.Inferno;
@@ -91,6 +87,8 @@ import io.exilius.content.skills.SkillInterfaces;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.agility.impl.*;
 import io.exilius.content.skills.agility.impl.rooftop.*;
+import io.exilius.content.skills.construction.House;
+import io.exilius.content.skills.construction.Room;
 import io.exilius.content.skills.farming.Farming;
 import io.exilius.content.skills.fletching.Fletching;
 import io.exilius.content.skills.herblore.Herblore;
@@ -108,6 +106,7 @@ import io.exilius.content.tournaments.TourneyManager;
 import io.exilius.content.trails.TreasureTrails;
 import io.exilius.content.tutorial.ModeSelection;
 import io.exilius.content.tutorial.TutorialDialogue;
+import io.exilius.content.upgrading.ItemUpgrading;
 import io.exilius.content.vote_panel.VotePanelManager;
 import io.exilius.content.vote_panel.VoteUser;
 import io.exilius.content.wogw.WogwContributeInterface;
@@ -391,6 +390,7 @@ public class Player extends Entity {
     public int xericDamage;
     public int raidCount;
     public int tobCompletions;
+    public int TBDCompletions;
     public int pollOption;
     // Bank
     private Bank bank;
@@ -4193,6 +4193,13 @@ public class Player extends Entity {
 
             getAttributes().removeBoolean(TobInstance.TOB_DEAD_ATTR_KEY); // Remove cause not in TOB anymore
         }
+        if (getAttributes().getBoolean(TBDInstance.TBD_DEAD_ATTR_KEY, false)) {
+            if (Boundary.isIn(this, TBDConstants.ALL_BOUNDARIES) && getInstance() != null) {
+                return;
+            }
+
+            getAttributes().removeBoolean(TBDInstance.TBD_DEAD_ATTR_KEY); // Remove cause not in TOB anymore
+        }
 
         // Degrade items when hitting by normal hits
         if (h == Hitmark.HIT || h == Hitmark.MISS) {
@@ -5428,6 +5435,9 @@ public class Player extends Entity {
 
     public TobContainer getTobContainer() {
         return tobContainer;
+    }
+    public TBDContainer getTBDContainer() {
+        return TBDContainer;
     }
 
     public boolean inParty(String type) {

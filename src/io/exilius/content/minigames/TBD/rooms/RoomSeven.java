@@ -31,26 +31,26 @@ public class RoomSeven extends TBDRoom {
             new GlobalObject(CHEST_ID, new Position(3240, 4323), 1, 10)
     };
 
-    public static void openChest(Player player, TBDInstance tobInstance) {
-        if (tobInstance.getChestRewards().contains(player.getLoginName())) {
+    public static void openChest(Player player, TBDInstance TBDInstance) {
+        if (TBDInstance.getChestRewards().contains(player.getLoginName())) {
             player.sendMessage("You've already received your rewards!");
             return;
         }
 
-        tobInstance.getChestRewards().add(player.getLoginName());
-        TheatreOfBloodChest.rewardItems(player, tobInstance.getChestRewardItems().get(player.getLoginName()));
+        TBDInstance.getChestRewards().add(player.getLoginName());
+        TheatreOfBloodChest.rewardItems(player, TBDInstance.getChestRewardItems().get(player.getLoginName()));
     }
 
     @Override
     public TBDBoss spawn(InstancedArea instancedArea) {
-        TBDInstance tobInstance = (TBDInstance) instancedArea;
-        Player rareWinner = Misc.random(tobInstance.getPlayers());//tobInstance.getMvpPoints().chooseRareWinner(tobInstance.getPlayers());
+        TBDInstance TBDInstance = (TBDInstance) instancedArea;
+        Player rareWinner = Misc.random(TBDInstance.getPlayers());//tobInstance.getMvpPoints().chooseRareWinner(tobInstance.getPlayers());
 
         instancedArea.getPlayers().forEach(player -> {
-            tobInstance.getChestRewardItems().put(player.getLoginName(),
-                    TheatreOfBloodChest.getRandomItems(player.equals(rareWinner), tobInstance.getPartySize()));
+            TBDInstance.getChestRewardItems().put(player.getLoginName(),
+                    TheatreOfBloodChest.getRandomItems(player.equals(rareWinner), TBDInstance.getPartySize()));
 
-            Pair<Integer, Integer> rank = tobInstance.getMvpPoints().getRank(player);
+            Pair<Integer, Integer> rank = TBDInstance.getMvpPoints().getRank(player);
             player.sendMessage("You ranked @pur@#" + rank.getLeft() + "@bla@ with @pur@" + rank.getRight() + " points.");
 
 //            if (rareWinner.equals(player)) {
@@ -64,7 +64,7 @@ public class RoomSeven extends TBDRoom {
             Player player = instancedArea.getPlayers().get(index);
             GlobalObject chest = CHESTS[index];
 
-            if (TheatreOfBloodChest.containsRare(tobInstance.getChestRewardItems().get(player.getLoginName()))) {
+            if (TheatreOfBloodChest.containsRare(TBDInstance.getChestRewardItems().get(player.getLoginName()))) {
                 chest = chest.withId(RARE_CHEST_ID);
             }
 
@@ -83,16 +83,16 @@ public class RoomSeven extends TBDRoom {
 
     @Override
     public boolean handleClickObject(Player player, WorldObject worldObject, int option) {
-        TBDInstance tobInstance = (TBDInstance) player.getInstance();
+        TBDInstance TBDInstance = (TBDInstance) player.getInstance();
         if (worldObject.getId() == TBDConstants.TREASURE_ROOM_EXIT_INSTANCE_OBJECT_ID) {
             player.start(new DialogueBuilder(player).option(
                     new DialogueOption("Leave", plr -> {
-                        plr.moveTo(TBDConstants.FINISHED_TOB_POSITION);
+                        plr.moveTo(TBDConstants.FINISHED_TBD_POSITION);
                         plr.getPA().closeAllWindows();
                     }),
                     new DialogueOption("Stay", plr -> plr.getPA().closeAllWindows())));
         } else if (worldObject.getId() == CHEST_ID || worldObject.getId() == RARE_CHEST_ID) {
-            if (player.getTobContainer().inTob()) {
+            if (player.getTBDContainer().inTBD()) {
                 int index = player.getInstance().getPlayers().indexOf(player);
 
                 if (index == -1) {
@@ -107,7 +107,7 @@ public class RoomSeven extends TBDRoom {
                     return true;
                 }
 
-                if (tobInstance.getChestRewards().contains(player.getLoginName())) {
+                if (TBDInstance.getChestRewards().contains(player.getLoginName())) {
                     player.sendMessage("You've already received your rewards!");
                     return true;
                 }
@@ -115,7 +115,7 @@ public class RoomSeven extends TBDRoom {
                 player.getPA().createObjectHints(worldObject.getX() + 1, worldObject.getY() + 1, 0, 0);
                 Server.getGlobalObjects().remove(worldObject.toGlobalObject());
                 Server.getGlobalObjects().add(worldObject.toGlobalObject().withId(CHEST_OPEN_ID).setInstance(player.getInstance()));
-                openChest(player, tobInstance);
+                openChest(player, TBDInstance);
             }
         }
 

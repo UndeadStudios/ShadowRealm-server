@@ -167,7 +167,7 @@ public class PestilentBloat extends TBDBoss {
         List<Position> positions = movementState.movementLos.positions.stream().map(it -> it.withHeight(getInstance().getHeight())).collect(Collectors.toList());
         getInstance().getPlayers().forEach(plr -> {
             positions.stream().filter(pos -> plr.getPosition().equals(pos)).findFirst().ifPresent(pos -> {
-                if (plr.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+                if (plr.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
                     return;
                 plr.startGraphic(FLIES_GFX);
                 plr.appendDamage(9 + Misc.random(11), Hitmark.HIT);
@@ -179,7 +179,7 @@ public class PestilentBloat extends TBDBoss {
         getInstance().getPlayers().forEach(plr -> {
             for (Position position : getTiles()) {
                 if (plr.distance(position) <= 1.5) {
-                    if (plr.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+                    if (plr.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
                         return;
                     plr.appendDamage(30 + Misc.random(20), Hitmark.HIT);
                     return;

@@ -23,7 +23,7 @@ import java.util.Optional;
 
 public class TBDInstance extends InstancedArea {
 
-    public static final String TOB_DEAD_ATTR_KEY = "dead_tob";
+    public static final String TBD_DEAD_ATTR_KEY = "dead_tbd";
     private static final int TREASURE_ROOM_INDEX = 6;
 
     private final HashSet<String> chestRewards = new HashSet<>();
@@ -60,15 +60,15 @@ public class TBDInstance extends InstancedArea {
         if (playerList.isEmpty())
             return;
         initialiseNextRoom(playerList.get(0));
-        TBDRoom tobRoom = TBDConstants.ROOM_LIST.get(0);
+        TBDRoom TBDRoom = TBDConstants.ROOM_LIST.get(0);
         playerList.forEach(plr -> {
-            if (plr.getPA().calculateTotalLevel() < plr.getMode().getTotalLevelForTob()) {
-                plr.sendStatement("You need " + Misc.insertCommas(plr.getMode().getTotalLevelForTob()) + " total level to compete.");
+            if (plr.getPA().calculateTotalLevel() < plr.getMode().getTotalLevelForTBD()) {
+                plr.sendStatement("You need " + Misc.insertCommas(plr.getMode().getTotalLevelForTBD()) + " total level to compete.");
                 return;
             }
 
             add(plr);
-            plr.moveTo(resolve(tobRoom.getPlayerSpawnPosition()));
+            plr.moveTo(resolve(TBDRoom.getPlayerSpawnPosition()));
             plr.sendMessage("Welcome to the Theatre of Blood.");
             plr.getBossTimers().track(TBDConstants.TBD);
             plr.getPA().closeAllWindows();
@@ -77,15 +77,15 @@ public class TBDInstance extends InstancedArea {
 
     private void initialiseNextRoom(Player player) {
         roomIndex = getPlayerRoomIndex(player) + 1;
-        TBDRoom tobRoom = TBDConstants.ROOM_LIST.get(roomIndex);
-        var boss = tobRoom.spawn(this);
+        TBDRoom TBDRoom = TBDConstants.ROOM_LIST.get(roomIndex);
+        var boss = TBDRoom.spawn(this);
         if (boss != null) {
             var modifier = TBDConstants.getHealthModifier(size);
             var maxHealth = (int) (boss.getHealth().getMaximumHealth() * modifier);
             boss.getHealth().setCurrentHealth(maxHealth);
             boss.getHealth().setMaximumHealth(maxHealth);
         }
-        GlobalObject foodChest = tobRoom.getFoodChestPosition();
+        GlobalObject foodChest = TBDRoom.getFoodChestPosition();
         if (foodChest != null) {
             Server.getGlobalObjects().add(foodChest.withHeight(resolveHeight(foodChest.getHeight())).setInstance(this));
         }
@@ -102,7 +102,7 @@ public class TBDInstance extends InstancedArea {
             player.healEverything();
             Position playerSpawnPosition = resolve(TBDConstants.ROOM_LIST.get(nextRoomIndex).getPlayerSpawnPosition());
             player.moveTo(playerSpawnPosition);
-            player.getAttributes().removeBoolean(TOB_DEAD_ATTR_KEY);
+            player.getAttributes().removeBoolean(TBD_DEAD_ATTR_KEY);
         } else {
             player.sendMessage("You haven't completed this room yet!");
         }
@@ -131,7 +131,7 @@ public class TBDInstance extends InstancedArea {
                         player.sendMessage("Only the party leader can start a fight.");
                     }
                 } else {
-                    if (player.getAttributes().getBoolean(TOB_DEAD_ATTR_KEY)) {
+                    if (player.getAttributes().getBoolean(TBD_DEAD_ATTR_KEY)) {
                         player.sendMessage("You've been disqualified from the fight for dying, you must wait.");
                     } else {
                         player.sendMessage("The fight has started, there's no turning back now.");
@@ -139,7 +139,7 @@ public class TBDInstance extends InstancedArea {
                 }
             } else {                                                                                                          // In room before last unlocked or room complete
                 Optional<TBDRoom> gateRoomOptional = TBDConstants.ROOM_LIST.stream().filter(gateRoom -> gateRoom.getBoundary().in(player)).findFirst();
-                gateRoomOptional.ifPresent(tobRoom -> gateRoomOptional.get().handleClickBossGate(player, object));
+                gateRoomOptional.ifPresent(TBDRoom -> gateRoomOptional.get().handleClickBossGate(player, object));
             }
 
             return true;
@@ -169,7 +169,7 @@ public class TBDInstance extends InstancedArea {
     public boolean handleDeath(Player player) {
         int roomIndex = getPlayerRoomIndex(player);
         if (roomIndex == -1) {
-            player.moveTo(TBDConstants.FINISHED_TOB_POSITION);
+            player.moveTo(TBDConstants.FINISHED_TBD_POSITION);
             player.sendMessage("Could not handle death!");
             return true;
         }
@@ -178,12 +178,12 @@ public class TBDInstance extends InstancedArea {
         player.moveTo(resolve(room.getDeathPosition()));
         player.sendMessage("Oh dear, you have died!");
         player.getItems().sendEquipmentContainer();
-        player.getAttributes().setBoolean(TOB_DEAD_ATTR_KEY, true);
+        player.getAttributes().setBoolean(TBD_DEAD_ATTR_KEY, true);
         //Server.getLogging().write(new DiedAtTBDLog(player, this));
 
         if (allDead()) {
             Lists.newArrayList(getPlayers()).forEach(plr -> {
-                plr.moveTo(TBDConstants.FINISHED_TOB_POSITION);
+                plr.moveTo(TBDConstants.FINISHED_TBD_POSITION);
                 removeButLeaveInParty(plr);
                 plr.sendMessage("Your performance in the theatre left much to be desired; your team has been defeated.");
             });
@@ -209,7 +209,7 @@ public class TBDInstance extends InstancedArea {
     }
 
     private boolean allDead() {
-        return getPlayers().stream().allMatch(plr -> plr.getAttributes().getBoolean(TOB_DEAD_ATTR_KEY));
+        return getPlayers().stream().allMatch(plr -> plr.getAttributes().getBoolean(TBD_DEAD_ATTR_KEY));
     }
 
     @Override

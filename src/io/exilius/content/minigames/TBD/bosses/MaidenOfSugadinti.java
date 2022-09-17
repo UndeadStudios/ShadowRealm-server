@@ -113,7 +113,7 @@ public class MaidenOfSugadinti extends TBDBoss {
 
                     if (container.getTotalExecutions() > 1) {
                         maiden.getInstance().getPlayers().forEach(plr -> {
-                            if (plr.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+                            if (plr.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
                                 return;
                             if (plr.getPosition().equals(pos)) {
                                 plr.appendDamage(5 + Misc.trueRand(7), Hitmark.HIT);

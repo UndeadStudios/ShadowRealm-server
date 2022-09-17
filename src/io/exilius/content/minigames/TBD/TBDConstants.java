@@ -2,7 +2,6 @@ package io.exilius.content.minigames.TBD;
 
 import com.google.common.collect.Lists;
 import io.exilius.content.minigames.TBD.rooms.*;
-import io.exilius.content.minigames.TBD.tob.rooms.*;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Position;
 
@@ -13,7 +12,7 @@ public class TBDConstants {
 
     public static final String TBD = "Theatre of Blood";
     public static final Position LOBBY_TELEPORT_POSITION = new Position(3650, 3211);
-    public static final Position FINISHED_TOB_POSITION = new Position(3671, 3219);
+    public static final Position FINISHED_TBD_POSITION = new Position(3671, 3219);
 
     /**
      * Lobby party overlay interface
@@ -23,7 +22,7 @@ public class TBDConstants {
     public static final int LOBBY_WALKABLE_NAME_CONTAINER = 21_476;
     public static final List<String> LOBBY_WALKABLE_EMPTY_NAME_LIST = Collections.unmodifiableList(Lists.newArrayList("-", "-", "-", "-", "-"));
 
-    public static final int ENTER_TOB_OBJECT_ID = 32_653;
+    public static final int ENTER_TBD_OBJECT_ID = 32_653;
 
     public static final int ENTER_NEXT_ROOM_OBJECT_ID = 33_113;
     public static final int ENTER_FINAL_ROOM_OBJECT_ID = 32_751;
@@ -34,7 +33,7 @@ public class TBDConstants {
 
     public static final int FOOD_CHEST_OBJECT_ID = 29_069;
 
-    public static final Boundary TOB_LOBBY = new Boundary(3641, 3202, 3685, 3237);
+    public static final Boundary TBD_LOBBY = new Boundary(3641, 3202, 3685, 3237);
 
     public static final Boundary MAIDEN_BOSS_ROOM_BOUNDARY = new Boundary(3138, 4411, 3238, 4471);
     public static final Boundary BLOAT_BOSS_ROOM_BOUNDARY = new Boundary(3265, 4428, 3327, 4465);

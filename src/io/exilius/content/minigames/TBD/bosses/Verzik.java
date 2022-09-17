@@ -17,7 +17,7 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
-import io.exilius.util.logging.player.CompletedTobLog;
+import io.exilius.util.logging.player.CompletedTBDLog;
 
 import java.util.List;
 
@@ -68,14 +68,14 @@ public class Verzik extends TBDBoss {
 
         // Teleport dead players to exit
         getInstance().getPlayers().forEach(plr -> {
-            if (plr.getAttributes().getBoolean(TBDInstance.TOB_DEAD_ATTR_KEY)) {
+            if (plr.getAttributes().getBoolean(TBDInstance.TBD_DEAD_ATTR_KEY)) {
                 plr.moveTo(new Position(3168, 4322, getInstance().getHeight()));
             }
 
-            plr.getBossTimers().death(TBDConstants.THEATRE_OF_BLOOD);
-            plr.tobCompletions++;
-            plr.sendMessage("You've completed the Theatre of Blood @red@" + plr.tobCompletions + "@bla@ times.");
-            Server.getLogging().write(new CompletedTobLog(plr, plr.getInstance()));
+            plr.getBossTimers().death(TBDConstants.TBD);
+            plr.TBDCompletions++;
+            plr.sendMessage("You've completed the Theatre of Blood @red@" + plr.TBDCompletions + "@bla@ times.");
+            Server.getLogging().write(new CompletedTBDLog(plr, plr.getInstance()));
         });
     }
 
@@ -178,7 +178,7 @@ public class Verzik extends TBDBoss {
                             .createTargetedProjectile(Verzik.this, pos).send(getInstance()));
                 } else if (container.getTotalExecutions() == 11) {
                     getInstance().getPlayers().forEach(plr -> {
-                        if (!Boundary.TOB_VERZIK.in(plr))
+                        if (!Boundary.TBD_VERZIK.in(plr))
                             return;
                         if (safeSpotList.stream().noneMatch(pos -> plr.getPosition().equals(pos))) {
                             plr.appendDamage(40 + Misc.trueRand(40), Hitmark.HIT);
@@ -210,7 +210,7 @@ public class Verzik extends TBDBoss {
 
     private void launchRangeAttack() {
         getInstance().getPlayers().forEach(plr -> {
-            if (plr.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+            if (plr.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
                 return;
             Position position = plr.getPosition();
             new ProjectileBaseBuilder().setProjectileId(1583).setSendDelay(1).createProjectileBase()
@@ -219,9 +219,9 @@ public class Verzik extends TBDBoss {
                 @Override
                 public void execute(CycleEventContainer container) {
                     getInstance().getPlayers().forEach(plr2 -> {
-                        if (!Boundary.TOB_VERZIK.in(plr))
+                        if (!Boundary.TBD_VERZIK.in(plr))
                             return;
-                        if (plr2.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+                        if (plr2.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
                             return;
                         if (plr2.getPosition().equals(position)) {
                             int damage = Misc.trueRand(70);

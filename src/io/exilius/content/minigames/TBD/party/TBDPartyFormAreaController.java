@@ -7,20 +7,20 @@ import io.exilius.model.entity.player.Boundary;
 
 import java.util.Set;
 
-public class TobPartyFormAreaController extends PartyFormAreaController {
+public class TBDPartyFormAreaController extends PartyFormAreaController {
 
     @Override
     public String getKey() {
-        return TobParty.TYPE;
+        return TBDParty.TYPE;
     }
 
     @Override
     public Set<Boundary> getBoundaries() {
-        return Set.of(TBDConstants.TOB_LOBBY);
+        return Set.of(TBDConstants.TBD_LOBBY);
     }
 
     @Override
     public PlayerParty createParty() {
-        return new TobParty();
+        return new TBDParty();
     }
 }

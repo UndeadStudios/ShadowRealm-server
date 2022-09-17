@@ -105,7 +105,7 @@ public class Nylocas extends TBDBoss {
     }
 
     private void reflect(Player player, int damage) {
-        if (player.getAttributes().containsBoolean(TBDInstance.TOB_DEAD_ATTR_KEY))
+        if (player.getAttributes().containsBoolean(TBDInstance.TBD_DEAD_ATTR_KEY))
             return;
         if (damage > 0 && System.currentTimeMillis() - lastTransform > 1_000) {
             player.appendDamage(damage, Hitmark.HIT);

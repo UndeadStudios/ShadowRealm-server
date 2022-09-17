@@ -1,7 +1,7 @@
 package io.exilius.content.minigames.TBD;
 
 import io.exilius.content.minigames.TBD.instance.TBDInstance;
-import io.exilius.content.minigames.TBD.party.TobParty;
+import io.exilius.content.minigames.TBD.party.TBDParty;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
@@ -10,7 +10,7 @@ import io.exilius.util.Misc;
 import java.util.List;
 
 /**
- * Handles actions outside of tob instance.
+ * Handles actions outside of tBD instance.
  */
 public class TBDContainer {
 
@@ -26,35 +26,35 @@ public class TBDContainer {
     }
 
     public boolean handleClickObject(WorldObject object, int option) {
-        if (object.getId() != TBDConstants.ENTER_TOB_OBJECT_ID)
+        if (object.getId() != TBDConstants.ENTER_TBD_OBJECT_ID)
             return false;
 
-        startTob();
+        startTBD();
         return true;
     }
 
-    public void startTob() {
-        if (!player.inParty(TobParty.TYPE)) {
+    public void startTBD() {
+        if (!player.inParty(TBDParty.TYPE)) {
             player.sendMessage("You must be in a party to start Theatre of Blood.");
             return;
         }
 
-        if (player.getPA().calculateTotalLevel() < player.getMode().getTotalLevelForTob()) {
-            player.sendStatement("You need " + Misc.insertCommas(player.getMode().getTotalLevelForTob()) + " total level to compete.");
+        if (player.getPA().calculateTotalLevel() < player.getMode().getTotalLevelForTBD()) {
+            player.sendStatement("You need " + Misc.insertCommas(player.getMode().getTotalLevelForTBD()) + " total level to compete.");
             return;
         }
 
-        player.getParty().openStartActivityDialogue(player, "Theatre of Blood", TBDConstants.TOB_LOBBY::in, list -> new TBDInstance(list.size()).start(list));
+        player.getParty().openStartActivityDialogue(player, "Theatre of Blood", TBDConstants.TBD_LOBBY::in, list -> new TBDInstance(list.size()).start(list));
     }
 
     public boolean handleContainerAction1(int interfaceId, int slot) {
-        if (inTob()) {
+        if (inTBD()) {
             return ((TBDInstance) player.getInstance()).getFoodRewards().handleBuy(player, interfaceId, slot);
         }
         return false;
     }
 
-    public boolean inTob() {
+    public boolean inTBD() {
         return player.getInstance() != null && player.getInstance() instanceof TBDInstance;
     }
 
