@@ -19116,6 +19116,7 @@ public class Items {
     public static final int ELDER_MAUL = 21_003;
     public static final int ELDER_MAUL_NOTED = 21_004;
     public static final int ELDER_MAUL_2 = 21_005;
+    public static final int ELDER_MAUL_OR = 27_100;
     public static final int KODAI_WAND = 21_006;
     public static final int KODAI_WAND_NOTED = 21_007;
     public static final int KODAI_WAND_2 = 21_008;

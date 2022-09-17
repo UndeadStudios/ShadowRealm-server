@@ -1956,13 +1956,13 @@ public class ObjectOptionOne {
 				c.getPA().startTeleport(3088, 3504, 0, "modern", false);
 				break;
 			case 11803:
-				if (c.getRights().isOrInherits(Right.ONYX_CLUB)) {
+				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)) {
 					AgilityHandler.delayEmote(c, "CLIMB_DOWN", 3577, 9927, 0, 2);
 					c.sendMessage("<img=4> Welcome to the donators only slayer cave.");
 				}
 				break;
 			case 17387:
-				if (c.getRights().isOrInherits(Right.ONYX_CLUB)) {
+				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)) {
 					AgilityHandler.delayEmote(c, "CLIMB_UP", 2125, 4913, 0, 2);
 				}
 				break;
@@ -2906,7 +2906,7 @@ public class ObjectOptionOne {
 						c.sendMessage("You have to wait another " + seconds + " seconds to use this altar.");
 						return;
 					}
-					if (c.getRights().isOrInherits(Right.ONYX_CLUB)) {
+					if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)) {
 						c.specRestore = 120;
 						c.specAmount = 10.0;
 						c.getItems().addSpecialBar(c.playerEquipment[Player.playerWeapon]);
@@ -2990,7 +2990,7 @@ public class ObjectOptionOne {
 				}
 
 			case 11737:
-				if (!c.getRights().isOrInherits(Right.ONYX_CLUB)) {
+				if (!c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)) {
 					return;
 				}
 				c.getPA().movePlayer(3365, 9641, 0);

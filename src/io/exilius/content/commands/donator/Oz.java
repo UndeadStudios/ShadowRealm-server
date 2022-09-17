@@ -1,11 +1,11 @@
 package io.exilius.content.commands.donator;
 
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.content.commands.Command;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
+
+import java.util.Optional;
 
 public class Oz extends Command {
 

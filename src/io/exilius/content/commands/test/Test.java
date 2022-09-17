@@ -1,10 +1,5 @@
 package io.exilius.content.commands.test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-
 import com.google.common.collect.Lists;
 import io.exilius.content.CompletionistCape;
 import io.exilius.content.bosses.hydra.AlchemicalHydra;
@@ -24,7 +19,6 @@ import io.exilius.model.Items;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
-//import io.exilius.model.cycleevent.impl.LeaderboardUpdateEvent;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCDumbPathFinder;
@@ -34,6 +28,11 @@ import io.exilius.model.entity.player.lock.CompleteLock;
 import io.exilius.model.entity.player.mode.group.GroupIronmanRepository;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 public class Test extends Command {
 	

@@ -1998,6 +1998,7 @@ public class Player extends Entity {
                 getRights().add(Right.ADMINISTRATOR);
                 getRights().add(Right.OWNER);
                 getRights().add(Right.ONYX_CLUB);
+                getRights().add(Right.Mystic_Club);
                 getRights().setPrimary(Right.OWNER);
             }
 
@@ -3080,6 +3081,16 @@ public class Player extends Entity {
                 //sendMessage("Please relog to receive your diamond club rank.");
             }
         }
+        if (amDonated >= 5000) {
+            if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
+                getRights().add(Right.Mystic_Club);
+            } else
+            //sendMessage("Your hidden diamond club rank is now active.");
+            {
+                getRights().setPrimary(Right.Mystic_Club);
+                //sendMessage("Please relog to receive your diamond club rank.");
+            }
+        }
         if (amDonated >= 1000) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
                 getRights().add(Right.ONYX_CLUB);
@@ -3092,6 +3103,8 @@ public class Player extends Entity {
         }
         //sendMessage("Your updated total amount donated is now $" + amDonated + ".");
     }
+
+
 
     public int getPrivateChat() {
         return privateChat;

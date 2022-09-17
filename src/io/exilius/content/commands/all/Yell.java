@@ -1,11 +1,5 @@
 package io.exilius.content.commands.all;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import io.exilius.Server;
 import io.exilius.content.commands.Command;
 import io.exilius.model.entity.player.Player;
@@ -16,6 +10,12 @@ import io.exilius.punishments.PunishmentType;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Tells the player they need to be a donator to use this feature.
  * 
@@ -24,7 +24,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Yell extends Command {
 
 	private static final Right[] PERMITTED = { Right.REGULAR_DONATOR, Right.EXTREME_DONOR, Right.LEGENDARY_DONATOR, Right.DIAMOND_CLUB,
-												Right.ONYX_CLUB, Right.HELPER, Right.MODERATOR, Right.ADMINISTRATOR,
+												Right.ONYX_CLUB,Right.Mystic_Club, Right.HELPER, Right.MODERATOR, Right.ADMINISTRATOR,
 												Right.OWNER, Right.GAME_DEVELOPER, Right.YOUTUBER, Right.HITBOX };
 
 	private static final String[] ILLEGAL_ARGUMENTS = { "<img", "@cr", "<tran", "#url#", "<shad", "<str",

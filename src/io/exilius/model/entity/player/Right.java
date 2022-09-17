@@ -1,17 +1,12 @@
 package io.exilius.model.entity.player;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
-
 import io.exilius.model.entity.player.mode.Mode;
 import io.exilius.model.entity.player.mode.ModeType;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.*;
 
 /**
  * The rights of a player determines their authority. Every right can be viewed with a name and a value. The value is used to separate each right from one another.
@@ -45,7 +40,7 @@ public enum Right implements Comparator<Right> {
 	ROGUE_IRONMAN(26, "60201f"),
 	ROGUE_HARDCORE_IRONMAN(27, "60201f"),
 	GROUP_IRONMAN(28, "60201f"),
-	EVENT_MAN(29, "60201f"),
+	Mystic_Club(29, "60201f", ONYX_CLUB),
 
 	;
 
@@ -57,15 +52,15 @@ public enum Right implements Comparator<Right> {
 	 */
 	public static final EnumSet[] DISPLAY_GROUPS = {
 			EnumSet.of(HELPER, MODERATOR, ADMINISTRATOR, OWNER, UNKNOWN, REGULAR_DONATOR, EXTREME_DONOR,
-					 LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, YOUTUBER),
-			EnumSet.of(HITBOX, EVENT_MAN, IRONMAN, ULTIMATE_IRONMAN, GAME_DEVELOPER, OSRS, MEMBERSHIP, HC_IRONMAN, ROGUE,
+					 LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club, YOUTUBER),
+			EnumSet.of(HITBOX, IRONMAN, ULTIMATE_IRONMAN, GAME_DEVELOPER, OSRS, MEMBERSHIP, HC_IRONMAN, ROGUE,
 					ROGUE_HARDCORE_IRONMAN, ROGUE_IRONMAN, GROUP_IRONMAN)
 	};
 
 	/**
 	 * Donator rights.
 	 */
-	public static final EnumSet<Right> DONATOR_SET = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB);
+	public static final EnumSet<Right> DONATOR_SET = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club);
 
 	//public static final EnumSet<Right> hiscorable = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB);
 
@@ -79,7 +74,7 @@ public enum Right implements Comparator<Right> {
 	 * {@link #MODERATOR} because they have more power within the community.
 	 * </p>
 	 */
-	public static final Right[] PRIORITY = { PLAYER, OSRS, EVENT_MAN, HC_IRONMAN, GROUP_IRONMAN, IRONMAN, ULTIMATE_IRONMAN, MEMBERSHIP, REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB,YOUTUBER, HITBOX, HELPER,
+	public static final Right[] PRIORITY = { PLAYER, OSRS, HC_IRONMAN, GROUP_IRONMAN, IRONMAN, ULTIMATE_IRONMAN, MEMBERSHIP, REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club, YOUTUBER, HITBOX, HELPER,
 			GAME_DEVELOPER, MODERATOR, ADMINISTRATOR, OWNER, UNKNOWN};
 
 

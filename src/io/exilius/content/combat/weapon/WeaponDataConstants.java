@@ -47,7 +47,7 @@ public class WeaponDataConstants {
     };
 
     public static final int[] SCYTHE = {
-            Items.SCYTHE, Items.SCYTHE_OF_VITUR,Items.SCYTHE_OF_OSIRIS,
+            Items.SCYTHE, Items.SCYTHE_OF_VITUR,Items.SCYTHE_OF_OSIRIS, 46399,
     };
 
     // [[accurate, stab], [aggressive, stab], [aggressive, slash], [defensive, stab]]
@@ -75,7 +75,7 @@ public class WeaponDataConstants {
     public static final int[] WARHAMMERS = {
             Items.BRONZE_WARHAMMER, Items.IRON_WARHAMMER, Items.STEEL_WARHAMMER, Items.BLACK_WARHAMMER,
             Items.MITHRIL_WARHAMMER, Items.ADAMANT_WARHAMMER, Items.RUNE_WARHAMMER,
-            Items.GRANITE_HAMMER, Items.TORAGS_HAMMERS, Items.DRAGON_WARHAMMER, Items.TZHAAR_KET_OM, Items.ELDER_MAUL,
+            Items.GRANITE_HAMMER, Items.TORAGS_HAMMERS, Items.DRAGON_WARHAMMER, Items.TZHAAR_KET_OM, Items.ELDER_MAUL, Items.ELDER_MAUL_OR,
             Items.ABYSSAL_BLUDGEON, Items.HILL_GIANT_CLUB, Items.GADDERHAMMER, Items.CURSED_GOBLIN_HAMMER, Items.FRYING_PAN,
             Items.MEAT_TENDERISER, Items.STATIUSS_WARHAMMER,
             Items.GRANITE_MAUL, Items.GRANITE_MAUL_OR,

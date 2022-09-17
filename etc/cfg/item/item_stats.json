@@ -25136,7 +25136,7 @@
       "str": 205,
       "aspeed": 5
     }
-    },
+  },
   "6663": {
     "name": "Forlorn boot"
   },
@@ -60041,6 +60041,23 @@
       "aspeed": 5
     }
   },
+  "26399": {
+    "name": "Lava Scythe",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 3,
+      "astab": 190,
+      "aslash": 180,
+      "acrush": 70,
+      "amagic": -6,
+      "dstab": -2,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 215,
+      "aspeed": 5
+    }
+  },
   "22326": {
     "name": "Justiciar faceguard",
     "equipable": true,
@@ -64177,7 +64194,7 @@
       "prayer": 5
     }
   },
-   "23849": {
+  "23849": {
     "name": "Corrupted halberd (basic)",
     "equipable": true,
     "weight": 1.5,
@@ -65238,27 +65255,27 @@
     }
   },
   "28347": {
-  "name": "Death Cape",
-  "equipable": true,
-  "weight": 0.453,
-  "equipment": {
-    "slot": 1,
-    "astab": 24,
-    "aslash": 24,
-    "acrush": 24,
-    "amagic": 21,
-    "arange": 21,
-    "dstab": 22,
-    "dslash": 22,
-    "dcrush": 22,
-    "dmagic": 22,
-    "drange": 22,
-    "str": 17,
-    "rstr": 17,
-    "mdmg": 17,
-    "prayer": 10
-  }
-},
+    "name": "Death Cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1,
+      "astab": 24,
+      "aslash": 24,
+      "acrush": 24,
+      "amagic": 21,
+      "arange": 21,
+      "dstab": 22,
+      "dslash": 22,
+      "dcrush": 22,
+      "dmagic": 22,
+      "drange": 22,
+      "str": 17,
+      "rstr": 17,
+      "mdmg": 17,
+      "prayer": 10
+    }
+  },
   "24134": {
     "name": "Fire max cape (l)",
     "equipable": true,
@@ -67955,6 +67972,63 @@
       "dmagic": -6,
       "drange": 107,
       "prayer": 5
+    }
+  },
+  "8812": {
+    "name": "Lava Torva Platelegs",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 7,
+      "astab": 54,
+      "aslash": 54,
+      "acrush": 54,
+      "amagic": -21,
+      "arange": -7,
+      "dstab": 150,
+      "dslash": 132,
+      "dcrush": 133,
+      "dmagic": -14,
+      "drange": 163,
+      "prayer": 10
+    }
+  },
+  "8813": {
+    "name": "Lava Torva Platebody",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 4,
+      "astab": 54,
+      "aslash": 54,
+      "acrush": 54,
+      "amagic": -20,
+      "arange": -10,
+      "dstab": 192,
+      "dslash": 190,
+      "dcrush": 157,
+      "dmagic": -6,
+      "drange": 189,
+      "prayer": 10
+    }
+  },
+  "8814": {
+    "name": "Lava Torva Full Helm",
+    "equipable": true,
+    "weight": 2.7,
+    "equipment": {
+      "slot": 0,
+      "astab": 44,
+      "aslash": 44,
+      "acrush": 44,
+      "amagic": -1,
+      "arange": 0,
+      "dstab": 110,
+      "dslash": 113,
+      "dcrush": 99,
+      "dmagic": -2,
+      "drange": 117,
+      "prayer": 8
     }
   },
   "26235": {

@@ -5,7 +5,8 @@ enum RankUpgrade {
     EXTREME_DONOR(Right.EXTREME_DONOR, 100),
     LEGENDARY_DONATOR(Right.LEGENDARY_DONATOR,250),
     DIAMOND_CLUB(Right.DIAMOND_CLUB, 500),
-    ONYX_CLUB(Right.ONYX_CLUB, 1000);
+    ONYX_CLUB(Right.ONYX_CLUB, 1000),
+    Mystic_Club(Right.Mystic_Club, 5000);
 
     /**
      * The rights that will be appended if upgraded

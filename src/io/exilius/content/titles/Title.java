@@ -1,15 +1,15 @@
 package io.exilius.content.titles;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.EnumSet;
-import java.util.Set;
-
 import io.exilius.content.achievement.AchievementTier;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.model.entity.npc.pets.PetHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.EnumSet;
+import java.util.Set;
 
 /**
  * Each element of the enum represents a singular title with an array of qualities.
@@ -26,7 +26,7 @@ public enum Title implements Comparator<Title> {
 	CUSTOM("Custom", 0, TitleCurrency.NONE, new TitleRequirement() {
 		@Override
 		public boolean meetsStandard(Player player) {
-			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.MODERATOR);
+			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.Mystic_Club) || player.getRights().isOrInherits(Right.MODERATOR);
 		}
 	}, "Have the option of choosing your own 16-character title. You must be a legendary donator or more to display this title."),
 	

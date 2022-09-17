@@ -103,23 +103,23 @@ public class PlayerDeath {
         if (c.getSlayer().superiorSpawned) {
             c.getSlayer().superiorSpawned = false;
         }
-        if (c.getRights().isOrInherits(Right.EVENT_MAN)) {
-            if (Boundary.isIn(c, Boundary.DUEL_ARENA) || Boundary.isIn(c, Boundary.FIGHT_CAVE)
-                    || c.getPosition().inClanWarsSafe() || Boundary.isIn(c, Boundary.INFERNO)
-                    || Boundary.isIn(c, Boundary.OUTLAST_AREA)
-                    || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_AREA)
-                    || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_LOBBY)
-                    || Boundary.isIn(c, Boundary.PEST_CONTROL_AREA)
-                    || Boundary.isIn(c, Boundary.RAIDS)
-                    || Boundary.isIn(c, Boundary.OLM)
-                    || Boundary.isIn(c, Boundary.RAID_MAIN)
-                    || Boundary.isIn(c, Boundary.XERIC)) { // TODO: Other areas.
-                return;
-            }
-            PlayerHandler.executeGlobalMessage("@red@News: @blu@" + c.getDisplayNameFormatted()
-                    + " @pur@has just died, with a skill total of " + c.totalLevel
-                    + "!");
-        }
+     //   if (c.getRights().isOrInherits(Right.OWNER)) {
+//            if (Boundary.isIn(c, Boundary.DUEL_ARENA) || Boundary.isIn(c, Boundary.FIGHT_CAVE)
+//                    || c.getPosition().inClanWarsSafe() || Boundary.isIn(c, Boundary.INFERNO)
+//                    || Boundary.isIn(c, Boundary.OUTLAST_AREA)
+//                    || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_AREA)
+//                    || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_LOBBY)
+//                    || Boundary.isIn(c, Boundary.PEST_CONTROL_AREA)
+//                    || Boundary.isIn(c, Boundary.RAIDS)
+//                    || Boundary.isIn(c, Boundary.OLM)
+//                    || Boundary.isIn(c, Boundary.RAID_MAIN)
+//                    || Boundary.isIn(c, Boundary.XERIC)) { // TODO: Other areas.
+//                return;
+//            }
+//            PlayerHandler.executeGlobalMessage("@red@News: @blu@" + c.getDisplayNameFormatted()
+//                    + " @pur@has just died, with a skill total of " + c.totalLevel
+//                    + "!");
+//        }
         if (c.getMode().isHardcoreIronman()) {
             if (Boundary.isIn(c, Boundary.DUEL_ARENA) || Boundary.isIn(c, Boundary.FIGHT_CAVE)
                     || c.getPosition().inClanWarsSafe() || Boundary.isIn(c, Boundary.INFERNO)

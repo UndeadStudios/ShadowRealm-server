@@ -516,6 +516,7 @@ public class UseItem {
 				c.getItems().deleteItem(26713, 1);
 				c.getItems().deleteItem(11828, 1);
 				c.getItems().addItem(26715, 1);
+				c.sendMessage("You have ornamented you're Armadyl Chestplate");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -525,6 +526,7 @@ public class UseItem {
 				c.getItems().deleteItem(26713, 1);
 				c.getItems().deleteItem(11826, 1);
 				c.getItems().addItem(26714, 1);
+				c.sendMessage("You have ornamented you're Armadyl Helm");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -534,6 +536,7 @@ public class UseItem {
 				c.getItems().deleteItem(26713, 1);
 				c.getItems().deleteItem(11830, 1);
 				c.getItems().addItem(26716, 1);
+				c.sendMessage("You have ornamented you're Armadyl Chainskirt");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -543,6 +546,7 @@ public class UseItem {
 				c.getItems().deleteItem(26717, 1);
 				c.getItems().deleteItem(11832, 1);
 				c.getItems().addItem(26718, 1);
+				c.sendMessage("You have ornamented you're Bandos Chest Plate");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -552,6 +556,7 @@ public class UseItem {
 				c.getItems().deleteItem(26717, 1);
 				c.getItems().deleteItem(11834, 1);
 				c.getItems().addItem(26719, 1);
+				c.sendMessage("You have ornamented you're Bandos Tassets");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -561,6 +566,7 @@ public class UseItem {
 				c.getItems().deleteItem(26717, 1);
 				c.getItems().deleteItem(11836, 1);
 				c.getItems().addItem(26720, 1);
+				c.sendMessage("You have ornamented you're Bandos Boots");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}
@@ -570,15 +576,7 @@ public class UseItem {
 				c.getItems().deleteItem(20798, 1);
 				c.getItems().deleteItem(21003, 1);
 				c.getItems().addItem(27100, 1);
-			}else {
-				c.sendMessage("You do not have the required items");
-			}
-		}
-		if (itemUsed == 20143 && useWith == 19722 || itemUsed == 19722 && useWith == 20143) {
-			if (c.getItems().playerHasItem(20143) && c.getItems().playerHasItem(19722)) {
-				c.getItems().deleteItem(20143, 1);
-				c.getItems().deleteItem(19722, 1);
-				c.getItems().addItem(27100, 1);
+				c.sendMessage("You have ornamented you're elder Maul");
 			}else {
 				c.sendMessage("You do not have the required items");
 			}

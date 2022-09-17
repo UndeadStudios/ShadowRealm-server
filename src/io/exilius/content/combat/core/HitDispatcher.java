@@ -13,6 +13,7 @@ import io.exilius.content.combat.effects.damageeffect.DamageEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.ToxicBlowpipeEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.ToxicStaffOfTheDeadEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.amuletofthedamned.impl.GuthanEffect;
+import io.exilius.content.combat.effects.special.impl.LavaScythe;
 import io.exilius.content.combat.effects.special.impl.ScytheOfOsiris;
 import io.exilius.content.combat.effects.special.impl.ScytheOfVitur;
 import io.exilius.content.combat.formula.rework.MagicCombatFormula;
@@ -111,6 +112,7 @@ public abstract class HitDispatcher {
 
         boolean usingSythe = false;
         boolean usingScythe = false;
+        boolean usingLScythe = false;
 
         if (combatType.equals(CombatType.MELEE)) {
 
@@ -139,6 +141,7 @@ public abstract class HitDispatcher {
 
             usingSythe = ScytheOfVitur.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
             usingScythe = ScytheOfOsiris.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
+            usingLScythe = LavaScythe.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
 
             damage = isMaxHitDummy ? maximumDamage : Misc.random((int) maximumDamage);
             boolean isAccurate = isMaxHitDummy || maximumAccuracy >= rand.nextDouble();
@@ -156,6 +159,18 @@ public abstract class HitDispatcher {
                 }
             }
             if (usingScythe) {
+
+                double roll = rand.nextDouble();
+                double roll2 = rand.nextDouble();
+
+                if (defender.getEntitySize() > 1 || isMaxHitDummy) {
+                    if (maximumAccuracy >= roll || isMaxHitDummy)
+                        damage2 = (isMaxHitDummy ? damage / 2 : Misc.random(maximumDamage / 3));
+                    if (maximumAccuracy >= roll2 || isMaxHitDummy)
+                        damage3 = (isMaxHitDummy ? damage / 4 : Misc.random(maximumDamage / 5));
+                }
+            }
+            if (usingLScythe) {
 
                 double roll = rand.nextDouble();
                 double roll2 = rand.nextDouble();
@@ -495,6 +510,10 @@ public abstract class HitDispatcher {
             attacker.getDamageQueue().add(new Damage(defender, usingScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
                     hitmark2, combatType));
         }
+        if (damage2 > -1 || usingLScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingLScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
+                    hitmark2, combatType));
+        }
 
         if (damage3 > -1 || usingSythe && defender.getEntitySize() > 1) {
             attacker.getDamageQueue().add(new Damage(defender, usingSythe ? damage3 : Math.max(0, damage3), delay + 1,
@@ -502,6 +521,10 @@ public abstract class HitDispatcher {
         }
         if (damage3 > -1 || usingScythe && defender.getEntitySize() > 1) {
             attacker.getDamageQueue().add(new Damage(defender, usingScythe ? damage3 : Math.max(0, damage3), delay + 1,
+                    attacker.playerEquipment, hitmark3, combatType));
+        }
+        if (damage3 > -1 || usingLScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingLScythe ? damage3 : Math.max(0, damage3), delay + 1,
                     attacker.playerEquipment, hitmark3, combatType));
         }
 
@@ -520,10 +543,28 @@ public abstract class HitDispatcher {
             if (!applyingMultiHitAttack && usingMultiAttack(combatType) && attacker.getPosition().inMulti()) {
                 List<Entity> multiHitEntities = getMultiHitEntities(MeleeData.usingSytheOfVitur(attacker));
                 List<Entity> multiHitEntities2 = getMultiHitEntities(MeleeData.usingScytheOfOsiris(attacker));
+                List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingLavaScythe(attacker));
                 if (attacker.isPrintAttackStats()) {
                     attacker.sendMessage("Using multi-attack, " + multiHitEntities.size() + " possible targets.");
                 }
                 multiHitEntities.forEach(entity -> {
+                    if (defender.isNPC()) {
+                        if (entity.isPlayer()) {
+                            Player target = entity.asPlayer();
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                                if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
+                                    attacker.attackedPlayers.add(target.getIndex());
+                                    attacker.isSkulled = true;
+                                    attacker.skullTimer = Configuration.SKULL_TIMER;
+                                    attacker.headIconPk = 0;
+                                    attacker.getPA().requestUpdates();
+                                }
+                            }
+                        }
+                    }
+                    getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
+                });
+                multiHitEntities3.forEach(entity -> {
                     if (defender.isNPC()) {
                         if (entity.isPlayer()) {
                             Player target = entity.asPlayer();
@@ -715,6 +756,8 @@ public abstract class HitDispatcher {
             return true;
         }else if (MeleeData.usingScytheOfOsiris(attacker)) {
             return true;
+        }else if (MeleeData.usingLavaScythe(attacker)) {
+            return true;
         }
 
         return false;
@@ -781,13 +824,17 @@ public abstract class HitDispatcher {
                             600 * freezeDelay);
                 }
             }
+//            if (attacker.playerEquipment[Player.playerWeapon] == 26399) {
+//                int heal = damage / 2;
+//                attacker.getHealth().increase(heal);
+//            }
 
             switch (CombatSpellData.MAGIC_SPELLS[attacker.getSpellId()][0]) {
                 case 12901:
                 case 12919: // blood spells
                 case 12911:
                 case 12929:
-                    int heal = damage / 4;
+                    int heal = damage / 3;
                     attacker.getHealth().increase(heal);
                     break;
             }

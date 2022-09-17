@@ -32265,7 +32265,7 @@
   shopValue: 1
 - id: 8817
   name: "Scythe of Osiris"
-  description: "Scythe of vitur."
+  description: "Scythe of Osiris."
   shopValue: 12800000
 - id: 6663
   name: "Forlorn boot"
@@ -70353,6 +70353,13 @@
   requirements:
     - skill: "ATTACK"
       level: 75
+- id: 26399
+  name: "Lava Scythe"
+  description: "Scythe of Lava."
+  shopValue: 12800000
+  requirements:
+    - skill: "ATTACK"
+      level: 75
 - id: 22326
   name: "Justiciar faceguard"
   description: "Justiciar faceguard."
@@ -71917,6 +71924,29 @@
   requirements:
     - skill: "DEFENCE"
       level: 80
+- id: 8814
+  name: "Lava Torva Full helm"
+  description: "Lava Torva Full helm."
+  shopValue: 71200000
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 90
+- id: 8813
+  name: "Lava Torva Platebody"
+  description: "Lava Torva Platebody."
+  shopValue: 92400000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 90
+- id: 8812
+  name: "Lava Torva PlateLegs"
+  description: "Lava Torva Platelegs."
+  shopValue: 82400000
+  requirements:
+    - skill: "DEFENCE"
+      level: 90
 - id: 26376
   name: "Torva Full helm (damaged)"
   description: "Torva Full helm (damaged)."
@@ -72717,6 +72747,7 @@
   name: "Bandos chestplate (or)"
   description: "A sturdy chest plate."
   shopValue: 10020000
+  equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
       level: 65

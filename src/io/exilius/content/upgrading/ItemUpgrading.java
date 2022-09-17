@@ -144,36 +144,14 @@ public class ItemUpgrading {
 
     public enum ItemUpgradeData {
 
-        ZAMORAKIAN_SPEAR(0, 11824, 25_000_000, new GameItem(8802, 1), 10.0),
-        SPEAR_OF_HAZZARDS(0, 8802, 80_000_000, new GameItem(8801, 1), 10.0),
-        SCYTHE_OF_VITUR(0, 22325, 180_000_000, new GameItem(5700, 1), 15.0),
-        STAFF_OF_LIGHT(0, 22296, 175_000_000, new GameItem(22323, 1), 10.0),
-        TWISTED_BOW(0, 20997, 200_000_000, new GameItem(2883, 1), 15.0),
-        SANG_STAFF(0, 22323, 175_000_000, new GameItem(6613, 1), 10.0),
-        HOLY_SANG_STAFF(0, 6613, 275_000_000, new GameItem(8807, 1), 10.0),
-        GHRAZI_RAPIER(0, 22324, 100_000_000, new GameItem(8806, 1), 25.0),
-        //PH_KNIFE(0,8806, 100_000_000, new GameItem(8804, 1), 15.0),
+        SCYTHE_OF_VITUR(0, 22325, 250_000_000, new GameItem(26399, 1), 10.0),
 
 
-        BANDOS_CHESTPLATE(1, 11832, 150_000_000, new GameItem(22327, 1), 20.0),
-        BANDOS_TASSETS(1, 11834, 150_000_000, new GameItem(22328, 1), 20.0),
-        ANCESTAL_HAT(1, 21018, 100_000_000, new GameItem(8811, 1), 20.0),
-        ANCESTAL_ROBE_TOP(1, 21021, 100_000_000, new GameItem(8812, 1), 20.0),
-        ANCESTAL_ROBE_BOTTOMS(1, 21024, 100_000_000, new GameItem(8813, 1), 20.0),
-        INFERNAL_HAT(1, 8811, 200_000_000, new GameItem(8814, 1), 15.0),
+        TORVA_PLATELEGS(1, 26386, 150_000_000, new GameItem(8812, 1), 10.0),
+        TORVA_PLATEBODY(1, 26384, 150_000_000, new GameItem(8813, 1), 10.0),
+        TORVA_FULL_HELM(1, 26382, 150_000_000, new GameItem(8814, 1), 10.0),
 
-        INFERNAL_ROBE_TOP(2, 8812, 200_000_000, new GameItem(8815, 1), 15.0),
-        INFERNAL_ROBE_BOTTOM(2, 8813, 200_000_000, new GameItem(8816, 1), 15.0),
-        PRIMORDIAL_BOOTS(2, 13239, 125_000_000, new GameItem(9073, 1), 15.0),
-
-
-        RING_OF_WEALTH(2, 2572, 50_000_000, new GameItem(12785, 1), 40.0),
-        RING_OF_WEALTH_I(2, 12785, 50_000_000, new GameItem(6465, 1), 15.0),
-        JUSTICAR_HELM(3,22326, 200_000_000, new GameItem(8808, 1), 25.0),
-        JUSTICAR_CHESTPLATE(3, 22327, 200_000_000, new GameItem(8809, 1), 25.0),
-        JUSTICAR_LEGGUARDS(3,22328, 200_000_000, new GameItem(8810, 1), 25.0),
-        PH_KNIFE(3, 8806, 100_000_000, new GameItem(8804, 1), 15.0),
-        HELLS_SCYTHE(3, 5700, 280_000_000, new GameItem(8817, 1), 15.0),
+        RING_OF_WEALTH(2, 2572, 20_000_000, new GameItem(12785, 1), 40.0),
 
         ;
 
