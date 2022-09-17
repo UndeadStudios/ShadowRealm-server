@@ -68338,5 +68338,300 @@
       "drange": 12,
       "str": 12
     }
+  },
+  "26724": {
+    "name": "Wristbands of the arena (i)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26725": {
+    "name": "Wristbands of the arena (c)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26726": {
+    "name": "Wristbands of the arena (cl)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26727": {
+    "name": "Wristbands of the arena (i)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26728": {
+    "name": "Wristbands of the arena (il)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26729": {
+    "name": "Wristbands of the arena (ic)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26730": {
+    "name": "Wristbands of the arena (ilc)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+  "26731": {
+    "name": "Saikas hood",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -20,
+      "aslash": -20,
+      "acrush": -20,
+      "amagic": 10,
+      "arange": -2,
+      "dstab": 10,
+      "dslash": 10,
+      "dcrush": 10,
+      "dmagic": 0,
+      "drange": -10,
+      "str": 0
+    }
+  },
+  "26732": {
+    "name": "Saikas hood (l)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -20,
+      "aslash": -20,
+      "acrush": -20,
+      "amagic": 10,
+      "arange": -2,
+      "dstab": 10,
+      "dslash": 10,
+      "dcrush": 10,
+      "dmagic": 0,
+      "drange": -10,
+      "str": 0
+    }
+  },
+  "26733": {
+    "name": "Saikas veil",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -40,
+      "aslash": -40,
+      "acrush": -40,
+      "amagic": 14,
+      "arange": -40,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 0,
+      "drange": -15,
+      "str": 0
+    }
+  },
+  "26734": {
+    "name": "Saikas veil (l)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -40,
+      "aslash": -40,
+      "acrush": -40,
+      "amagic": 14,
+      "arange": -40,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 0,
+      "drange": -15,
+      "str": 0
+    }
+  },
+  "26735": {
+    "name": "Saikas shroud",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -60,
+      "aslash": -60,
+      "acrush": -60,
+      "amagic": 18,
+      "arange": -70,
+      "dstab": 20,
+      "dslash": 20,
+      "dcrush": 20,
+      "dmagic": 0,
+      "drange": -25,
+      "str": 0
+    }
+  },
+  "26736": {
+    "name": "Saikas shroud (l)",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 0,
+      "astab": -60,
+      "aslash": -60,
+      "acrush": -60,
+      "amagic": 18,
+      "arange": -70,
+      "dstab": 20,
+      "dslash": 20,
+      "dcrush": 20,
+      "dmagic": 0,
+      "drange": -25,
+      "str": 0
+    }
+  },
+  "28715": {
+    "name": "Dr Cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28716": {
+    "name": "Dr Cape (Blue)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28717": {
+    "name": "Dr Cape (Red)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28718": {
+    "name": "Dr Cape (Purple)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28719": {
+    "name": "Dr Cape (Green)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28720": {
+    "name": "Dr Cape (Gold)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
   }
 }
