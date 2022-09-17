@@ -72945,3 +72945,43 @@
       level: 85
     - skill: "PRAYER"
       level: 85
+- id: 28221
+  name: "Purple Santa hat"
+  description: "It's a Purple Santa hat."
+  shopValue: 11400000
+- id: 28222
+  name: "Black Santa hat"
+  description: "It's a Black Santa hat."
+  shopValue: 11400000
+- id: 28223
+  name: "Mithril Santa hat"
+  description: "It's a Mithril Santa hat."
+  shopValue: 11400000
+- id: 28224
+  name: "Rune Santa hat"
+  description: "It's a Rune Santa hat."
+  shopValue: 11400000
+- id: 28225
+  name: "Dragon Santa hat"
+  description: "It's a Dragon Santa hat."
+  shopValue: 11400000
+- id: 28226
+  name: "Addy Santa hat"
+  description: "It's a Addy Santa hat."
+  shopValue: 11400000
+- id: 28227
+  name: "Gold Santa hat"
+  description: "It's a Gold Santa hat."
+  shopValue: 11400000
+- id: 28228
+  name: "Barrows Santa hat"
+  description: "It's a Barrows Santa hat."
+  shopValue: 11400000
+- id: 28229
+  name: "Blue Santa hat"
+  description: "It's a Purple Santa hat."
+  shopValue: 11400000
+- id: 28230
+  name: "Purple Santa hat"
+  description: "It's a Purple Santa hat."
+  shopValue: 11400000

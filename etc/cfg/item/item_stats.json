@@ -68707,5 +68707,85 @@
     "equipment": {
       "slot": 1
     }
+  },
+  "28221": {
+    "name": "Purple Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28222": {
+    "name": "Black Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28223": {
+    "name": "Mithril Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28224": {
+    "name": "Rune Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28225": {
+    "name": "Dragon Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28226": {
+    "name": "Addy Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28227": {
+    "name": "Gold Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28228": {
+    "name": "Barrows Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28229": {
+    "name": "Blue Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28230": {
+    "name": "Purple Santa hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
   }
 }
