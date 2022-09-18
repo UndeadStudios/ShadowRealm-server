@@ -73048,6 +73048,50 @@
   name: "Purple Santa hat"
   description: "It's a Purple Santa hat."
   shopValue: 11400000
+- id: 28231
+  name: "Black partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28232
+  name: "Orange partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28233
+  name: "Gold partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28234
+  name: "Grey partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28235
+  name: "Bronze partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28236
+  name: "Steel partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28237
+  name: "Mithril partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28238
+  name: "Adamant partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28239
+  name: "Rune partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28240
+  name: "Dragon partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 28241
+  name: "Barrows partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
 - id: 29095
   name: "Epic's platebody"
   description: "Provides excellent protection."

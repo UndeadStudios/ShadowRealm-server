@@ -14,6 +14,7 @@ import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.slayer.SlayerUnlock;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 
 public class Fletching {
@@ -77,16 +78,16 @@ public class Fletching {
 				player.getPA().stopSkilling();
 				player.getPA().sendChatboxInterface(8938);
 				player.getPA().sendFrame126("What would you like to make?", 8966);
-				player.getPA().sendFrame246(8942, 190, fletchables[0].getProduct());
-				player.getPA().sendFrame246(8941, 190, fletchables[1].getProduct());
+				player.getPA().sendFrame246(8941, 190, fletchables[0].getProduct());
+				player.getPA().sendFrame246(8942, 190, fletchables[1].getProduct());
 				player.getPA().sendFrame246(8943, 190, fletchables[2].getProduct());
 				player.getPA().sendFrame246(8944, 190, fletchables[3].getProduct());
 				player.getPA().sendFrame246(8945, 190, fletchables[4].getProduct());
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8946);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8950);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8954);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[3].getProduct()), 8958);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[4].getProduct()), 8962);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[0].getProduct()).getName(), 8949);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[1].getProduct()).getName(), 8953);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[2].getProduct()).getName(), 8957);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[3].getProduct()).getName(), 8961);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[4].getProduct()).getName(), 8965);
 			} else if (fletchables.length == 4) {
 				player.getPA().stopSkilling();
 					player.getPA().sendChatboxInterface(8899);
@@ -95,10 +96,10 @@ public class Fletching {
 					player.getPA().sendFrame246(8903, 190, fletchables[0].getProduct());
 					player.getPA().sendFrame246(8904, 190, fletchables[2].getProduct());
 					player.getPA().sendFrame246(8905, 190, fletchables[3].getProduct());
-					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8906);
-					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8910);
-					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8914);
-					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[3].getProduct()), 8918);
+					player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[0].getProduct()).getName(), 8906);
+					player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[1].getProduct()).getName(), 8910);
+					player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[2].getProduct()).getName(), 8914);
+					player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[3].getProduct()).getName(), 8918);
 				} else if (fletchables.length == 3) {
 				player.getPA().stopSkilling();
 			player.getPA().sendChatboxInterface(8880);
@@ -106,17 +107,17 @@ public class Fletching {
 			player.getPA().sendFrame246(8884, 190, fletchables[1].getProduct());
 			player.getPA().sendFrame246(8883, 190, fletchables[0].getProduct());
 			player.getPA().sendFrame246(8885, 190, fletchables[2].getProduct());
-			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8889);
-			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8893);
-			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8897);
+			player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[0].getProduct()).getName(), 8889);
+			player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[1].getProduct()).getName(), 8893);
+			player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[2].getProduct()).getName(), 8897);
 			} else if (fletchables.length == 2) {
 				player.getPA().stopSkilling();
 				player.getPA().sendChatboxInterface(8866);
 				player.getPA().sendFrame126("What would you like to make?", 8879);
 				player.getPA().sendFrame246(8869, 190, fletchables[0].getProduct());
 				player.getPA().sendFrame246(8870, 190, fletchables[1].getProduct());
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8871);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8875);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[0].getProduct()).getName(), 8871);
+				player.getPA().sendFrame126(ItemCacheDefinition.forID(fletchables[1].getProduct()).getName(), 8875);
 			}
 		});
 		return selectedGroup.isPresent();

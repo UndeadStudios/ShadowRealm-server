@@ -68788,6 +68788,94 @@
       "slot": 0
     }
   },
+  "28231": {
+    "name": "Black partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28232": {
+    "name": "Orange partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28233": {
+    "name": "Gold partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28234": {
+    "name": "Grey partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28235": {
+    "name": "Bronze partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28236": {
+    "name": "Steel partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28237": {
+    "name": "Mithril partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28238": {
+    "name": "Adamant partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28239": {
+    "name": "Rune partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28240": {
+    "name": "Dragon partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28241": {
+    "name": "Barrows partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "29095": {
     "name": "Epic's platebody",
     "equipable": true,
