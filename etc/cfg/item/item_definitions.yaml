@@ -72985,3 +72985,24 @@
   name: "Purple Santa hat"
   description: "It's a Purple Santa hat."
   shopValue: 11400000
+- id: 29095
+  name: "Epic's platebody"
+  description: "Provides excellent protection."
+  shopValue: 560
+  equipmentModelType: "FULL_BODY"
+- id: 29096
+  name: "Epic's platelegs"
+  description: "These look pretty heavy."
+  shopValue: 64000
+- id: 29097
+  name: "Epic boots"
+  description: "Comfortable shoes."
+  shopValue: 20
+- id: 29098
+  name: "Epic's kiteshield"
+  description: "A large metal shield."
+  shopValue: 54400
+- id: 29099
+  name: "Epic's crown"
+  description: "Who said I'd never be royal?"
+  shopValue: 6000
