@@ -73,28 +73,52 @@ public class Fletching {
 		selectedGroup = FLETCHABLE_LOG_GROUP.stream().filter(g -> Arrays.stream(g.getFletchables()).anyMatch(f -> f.getItemId() == use || f.getItemId() == used)).findFirst();
 		selectedGroup.ifPresent(group -> {
 			FletchableLog[] fletchables = group.getFletchables();
-			if (fletchables.length <= 3) {
+			if (fletchables.length == 5) {
+				player.getPA().stopSkilling();
+				player.getPA().sendChatboxInterface(8938);
+				player.getPA().sendFrame126("What would you like to make?", 8966);
+				player.getPA().sendFrame246(8942, 190, fletchables[0].getProduct());
+				player.getPA().sendFrame246(8941, 190, fletchables[1].getProduct());
+				player.getPA().sendFrame246(8943, 190, fletchables[2].getProduct());
+				player.getPA().sendFrame246(8944, 190, fletchables[3].getProduct());
+				player.getPA().sendFrame246(8945, 190, fletchables[4].getProduct());
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8946);
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8950);
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8954);
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[3].getProduct()), 8958);
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[4].getProduct()), 8962);
+			} else if (fletchables.length == 4) {
+				player.getPA().stopSkilling();
+					player.getPA().sendChatboxInterface(8899);
+					player.getPA().sendFrame126("What would you like to make?", 8922);
+					player.getPA().sendFrame246(8902, 190, fletchables[1].getProduct());
+					player.getPA().sendFrame246(8903, 190, fletchables[0].getProduct());
+					player.getPA().sendFrame246(8904, 190, fletchables[2].getProduct());
+					player.getPA().sendFrame246(8905, 190, fletchables[3].getProduct());
+					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8906);
+					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8910);
+					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8914);
+					player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[3].getProduct()), 8918);
+				} else if (fletchables.length == 3) {
 				player.getPA().stopSkilling();
 			player.getPA().sendChatboxInterface(8880);
-			player.getPA().sendFrame126("What would you like to make?", 8879);
+			player.getPA().sendFrame126("What would you like to make?", 8898);
 			player.getPA().sendFrame246(8884, 190, fletchables[1].getProduct());
 			player.getPA().sendFrame246(8883, 190, fletchables[0].getProduct());
 			player.getPA().sendFrame246(8885, 190, fletchables[2].getProduct());
 			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8889);
 			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8893);
 			player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8897);
-		} else{
-				player.getPA().sendChatboxInterface(8899);
-				player.getPA().sendFrame126("What would you like to make?", 8922);
-				player.getPA().sendFrame246(8902, 190, fletchables[1].getProduct());
-				player.getPA().sendFrame246(8903, 190, fletchables[0].getProduct());
-				player.getPA().sendFrame246(8904, 190, fletchables[2].getProduct());
-				player.getPA().sendFrame246(8905, 190, fletchables[3].getProduct());
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8906);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8910);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[2].getProduct()), 8914);
-				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[3].getProduct()), 8918);
-			}});
+			} else if (fletchables.length == 2) {
+				player.getPA().stopSkilling();
+				player.getPA().sendChatboxInterface(8866);
+				player.getPA().sendFrame126("What would you like to make?", 8879);
+				player.getPA().sendFrame246(8869, 190, fletchables[0].getProduct());
+				player.getPA().sendFrame246(8870, 190, fletchables[1].getProduct());
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[0].getProduct()), 8871);
+				player.getPA().sendFrame126(ItemAssistant.getItemName(fletchables[1].getProduct()), 8875);
+			}
+		});
 		return selectedGroup.isPresent();
 	}
 
