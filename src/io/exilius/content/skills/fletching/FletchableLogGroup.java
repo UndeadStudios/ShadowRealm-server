@@ -6,7 +6,7 @@ public enum FletchableLogGroup {
 	YEW(FletchableLog.YEW_SHORTBOW, FletchableLog.YEW_LONGBOW, FletchableLog.YEW_SHAFT), 
 	MAPLE(FletchableLog.MAPLE_SHORTBOW, FletchableLog.MAPLE_LONGBOW, FletchableLog.MAPLE_SHAFT), 
 	WILLOW(FletchableLog.WILLOW_SHORTBOW, FletchableLog.WILLOW_LONGBOW, FletchableLog.WILLOW_SHAFT), 
-	OAK(FletchableLog.OAK_SHORTBOW, FletchableLog.OAK_LONGBOW, FletchableLog.OAK_SHAFT),
+	OAK(FletchableLog.OAK_SHORTBOW, FletchableLog.OAK_LONGBOW, FletchableLog.OAK_SHAFT, FletchableLog.OAK_SHIELD),
 	REDWOOD(FletchableLog.ARROW_SHAFT);
 
 
