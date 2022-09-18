@@ -73006,3 +73006,25 @@
   name: "Epic's crown"
   description: "Who said I'd never be royal?"
   shopValue: 6000
+- id: 29163
+  name: "Bandos chestplate (g)"
+  description: "A sturdy chest plate."
+  shopValue: 10020000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+- id: 29164
+  name: "Bandos tassets (g)"
+  description: "A sturdy pair of tassets."
+  shopValue: 10290000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+- id: 29165
+  name: "Bandos boots (g)"
+  description: "Some sturdy boots."
+  shopValue: 500000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
