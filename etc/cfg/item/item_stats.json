@@ -68708,62 +68708,6 @@
       "slot": 1
     }
   },
-  "28721": {
-    "name": "Dr Cape (White)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28722": {
-    "name": "Dr Cape (Neon Green)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28723": {
-    "name": "Dr Cape (Neon Pink)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28724": {
-    "name": "Dr Cape (Neon Blue)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28725": {
-    "name": "Dr Cape (Neon Purple)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28726": {
-    "name": "Dr Cape (Neon Yellow)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
-  "28727": {
-    "name": "Dr Cape (Neon Teal)",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
   "28221": {
     "name": "Purple Santa hat",
     "equipable": true,
@@ -68957,6 +68901,62 @@
       "dcrush": 19,
       "drange": 15,
       "prayer": 1
+    }
+  },
+  "28721": {
+    "name": "Dr Cape (White)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28722": {
+    "name": "Dr Cape (Neon Green)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28723": {
+    "name": "Dr Cape (Neon Pink)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28724": {
+    "name": "Dr Cape (Neon Blue)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28725": {
+    "name": "Dr Cape (Neon Purple)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28726": {
+    "name": "Dr Cape (Neon Yellow)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28727": {
+    "name": "Dr Cape (Neon Teal)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
     }
   }
 }
