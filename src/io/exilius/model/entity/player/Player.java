@@ -55,9 +55,9 @@ import io.exilius.content.items.pouch.HerbSack;
 import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.itemskeptondeath.perdu.PerduLostPropertyShop;
 import io.exilius.content.lootbag.LootingBag;
-import io.exilius.content.minigames.TBD.TBDConstants;
-import io.exilius.content.minigames.TBD.TBDContainer;
-import io.exilius.content.minigames.TBD.instance.TBDInstance;
+//import io.exilius.content.minigames.TBD.TBDConstants;
+//import io.exilius.content.minigames.TBD.TBDContainer;
+//import io.exilius.content.minigames.TBD.instance.TBDInstance;
 import io.exilius.content.minigames.bounty_hunter.BountyHunter;
 import io.exilius.content.minigames.fight_cave.FightCave;
 import io.exilius.content.minigames.inferno.Inferno;
@@ -513,6 +513,7 @@ public class Player extends Entity {
     // Instances..
     private PlayerParty party = null;
     private final TobContainer tobContainer = new TobContainer(this);
+    //private final TBDContainer TBDContainer = new TBDContainer(this);
     private final TeleportInterface teleportInterface = new TeleportInterface(this);
     private final Questing questing = new Questing(this);
     private final NotificationsTab notificationsTab = new NotificationsTab(this);
@@ -4193,13 +4194,13 @@ public class Player extends Entity {
 
             getAttributes().removeBoolean(TobInstance.TOB_DEAD_ATTR_KEY); // Remove cause not in TOB anymore
         }
-        if (getAttributes().getBoolean(TBDInstance.TBD_DEAD_ATTR_KEY, false)) {
-            if (Boundary.isIn(this, TBDConstants.ALL_BOUNDARIES) && getInstance() != null) {
-                return;
-            }
-
-            getAttributes().removeBoolean(TBDInstance.TBD_DEAD_ATTR_KEY); // Remove cause not in TOB anymore
-        }
+//        if (getAttributes().getBoolean(TBDInstance.TBD_DEAD_ATTR_KEY, false)) {
+//            if (Boundary.isIn(this, TBDConstants.ALL_BOUNDARIES) && getInstance() != null) {
+//                return;
+//            }
+//
+//            getAttributes().removeBoolean(TBDInstance.TBD_DEAD_ATTR_KEY); // Remove cause not in TOB anymore
+//        }
 
         // Degrade items when hitting by normal hits
         if (h == Hitmark.HIT || h == Hitmark.MISS) {
@@ -5436,9 +5437,9 @@ public class Player extends Entity {
     public TobContainer getTobContainer() {
         return tobContainer;
     }
-    public TBDContainer getTBDContainer() {
-        return TBDContainer;
-    }
+//    public TBDContainer getTBDContainer() {
+//        return TBDContainer;
+//    }
 
     public boolean inParty(String type) {
         return getParty() != null && getParty().isType(type);

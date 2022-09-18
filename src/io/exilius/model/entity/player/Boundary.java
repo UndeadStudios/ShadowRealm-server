@@ -1,13 +1,13 @@
 package io.exilius.model.entity.player;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
-
 import com.google.common.base.Preconditions;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.npc.NPC;
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * 
@@ -520,7 +520,7 @@ public class Boundary {
 	public static final Boundary THEATRE_LOBBY_ENTRANCE = new Boundary(3058, 9952, 3061, 9960);
 	public static final Boundary TOURNY_LOBBY = new Boundary(3091, 3505, 3101, 3514);
 	public static final Boundary TOB_VERZIK = new Boundary(3150, 4293, 3184, 4329);
-	public static final Boundary TBD_VERZIK = new Boundary(3150, 4293, 3184, 4329);
+	//public static final Boundary TBD_VERZIK = new Boundary(3250, 4293, 3284, 4329);
 
 	/**
 	 * Raids bosses
