@@ -87,77 +87,57 @@ public class ChangeAppearance implements PacketType {
 			return;
 		}
 		c.interruptActions();
-		final int gender = c.getInStream().readSignedByte();
-		if (!c.canChangeAppearance)
-			return;
-		if (gender != 0 && gender != 1)
-			return;
-
-		final int[] apperances = new int[MALE_VALUES.length]; // apperance's
-																// value
-		// check
-		for (int i = 0; i < apperances.length; i++) {
-			int value = c.getInStream().readSignedByte();
-			if (value < (gender == 0 ? MALE_VALUES[i][0] : FEMALE_VALUES[i][0]) || value > (gender == 0 ? MALE_VALUES[i][1] : FEMALE_VALUES[i][1]))
-				value = (gender == 0 ? MALE_VALUES[i][0] : FEMALE_VALUES[i][0]);
-			apperances[i] = value;
-		}
-
-		final int[] colors = new int[ALLOWED_COLORS.length]; // color value
-																// check
-		for (int i = 0; i < colors.length; i++) {
-			int value = c.getInStream().readSignedByte();
-			if (value < ALLOWED_COLORS[i][0] || value > ALLOWED_COLORS[i][1])
-				value = ALLOWED_COLORS[i][0];
-			colors[i] = value;
-		}
+		int gender = c.getInStream().readSignedByte();
+		int head = c.getInStream().readSignedByte();
+		int jaw = c.getInStream().readSignedByte();
+		int torso = c.getInStream().readSignedByte();
+		int arms = c.getInStream().readSignedByte();
+		int hands = c.getInStream().readSignedByte();
+		int legs = c.getInStream().readSignedByte();
+		int feet = c.getInStream().readSignedByte();
+		int hairColour = c.getInStream().readSignedByte();
+		int torsoColour = c.getInStream().readSignedByte();
+		int legsColour = c.getInStream().readSignedByte();
+		int feetColour = c.getInStream().readSignedByte();
+		int skinColour = c.getInStream().readSignedByte();
 
 		if (c.canChangeAppearance) {
+
+
 			c.playerAppearance[0] = gender; // gender
-			c.playerAppearance[6] = apperances[6]; // feet
-			c.playerAppearance[7] = apperances[1]; // beard
-			c.playerAppearance[8] = colors[0]; // hair colour
-			c.playerAppearance[9] = colors[1]; // torso colour
-			c.playerAppearance[10] = colors[2]; // legs colour
-			c.playerAppearance[11] = colors[3]; // feet colour
-			
-			if(apperances[0] < 0) // head
-				c.playerAppearance[1] = apperances[0] + 256;
+			c.playerAppearance[6] = feet; // feet
+			c.playerAppearance[7] = jaw; // beard
+			c.playerAppearance[8] = hairColour; // hair colour
+			c.playerAppearance[9] = torsoColour; // torso colour
+			c.playerAppearance[10] = legsColour; // legs colour
+			c.playerAppearance[11] = feetColour; // feet colour
+			c.playerAppearance[12] = skinColour; // skin colour
+			if (head < 0) // head
+				c.playerAppearance[1] = head + 256;
 			else
-				c.playerAppearance[1] = apperances[0];
-			if(apperances[2] < 0)
-				c.playerAppearance[2] = apperances[2] + 256;
+				c.playerAppearance[1] = head;
+			if (torso < 0)
+				c.playerAppearance[2] = torso + 256;
 			else
-				c.playerAppearance[2] = apperances[2];
-			if(apperances[3] < 0)
-				c.playerAppearance[3] = apperances[3] + 256;
+				c.playerAppearance[2] = torso;
+			if (arms < 0)
+				c.playerAppearance[3] = arms + 256;
 			else
-				c.playerAppearance[3] = apperances[3];
-			if(apperances[4] < 0)
-				c.playerAppearance[4] = apperances[4] + 256;
+				c.playerAppearance[3] = arms;
+			if (hands < 0)
+				c.playerAppearance[4] = hands + 256;
 			else
-				c.playerAppearance[4] = apperances[4];
-			if(apperances[5] < 0)
-				c.playerAppearance[5] = apperances[5] + 256;
+				c.playerAppearance[4] = hands;
+			if (legs < 0)
+				c.playerAppearance[5] = legs + 256;
 			else
-				c.playerAppearance[5] = apperances[5];
-			
-			if (colors[4] == 8 || colors[4] == 9 || colors[4] == 10) {
-				//if (c.getHolidayStages().getStage("Halloween") < 6) {
-				if (c.amDonated < 10) {
-					//c.sendMessage("Only those whom entered at the dark times of halloween may use this skin.");
-					c.sendMessage("You must be a donator to use these skin colors.");
-					return;
-				} else {
-					c.playerAppearance[12] = colors[4]; // skin colour
-				}
-			} else {
-				c.playerAppearance[12] = colors[4]; // skin colour
-			}
+				c.playerAppearance[5] = legs;
 
 			c.getPA().removeAllWindows();
 			c.getPA().requestUpdates();
 			c.canChangeAppearance = false;
+
+
 		}
 	}
 
