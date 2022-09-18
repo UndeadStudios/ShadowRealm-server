@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 public class Yell extends Command {
 
 	private static final Right[] PERMITTED = { Right.REGULAR_DONATOR, Right.EXTREME_DONOR, Right.LEGENDARY_DONATOR, Right.DIAMOND_CLUB,
-												Right.ONYX_CLUB,Right.Mystic_Club, Right.HELPER, Right.MODERATOR, Right.ADMINISTRATOR,
+												Right.ONYX_CLUB,Right.Mystic_Club, Right.Mythic_Club, Right.HELPER, Right.MODERATOR, Right.ADMINISTRATOR,
 												Right.OWNER, Right.GAME_DEVELOPER, Right.YOUTUBER, Right.HITBOX };
 
 	private static final String[] ILLEGAL_ARGUMENTS = { "<img", "@cr", "<tran", "#url#", "<shad", "<str",

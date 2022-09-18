@@ -26,7 +26,7 @@ public enum Title implements Comparator<Title> {
 	CUSTOM("Custom", 0, TitleCurrency.NONE, new TitleRequirement() {
 		@Override
 		public boolean meetsStandard(Player player) {
-			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.Mystic_Club) || player.getRights().isOrInherits(Right.MODERATOR);
+			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.Mystic_Club)  || player.getRights().isOrInherits(Right.Mythic_Club) || player.getRights().isOrInherits(Right.MODERATOR);
 		}
 	}, "Have the option of choosing your own 16-character title. You must be a legendary donator or more to display this title."),
 	
@@ -52,13 +52,25 @@ public enum Title implements Comparator<Title> {
 			return player.getRights().isOrInherits(Right.DIAMOND_CLUB);
 		}
 	}, "This title is for DIAMOND CLUB only. You must be in the ONYX CLUB to purchase and display this title."),
-	
+
 	ONYX_CLUB("Onyx Club", 0, TitleCurrency.NONE, new TitleRequirement() {
 		@Override
 		public boolean meetsStandard(Player player) {
 			return player.getRights().isOrInherits(Right.ONYX_CLUB);
 		}
 	}, "This title is for ONYX CLUB only. You must be in the ONYX CLUB to purchase and display this title."),
+	Mythic_CLUB("Mythic Club", 0, TitleCurrency.NONE, new TitleRequirement() {
+		@Override
+		public boolean meetsStandard(Player player) {
+			return player.getRights().isOrInherits(Right.Mythic_Club);
+		}
+	}, "This title is for Mythic CLUB only. You must be in the Mythic CLUB to purchase and display this title."),
+	Mystic_CLUB("Mystic Club", 0, TitleCurrency.NONE, new TitleRequirement() {
+		@Override
+		public boolean meetsStandard(Player player) {
+			return player.getRights().isOrInherits(Right.Mystic_Club);
+		}
+	}, "This title is for Mystic CLUB only. You must be in the Mystic CLUB to purchase and display this title."),
 
 
 	HELPER("Helper", 0, TitleCurrency.NONE, new TitleRequirement() {
@@ -296,7 +308,7 @@ public enum Title implements Comparator<Title> {
 	 * Represents a single title.
 	 * 
 	 * @param name the name of the title
-	 * @param color the color of each character
+	 * @param //color the color of each character
 	 * @param currency the currency used to purchase
 	 * @param cost the cost, or amount, of currency required to purchase
 	 * @param requirement the requirement to purcahse or display

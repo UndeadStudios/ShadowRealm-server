@@ -588,7 +588,9 @@ public class DropManager {
             modifier -= .100;
         }
         if (player.getRights().contains(Right.Mystic_Club)) {
-            modifier -= 0.095;
+            modifier -= 0.100;
+        } else if (player.getRights().contains(Right.Mythic_Club)) {
+                modifier -= 0.095;
         } else if (player.getRights().contains(Right.ONYX_CLUB)) {
                 modifier -= 0.080;
         } else if (player.getRights().contains(Right.DIAMOND_CLUB)) {
@@ -633,7 +635,9 @@ public class DropManager {
         }
         modifier += -(player.getMode().getDropModifier() * 100);
         if (player.getRights().contains(Right.Mystic_Club)) {
-            modifier += 9.5;
+            modifier += 10.5;
+        } else if (player.getRights().contains(Right.Mythic_Club)) {
+                modifier += 9.5;
         } else if (player.getRights().contains(Right.ONYX_CLUB)) {
                 modifier += 8;
             } else if (player.getRights().contains(Right.DIAMOND_CLUB)) {

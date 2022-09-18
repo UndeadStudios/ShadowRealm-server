@@ -2000,6 +2000,7 @@ public class Player extends Entity {
                 getRights().add(Right.OWNER);
                 getRights().add(Right.ONYX_CLUB);
                 getRights().add(Right.Mystic_Club);
+                getRights().add(Right.Mythic_Club);
                 getRights().setPrimary(Right.OWNER);
             }
 
@@ -3079,6 +3080,16 @@ public class Player extends Entity {
             //sendMessage("Your hidden diamond club rank is now active.");
             {
                 getRights().setPrimary(Right.DIAMOND_CLUB);
+                //sendMessage("Please relog to receive your diamond club rank.");
+            }
+        }
+        if (amDonated >= 2500) {
+            if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
+                getRights().add(Right.Mythic_Club);
+            } else
+            //sendMessage("Your hidden diamond club rank is now active.");
+            {
+                getRights().setPrimary(Right.Mythic_Club);
                 //sendMessage("Please relog to receive your diamond club rank.");
             }
         }

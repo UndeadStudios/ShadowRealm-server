@@ -6,6 +6,7 @@ enum RankUpgrade {
     LEGENDARY_DONATOR(Right.LEGENDARY_DONATOR,250),
     DIAMOND_CLUB(Right.DIAMOND_CLUB, 500),
     ONYX_CLUB(Right.ONYX_CLUB, 1000),
+    Mythic_Club(Right.Mythic_Club, 2500),
     Mystic_Club(Right.Mystic_Club, 5000);
 
     /**
