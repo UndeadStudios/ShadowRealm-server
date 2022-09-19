@@ -73135,3 +73135,53 @@
   requirements:
     - skill: "DEFENCE"
       level: 65
+- id: 27226
+  name: "Masori mask"
+  description: "An ancient mask once worn by a powerful ranger."
+  shopValue: 800000
+  noteId: 27227
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "RANGED"
+      level: 80
+    - skill: "DEFENCE"
+      level: 30
+- id: 27227
+  name: "Masori mask"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27226
+  noted: true
+  stackable: true
+- id: 27229
+  name: "Masori body"
+  description: "Ancient armour once worn by a powerful ranger."
+  shopValue: 1200000
+  noteId: 27230
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "RANGED"
+      level: 80
+    - skill: "DEFENCE"
+      level: 30
+- id: 27230
+  name: "Masori body"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27229
+  noted: true
+  stackable: true
+- id: 27232
+  name: "Masori chaps"
+  description: "Ancient armour once worn by a powerful ranger."
+  shopValue: 1000000
+  noteId: 27233
+  requirements:
+    - skill: "RANGED"
+      level: 80
+    - skill: "DEFENCE"
+      level: 30
+- id: 27233
+  name: "Masori chaps"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27232
+  noted: true
+  stackable: true

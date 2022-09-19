@@ -69046,5 +69046,52 @@
     "equipment": {
       "slot": 1
     }
+  },
+  "27226": {
+    "name": "Masori mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0,
+      "amagic": -1,
+      "arange": 12,
+      "dstab": 3,
+      "dslash": 4,
+      "dcrush": 3,
+      "dmagic": 6,
+      "drange": 4,
+      "prayer": 0
+    }
+  },
+  "27229": {
+    "name": "Masori body",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 4,
+      "amagic": -4,
+      "arange": 73,
+      "dstab": 37,
+      "dslash": 35,
+      "dcrush": 38,
+      "dmagic": 25,
+      "drange": 33,
+      "prayer": 0
+    }
+  },
+  "27232": {
+    "name": "Masori chaps",
+    "equipable": true,
+    "weight": 5.0,
+    "equipment": {
+      "slot": 7,
+      "amagic": -2,
+      "arange": 27,
+      "dstab": 26,
+      "dslash": 24,
+      "dcrush": 29,
+      "dmagic": 19,
+      "drange": 22,
+      "prayer": 0
+    }
   }
 }
