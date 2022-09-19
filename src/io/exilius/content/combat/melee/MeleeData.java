@@ -404,6 +404,13 @@ public class MeleeData {
 		if (weaponName.contains("hasta") || weaponName.contains("spear")) {
 			return 400;
 		}
+		if (weaponName.contains("warspear")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case CONTROLLED:
+				case DEFENSIVE:
+					return 2081;
+			}
+		}
 		if (weaponName.contains("scim")) {
 				return 451;
 			}
@@ -444,8 +451,8 @@ public class MeleeData {
 		case 12848:
 		case 4153: // granite maul
 			return 1665;
-		case 4726: // guthan
-			return 2081;
+//		case 4726: // guthan
+//			return 2081;
 		case 4747: // torag
 			return 0x814;
 		case 4710: // ahrim
