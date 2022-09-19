@@ -72008,6 +72008,20 @@
   noteId: 26219
   noted: true
   stackable: true
+- id: 27275
+  name: "Tumeken's shadow"
+  description: "An ancient staff created using a higher power.."
+  shopValue: 7000000
+  noteId: 27276
+  requirements:
+    - skill: "MAGIC"
+      level: 85
+- id: 27276
+  name: "Tumeken's shadow"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27275
+  noted: true
+  stackable: true
 - id: 27277
   name: "Tumeken's shadow (uncharged)"
   description: "An ancient staff created using a higher power.."
