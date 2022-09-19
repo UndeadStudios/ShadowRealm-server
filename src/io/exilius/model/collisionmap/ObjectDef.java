@@ -207,9 +207,10 @@ public final class ObjectDef {
 					xLength = buffer.readUnsignedByte();
 				else if (opcode == 15)
 					yLength = buffer.readUnsignedByte();
-				else if (opcode == 17)
+				else if (opcode == 17) {
 					aBoolean767 = false;
-				else if (opcode == 18)
+					walkType = 0;
+				}else if (opcode == 18)
 					aBoolean757 = false;
 				else if (opcode == 19) {
 					i = buffer.readUnsignedByte();
@@ -225,7 +226,9 @@ public final class ObjectDef {
 					anInt781 = buffer.readUnsignedWord();
 					if (anInt781 == 65535)
 						anInt781 = -1;
-				} else if (opcode == 28)
+				} else if (opcode == 27)
+					walkType = 1;
+				 else if (opcode == 28)
 					anInt775 = buffer.readUnsignedByte();
 				else if (opcode == 29)
 					aByte737 = buffer.readSignedByte();
@@ -253,8 +256,8 @@ public final class ObjectDef {
 						/* originalTexture[textureId] = (short) */buffer.readUnsignedWord();
 						/* modifiedTexture[textureId] = (short) */buffer.readUnsignedWord();
 					}
-				} else if (opcode == 60)
-					anInt746 = buffer.readUnsignedWord();
+				} else if (opcode == 61)
+				opcode61 = buffer.readUnsignedWord();
 				else if (opcode == 62)
 					aBoolean751 = true;
 				else if (opcode == 64)
@@ -308,7 +311,9 @@ public final class ObjectDef {
 				} else if(opcode == 81) {
 					buffer.readUnsignedByte();
 				} else if(opcode == 82) {
-					buffer.readUnsignedWord();
+				anInt746 = buffer.readUnsignedWord();
+			} else if (opcode == 89){
+				field3621 = false;
 				}
 		} while (true);
 		if (i == -1) {
@@ -368,6 +373,7 @@ public final class ObjectDef {
 	public boolean aBoolean762;
 	public boolean aBoolean764;
 	public boolean aBoolean767;
+	public int walkType = 2;
 	public int anInt768;
 	private static int cacheIndex;
 	private int[] anIntArray773;
@@ -376,7 +382,9 @@ public final class ObjectDef {
 	public int anInt738;
 	public int anInt740; // Width
 	public int anInt745;
+	private int opcode61;
 	public int anInt783;
+	private boolean field3621;
 	public int anInt772; // Height
 	private int[] anIntArray776;
 	public int anInt760;
