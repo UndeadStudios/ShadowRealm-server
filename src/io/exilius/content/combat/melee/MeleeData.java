@@ -71,7 +71,7 @@ public class MeleeData {
 			c.playerRunIndex = 7327;
 			return;
 		}
-		
+
 		if (weaponName.contains("bulwark")) {
 			c.playerStandIndex = 7508;
 			c.playerWalkIndex = 7510;
@@ -109,12 +109,6 @@ public class MeleeData {
 			return;
 		}
 
-		if (weaponName.contains("scythe") ) {
-			c.playerStandIndex = 8057;
-			c.playerWalkIndex = 1146;
-			c.playerRunIndex = 1210;
-			return;
-		}
 
 		if (weaponName.contains("banner")) {
 			c.playerStandIndex = 1421;
@@ -189,6 +183,7 @@ public class MeleeData {
 			return;
 		}
 
+
 		switch (weaponId) {
 		case Items.DRAGON_HUNTER_LANCE:
 			c.playerStandIndex = 813;
@@ -199,6 +194,15 @@ public class MeleeData {
 			c.playerTurn90CWIndex = 1207;
 			c.playerTurn90CCWIndex = 1208;
 			break;
+			case 10735:
+			case 1419:
+			case 26399:
+			case Items.SCYTHE_OF_OSIRIS:
+			case Items.SCYTHE_OF_VITUR:
+				c.playerStandIndex = 8057;
+				c.playerWalkIndex = 1146;
+				c.playerRunIndex = 1210;
+				break;
 		case 7158:
 			c.playerStandIndex = 2065;
 			c.playerWalkIndex = 2064;
@@ -297,15 +301,7 @@ public class MeleeData {
 					return 8056;
 			}
 		}
-		if (weaponName.contains("scythe of Osiris")) {
-			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
-				case ACCURATE:
-				case AGGRESSIVE:
-				case CONTROLLED:
-				case DEFENSIVE:
-					return 8056;
-			}
-		}
+
 		if (weaponName.contains("ghrazi rapier")) {
 			return 8145;
 		}
@@ -419,7 +415,15 @@ public class MeleeData {
 				return 245;
 		case 13263:
 			return 3298;
-
+			case 26399:
+			case Items.SCYTHE_OF_OSIRIS:
+				switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+					case ACCURATE:
+					case AGGRESSIVE:
+					case CONTROLLED:
+					case DEFENSIVE:
+						return 8056;
+				}
 		case 6522:
 			return 2614;
 		case 11959:
@@ -441,7 +445,7 @@ public class MeleeData {
 		case 4153: // granite maul
 			return 1665;
 		case 4726: // guthan
-			return 2080;
+			return 2081;
 		case 4747: // torag
 			return 0x814;
 		case 4710: // ahrim

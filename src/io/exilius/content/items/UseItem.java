@@ -571,9 +571,9 @@ public class UseItem {
 				c.sendMessage("You do not have the required items");
 			}
 		}
-		if (itemUsed == 20798 && useWith == 21003 || itemUsed == 21003 && useWith == 20798) {
-			if (c.getItems().playerHasItem(20798) && c.getItems().playerHasItem(21003)) {
-				c.getItems().deleteItem(20798, 1);
+		if (itemUsed == 27098 && useWith == 21003 || itemUsed == 21003 && useWith == 20798) {
+			if (c.getItems().playerHasItem(27098) && c.getItems().playerHasItem(21003)) {
+				c.getItems().deleteItem(27098, 1);
 				c.getItems().deleteItem(21003, 1);
 				c.getItems().addItem(27100, 1);
 				c.sendMessage("You have ornamented you're elder Maul");

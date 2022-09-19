@@ -7,13 +7,12 @@ public class WeaponDataConstants {
     // [[shared, stab], [shared, slash], [shared, crush], [defensive, stab]]
     public static final int[] SPEARS = {
             Items.BRONZE_SPEAR, Items.IRON_SPEAR, Items.STEEL_SPEAR, Items.BLACK_SPEAR, Items.MITHRIL_SPEAR, Items.ADAMANT_SPEAR, Items.RUNE_SPEAR, Items.DRAGON_SPEAR,
-            Items.VESTAS_SPEAR, Items.ANGER_SPEAR, Items.BONE_SPEAR, Items.LEAF_BLADED_SPEAR, Items.GUTHANS_WARSPEAR, Items.ZAMORAKIAN_SPEAR, Items.DRAGON_HUNTER_LANCE,
-
+            Items.VESTAS_SPEAR, Items.ANGER_SPEAR, Items.BONE_SPEAR, Items.LEAF_BLADED_SPEAR, Items.ZAMORAKIAN_SPEAR, Items.DRAGON_HUNTER_LANCE,
+            Items.GUTHANS_WARSPEAR,
             // Hasta
             Items.BRONZE_HASTA, Items.IRON_HASTA, Items.STEEL_HASTA, Items.MITHRIL_HASTA, Items.ADAMANT_HASTA, Items.RUNE_HASTA, Items.DRAGON_HASTA,
             Items.GILDED_HASTA, Items.ZAMORAKIAN_HASTA,
     };
-
     // [[accurate, slash], [aggressive, slash], [shared, stab], [defensive, slash]]
     public static final int[] SLASH_SWORDS = {
             // Scimitars

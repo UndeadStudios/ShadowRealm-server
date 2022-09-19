@@ -1,17 +1,18 @@
 package io.exilius.model.collisionmap;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.zip.GZIPInputStream;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.world.objects.GlobalObject;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.zip.GZIPInputStream;
 
 public class Region {
 
@@ -488,9 +489,10 @@ public class Region {
             Arrays.stream(data).forEach(Region::loadMap);
             Arrays.asList(EXISTANT_OBJECTS).forEach(object -> RegionProvider.getGlobal().get(object.getX(), object.getY()).addWorldObject(object));
             log.info("Loaded " + customMapFiles + " custom maps.");
-            log.info("Error loading map files: " + errors.toString());
-        } catch (Exception e) {
+             } catch (Exception e) {
             e.printStackTrace();
+            log.info("Error loading map files: " + errors.toString());
+
         }
 
         for (int x = Boundary.INFERNO.getMinimumX(); x < Boundary.INFERNO.getMaximumX(); x++) {
@@ -592,7 +594,7 @@ public class Region {
         //e.printStackTrace();
     }
 
-    private static final int[][] fixClips = {{2207, 3057}};
+    private static final int[][] fixClips = {{2207, 3057, 12854, 12856, 13368, 13367, 12855, 13111, 13112}};
 
     private static void loadMaps(int regionId, ByteStream str1, ByteStream str2) {
         int absX = (regionId >> 8) * 64;

@@ -198,7 +198,7 @@ public abstract class HitDispatcher {
                         attacker.getHealth().increase(damage);
                     }
                     if (guthanGfxFlag) {
-                        defender.startGraphic(new Graphic(399));
+                        defender.startGraphic(new Graphic(398));
                     }
                 }
             }

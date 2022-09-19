@@ -1,9 +1,5 @@
 package io.exilius.content.dailyrewards;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
@@ -15,6 +11,10 @@ import io.exilius.model.items.ImmutableItem;
 import io.exilius.util.Misc;
 import io.exilius.util.logging.global.DailyRewardsCompletedLog;
 import io.exilius.util.logging.player.DailyRewardLog;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class DailyRewards {
 
@@ -183,7 +183,7 @@ public class DailyRewards {
         return streak;
     }
 
-    void setStreak(int streak) {
+    public void setStreak(int streak) {
         this.streak = streak;
     }
 }
