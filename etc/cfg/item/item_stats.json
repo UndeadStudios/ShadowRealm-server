@@ -68158,6 +68158,48 @@
       "aspeed": 5
     }
   },
+  "27287": {
+    "name": "Keris partisan of corruption",
+    "equipable": true,
+    "weight": 4,
+    "equipment": {
+      "slot": 3,
+      "astab": 58,
+      "aslash": -2,
+      "acrush": 57,
+      "amagic": 2,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 3,
+      "str": 45,
+      "aspeed": 4
+    }
+  },
+  "27291": {
+    "name": "Keris partisan of sun",
+    "equipable": true,
+    "weight": 4,
+    "equipment": {
+      "slot": 3,
+      "astab": 58,
+      "aslash": -2,
+      "acrush": 57,
+      "amagic": 2,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 3,
+      "str": 45,
+      "aspeed": 4
+    }
+  },
   "27275": {
     "name": "Tumeken's shadow",
     "equipable": true,
