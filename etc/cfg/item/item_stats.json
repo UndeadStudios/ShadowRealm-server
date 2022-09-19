@@ -68158,6 +68158,27 @@
       "aspeed": 5
     }
   },
+  "27275": {
+    "name": "Tumeken's shadow",
+    "equipable": true,
+    "weight": 4,
+    "equipment": {
+      "slot": 3,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": 35,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 20,
+      "drange": 0,
+      "prayer": 1,
+      "str": 0,
+      "aspeed": 5
+    }
+  },
   "27277": {
     "name": "Tumeken's shadow (uncharged)",
     "equipable": true,
