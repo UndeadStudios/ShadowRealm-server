@@ -638,7 +638,7 @@ public class Region {
         }
         int objectId = -1;
         int incr;
-        while ((incr = str1.getUSmart()) != 0) {
+        while ((incr = str1.readUnsignedIntSmartShortCompat()) != 0) {
             objectId += incr;
             int location = 0;
             int incr2;
