@@ -33,12 +33,13 @@ public enum Right implements Comparator<Right> {
 	YOUTUBER(15, "FE0018"),
 	GAME_DEVELOPER(16, "544FBB"),
 	OSRS(23, "437100"),
-	Mythic_Club(31, "437100", ONYX_CLUB),
+	Mythic_Club(21, "437100", ONYX_CLUB),
 	ROGUE(25, "437100"),
 	HC_IRONMAN(10, "60201f"),
 	ROGUE_IRONMAN(26, "60201f"),
 	ROGUE_HARDCORE_IRONMAN(27, "60201f"),
 	GROUP_IRONMAN(28, "60201f"),
+
 	//Mythic_Club(4, "F5FF0F", ONYX_CLUB),
 	Mystic_Club(29, "60201f", Mythic_Club),
 

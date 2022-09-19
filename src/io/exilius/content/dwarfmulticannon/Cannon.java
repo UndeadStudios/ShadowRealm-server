@@ -1,8 +1,5 @@
 package io.exilius.content.dwarfmulticannon;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.combat.Hitmark;
@@ -24,6 +21,9 @@ import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static io.exilius.content.dwarfmulticannon.CannonConstants.*;
 
@@ -378,6 +378,8 @@ public class Cannon {
     }
 
     private int getCannonMaxAmmoCount(Player player) {
+            if (player.amDonated >= 2500)
+            return 80;
             if (player.amDonated >= 1000)
                 return 60;
             if (player.amDonated >= 500)

@@ -103,8 +103,13 @@ public class PkpRewards {
                         killer.pkp += bonuspkp;
                         killer.sendMessage("[@red@PKP@bla@] You are rewarded an extra@red@ " + bonuspkp + " pkp @bla@for your donator rank.");
 
-                    } else if (killer.amDonated >= 1000) { //onyx club
+                    } else if (killer.amDonated >= 1000 && killer.amDonated <= 2499) { //onyx club
                         int bonuspkp = 12;
+                        killer.pkp += bonuspkp;
+                        killer.sendMessage("[@red@PKP@bla@] You are rewarded an extra@red@ " + bonuspkp + " pkp @bla@for your donator rank.");
+
+                    } else if (killer.amDonated >= 2500) { //mystic club
+                        int bonuspkp = 15;
                         killer.pkp += bonuspkp;
                         killer.sendMessage("[@red@PKP@bla@] You are rewarded an extra@red@ " + bonuspkp + " pkp @bla@for your donator rank.");
                     }

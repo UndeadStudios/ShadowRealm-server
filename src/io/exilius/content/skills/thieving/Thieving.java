@@ -1,21 +1,10 @@
 package io.exilius.content.skills.thieving;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.google.common.collect.Lists;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
-import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
-import io.exilius.content.achievement_diary.impl.DesertDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.Items;
@@ -28,6 +17,12 @@ import io.exilius.model.items.GameItem;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.RandomUtils;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * A representation of the thieving skill. Support for both object and npc actions will be supported.
@@ -94,9 +89,6 @@ public class Thieving {
 //		}
 		player.getEventCalendar().progress(EventChallenge.THIEVE_X_STALLS);
 		switch (stall) {
-		case Food:
-			player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.TEA_STALL);
-			break;
 		case Crafting:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_CAKE);

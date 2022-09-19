@@ -162,8 +162,8 @@ public class UseItem {
 		ObjectDef def = ObjectDef.getObjectDef(objectID);
 
 		if (def != null) {
-			
-			if (def.name != null && def.name.toLowerCase().contains("bank")) {
+			//unnote noted items fix? restart later and test @sniper
+			if (def.name != null && def.name.toLowerCase().contains("bank") && def.name.toLowerCase().contains("trading post") && def.name.toLowerCase().contains("bank booth")) {
 					//ItemDefinition definition = ItemDefinition.forId(itemId);
 					boolean stackable = ItemDef.forId(itemId).isStackable();
 					if (stackable) {

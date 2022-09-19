@@ -1,10 +1,5 @@
 package io.exilius.model.entity.npc.actions;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import io.exilius.Server;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.godwars.God;
@@ -20,6 +15,11 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class NpcAggression {
 
@@ -170,7 +170,7 @@ public class NpcAggression {
                 case 11284:
                 case 11285:
                 case 11286:
-                    return 25;
+                    return 40;
                 case 135:
                     return 8;
             }

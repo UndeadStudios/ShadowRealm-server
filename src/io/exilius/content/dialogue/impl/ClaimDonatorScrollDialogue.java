@@ -1,12 +1,12 @@
 package io.exilius.content.dialogue.impl;
 
-import java.util.Arrays;
-import java.util.Optional;
-
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.player.Player;
+
+import java.util.Arrays;
+import java.util.Optional;
 
 public class ClaimDonatorScrollDialogue extends DialogueBuilder {
 
@@ -51,7 +51,9 @@ public class ClaimDonatorScrollDialogue extends DialogueBuilder {
             getPlayer().sendMessage("@blu@Your next donator rank is @red@Diamond Club");
         } else if (getPlayer().amDonated >= 500 && getPlayer().amDonated <= 999) {
             getPlayer().sendMessage("@blu@Your next donator rank is @red@Oynx Club");
-        }
+        } else if (getPlayer().amDonated >= 1000 && getPlayer().amDonated <= 2499) {
+        getPlayer().sendMessage("@blu@Your next donator rank is @red@Mystic Club");
+    }
     }
     
     public enum DonationScroll {

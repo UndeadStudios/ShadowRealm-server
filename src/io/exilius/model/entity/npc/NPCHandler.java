@@ -1,13 +1,5 @@
 package io.exilius.model.entity.npc;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 import com.google.common.base.Preconditions;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
@@ -45,10 +37,18 @@ import io.exilius.model.definitions.NpcDef;
 import io.exilius.model.definitions.NpcStats;
 import io.exilius.model.entity.npc.actions.LoadSpell;
 import io.exilius.model.entity.npc.data.AttackAnimation;
-import io.exilius.model.entity.player.*;
+import io.exilius.model.entity.player.Boundary;
+import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.entity.player.Position;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class NPCHandler {
 
@@ -1454,7 +1454,7 @@ public class NPCHandler {
             case 11284:
             case 11285:
             case 11286:
-                return 15;
+                return 40;
         case 8622: 
         case 8621: 
         case 8620: 

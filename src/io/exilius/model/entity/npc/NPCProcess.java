@@ -1,8 +1,5 @@
 package io.exilius.model.entity.npc;
 
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.bosses.*;
@@ -26,14 +23,14 @@ import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.npc.actions.NPCHitPlayer;
 import io.exilius.model.entity.npc.actions.NpcAggression;
 import io.exilius.model.entity.npc.data.RespawnTime;
-import io.exilius.model.entity.player.Boundary;
-import io.exilius.model.entity.player.Player;
-import io.exilius.model.entity.player.PlayerHandler;
-import io.exilius.model.entity.player.Position;
+import io.exilius.model.entity.player.*;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 public class NPCProcess {
 
@@ -609,6 +606,11 @@ public class NPCProcess {
                 }
                    // npc.unregister();
                     break;
+                    case 494:
+                      if  (!playerOwner.getSlayer().getTask().get().getPrimaryName().contains("kraken") && playerOwner.getRights().getPrimary() != Right.OWNER){
+                          playerOwner.getPA().movePlayer(new Coordinate(3080, 3510));
+                      }
+                        break;
                     case 3127:
                         playerOwner.getFightCave().stop();
                         break;

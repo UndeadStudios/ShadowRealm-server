@@ -113,7 +113,7 @@ public class Yell extends Command {
 			return 5;
 		} else if (player.amDonated >=100) {
 			return 15;
-		} else if (player.amDonated >=50) {
+		} else if (player.amDonated >=25) {
 			return 30;
 		} else {
 			return 60;

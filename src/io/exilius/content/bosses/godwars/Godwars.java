@@ -1,13 +1,13 @@
 package io.exilius.content.bosses.godwars;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import io.exilius.Server;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerAssistant;
 import io.exilius.util.Misc;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Godwars {
 
@@ -50,8 +50,10 @@ public class Godwars {
 				KC_REQUIRED = 8;
 			} else if (player.amDonated >= 500 && player.amDonated <= 999) { //diamond club
 				KC_REQUIRED = 6;
-			} else if (player.amDonated >= 1000) { //onyx
+			} else if (player.amDonated >= 1000 && player.amDonated <= 2499) {
 				KC_REQUIRED = 5;
+			} else if (player.amDonated >= 2500) { //onyx
+				KC_REQUIRED = 0;
 			}
 		if (killcount.get(god) >= KC_REQUIRED) {
 			killcount.put(god, killcount.get(god) - KC_REQUIRED);

@@ -1,13 +1,5 @@
 package io.exilius.content.skills.slayer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.IntPredicate;
-import java.util.stream.IntStream;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.Server;
@@ -33,6 +25,10 @@ import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.Range;
+
+import java.util.*;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 public class Slayer {
 
@@ -507,8 +503,11 @@ public class Slayer {
 							} else if (player.amDonated >= 500 && player.amDonated < 1000) {
 								points += 10;
 								player.sendMessage("You have received an additonal@red@ 10@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 1000) {
+							} else if (player.amDonated >= 1000 && player.amDonated < 2499) {
 								points += 12;
+								player.sendMessage("You have received an additonal@red@ 12@bla@ points for your donator rank.");
+							} else if (player.amDonated >= 2500) {
+								points += 15;
 								player.sendMessage("You have received an additonal@red@ 12@bla@ points for your donator rank.");
 							}
 						player.getQuestTab().updateInformationTab();
@@ -838,8 +837,10 @@ public class Slayer {
 			return 60;
 		} else if (player.amDonated >= 500 && player.amDonated <= 999) {
 			return 50;
-		} else if (player.amDonated >= 1000) {
-			return 40;
+		} else if (player.amDonated >= 1000 && player.amDonated <= 2499) {
+			return 35;
+		} else if (player.amDonated >= 2500 && player.amDonated <= 99999) {
+			return 0;
 		}
 		return 100;
 	}

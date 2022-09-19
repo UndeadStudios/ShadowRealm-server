@@ -1,10 +1,10 @@
 package io.exilius.content.commands.donator;
 
-import java.util.Optional;
-
 import io.exilius.content.commands.Command;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
+
+import java.util.Optional;
 
 public class Divine extends Command {
 
@@ -14,7 +14,7 @@ public class Divine extends Command {
 			return;
 		}
 
-		if (c.amDonated < 2500 && !c.getRights().isOrInherits(Right.ADMINISTRATOR)) {
+		if (c.amDonated < 5000 && !c.getRights().isOrInherits(Right.ADMINISTRATOR)) {
 			c.sendMessage("@red@You need to be a divine donator to do this command");
 			return;
 		}

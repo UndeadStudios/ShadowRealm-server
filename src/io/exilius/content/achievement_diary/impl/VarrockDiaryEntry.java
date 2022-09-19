@@ -12,7 +12,6 @@ public enum VarrockDiaryEntry {
 	EARTH_RUNES("Craft some earth runes"),
 	TELEPORT_ESSENCE_VAR("Have the wizard teleport you to the essence mine"),
 	MINE_ESSENCE("Mine some essence: %totalstage", 10),
-	TEA_STALL("Steal from the tea stall"),
 	BECOME_A_DANCER("Dance, dance, dance: %totalstage", 15),
 	MINE_IRON("Mine some iron ore: %totalstage", 10),
 	

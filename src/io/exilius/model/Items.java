@@ -16,6 +16,7 @@ public class Items {
     public static final int COMPLETIONIST_CAPE = 33056;
     public static final int NAME_CHANGE_SCROLL = 21259;
     public static final int CRYSTALLINE_SIGNET = 23943;
+    public static final int DRAGON_HUNTER_CROSSBOW_T = 25916;
 
     public static final int TOOLKIT = 1;
     public static final int CANNONBALL = 2;

@@ -90,7 +90,7 @@ public class Nex extends NPC {
 
 
     public void init() {
-        NPCSpawning.spawnNpc(11278, 2925, 5203, 0, 0, 70 );
+        NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
        }
 
     public static void spawnHealer() {
@@ -104,13 +104,13 @@ public class Nex extends NPC {
                 int maximumHealth = Nex.getHealth().getMaximumHealth();
                 int currentHealth = Nex.getHealth().getCurrentHealth();
                 int percentRemaining = (int)((double)currentHealth / (double)maximumHealth * 100.0D);
-                if (percentRemaining <= 60) {
+                if (percentRemaining <= 80) {
                     if (Misc.passedProbability(Range.between(0, percentRemaining), 10, true)) {
                         if (stage == 0) {
-                            NPCSpawning.spawnNpc(11283, 2914, 5214, 0, 0, 30);
-                            NPCSpawning.spawnNpc(11284, 2936, 5214, 0, 0, 30);
-                            NPCSpawning.spawnNpc(11285, 2914, 5192, 0, 0, 30);
-                            NPCSpawning.spawnNpc(11286, 2936, 5192, 0, 0, 30);
+                            NPCSpawning.spawn(11283, 2914, 5214, 0, 1, 45, true);
+                            NPCSpawning.spawn(11284, 2936, 5214, 0, 1, 45, true);
+                            NPCSpawning.spawn(11285, 2914, 5192, 0, 1, 45, true);
+                            NPCSpawning.spawn(11286, 2936, 5192, 0, 1, 45, true);
                             stage = 1;
                         }
 

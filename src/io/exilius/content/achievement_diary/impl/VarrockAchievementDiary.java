@@ -1,39 +1,18 @@
 package io.exilius.content.achievement_diary.impl;
 
+import io.exilius.content.achievement_diary.StatefulAchievementDiary;
+import io.exilius.model.entity.player.Player;
+
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import io.exilius.content.achievement_diary.StatefulAchievementDiary;
-import io.exilius.model.entity.player.Player;
-
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.ALOT_OF_EARTH;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.APOTHECARY_STRENGTH;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.BECOME_A_DANCER;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.CHAMPIONS_GUILD;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.COOK_LOBSTER;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.DRESS_FOR_SUCESS;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.EARTH_RUNES;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.FILL_VIAL;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.GRAND_TREE_TELEPORT;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.MINE_ESSENCE;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.MINE_IRON;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.OBSTACLE_PIPE;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.POTION_DECANT;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.PRAY_WITH_SMITE;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.PURCHASE_KITTEN;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.SMITH_RUNE_KNIFES;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.SMITH_STEEL_KNIFES;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.SUPER_COMBAT;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.TEA_STALL;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.TELEPORT_ESSENCE_VAR;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.VARROCK_ROOFTOP;
-import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.YEWS_AND_BURN;
+import static io.exilius.content.achievement_diary.impl.VarrockDiaryEntry.*;
 
 public final class VarrockAchievementDiary extends StatefulAchievementDiary<VarrockDiaryEntry> {
 	
-	public static final Set<VarrockDiaryEntry> EASY_TASKS = EnumSet.of(VARROCK_ROOFTOP,SMITH_STEEL_KNIFES,FILL_VIAL,EARTH_RUNES,TELEPORT_ESSENCE_VAR,MINE_ESSENCE,TEA_STALL,BECOME_A_DANCER,MINE_IRON);
+	public static final Set<VarrockDiaryEntry> EASY_TASKS = EnumSet.of(VARROCK_ROOFTOP,SMITH_STEEL_KNIFES,FILL_VIAL,EARTH_RUNES,TELEPORT_ESSENCE_VAR,MINE_ESSENCE,BECOME_A_DANCER,MINE_IRON);
 	
 	public static final Set<VarrockDiaryEntry> MEDIUM_TASKS = EnumSet.of(CHAMPIONS_GUILD,DRESS_FOR_SUCESS,APOTHECARY_STRENGTH,PURCHASE_KITTEN,GRAND_TREE_TELEPORT,POTION_DECANT);
 	

@@ -3090,7 +3090,7 @@ public class Player extends Entity {
             //sendMessage("Your hidden diamond club rank is now active.");
             {
                 getRights().setPrimary(Right.Mythic_Club);
-                //sendMessage("Please relog to receive your diamond club rank.");
+                //sendMessage("Please relog to receive your Mystic club rank.");
             }
         }
         if (amDonated >= 5000) {
@@ -3100,7 +3100,7 @@ public class Player extends Entity {
             //sendMessage("Your hidden diamond club rank is now active.");
             {
                 getRights().setPrimary(Right.Mystic_Club);
-                //sendMessage("Please relog to receive your diamond club rank.");
+                //sendMessage("Please relog to receive your Mystic club rank.");
             }
         }
         if (amDonated >= 1000) {

@@ -1,13 +1,5 @@
 package io.exilius.content.tradingpost;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.Server;
@@ -23,6 +15,12 @@ import io.exilius.model.items.ImmutableItem;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.player.TradingPostBuyLog;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -843,7 +841,10 @@ public class Listing {
 				} else if(c.amDonated >= 500 && c.amDonated <= 999 && total >= 10) { //diamond club
 					c.sendMessage("[@red@Trading Post@bla@] You cannot have more then 10 listings as a diamond club rank.");
 					return;
-				} else if(c.amDonated >= 1000 && total >= 11) { //onyx club
+				} else if(c.amDonated >= 1000 && c.amDonated <= 2499 && total >= 10) { //onyx club
+					c.sendMessage("[@red@Trading Post@bla@] You cannot have more then 10 listings as a diamond club rank.");
+					return;
+				} else if(c.amDonated >= 2500 && total >= 15) { //mystic club
 					c.sendMessage("[@red@Trading Post@bla@] You cannot have more then 11 listings as a onyx club rank.");
 					return;
 				}
