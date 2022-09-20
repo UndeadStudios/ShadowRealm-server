@@ -73199,3 +73199,86 @@
   noteId: 27232
   noted: true
   stackable: true
+- id: 27279
+  name: "Thread of elidinis"
+  description: "A spool of thread that gives off a divine energy."
+  shopValue: 14000
+  noteId: 27280
+- id: 27280
+  name: "Thread of elidinis"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27279
+  noted: true
+  stackable: true
+- id: 27281
+  name: "Divine rune pouch"
+  description: "A vessel used to store runes that's been imbued with the powers of Elidinis."
+  shopValue: 20000
+  noteId: 27282
+- id: 27282
+  name: "Divine rune pouch"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27281
+  noted: true
+  stackable: true
+- id: 27283
+  name: "Breach of the scarab"
+  description: "A jewel with a scarab etched upon it that radiates with power."
+  shopValue: 300000
+  noteId: 27284
+- id: 27284
+  name: "Breach of the scarab"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27283
+  noted: true
+  stackable: true
+- id: 27285
+  name: "Eye of the corruptor"
+  description: "A jewel with a symbol of destruction etched upon it that radiates with power."
+  shopValue: 300000
+  noteId: 27286
+- id: 27286
+  name: "Eye of the corruptor"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27285
+  noted: true
+  stackable: true
+- id: 27287
+  name: "Keris partisan of corruption"
+  description: "A mystical-feeling polearm imbued with destructive power."
+  shopValue: 300000
+  noteId: 27288
+  requirements:
+    - skill: "ATTACK"
+      level: 80
+- id: 27288
+  name: "Keris partisan of corruption"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27287
+  noted: true
+  stackable: true
+- id: 27289
+  name: "Jewel of the sun"
+  description: "A jewel with a symbol of the sun etched upon it that radiates with power."
+  shopValue: 300000
+  noteId: 27290
+- id: 27290
+  name: "Jewel of the sun"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27289
+  noted: true
+  stackable: true
+- id: 27291
+  name: "Keris partisan of sun"
+  description: "A mystical-feeling polearm imbued with radiating power."
+  shopValue: 300000
+  noteId: 27292
+  requirements:
+    - skill: "ATTACK"
+      level: 80
+- id: 27292
+  name: "Keris partisan of sun"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27291
+  noted: true
+  stackable: true
