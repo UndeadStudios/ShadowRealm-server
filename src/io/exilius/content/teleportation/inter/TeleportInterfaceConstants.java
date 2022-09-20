@@ -1,13 +1,13 @@
 package io.exilius.content.teleportation.inter;
 
-import java.util.Collections;
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.entity.player.Right;
+
+import java.util.Collections;
+import java.util.List;
 
 public class TeleportInterfaceConstants {
 
@@ -21,7 +21,7 @@ public class TeleportInterfaceConstants {
     /**
      * This requires editing of the client (Interfaces#teleportInterface#teleportAmount) if changed.
      */
-    public static final int TELEPORT_LIST_COUNT = 40;
+    public static final int TELEPORT_LIST_COUNT = 41;
 
     static {
         List<Integer> buttonList = Lists.newArrayList();
@@ -49,6 +49,8 @@ public class TeleportInterfaceConstants {
                     plr.sendMessage("@cr10@ Use @pur@::level2@bla@ to be sent to @pur@next catacombs level.");
                 }
             }),
+
+            new TeleportButtonStandard("Sand Crabs", new Position(1691, 3475, 0)),
             new TeleportButtonStandard("Rock Crabs", new Position(2673, 3710, 0)),
             new TeleportButtonStandard("Cows", new Position(3260, 3272, 0)),
             new TeleportButtonStandard("Bob's Island", new Position(2524, 4775, 0)),

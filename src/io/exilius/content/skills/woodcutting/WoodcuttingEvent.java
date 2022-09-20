@@ -1,19 +1,11 @@
 package io.exilius.content.skills.woodcutting;
 
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
-import io.exilius.content.achievement_diary.impl.DesertDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.skills.Skill;
@@ -27,6 +19,8 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
+
+import java.util.Optional;
 
 public class WoodcuttingEvent extends Event<Player> {
 	private static boolean woodcuttingTree;
@@ -217,6 +211,7 @@ public class WoodcuttingEvent extends Event<Player> {
 				}
 				break;
 			case WILLOW:
+			case WILLOW2:
 				if (Boundary.isIn(attachment, Boundary.FALADOR_BOUNDARY)) {
 					attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.CHOP_WILLOW);
 				}

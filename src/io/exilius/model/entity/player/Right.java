@@ -41,7 +41,7 @@ public enum Right implements Comparator<Right> {
 	GROUP_IRONMAN(28, "60201f"),
 
 	//Mythic_Club(4, "F5FF0F", ONYX_CLUB),
-	Mystic_Club(29, "60201f", Mythic_Club),
+	Mystic_Club(29, "01ddff", Mythic_Club),
 
 	;
 

@@ -1,10 +1,5 @@
 package io.exilius.content.combat.core;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 import com.google.common.base.Preconditions;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.hydra.HydraStage;
@@ -22,6 +17,11 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.npc.pets.PetHandler;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class AttackNpcCheck {
 
@@ -313,7 +313,7 @@ public class AttackNpcCheck {
             }
         }
 
-        if (npc.getNpcId() >= 5886 && npc.getNpcId() <= 5981 && npc.getNpcId() != 5944) {//abyssal sire
+        if (npc.getNpcId() >= 5886 && npc.getNpcId() <= 5892 && npc.getNpcId() != 5895) {//abyssal sire
             if (!(c.getSlayer().getTask().isPresent()) || (c.getSlayer().getTask().isPresent() && !c.getSlayer().getTask().get().getPrimaryName().equals("abyssal demon")&& !c.getSlayer().getTask().get().getPrimaryName().equals("abyssal sire"))) {
                 sendCheckMessage(c, sendMessages, "You need an abyssal task to attack this monster.");
                 return false;

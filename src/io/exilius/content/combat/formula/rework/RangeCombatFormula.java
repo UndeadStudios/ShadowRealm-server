@@ -95,6 +95,9 @@ public class RangeCombatFormula implements CombatFormula {
         if (attacker.getItems().isWearingItem(Items.DRAGON_HUNTER_CROSSBOW, Player.playerWeapon))
             if (defender.isDragon())
                 multiplier += 0.3;
+        if (attacker.getItems().isWearingItem(Items.DRAGON_HUNTER_CROSSBOW_T, Player.playerWeapon))
+            if (defender.isDragon())
+                multiplier += 0.3;
 
         if (attacker.getPosition().inWild() && defender.getPosition().inWild()) {
             if (PvpWeapons.activateEffect(attacker, attacker.getItems().getWeapon())) {
@@ -422,6 +425,9 @@ public class RangeCombatFormula implements CombatFormula {
 
         // DHCB Multiplier
         if (attacker.getItems().isWearingItem(Items.DRAGON_HUNTER_CROSSBOW, Player.playerWeapon))
+            if (defender.isDragon())
+                multiplier += 0.25;
+        if (attacker.getItems().isWearingItem(Items.DRAGON_HUNTER_CROSSBOW_T, Player.playerWeapon))
             if (defender.isDragon())
                 multiplier += 0.25;
 

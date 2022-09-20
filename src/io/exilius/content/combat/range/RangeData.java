@@ -1,7 +1,5 @@
 package io.exilius.content.combat.range;
 
-import java.util.*;
-
 import io.exilius.content.achievement_diary.DifficultyAchievementDiary;
 import io.exilius.content.combat.effects.damageeffect.DamageBoostingEffect;
 import io.exilius.content.combat.effects.damageeffect.impl.bolts.*;
@@ -15,6 +13,8 @@ import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
 
+import java.util.*;
+
 public class RangeData {
 
 	public static final int[] MULTI_WEAPONS = {
@@ -22,9 +22,9 @@ public class RangeData {
 			10034, // Red chin
 			11959, // Black chin
 	};
-    public static final int[] BOWS = { 19481, 19478, 12788, 9185, 11785, 26374, 21012, 839, 845, 847, 851, 855, 859, 841, 843, 849,
-            853, 857, 12424, 861, 4212, 4214, 4215, 12765, 12766, 12767, 12768, 11235, 4216, 4217, 4218, 4219, 4220,
-            4221, 4222, 4223, 4734, 6724, 20997, 21902, 22550 };
+		public static final int[] BOWS = { 19481, 19478, 12788, 9185, 11785, 26374, 25916/*dhcb T*/, 21012/*dhcb*/, 839, 845, 847, 851, 855, 859, 841, 843, 849,
+				853, 857, 12424, 861, 4212, 4214, 4215, 12765, 12766, 12767, 12768, 11235, 4216, 4217, 4218, 4219, 4220,
+				4221, 4222, 4223, 4734, 6724, 20997, 21902, 22550 };
 
     public static final int[] ARROWS = { 9341, 4160, 11959, 10033, 10034, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891,
             892, 893, 4740, 5616, 5617, 5618, 5619, 5620, 5621, 5622, 5623, 5624, 5625, 5626, 5627, 9139, 9140, 9141,
@@ -171,7 +171,7 @@ public class RangeData {
 		}
 
 		// Crossbows
-		if (c.playerEquipment[Player.playerWeapon] == 9185 || c.playerEquipment[Player.playerWeapon] == 11785 || c.playerEquipment[Player.playerWeapon] == 21012
+		if (c.playerEquipment[Player.playerWeapon] == 9185 || c.playerEquipment[Player.playerWeapon] == 25916/*dhcb T*/ || c.playerEquipment[Player.playerWeapon] == 11785 || c.playerEquipment[Player.playerWeapon] == 21012/*dhcb*/
 				|| c.playerEquipment[Player.playerWeapon] == 26374 || c.playerEquipment[Player.playerWeapon] == 21902) {
 			return 27;
 		}
@@ -357,7 +357,7 @@ public class RangeData {
 
 	public static boolean wearingCrossbow(Player player) {
 		return player.playerEquipment[Player.playerWeapon] == 11785 || player.playerEquipment[Player.playerWeapon] == 9185 || player.playerEquipment[Player.playerWeapon] == 26374
-				|| player.playerEquipment[Player.playerWeapon] == 21012 || player.playerEquipment[Player.playerWeapon] == 21902;
+				|| player.playerEquipment[Player.playerWeapon] == 21012/*dhcb*/ || player.playerEquipment[Player.playerWeapon] == 25916/*dhcb t*/ ||  player.playerEquipment[Player.playerWeapon] == 21902;
 	}
 
 	public static boolean wearingBolt(Player player) {

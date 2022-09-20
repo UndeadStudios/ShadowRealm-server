@@ -1,8 +1,5 @@
 package io.exilius.content.combat.formula;
 
-import java.util.Arrays;
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.content.combat.range.RangeData;
 import io.exilius.model.Bonus;
@@ -14,6 +11,9 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.Optional;
 
 public class RangeMaxHit extends RangeData {
 
@@ -105,7 +105,7 @@ public class RangeMaxHit extends RangeData {
 		if (c.npcAttackingIndex > 0) {
 			NPC npc = NPCHandler.npcs[c.npcAttackingIndex];
 
-			if (c.getItems().isWearingItem(21012)) {
+			if (c.getItems().isWearingItem(21012) && c.getItems().isWearingItem(25916)) {
 				if (Misc.linearSearch(Configuration.DRAG_IDS, npc.getNpcId()) != -1) {
 					b += 0.60;
 				}
