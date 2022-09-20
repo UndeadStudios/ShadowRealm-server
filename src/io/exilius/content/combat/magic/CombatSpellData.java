@@ -236,6 +236,15 @@ public class CombatSpellData {
 		return null;
 	}
 
+	public static int[] getFireSpellData(int spellId) {
+		for (int[] spellData: Player.FIRE_SPELLS) {
+			int spellDataId = spellData[0];
+			if (spellId == spellDataId)
+				return spellData;
+		}
+		return null;
+	}
+
 	public static int getBaseDamage(int[] spellData) {
 		return spellData[6];
 	}
