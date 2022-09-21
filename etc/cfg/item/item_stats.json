@@ -69156,5 +69156,26 @@
       "drange": 22,
       "prayer": 0
     }
+  },
+  "27363": {
+    "name": "Masori assembler max cape",
+    "equipable": true,
+    "equipment": {
+      "slot": 1,
+      "dstab": 9,
+      "dslash": 9,
+      "dcrush": 9,
+      "dmagic": 9,
+      "drange": 9,
+      "prayer": 4
+    }
+  },
+  "27366": {
+    "name": "Masori assembler max hood",
+    "equipable": true,
+    "weight": 0.4,
+    "equipment": {
+      "slot": 0
+    }
   }
 }
