@@ -1,6 +1,7 @@
 package io.exilius.content.commands.admin;
 
 import io.exilius.content.commands.Command;
+import io.exilius.model.Npcs;
 import io.exilius.model.entity.npc.NPCCacheDefinition;
 import io.exilius.model.entity.player.Player;
 
@@ -24,6 +25,10 @@ public class Pnpc extends Command {
 		c.playerStandIndex = NPCCacheDefinition.forID(npc).getStandAnim();
 		c.playerWalkIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
 		c.playerRunIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
+		c.playerTurnIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
+		c.playerTurn180Index = NPCCacheDefinition.forID(npc).getWalkAnim();
+		c.playerTurn90CCWIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
+		c.playerTurn90CWIndex = NPCCacheDefinition.forID(npc).getWalkAnim();
 		c.isNpc = true;
 		c.setUpdateRequired(true);
 		c.appearanceUpdateRequired = true;
