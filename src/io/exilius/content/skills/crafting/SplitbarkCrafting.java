@@ -37,9 +37,6 @@ public static void OpenInterface(Player c){
                     c.getPA().removeAllWindows();
                     return;
                 }
-                if (!c.getItems().playerHasItem(g.getItemid1(), g.getItem1Amount()) && !c.getItems().playerHasItem(g.getItemid2(), g.getItem2Amount())) {
-                    c.sendMessage("You need thr right items.");
-                }
                 if (!c.getItems().playerHasItem(1734, 1)) {
                     c.sendMessage("You have run out of Thread.");
                     return;
@@ -62,6 +59,16 @@ public static void OpenInterface(Player c){
                             }
                             if (!c.getItems().playerHasItem(1734, 1)) {
                                 c.sendMessage("You have run out of Thread.");
+                                container.stop();
+                                return;
+                            }
+                            if (!c.getItems().playerHasItem(g.getItemid1(), g.getItem1Amount())) {
+                                c.sendMessage("You have run out of bark.");
+                                container.stop();
+                                return;
+                            }
+                            if (!c.getItems().playerHasItem(g.getItemid2(), g.getItem2Amount())) {
+                                c.sendMessage("You have run out of fine cloth.");
                                 container.stop();
                                 return;
                             }
