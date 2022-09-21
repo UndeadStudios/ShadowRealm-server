@@ -3,6 +3,7 @@ package io.exilius.content.skills.crafting;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemCacheDefinition;
@@ -39,6 +40,17 @@ public static void OpenInterface(Player c){
                 }
                 if (!c.getItems().playerHasItem(1734, 1)) {
                     c.sendMessage("You have run out of Thread.");
+                    c.getPA().removeAllWindows();
+                    return;
+                }
+                if (!c.getItems().playerHasItem(g.getItemid1(), g.getItem1Amount())) {
+                    c.sendMessage("You need "+g.getItem1Amount()+" of  "+ItemCacheDefinition.forID(g.getItemid1()).getName()+" to make this");
+                    c.getPA().removeAllWindows();
+                    return;
+                }
+                if (!c.getItems().playerHasItem(g.getItemid2(), g.getItem2Amount())) {
+                    c.sendMessage("You need "+g.getItem2Amount()+" of  "+ItemCacheDefinition.forID(g.getItemid2()).getName()+" to make this");
+                    c.getPA().removeAllWindows();
                     return;
                 }
                 c.startAnimation(5243);
@@ -93,7 +105,7 @@ public static void OpenInterface(Player c){
                         c.startAnimation(65535);
                         c.playerIsCrafting = true;
                     }
-                }, 3);
+                }, AnimationLength.getFrameLength(5243));
             }
         }
     }
