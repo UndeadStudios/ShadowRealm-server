@@ -49,8 +49,15 @@ public class TeleportInterfaceConstants {
                     plr.sendMessage("@cr10@ Use @pur@::level2@bla@ to be sent to @pur@next catacombs level.");
                 }
             }),
+            new TeleportButton("Sand Crabs", plr -> {
+                if (plr.getPA().canTeleport()) {
+                    plr.getPA().movePlayer(1691, 3475);
+                    //plr.getPA().showInterface(33900);
+                    plr.sendMessage("@red@ go south east for multi-zone.");
+                }
+            }),
 
-            new TeleportButtonStandard("Sand Crabs", new Position(1691, 3475, 0)),
+            //new TeleportButtonStandard("Sand Crabs", new Position(1691, 3475, 0)),
             new TeleportButtonStandard("Rock Crabs", new Position(2673, 3710, 0)),
             new TeleportButtonStandard("Cows", new Position(3260, 3272, 0)),
             new TeleportButtonStandard("Bob's Island", new Position(2524, 4775, 0)),

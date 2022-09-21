@@ -84,10 +84,11 @@ public class NPCHandler {
             npcs[i] = null;
         }
         startGame();
+        Nex.spawned = false;
         //new Nex(11278, new Position(2925, 5203, 0));
         //new Nex(11278, new Position(2925, 5203, 0));
         //NPCSpawning.spawnNpc(11278, 2925, 5203, 0, 0, 70 );
-        NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
+       // NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
     }
 
     public void startGame() {
@@ -1454,7 +1455,7 @@ public class NPCHandler {
             case 11284:
             case 11285:
             case 11286:
-                return 40;
+                return 18;
         case 8622: 
         case 8621: 
         case 8620: 

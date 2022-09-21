@@ -1,10 +1,5 @@
 package io.exilius.model.entity.player;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.exilius.content.bosses.godwars.Godwars;
 import io.exilius.content.bosses.nightmare.NightmareConstants;
@@ -12,6 +7,11 @@ import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.model.Direction;
 import io.exilius.model.collisionmap.Tile;
 import io.exilius.model.entity.npc.NPCClipping;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public final class Position {
 
@@ -332,6 +332,7 @@ public final class Position {
 				|| Boundary.isIn(this, NightmareConstants.BOUNDARY)
 				|| Boundary.isIn(this, Boundary.OURIANA_ALTAR)
 				|| Boundary.isIn(this, Boundary.BRYOPHYTA_ROOM)
+				|| Boundary.isIn(this, Boundary.SandCrab)
 		) {
 			return true;
 		}

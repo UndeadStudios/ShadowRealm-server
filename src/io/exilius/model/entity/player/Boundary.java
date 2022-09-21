@@ -220,6 +220,7 @@ public class Boundary {
 	 * Diary locations
 	 */
 	public static final Boundary VARROCK_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
+	//public static final Boundary VARROCK_COOKING_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
 	public static final Boundary ARDOUGNE_BOUNDARY = new Boundary(2432, 3259, 2690, 3380);
 	public static final Boundary ARDOUGNE_ZOO_BRIDGE_BOUNDARY = new Boundary(2611, 3270, 2614, 3280);
 	public static final Boundary FALADOR_BOUNDARY = new Boundary(2935, 3310, 3066, 3394);
@@ -380,6 +381,7 @@ public class Boundary {
 	public static final Boundary SKOTIZO_BOSSROOM = new Boundary(2240, 5632, 2303, 5695);
 
 	public static Boundary Nex = new Boundary(2909,5187,2943,5221);
+	public static Boundary SandCrab = new Boundary(1730,3465,1772,3483);
 	public static final Boundary GODWARS_MAIN = new Boundary(2847, 5346, 2912, 5280);
 	public static final Boundary GODWARS_AREA = new Boundary(2815, 5245, 2954, 5377);
 

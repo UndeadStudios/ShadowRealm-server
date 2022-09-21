@@ -1,7 +1,5 @@
 package io.exilius.content.skills;
 
-import java.util.Random;
-
 import io.exilius.Server;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
@@ -16,6 +14,8 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
+
+import java.util.Random;
 
 /**
  * Class Cooking Handles Cooking
@@ -288,9 +288,10 @@ public class Cooking extends SkillHandler {
 						c.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.COOK_MONK);
 						break;
 					case 377:
-						if (c.playerSkillProp[7][5] == 7183 && c.playerSkillProp[7][5] == 7184 )
+						if (Boundary.isIn(c, Boundary.VARROCK_BOUNDARY)) {
 							c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.COOK_LOBSTER);
-						break;
+						}
+							break;
 					case 317:
 						if (Boundary.isIn(c, Boundary.LUMRIDGE_BOUNDARY)) {
 							c.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.COOK_SHRIMP);

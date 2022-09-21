@@ -192,12 +192,24 @@ public class ObjectOptionOne {
 				if (Nex.isMissingRequirements(c)) {
 					return;
 				}
+			if (Nex.spawned) {
 				if (c.absX == 2908) {
-					c.getPA().movePlayer(2910, 5203, 0);
-				}
+				c.getPA().movePlayer(2910, 5203, 0);
+			}
 				if (c.absX == 2910) {
 					c.getPA().movePlayer(2908, 5203, 0);
 				}
+			}
+			if (!Nex.spawned) {
+				Nex.init();
+				Nex.spawned = true;
+				if (c.absX == 2908) {
+					c.getPA().movePlayer(2910, 5203, 0);
+				}
+					if (c.absX == 2910) {
+						c.getPA().movePlayer(2908, 5203, 0);
+					}
+			}
 				break;
 			case 42934:
 				if(c.getX() == 2900 && c.getY() == 5203){

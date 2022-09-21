@@ -171,6 +171,7 @@ public class NpcAggression {
                 case 11285:
                 case 11286:
                     return 40;
+                case 5935:
                 case 135:
                     return 8;
             }
@@ -214,6 +215,11 @@ public class NpcAggression {
         }
 
         switch (npc.getNpcId()) {
+            case 11283:
+            case 11284:
+            case 11285:
+            case 11286:
+            case 5935:
             case 5916:
             case 690:
             case 963:

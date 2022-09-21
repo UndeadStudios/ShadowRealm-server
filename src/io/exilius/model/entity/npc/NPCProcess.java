@@ -594,6 +594,7 @@ public class NPCProcess {
                         npc.unregister();
                         break;
                     case 11278: {
+                        Nex.spawned = false;
                         Nex.stage = 0;
                         Nex.nexHealed = false;
                         Nex.currentAttack = 0;

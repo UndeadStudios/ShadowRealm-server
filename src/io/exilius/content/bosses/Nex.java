@@ -31,7 +31,8 @@ public class Nex extends NPC {
 
     public static int phase = -1;
     public static NPC nex;
-    public static boolean spawned;
+    public static boolean spawned = false;
+    public static boolean healers;
     public static int stage;
     public static Nex.NexPhase phases;
     public static int currentAttack;
@@ -48,6 +49,12 @@ public class Nex extends NPC {
         super(npcId, position);
         nex = this;
     }
+
+    public static void spawnNPC() {
+        if (spawned = false) {
+            NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
+        }
+    }
     public static boolean isMissingRequirements(Player c) {
         if (c.totalLevel < c.getMode().getTotalLevelNeededForNex()) {
             c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForNex() + " to join this raid!");
@@ -59,6 +66,7 @@ public class Nex extends NPC {
     public static void rewardPlayers() {
         NEX = System.currentTimeMillis();
         spawned = false;
+        healers = false;
         PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.Nex))
                 .forEach(p -> {
                     if (p.getIceQueenDamageCounter() >= 80) {
@@ -89,14 +97,19 @@ public class Nex extends NPC {
 
 
 
-    public void init() {
-        NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
-       }
+    public static void init() {
+       // spawned = true;
+        healers = true;
+       NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
+    }
+    public static NPC getNex() {
+        return nex;
+    }
 
     public static void spawnHealer() {
         NPC Nex = NPCHandler.getNpc(11278);
-        spawned = true;
-        if (Nex != null) {
+        healers = true;
+        if (healers) {
             List<NPC> healer = Arrays.asList(NPCHandler.npcs);
             if (!healer.stream().filter(Objects::nonNull).anyMatch((n) -> {
                 return n.getNpcId() == 11294 && !n.isDead() && n.getHealth().getCurrentHealth() > 0;
@@ -104,7 +117,7 @@ public class Nex extends NPC {
                 int maximumHealth = Nex.getHealth().getMaximumHealth();
                 int currentHealth = Nex.getHealth().getCurrentHealth();
                 int percentRemaining = (int)((double)currentHealth / (double)maximumHealth * 100.0D);
-                if (percentRemaining <= 80) {
+                if (percentRemaining <= 85) {
                     if (Misc.passedProbability(Range.between(0, percentRemaining), 10, true)) {
                         if (stage == 0) {
                             NPCSpawning.spawn(11283, 2914, 5214, 0, 1, 45, true);
@@ -326,6 +339,8 @@ public class Nex extends NPC {
             this.shout = shout;
             this.phase = phase;
         }
+
+
 
 
         public String getShout() {
