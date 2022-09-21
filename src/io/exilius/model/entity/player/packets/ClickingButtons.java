@@ -232,7 +232,7 @@ public class ClickingButtons implements PacketType {
 		DuelSession duelSession = null;
 		c.getFletching().select(actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
-		SplitbarkCrafting.craft(c, actionButtonId);
+		//SplitbarkCrafting.craft(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
 		// int[] teleportButtons = { 4140, 4143, 4146, 4150, 6004, 6005, 29031,
 		// 50235, 50245, 50253, 51005, 51013, 51023, 51031, 51039,

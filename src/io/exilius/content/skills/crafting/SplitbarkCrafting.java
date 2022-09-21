@@ -12,19 +12,22 @@ import io.exilius.util.Misc;
 public class SplitbarkCrafting
 {
 public static void OpenInterface(Player c){
-    c.getPA().sendChatboxInterface(8938);
-    c.getPA().sendFrame126("What would you like to make?", 8966);
-    c.getPA().sendFrame246(8941, 190, 3385);
-    c.getPA().sendFrame246(8942, 190, 3387);
-    c.getPA().sendFrame246(8943, 190, 3391);
-    c.getPA().sendFrame246(8944, 190, 3389);
-    c.getPA().sendFrame246(8945, 190, 3393);
-    c.getPA().sendFrame126(ItemCacheDefinition.forID(3385).getName(), 8949);
-    c.getPA().sendFrame126(ItemCacheDefinition.forID(3387).getName(), 8953);
-    c.getPA().sendFrame126(ItemCacheDefinition.forID(3391).getName(), 8957);
-    c.getPA().sendFrame126(ItemCacheDefinition.forID(3389).getName(), 8961);
-    c.getPA().sendFrame126(ItemCacheDefinition.forID(3393).getName(), 8965);
-}
+    if(c.playerIsCrafting) {
+        c.getPA().sendChatboxInterface(8938);
+        c.getPA().sendFrame126("What would you like to make?", 8966);
+        c.getPA().sendFrame246(8941, 190, 3385);
+        c.getPA().sendFrame246(8942, 190, 3387);
+        c.getPA().sendFrame246(8943, 190, 3391);
+        c.getPA().sendFrame246(8944, 190, 3389);
+        c.getPA().sendFrame246(8945, 190, 3393);
+        c.getPA().sendFrame126(ItemCacheDefinition.forID(3385).getName(), 8949);
+        c.getPA().sendFrame126(ItemCacheDefinition.forID(3387).getName(), 8953);
+        c.getPA().sendFrame126(ItemCacheDefinition.forID(3391).getName(), 8957);
+        c.getPA().sendFrame126(ItemCacheDefinition.forID(3389).getName(), 8961);
+        c.getPA().sendFrame126(ItemCacheDefinition.forID(3393).getName(), 8965);
+        c.playerIsCrafting = true;
+    }
+    }
     private static int amount;
 
     public static void craft(Player c, final int buttonId){
@@ -56,6 +59,7 @@ public static void OpenInterface(Player c){
                 c.startAnimation(5243);
                 c.getPA().closeAllWindows();
                 c.playerIsCrafting = true;
+                c.issplitbarkcrafting = true;
                 amount = g.getAmount(buttonId);
                 CycleEventHandler.getSingleton().addEvent(c, new CycleEvent() {
                     @Override
@@ -66,6 +70,7 @@ public static void OpenInterface(Player c){
                         }
                         if (c.playerIsCrafting) {
                             if (amount == 0) {
+                                c.issplitbarkcrafting = false;
                                 container.stop();
                                 return;
                             }
@@ -95,6 +100,7 @@ public static void OpenInterface(Player c){
                             c.startAnimation(5243);
                             amount--;
                         } else {
+                            c.issplitbarkcrafting = false;
                             container.stop();
                         }
 

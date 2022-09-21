@@ -227,6 +227,7 @@ public class Player extends Entity {
     public long biggestFlowerPokerPotWon;
     public long biggestFlowerPokerPotLost;
     public boolean isXslimed = false;
+    public boolean issplitbarkcrafting = false;
 
     public void saveItemsForMinigame() {
         /**
