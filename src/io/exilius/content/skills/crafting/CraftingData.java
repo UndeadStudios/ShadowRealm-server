@@ -510,7 +510,75 @@ public class CraftingData extends SkillHandler {
 			return product;
 		}
 	}
+	public enum splitbarkData {
+		HELM(3239, 2, 3470, 2,3385, 61, 128, new int[][] {{34245, 1}, {34244, 5}, {34243, 10}, {34242, 28}}),
+		BODY(3239,4, 3470, 4,3387, 62, 248, new int[][] {{34249, 1}, {34248, 5}, {34247, 10}, {34246, 28}}),
+		GLOVES(3239,1, 3470, 1,3391, 60, 62, new int[][] {{34253, 1}, {34252, 5}, {34251, 10}, {34250, 28}}),
+		LEGS(3239,3, 3470, 3,3389, 62, 186, new int[][] {{35001, 1}, {35000, 5}, {34255, 10}, {34254, 28}}),
+		boots(3239,1, 3470, 1,3393, 60, 62, new int[][] {{35005, 1}, {35004, 5}, {35003, 10}, {35002, 28}});
+		public final int itemid1;
+		public final int item1Amount;
+		public final int itemid2;
+		public final int item2Amount;
+		public final int product;
+		public final int level;
+		public final int xp;
+		private final int[][] buttonId;
+		splitbarkData(final int itemid1, final int item1Amount, final int itemid2, final int item2Amount, final int product, final int level, final int xp, final int[][] buttonId){
+			this.itemid1 = itemid1;
+			this.item1Amount = item1Amount;
+			this.itemid2 = itemid2;
+			this.item2Amount = item2Amount;
+			this.product = product;
+			this.level = level;
+			this.xp = xp;
+			this.buttonId = buttonId;
+		}
 
+		public int getItemid1() {
+			return itemid1;
+		}
+
+		public int getItemid2() {
+			return itemid2;
+		}
+
+		public int getItem1Amount() {
+			return item1Amount;
+		}
+
+		public int getItem2Amount() {
+			return item2Amount;
+		}
+		public int getProduct() {
+			return product;
+		}
+
+		public int getLevel() {
+			return level;
+		}
+
+		public int getXp() {
+			return xp;
+		}
+		public int getButtonId(final int button) {
+			for (int i = 0; i < buttonId.length; i++) {
+				if (button == buttonId[i][0]) {
+					return buttonId[i][0];
+				}
+			}
+			return -1;
+		}
+
+		public int getAmount(final int button) {
+			for (int i = 0; i < buttonId.length; i++) {
+				if (button == buttonId[i][0]) {
+					return buttonId[i][1];
+				}
+			}
+			return -1;
+		}
+	}
 	public static void resetCrafting(Player c) {
 		c.playerIsCrafting = false;
 	}
