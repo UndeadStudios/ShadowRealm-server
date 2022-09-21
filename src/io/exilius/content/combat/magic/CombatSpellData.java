@@ -52,6 +52,7 @@ public class CombatSpellData {
 			12891, // Ice barrage
 	};
 
+
 	/**
 	 * Contains data of every magic spell and requirements
 	 * 
