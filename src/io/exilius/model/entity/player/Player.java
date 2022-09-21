@@ -226,6 +226,7 @@ public class Player extends Entity {
     public int flowerPokerWins, flowerPokerLoses, flowerPokerGames;
     public long biggestFlowerPokerPotWon;
     public long biggestFlowerPokerPotLost;
+    public boolean isXslimed = false;
 
     public void saveItemsForMinigame() {
         /**
@@ -2495,6 +2496,11 @@ public class Player extends Entity {
                 fasterCluesTicks = 0;
                 fasterCluesScroll = false;
                 sendMessage("@red@Your faster clue scroll has run out!");
+            }
+        }
+        if(isXslimed){
+            if(Misc.random(60) == 6){
+                forcedChat("Oink!");
             }
         }
         if (skillingPetRateTicks > 0) {

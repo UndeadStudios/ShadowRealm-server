@@ -31,6 +31,7 @@ public class xslime extends Command {
         c2.playerTurn180Index = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
         c2.playerTurn90CCWIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
         c2.playerTurn90CWIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.isXslimed = true;
         c2.isNpc = true;
         c2.setUpdateRequired(true);
         c2.appearanceUpdateRequired = true;
