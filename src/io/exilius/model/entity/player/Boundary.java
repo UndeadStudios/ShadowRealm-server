@@ -450,6 +450,18 @@ public class Boundary {
 	public static final Boundary HYDRA_BOSS_ROOM = new Boundary(1355, 10253, 1380, 10281);
 	public static final Boundary[] HYDRA_ROOMS = {HYDRA_DUNGEON, HYDRA_DUNGEON2, HYDRA_BOSS_ROOM};
 
+	/*
+	 * Mage Only Raids
+	 */
+	/*public static final Boundary MAGE_RAID_ROOM1 = new Boundary(1297, 10215, 1397, 10283);
+	public static final Boundary MAGE_RAID_ROOM2 = new Boundary(1248, 10144, 1302, 10210);
+	public static final Boundary MAGE_RAID_ROOM3 = new Boundary(1355, 10253, 1380, 10281);
+	public static final Boundary MAGE_RAID_ROOM4 = new Boundary(1248, 10144, 1302, 10210);
+	public static final Boundary MAGE_RAID_ROOM5 = new Boundary(1355, 10253, 1380, 10281);
+	public static final Boundary MAGE_RAID_BOSS = new Boundary(1355, 10253, 1380, 10281);
+	public static final Boundary[] MAGE_RAIDS = {MAGE_RAID_ROOM1, MAGE_RAID_ROOM2, MAGE_RAID_ROOM3, MAGE_RAID_ROOM4,
+	 MAGE_RAID_ROOM5, MAGE_RAID_BOSS};*/
+
 	public static final Boundary HESPORI = new Boundary(3025, 3475, 3068, 3508);
 	public static final Boundary HESPORI_EXIT = new Boundary(3066, 3497, 3067, 3501);
 	public static final Boundary HESPORI_ENTRANCE = new Boundary(3069, 3497,3072, 3501);

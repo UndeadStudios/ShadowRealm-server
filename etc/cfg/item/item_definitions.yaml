@@ -73282,3 +73282,179 @@
   noteId: 27291
   noted: true
   stackable: true
+- id: 27293
+  name: "Cache of runes"
+  description: "An intricate casket engraved with images of blood, soul and death runes."
+  shopValue: 300000
+  noteId: 27294
+- id: 27294
+  name: "Cache of runes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27293
+  noted: true
+  stackable: true
+- id: 27295
+  name: "Water container"
+  description: "It has lots of water in it."
+  shopValue: 100
+- id: 27296
+  name: "Mirror"
+  description: "I can just about see something in the reflection."
+  shopValue: 100
+- id: 27297
+  name: "Neutralising potion"
+  description: "For neutralising toxic fumes and corruption."
+  shopValue: 50
+- id: 27298
+  name: "Maisa's message"
+  description: "A message from Maisa."
+  shopValue: 50
+- id: 27299
+  name: "Antique lamp"
+  description: "Wonder what happens if I rub it..."
+  shopValue: 50
+- id: 27300
+  name: "Akila's journal"
+  description: "A journal found at the entrance to Osmumten's Tomb."
+  shopValue: 30
+  noteId: 27301
+- id: 27301
+  name: "Akila's journal"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27300
+  noted: true
+  stackable: true
+- id: 27302
+  name: "Het's capture"
+  description: "A book about Amascut's capture of Het."
+  shopValue: 33
+  noteId: 27303
+- id: 27303
+  name: "Het's capture"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27302
+  noted: true
+  stackable: true
+- id: 27304
+  name: "Apmeken's capture"
+  description: "A book about Amascut's capture of Apmeken."
+  shopValue: 30
+  noteId: 27305
+- id: 27305
+  name: "Apmeken's capture"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27304
+  noted: true
+  stackable: true
+- id: 27306
+  name: "Scabaras' capture"
+  description: "A book about Amascut's capture of Scabaras."
+  shopValue: 30
+  noteId: 27307
+- id: 27307
+  name: "Scabaras' capture"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27306
+  noted: true
+  stackable: true
+- id: 27363
+  name: "Masori assembler max cape"
+  description: "The cape worn by only the most experienced players."
+  shopValue: 495000
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 99
+    - skill: "DEFENCE"
+      level: 99
+    - skill: "STRENGTH"
+      level: 99
+    - skill: "HITPOINTS"
+      level: 99
+    - skill: "RANGED"
+      level: 99
+    - skill: "PRAYER"
+      level: 99
+    - skill: "MAGIC"
+      level: 99
+    - skill: "COOKING"
+      level: 99
+    - skill: "WOODCUTTING"
+      level: 99
+    - skill: "FLETCHING"
+      level: 99
+    - skill: "FISHING"
+      level: 99
+    - skill: "FIREMAKING"
+      level: 99
+    - skill: "CRAFTING"
+      level: 99
+    - skill: "SMITHING"
+      level: 99
+    - skill: "MINING"
+      level: 99
+    - skill: "HERBLORE"
+      level: 99
+    - skill: "AGILITY"
+      level: 99
+    - skill: "THIEVING"
+      level: 99
+    - skill: "SLAYER"
+      level: 99
+    - skill: "FARMING"
+      level: 99
+    - skill: "RUNECRAFTING"
+      level: 99
+    - skill: "HUNTER"
+      level: 99
+- id: 27366
+  name: "Masori assembler max hood"
+  description: "The hood worn by only the most experienced players."
+  shopValue: 1
+  untradeable: true
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "ATTACK"
+      level: 99
+    - skill: "DEFENCE"
+      level: 99
+    - skill: "STRENGTH"
+      level: 99
+    - skill: "HITPOINTS"
+      level: 99
+    - skill: "RANGED"
+      level: 99
+    - skill: "PRAYER"
+      level: 99
+    - skill: "MAGIC"
+      level: 99
+    - skill: "COOKING"
+      level: 99
+    - skill: "WOODCUTTING"
+      level: 99
+    - skill: "FLETCHING"
+      level: 99
+    - skill: "FISHING"
+      level: 99
+    - skill: "FIREMAKING"
+      level: 99
+    - skill: "CRAFTING"
+      level: 99
+    - skill: "SMITHING"
+      level: 99
+    - skill: "MINING"
+      level: 99
+    - skill: "HERBLORE"
+      level: 99
+    - skill: "AGILITY"
+      level: 99
+    - skill: "THIEVING"
+      level: 99
+    - skill: "SLAYER"
+      level: 99
+    - skill: "FARMING"
+      level: 99
+    - skill: "RUNECRAFTING"
+      level: 99
+    - skill: "HUNTER"
+      level: 99

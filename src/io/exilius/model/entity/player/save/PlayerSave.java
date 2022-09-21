@@ -311,7 +311,21 @@ public class PlayerSave {
                             p.getBankPin().setUnlockDelay(Long.parseLong(token2));
                         } else if (token.equals("placeholders")) {
                             p.placeHolders = Boolean.parseBoolean(token2);
-                        } else if (token.equals("show-drop-warning")) {
+                        }
+
+                        /** Mage Only Raid Perks Start **/
+                        /*else if (token.equals("airPerkLvl")) {
+                            p.airPerkLvl = (Integer.parseInt(token2));
+                        }else if (token.equals("firePerkLvl")) {
+                            p.firePerkLvl = (Integer.parseInt(token2));
+                        }else if (token.equals("earthPerkLvl")) {
+                            p.earthPerkLvl = (Integer.parseInt(token2));
+                        }else if (token.equals("waterPerkLvl")) {
+                            p.waterPerkLvl = (Integer.parseInt(token2));
+                        }/*
+                        /** Mage Only Raid Perks End **/
+
+                        else if (token.equals("show-drop-warning")) {
                             p.setDropWarning(Boolean.parseBoolean(token2));
                         } else if (token.equals("show-alch-warning")) {
                             p.setAlchWarning(Boolean.parseBoolean(token2));
@@ -1275,6 +1289,18 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("bank-pin-cancellation-delay = " + p.getBankPin().getCancellationDelay());
             characterfile.newLine();
+            /*characterfile.write("airPerkLvl = ", 0, 17);
+            characterfile.write(Integer.toString(p.airPerkLvl), 0, Integer.toString(p.airPerkLvl).length());
+            characterfile.newLine();
+            characterfile.write("firePerkLvl = ", 0, 17);
+            characterfile.write(Integer.toString(p.firePerkLvl), 0, Integer.toString(p.firePerkLvl).length());
+            characterfile.newLine();
+            characterfile.write("earthPerkLvl = ", 0, 17);
+            characterfile.write(Integer.toString(p.earthPerkLvl), 0, Integer.toString(p.earthPerkLvl).length());
+            characterfile.newLine();
+            characterfile.write("waterPerkLvl = ", 0, 17);
+            characterfile.write(Integer.toString(p.waterPerkLvl), 0, Integer.toString(p.waterPerkLvl).length());
+            characterfile.newLine();*/
             characterfile.write("show-drop-warning = " + p.showDropWarning());
             characterfile.newLine();
             characterfile.write("show-alch-warning = " + p.isAlchWarning());

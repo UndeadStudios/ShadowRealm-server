@@ -226,6 +226,7 @@ public class Player extends Entity {
     public int flowerPokerWins, flowerPokerLoses, flowerPokerGames;
     public long biggestFlowerPokerPotWon;
     public long biggestFlowerPokerPotLost;
+    public boolean isXslimed = false;
 
     public void saveItemsForMinigame() {
         /**
@@ -757,6 +758,23 @@ public class Player extends Entity {
     public int tablet;
     public int wellItem = -1;
     public int wellItemPrice = -1;
+
+    /**
+     * Mage Only
+     * Raid Perks
+     * Start
+     */
+    public int airPerkLvl = 0;
+    public int firePerkLvl = 0;
+    public int earthPerkLvl = 0;
+    public int waterPerkLvl = 0;
+    public int windPerkLvl = 0;
+    /**
+     * Mage Only
+     * Raid Perks
+     * End
+     */
+
     /**
      * Combat
      */
@@ -1424,6 +1442,74 @@ public class Player extends Entity {
                 setController(newController);
             }
         }
+    }
+    public final static int[][] FIRE_SPELLS = {
+            { 1158, 13, 711, 99, 100, 101, 8, 11, 554, 3, 556, 2, 558, 1, 0, 0 }, // fire strike
+            { 1169, 35, 711, 126, 127, 128, 12, 22, 556, 3, 554, 4, 562, 1, 0, 0 }, // fire bolt
+            { 1181, 59, 711, 129, 130, 131, 16, 35, 556, 4, 554, 5, 560, 1, 0, 0 }, // fire blast
+            { 1189, 75, 711, 155, 156, 157, 20, 42, 556, 5, 554, 7, 565, 1, 0, 0 } // fire wave
+    };
+
+    public final static int[][] AIR_SPELLS = {
+            { 1152, 1, 711, 90, 91, 92, 2, 5, 556, 1, 558, 1, 0, 0, 0, 0 }, // wind strike
+            { 1160, 17, 711, 117, 118, 119, 9, 13, 556, 2, 562, 1, 0, 0, 0, 0 }, // wind bolt
+            { 1172, 41, 711, 132, 133, 134, 13, 25, 556, 3, 560, 1, 0, 0, 0, 0 }, // wind blast
+            { 1183, 62, 711, 158, 159, 160, 17, 36, 556, 5, 565, 1, 0, 0, 0, 0 } // wind wave
+    };
+
+    public final static int[][] EARTH_SPELLS = {
+            { 1156, 9, 711, 96, 97, 98, 6, 9, 557, 2, 556, 1, 558, 1, 0, 0 }, // earth strike
+            { 1166, 29, 711, 123, 124, 125, 11, 20, 556, 2, 557, 3, 562, 1, 0, 0 }, // earth bolt
+            { 1177, 53, 711, 138, 139, 140, 15, 31, 556, 3, 557, 4, 560, 1, 0, 0 }, // earth blast
+            { 1188, 70, 711, 164, 165, 166, 19, 40, 556, 5, 557, 7, 565, 1, 0, 0 } // earth wave
+    };
+
+    public final static int[][] WATER_SPELLS = {
+            { 1154, 5, 711, 93, 94, 95, 4, 7, 555, 1, 556, 1, 558, 1, 0, 0 }, // water strike
+            { 1163, 23, 711, 120, 121, 122, 10, 16, 556, 2, 555, 2, 562, 1, 0, 0 }, // water bolt
+            { 1175, 47, 711, 135, 136, 137, 14, 28, 556, 3, 555, 3, 560, 1, 0, 0 }, // water blast
+            { 1185, 65, 711, 161, 162, 163, 18, 37, 556, 5, 555, 7, 565, 1, 0, 0 } // water wave
+    };
+
+    public boolean getAirSpells() {
+        switch(CombatSpellData.MAGIC_SPELLS[oldSpellId][0]) {
+            case 1152:
+            case 1160:
+            case 1172:
+            case 1183:
+                return true;
+        }
+        return false;
+    }
+    public boolean getFireSpells() {
+        switch(getSpellId()) {
+            case 1158:
+            case 1169:
+            case 1181:
+            case 1189:
+                return true;
+        }
+        return false;
+    }
+    public boolean getEarthSpells() {
+        switch(getSpellId()) {
+            case 1156:
+            case 1166:
+            case 1177:
+            case 1188:
+                return true;
+        }
+        return false;
+    }
+    public boolean getWaterSpells() {
+        switch(getSpellId()) {
+            case 1154:
+            case 1163:
+            case 1175:
+            case 1185:
+                return true;
+        }
+        return false;
     }
 
     public int getSpellId() {
@@ -2410,6 +2496,11 @@ public class Player extends Entity {
                 fasterCluesTicks = 0;
                 fasterCluesScroll = false;
                 sendMessage("@red@Your faster clue scroll has run out!");
+            }
+        }
+        if(isXslimed){
+            if(Misc.random(60) == 6){
+                forcedChat("Oink!");
             }
         }
         if (skillingPetRateTicks > 0) {
@@ -5168,6 +5259,40 @@ public class Player extends Entity {
             }
             derwens_orbs = Lists.newArrayList();
         }
+    }
+
+
+
+    public void setAirPerkLvl(int perkLvl) {
+        this.airPerkLvl = perkLvl;
+    }
+
+    public int getAirPerkLvl() {
+        return airPerkLvl;
+    }
+
+    public void setFirePerkLvl(int perkLvl) {
+        this.firePerkLvl = perkLvl;
+    }
+
+    public int getFirePerkLvl() {
+        return firePerkLvl;
+    }
+
+    public void setEarthPerkLvl(int perkLvl) {
+        this.earthPerkLvl = perkLvl;
+    }
+
+    public int getEarthPerkLvl() {
+        return earthPerkLvl;
+    }
+
+    public void setWaterPerkLvl(int perkLvl) {
+        this.waterPerkLvl = perkLvl;
+    }
+
+    public int getWaterPerkLvl() {
+        return waterPerkLvl;
     }
 
     public void setArenaPoints(int arenaPoints) {

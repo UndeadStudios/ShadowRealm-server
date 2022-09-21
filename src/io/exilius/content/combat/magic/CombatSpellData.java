@@ -52,6 +52,7 @@ public class CombatSpellData {
 			12891, // Ice barrage
 	};
 
+
 	/**
 	 * Contains data of every magic spell and requirements
 	 * 
@@ -229,6 +230,15 @@ public class CombatSpellData {
 
 	public static int[] getSpellData(int spellId) {
 		for (int[] spellData: MAGIC_SPELLS) {
+			int spellDataId = spellData[0];
+			if (spellId == spellDataId)
+				return spellData;
+		}
+		return null;
+	}
+
+	public static int[] getFireSpellData(int spellId) {
+		for (int[] spellData: Player.FIRE_SPELLS) {
 			int spellDataId = spellData[0];
 			if (spellId == spellDataId)
 				return spellData;

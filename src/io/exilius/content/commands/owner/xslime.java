@@ -27,6 +27,11 @@ public class xslime extends Command {
         c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIG).getStandAnim();
         c2.playerWalkIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
         c2.playerRunIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.playerTurnIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.playerTurn180Index = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.playerTurn90CCWIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.playerTurn90CWIndex = NPCCacheDefinition.forID(Npcs.PIG).getWalkAnim();
+        c2.isXslimed = true;
         c2.isNpc = true;
         c2.setUpdateRequired(true);
         c2.appearanceUpdateRequired = true;

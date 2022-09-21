@@ -13,6 +13,7 @@ import io.exilius.model.Graphic;
 import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.EntityReference;
 import io.exilius.model.entity.HealthStatus;
+import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.RandomUtils;
@@ -41,7 +42,30 @@ public abstract class HitExecutor {
         this.defender = defender;
         this.damage = damage;
     }
+    public boolean checkPerkLvls() {
+        if ((attacker.firePerkLvl >= 1) && (attacker.airPerkLvl >= 1) && (attacker.airPerkLvl >= 1) && (attacker.airPerkLvl >= 1)) {
+            return true;
+        } else
+        return false;
+    }
 
+    public int perkLvlEffects() {
+        int spellDamage = damage.getAmount();
+        int damageBooster = 1/25;
+        if (attacker.firePerkLvl >= 1) {
+            spellDamage = attacker.getFirePerkLvl() * damageBooster;
+        }
+        if (attacker.airPerkLvl >= 1) {
+            spellDamage = attacker.getAirPerkLvl() * damageBooster;
+        }
+        if (attacker.waterPerkLvl >= 1) {
+            spellDamage = attacker.getWaterPerkLvl() * damageBooster;
+        }
+        if (attacker.earthPerkLvl >= 1) {
+            spellDamage = attacker.getEarthPerkLvl() * damageBooster;
+        }
+        return 0;
+    }
     public void hit() {
         if (defender.isDead || defender.getHealth().getCurrentHealth() <= 0) {
             return;
@@ -113,6 +137,11 @@ public abstract class HitExecutor {
                     break;
 
                 case MAGE:
+
+                    int spellDamage = damage.getAmount();
+                    int damageBooster = 1/25;
+                    int finalDamage = spellDamage + attacker.getAirPerkLvl() * damageBooster;
+
                     if (attacker.spellSwap) {
                         attacker.spellSwap = false;
                         attacker.setSidebarInterface(6, 16640);
@@ -121,6 +150,17 @@ public abstract class HitExecutor {
                     }
 
                     if (damage.isSuccess()) {
+                       /* if (Boundary.isIn(attacker, Boundary.MAGE_RAIDS)) {
+                            int perkEffect = perkLvlEffects();
+                            if (attacker.usingMagic = true && attacker.getFireSpells()) {
+                                if (checkPerkLvls()) {
+                                    defender.appendDamage(attacker, finalDamage, damage.getHitmark());
+                                }
+                            } else if (!checkPerkLvls()) {
+                                defender.appendDamage(attacker, damage.getAmount(), damage.getHitmark());
+                            }
+                            return;
+                        } else*/
                         defender.appendDamage(attacker, damage.getAmount(), damage.getHitmark());
                         if (attacker.oldSpellId > -1) {
                             defender.startGraphic(new Graphic(CombatSpellData.MAGIC_SPELLS[attacker.oldSpellId][5],
