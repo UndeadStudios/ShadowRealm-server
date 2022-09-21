@@ -3,6 +3,7 @@ package io.exilius.content.skills.crafting;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 
@@ -61,7 +62,7 @@ public class GlassBlowing extends GlassData {
 						c.startAnimation(65535);
 						c.playerIsCrafting = true;
 					}
-				}, 3);
+				}, AnimationLength.getFrameLength(884));
 			}
 		}
 	}
