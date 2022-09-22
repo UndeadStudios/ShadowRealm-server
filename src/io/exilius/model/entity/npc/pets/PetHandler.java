@@ -190,6 +190,7 @@ public class PetHandler {
     	YOUNGLEF(23757, 8737, "Youngllef", 500, "second"),
     	CORRUPT_YOUNGLEF(23759, 8738, "Corrupt youngllef", 500, "second"),
         LITTLE_NIGHTMARE(24491, 9398, "The Nightmare", 500, "second"),
+        NEXLING(26348, 11276, "Nex", 500, "second"),
         POSTIE_PETE(30010, 3291, "Postie Pete", -1, "second"),
         IMP(30011, 5738, "Imp", -1, "second"),
         TOUCAN(30012, 5240, "Toucan", -1, "second"),
