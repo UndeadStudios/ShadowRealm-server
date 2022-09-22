@@ -69251,5 +69251,64 @@
     "equipment": {
       "slot": 2
     }
+  },
+  "29176": {
+    "name": "3rd age platelegs (g)",
+    "equipable": true,
+    "weight": 2.721,
+    "equipment": {
+      "slot": 7,
+      "amagic": -25,
+      "arange": -2,
+      "dstab": 78,
+      "dslash": 76,
+      "dcrush": 83,
+      "dmagic": -5,
+      "drange": 75
+    }
+  },
+  "29177": {
+    "name": "3rd age platebody (g)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": -20,
+      "dstab": 96,
+      "dslash": 108,
+      "dcrush": 113,
+      "dmagic": -4,
+      "drange": 97
+    }
+  },
+  "29178": {
+    "name": "3rd age full helmet (g)",
+    "equipable": true,
+    "weight": 0.907,
+    "equipment": {
+      "slot": 0,
+      "amagic": -5,
+      "arange": -2,
+      "dstab": 47,
+      "dslash": 49,
+      "dcrush": 43,
+      "dmagic": -3,
+      "drange": 48
+    }
+  },
+  "29179": {
+    "name": "3rd age kiteshield (g)",
+    "equipable": true,
+    "weight": 2.0,
+    "equipment": {
+      "slot": 5,
+      "amagic": -10,
+      "arange": -4,
+      "dstab": 63,
+      "dslash": 65,
+      "dcrush": 61,
+      "dmagic": -3,
+      "drange": 63
+    }
   }
 }

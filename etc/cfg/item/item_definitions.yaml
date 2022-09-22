@@ -73487,3 +73487,33 @@
   name: "Golden Gnome scarf"
   description: "A golden scarf. You feel your upper lip stiffening."
   shopValue: 1000
+- id: 29176
+  name: "3rd age platelegs (g)"
+  description: "Fabulous rare armour beaten from magical silver."
+  shopValue: 200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 60
+- id: 26177
+  name: "3rd age platebody (g)"
+  description: "Fabulous rare armour beaten from magical silver."
+  shopValue: 200000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 60
+- id: 26178
+  name: "3rd age full helmet (g)"
+  description: "Fabulous rare armour beaten from magical silver."
+  shopValue: 90000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 60
+- id: 26179
+  name: "3rd age kiteshield (g)"
+  description: "Fabulous rare armour beaten from magical silver."
+  shopValue: 180000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
