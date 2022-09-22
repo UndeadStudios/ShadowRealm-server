@@ -295,6 +295,8 @@ public class PetHandler {
                 return Pets.LITTLE_NIGHTMARE;
             case "Kalphite Queen":
                 return Pets.KALPHITE_PRINCESS;
+            case "Nex":
+                return Pets.NEXLING;
             default:
                 return pet;
         }
