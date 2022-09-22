@@ -521,9 +521,11 @@ public class UseItem {
 				c.sendMessage("You do not have the required items");
 			}
 		}
-		if(itemUsed == 1733 && useWith == 3470 || itemUsed == 3470 && useWith == 1733){
-			SplitbarkCrafting.OpenInterface(c);
-		}
+		/*if(itemUsed == 1733 && useWith == 3470 || itemUsed == 3470 && useWith == 1733){
+			if (c.getItems().playerHasItem(1733) && c.getItems().playerHasItem(3470)) {
+				SplitbarkCrafting.OpenInterface(c);
+			}
+		}*/
 		if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
 			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
 				c.getItems().deleteItem(26713, 1);

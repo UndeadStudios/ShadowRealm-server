@@ -73131,6 +73131,27 @@
   name: "Epic's crown"
   description: "Who said I'd never be royal?"
   shopValue: 6000
+- id: 29395
+  name: "Rico's platebody"
+  description: "Provides excellent protection."
+  shopValue: 560
+  equipmentModelType: "FULL_BODY"
+- id: 29396
+  name: "Rico's platelegs"
+  description: "These look pretty heavy."
+  shopValue: 64000
+- id: 29397
+  name: "Rico boots"
+  description: "Comfortable shoes."
+  shopValue: 20
+- id: 29398
+  name: "Rico's kiteshield"
+  description: "A large metal shield."
+  shopValue: 54400
+- id: 29399
+  name: "Rico's crown"
+  description: "Who said I'd never be royal?"
+  shopValue: 6000
 - id: 29163
   name: "Bandos chestplate (g)"
   description: "A sturdy chest plate."

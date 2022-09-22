@@ -1080,6 +1080,7 @@ public class PlayerAssistant {
 
 			c.nextChat = 0;
 			c.dialogueOptions = 0;
+			c.issplitbarkcrafting = false;
 			c.closedInterface();
 			c.setDialogueBuilder(null);
 			c.stringInputHandler = null;

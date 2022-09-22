@@ -69005,6 +69005,72 @@
       "slot": 0
     }
   },
+  "29395": {
+    "name": "Rico's platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29396": {
+    "name": "Rico's platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29397": {
+    "name": "Rico's boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "29398": {
+    "name": "Rico's kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "29399": {
+    "name": "Rico crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "29163": {
     "name": "Bandos chestplate (g)",
     "equipable": true,
