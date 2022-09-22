@@ -26,6 +26,7 @@ import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
 import io.exilius.content.minigames.raids.CoxParty;
 import io.exilius.content.minigames.raids.Raids;
+import io.exilius.content.objects.AxeInLog;
 import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
@@ -83,6 +84,23 @@ import java.util.stream.IntStream;
 public class ObjectOptionOne {
 
 	static int[] barType = { 2363, 2361, 2359, 2353, 2351, 2349 };
+
+	static int FirstFloorSos[][] = {
+			{1865, 5227}, {1865, 5226}, {1868, 5226}, {1868, 5227}, {1867, 5217}, {1867, 5218}, {1870, 5217}, {1870, 5218},
+			{1894, 5213}, {1894, 5212}, {1897, 5213}, {1897, 5212}, {1904, 5203}, {1904, 5204}, {1907, 5203}, {1907, 5204},
+			{1882, 5188}, {1882, 5189}, {1879, 5189}, {1879, 5188}, {1879, 5240}, {1879, 5239}, {1876, 5240}, {1876, 5239},
+			{1884, 5244}, {1884, 5243}, {1887, 5244}, {1887, 5243}, {1889, 5235}, {1889, 5236}, {1886, 5235}, {1886, 5236},
+			{1904, 5242}, {1904, 5243}, {1908, 5242}, {1908, 5243} };
+	static int SecondFloorSos[][] = {
+			{2039, 5244}, {2039, 5245}, {2037, 5244}, {2037, 5245}, {2032, 5227}, {2031, 5227}, {2032, 5225}, {2031, 5225},
+			{2026, 5239}, {2027, 5239}, {2026, 5241}, {2027, 5241}, {2020, 5242}, {2019, 5242}, {2020, 5240}, {2019, 5240},
+			{2014, 5240}, {2013, 5240}, {2014, 5242}, {2013, 5242}, {2006, 5237}, {2005, 5237}, {2006, 5235}, {2005, 5235},
+			{1997, 5216}, {1997, 5215}, {1999, 5216}, {1999, 5215}, {1995, 5196}, {1994, 5196}, {1995, 5194}, {1994, 5194},
+			{2005, 5192}, {2004, 5192}, {2004, 5194}, {2005, 5194}, {2006, 5216}, {2006, 5215}, {2008, 5216}, {2008, 5215},
+			{2016, 5228}, {2016, 5227}, {2018, 5228}, {2018, 5227}, {2044, 5239}, {2045, 5239}, {2045, 5237}, {2044, 5237},
+			{2042, 5222}, {2042, 5223}, {2040, 5222}, {2040, 5223}, {2037, 5203}, {2036, 5203}, {2037, 5201}, {2036, 5201},
+			{2045, 5197}, {2046, 5197}, {2046, 5195}, {2045, 5195}, {2036, 5185}, {2036, 5186}, {2034, 5186}, {2034, 5185},
+			{2020, 5200}, {2021, 5200}, {2020, 5202}, {2021, 5202},};
 
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
@@ -211,6 +229,37 @@ public class ObjectOptionOne {
 					}
 			}
 				break;
+			case 5581: // take axe from log
+				AxeInLog.pullAxeFromLog(c, obX, obY);
+				break;
+			case 19206:
+			case 19207:
+				for(int i = 0; i < FirstFloorSos.length; i++) {
+					if(c.absX == FirstFloorSos[i][0] && c.absY == FirstFloorSos[i][1]) {
+						c.startAnimation(4282);
+						c.getPA().walkTo(-1, 0);
+						return;
+					}
+				}
+				if(c.absX == 1890 && c.absY == 5208 || c.absX == 1889 && c.absY == 5208
+						|| c.absX == 1876 && c.absY == 5195 || c.absX == 1877 && c.absY == 5195
+						|| c.absX == 1876 && c.absY == 5192 || c.absX == 1877 && c.absY == 5192) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, -1);
+					return;
+				}
+				if(c.absX == obX && c.absY == obY)
+					c.startAnimation(4282);
+				c.getPA().walkTo(0, +1);
+				if(c.absY == obY && c.absX < obX)
+					c.startAnimation(4282);
+				c.getPA().walkTo(+1, 0);
+				if(c.absY > obY && c.absX == obX)
+					c.getPA().walkTo(0, -1);
+				if(c.absY < obY && c.absX == obX)
+					c.getPA().walkTo(0, 1);
+				break;
+
 			case 42934:
 				if(c.getX() == 2900 && c.getY() == 5203){
 					c.getPA().movePlayer(2898, 5203, 0);
@@ -2013,13 +2062,6 @@ public class ObjectOptionOne {
 				} else if (c.absX == 3184 && c.absY == 3944) {
 					c.getPA().movePlayer(3184, 3945, 0);
 				}
-				break;
-			case 19206:
-				//	if (c.absX == 1502 && c.absY == 3838) {
-				//	c.getDH().sendDialogues(63100, -1);
-				//	} else if (c.absX == 1502 && c.absY == 3840) {
-				//		c.getPA().movePlayer(1502, 3838, 0);
-				//	}
 				break;
 			case 9326:
 				if (c.playerLevel[16] < 62) {
