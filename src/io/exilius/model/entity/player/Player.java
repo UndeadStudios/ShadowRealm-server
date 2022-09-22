@@ -1941,6 +1941,10 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@red@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
             PlayerHandler.executeGlobalMessage("[@red@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        } else if (getLoginName().equals("sgsrocks")) {
+            PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        } else if (getLoginName().equals("198078")) {
+            PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }
         if (getSlayer().superiorSpawned) {
             getSlayer().superiorSpawned = false;

@@ -60917,18 +60917,22 @@
   name: "Varrock armour 1"
   description: "Varrock smithing armour."
   untradeable: true
+  equipmentModelType: "FULL_BODY"
 - id: 13105
   name: "Varrock armour 2"
   description: "Varrock smithing armour."
   untradeable: true
+  equipmentModelType: "FULL_BODY"
 - id: 13106
   name: "Varrock armour 3"
   description: "Varrock smithing armour."
   untradeable: true
+  equipmentModelType: "FULL_BODY"
 - id: 13107
   name: "Varrock armour 4"
   description: "Varrock smithing armour."
   untradeable: true
+  equipmentModelType: "FULL_BODY"
 - id: 13108
   name: "Wilderness sword 1"
   description: "A razor sharp sword."
