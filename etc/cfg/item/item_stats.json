@@ -69243,5 +69243,13 @@
     "equipment": {
       "slot": 0
     }
+  },
+  "29161": {
+    "name": "Golden Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
   }
 }

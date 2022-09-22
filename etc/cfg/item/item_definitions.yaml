@@ -45261,12 +45261,12 @@
   stackable: true
 - id: 9470
   name: "Gnome scarf"
-  description: "Null"
+  description: "A scarf. You feel your upper lip stiffening."
   shopValue: 1000
   noteId: 9471
 - id: 9471
   name: "Gnome scarf"
-  description: "Null"
+  description: "Swap this note at any bank for the equivalent item."
   noteId: 9470
   noted: true
   stackable: true
@@ -73120,7 +73120,7 @@
   description: "These look pretty heavy."
   shopValue: 64000
 - id: 29097
-  name: "Epic boots"
+  name: "Epic's boots"
   description: "Comfortable shoes."
   shopValue: 20
 - id: 29098
@@ -73483,3 +73483,7 @@
       level: 99
     - skill: "HUNTER"
       level: 99
+- id: 29161
+  name: "Golden Gnome scarf"
+  description: "A golden scarf. You feel your upper lip stiffening."
+  shopValue: 1000
