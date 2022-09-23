@@ -65,7 +65,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Forthos Dungeon", new Position(1800, 9948, 0)),
             new TeleportButtonStandard("Elf Warriors", new Position(2897, 2725, 0)),
             new TeleportButtonStandard("Dagannoths", new Position(2442, 10147, 0)),
-            new TeleportButtonStandard("Mithril Dragons", new Position(1740, 5342, 0)),
+            new TeleportButtonStandard("Ancient Cavern", new Position(1765, 5365, 1)),
             new TeleportButtonStandard("Slayer Tower", new Position(3428, 3538, 0)),
             new TeleportButtonStandard("Fremennik Slayer Dungeon", new Position(2807, 10002, 0)),
             new TeleportButtonStandard("Taverly Dungeon", new Position(2883, 9800, 0)),
@@ -178,6 +178,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Barrows", new Position(3565, 3316, 0)),
             new TeleportButtonStandard("Duel Arena", new Position(3366, 3266, 0)),
             new TeleportButtonStandard("Warriors Guild", new Position(2874, 3546, 0)),
+            new TeleportButtonStandard("Soul Wars", new Position(2209, 2858, 0)),
             new TeleportButton("Pest Control", plr -> {
                 plr.getPA().startTeleport(2660, 2648, 0, "modern", false);
                 plr.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PEST_CONTROL_TELEPORT);

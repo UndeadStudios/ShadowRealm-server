@@ -1,0 +1,83 @@
+---
+npc_id: 2918
+constant:
+  accessibility: 0
+  items:
+  - name: "dragon bones"
+    minimum: 1
+    maximum: 1
+  - name: "green dragonhide"
+    minimum: 2
+    maximum: 2
+common:
+  accessibility: 1
+  items:
+  - name: "coins"
+    minimum: 500
+    maximum: 35000
+  - name: "dragon javelin heads"
+    minimum: 12
+    maximum: 12
+  - name: "blood rune"
+    minimum: 20
+    maximum: 20
+  - name: "lava rune"
+    minimum: 35
+    maximum: 35
+  - name: "steam rune"
+    minimum: 37
+    maximum: 37
+uncommon:
+  accessibility: 5
+  items:
+  - name: "adamant dart"
+    minimum: 25
+    maximum: 25
+  - name: "adamant 2h sword"
+    minimum: 1
+    maximum: 1
+  - name: "adamant med helm"
+    minimum: 1
+    maximum: 1
+  - name: "rune thrownaxe"
+    minimum: 8
+    maximum: 8
+  - name: "adamant spear"
+    minimum: 1
+    maximum: 1
+  - name: "adamant knife"
+    minimum: 8
+    maximum: 8
+  - name: "mithril hasta"
+    minimum: 1
+    maximum: 1
+  - name: "mithril ore noted"
+    minimum: 5
+    maximum: 5
+  - name: "adamant arrow"
+    minimum: 8
+    maximum: 8
+  - name: "nature rune"
+    minimum: 17
+    maximum: 17
+  - name: "law rune"
+    minimum: 15
+    maximum: 15
+rare:
+  accessibility: 40
+  items:
+  - name: "adamant chainbody"
+    minimum: 1
+    maximum: 1
+  - name: "adamant kiteshield"
+    minimum: 1
+    maximum: 1
+  - name: "adamant platelegs"
+    minimum: 1
+    maximum: 1
+  - name: "rune full helm"
+    minimum: 1
+    maximum: 1
+  - name: "rune chainbody"
+    minimum: 1
+    maximum: 1

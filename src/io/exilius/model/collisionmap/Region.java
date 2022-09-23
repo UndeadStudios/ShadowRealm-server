@@ -298,9 +298,9 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             xLength = def.yLength();
             yLength = def.xLength();
         }
-        //if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Castle Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
-           // dumpDoorobject(objectId, x, y, height,type, direction);
-       // }
+      //  if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Gate")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
+    //        dumpDoorobject(objectId, x, y, height,type, direction);
+     //   }
         if (objectId == 29165) {
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }

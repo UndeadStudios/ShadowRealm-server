@@ -229,6 +229,26 @@ public class ObjectOptionOne {
 					}
 			}
 				break;
+			case 25336:
+				if(c.getX() == 1772 && c.getY() == 5366){
+					c.getPA().movePlayer(1768, 5366, 1);
+				}
+				break;
+			case 25338:
+				if(c.getX() == 1768 && c.getY() == 5366){
+					c.getPA().movePlayer(1772, 5366, 0);
+				}
+				break;
+			case 25339:
+				if(c.getX() == 1778 && c.getY() == 5346){
+					c.getPA().movePlayer(1778, 5343, 1);
+				}
+				break;
+			case 25340:
+				if(c.getX() == 1778 && c.getY() == 5343){
+					c.getPA().movePlayer(1778, 5346, 0);
+				}
+				break;
 			case 5581: // take axe from log
 				AxeInLog.pullAxeFromLog(c, obX, obY);
 				break;

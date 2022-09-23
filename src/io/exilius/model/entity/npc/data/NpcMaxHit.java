@@ -474,6 +474,8 @@ public class NpcMaxHit {
                 return 10;
             case 7274:
                 return 21;
+            case 2918:
+                return 18;
             case 7273:
                 return 19;
             case 7275:

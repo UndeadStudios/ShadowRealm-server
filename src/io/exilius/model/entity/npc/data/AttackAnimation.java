@@ -804,6 +804,7 @@ public class AttackAnimation extends NPCHandler {
 		case 6593:
 		case 7273:
 		case 7274:
+			case 2918:
 		case 7275:
 		case 8027:
 			if (npc.getAttackType() == CombatType.DRAGON_FIRE) {
