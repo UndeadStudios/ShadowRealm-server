@@ -178,6 +178,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Barrows", new Position(3565, 3316, 0)),
             new TeleportButtonStandard("Duel Arena", new Position(3366, 3266, 0)),
             new TeleportButtonStandard("Warriors Guild", new Position(2874, 3546, 0)),
+            new TeleportButtonStandard("Soul Wars", new Position(2209, 2858, 0)),
             new TeleportButton("Pest Control", plr -> {
                 plr.getPA().startTeleport(2660, 2648, 0, "modern", false);
                 plr.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PEST_CONTROL_TELEPORT);
