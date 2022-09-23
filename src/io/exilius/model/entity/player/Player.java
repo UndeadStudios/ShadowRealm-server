@@ -3178,6 +3178,15 @@ public class Player extends Entity {
                 getRights().setPrimary(Right.DIAMOND_CLUB);
                 //sendMessage("Please relog to receive your diamond club rank.");
             }
+        } if (amDonated >= 1000) {
+            if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
+                getRights().add(Right.ONYX_CLUB);
+            } else
+            //sendMessage("Your hidden onyx club donator rank is now active.");
+            {
+                getRights().setPrimary(Right.ONYX_CLUB);
+                //sendMessage("Please relog to receive your Onyx Club donator rank.");
+            }
         }
         if (amDonated >= 2500) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
@@ -3199,16 +3208,7 @@ public class Player extends Entity {
                 //sendMessage("Please relog to receive your Mystic club rank.");
             }
         }
-        if (amDonated >= 1000) {
-            if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
-                getRights().add(Right.ONYX_CLUB);
-            } else
-            //sendMessage("Your hidden onyx club donator rank is now active.");
-            {
-                getRights().setPrimary(Right.ONYX_CLUB);
-                //sendMessage("Please relog to receive your Onyx Club donator rank.");
-            }
-        }
+
         //sendMessage("Your updated total amount donated is now $" + amDonated + ".");
     }
 

@@ -1,9 +1,5 @@
 package io.exilius.content.combat.core;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import io.exilius.content.bosses.Scorpia;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Tekton;
@@ -19,6 +15,10 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class HitExecutorNpc extends HitExecutor {
 
@@ -106,6 +106,7 @@ public class HitExecutorNpc extends HitExecutor {
                 break;
             case 11278:
                 attacker.setNexDamageCounter(attacker.getNexDamageCounter() + damage.getAmount());
+
                 break;
             case 6617:
             case 6616:

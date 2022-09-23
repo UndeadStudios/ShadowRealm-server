@@ -29,37 +29,22 @@ common:
     maximum: 1
   - name: "fire rune"
     minimum: 100
-    maximum: 250
+    maximum: 2500
   - name: "chaos rune"
     minimum: 40
-    maximum: 80
+    maximum: 800
   - name: "death rune"
     minimum: 20
     maximum: 40
   - name: "gold ore"
-    minimum: 1
-    maximum: 1
+    minimum: 10
+    maximum: 100
   - name: "grimy tarromin"
-    minimum: 1
-    maximum: 1
+    minimum: 10
+    maximum: 20
 uncommon:
   accessibility: 15
   items:
   - name: "rune med helm"
-    minimum: 1
-    maximum: 1
-  - name: "splitbark helm"
-    minimum: 1
-    maximum: 1
-  - name: "splitbark body"
-    minimum: 1
-    maximum: 1
-  - name: "splitbark legs"
-    minimum: 1
-    maximum: 1
-  - name: "splitbark gauntlets"
-    minimum: 1
-    maximum: 1
-  - name: "splitbark boots"
     minimum: 1
     maximum: 1

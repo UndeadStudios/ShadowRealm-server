@@ -37,7 +37,7 @@ public class Configuration {
 	/**
 	 * Hours between backup of player files for current {@link ServerState}.
 	 */
-	public static long PLAYER_SAVE_TIMER_MILLIS = TimeUnit.MINUTES.toMillis(15);
+	public static long PLAYER_SAVE_TIMER_MILLIS = TimeUnit.MINUTES.toMillis(10);
 	public static int PLAYER_SAVE_BACKUP_EVERY_X_SAVE_TICKS = 2;
 
 	/**
