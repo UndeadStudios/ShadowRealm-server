@@ -101,7 +101,7 @@ public class WearItem implements PacketType {
 			
 		}
 		if(wearId == 8817) {
-			if(!c.getLoginName().equalsIgnoreCase("Osiris")) {
+			if(!c.getRights().getPrimary().isOwner() && !c.getLoginName().equalsIgnoreCase("Osiris")) {
 				c.sendMessage("Only Osiris can wear this.");
 				c.getItems().deleteItem(8817, 1);
 				c.getItems().addItem(995, 10000000);
