@@ -126,7 +126,7 @@ public class MiningEvent extends Event<Player> {
 //			return;
 //		}
 		if (objectId > 0) {
-			if (Server.getGlobalObjects().exists(Mineral.EMPTY_VEIN, location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
+			if (Server.getGlobalObjects().exists(mineral.getDepleteObject(), location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
 				attachment.sendMessage("This vein contains no more minerals.");
 				stop();
 				return;
@@ -176,7 +176,7 @@ public class MiningEvent extends Event<Player> {
 			if (RandomUtils.nextInt(0, mineral.getDepletionProbability()) == 0
 					|| mineral.getDepletionProbability() == 0) {
 				if (objectId > 0) {
-					Server.getGlobalObjects().add(new GlobalObject(Mineral.EMPTY_VEIN, location.getX(), location.getY(),
+					Server.getGlobalObjects().add(new GlobalObject(mineral.getDepleteObject(), location.getX(), location.getY(),
 							location.getZ(), 0, 10, mineral.getRespawnRate(), objectId));
 				} else {
 					npc.setDead(true);

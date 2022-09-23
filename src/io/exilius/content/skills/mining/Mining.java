@@ -46,7 +46,7 @@ public class Mining {
 			player.sendMessage("You need a mining level of at least " + mineral.getLevel() + " to mine this.");
 			return;
 		}
-		if (Server.getGlobalObjects().exists(Mineral.EMPTY_VEIN, location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
+		if (Server.getGlobalObjects().exists(mineral.getDepleteObject(), location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
 			player.sendMessage("This vein contains no more minerals.");
 			return;
 		}

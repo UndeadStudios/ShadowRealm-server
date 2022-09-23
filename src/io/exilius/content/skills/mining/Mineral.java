@@ -15,19 +15,23 @@ import org.apache.commons.lang3.RandomUtils;
  * @date Feb 18, 2015, 5:14:50 PM
  */
 public enum Mineral {
-			ENCHANTED_STONE(new int[] { 33223 }, "none", 50, 5, 1000, 1, 15, 15000, true, generateExclusive(23778)),
-			BURNING_ORE(new int[] { 33222 }, "none", 50, 5, 10000, 1, 15, 15000, true, generateExclusive(9698)),
-			CLAY(new int[] { 7487, 7454, 11363 }, "none", 1, 18, 0, 3, 15, 30000, true, generateExclusive(434)),
-			COPPER(new int[] { 7484, 11961, 11960, 11962, 13709, 11161 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(436)), 
-			TIN(new int[] { 7485, 9714, 9716, 11957, 11958, 11959, 13712, 11360, 11361 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(438)),
-			IRON(new int[] { 7488, 11954, 11955, 11956, 13710, 13444, 13445, 13446, 7455, 11364, 11365 }, "iron", 15, 35, 5, 8, 17, 14800, true, generateExclusive(440)),
-			COAL(new int[] { 7489, 9717, 9718, 9719, 2096, 13714, 13706, 11366, 11367 }, "none", 30, 50, 3, 15, 29, 14600, true, generateExclusive(453)),
-			GOLD(new int[] { 7491, 7458, 9722, 9720, 13707, 14962, 14963, 14964, 13441, 13442, 13443, 8728, 8975, 11370 }, "gold", 40, 65, 3, 25, 32, 14200, true, generateExclusive(444)), 
-			MITHRIL(new int[] { 11373, 13718, 7459, 11373, 11372 }, "mithril", 55, 80, 3, 40, 35, 13800, true, generateExclusive(447)),
-			ADAMANT(new int[] { 13720, 7460, 11375, 11374 }, "adamant", 70, 95, 2, 50, 37, 13200, true, generateExclusive(449)),
-			RUNE(new int[] { 11376, 7461, 14175, 11376, 11377 }, "rune", 85, 125, 0, 100, 39, 3600, true, generateExclusive(451)),
-			ESSENCE(new int[] { 7471, 14912, 34773 }, "none", 30, 5, -1, -1, 5, 50000, false, generateExclusive(7936)),
-			AMETHYST(new int[] { 30371, 30372, 11389, 11388 }, "none", 92, 140, 0, 100, 40, 11500, false, generateExclusive(21347)),			
+			ENCHANTED_STONE(new int[] { 33223 }, "none", 50, 5, 1000, 1, 15, 15000, true, generateExclusive(23778), 2835),
+			BURNING_ORE(new int[] { 33222 }, "none", 50, 5, 10000, 1, 15, 15000, true, generateExclusive(9698), 2835),
+			CLAY(new int[] { 11363, }, "none", 1, 18, 0, 3, 15, 30000, true, generateExclusive(434), 2836),
+			CLAY2(new int[] {  11362 }, "none", 1, 18, 0, 3, 15, 30000, true, generateExclusive(434), 2835),
+			COPPER(new int[] { 11161 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(436), 2836),
+			COPPER2(new int[] { 10943 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(436), 2835),
+			TIN(new int[] { 11360 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(438), 2835),
+			TIN2(new int[] { 11361 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(438), 2836),
+			IRON(new int[] { 7488, 11954, 11955, 11956, 13710, 13444, 13445, 13446, 7455, 11364, 11365 }, "iron", 15, 35, 5, 8, 17, 14800, true, generateExclusive(440), 2835),
+			COAL(new int[] { 7489, 9717, 9718, 9719, 2096, 13714, 13706, 11366, 11367 }, "none", 30, 50, 3, 15, 29, 14600, true, generateExclusive(453), 2835),
+			GOLD(new int[] { 7491, 7458, 9722, 9720, 13707, 14962, 14963, 14964, 13441, 13442, 13443, 8728, 8975, 11370 }, "gold", 40, 65, 3, 25, 32, 14200, true, generateExclusive(444), 2835),
+			SILVER(new int[] { 11368, 11369}, "silver", 40, 40, 3, 60, 32, 14600, true, generateExclusive(442), 2835),
+			MITHRIL(new int[] { 11373, 13718, 7459, 11373, 11372 }, "mithril", 55, 80, 3, 40, 35, 13800, true, generateExclusive(447), 2835),
+			ADAMANT(new int[] { 13720, 7460, 11375, 11374 }, "adamant", 70, 95, 2, 50, 37, 13200, true, generateExclusive(449), 2835),
+			RUNE(new int[] { 11376, 7461, 14175, 11376, 11377 }, "rune", 85, 125, 0, 100, 39, 3600, true, generateExclusive(451), 2835),
+			ESSENCE(new int[] { 7471, 14912, 34773 }, "none", 30, 5, -1, -1, 5, 50000, false, generateExclusive(7936), 2835),
+			AMETHYST(new int[] { 11389, 11388 }, "none", 92, 140, 0, 100, 40, 11500, false, generateExclusive(21347), 11393),
 			GEM(new int[] { 9030 }, "none", 40, 5, 20, 25, 20, 15000, true, new MineralReturn() {
 
 				@Override
@@ -50,7 +54,7 @@ public enum Mineral {
 					return new int[] { 1625, 1627, 1623, 1621, 1619, 1617, 1631, 6571 };
 				}//                    0      1     2     3   4ruby     5    6      7
 
-			});
+			}, 9032);
 
 	/**
 	 * An array of object ids that are associated with the mineral obtained from them
@@ -103,6 +107,10 @@ public enum Mineral {
 	private final MineralReturn mineralReturn;
 
 	/**
+	 *
+	 */
+	private  final int depleteObject;
+	/**
 	 * Constructs a new mineral
 	 * 
 	 * @param objectIds the objects that the mineral can be extracted from
@@ -114,7 +122,7 @@ public enum Mineral {
 	 * @param depletes determine if the mineral depletes in the world
 	 * @param mineralReturn the mineral that is returned to the player as a result of mining the resource
 	 */
-    Mineral(int[] objectIds, String barName, int level, double experience, int depletionProbability, int respawnRate, int extractionRate, int petChance, boolean depletes, MineralReturn mineralReturn) {
+    Mineral(int[] objectIds, String barName, int level, double experience, int depletionProbability, int respawnRate, int extractionRate, int petChance, boolean depletes, MineralReturn mineralReturn, int depleteObject) {
 		this.objectIds = objectIds;
 		this.barName = barName;
 		this.level = level;
@@ -125,6 +133,7 @@ public enum Mineral {
 		this.petChance = petChance;
 		this.depletes = depletes;
 		this.mineralReturn = mineralReturn;
+		this.depleteObject = depleteObject;
 	}
 
 	/**
@@ -212,10 +221,9 @@ public enum Mineral {
 		return mineralReturn;
 	}
 
-	/**
-	 * The identification value of the object with no mineral remaining after extraction
-	 */
-	public static final int EMPTY_VEIN = 2835;
+	public int getDepleteObject(){
+		return depleteObject;
+	}
 
 	/**
 	 * An unmodifiable set of {@link Mineral} objects that will be used as a constant for obtaining information about certain minerals.

@@ -107,10 +107,12 @@ public class TeleportInterfaceConstants {
 
             new TeleportButtonStandard("Neitiznot", new Position(2321, 3804, 0)),
             new TeleportButtonStandard("Karamja", new Position(2948, 3147, 0)),
+            new TeleportButtonStandard("Brimhaven", new Position(2802, 3178, 0)),
             new TeleportButton("Falador", plr -> {
                 plr.getPA().startTeleport(2964, 3378, 0, "modern", false);
                 plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_TO_FALADOR);
             }),
+            new TeleportButtonStandard("Barbarian Village", new Position(3083, 3424, 0)),
             new TeleportButtonStandard("Taverley", new Position(2928, 3451, 0)),
             new TeleportButton("Camelot", plr -> {
                 plr.getPA().startTeleport(2757, 3478, 0, "modern", false);
@@ -119,6 +121,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Catherby", new Position(2804, 3432, 0)),
             new TeleportButtonStandard("Al Kharid", new Position(3293, 3179, 0)),
             new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
+            new TeleportButtonStandard("Rimmington", new Position(2958, 3215, 0)),
             new TeleportButtonStandard("Kebos Lowlands", new Position(1310, 3618, 0))
     ));
 
