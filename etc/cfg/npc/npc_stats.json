@@ -29069,7 +29069,7 @@
     "magicLevel": 380
   },
   "6723": {
-    "name": "Chaotic death spawn",
+    "name": "Healer death spawn",
     "hitpoints": 50,
     "combatLevel": 215,
     "attackSpeed": 3,

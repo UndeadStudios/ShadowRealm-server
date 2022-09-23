@@ -1,8 +1,5 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Objects;
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.bosses.Nex;
@@ -10,20 +7,19 @@ import io.exilius.content.bosses.bryophyta.Bryophyta;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hespori.HesporiSpawner;
 import io.exilius.content.bosses.mimic.StrangeCasketDialogue;
+import io.exilius.content.bosses.obor.OborInstance;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
-import io.exilius.content.bosses.obor.OborInstance;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dwarfmulticannon.Cannon;
-import io.exilius.content.item.lootable.impl.NexChest;
-import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.event.eventcalendar.EventChallenge;
+import io.exilius.content.item.lootable.impl.NexChest;
 import io.exilius.content.item.lootable.impl.SerenChest;
 import io.exilius.content.item.lootable.impl.UnbearableChest;
+import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.skills.Cooking;
 import io.exilius.content.skills.agility.AgilityHandler;
-import io.exilius.content.skills.construction.Construction;
 import io.exilius.content.skills.hunter.impling.PuroPuro;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaAltar;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaBanker;
@@ -37,6 +33,9 @@ import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.tickable.impl.WalkToTickable;
 import io.exilius.util.logging.player.ClickObjectLog;
+
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Click Object
@@ -313,7 +312,15 @@ public class ClickObject implements PacketType {
                             c.sendMessage("@red@You need to lower Hespori's defence first.");
                             return;
                         }
-                        break;
+                        if (c.getItems().playerHasItem(9698, 250)) {
+                            c.sendMessage("@red@You already have 250 ore please burn and use them before continuing!");
+                            return;
+                        }
+                        if (c.getItems().playerHasItem(9699, 250)) {
+                        c.sendMessage("@red@You already have 250 Burning runes please use them before continuing!");
+                        return;
+                    }
+                            break;
                     case 33223:
                     case 1206:
                         if (!HesporiSpawner.isSpawned()) {
