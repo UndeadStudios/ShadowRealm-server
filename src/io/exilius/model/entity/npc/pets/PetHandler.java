@@ -190,6 +190,7 @@ public class PetHandler {
     	YOUNGLEF(23757, 8737, "Youngllef", 500, "second"),
     	CORRUPT_YOUNGLEF(23759, 8738, "Corrupt youngllef", 500, "second"),
         LITTLE_NIGHTMARE(24491, 9398, "The Nightmare", 500, "second"),
+        NEXLING(26348, 11276, "Nex", 500, "second"),
         POSTIE_PETE(30010, 3291, "Postie Pete", -1, "second"),
         IMP(30011, 5738, "Imp", -1, "second"),
         TOUCAN(30012, 5240, "Toucan", -1, "second"),
@@ -225,7 +226,8 @@ public class PetHandler {
         DARK_CORRUPT_BEAST(30120, 2311, "Dark Corrupt Beast", -1, "second"),
         DARK_ROC(30121, 2312, "Dark Roc", -1, "second"),
         DARK_KRATOS(30122, 2313, "Dark Kratos", -1, "second"),
-        DARK_RED_SEREN(30123, 2310, "Dark Seren", -1, "second");
+        DARK_RED_SEREN(30123, 2310, "Dark Seren", -1, "second"),
+        ABYSSAL_PROTECTOR(26901, 11402, "Guardians of the Rift", -1, "second");
 
         private final boolean rollOnNpcDeath;
         private final int itemId;
@@ -294,6 +296,8 @@ public class PetHandler {
                 return Pets.LITTLE_NIGHTMARE;
             case "Kalphite Queen":
                 return Pets.KALPHITE_PRINCESS;
+            case "Nex":
+                return Pets.NEXLING;
             default:
                 return pet;
         }

@@ -76,6 +76,7 @@ public class DoorDefinition {
 
 	private int h;
 
+
 	private int face;
 
 	public int getId() {

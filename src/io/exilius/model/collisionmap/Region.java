@@ -257,6 +257,33 @@ public class Region {
 //		
 //		return false;
 //	}
+public static void dumpDoorobject(int objectId, int x, int y, int h, int type, int face) {
+    //x	y	height	walk	maxhit	attack	defence	desc
+    //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
+    try {
+        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Doordump.cfg", true));
+        try {
+            out.write("  {");
+            out.newLine();
+            out.write("      \"id\":"+objectId+",");
+            out.newLine();
+            out.write("      \"x\":"+x+",");
+            out.newLine();
+            out.write("      \"y\":"+y+",");
+            out.newLine();
+            out.write("      \"h\":"+h+",");
+            out.newLine();
+            out.write("      \"face\":"+face+"");
+            out.newLine();
+            out.write("    },");;
+            out.newLine();
+        } finally {
+            out.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
     public void addObject(int objectId, int x, int y, int height, int type, int direction) {
         ObjectDef def = ObjectDef.getObjectDef(objectId);
         if (def == null) {
@@ -271,6 +298,9 @@ public class Region {
             xLength = def.yLength();
             yLength = def.xLength();
         }
+        //if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Castle Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
+           // dumpDoorobject(objectId, x, y, height,type, direction);
+       // }
         if (objectId == 29165) {
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }
