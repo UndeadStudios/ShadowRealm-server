@@ -226,7 +226,8 @@ public class PetHandler {
         DARK_CORRUPT_BEAST(30120, 2311, "Dark Corrupt Beast", -1, "second"),
         DARK_ROC(30121, 2312, "Dark Roc", -1, "second"),
         DARK_KRATOS(30122, 2313, "Dark Kratos", -1, "second"),
-        DARK_RED_SEREN(30123, 2310, "Dark Seren", -1, "second");
+        DARK_RED_SEREN(30123, 2310, "Dark Seren", -1, "second"),
+        ABYSSAL_PROTECTOR(26901, 11402, "Guardians of the Rift", -1, "second");
 
         private final boolean rollOnNpcDeath;
         private final int itemId;
