@@ -721,6 +721,7 @@ public class BlockAnimation {
             case 52:
             case 7273:
             case 7274:
+            case 2918:
             case 259:
             case 7275:
                 return 89;
