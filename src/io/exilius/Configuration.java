@@ -306,8 +306,8 @@ public class Configuration {
 	/**
 	 * Glory locations.
 	 */
-	public static final int EDGEVILLE_X = 3091;
-	public static final int EDGEVILLE_Y = 3490;
+	public static final int EDGEVILLE_X = 3099;
+	public static final int EDGEVILLE_Y = 3488;
 
 	public static final int AL_KHARID_X = 3293;
 	public static final int AL_KHARID_Y = 3176;

@@ -546,8 +546,8 @@ public class ObjectOptionOne {
 					if (c.getItems().playerHasItem(9698) || c.getItems().playerHasItem(9699)
 							|| c.getItems().playerHasItem(23778) || c.getItems().playerHasItem(23783)
 							|| c.getItems().playerHasItem(9017)) {
-						c.getItems().deleteItem2(9698, 28);
-						c.getItems().deleteItem2(9699, 28);
+						c.getItems().deleteItem2(9698, 250);
+						c.getItems().deleteItem2(9699, 250);
 						c.getItems().deleteItem2(23778, 28);
 						c.getItems().deleteItem2(923783, 28);
 						c.getItems().deleteItem2(9017, 28);
