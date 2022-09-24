@@ -14,6 +14,7 @@ import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.smithing.Smelting;
+import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.npc.NPC;
@@ -24,6 +25,8 @@ import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.RandomUtils;
+
+import java.util.Optional;
 
 /**
  * Represents a singular event that is executed when a player attempts to mine.
@@ -163,6 +166,7 @@ public class MiningEvent extends Event<Player> {
 	public void execute() {
 		double osrsExperience = 0;
 		int pieces = 0;
+		int face = 0;
 		for (int i = 0; i < prospectorOutfit.length; i++) {
 			if (attachment.getItems().isWearingItem(prospectorOutfit[i])) {
 				pieces += 6;
@@ -173,11 +177,15 @@ public class MiningEvent extends Event<Player> {
 			return;
 		}
 		if (mineral.isDepletable()) {
+			Optional<WorldObject> worldObject = attachment.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(objectId, location.getX(), location.getY(), 0);
+			if (worldObject.isPresent()) {
+				face = worldObject.get().getFace();
+			}
 			if (RandomUtils.nextInt(0, mineral.getDepletionProbability()) == 0
 					|| mineral.getDepletionProbability() == 0) {
 				if (objectId > 0) {
 					Server.getGlobalObjects().add(new GlobalObject(mineral.getDepleteObject(), location.getX(), location.getY(),
-							location.getZ(), 0, 10, mineral.getRespawnRate(), objectId));
+							location.getZ(), face, 10, mineral.getRespawnRate(), objectId));
 				} else {
 					npc.setDead(true);
 					npc.actionTimer = 0;

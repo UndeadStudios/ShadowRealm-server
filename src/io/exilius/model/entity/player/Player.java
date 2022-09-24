@@ -2508,6 +2508,10 @@ public class Player extends Entity {
                 forcedChat("Oink!");
             }
         }
+        if (playerEquipment[playerHands] == 21816 && braceletEtherCount <= 0) {
+            getItems().equipItem(21817, 1, 9);
+            sendMessage("You have run out of charges on your bracelet.");
+        }
         if (skillingPetRateTicks > 0) {
             skillingPetRateTicks--;
             if (skillingPetRateTicks <= 0) {

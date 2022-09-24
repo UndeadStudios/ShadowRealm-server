@@ -103,6 +103,11 @@ public class Region {
         return worldObjects.stream().filter(object -> object.id == id && object.x == x && object.y == y && object.height == z).findFirst();
     }
 
+    public Optional<WorldObject> getWorldObject2(int[] id, int x, int y, int height) {
+        final int z = height % 4;
+        return worldObjects.stream().filter(object -> false).findFirst();
+    }
+
     /**
      * Adds a {@link WorldObject} to the {@link WorldObject} map based on the x, y, height, and identification of the object.
      *

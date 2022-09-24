@@ -57,9 +57,9 @@ public class PvpWeapons {
      */
     public PvpWeapons(Player player) {
         this.player = player;
-        this.viggoraChainmaceCharges = 20_000;
-        this.thammaronSceptreCharges = 20_000;
-        this.crawsBowCharges = 20_000;
+        //this.viggoraChainmaceCharges = 20_000;
+        //this.thammaronSceptreCharges = 20_000;
+       // this.crawsBowCharges = 20_000;
     }
 
     /**
