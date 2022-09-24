@@ -109,11 +109,11 @@ public class PvpWeapons {
      *
      * @param player The player that is being given charges
      */
-//    public static void giveStartingCharges(Player player) {
-//        player.getPvpWeapons().setCrawsBowCharges(20_000);
-//        player.getPvpWeapons().setViggoraChainmaceCharges(20_000);
-//        player.getPvpWeapons().setThammaronSceptreCharges(20_000);
-//    }
+    public static void giveStartingCharges(Player player) {
+        player.getPvpWeapons().setCrawsBowCharges(0);
+        player.getPvpWeapons().setViggoraChainmaceCharges(0);
+        player.getPvpWeapons().setThammaronSceptreCharges(0);
+    }
 
     /**
      * Determines if the item id is a Pvp weapon

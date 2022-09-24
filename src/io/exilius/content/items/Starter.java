@@ -110,6 +110,7 @@ public class Starter {
         c.getInventory().addAnywhere(new ImmutableItem(868, 100));//rune knife
         c.getInventory().addAnywhere(new ImmutableItem(558, 100));//mind runes
         c.getInventory().addAnywhere(new ImmutableItem(562, 100));//chaos runes
+        PvpWeapons.giveStartingCharges(c);
     }
 
 //    public static void testingStarter(Player player) {
