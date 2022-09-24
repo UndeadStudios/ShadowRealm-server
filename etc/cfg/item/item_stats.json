@@ -57204,8 +57204,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 80
-    }
+      "rstr": 55
     }
   },
   "21328": {
@@ -57213,7 +57212,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 85
+      "rstr": 55
     }
   },
   "21330": {
@@ -57229,7 +57228,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 85
+      "rstr": 55
     }
   },
   "21334": {
