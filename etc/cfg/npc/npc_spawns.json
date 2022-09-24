@@ -3571,8 +3571,8 @@
   {
     "id": 9120,
     "position": {
-      "x": 2789,
-      "y": 4847,
+      "x": 2778,
+      "y": 4832,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
@@ -3580,8 +3580,8 @@
   {
     "id": 9011,
     "position": {
-      "x": 2788,
-      "y": 4847,
+      "x": 2779,
+      "y": 4832,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
@@ -3589,8 +3589,8 @@
   {
     "id": 555,
     "position": {
-      "x": 2787,
-      "y": 4847,
+      "x": 2780,
+      "y": 4832,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
@@ -3598,8 +3598,8 @@
   {
     "id": 4921,
     "position": {
-      "x": 2785,
-      "y": 4847,
+      "x": 2782,
+      "y": 4845,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
@@ -3607,8 +3607,8 @@
   {
     "id": 2111,
     "position": {
-      "x": 2786,
-      "y": 4847,
+      "x": 2781,
+      "y": 4832,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
@@ -3814,35 +3814,35 @@
   {
     "id": 9168,
     "position": {
-      "x": 3809,
-      "y": 2841,
+      "x": 3830,
+      "y": 2839,
       "height": 0
     },
-    "walkingType": "FACE_NORTH"
+    "walkingType": "FACE_WEST"
   },
   {
     "id": 9120,
     "position": {
-      "x": 3810,
-      "y": 2841,
+      "x": 3813,
+      "y": 2856,
       "height": 0
     },
-    "walkingType": "FACE_NORTH"
+    "walkingType": "FACE_SOUTH"
   },
   {
     "id": 4921,
     "position": {
       "x": 3811,
-      "y": 2841,
+      "y": 2856,
       "height": 0
     },
-    "walkingType": "FACE_NORTH"
+    "walkingType": "FACE_SOUTH"
   },
   {
     "id": 9011,
     "position": {
-      "x": 3812,
-      "y": 2841,
+      "x": 3819,
+      "y": 2848,
       "height": 0
     },
     "walkingType": "FACE_NORTH"
@@ -3851,7 +3851,7 @@
     "id": 555,
     "position": {
       "x": 3813,
-      "y": 2841,
+      "y": 2833,
       "height": 0
     },
     "walkingType": "FACE_NORTH"
@@ -8972,11 +8972,11 @@
   {
     "id": 5730,
     "position": {
-      "x": 3821,
-      "y": 2839,
+      "x": 3829,
+      "y": 2836,
       "height": 0
     },
-    "walkingType": "WALK"
+    "walkingType": "FACE_WEST"
   },
   {
     "id": 3258,
@@ -12581,8 +12581,8 @@
   {
     "id": 7913,
     "position": {
-      "x": 2781,
-      "y": 4847,
+      "x": 2777,
+      "y": 4832,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
