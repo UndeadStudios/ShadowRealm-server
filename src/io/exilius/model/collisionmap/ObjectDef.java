@@ -402,4 +402,8 @@ public final class ObjectDef {
 	private int[] modifiedModelColors;
 	public String[] actions;
 
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
 }

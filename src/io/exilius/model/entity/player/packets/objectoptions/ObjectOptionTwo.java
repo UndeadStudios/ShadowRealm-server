@@ -10,6 +10,7 @@ import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.item.lootable.impl.RaidsChestCommon;
 import io.exilius.content.item.lootable.impl.RaidsChestRare;
 import io.exilius.content.minigames.raids.Raids;
+import io.exilius.content.objects.Pickable;
 import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.hunter.Hunter;
@@ -77,7 +78,17 @@ public class ObjectOptionTwo {
 			case 33320:
 				FireOfExchangeBurnPrice.openExchangeRateShop(c);
 				break;
-
+			case 1161:
+			case 2646:
+			case 313:
+			case 5585:
+			case 5584:
+			case 312:
+			case 3366:
+			case 5583:
+			case 15506:
+				Pickable.pickObject(c, objectType, obX, obY);
+				break;
 //			case 16682:
 //				c.getPA().movePlayer(2532, 3546, 0);
 //				break;

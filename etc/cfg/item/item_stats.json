@@ -57204,7 +57204,8 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 55
+      "rstr": 55,
+      "rstr": 80
     }
   },
   "21328": {

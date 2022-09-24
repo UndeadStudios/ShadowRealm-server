@@ -27,3 +27,5 @@ data/cfg/vote_panel.json
 Data/cfg/wiki/npcs/cached
 build/tmp/compileJava/source-classes-mapping.txt
 build/tmp/compileTestJava/source-classes-mapping.txt
+/etc/mapdata/oldindex4/
+/etc/mapdata/208.3index4/

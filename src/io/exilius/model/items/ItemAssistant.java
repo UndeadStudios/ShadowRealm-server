@@ -946,6 +946,7 @@ public class ItemAssistant {
 		case 21816:
 			if(player.braceletEtherCount < 0) {
 				player.sendMessage("You have no charges remaining in your bracelet.");
+				player.getItems().replaceItem(player, 21816, 21817);
 				player.braceletEtherCount = 0;
 				return false;
 			}
