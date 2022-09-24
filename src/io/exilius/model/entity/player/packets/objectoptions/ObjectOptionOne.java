@@ -1998,6 +1998,15 @@ public class ObjectOptionOne {
 					}
 				}
 				break;
+			case 26461:
+				if (obX == 2851 && obY == 5333) {
+					if (c.getX() == 2850) {
+						c.getPA().movePlayer(2851, 5333);
+					} else if (c.getX() == 2851) {
+						c.getPA().movePlayer(2850, 5333);
+					}
+				}
+				break;
 			case 21578: // Stairs up
 			case 10:
 				if (!c.getRights().isOrInherits(Right.DIAMOND_CLUB)) {

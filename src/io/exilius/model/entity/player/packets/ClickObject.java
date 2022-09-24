@@ -713,7 +713,6 @@ public class ClickObject implements PacketType {
                     case 26569:
                     case 11406:
                     case 11430:
-                    case 26461:
                     case 26766:
                     case 1759:
                     case 1761:

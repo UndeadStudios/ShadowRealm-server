@@ -69311,5 +69311,20 @@
       "dmagic": -3,
       "drange": 63
     }
+  },
+  "29180": {
+    "name": "Osiris's chainmace",
+      "equipable": true,
+      "weight": 2.0,
+      "equipment": {
+        "slot": 3,
+        "astab": 83,
+        "aslash": -2,
+        "acrush": 97,
+        "dslash": 1,
+        "str": 96,
+        "prayer": 8,
+        "aspeed": 3
+      }
   }
 }

@@ -73517,3 +73517,11 @@
   requirements:
     - skill: "DEFENCE"
       level: 65
+- id: 29180
+  name: "Osiris Chainmace"
+  description: "Fabulous rare chainmace from hell."
+  shopValue: 180000
+  requirements:
+    - skill: "ATTACK"
+      level: 65
+
