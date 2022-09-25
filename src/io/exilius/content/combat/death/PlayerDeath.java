@@ -155,6 +155,14 @@ public class PlayerDeath {
                 } else {
                     throw new IllegalStateException("Not a hardcore: " + c.getMode());
                 }
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
 
                 PlayerSave.saveGame(c);
             }
@@ -171,6 +179,14 @@ public class PlayerDeath {
                 }
                 c.sendMessage("Oh dear you are dead!");
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
             }
         }
 
