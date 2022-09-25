@@ -1,6 +1,5 @@
 ---
-npc_id:
-  - 2492
+npc_id: 2492
 constant:
   accessibility: 0
   items:
