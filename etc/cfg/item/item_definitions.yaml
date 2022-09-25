@@ -73382,6 +73382,17 @@
   noteId: 27306
   noted: true
   stackable: true
+- id: 24777
+  name: "Blood shard"
+  description: "A magical shard filled with a dark power."
+  shopValue: 200000
+  noteId: 24778
+- id: 24778
+  name: "Blood shard"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 24777
+  noted: true
+  stackable: true
 - id: 27363
   name: "Masori assembler max cape"
   description: "The cape worn by only the most experienced players."
@@ -73494,7 +73505,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26177
+- id: 29177
   name: "3rd age platebody (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 200000
@@ -73502,7 +73513,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26178
+- id: 29178
   name: "3rd age full helmet (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 90000
@@ -73510,7 +73521,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26179
+- id: 29179
   name: "3rd age kiteshield (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 180000
@@ -73524,4 +73535,15 @@
   requirements:
     - skill: "ATTACK"
       level: 65
+- id: 27440
+  name: "Infinite money bag"
+  description: "its a Infinite money bag."
+  shopValue: 40
+  noteId: 27441
+- id: 27441
+  name: "Infinite money bag"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27440
+  noted: true
+  stackable: true
 

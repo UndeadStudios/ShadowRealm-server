@@ -329,6 +329,23 @@ public class Boundary {
 	/**
 	 * Hunter
 	 */
+	public static final Boundary[] SOUL_WARS = {
+			new Boundary(2089, 2743, 2344, 2824),
+			new Boundary(2236, 2824, 2339, 2878),
+			new Boundary(2303, 2879, 2350, 2975),
+			new Boundary(2212, 2948, 2302, 2990),
+			new Boundary(2090, 2947, 2211, 3006),
+			new Boundary(2212, 2991, 2221, 3001),
+			new Boundary(2083, 2859, 2110, 2946),
+			new Boundary(2082, 2825, 2175, 2858),
+			new Boundary(2111, 2859, 2146, 2875),
+			new Boundary(2142, 2876, 2148, 2879),
+			new Boundary(2147, 2859, 2179, 2875),
+			new Boundary(2180, 2864, 2187, 2878),
+			new Boundary(2149, 2876, 2179, 2885),
+			new Boundary(2141, 2880, 2148, 2887),
+			new Boundary(2149, 2886, 2152, 2887)
+	};
 	public static final Boundary HUNTER_JUNGLE = new Boundary(1486, 3392, 1685, 3520);
 	public static final Boundary HUNTER_LOVAK = new Boundary(1468, 3840, 1511, 3890);
 	public static final Boundary HUNTER_DONATOR = new Boundary(2124, 4917, 2157, 4946);

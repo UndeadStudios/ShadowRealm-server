@@ -402,8 +402,55 @@ public class BlockAnimation {
                 return 1313;
             case 100:// rc
                 return 1313;
-            case 662:// goblins
-                return 6186;
+            case 655:
+            case 657:
+            case 659:
+            case 662:
+            case 664:
+            case 666:
+            case 3028://unarmed
+            case 3029:
+            case 3030:
+            case 3031:
+            case 3032:
+            case 3033:
+            case 3034:
+            case 3035:
+            case 3036:
+            case 3037:
+            case 3038:
+            case 3039:
+            case 3040:
+            case 5192:
+            case 5193:
+            case 5195:
+            case 5196:
+            case 5197:
+            case 5198:
+            case 5199:
+            case 5200:
+            case 5201:
+            case 5202:
+            case 5203:
+            case 5205:
+            case 5206:
+            case 5207:
+            case 5208:
+                return 6183;
+            case 3073:
+            case 3074:
+            case 5204:
+            case 3075://armed
+            case 3076:
+            case 656:
+            case 658:
+            case 660:
+            case 661:
+            case 663:
+            case 665:
+            case 667:
+            case 668:
+                return 6189;
             case 118:
                 return 100;
             case 2263:
@@ -690,7 +737,6 @@ public class BlockAnimation {
             case 7258:
             case 749:
             case 104:
-            case 655:
             case 491: // ghost
                 return -1;
 

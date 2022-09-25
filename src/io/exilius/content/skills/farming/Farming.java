@@ -160,6 +160,9 @@ public class Farming {
 						+ (config(FarmingPatches.PHAS_ALLOTMENT_EAST) << 8)
 						+ (config(FarmingPatches.PHAS_ALLOTMENT_WEST));
 				break;
+			case FARMING_GUILD_HERB:
+				config = (config(FarmingPatches.FARMING_GUILD_HERB) << 24);
+				break;
 		}
 
 		player.getPA().sendConfig(529, config);

@@ -1648,6 +1648,10 @@ public class SkillInterfaces {
 			menuLine("21", "Mithril Pickaxe", 1271, 3);
 			menuLine("31", "Adamant Pickaxe", 1273, 4);
 			menuLine("41", "Rune Pickaxe", 1275, 5);
+			menuLine("61", "Dragon Pickaxe", 11920, 6);
+			menuLine("61", "Infernal pickaxe", 13243, 7);
+			menuLine("61", "3rd age pickaxe", 20014, 8);
+			menuLine("71", "Crystal pickaxe", 23680, 9);
 			optionTab("Mining", "Pickaxes", "Ores", "Pickaxes", "Milestones", "", "", "", "", "", "", "", "", "", "");
 		}
 
@@ -2246,14 +2250,18 @@ public class SkillInterfaces {
 
 		else if (screen == 2) {
 			clearMenu();
-			menuLine("1", "Bronze Axe", 1351, 0);
-			menuLine("1", "Iron Axe", 1349, 1);
-			menuLine("6", "Steel Axe", 1353, 2);
-			menuLine("6", "Black Axe", 1361, 3);
-			menuLine("21", "Mithril Axe", 1355, 4);
-			menuLine("31", "Adamant Axe", 1357, 5);
-			menuLine("41", "Rune Axe", 1359, 6);
-			menuLine("61", "Dragon Axe", 6739, 7);
+			menuLine("1", "Bronze axe", 1351, 0);
+			menuLine("1", "Iron axe", 1349, 1);
+			menuLine("6", "Steel axe", 1353, 2);
+			menuLine("6", "Black axe", 1361, 3);
+			menuLine("21", "Mithril axe", 1355, 4);
+			menuLine("31", "Adamant axe", 1357, 5);
+			menuLine("41", "Rune axe", 1359, 6);
+			menuLine("41", "Gilded axe", 23279, 7);
+			menuLine("61", "Dragon axe", 6739, 8);
+			menuLine("61", "3rd age axe", 20011, 9);
+			menuLine("61", "Infernal axe", 13241, 10);
+			menuLine("71", "Crystal axe", 23673, 11);
 			optionTab("Woodcutting", "Hatchets", "Trees", "Hatchets", "Canoes", "Milestones", "", "", "", "", "", "", "", "", "");
 		}
 
