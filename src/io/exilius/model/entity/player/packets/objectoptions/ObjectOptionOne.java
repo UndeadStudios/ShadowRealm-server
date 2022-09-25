@@ -21,6 +21,7 @@ import io.exilius.content.dialogue.impl.OutlastLeaderboard;
 import io.exilius.content.dialogue.impl.SkillingPortalDialogue;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.impl.*;
+import io.exilius.content.minigames.CastleWarObjects;
 import io.exilius.content.minigames.pest_control.PestControl;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
@@ -171,6 +172,7 @@ public class ObjectOptionOne {
 		if (c.getLighthouse().execute(c, objectType)) {
 			return;
 		}
+
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
 
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().contains("bank") && !Boundary.isIn(c, Boundary.OURIANA_ALTAR)) {
@@ -190,6 +192,7 @@ public class ObjectOptionOne {
 		c.getMining().mine(objectType, new Location3D(obX, obY, c.heightLevel));
 		Obelisks.get().activate(c, objectType);
 		Runecrafting.execute(c, objectType);
+		Server.castleWars.handleObjects(c, objectType, obX, obY);
 
 		DoorDefinition door = DoorDefinition.forCoordinate(c.objectX, c.objectY, c.getHeight());
 
@@ -228,6 +231,24 @@ public class ObjectOptionOne {
 						c.getPA().movePlayer(2908, 5203, 0);
 					}
 			}
+				break;
+			case 4387:
+				 Server.castleWars.joinWait(c,1);
+				break;
+
+			case 4388:
+				 Server.castleWars.joinWait(c,2);
+				break;
+
+			case 4408:
+				 Server.castleWars.joinWait(c,3);
+				break;
+			case 4389:
+			case 4390:
+				Server.castleWars.leaveWaitingRoom(c);
+				break;
+			case 25216:
+				c.getPA().movePlayer(2531, 3442, 0);
 				break;
 			case 20790:
 				if(c.getX() == 3081 && c.getY() == 3421){

@@ -43,7 +43,9 @@ public class DeathAnimation extends NPCHandler {
                 return 8284;
             case 8611: //wyrm
                 return 8269;
-
+            case 2916:
+            case 2917:
+                return 1580;
             /**
              * Theatre of blood npcs start
              */
@@ -691,6 +693,12 @@ public class DeathAnimation extends NPCHandler {
             case 3040:
             case 5192:
             case 5193:
+            case 2484:
+            case 2485:
+            case 2486:
+            case 2487:
+            case 2488:
+            case 2489:
             case 5195:
             case 5196:
             case 5197:
@@ -705,6 +713,29 @@ public class DeathAnimation extends NPCHandler {
             case 5207:
             case 5208:
                 return 6182;
+            case 2481:
+            case 2482:
+            case 2483:
+                return 4265;
+            case 2490:
+            case 2491:
+                return 6558;
+            case 2498:
+            case 2499:
+            case 2500:
+                return 1187;
+            case 2501:
+            case 2502:
+            case 2503:
+            case 2504:
+            case 2505:
+            case 2506:
+            case 2507:
+            case 2508:
+            case 2509:
+                return 5569;
+            case 2492:
+                return 2707;
             case 1767:
             case 397:
             case 1766:

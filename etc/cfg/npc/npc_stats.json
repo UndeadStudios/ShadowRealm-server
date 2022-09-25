@@ -13989,7 +13989,7 @@
   },
   "2916": {
     "name": "Waterfiend",
-    "hitpoints": 130,
+    "hitpoints": 128,
     "combatLevel": 115,
     "attackSpeed": 4,
     "defenceLevel": 128,
@@ -14005,7 +14005,7 @@
   },
   "2917": {
     "name": "Waterfiend",
-    "hitpoints": 130,
+    "hitpoints": 128,
     "combatLevel": 115,
     "attackSpeed": 4,
     "defenceLevel": 128,

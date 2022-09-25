@@ -110,6 +110,7 @@ public class ServerStartup {
         TourneyManager.initialiseSingleton();
         TourneyManager.getSingleton().init();
         Server.getDropManager().read();
+        Server.castleWars.process();
         TreasureTrailsRewards.load();
         AnimationLength.startup();
         PresetManager.getSingleton().init();

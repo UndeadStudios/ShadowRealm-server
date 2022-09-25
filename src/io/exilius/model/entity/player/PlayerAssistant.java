@@ -116,6 +116,27 @@ public class PlayerAssistant {
     public void openQuestInterface(String header, List<String> lines) {
         openQuestInterface(header, lines.toArray(new String[lines.size()]));
     }
+	public void removeFromCW() {
+		if (c.castleWarsTeam == 1) {
+			if (c.inCwWait) {
+				Server.castleWars.saradominWait
+						.remove(Server.castleWars.saradominWait
+								.indexOf(c.getIndex()));
+			} else {
+				Server.castleWars.saradomin.remove(Server.castleWars.saradomin
+						.indexOf(c.getIndex()));
+			}
+		} else if (c.castleWarsTeam == 2) {
+			if (c.inCwWait) {
+				Server.castleWars.zamorakWait
+						.remove(Server.castleWars.zamorakWait
+								.indexOf(c.getIndex()));
+			} else {
+				Server.castleWars.zamorak.remove(Server.castleWars.zamorak
+						.indexOf(c.getIndex()));
+			}
+		}
+	}
 
     public void openQuestInterface(String header, String... lines) {
         Preconditions.checkArgument(lines.length <= 151, new IllegalArgumentException("Too many lines: " + lines.length));
