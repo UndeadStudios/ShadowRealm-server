@@ -118,6 +118,17 @@ public class MiningEvent extends Event<Player> {
 			stop();
 			return;
 		}
+
+		if (attachment.getItems().playerHasItem(9699, 250)) {
+			attachment.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			attachment.nextChat = -1;
+			return;
+		}
+		if (attachment.getItems().playerHasItem(9698, 250)) {
+			attachment.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
+			attachment.nextChat = -1;
+			return;
+		}
 		if (attachment.getItems().freeSlots() == 0) {
 			attachment.getDH().sendStatement("You have no more free slots.");
 			stop();
@@ -267,6 +278,16 @@ public class MiningEvent extends Event<Player> {
 		if ((SkillcapePerks.MINING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment)) && attachment.getItems().freeSlots() < 2) {
 			attachment.sendMessage("You have run out of inventory space.");
 			stop();
+			return;
+		}
+		if (attachment.getItems().playerHasItem(9699, 250)) {
+			attachment.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			attachment.nextChat = -1;
+			return;
+		}
+		if (attachment.getItems().playerHasItem(9698, 250)) {
+			attachment.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
+			attachment.nextChat = -1;
 			return;
 		}
 
