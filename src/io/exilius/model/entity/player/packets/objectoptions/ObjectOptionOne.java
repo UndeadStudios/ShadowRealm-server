@@ -229,6 +229,20 @@ public class ObjectOptionOne {
 					}
 			}
 				break;
+			case 20790:
+				if(c.getX() == 3081 && c.getY() == 3421){
+					c.facePosition(obX, obY);
+					c.getPA().movePlayer(1859, 5243, 0);
+				}
+				break;
+			case 20788:
+				break;
+			case 20784:
+				if(c.getX() == 1859 && c.getY() == 5243){
+					c.facePosition(obX, obY);
+					c.getPA().movePlayer(3081, 3421, 0);
+				}
+				break;
 			case 25336:
 				if(c.getX() == 1772 && c.getY() == 5366){
 					c.getPA().movePlayer(1768, 5366, 1);

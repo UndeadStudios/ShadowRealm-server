@@ -69326,5 +69326,12 @@
         "prayer": 8,
         "aspeed": 3
       }
+  },
+  "27440": {
+    "name": "Infinite money bag",
+    "equipable": true,
+    "equipment": {
+      "slot": 1
+    }
   }
 }

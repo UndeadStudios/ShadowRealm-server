@@ -83,7 +83,7 @@ public final class Hunter {
 
 		player.last_trap_layed.reset();
 		
-		if (!Boundary.isIn(player, Boundary.HUNTER_BOUNDARIES) && !Boundary.isIn(player, Boundary.REGULAR_DZ_HUNTER)
+		if (!Boundary.isIn(player, Boundary.HUNTER_BOUNDARIES) && !Boundary.isIn(player, Boundary.REGULAR_DZ_HUNTER) && !Boundary.isIn(player, Boundary.SOUL_WARS)
 				&& !Boundary.isIn(player, Boundary.HUNTER_AREA)) {
 			player.sendMessage("This is not a suitable spot to place a trap.");
 			return false;

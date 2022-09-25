@@ -573,8 +573,6 @@ public class DeathAnimation extends NPCHandler {
                 return 1314;
             case 100:// rc
                 return 1314;
-            case 662:
-                return 6182;
             case 414:// Battle Mage
             case 7272:
             case 7391:
@@ -664,13 +662,48 @@ public class DeathAnimation extends NPCHandler {
                 return 141;
             case 2031: // bloodvel
                 return 2073;
-            case 1769:
-            case 1770:
-            case 1771:
-            case 1772:
-            case 7931:
-            case 1773:
-            case 101: // goblin
+            case 9756:
+            case 9757:
+            case 9758:
+            case 9759:
+            case 9760:
+            case 9761:
+            case 9763:
+                return 8723;
+            case 655:
+            case 657://axes
+            case 659://axes
+            case 662://axes
+            case 664://axes
+            case 666://axes
+            case 3028://unarmed
+            case 3029:
+            case 3030:
+            case 3031:
+            case 3032:
+            case 3033:
+            case 3034:
+            case 3035:
+            case 3036:
+            case 3037:
+            case 3038:
+            case 3039:
+            case 3040:
+            case 5192:
+            case 5193:
+            case 5195:
+            case 5196:
+            case 5197:
+            case 5198:
+            case 5199:
+            case 5200:
+            case 5201:
+            case 5202:
+            case 5203:
+            case 5205:
+            case 5206:
+            case 5207:
+            case 5208:
                 return 6182;
             case 1767:
             case 397:
