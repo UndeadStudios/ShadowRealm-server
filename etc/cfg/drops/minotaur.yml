@@ -1,0 +1,65 @@
+---
+npc_id:
+  - 2481
+  - 2482
+  - 2483
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 1
+  items:
+  - name: "iron arrow"
+    minimum: 5
+    maximum: 14
+  - name: "bronze spear"
+    minimum: 1
+    maximum: 1
+  - name: "bronze full helm"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 7
+    maximum: 7
+  - name: "coins"
+    minimum: 2
+    maximum: 2
+  - name: "coins"
+    minimum: 5
+    maximum: 84
+  - name: "copper ore noted"
+    minimum: 1
+    maximum: 1
+  - name: "tin ore noted"
+    minimum: 1
+    maximum: 1
+  - name: "pure essence noted"
+    minimum: 15
+    maximum: 15
+  - name: "rune essence noted"
+    minimum: 5
+    maximum: 5
+uncommon:
+  accessibility: 10
+  items:
+  - name: "bronze dagger"
+    minimum: 1
+    maximum: 1
+  - name: "bronze arrow"
+    minimum: 3
+    maximum: 3
+  - name: "cooked meat"
+    minimum: 1
+    maximum: 1
+  - name: "right skull half"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 100
+  items:
+  - name: "mind rune"
+    minimum: 1
+    maximum: 1

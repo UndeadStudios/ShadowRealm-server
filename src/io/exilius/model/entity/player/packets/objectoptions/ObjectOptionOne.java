@@ -247,7 +247,9 @@ public class ObjectOptionOne {
 			case 4390:
 				Server.castleWars.leaveWaitingRoom(c);
 				break;
-
+			case 25216:
+				c.getPA().movePlayer(2531, 3442, 0);
+				break;
 			case 20790:
 				if(c.getX() == 3081 && c.getY() == 3421){
 					c.facePosition(obX, obY);

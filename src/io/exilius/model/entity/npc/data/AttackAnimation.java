@@ -909,6 +909,12 @@ public class AttackAnimation extends NPCHandler {
 			case 5204:
 			case 3075://armed
 			case 3076:
+			case 2484:
+			case 2485:
+			case 2486:
+			case 2487:
+			case 2488:
+			case 2489:
 			case 656:
 			case 658:
 			case 660:
@@ -918,6 +924,9 @@ public class AttackAnimation extends NPCHandler {
 			case 667:
 			case 668:
 				return 6188;
+			case 2916:
+			case 2917:
+				return 1582;
 			case 9756:
 			case 9757:
 			case 9758:
@@ -934,7 +943,27 @@ public class AttackAnimation extends NPCHandler {
 			case 6401:
 			case 10598:
 				return 5782;
-
+			case 2481:
+			case 2482:
+			case 2483:
+				return 4266;
+			case 2490:
+			case 2491:
+				return 6559;
+			case 2498:
+			case 2499:
+			case 2500:
+				return 1184;
+			case 2501:
+			case 2502:
+			case 2503:
+			case 2504:
+			case 2505:
+			case 2506:
+			case 2507:
+			case 2508:
+			case 2509:
+				return 5568;
 		case 21: // hero
 			return 451;
 
