@@ -228,6 +228,12 @@ public class Player extends Entity {
     public long biggestFlowerPokerPotLost;
     public boolean isXslimed = false;
     public boolean issplitbarkcrafting = false;
+    /**
+     * Castle Wars
+     */
+    public int castleWarsTeam;
+    public boolean inCwGame;
+    public boolean inCwWait;
 
     public void saveItemsForMinigame() {
         /**

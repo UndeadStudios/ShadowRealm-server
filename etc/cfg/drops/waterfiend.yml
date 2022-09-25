@@ -1,0 +1,195 @@
+---
+npc_id:
+  - 2916
+constant:
+  accessibility: 0
+  items:
+  - name: "water rune"
+    minimum: 1
+    maximum: 1
+  - name: "fiendish ashes"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 30
+  items:
+  - name: "staff of water"
+    minimum: 1
+    maximum: 1
+  - name: "mithril arrow"
+    minimum: 90
+    maximum: 90
+  - name: "water rune"
+    minimum: 150
+    maximum: 150
+  - name: "coins"
+    minimum: 2000
+    maximum: 3000
+  - name: "water orb noted"
+    minimum: 6
+    maximum: 10
+uncommon:
+  accessibility: 64
+  items:
+  - name: "water battlestaff"
+    minimum: 1
+    maximum: 1
+  - name: "adamant chainbody"
+    minimum: 1
+    maximum: 1
+  - name: "adamant warhammer"
+    minimum: 1
+    maximum: 1
+  - name: "rune med helm"
+    minimum: 2
+    maximum: 2
+  - name: "sapphire bolts"
+    minimum: 15
+    maximum: 15
+  - name: "death rune"
+    minimum: 23
+    maximum: 23
+  - name: "blood rune"
+    minimum: 17
+    maximum: 17
+  - name: "mist rune"
+    minimum: 25
+    maximum: 75
+  - name: "mud rune"
+    minimum: 75
+    maximum: 100
+  - name: "steam rune"
+    minimum: 40
+    maximum: 60
+  - name: "mithril ore noted"
+    minimum: 10
+    maximum: 20
+  - name: "raw lobster noted"
+    minimum: 18
+    maximum: 18
+  - name: "raw shark noted"
+    minimum: 8
+    maximum: 8
+  - name: "shark"
+    minimum: 2
+    maximum: 2
+  - name: "grimy guam leaf"
+    minimum: 1
+    maximum: 1
+  - name: "grimy marrentill"
+    minimum: 1
+    maximum: 1
+  - name: "watermelon seed"
+    minimum: 5
+    maximum: 15
+  - name: "vial of water noted"
+    minimum: 40
+    maximum: 50
+  - name: "water talisman"
+    minimum: 1
+    maximum: 1
+  - name: "oyster"
+    minimum: 3
+    maximum: 3
+  - name: "seaweed noted"
+    minimum: 20
+    maximum: 30
+  - name: "snape grass noted"
+    minimum: 20
+    maximum: 30
+rare:
+  accessibility: 100
+  items:
+    - name: "mystic water staff"
+      minimum: 1
+      maximum: 1
+    - name: "Blue dhide vamb"
+      minimum: 1
+      maximum: 1
+    - name: "rune full helm"
+      minimum: 1
+      maximum: 1
+    - name: "mithril bar noted"
+      minimum: 10
+      maximum: 15
+    - name: "uncut sapphire noted"
+      minimum: 3
+      maximum: 3
+    - name: "uncut emerald noted"
+      minimum: 3
+      maximum: 3
+    - name: "uncut ruby noted"
+      minimum: 3
+      maximum: 3
+    - name: "uncut diamond noted"
+      minimum: 1
+      maximum: 1
+    - name: "grimy tarromin"
+      minimum: 1
+      maximum: 1
+    - name: "grimy harralander"
+      minimum: 1
+      maximum: 1
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+    - name: "grimy irit leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy avantoe"
+      minimum: 1
+      maximum: 1
+    - name: "grimy kwuarm"
+      minimum: 1
+      maximum: 1
+    - name: "grimy cadantine"
+      minimum: 1
+      maximum: 1
+    - name: "grimy lantadyme"
+      minimum: 1
+      maximum: 1
+    - name: "grimy dwarf weed"
+      minimum: 1
+      maximum: 1
+    - name: "toadflax seed"
+      minimum: 1
+      maximum: 1
+    - name: "irit seed"
+      minimum: 1
+      maximum: 1
+    - name: "belladonna seed"
+      minimum: 1
+      maximum: 1
+    - name: "poison ivy seed"
+      minimum: 1
+      maximum: 1
+    - name: "avantoe seed"
+      minimum: 1
+      maximum: 1
+    - name: "kwuarm seed"
+      minimum: 1
+      maximum: 1
+    - name: "snapdragon seed"
+      minimum: 1
+      maximum: 1
+very_rare:
+  accessibility: 150
+  items:
+    - name: "mist battlestaff"
+      minimum: 1
+      maximum: 1
+    - name: "cadantine seed"
+      minimum: 1
+      maximum: 1
+    - name: "lantadyme seed"
+      minimum: 1
+      maximum: 1
+    - name: "snape grass seed"
+      minimum: 1
+      maximum: 1
+    - name: "dwarf weed seed"
+      minimum: 1
+      maximum: 1
+    - name: "torstol seed"
+      minimum: 1
+      maximum: 1

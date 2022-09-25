@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import io.exilius.content.minigames.CastleWars;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -77,6 +78,7 @@ public class Server {
     /**
      * ClanChat Added by Valiant
      */
+    public static CastleWars castleWars = new CastleWars();
     public static ClanManager clanManager = new ClanManager();
     /**
      * Server updating.
