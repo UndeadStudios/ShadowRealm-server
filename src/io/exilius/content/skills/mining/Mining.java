@@ -60,6 +60,16 @@ public class Mining {
 			player.nextChat = -1;
 			return;
 		}
+		if (player.getItems().playerHasItem(9699, 250)) {
+			player.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			player.nextChat = -1;
+			return;
+		}
+		if (player.getItems().playerHasItem(9698, 250)) {
+			player.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
+			player.nextChat = -1;
+			return;
+		}
 		int levelReduction = (int) Math.floor(player.playerLevel[Skill.MINING.getId()] / 10);
 		int pickaxeReduction = pickaxe.getExtractionReduction();
 		int extractionTime = mineral.getExtractionRate() - (levelReduction + pickaxeReduction);
@@ -96,6 +106,17 @@ public class Mining {
 		}
 		if (player.getItems().freeSlots() == 0) {
 			player.getDH().sendStatement("You have no more free slots.");
+			player.nextChat = -1;
+			return;
+		}
+
+		if (player.getItems().playerHasItem(9699, 250)) {
+			player.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			player.nextChat = -1;
+			return;
+		}
+		if (player.getItems().playerHasItem(9698, 250)) {
+			player.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
 			player.nextChat = -1;
 			return;
 		}

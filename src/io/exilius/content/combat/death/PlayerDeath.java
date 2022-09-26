@@ -155,6 +155,14 @@ public class PlayerDeath {
                 } else {
                     throw new IllegalStateException("Not a hardcore: " + c.getMode());
                 }
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
 
                 PlayerSave.saveGame(c);
             }
@@ -171,6 +179,14 @@ public class PlayerDeath {
                 }
                 c.sendMessage("Oh dear you are dead!");
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
             }
         }
 
@@ -286,6 +302,14 @@ public class PlayerDeath {
         PlayerSave.saveGame(c);
         c.resetOnDeath();
         c.getItems().sendEquipmentContainer();
+        if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
+        }
     }
 
     private static void handleAreaBasedDeath(Player c) {
@@ -320,6 +344,14 @@ public class PlayerDeath {
             }
 
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
 
             lostItems.removeAll(untradeables);
             untradeables.forEach(item -> c.getPerduLostPropertyShop().add(c, item));
@@ -342,51 +374,155 @@ public class PlayerDeath {
             Entity tourneyKiller = c.calculateTourneyKiller();
 
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.outlastDeaths++;
             TourneyManager.getSingleton().handleDeath(c.getLoginName(), false);
             TourneyManager.getSingleton().handleKill(tourneyKiller);
         } else if (TourneyManager.getSingleton().isInLobbyBounds(c)) {
             TourneyManager.getSingleton().leaveLobby(c, false);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         }
 
         if (Boundary.isIn(c, Boundary.PEST_CONTROL_AREA)) {
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.getPA().movePlayer(2657, 2639, 0);
         } else if (Boundary.isIn(c, PestControl.GAME_BOUNDARY)) {
+            if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
+        }
             c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2656 + Misc.random(2), 2614 - Misc.random(3), 0);
         } else if (Boundary.isIn(c, Boundary.ZULRAH)) {
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.getPA().movePlayer(2202, 3056, 0);
         } else if (Boundary.isIn(c, Boundary.KRAKEN_CAVE)) {
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.getPA().movePlayer(2280, 10016, 0);
         }
         if (Boundary.isIn(c, Boundary.CERBERUS_BOSSROOMS)) {
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.getPA().movePlayer(1309, 1250, 0);
         } else if (Boundary.isIn(c, Boundary.SKOTIZO_BOSSROOM)) {
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
             c.getPA().movePlayer(1665, 10045, 0);
         } else if (Boundary.isIn(c, Boundary.DUEL_ARENA)) {
             DuelSession duelSession = (DuelSession) Server.getMultiplayerSessionListener().getMultiplayerSession(c, MultiplayerSessionType.DUEL);
             if (Objects.nonNull(duelSession) && duelSession.getStage().getStage() == MultiplayerSessionStage.FURTHER_INTERATION) {
                 duelSession.finish(MultiplayerSessionFinalizeType.GIVE_ITEMS);
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
             }
         } else if (Boundary.isIn(c, Boundary.HYDRA_BOSS_ROOM)) {
             c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Boundary.isIn(c, Boundary.FIGHT_CAVE)) {
             c.getFightCave().handleDeath();
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Boundary.isIn(c, Boundary.INFERNO) && c.getInferno() != null) {
             c.getInferno().handleDeath();
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Boundary.isIn(c, Boundary.XERIC)) {
             c.getXeric().leaveGame(c, true);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Boundary.isIn(c, Boundary.OLM)) {
             Raids raidInstance = c.getRaidsInstance();
             if (raidInstance != null) {
@@ -394,6 +530,14 @@ public class PlayerDeath {
                 c.getPA().movePlayer(olmWait.getX(), olmWait.getY(), raidInstance.currentHeight);
                 raidInstance.resetOlmRoom(c);
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
             }
         } else if (Boundary.isIn(c, Boundary.RAIDS)) {
             Raids raidInstance = c.getRaidsInstance();
@@ -402,26 +546,82 @@ public class PlayerDeath {
                 c.getPA().movePlayer(startRoom.getX(), startRoom.getY(), raidInstance.currentHeight);
                 raidInstance.resetRoom(c);
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
             }
         } else if (Highpkarena.getState(c) != null) {
             Highpkarena.handleDeath(c);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Lowpkarena.getState(c) != null) {
             Lowpkarena.handleDeath(c);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
             c.getPA().movePlayer(c.absX, 4759, 0);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else if (Boundary.isIn(c, Boundary.SAFEPKSAFE)) {
             c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
             onRespawn(c);
             c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
         } else {
             if (Boundary.isIn(c, Boundary.OUTLAST)) {
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
                 c.getPA().movePlayer(new Coordinate(3080, 3510));
             } else {
                 c.getItems().sendEquipmentContainer();
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
                 c.getPA().movePlayer(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, 0);
             }
 
@@ -458,6 +658,14 @@ public class PlayerDeath {
         c.setKiller(null);
         c.killerId = 0;
         c.getItems().sendEquipmentContainer();
+        if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
+        }
     }
 
 }

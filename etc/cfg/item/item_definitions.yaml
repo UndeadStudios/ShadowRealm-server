@@ -73382,6 +73382,17 @@
   noteId: 27306
   noted: true
   stackable: true
+- id: 24777
+  name: "Blood shard"
+  description: "A magical shard filled with a dark power."
+  shopValue: 200000
+  noteId: 24778
+- id: 24778
+  name: "Blood shard"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 24777
+  noted: true
+  stackable: true
 - id: 27363
   name: "Masori assembler max cape"
   description: "The cape worn by only the most experienced players."
@@ -73494,7 +73505,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26177
+- id: 29177
   name: "3rd age platebody (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 200000
@@ -73502,7 +73513,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26178
+- id: 29178
   name: "3rd age full helmet (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 90000
@@ -73510,10 +73521,156 @@
   requirements:
     - skill: "DEFENCE"
       level: 60
-- id: 26179
+- id: 29179
   name: "3rd age kiteshield (g)"
   description: "Fabulous rare armour beaten from magical silver."
   shopValue: 180000
   requirements:
     - skill: "DEFENCE"
       level: 65
+- id: 29180
+  name: "Osiris Chainmace"
+  description: "Fabulous rare chainmace from hell."
+  shopValue: 180000
+  requirements:
+    - skill: "ATTACK"
+      level: 65
+- id: 27440
+  name: "Infinite money bag"
+  description: "its a Infinite money bag."
+  shopValue: 40
+  noteId: 27441
+- id: 27441
+  name: "Infinite money bag"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 27440
+  noted: true
+  stackable: true
+- id: 28242
+  name: "Barrows defender"
+  description: "A broken defensive weapon."
+  shopValue: 125000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28243
+  name: "2008 hween boots"
+  description: "a pair of 2008 hween boots."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28244
+  name: "2008 hween legs"
+  description: "a pair of 2008 hween legs."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28245
+  name: "2008 hween plate"
+  description: "a pair of 2008 hween plate."
+  shopValue: 5000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28246
+  name: "2008 hween gloves"
+  description: "a pair of 2008 hween gloves."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28247
+  name: "2008 hween mask"
+  description: "a pair of 2008 hween gloves."
+  shopValue: 5000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28248
+  name: "Dragon platebody (t)"
+  description: "its a Dragon platebody (t)"
+  shopValue: 5000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 60
+- id: 28249
+  name: "Dragon platebody"
+  description: "its a Dragon platebody"
+  shopValue: 5000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 60
+- id: 28250
+  name: "Admin platebody"
+  description: "its a Admin platebody."
+  shopValue: 5000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28251
+  name: "Admin platelegs"
+  description: "its a Admin platelegs."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28252
+  name: "Admin crown"
+  description: "its a Admin crown."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28253
+  name: "G-Mod crown"
+  description: "its a G-Mod crown."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28254
+  name: "Mod crown"
+  description: "its a Mod crown."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28255
+  name: "SB-Mod crown"
+  description: "its a SB-Mod crown."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28256
+  name: "Admin Boots"
+  description: "its a Admin Boots."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28257
+  name: "Admin Kiteshield"
+  description: "its a Admin Kiteshield."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 10
+- id: 28258
+  name: "Admin abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+
+
+

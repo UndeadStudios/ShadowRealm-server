@@ -96,17 +96,13 @@ public enum WeaponData {
             new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.CRUSH),
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.CRUSH),
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.CRUSH)),
-//    WARSPEAR(WeaponDataConstants.WARSPEARS, WeaponInterface.SPEAR,
-//            new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.CRUSH),
-//            new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.CRUSH),
-//            new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.CRUSH)),
 
     BOW(WeaponDataConstants.BOWS, WeaponInterface.BOW,
             new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.RANGE),
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.RANGE),
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.RANGE)),
 
-    CROSSBOW(WeaponDataConstants.CROSSBOWS, WeaponInterface.CROSSBOW,
+    CROSSBOW(WeaponDataConstants.CROSSBOWS, WeaponInterface.BOW,
             new WeaponMode(0, AttackStyle.ACCURATE, CombatStyle.RANGE),
             new WeaponMode(1, AttackStyle.AGGRESSIVE, CombatStyle.RANGE),
             new WeaponMode(2, AttackStyle.DEFENSIVE, CombatStyle.RANGE)),

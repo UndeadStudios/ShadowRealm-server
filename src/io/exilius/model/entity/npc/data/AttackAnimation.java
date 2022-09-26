@@ -193,8 +193,6 @@ public class AttackAnimation extends NPCHandler {
 				return 394;
 			case 1609:
 				return 64;
-			case 5842:
-				return 5782;
 		case 8028:
 			return 7952;
 		case 8609:
@@ -366,11 +364,31 @@ public class AttackAnimation extends NPCHandler {
 		case 6617:
 			return 6254;
 		case 1277:
-		case 2527: // Ghosts
+		case 2527:
+			case 85:
 			return 5540;
 		case 2528:
 		case 2529:
 		case 2530:
+			case 2531:
+			case 2532:
+			case 2533:
+			case 2534:
+			case 1786:
+			case 86:
+			case 87:
+			case 88:
+			case 89:
+			case 90:
+			case 91:
+			case 92:
+			case 93:
+			case 94:
+			case 95:
+			case 96:
+			case 97:
+			case 98:
+			case 99:
 			return 5532;
 		case 2145:
 		case 6462: // Zombies
@@ -668,8 +686,6 @@ public class AttackAnimation extends NPCHandler {
 		case 2092:
 		case 2093:
 			return 4658;
-		case 85: // ghost
-			return -1;
 		case 7258:
 			return 5540;
 
@@ -710,15 +726,11 @@ public class AttackAnimation extends NPCHandler {
 		case 1459:
 			return 1402;
 
-		case 86:
-		case 87:
-			return 4933;
 		case 871:// Ogre Shaman
 		case 5181:// Ogre Shaman
 		case 5184:// Ogre Shaman
 		case 5187:// Ogre Shaman
 		case 5190:// Ogre Shaman
-		case 5193:// Ogre Shaman
 			return 359;
 
 		case 2892:
@@ -873,15 +885,100 @@ public class AttackAnimation extends NPCHandler {
 			case 7931:
 		case 1773:
 		case 101: // goblin
+			case 657:
+			case 659:
+			case 662:
+			case 664:
+			case 666:
+			case 3028://unarmed
+			case 3029:
+			case 3030:
+			case 3031:
+			case 3032:
+			case 3033:
+			case 3034:
+			case 3035:
+			case 3036:
+			case 3037:
+			case 3038:
+			case 3039:
+			case 3040:
+			case 5192:
+			case 5193:
+			case 5195:
+			case 5196:
+			case 5197:
+			case 5198:
+			case 5199:
+			case 5200:
+			case 5201:
+			case 5202:
+			case 5203:
+			case 5205:
+			case 5206:
+			case 5207:
+			case 5208:
 			return 6184;
-
-		case 1767:
-		case 397:
-		case 1766:
-		case 1768:
-		case 81: // cow
-			return 5849;
-
+			case 3073:
+			case 3074:
+			case 5204:
+			case 3075://armed
+			case 3076:
+			case 2484:
+			case 2485:
+			case 2486:
+			case 2487:
+			case 2488:
+			case 2489:
+			case 656:
+			case 658:
+			case 660:
+			case 661:
+			case 663:
+			case 665:
+			case 667:
+			case 668:
+				return 6188;
+			case 2916:
+			case 2917:
+				return 1582;
+			case 9756:
+			case 9757:
+			case 9758:
+			case 9759:
+			case 9760:
+			case 9761:
+			case 9763:
+				return 8705;
+			case 2790:
+			case 2791:
+			case 2793:
+			case 2795:
+			case 5842:
+			case 6401:
+			case 10598:
+				return 5782;
+			case 2481:
+			case 2482:
+			case 2483:
+				return 4266;
+			case 2490:
+			case 2491:
+				return 6559;
+			case 2498:
+			case 2499:
+			case 2500:
+				return 1184;
+			case 2501:
+			case 2502:
+			case 2503:
+			case 2504:
+			case 2505:
+			case 2506:
+			case 2507:
+			case 2508:
+			case 2509:
+				return 5568;
 		case 21: // hero
 			return 451;
 
@@ -940,8 +1037,6 @@ public class AttackAnimation extends NPCHandler {
 			return 1312;
 		case 100:// rock crabs
 			return 1312;
-		case 662:// Goblins
-			return 6183;
 		case 2841: // ice warrior
 		case 178:
 			return 451;

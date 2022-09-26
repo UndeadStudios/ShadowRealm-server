@@ -69311,5 +69311,241 @@
       "dmagic": -3,
       "drange": 63
     }
+  },
+  "29180": {
+    "name": "Osiris's chainmace",
+      "equipable": true,
+      "weight": 2.0,
+      "equipment": {
+        "slot": 3,
+        "astab": 83,
+        "aslash": -2,
+        "acrush": 97,
+        "dslash": 1,
+        "str": 96,
+        "prayer": 8,
+        "aspeed": 3
+      }
+  },
+  "27440": {
+    "name": "Infinite money bag",
+    "equipable": true,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28242": {
+    "name": "Barrows defender",
+    "equipable": true,
+    "weight": 0.4,
+    "equipment": {
+      "slot": 5,
+      "astab": 30,
+      "aslash": 29,
+      "acrush": 28,
+      "amagic": -6,
+      "arange": -4,
+      "dstab": 30,
+      "dslash": 29,
+      "dcrush": 28,
+      "dmagic": -6,
+      "drange": -4,
+      "str": 9
+    }
+  },
+  "28243": {
+    "name": "2008 hween boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28244": {
+    "name": "2008 hween legs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28245": {
+    "name": "2008 hween plate",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28246": {
+    "name": "2008 hween gloves",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 9,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28247": {
+    "name": "2008 mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28248": {
+    "name": "Dragon platebody (t)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28249": {
+    "name": "Dragon platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28250": {
+    "name": "Admin platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "28251": {
+    "name": "Admin platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28252": {
+    "name": "Admin crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28253": {
+    "name": "G-Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28254": {
+    "name": "Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28255": {
+    "name": "SB Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28256": {
+    "name": "Admin boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28257": {
+    "name": "Admin kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28258": {
+    "name": "Admin Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
   }
 }

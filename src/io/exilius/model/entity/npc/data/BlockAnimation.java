@@ -15,6 +15,9 @@ public class BlockAnimation {
                 return 6375;
             case 936:
                 return 285;
+            case 2916:
+            case 2917:
+                return 1581;
             case Hespori.NPC_ID:
                 return -1;
             //Inferno Npcs
@@ -158,11 +161,32 @@ public class BlockAnimation {
             case 6616:
             case 6617:
                 return 6255;
-            case 2527: // Ghosts
+            case 1277:
+            case 2527:
+            case 85:
                 return 5541;
             case 2528:
             case 2529:
             case 2530:
+            case 2531:
+            case 2532:
+            case 2533:
+            case 2534:
+            case 1786:
+            case 86:
+            case 87:
+            case 88:
+            case 89:
+            case 90:
+            case 91:
+            case 92:
+            case 93:
+            case 94:
+            case 95:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
                 return 5533;
             //Xeric Minigame
             case 7547:
@@ -402,8 +426,6 @@ public class BlockAnimation {
                 return 1313;
             case 100:// rc
                 return 1313;
-            case 662:// goblins
-                return 6186;
             case 118:
                 return 100;
             case 2263:
@@ -593,17 +615,82 @@ public class BlockAnimation {
             case 7410:
                 return 1537;
 
-            case 1770:
-            case 1771:
-            case 1772:
-            case 1773:
-            case 2678:
-            case 2679:
-            case 1774:
-            case 1775:
-            case 1776:// goblins
-                return 312;
-
+            case 655://goblins
+            case 657:
+            case 659:
+            case 662:
+            case 664:
+            case 666:
+            case 3028://unarmed
+            case 3029:
+            case 3030:
+            case 3031:
+            case 3032:
+            case 3033:
+            case 3034:
+            case 3035:
+            case 3036:
+            case 3037:
+            case 3038:
+            case 3039:
+            case 3040:
+            case 5192:
+            case 5193:
+            case 5195:
+            case 5196:
+            case 5197:
+            case 5198:
+            case 5199:
+            case 5200:
+            case 5201:
+            case 5202:
+            case 5203:
+            case 5205:
+            case 5206:
+            case 5207:
+            case 5208:
+                return 6183;
+            case 3073:
+            case 3074:
+            case 5204:
+            case 3075://armed
+            case 3076:
+            case 656:
+            case 658:
+            case 2484:
+            case 2485:
+            case 2486:
+            case 2487:
+            case 2488:
+            case 2489:
+            case 660:
+            case 661:
+            case 663:
+            case 665:
+            case 667:
+            case 668:
+                return 6189;
+            case 2481:
+            case 2482:
+            case 2483:
+                return 4266;
+            case 2490:
+            case 2491:
+                return 6557;
+            case 2498:
+            case 2499:
+            case 2500:
+                return 1251;
+            case 2501:
+            case 2502:
+            case 2503:
+            case 2504:
+            case 2505:
+            case 2506:
+            case 2507:
+            case 2508:
+            case 2509:
+                return 5574;
             case 132: // monkey
                 return 221;
 
@@ -641,7 +728,6 @@ public class BlockAnimation {
 
             case 135:// hellhound
             case 142:
-            case 95:
                 return 6578;
 
             case 1593:
@@ -652,8 +738,6 @@ public class BlockAnimation {
                 return 76;
             case 6707:
                 return -1;
-            case 89:
-                return 6375;
             case 133:
                 return 290;
 
@@ -685,14 +769,6 @@ public class BlockAnimation {
             case 1009:
                 return 5328;
 
-            case 2534:
-            case 85:
-            case 7258:
-            case 749:
-            case 104:
-            case 655:
-            case 491: // ghost
-                return -1;
 
             case 1585:
             case 2084: // giant
@@ -734,9 +810,6 @@ public class BlockAnimation {
             case 708: // imp
                 return 170;
 
-            case 86:
-            case 87:
-                return 139;
             case 47:// rat
                 return 2706;
             case 2457:
@@ -750,10 +823,6 @@ public class BlockAnimation {
             case 41: // chicken
                 return 55;
 
-            case 90:
-            case 91:
-            case 93: // skeleton
-                return 261;
             case 1:
                 return 424;
             default:

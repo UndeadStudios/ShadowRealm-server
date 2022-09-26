@@ -1,0 +1,80 @@
+---
+npc_id:
+  - 2498
+  - 2499
+  - 2500
+common:
+  accessibility: 1
+  items:
+  - name: "body rune"
+    minimum: 3
+    maximum: 12
+  - name: "dust rune"
+    minimum: 3
+    maximum: 9
+  - name: "grimy guam leaf"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 10
+    maximum: 10
+  - name: "coins"
+    minimum: 5
+    maximum: 84
+  - name: "iron ore"
+    minimum: 1
+    maximum: 1
+  - name: "iron ore noted"
+    minimum: 3
+    maximum: 10
+  - name: "ashes"
+    minimum: 1
+    maximum: 1
+uncommon:
+  accessibility: 10
+  items:
+  - name: "fire rune"
+    minimum: 42
+    maximum: 42
+  - name: "nature rune"
+    minimum: 5
+    maximum: 5
+  - name: "grimy marrentill"
+    minimum: 1
+    maximum: 1
+  - name: "grimy tarromin"
+    minimum: 1
+    maximum: 1
+  - name: "grimy harralander"
+    minimum: 1
+    maximum: 1
+  - name: "grimy ranarr weed"
+    minimum: 1
+    maximum: 1
+  - name: "grimy irit leaf"
+    minimum: 1
+    maximum: 1
+  - name: "bottom of sceptre"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 50
+  items:
+  - name: "grimy avantoe"
+    minimum: 1
+    maximum: 1
+  - name: "grimy kwuarm"
+    minimum: 1
+    maximum: 1
+  - name: "grimy cadantine"
+    minimum: 1
+    maximum: 1
+  - name: "grimy lantadyme"
+    minimum: 1
+    maximum: 1
+  - name: "grimy dwarf weed"
+    minimum: 1
+    maximum: 1
+  - name: "silver bar"
+    minimum: 1
+    maximum: 1

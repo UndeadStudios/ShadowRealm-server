@@ -1,0 +1,114 @@
+---
+npc_id:
+  - 9756
+  - 9757
+  - 9758
+  - 9759
+  - 9760
+  - 9761
+  - 9763
+constant:
+  accessibility: 0
+  items:
+  - name: "vampyre dust"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 2
+  items:
+  - name: "rune dagger"
+    minimum: 1
+    maximum: 1
+  - name: "adamant platelegs"
+    minimum: 1
+    maximum: 1
+  - name: "adamant platebody"
+    minimum: 1
+    maximum: 1
+  - name: "death rune"
+    minimum: 6
+    maximum: 10
+  - name: "blood rune"
+    minimum: 8
+    maximum: 16
+  - name: "nature rune"
+    minimum: 6
+    maximum: 11
+  - name: "rune arrow"
+    minimum: 4
+    maximum: 10
+  - name: "bark noted"
+    minimum: 4
+    maximum: 8
+  - name: "coal noted"
+    minimum: 8
+    maximum: 8
+  - name: "coins"
+    minimum: 100
+    maximum: 1500
+uncommon:
+  accessibility: 5
+  items:
+  - name: "rune full helm"
+    minimum: 1
+    maximum: 1
+  - name: "rune kiteshield"
+    minimum: 1
+    maximum: 1
+  - name: "rune javelin"
+    minimum: 5
+    maximum: 15
+  - name: "runite bar"
+    minimum: 1
+    maximum: 1
+  - name: "yew logs noted"
+    minimum: 6
+    maximum: 6
+  - name: "runite ore"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 80
+  items:
+  - name: "grimy guam leaf"
+    minimum: 1
+    maximum: 1
+  - name: "grimy marrentill"
+    minimum: 1
+    maximum: 1
+  - name: "grimy tarromin"
+    minimum: 1
+    maximum: 1
+  - name: "grimy harralander"
+    minimum: 1
+    maximum: 1
+  - name: "limpwurt seed"
+    minimum: 1
+    maximum: 1
+  - name: "strawberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "marrentill seed"
+    minimum: 1
+    maximum: 1
+  - name: "opal bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "pearl bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "diamond bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "ruby bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "dragonstone bolt tips"
+    minimum: 6
+    maximum: 14
+very_rare:
+  accessibility: 1500
+  items:
+  - name: "blood shard"
+    minimum: 1
+    maximum: 1

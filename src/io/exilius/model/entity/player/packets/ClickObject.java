@@ -312,14 +312,14 @@ public class ClickObject implements PacketType {
                             c.sendMessage("@red@You need to lower Hespori's defence first.");
                             return;
                         }
-                        if (c.getItems().playerHasItem(9698, 250)) {
-                            c.sendMessage("@red@You already have 250 ore please burn and use them before continuing!");
-                            return;
-                        }
-                        if (c.getItems().playerHasItem(9699, 250)) {
-                        c.sendMessage("@red@You already have 250 Burning runes please use them before continuing!");
-                        return;
-                    }
+//                        if (c.getItems().playerHasItem(9698, 250)) {
+//                            c.sendMessage("@red@You already have 250 ore please burn and use them before continuing!");
+//                            return;
+//                        }
+//                        if (c.getItems().playerHasItem(9699, 250)) {
+//                        c.sendMessage("@red@You already have 250 Burning runes please use them before continuing!");
+//                        return;
+//                    }
                             break;
                     case 33223:
                     case 1206:
@@ -713,7 +713,6 @@ public class ClickObject implements PacketType {
                     case 26569:
                     case 11406:
                     case 11430:
-                    case 26461:
                     case 26766:
                     case 1759:
                     case 1761:

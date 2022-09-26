@@ -1,0 +1,88 @@
+---
+npc_id:
+  - 3055
+  - 3056
+  - 3057
+  - 3058
+  - 3059
+  - 3060
+  - 3061
+  - 3062
+  - 3064
+  - 3065
+  - 3066
+  - 3067
+  - 3068
+  - 3069
+  - 3070
+  - 3071
+  - 3072
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 30
+  items:
+  - name: "bronze axe"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 5
+    maximum: 5
+  - name: "coins"
+    minimum: 8
+    maximum: 8
+uncommon:
+  accessibility: 64
+  items:
+  - name: "staff"
+    minimum: 1
+    maximum: 1
+  - name: "chaos rune"
+    minimum: 2
+    maximum: 2
+  - name: "bronze arrow"
+    minimum: 15
+    maximum: 15
+  - name: "earth rune"
+    minimum: 2
+    maximum: 2
+  - name: "fire rune"
+    minimum: 5
+    maximum: 5
+  - name: "mind rune"
+    minimum: 5
+    maximum: 5
+  - name: "coins"
+    minimum: 17
+    maximum: 17
+  - name: "coins"
+    minimum: 27
+    maximum: 27
+rare:
+  accessibility: 100
+  items:
+    - name: "iron mace"
+      minimum: 1
+      maximum: 1
+    - name: "law rune"
+      minimum: 2
+      maximum: 2
+    - name: "tin ore noted"
+      minimum: 4
+      maximum: 4
+    - name: "bear fur"
+      minimum: 1
+      maximum: 1
+    - name: "beer"
+      minimum: 1
+      maximum: 1
+    - name: "cooked meat"
+      minimum: 1
+      maximum: 1
+    - name: "ring mould"
+      minimum: 1
+      maximum: 1

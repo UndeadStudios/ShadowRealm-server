@@ -10,6 +10,7 @@ import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.minigames.tob.TobRoom;
 import io.exilius.content.minigames.tob.rooms.RoomSevenTreasure;
 import io.exilius.model.collisionmap.WorldObject;
+import io.exilius.model.entity.npc.pets.PetHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.items.GameItem;
@@ -179,6 +180,14 @@ public class TobInstance extends InstancedArea {
         player.moveTo(resolve(room.getDeathPosition()));
         player.sendMessage("Oh dear, you have died!");
         player.getItems().sendEquipmentContainer();
+        if (player.hasFollower) {
+            if (player.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(player.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(player, pet, true, false);
+                }
+            }
+        }
         player.getAttributes().setBoolean(TOB_DEAD_ATTR_KEY, true);
         Server.getLogging().write(new DiedAtTobLog(player, this));
 
