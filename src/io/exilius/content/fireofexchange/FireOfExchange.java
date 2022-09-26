@@ -135,11 +135,11 @@ public class FireOfExchange {
             case 23939://corrupt beast
                 return 100000;
             case 30020://corrupt beast
-                return 500_000;
+                return 500000;
             case 30021://roc
-                return 1_000_000;
-            case 30022://Kratos
-                return 1_150_000;
+                return 500000;
+            case 30022://yama
+                return 1500000;
             case 23804://imbue dust
                 return 15000;
             case 12783://row i scroll

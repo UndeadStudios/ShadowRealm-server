@@ -32,9 +32,9 @@ public class FireOfDestruction {
             c.getItems().addItem(darkPetReward, 1);
             PlayerHandler.executeGlobalMessage("@bla@[@red@@cr18@Dark Pet@bla@] "+ c.getDisplayName() +"@pur@ has just received a @bla@" + ItemAssistant.getItemName(darkPetReward) + "!");
         } else {
-            //gives back 15% to 25% of foe pet value in coins at 100 gp per foe
-            int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 100L * 0.15);
-            int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 100L / 10L));
+            //gives back 15% to 25% of foe pet value in coins at 2k gp per foe
+            int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 2000L * 0.15);
+            int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 2000L / 10L));
             c.getItems().addItemUnderAnyCircumstance(995, base + random);
             PlayerHandler.executeGlobalMessage("@bla@[@red@Dark Pet@bla@] "+ c.getDisplayName() +"@pur@ sacrificed his @bla@"
                     + ItemAssistant.getItemName(itemId) + " @pur@and received only gp!");
