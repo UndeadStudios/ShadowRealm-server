@@ -69418,5 +69418,134 @@
     "equipment": {
       "slot": 0
     }
+  },
+  "28248": {
+    "name": "Dragon platebody (t)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28249": {
+    "name": "Dragon platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28250": {
+    "name": "Admin platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "28251": {
+    "name": "Admin platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28252": {
+    "name": "Admin crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28253": {
+    "name": "G-Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28254": {
+    "name": "Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28255": {
+    "name": "SB Mod crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28256": {
+    "name": "Admin boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28257": {
+    "name": "Admin kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28258": {
+    "name": "Admin Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
   }
 }
