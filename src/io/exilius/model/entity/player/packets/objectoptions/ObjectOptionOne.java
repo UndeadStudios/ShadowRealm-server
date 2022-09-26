@@ -263,6 +263,21 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(1903, 5222, 0);
 				}
 				break;
+			case 23705:
+				if(obX == 2123 && obY == 5251){
+					c.getPA().movePlayer(2026, 5217, 0);
+				}
+				break;
+			case 19004:
+				if(obX == 2026 && obY == 5218){
+					c.getPA().movePlayer(2123, 5252, 0);
+				}
+				break;
+			case 19001:
+				if(obX == 2017 && obY == 5210){
+					c.getPA().movePlayer(1859, 5243, 0);
+				}
+				break;
 			case 20784:
 				if(c.getX() == 1859 && c.getY() == 5243){
 					c.facePosition(obX, obY);

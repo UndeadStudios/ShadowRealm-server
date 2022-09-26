@@ -30,7 +30,12 @@ public final class ObjectDef {
 		class46.type = id;
 		class46.setDefaults();
 		class46.readValues(stream);
-
+		switch(id){
+			case 591:
+				class46.name = "Item Upgrades Table";
+				class46.actions = new String[]{"Forge", null, null, null, null};
+				break;
+		}
 		return class46;
 	}
 
