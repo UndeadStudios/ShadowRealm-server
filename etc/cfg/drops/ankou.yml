@@ -1,5 +1,11 @@
 ---
-npc_id: 2514
+npc_id:
+  - 2514
+  - 2515
+  - 2516
+  - 2517
+  - 2518
+  - 2519
 constant:
   accessibility: 0
   items:
