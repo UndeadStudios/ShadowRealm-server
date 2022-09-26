@@ -1,0 +1,158 @@
+---
+npc_id:
+- 2474
+- 2475
+- 2476
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 1
+  items:
+    - name: "fire rune"
+      minimum: 15
+      maximum: 15
+    - name: "water rune"
+      minimum: 7
+      maximum: 7
+    - name: "eye of newt"
+      minimum: 1
+      maximum: 1
+    - name: "rune essence noted"
+      minimum: 15
+      maximum: 15
+    - name: "pure essence noted"
+      minimum: 15
+      maximum: 15
+    - name: "coins"
+      minimum: 44
+      maximum: 44
+    - name: "coins"
+      minimum: 5
+      maximum: 104
+    - name: "coins"
+      minimum: 15
+      maximum: 15
+    - name: "unlit torch"
+      minimum: 1
+      maximum: 1
+uncommon:
+  accessibility: 10
+  items:
+    - name: "law rune"
+      minimum: 2
+      maximum: 2
+    - name: "mithril arrow"
+      minimum: 5
+      maximum: 14
+    - name: "cosmic rune"
+      minimum: 2
+      maximum: 2
+    - name: "iron arrow"
+      minimum: 8
+      maximum: 8
+    - name: "steel arrow"
+      minimum: 5
+      maximum: 5
+    - name: "grimy marrentill"
+      minimum: 1
+      maximum: 1
+    - name: "grimy tarromin"
+      minimum: 1
+      maximum: 1
+    - name: "grimy harralander"
+      minimum: 1
+      maximum: 1
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+    - name: "grimy irit leaf"
+      minimum: 1
+      maximum: 1
+    - name: "coins"
+      minimum: 4
+      maximum: 4
+    - name: "coins"
+      minimum: 18
+      maximum: 18
+    - name: "coins"
+      minimum: 13
+      maximum: 13
+    - name: "coins"
+      minimum: 28
+      maximum: 28
+    - name: "copper ore"
+      minimum: 1
+      maximum: 1
+    - name: "top of sceptre"
+      minimum: 1
+      maximum: 1
+    - name: "trout"
+      minimum: 1
+      maximum: 1
+rare:
+  accessibility: 50
+  items:
+    - name: "grimy guam leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy marrentill"
+      minimum: 1
+      maximum: 1
+    - name: "grimy tarromin"
+      minimum: 1
+      maximum: 1
+    - name: "grimy harralander"
+      minimum: 1
+      maximum: 1
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+    - name: "grimy irit leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy avantoe"
+      minimum: 1
+      maximum: 1
+    - name: "grimy kwuarm"
+      minimum: 1
+      maximum: 1
+    - name: "potato seed"
+      minimum: 1
+      maximum: 4
+    - name: "onion seed"
+      minimum: 1
+      maximum: 3
+    - name: "cabbage seed"
+      minimum: 1
+      maximum: 3
+very_rare:
+  accessibility: 700
+  items:
+    - name: "grimy cadantine"
+      minimum: 1
+      maximum: 1
+    - name: "grimy lantadyme"
+      minimum: 1
+      maximum: 1
+    - name: "grimy dwarf weed"
+      minimum: 1
+      maximum: 1
+    - name: "tomato seed"
+      minimum: 1
+      maximum: 2
+    - name: "sweetcorn seed"
+      minimum: 1
+      maximum: 2
+    - name: "strawberry seed"
+      minimum: 1
+      maximum: 1
+    - name: "watermelon seed"
+      minimum: 1
+      maximum: 1
+    - name: "snape grass seed"
+      minimum: 1
+      maximum: 1
