@@ -10,44 +10,44 @@ common:
   accessibility: 1
   items:
   - name: "death rune"
-    minimum: 5
-    maximum: 10
+    minimum: 50
+    maximum: 100
   - name: "blood rune"
-    minimum: 3
-    maximum: 16
+    minimum: 30
+    maximum: 160
   - name: "law rune"
-    minimum: 1
-    maximum: 2
+    minimum: 10
+    maximum: 20
   - name: "coins"
-    minimum: 24
-    maximum: 391
+    minimum: 2400
+    maximum: 39100
 uncommon:
   accessibility: 3
   items:
   - name: "limpwurt seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "strawberry seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "marrentill seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "jangerberry seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "tarromin seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "wildblood seed"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "adamant arrow"
     minimum: 4
-    maximum: 14
+    maximum: 140
   - name: "black knife"
-    minimum: 5
-    maximum: 9
+    minimum: 50
+    maximum: 90
   - name: "black robe"
     minimum: 1
     maximum: 1
@@ -57,30 +57,30 @@ uncommon:
   - name: "grimy guam leaf"
     minimum: 1
     maximum: 1
-  - name: "grimy marrentill"
+  - name: "grimy marrentill noted"
     minimum: 1
-    maximum: 1
-  - name: "grimy tarromin"
+    maximum: 10
+  - name: "grimy tarromin noted"
     minimum: 1
-    maximum: 1
-  - name: "grimy harralander"
+    maximum: 10
+  - name: "grimy harralander noted"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "rune essence noted"
     minimum: 15
-    maximum: 15
+    maximum: 150
   - name: "pure essence noted"
     minimum: 15
-    maximum: 15
-  - name: "bass"
+    maximum: 150
+  - name: "bass noted"
     minimum: 1
-    maximum: 1
+    maximum: 100
   - name: "mithril ore noted"
     minimum: 3
     maximum: 7
-  - name: "fried mushrooms"
+  - name: "fried mushrooms noted"
     minimum: 1
-    maximum: 1
+    maximum: 10
   - name: "left skull half"
     minimum: 1
     maximum: 1
