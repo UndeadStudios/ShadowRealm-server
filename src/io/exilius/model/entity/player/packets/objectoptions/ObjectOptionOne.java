@@ -318,9 +318,22 @@ public class ObjectOptionOne {
 				}
 				if(c.absX == 1890 && c.absY == 5208 || c.absX == 1889 && c.absY == 5208
 						|| c.absX == 1876 && c.absY == 5195 || c.absX == 1877 && c.absY == 5195
-						|| c.absX == 1876 && c.absY == 5192 || c.absX == 1877 && c.absY == 5192) {
+						|| c.absX == 1876 && c.absY == 5192 || c.absX == 1877 && c.absY == 5192
+						|| c.absX == 1879 && c.absY == 5223 || c.absX == 1878 && c.absY == 5223
+						|| c.absX == 1879 && c.absY == 5226 || c.absX == 1878 && c.absY == 5226) {
 					c.startAnimation(4282);
 					c.getPA().walkTo(0, -1);
+					return;
+				}
+				if(c.absX == 1861 && c.absY == 5212 || c.absX == 1860 && c.absY == 5212
+						|| c.absX == 1861 && c.absY == 5209 || c.absX == 1860 && c.absY == 5209
+						|| c.absX == 1861 && c.absY == 5198 || c.absX == 1860 && c.absY == 5198
+						|| c.absX == 1861 && c.absY == 5195 || c.absX == 1860 && c.absY == 5195
+						|| c.absX == 1875 && c.absY == 5204 || c.absX == 1874 && c.absY == 5204
+						|| c.absX == 1875 && c.absY == 5207 || c.absX == 1874 && c.absY == 5204
+						|| c.absX == 1890 && c.absY == 5211 || c.absX == 1889 && c.absY == 5211) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
 					return;
 				}
 				if(c.absX == obX && c.absY == obY)
