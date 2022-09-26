@@ -21,7 +21,7 @@ bin/*
 !logback.xml
 
 # Config file to define server state
-config.yaml
+src/config.yaml
 Data/save_files/public/vote_panel.json
 data/cfg/vote_panel.json
 Data/cfg/wiki/npcs/cached
