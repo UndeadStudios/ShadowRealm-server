@@ -434,16 +434,14 @@ public class ObjectOptionOne {
 				if(!c.hasfirstfloorDone){
 					c.getItems().addItem(995, 200000);
 					c.hasfirstfloorDone = true;
-					c.playerLevel[2] = c.getPA().getLevelForXP(c.playerXP[2]);
+					c.getHealth().increase(c.getHealth().getMaximumHealth());
 					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
 					c.getPA().refreshSkill(5);
-					c.getPA().refreshSkill(2);
 					c.sendMessage("The gift of peace heals your hp and prayer.");
 				} else {
-					c.playerLevel[2] = c.getPA().getLevelForXP(c.playerXP[2]);
+					c.getHealth().increase(c.getHealth().getMaximumHealth());
 					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
 					c.getPA().refreshSkill(5);
-					c.getPA().refreshSkill(2);
 					c.sendMessage("The gift of peace heals your hp and prayer again.");
 				}
 				break;
