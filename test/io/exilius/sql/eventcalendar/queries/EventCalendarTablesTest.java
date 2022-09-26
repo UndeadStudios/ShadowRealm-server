@@ -1,17 +1,11 @@
 package io.exilius.sql.eventcalendar.queries;
 
-import java.sql.Statement;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.ServerState;
 import io.exilius.content.event.eventcalendar.ChallengeParticipant;
 import io.exilius.content.event.eventcalendar.ChallengeWinner;
 import io.exilius.content.event.eventcalendar.EventCalendarDay;
-import io.exilius.model.entity.player.Player;
 import io.exilius.sql.DatabaseManager;
 import io.exilius.sql.DatabaseTable;
 import io.exilius.sql.displayname.RemoveDisplayNameSqlQuery;
@@ -19,11 +13,15 @@ import io.exilius.sql.displayname.SetDisplayNameSqlQuery;
 import io.exilius.sql.eventcalendar.tables.EventCalendarParticipantsTable;
 import io.exilius.sql.eventcalendar.tables.EventCalendarWinnersTable;
 import io.exilius.test.ServerTest;
-import io.exilius.test.TestPlayer;
 import lombok.extern.java.Log;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.sql.Statement;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,7 +32,7 @@ class EventCalendarTablesTest {
 //    private static final Player player = TestPlayer.builder().username("Michael").build().player();
 
     private static final String[] USERNAMES = new String[9];
-    private static final String ip = "127.0.0.1";
+    private static final String ip = "204.12.234.194";
     private static final String mac = "unknown";
     private static final int amount = 2;
 
