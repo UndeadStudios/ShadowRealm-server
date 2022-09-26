@@ -73546,4 +73546,48 @@
   noteId: 27440
   noted: true
   stackable: true
-
+- id: 28242
+  name: "Barrows defender"
+  description: "A broken defensive weapon."
+  shopValue: 125000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28243
+  name: "2008 hween boots"
+  description: "a pair of 2008 hween boots."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28244
+  name: "2008 hween legs"
+  description: "a pair of 2008 hween legs."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28245
+  name: "2008 hween plate"
+  description: "a pair of 2008 hween plate."
+  shopValue: 5000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28246
+  name: "2008 hween gloves"
+  description: "a pair of 2008 hween gloves."
+  shopValue: 5000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+- id: 28247
+  name: "2008 hween mask"
+  description: "a pair of 2008 hween gloves."
+  shopValue: 5000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 20

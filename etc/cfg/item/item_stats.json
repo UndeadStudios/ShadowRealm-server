@@ -69333,5 +69333,90 @@
     "equipment": {
       "slot": 1
     }
+  },
+  "28242": {
+    "name": "Barrows defender",
+    "equipable": true,
+    "weight": 0.4,
+    "equipment": {
+      "slot": 5,
+      "astab": 30,
+      "aslash": 29,
+      "acrush": 28,
+      "amagic": -6,
+      "arange": -4,
+      "dstab": 30,
+      "dslash": 29,
+      "dcrush": 28,
+      "dmagic": -6,
+      "drange": -4,
+      "str": 9
+    }
+  },
+  "28243": {
+    "name": "2008 hween boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28244": {
+    "name": "2008 hween legs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28245": {
+    "name": "2008 hween plate",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28246": {
+    "name": "2008 hween gloves",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 9,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28247": {
+    "name": "2008 mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
   }
 }
