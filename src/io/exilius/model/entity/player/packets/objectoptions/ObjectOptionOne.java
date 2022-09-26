@@ -85,23 +85,20 @@ import java.util.stream.IntStream;
 public class ObjectOptionOne {
 
 	static int[] barType = { 2363, 2361, 2359, 2353, 2351, 2349 };
-
+//east
 	static int FirstFloorSos[][] = {
 			{1865, 5227}, {1865, 5226}, {1868, 5226}, {1868, 5227}, {1867, 5217}, {1867, 5218}, {1870, 5217}, {1870, 5218},
 			{1894, 5213}, {1894, 5212}, {1897, 5213}, {1897, 5212}, {1904, 5203}, {1904, 5204}, {1907, 5203}, {1907, 5204},
 			{1882, 5188}, {1882, 5189}, {1879, 5189}, {1879, 5188}, {1879, 5240}, {1879, 5239}, {1876, 5240}, {1876, 5239},
 			{1884, 5244}, {1884, 5243}, {1887, 5244}, {1887, 5243}, {1889, 5235}, {1889, 5236}, {1886, 5235}, {1886, 5236},
-			{1904, 5242}, {1904, 5243}, {1908, 5242}, {1908, 5243} };
+			{1904, 5242}, {1904, 5243}, {1908, 5242}, {1908, 5243}
+
+	};
 	static int SecondFloorSos[][] = {
-			{2039, 5244}, {2039, 5245}, {2037, 5244}, {2037, 5245}, {2032, 5227}, {2031, 5227}, {2032, 5225}, {2031, 5225},
-			{2026, 5239}, {2027, 5239}, {2026, 5241}, {2027, 5241}, {2020, 5242}, {2019, 5242}, {2020, 5240}, {2019, 5240},
-			{2014, 5240}, {2013, 5240}, {2014, 5242}, {2013, 5242}, {2006, 5237}, {2005, 5237}, {2006, 5235}, {2005, 5235},
-			{1997, 5216}, {1997, 5215}, {1999, 5216}, {1999, 5215}, {1995, 5196}, {1994, 5196}, {1995, 5194}, {1994, 5194},
-			{2005, 5192}, {2004, 5192}, {2004, 5194}, {2005, 5194}, {2006, 5216}, {2006, 5215}, {2008, 5216}, {2008, 5215},
-			{2016, 5228}, {2016, 5227}, {2018, 5228}, {2018, 5227}, {2044, 5239}, {2045, 5239}, {2045, 5237}, {2044, 5237},
-			{2042, 5222}, {2042, 5223}, {2040, 5222}, {2040, 5223}, {2037, 5203}, {2036, 5203}, {2037, 5201}, {2036, 5201},
-			{2045, 5197}, {2046, 5197}, {2046, 5195}, {2045, 5195}, {2036, 5185}, {2036, 5186}, {2034, 5186}, {2034, 5185},
-			{2020, 5200}, {2021, 5200}, {2020, 5202}, {2021, 5202},};
+			{2040, 5244}, {2040, 5245}, {2037, 5245}, {2037, 5245}, {2037, 5244},
+			{2000, 5216}, {2000, 5215}, {1997, 5216}, {1997, 5215}, {2009, 5215}, {2009, 5216}, {2006, 5215}, {2006, 5216},
+			{2043, 5223}, {2043, 5222}, {2040, 5222}, {2040, 5223}, {2037, 5185}, {2037, 5186}, {2034, 5185}, {2034, 5186},
+			{2016, 5228}, {2016, 5227}, {2019, 5228}, {2019, 5227}};
 
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
@@ -256,7 +253,15 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(1859, 5243, 0);
 				}
 				break;
-			case 20788:
+			case 20785:
+				if(obX == 1902 && obY == 5222){
+					c.getPA().movePlayer(2042, 5245, 0);
+				}
+				break;
+			case 19003:
+				if(obX == 2042 && obY == 5246){
+					c.getPA().movePlayer(1903, 5222, 0);
+				}
 				break;
 			case 20784:
 				if(c.getX() == 1859 && c.getY() == 5243){
@@ -314,7 +319,75 @@ public class ObjectOptionOne {
 				if(c.absY < obY && c.absX == obX)
 					c.getPA().walkTo(0, 1);
 				break;
-
+			case 17009:
+			case 17100:
+				for(int i = 0; i < SecondFloorSos.length; i++) {
+					if(c.absX == SecondFloorSos[i][0] && c.absY == SecondFloorSos[i][1]) {
+						c.startAnimation(4282);
+						c.getPA().walkTo(-1, 0);
+						return;
+					}
+				}
+				if(c.absX == 2005 && c.absY == 5235 || c.absX == 2006 && c.absY == 5235
+						|| c.absX == 2006 && c.absY == 5238 || c.absX == 2005 && c.absY == 5238
+						|| c.absX == 2044 && c.absY == 5239 || c.absX == 2045 && c.absY == 5239
+						|| c.absX == 2045 && c.absY == 5237 || c.absX == 2044 && c.absY == 5237
+						|| c.absX == 2033 && c.absY == 5203 || c.absX == 2034 && c.absY == 5203
+						|| c.absX == 2031 && c.absY == 5198 || c.absX == 2032 && c.absY == 5198
+						|| c.absX == 2031 && c.absY == 5196 || c.absX == 2032 && c.absY == 5196
+						|| c.absX == 2046 && c.absY == 5198 || c.absX == 2045 && c.absY == 5198
+						|| c.absX == 2045 && c.absY == 5195 || c.absX == 2046 && c.absY == 5195
+						|| c.absX == 2036 && c.absY == 5201 || c.absX == 2037 && c.absY == 5201
+						|| c.absX == 2031 && c.absY == 5225 || c.absX == 2032 && c.absY == 5225
+						|| c.absX == 2034 && c.absY == 5208 || c.absX == 2033 && c.absY == 5208
+						|| c.absX == 1995 && c.absY == 5194 || c.absX == 1994 && c.absY == 5194
+						|| c.absX == 2027 && c.absY == 5239 || c.absX == 2026 && c.absY == 5239
+						|| c.absX == 2020 && c.absY == 5240 || c.absX == 2019 && c.absY == 5240
+						|| c.absX == 2014 && c.absY == 5240 || c.absX == 2013 && c.absY == 5240
+						|| c.absX == 2020 && c.absY == 5200 || c.absX == 2021 && c.absY == 5200
+						|| c.absX == 2005 && c.absY == 5192 || c.absX == 2004 && c.absY == 5192) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, -1);
+					return;
+				}
+				if(c.absX == 2036 && c.absY == 5186 || c.absX == 2036 && c.absY == 5185
+						|| c.absX == 2042 && c.absY == 5222 || c.absX == 2042 && c.absY == 5223
+						|| c.absX == 2018 && c.absY == 5227 || c.absX == 2018 && c.absY == 5228
+						|| c.absX == 2008 && c.absY == 5216 || c.absX == 2008 && c.absY == 5215) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(+1, 0);
+					c.sendMessage("test +1 0");
+					return;
+				}
+				if(c.absX == 2032 && c.absY == 5227 || c.absX == 2031 && c.absY == 5227
+						|| c.absX == 2033 && c.absY == 5210 || c.absX == 2034 && c.absY == 5210) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
+					return;
+				}
+				if(c.absX == obX && c.absY == obY) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
+					c.sendMessage("test 0 1");
+					return;
+				}
+				if(c.absY == obY && c.absX < obX) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(+1, 0);
+					c.sendMessage("test +1 0 v2");
+					return;
+				}
+				if(c.absY > obY && c.absX == obX) {
+					c.getPA().walkTo(0, -1);
+					c.sendMessage("test 0 -1");
+					return;
+				}
+				if(c.absY < obY && c.absX == obX) {
+					c.getPA().walkTo(0, 1);
+					c.sendMessage("test 0 1 v2");
+					return;
+				}
+				break;
 			case 42934:
 				if(c.getX() == 2900 && c.getY() == 5203){
 					c.getPA().movePlayer(2898, 5203, 0);
