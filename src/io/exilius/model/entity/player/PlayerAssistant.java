@@ -245,7 +245,7 @@ public class PlayerAssistant {
 				{"Are you sure you want to " + itemToDestroy.getType().getText() + " this item?", "14174"}, {"Yes.", "14175"},
 				{"No.", "14176"}, {"There is no way to reverse this.", "14177"}, {"", "14182"},
 				{"", "14183"}, {itemName, "14184"}};
-		sendFrame34(itemToDestroy.getItemId(), 0, 14171, 1);
+		sendItemOnInterface(itemToDestroy.getItemId(), 0, 14171, 1);
 		for (String[] anInfo : info)
 			sendFrame126(anInfo[0], Integer.parseInt(anInfo[1]));
 		sendChatboxInterface(14170);
@@ -258,7 +258,7 @@ public class PlayerAssistant {
                 {"Are you sure you want to " + config + " this item?", "14174"}, {"Yes.", "14175"},
                 {"No.", "14176"}, {"", "14177"}, {"If you wish to remove this confirmation,", "14182"},
                 {"simply type '::toggle" + config + "'.", "14183"}, {itemName, "14184"}};
-        sendFrame34(itemId, 0, 14171, 1);
+        sendItemOnInterface(itemId, 0, 14171, 1);
         for (String[] anInfo : info)
             sendFrame126(anInfo[0], Integer.parseInt(anInfo[1]));
         sendChatboxInterface(14170);
@@ -1126,7 +1126,7 @@ public class PlayerAssistant {
 		}
 	}
 
-	public void sendFrame34(int id, int slot, int column, int amount) {
+	public void sendItemOnInterface(int id, int slot, int column, int amount) {
 		// synchronized(c) {
 		if (c.getOutStream() != null && c != null) {
 			c.outStream.createFrameVarSizeWord(34); // init item to smith screen

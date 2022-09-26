@@ -6,6 +6,6 @@ import io.exilius.model.entity.player.Player;
 public class Upgradetest extends Command {
     @Override
     public void execute(Player c, String commandName, String input) {
-        c.getItemUpgradeSystem().openInterface(1);
+        c.getItemUpgradeSystem().openInterface();
     }
 }

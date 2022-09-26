@@ -77,29 +77,29 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(85, c) + "Dagger" + GetForlvl(1, c), 1094);
 		c.getPA().sendFrame126(GetForlvl(86, c) + "Axe" + GetForlvl(1, c), 1091);
 		c.getPA().sendFrame126(GetForlvl(89, c) + "Dart Tips" + GetForlvl(89, c), 1096);
-		c.getPA().sendFrame34(1213, 0, 1119, 1); // dagger
-		c.getPA().sendFrame34(1359, 0, 1120, 1); // axe
-		c.getPA().sendFrame34(1113, 0, 1121, 1); // chain body
-		c.getPA().sendFrame34(1147, 0, 1122, 1); // med helm
-		c.getPA().sendFrame34(9381, 0, 1123, 10); // Bolts
-		c.getPA().sendFrame34(1289, 1, 1119, 1); // s-sword
-		c.getPA().sendFrame34(1432, 1, 1120, 1); // mace
-		c.getPA().sendFrame34(1079, 1, 1121, 1); // platelegs
-		c.getPA().sendFrame34(1163, 1, 1122, 1); // full helm
-		c.getPA().sendFrame34(44, 1, 1123, 15); // arrowtips
-		c.getPA().sendFrame34(1333, 2, 1119, 1); // scimmy
-		c.getPA().sendFrame34(1347, 2, 1120, 1); // warhammer
-		c.getPA().sendFrame34(1093, 2, 1121, 1); // plateskirt
-		c.getPA().sendFrame34(1185, 2, 1122, 1); // Sq. Shield
-		c.getPA().sendFrame34(868, 2, 1123, 5); // throwing-knives
-		c.getPA().sendFrame34(1303, 3, 1119, 1); // longsword
-		c.getPA().sendFrame34(1373, 3, 1120, 1); // battleaxe
-		c.getPA().sendFrame34(1127, 3, 1121, 1); // platebody
-		c.getPA().sendFrame34(1201, 3, 1122, 1); // kiteshield
-		c.getPA().sendFrame34(824, 3, 1123, 10); // dart tips
-		c.getPA().sendFrame34(1319, 4, 1119, 1); // 2h sword
-		c.getPA().sendFrame34(3101, 4, 1120, 1); // claws
-		c.getPA().sendFrame34(19580, 4, 1122, 5); // nails
+		c.getPA().sendItemOnInterface(1213, 0, 1119, 1); // dagger
+		c.getPA().sendItemOnInterface(1359, 0, 1120, 1); // axe
+		c.getPA().sendItemOnInterface(1113, 0, 1121, 1); // chain body
+		c.getPA().sendItemOnInterface(1147, 0, 1122, 1); // med helm
+		c.getPA().sendItemOnInterface(9381, 0, 1123, 10); // Bolts
+		c.getPA().sendItemOnInterface(1289, 1, 1119, 1); // s-sword
+		c.getPA().sendItemOnInterface(1432, 1, 1120, 1); // mace
+		c.getPA().sendItemOnInterface(1079, 1, 1121, 1); // platelegs
+		c.getPA().sendItemOnInterface(1163, 1, 1122, 1); // full helm
+		c.getPA().sendItemOnInterface(44, 1, 1123, 15); // arrowtips
+		c.getPA().sendItemOnInterface(1333, 2, 1119, 1); // scimmy
+		c.getPA().sendItemOnInterface(1347, 2, 1120, 1); // warhammer
+		c.getPA().sendItemOnInterface(1093, 2, 1121, 1); // plateskirt
+		c.getPA().sendItemOnInterface(1185, 2, 1122, 1); // Sq. Shield
+		c.getPA().sendItemOnInterface(868, 2, 1123, 5); // throwing-knives
+		c.getPA().sendItemOnInterface(1303, 3, 1119, 1); // longsword
+		c.getPA().sendItemOnInterface(1373, 3, 1120, 1); // battleaxe
+		c.getPA().sendItemOnInterface(1127, 3, 1121, 1); // platebody
+		c.getPA().sendItemOnInterface(1201, 3, 1122, 1); // kiteshield
+		c.getPA().sendItemOnInterface(824, 3, 1123, 10); // dart tips
+		c.getPA().sendItemOnInterface(1319, 4, 1119, 1); // 2h sword
+		c.getPA().sendItemOnInterface(3101, 4, 1120, 1); // claws
+		c.getPA().sendItemOnInterface(19580, 4, 1122, 5); // nails
 		c.getPA().sendFrame126("", 1135);
 		c.getPA().sendFrame126("", 1134);
 		c.getPA().sendFrame126("", 11461);
@@ -160,30 +160,30 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(76, c) + "Limbs" + GetForlvl(76, c), 11461);
 		c.getPA().sendFrame126(GetForlvl(73, c) + "Dart Tips" + GetForlvl(73, c), 1096);
 		c.getPA().sendFrame126(GetForlvl(83, c) + "Claws" + GetForlvl(83, c), 8429);
-		c.getPA().sendFrame34(1211, 0, 1119, 1); // dagger
-		c.getPA().sendFrame34(1357, 0, 1120, 1); // axe
-		c.getPA().sendFrame34(1111, 0, 1121, 1); // chain body
-		c.getPA().sendFrame34(1145, 0, 1122, 1); // med helm
-		c.getPA().sendFrame34(9380, 0, 1123, 10); // Bolts
-		c.getPA().sendFrame34(1287, 1, 1119, 1); // s-sword
-		c.getPA().sendFrame34(1430, 1, 1120, 1); // mace
-		c.getPA().sendFrame34(1073, 1, 1121, 1); // platelegs
-		c.getPA().sendFrame34(1161, 1, 1122, 1); // full helm
-		c.getPA().sendFrame34(43, 1, 1123, 15); // arrowtips
-		c.getPA().sendFrame34(1331, 2, 1119, 1); // scimmy
-		c.getPA().sendFrame34(1345, 2, 1120, 1); // warhammer
-		c.getPA().sendFrame34(1091, 2, 1121, 1); // plateskirt
-		c.getPA().sendFrame34(1183, 2, 1122, 1); // Sq. Shield
-		c.getPA().sendFrame34(867, 2, 1123, 5); // throwing-knives
-		c.getPA().sendFrame34(1301, 3, 1119, 1); // longsword
-		c.getPA().sendFrame34(1371, 3, 1120, 1); // battleaxe
-		c.getPA().sendFrame34(1123, 3, 1121, 1); // platebody
-		c.getPA().sendFrame34(1199, 3, 1122, 1); // kiteshield
-		c.getPA().sendFrame34(823, 3, 1123, 10); // dart tips
-		c.getPA().sendFrame34(1317, 4, 1119, 1); // 2h sword
-		c.getPA().sendFrame34(3100, 4, 1120, 1); // claws
-		c.getPA().sendFrame34(9429, 4, 1121, 1); // crossbow limbs
-		c.getPA().sendFrame34(19578, 4, 1122, 5); // nails
+		c.getPA().sendItemOnInterface(1211, 0, 1119, 1); // dagger
+		c.getPA().sendItemOnInterface(1357, 0, 1120, 1); // axe
+		c.getPA().sendItemOnInterface(1111, 0, 1121, 1); // chain body
+		c.getPA().sendItemOnInterface(1145, 0, 1122, 1); // med helm
+		c.getPA().sendItemOnInterface(9380, 0, 1123, 10); // Bolts
+		c.getPA().sendItemOnInterface(1287, 1, 1119, 1); // s-sword
+		c.getPA().sendItemOnInterface(1430, 1, 1120, 1); // mace
+		c.getPA().sendItemOnInterface(1073, 1, 1121, 1); // platelegs
+		c.getPA().sendItemOnInterface(1161, 1, 1122, 1); // full helm
+		c.getPA().sendItemOnInterface(43, 1, 1123, 15); // arrowtips
+		c.getPA().sendItemOnInterface(1331, 2, 1119, 1); // scimmy
+		c.getPA().sendItemOnInterface(1345, 2, 1120, 1); // warhammer
+		c.getPA().sendItemOnInterface(1091, 2, 1121, 1); // plateskirt
+		c.getPA().sendItemOnInterface(1183, 2, 1122, 1); // Sq. Shield
+		c.getPA().sendItemOnInterface(867, 2, 1123, 5); // throwing-knives
+		c.getPA().sendItemOnInterface(1301, 3, 1119, 1); // longsword
+		c.getPA().sendItemOnInterface(1371, 3, 1120, 1); // battleaxe
+		c.getPA().sendItemOnInterface(1123, 3, 1121, 1); // platebody
+		c.getPA().sendItemOnInterface(1199, 3, 1122, 1); // kiteshield
+		c.getPA().sendItemOnInterface(823, 3, 1123, 10); // dart tips
+		c.getPA().sendItemOnInterface(1317, 4, 1119, 1); // 2h sword
+		c.getPA().sendItemOnInterface(3100, 4, 1120, 1); // claws
+		c.getPA().sendItemOnInterface(9429, 4, 1121, 1); // crossbow limbs
+		c.getPA().sendItemOnInterface(19578, 4, 1122, 5); // nails
 		c.getPA().sendFrame126("", 1135);
 		c.getPA().sendFrame126("", 1134);
 		c.getPA().sendFrame126(GetForlvl(76, c) + "Limbs" + GetForlvl(76, c), 11461);
@@ -243,30 +243,30 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(56, c) + "Limbs" + GetForlvl(56, c), 11461);
 		c.getPA().sendFrame126(GetForlvl(54, c) + "Dart Tips" + GetForlvl(54, c), 1096);
 		c.getPA().sendFrame126(GetForlvl(63, c) + "Claws" + GetForlvl(63, c), 8429);
-		c.getPA().sendFrame34(1209, 0, 1119, 1); // dagger
-		c.getPA().sendFrame34(1355, 0, 1120, 1); // axe
-		c.getPA().sendFrame34(1109, 0, 1121, 1); // chain body
-		c.getPA().sendFrame34(1143, 0, 1122, 1); // med helm
-		c.getPA().sendFrame34(9379, 0, 1123, 10); // Bolts
-		c.getPA().sendFrame34(1285, 1, 1119, 1); // s-sword
-		c.getPA().sendFrame34(1428, 1, 1120, 1); // mace
-		c.getPA().sendFrame34(1071, 1, 1121, 1); // platelegs
-		c.getPA().sendFrame34(1159, 1, 1122, 1); // full helm
-		c.getPA().sendFrame34(42, 1, 1123, 15); // arrowtips
-		c.getPA().sendFrame34(1329, 2, 1119, 1); // scimmy
-		c.getPA().sendFrame34(1343, 2, 1120, 1); // warhammer
-		c.getPA().sendFrame34(1085, 2, 1121, 1); // plateskirt
-		c.getPA().sendFrame34(1181, 2, 1122, 1); // Sq. Shield
-		c.getPA().sendFrame34(866, 2, 1123, 5); // throwing-knives
-		c.getPA().sendFrame34(1299, 3, 1119, 1); // longsword
-		c.getPA().sendFrame34(1369, 3, 1120, 1); // battleaxe
-		c.getPA().sendFrame34(1121, 3, 1121, 1); // platebody
-		c.getPA().sendFrame34(1197, 3, 1122, 1); // kiteshield
-		c.getPA().sendFrame34(822, 3, 1123, 10); // dart tips
-		c.getPA().sendFrame34(1315, 4, 1119, 1); // 2h sword
-		c.getPA().sendFrame34(3099, 4, 1120, 1); // claws
-		c.getPA().sendFrame34(9427, 4, 1121, 1); // crossbow limbs
-		c.getPA().sendFrame34(19576, 4, 1122, 5); // nails
+		c.getPA().sendItemOnInterface(1209, 0, 1119, 1); // dagger
+		c.getPA().sendItemOnInterface(1355, 0, 1120, 1); // axe
+		c.getPA().sendItemOnInterface(1109, 0, 1121, 1); // chain body
+		c.getPA().sendItemOnInterface(1143, 0, 1122, 1); // med helm
+		c.getPA().sendItemOnInterface(9379, 0, 1123, 10); // Bolts
+		c.getPA().sendItemOnInterface(1285, 1, 1119, 1); // s-sword
+		c.getPA().sendItemOnInterface(1428, 1, 1120, 1); // mace
+		c.getPA().sendItemOnInterface(1071, 1, 1121, 1); // platelegs
+		c.getPA().sendItemOnInterface(1159, 1, 1122, 1); // full helm
+		c.getPA().sendItemOnInterface(42, 1, 1123, 15); // arrowtips
+		c.getPA().sendItemOnInterface(1329, 2, 1119, 1); // scimmy
+		c.getPA().sendItemOnInterface(1343, 2, 1120, 1); // warhammer
+		c.getPA().sendItemOnInterface(1085, 2, 1121, 1); // plateskirt
+		c.getPA().sendItemOnInterface(1181, 2, 1122, 1); // Sq. Shield
+		c.getPA().sendItemOnInterface(866, 2, 1123, 5); // throwing-knives
+		c.getPA().sendItemOnInterface(1299, 3, 1119, 1); // longsword
+		c.getPA().sendItemOnInterface(1369, 3, 1120, 1); // battleaxe
+		c.getPA().sendItemOnInterface(1121, 3, 1121, 1); // platebody
+		c.getPA().sendItemOnInterface(1197, 3, 1122, 1); // kiteshield
+		c.getPA().sendItemOnInterface(822, 3, 1123, 10); // dart tips
+		c.getPA().sendItemOnInterface(1315, 4, 1119, 1); // 2h sword
+		c.getPA().sendItemOnInterface(3099, 4, 1120, 1); // claws
+		c.getPA().sendItemOnInterface(9427, 4, 1121, 1); // crossbow limbs
+		c.getPA().sendItemOnInterface(19576, 4, 1122, 5); // nails
 		c.getPA().sendFrame126("", 1135);
 		c.getPA().sendFrame126("", 1134);
 		c.getPA().showInterface(994);
@@ -327,31 +327,31 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(31, c) + "Axe" + GetForlvl(1, c), 1091);
 		c.getPA().sendFrame126(GetForlvl(35, c) + "Cannon Ball" + GetForlvl(35, c), 1096);
 		c.getPA().sendFrame126(GetForlvl(36, c) + "Studs" + GetForlvl(36, c), 1134);
-		c.getPA().sendFrame34(1207, 0, 1119, 1);
-		c.getPA().sendFrame34(1353, 0, 1120, 1);
-		c.getPA().sendFrame34(1105, 0, 1121, 1);
-		c.getPA().sendFrame34(1141, 0, 1122, 1);
-		c.getPA().sendFrame34(9378, 0, 1123, 10);
-		c.getPA().sendFrame34(1281, 1, 1119, 1);
-		c.getPA().sendFrame34(1424, 1, 1120, 1);
-		c.getPA().sendFrame34(1069, 1, 1121, 1);
-		c.getPA().sendFrame34(1157, 1, 1122, 1);
-		c.getPA().sendFrame34(41, 1, 1123, 15);
-		c.getPA().sendFrame34(1325, 2, 1119, 1);
-		c.getPA().sendFrame34(1339, 2, 1120, 1);
-		c.getPA().sendFrame34(1083, 2, 1121, 1);
-		c.getPA().sendFrame34(1177, 2, 1122, 1);
-		c.getPA().sendFrame34(865, 2, 1123, 5);
-		c.getPA().sendFrame34(1295, 3, 1119, 1);
-		c.getPA().sendFrame34(1365, 3, 1120, 1);
-		c.getPA().sendFrame34(1119, 3, 1121, 1);
-		c.getPA().sendFrame34(1193, 3, 1122, 1);
-		c.getPA().sendFrame34(1311, 4, 1119, 1);
-		c.getPA().sendFrame34(821, 4, 1120, 10);
-		c.getPA().sendFrame34(9425, 4, 1121, 1);
-		c.getPA().sendFrame34(19574, 4, 1122, 5); //
-		c.getPA().sendFrame34(2, 3, 1123, 4);
-		c.getPA().sendFrame34(2370, 4, 1123, 1);
+		c.getPA().sendItemOnInterface(1207, 0, 1119, 1);
+		c.getPA().sendItemOnInterface(1353, 0, 1120, 1);
+		c.getPA().sendItemOnInterface(1105, 0, 1121, 1);
+		c.getPA().sendItemOnInterface(1141, 0, 1122, 1);
+		c.getPA().sendItemOnInterface(9378, 0, 1123, 10);
+		c.getPA().sendItemOnInterface(1281, 1, 1119, 1);
+		c.getPA().sendItemOnInterface(1424, 1, 1120, 1);
+		c.getPA().sendItemOnInterface(1069, 1, 1121, 1);
+		c.getPA().sendItemOnInterface(1157, 1, 1122, 1);
+		c.getPA().sendItemOnInterface(41, 1, 1123, 15);
+		c.getPA().sendItemOnInterface(1325, 2, 1119, 1);
+		c.getPA().sendItemOnInterface(1339, 2, 1120, 1);
+		c.getPA().sendItemOnInterface(1083, 2, 1121, 1);
+		c.getPA().sendItemOnInterface(1177, 2, 1122, 1);
+		c.getPA().sendItemOnInterface(865, 2, 1123, 5);
+		c.getPA().sendItemOnInterface(1295, 3, 1119, 1);
+		c.getPA().sendItemOnInterface(1365, 3, 1120, 1);
+		c.getPA().sendItemOnInterface(1119, 3, 1121, 1);
+		c.getPA().sendItemOnInterface(1193, 3, 1122, 1);
+		c.getPA().sendItemOnInterface(1311, 4, 1119, 1);
+		c.getPA().sendItemOnInterface(821, 4, 1120, 10);
+		c.getPA().sendItemOnInterface(9425, 4, 1121, 1);
+		c.getPA().sendItemOnInterface(19574, 4, 1122, 5); //
+		c.getPA().sendItemOnInterface(2, 3, 1123, 4);
+		c.getPA().sendItemOnInterface(2370, 4, 1123, 1);
 		c.getPA().showInterface(994);
 	}
 
@@ -410,31 +410,31 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(17, c) + "Mace" + GetForlvl(17, c), 1093);
 		c.getPA().sendFrame126(GetForlvl(15, c) + "Dagger" + GetForlvl(15, c), 1094);
 		c.getPA().sendFrame126(GetForlvl(16, c) + "Axe" + GetForlvl(16, c), 1091);
-		c.getPA().sendFrame34(1203, 0, 1119, 1);
-		c.getPA().sendFrame34(1349, 0, 1120, 1);
-		c.getPA().sendFrame34(1101, 0, 1121, 1);
-		c.getPA().sendFrame34(1137, 0, 1122, 1);
-		c.getPA().sendFrame34(9377, 0, 1123, 10);
-		c.getPA().sendFrame34(1279, 1, 1119, 1);
-		c.getPA().sendFrame34(1420, 1, 1120, 1);
-		c.getPA().sendFrame34(1067, 1, 1121, 1);
-		c.getPA().sendFrame34(1153, 1, 1122, 1);
-		c.getPA().sendFrame34(40, 1, 1123, 15);
-		c.getPA().sendFrame34(1323, 2, 1119, 1);
-		c.getPA().sendFrame34(1335, 2, 1120, 1);
-		c.getPA().sendFrame34(1081, 2, 1121, 1);
-		c.getPA().sendFrame34(1175, 2, 1122, 1);
-		c.getPA().sendFrame34(863, 2, 1123, 5);
-		c.getPA().sendFrame34(1293, 3, 1119, 1);
-		c.getPA().sendFrame34(1363, 3, 1120, 1);
-		c.getPA().sendFrame34(1115, 3, 1121, 1);
-		c.getPA().sendFrame34(1191, 3, 1122, 1);
-		c.getPA().sendFrame34(820, 3, 1123, 10);
-		c.getPA().sendFrame34(1309, 4, 1119, 1);
-		c.getPA().sendFrame34(3096, 4, 1120, 1);
-		c.getPA().sendFrame34(4540, 4, 1121, 1);
-		c.getPA().sendFrame34(19572, 4, 1122, 5); //
-		c.getPA().sendFrame34(9423, 4, 1123, 1);
+		c.getPA().sendItemOnInterface(1203, 0, 1119, 1);
+		c.getPA().sendItemOnInterface(1349, 0, 1120, 1);
+		c.getPA().sendItemOnInterface(1101, 0, 1121, 1);
+		c.getPA().sendItemOnInterface(1137, 0, 1122, 1);
+		c.getPA().sendItemOnInterface(9377, 0, 1123, 10);
+		c.getPA().sendItemOnInterface(1279, 1, 1119, 1);
+		c.getPA().sendItemOnInterface(1420, 1, 1120, 1);
+		c.getPA().sendItemOnInterface(1067, 1, 1121, 1);
+		c.getPA().sendItemOnInterface(1153, 1, 1122, 1);
+		c.getPA().sendItemOnInterface(40, 1, 1123, 15);
+		c.getPA().sendItemOnInterface(1323, 2, 1119, 1);
+		c.getPA().sendItemOnInterface(1335, 2, 1120, 1);
+		c.getPA().sendItemOnInterface(1081, 2, 1121, 1);
+		c.getPA().sendItemOnInterface(1175, 2, 1122, 1);
+		c.getPA().sendItemOnInterface(863, 2, 1123, 5);
+		c.getPA().sendItemOnInterface(1293, 3, 1119, 1);
+		c.getPA().sendItemOnInterface(1363, 3, 1120, 1);
+		c.getPA().sendItemOnInterface(1115, 3, 1121, 1);
+		c.getPA().sendItemOnInterface(1191, 3, 1122, 1);
+		c.getPA().sendItemOnInterface(820, 3, 1123, 10);
+		c.getPA().sendItemOnInterface(1309, 4, 1119, 1);
+		c.getPA().sendItemOnInterface(3096, 4, 1120, 1);
+		c.getPA().sendItemOnInterface(4540, 4, 1121, 1);
+		c.getPA().sendItemOnInterface(19572, 4, 1122, 5); //
+		c.getPA().sendItemOnInterface(9423, 4, 1123, 1);
 		c.getPA().showInterface(994);
 	}
 
@@ -491,30 +491,30 @@ public class SmithingInterface {
 		c.getPA().sendFrame126(GetForlvl(2, c) + "Mace" + GetForlvl(2, c), 1093);
 		c.getPA().sendFrame126(GetForlvl(1, c) + "Dagger" + GetForlvl(1, c), 1094);
 		c.getPA().sendFrame126(GetForlvl(1, c) + "Axe" + GetForlvl(1, c), 1091);
-		c.getPA().sendFrame34(1205, 0, 1119, 1);
-		c.getPA().sendFrame34(1351, 0, 1120, 1);
-		c.getPA().sendFrame34(1103, 0, 1121, 1);
-		c.getPA().sendFrame34(1139, 0, 1122, 1);
-		c.getPA().sendFrame34(9375, 0, 1123, 10);
-		c.getPA().sendFrame34(1277, 1, 1119, 1);
-		c.getPA().sendFrame34(1422, 1, 1120, 1);
-		c.getPA().sendFrame34(1075, 1, 1121, 1);
-		c.getPA().sendFrame34(1155, 1, 1122, 1);
-		c.getPA().sendFrame34(39, 1, 1123, 15);
-		c.getPA().sendFrame34(1321, 2, 1119, 1);
-		c.getPA().sendFrame34(1337, 2, 1120, 1);
-		c.getPA().sendFrame34(1087, 2, 1121, 1);
-		c.getPA().sendFrame34(1173, 2, 1122, 1);
-		c.getPA().sendFrame34(864, 2, 1123, 5);
-		c.getPA().sendFrame34(1291, 3, 1119, 1);
-		c.getPA().sendFrame34(1375, 3, 1120, 1);
-		c.getPA().sendFrame34(1117, 3, 1121, 1);
-		c.getPA().sendFrame34(1189, 3, 1122, 1);
-		c.getPA().sendFrame34(819, 3, 1123, 10);
-		c.getPA().sendFrame34(1307, 4, 1119, 1);
-		c.getPA().sendFrame34(3095, 4, 1120, 1);
-		c.getPA().sendFrame34(9420, 4, 1121, 1);
-		c.getPA().sendFrame34(19570, 4, 1122, 5);
+		c.getPA().sendItemOnInterface(1205, 0, 1119, 1);
+		c.getPA().sendItemOnInterface(1351, 0, 1120, 1);
+		c.getPA().sendItemOnInterface(1103, 0, 1121, 1);
+		c.getPA().sendItemOnInterface(1139, 0, 1122, 1);
+		c.getPA().sendItemOnInterface(9375, 0, 1123, 10);
+		c.getPA().sendItemOnInterface(1277, 1, 1119, 1);
+		c.getPA().sendItemOnInterface(1422, 1, 1120, 1);
+		c.getPA().sendItemOnInterface(1075, 1, 1121, 1);
+		c.getPA().sendItemOnInterface(1155, 1, 1122, 1);
+		c.getPA().sendItemOnInterface(39, 1, 1123, 15);
+		c.getPA().sendItemOnInterface(1321, 2, 1119, 1);
+		c.getPA().sendItemOnInterface(1337, 2, 1120, 1);
+		c.getPA().sendItemOnInterface(1087, 2, 1121, 1);
+		c.getPA().sendItemOnInterface(1173, 2, 1122, 1);
+		c.getPA().sendItemOnInterface(864, 2, 1123, 5);
+		c.getPA().sendItemOnInterface(1291, 3, 1119, 1);
+		c.getPA().sendItemOnInterface(1375, 3, 1120, 1);
+		c.getPA().sendItemOnInterface(1117, 3, 1121, 1);
+		c.getPA().sendItemOnInterface(1189, 3, 1122, 1);
+		c.getPA().sendItemOnInterface(819, 3, 1123, 10);
+		c.getPA().sendItemOnInterface(1307, 4, 1119, 1);
+		c.getPA().sendItemOnInterface(3095, 4, 1120, 1);
+		c.getPA().sendItemOnInterface(9420, 4, 1121, 1);
+		c.getPA().sendItemOnInterface(19570, 4, 1122, 5);
 		c.getPA().sendFrame126("", 1135);
 		c.getPA().sendFrame126("", 1134);
 		c.getPA().showInterface(994);

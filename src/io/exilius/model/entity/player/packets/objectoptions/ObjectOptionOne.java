@@ -204,7 +204,7 @@ public class ObjectOptionOne {
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
 			case 591:
-				c.getItemUpgradeSystem().openInterface(1);
+				c.getItemUpgradeSystem().openInterface();
 				break;
 			case 42967:
 				if (Nex.isMissingRequirements(c)) {
