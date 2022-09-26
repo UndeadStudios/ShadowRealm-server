@@ -17,7 +17,7 @@ bin/*
 /build/
 .idea/
 /save_files/
-
+config.yaml
 !logback.xml
 
 # Config file to define server state
