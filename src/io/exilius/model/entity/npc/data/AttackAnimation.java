@@ -364,11 +364,31 @@ public class AttackAnimation extends NPCHandler {
 		case 6617:
 			return 6254;
 		case 1277:
-		case 2527: // Ghosts
+		case 2527:
+			case 85:
 			return 5540;
 		case 2528:
 		case 2529:
 		case 2530:
+			case 2531:
+			case 2532:
+			case 2533:
+			case 2534:
+			case 1786:
+			case 86:
+			case 87:
+			case 88:
+			case 89:
+			case 90:
+			case 91:
+			case 92:
+			case 93:
+			case 94:
+			case 95:
+			case 96:
+			case 97:
+			case 98:
+			case 99:
 			return 5532;
 		case 2145:
 		case 6462: // Zombies
@@ -666,8 +686,6 @@ public class AttackAnimation extends NPCHandler {
 		case 2092:
 		case 2093:
 			return 4658;
-		case 85: // ghost
-			return -1;
 		case 7258:
 			return 5540;
 
@@ -708,9 +726,6 @@ public class AttackAnimation extends NPCHandler {
 		case 1459:
 			return 1402;
 
-		case 86:
-		case 87:
-			return 4933;
 		case 871:// Ogre Shaman
 		case 5181:// Ogre Shaman
 		case 5184:// Ogre Shaman

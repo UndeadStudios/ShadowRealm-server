@@ -161,11 +161,32 @@ public class BlockAnimation {
             case 6616:
             case 6617:
                 return 6255;
-            case 2527: // Ghosts
+            case 1277:
+            case 2527:
+            case 85:
                 return 5541;
             case 2528:
             case 2529:
             case 2530:
+            case 2531:
+            case 2532:
+            case 2533:
+            case 2534:
+            case 1786:
+            case 86:
+            case 87:
+            case 88:
+            case 89:
+            case 90:
+            case 91:
+            case 92:
+            case 93:
+            case 94:
+            case 95:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
                 return 5533;
             //Xeric Minigame
             case 7547:
@@ -707,7 +728,6 @@ public class BlockAnimation {
 
             case 135:// hellhound
             case 142:
-            case 95:
                 return 6578;
 
             case 1593:
@@ -718,8 +738,6 @@ public class BlockAnimation {
                 return 76;
             case 6707:
                 return -1;
-            case 89:
-                return 6375;
             case 133:
                 return 290;
 
@@ -751,13 +769,6 @@ public class BlockAnimation {
             case 1009:
                 return 5328;
 
-            case 2534:
-            case 85:
-            case 7258:
-            case 749:
-            case 104:
-            case 491: // ghost
-                return -1;
 
             case 1585:
             case 2084: // giant
@@ -799,9 +810,6 @@ public class BlockAnimation {
             case 708: // imp
                 return 170;
 
-            case 86:
-            case 87:
-                return 139;
             case 47:// rat
                 return 2706;
             case 2457:
@@ -815,10 +823,6 @@ public class BlockAnimation {
             case 41: // chicken
                 return 55;
 
-            case 90:
-            case 91:
-            case 93: // skeleton
-                return 261;
             case 1:
                 return 424;
             default:
