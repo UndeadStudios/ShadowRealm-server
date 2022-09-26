@@ -384,7 +384,7 @@ public class ObjectOptionOne {
 						|| c.absX == 2008 && c.absY == 5216 || c.absX == 2008 && c.absY == 5215) {
 					c.startAnimation(4282);
 					c.getPA().walkTo(+1, 0);
-					c.sendMessage("test +1 0");
+				//	c.sendMessage("test +1 0");
 					return;
 				}
 				if(c.absX == 2032 && c.absY == 5227 || c.absX == 2031 && c.absY == 5227
@@ -396,23 +396,23 @@ public class ObjectOptionOne {
 				if(c.absX == obX && c.absY == obY) {
 					c.startAnimation(4282);
 					c.getPA().walkTo(0, 1);
-					c.sendMessage("test 0 1");
+					//c.sendMessage("test 0 1");
 					return;
 				}
 				if(c.absY == obY && c.absX < obX) {
 					c.startAnimation(4282);
 					c.getPA().walkTo(+1, 0);
-					c.sendMessage("test +1 0 v2");
+					//c.sendMessage("test +1 0 v2");
 					return;
 				}
 				if(c.absY > obY && c.absX == obX) {
 					c.getPA().walkTo(0, -1);
-					c.sendMessage("test 0 -1");
+					//c.sendMessage("test 0 -1");
 					return;
 				}
 				if(c.absY < obY && c.absX == obX) {
 					c.getPA().walkTo(0, 1);
-					c.sendMessage("test 0 1 v2");
+					//c.sendMessage("test 0 1 v2");
 					return;
 				}
 				break;
