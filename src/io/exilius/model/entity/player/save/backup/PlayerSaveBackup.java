@@ -1,5 +1,15 @@
 package io.exilius.model.entity.player.save.backup;
 
+import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import io.exilius.Configuration;
+import io.exilius.Server;
+import io.exilius.model.entity.player.save.PlayerSave;
+import io.exilius.sql.DatabaseCredentials;
+import io.exilius.util.Misc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,27 +18,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import com.google.common.base.Preconditions;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import io.exilius.Configuration;
-import io.exilius.Server;
-import io.exilius.model.entity.player.save.PlayerSave;
-import io.exilius.sql.DatabaseCredentials;
-import io.exilius.util.Misc;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPReply;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * http://www.devx.com/tips/Tip/14049
@@ -73,8 +67,8 @@ public class PlayerSaveBackup {
         deleteOldDiskBackups(backupFileDirectory);
 
         // Upload new remote backup and deleted expired ones
-        deleteExpiredRemoteBackups();
-        uploadRemoteBackup(created);
+//        deleteExpiredRemoteBackups();
+//        uploadRemoteBackup(created);
         return created;
     }
 
@@ -171,73 +165,73 @@ public class PlayerSaveBackup {
         }
     }
 
-    private static void deleteExpiredRemoteBackups() throws IOException {
-        connectFTP(client -> {
-            try {
-                client.enterLocalPassiveMode();
-                FTPFile[] files = client.listFiles();
-                List<PlayerSaveBackupFile> backups = Arrays.stream(files).filter(it -> it.getName().endsWith(".zip")).map(it -> new PlayerSaveBackupFile(it.getName()))
-                        .collect(Collectors.toList());
-
-                for (PlayerSaveBackupFile backup : backups) {
-                    if (backup.expired(Configuration.PLAYER_SAVE_BACKUPS_EXTERNAL_DELETE_AFTER_DAYS)) {
-                        if (!client.deleteFile(backup.getFileName()))
-                            throw new IllegalStateException("Could not delete remote backup " + backup.getFileName());
-                        logger.debug("Deleted old remote backup {}", backup.getFileName());
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    private static void uploadRemoteBackup(File file) throws IOException {
-        connectFTP(client -> {
-            try {
-                client.setFileType(FTP.BINARY_FILE_TYPE);
-                client.enterLocalPassiveMode();
-
-                try (FileInputStream fis = new FileInputStream(file)) {
-                    client.storeFile(file.getName(), fis);
-                    logger.info("Uploaded backup file to webserver.");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    private static void connectFTP(Consumer<FTPClient> callback) throws IOException {
-        FTPClient client = new FTPClient();
-        try {
-            DatabaseCredentials credentials = Server.getConfiguration().getBackupFtpCredentials();
-
-            if (credentials == null) {
-                logger.warn("No FTP credentials to upload remote backups.");
-                return;
-            }
-
-            client.connect(credentials.getUrl());
-            int reply = client.getReplyCode();
-
-            if (reply != FTPReply.SERVICE_READY) {
-                client.disconnect();
-                throw new IllegalStateException("Could not connect to ftp backup server, response: " + reply);
-            }
-
-            if (!client.login(credentials.getUsername(), credentials.getPassword())) {
-                client.logout();
-                client.disconnect();
-                throw new IllegalStateException("Could not login to ftp backup server.");
-            }
-
-            callback.accept(client);
-        } finally {
-            if (client.isConnected()) {
-                client.logout();
-                client.disconnect();
-            }
-        }
-    }
+//    private static void deleteExpiredRemoteBackups() throws IOException {
+//        connectFTP(client -> {
+//            try {
+//                client.enterLocalPassiveMode();
+//                FTPFile[] files = client.listFiles();
+//                List<PlayerSaveBackupFile> backups = Arrays.stream(files).filter(it -> it.getName().endsWith(".zip")).map(it -> new PlayerSaveBackupFile(it.getName()))
+//                        .collect(Collectors.toList());
+//
+//                for (PlayerSaveBackupFile backup : backups) {
+//                    if (backup.expired(Configuration.PLAYER_SAVE_BACKUPS_EXTERNAL_DELETE_AFTER_DAYS)) {
+//                        if (!client.deleteFile(backup.getFileName()))
+//                            throw new IllegalStateException("Could not delete remote backup " + backup.getFileName());
+//                        logger.debug("Deleted old remote backup {}", backup.getFileName());
+//                    }
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        });
+//    }
+//
+//    private static void uploadRemoteBackup(File file) throws IOException {
+//        connectFTP(client -> {
+//            try {
+//                client.setFileType(FTP.BINARY_FILE_TYPE);
+//                client.enterLocalPassiveMode();
+//
+//                try (FileInputStream fis = new FileInputStream(file)) {
+//                    client.storeFile(file.getName(), fis);
+//                    logger.info("Uploaded backup file to webserver.");
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        });
+//    }
+//
+//    private static void connectFTP(Consumer<FTPClient> callback) throws IOException {
+//        FTPClient client = new FTPClient();
+//        try {
+//            DatabaseCredentials credentials = Server.getConfiguration().getBackupFtpCredentials();
+//
+//            if (credentials == null) {
+//                logger.warn("No FTP credentials to upload remote backups.");
+//                return;
+//            }
+//
+//            client.connect(credentials.getUrl());
+//            int reply = client.getReplyCode();
+//
+//            if (reply != FTPReply.SERVICE_READY) {
+//                client.disconnect();
+//                throw new IllegalStateException("Could not connect to ftp backup server, response: " + reply);
+//            }
+//
+//            if (!client.login(credentials.getUsername(), credentials.getPassword())) {
+//                client.logout();
+//                client.disconnect();
+//                throw new IllegalStateException("Could not login to ftp backup server.");
+//            }
+//
+//            callback.accept(client);
+//        } finally {
+//            if (client.isConnected()) {
+//                client.logout();
+//                client.disconnect();
+//            }
+//        }
+//    }
 }

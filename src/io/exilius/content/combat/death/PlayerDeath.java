@@ -70,7 +70,7 @@ public class PlayerDeath {
         c.getItems().sendEquipmentContainer();
         c.getPA().removeAllWindows();
         c.getPA().closeAllWindows();
-        c.getPA().resetFollowers();
+        //c.getPA().resetFollowers();
         c.getItems().addSpecialBar(c.playerEquipment[Player.playerWeapon]);
         c.specAmount = 10;
         c.attackTimer = 10;
@@ -82,6 +82,14 @@ public class PlayerDeath {
         c.vengOn = false;
         c.isDead = false;
         c.tradeResetNeeded = true;
+        if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
+        }
     }
 
     public static void applyDead(Player c) {
@@ -98,6 +106,15 @@ public class PlayerDeath {
         DuelSession duelSession = (DuelSession) Server.getMultiplayerSessionListener().getMultiplayerSession(c, MultiplayerSessionType.DUEL);
         if (Objects.nonNull(duelSession) && duelSession.getStage().getStage() < MultiplayerSessionStage.FURTHER_INTERATION) {
             duelSession = null;
+        }
+
+        if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
         }
 
         if (c.getSlayer().superiorSpawned) {
@@ -131,7 +148,23 @@ public class PlayerDeath {
                     || Boundary.isIn(c, Boundary.OLM)
                     || Boundary.isIn(c, Boundary.RAID_MAIN)
                     || Boundary.isIn(c, Boundary.XERIC)) { // TODO: Other areas.
+                if (c.hasFollower) {
+                    if (c.petSummonId > 0) {
+                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                        if (pet != null) {
+                            PetHandler.spawn(c, pet, true, false);
+                        }
+                    }
+                }
                 return;
+            }
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
             }
 
             if (!Configuration.DISABLE_HC_LOSS_ON_DEATH) {
@@ -147,23 +180,30 @@ public class PlayerDeath {
                     c.setMode(Mode.forType(ModeType.IRON_MAN));
                     c.getRights().setPrimary(Right.IRONMAN);
                     c.sendMessage("You are now a normal Ironman.");
+                    if (c.hasFollower) {
+                        if (c.petSummonId > 0) {
+                            PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                            if (pet != null) {
+                                PetHandler.spawn(c, pet, true, false);
+                            }
+                        }
+                    }
                 } else if (c.getMode().getType() == ModeType.ROGUE_HARDCORE_IRONMAN) {
                     c.getRights().remove(Right.ROGUE_HARDCORE_IRONMAN);
                     c.setMode(Mode.forType(ModeType.ROGUE_IRONMAN));
                     c.getRights().setPrimary(Right.ROGUE_IRONMAN);
                     c.sendMessage("You are now a rogue Ironman.");
+                    if (c.hasFollower) {
+                        if (c.petSummonId > 0) {
+                            PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                            if (pet != null) {
+                                PetHandler.spawn(c, pet, true, false);
+                            }
+                        }
+                    }
                 } else {
                     throw new IllegalStateException("Not a hardcore: " + c.getMode());
                 }
-                if (c.hasFollower) {
-                    if (c.petSummonId > 0) {
-                        PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
-                        if (pet != null) {
-                            PetHandler.spawn(c, pet, true, false);
-                        }
-                    }
-                }
-
                 PlayerSave.saveGame(c);
             }
         }
