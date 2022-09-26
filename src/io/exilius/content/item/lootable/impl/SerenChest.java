@@ -1,10 +1,5 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.Server;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.LootRarity;
@@ -15,6 +10,11 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SerenChest implements Lootable {
 
@@ -90,6 +90,7 @@ public class SerenChest implements Lootable {
                 new GameItem(21034, 1), //dex scroll
                 new GameItem(22622, 1), //statius warhammer
                 new GameItem(22610, 1), //vesta spear
+                new GameItem(28347, 1), //Death cape
                 new GameItem(22613, 1))); //vesta longsword
     }
 
