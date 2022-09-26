@@ -423,6 +423,23 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(2900, 5203, 0);
 				}
 				break;
+			case 20786:
+				if(c.hasfirstfloorDone){
+					c.getPA().movePlayer(1907, 5226, 0);
+				} else {
+					c.sendMessage("You need to complete the first floor to use this portal.");
+				}
+				break;
+			case 20656:
+				if(!c.hasfirstfloorDone){
+					c.getItems().addItem(995, 200000);
+					c.hasfirstfloorDone = true;
+					c.playerLevel[2] = c.getPA().getLevelForXP(c.playerXP[2]);
+					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
+					c.getPA().refreshSkill(5);
+					c.getPA().refreshSkill(2);
+				}
+				break;
 			case 42966:
 				break;
 			case 11726:// Open Door @ Magic Hut

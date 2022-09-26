@@ -291,6 +291,8 @@ public class PlayerSave {
                             p.horrorFromDeep = Integer.parseInt(token2);
                         } else if (token.equals("breakVials")) {
                             p.breakVials = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasfirstfloorDone")) {
+                            p.hasfirstfloorDone = Boolean.parseBoolean(token2);
                         } else if (token.equals("absorption")) {
                             p.absorption = Boolean.parseBoolean(token2);
                         } else if (token.equals("announce")) {
@@ -1454,6 +1456,9 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("breakVials = ", 0, 13);
             characterfile.write(Boolean.toString(p.breakVials), 0, Boolean.toString(p.breakVials).length());
+            characterfile.newLine();
+            characterfile.write("hasfirstfloorDone = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasfirstfloorDone), 0, Boolean.toString(p.hasfirstfloorDone).length());
             characterfile.newLine();
             characterfile.write("barbarian = ", 0, 12);
             characterfile.write(Boolean.toString(p.barbarian), 0, Boolean.toString(p.barbarian).length());
