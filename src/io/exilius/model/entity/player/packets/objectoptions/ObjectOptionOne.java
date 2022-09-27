@@ -629,7 +629,7 @@ static int fourthFloorsos[][] = {
 				break;
 			case 23731:
 				if(!c.hasfourthfloorDone){
-					c.getDH().sendItemStatement("You have to pick what boots you want.", Items.FANCY_BOOTS);
+					c.getDH().sendItem2(c,"You have to pick what ", "boots you want.", Items.FANCY_BOOTS, Items.FIGHTING_BOOTS);
 					c.nextChat = 10040;
 					//c.getItems().addItem(995, 155000);
 					//c.sendMessage("The Cradle of life gives you 155k.");
