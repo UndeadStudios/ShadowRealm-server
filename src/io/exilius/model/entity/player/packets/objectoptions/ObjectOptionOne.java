@@ -95,11 +95,18 @@ public class ObjectOptionOne {
 
 	};
 	static int SecondFloorSos[][] = {
-			{2040, 5244}, {2040, 5245}, {2037, 5245}, {2037, 5245}, {2037, 5244},
-			{2000, 5216}, {2000, 5215}, {1997, 5216}, {1997, 5215}, {2009, 5215}, {2009, 5216}, {2006, 5215}, {2006, 5216},
-			{2043, 5223}, {2043, 5222}, {2040, 5222}, {2040, 5223}, {2037, 5185}, {2037, 5186}, {2034, 5185}, {2034, 5186},
-			{2016, 5228}, {2016, 5227}, {2019, 5228}, {2019, 5227}};
+			{2040, 5244}, {2040, 5245}, {2037, 5245}, {2037, 5245}, {2037, 5244}, {2000, 5216}, {2000, 5215}, {1997, 5216},
+			{1997, 5215}, {2009, 5215}, {2009, 5216}, {2006, 5215}, {2006, 5216}, {2043, 5223}, {2043, 5222}, {2040, 5222},
+			{2040, 5223}, {2037, 5185}, {2037, 5186}, {2034, 5185}, {2034, 5186}, {2016, 5228}, {2016, 5227}, {2019, 5228},
+			{2019, 5227}
 
+	};
+static int thirdFloorSos[][] = {
+			{2141, 5263}, {2141, 5262}, {2138, 5263}, {2138, 5262}, {2154, 5264}, {2154, 5263}, {2157, 5264}, {2157, 5263},
+			{2168, 5271}, {2168, 5272}, {2171, 5272}, {2171, 5271}, {2153, 5291}, {2153, 5292}, {2149, 5291}, {2149, 5292},
+			{2127, 5287}, {2127, 5288}, {2124, 5287}, {2124, 5288}, {2138, 5294}, {2138, 5295}, {2141, 5294}, {2141, 5295}
+
+};
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			return;
@@ -304,6 +311,21 @@ public class ObjectOptionOne {
 					c.getPA().movePlayer(1778, 5346, 0);
 				}
 				break;
+			case 23706:
+				if(obX == 2148 && obY == 5284){
+					c.getPA().movePlayer(2358, 5215, 0);
+				}
+				break;
+			case 23703:
+				if(obX == 2150 && obY == 5278){
+					c.getPA().movePlayer(2123, 5252, 0);
+				}
+				break;
+			case 23921:
+				if(obX == 2358 && obY == 5216){
+					c.getPA().movePlayer(2147, 5284, 0);
+				}
+				break;
 			case 5581: // take axe from log
 				AxeInLog.pullAxeFromLog(c, obX, obY);
 				break;
@@ -416,6 +438,71 @@ public class ObjectOptionOne {
 					return;
 				}
 				break;
+			case 23653:
+			case 23654:
+				for(int i = 0; i < thirdFloorSos.length; i++) {
+					if(c.absX == thirdFloorSos[i][0] && c.absY == thirdFloorSos[i][1]) {
+						c.startAnimation(4282);
+						c.getPA().walkTo(-1, 0);//going west
+						return;
+					}
+				}//going south
+				if(c.absX == 2133 && c.absY == 5257 || c.absX == 2132 && c.absY == 5257
+						|| c.absX == 2132 && c.absY == 5260 || c.absX == 2133 && c.absY == 5260
+						|| c.absX == 2164 && c.absY == 5278 || c.absX == 2163 && c.absY == 5278
+						|| c.absX == 2164 && c.absY == 5275 || c.absX == 2163 && c.absY == 5275
+						|| c.absX == 2166 && c.absY == 5262 || c.absX == 2167 && c.absY == 5262
+						|| c.absX == 2168 && c.absY == 5297 || c.absX == 2167 && c.absY == 5297
+						|| c.absX == 2162 && c.absY == 5290 || c.absX == 2163 && c.absY == 5290
+						|| c.absX == 2162 && c.absY == 5287 || c.absX == 2163 && c.absY == 5287
+						|| c.absX == 2156 && c.absY == 5286 || c.absX == 2155 && c.absY == 5286
+						|| c.absX == 2156 && c.absY == 5289 || c.absX == 2155 && c.absY == 5289
+						|| c.absX == 2167 && c.absY == 5294 || c.absX == 2168 && c.absY == 5294
+						|| c.absX == 2130 && c.absY == 5296 || c.absX == 2131 && c.absY == 5296
+						|| c.absX == 2130 && c.absY == 5293 || c.absX == 2131 && c.absY == 5293
+						|| c.absX == 2148 && c.absY == 5302 || c.absX == 2149 && c.absY == 5302
+						|| c.absX == 2148 && c.absY == 5299 || c.absX == 2149 && c.absY == 5299) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, -1);
+					//	c.sendMessage("test +1 0");
+					return;
+				} //going east
+				if(c.absX == 2137 && c.absY == 5263 || c.absX == 2137 && c.absY == 5262
+						|| c.absX == 2140 && c.absY == 5263 || c.absX == 2140 && c.absY == 5262
+						|| c.absX == 2156 && c.absY == 5264 || c.absX == 2156 && c.absY == 5263
+						|| c.absX == 2153 && c.absY == 5264 || c.absX == 2153 && c.absY == 5263
+						|| c.absX == 2170 && c.absY == 5271 || c.absX == 2170 && c.absY == 5272
+						|| c.absX == 2167 && c.absY == 5271 || c.absX == 2167 && c.absY == 5272
+						|| c.absX == 2148 && c.absY == 5292 || c.absX == 2147 && c.absY == 5291
+						|| c.absX == 2152 && c.absY == 5292 || c.absX == 2152 && c.absY == 5291) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(1, 0);
+					//	c.sendMessage("test +1 0");
+					return;
+				}
+				if(c.absX == obX && c.absY == obY) {//going north
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
+					//c.sendMessage("test 0 1");
+					return;
+				}
+				if(c.absY == obY && c.absX < obX) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(+1, 0);
+					//c.sendMessage("test +1 0 v2");
+					return;
+				}
+				if(c.absY > obY && c.absX == obX) {
+					c.getPA().walkTo(0, -1);
+					//c.sendMessage("test 0 -1");
+					return;
+				}
+				if(c.absY < obY && c.absX == obX) {
+					c.getPA().walkTo(0, 1);
+					//c.sendMessage("test 0 1 v2");
+					return;
+				}
+				break;
 			case 42934:
 				if(c.getX() == 2900 && c.getY() == 5203){
 					c.getPA().movePlayer(2898, 5203, 0);
@@ -430,9 +517,16 @@ public class ObjectOptionOne {
 					c.sendMessage("You need to complete the first floor to use this portal.");
 				}
 				break;
+			case 19005:
+				if(c.hassecoundfloorDone){
+					c.getPA().movePlayer(2025, 5214, 0);
+				} else {
+					c.sendMessage("You need to complete the secound floor to use this portal.");
+				}
+				break;
 			case 20656:
 				if(!c.hasfirstfloorDone){
-					c.getItems().addItem(995, 200000);
+					c.getItems().addItem(995, 20000);
 					c.hasfirstfloorDone = true;
 					c.getHealth().increase(c.getHealth().getMaximumHealth());
 					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
@@ -443,6 +537,13 @@ public class ObjectOptionOne {
 					c.playerLevel[5] = c.getPA().getLevelForXP(c.playerXP[5]);
 					c.getPA().refreshSkill(5);
 					c.sendMessage("The gift of peace heals your hp and prayer again.");
+				}
+				break;
+			case 19000:
+				if(!c.hassecoundfloorDone){
+					c.getItems().addItem(995, 55000);
+					c.sendMessage("The grain of plenty gives you 55k.");
+					c.hassecoundfloorDone = true;
 				}
 				break;
 			case 42966:

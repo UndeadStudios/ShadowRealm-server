@@ -235,6 +235,7 @@ public class Player extends Entity {
     public boolean inCwGame;
     public boolean inCwWait;
     public boolean hasfirstfloorDone;
+    public boolean hassecoundfloorDone;
 
     public void saveItemsForMinigame() {
         /**
