@@ -2902,6 +2902,15 @@ public class DialogueHandler {
 				c.dialogueAction = 907;
 				break;
 
+			case 10040:
+				sendOptions("Fighting boots", "Fancy boots");
+				c.dialogueAction = 10040;
+				break;
+			case 10041:
+				sendOptions("Fighting boots", "Fancy boots");
+				c.dialogueAction = 10040;
+				break;
+
 		}
 	}
 
