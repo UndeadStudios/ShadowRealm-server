@@ -295,6 +295,8 @@ public class PlayerSave {
                             p.hasfirstfloorDone = Boolean.parseBoolean(token2);
                         } else if (token.equals("hassecoundfloorDone")) {
                             p.hassecoundfloorDone = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasthirdfloorDone")) {
+                            p.hasthirdfloorDone = Boolean.parseBoolean(token2);
                         } else if (token.equals("absorption")) {
                             p.absorption = Boolean.parseBoolean(token2);
                         } else if (token.equals("announce")) {
@@ -1464,6 +1466,9 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("hassecoundfloorDone = ", 0, 22);
             characterfile.write(Boolean.toString(p.hassecoundfloorDone), 0, Boolean.toString(p.hassecoundfloorDone).length());
+            characterfile.newLine();
+            characterfile.write("hasthirdfloorDone = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasthirdfloorDone), 0, Boolean.toString(p.hasthirdfloorDone).length());
             characterfile.newLine();
             characterfile.write("barbarian = ", 0, 12);
             characterfile.write(Boolean.toString(p.barbarian), 0, Boolean.toString(p.barbarian).length());

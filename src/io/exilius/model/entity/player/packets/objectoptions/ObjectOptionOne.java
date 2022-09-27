@@ -282,13 +282,15 @@ static int thirdFloorSos[][] = {
 				break;
 			case 19001:
 				if(obX == 2017 && obY == 5210){
-					c.getPA().movePlayer(1859, 5243, 0);
+					c.getPA().movePlayer(2042, 5245, 0);
 				}
 				break;
 			case 20784:
-				if(c.getX() == 1859 && c.getY() == 5243){
+				if(obX == 1859 && obY == 5244){
 					c.facePosition(obX, obY);
 					c.getPA().movePlayer(3081, 3421, 0);
+				} else if(obX == 1913 && obY == 5226){
+					c.getPA().movePlayer(1859, 5243, 0);
 				}
 				break;
 			case 25336:
@@ -524,6 +526,13 @@ static int thirdFloorSos[][] = {
 					c.sendMessage("You need to complete the secound floor to use this portal.");
 				}
 				break;
+			case 23707:
+				if(c.hasthirdfloorDone){
+					c.getPA().movePlayer(2140, 5282, 0);
+				} else {
+					c.sendMessage("You need to complete the third floor to use this portal.");
+				}
+				break;
 			case 20656:
 				if(!c.hasfirstfloorDone){
 					c.getItems().addItem(995, 20000);
@@ -544,6 +553,8 @@ static int thirdFloorSos[][] = {
 					c.getItems().addItem(995, 55000);
 					c.sendMessage("The grain of plenty gives you 55k.");
 					c.hassecoundfloorDone = true;
+				} else {
+					c.sendMessage("You allready claimed this reward.");
 				}
 				break;
 			case 42966:
@@ -1150,7 +1161,16 @@ static int thirdFloorSos[][] = {
 
 				break;
 			case 23709:
-				long time;
+				if(obX == 2144 && obY == 5280) {
+					if (!c.hasthirdfloorDone) {
+						c.getItems().addItem(995, 75000);
+						c.hasthirdfloorDone = true;
+						c.sendMessage("The box of health gives u 75k for getting here.");
+					} else {
+						c.sendMessage("You have allready claimed this reward.");
+					}
+				} else {
+					long time;
 //				if (c.amDonated >= 1000) {
 //					time = 30_000;b
 //				} else if (c.amDonated >= 500) {
@@ -1162,8 +1182,8 @@ static int thirdFloorSos[][] = {
 //				} else {
 
 //				}
-				time = 20_000L;
-				if (System.currentTimeMillis() - c.lastHealChest < time) {
+					time = 20_000L;
+					if (System.currentTimeMillis() - c.lastHealChest < time) {
 //					if (c.amDonated >= 1000) {
 //						c.sendMessage("Your rank may only use this chest every 30 seconds.");
 //					} else if (c.amDonated >= 500) {
@@ -1173,32 +1193,33 @@ static int thirdFloorSos[][] = {
 //					} else if (c.amDonated >= 100) {
 //						c.sendMessage("Your rank may only use this chest every 2 minutes.");
 //					} else {
-					c.sendMessage("You may only use this chest every 20 seconds including after login.");
-					//}
-					return;
-				}
-				for (int skill = 0; skill < c.playerLevel.length; skill++) {
-					if (skill == 3)
-						continue;
-					if (c.playerLevel[skill] < c.getLevelForXP(c.playerXP[skill])) {
-						c.playerLevel[skill] += 8 + (c.getLevelForXP(c.playerXP[skill]));
-						if (SkillcapePerks.PRAYER.isWearing(c) || SkillcapePerks.isWearingMaxCape(c))
-							c.playerLevel[skill] += 5;
-						if (c.playerLevel[skill] > c.getLevelForXP(c.playerXP[skill])) {
-							c.playerLevel[skill] = c.getLevelForXP(c.playerXP[skill]);
-						}
-						if (Boundary.isIn(c, Boundary.DEMONIC_RUINS_BOUNDARY)) {
-							c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DEMONIC_RUINS);
-						}
-						c.getPA().refreshSkill(skill);
-						c.getPA().setSkillLevel(skill, c.playerLevel[skill], c.playerXP[skill]);
+						c.sendMessage("You may only use this chest every 20 seconds including after login.");
+						//}
+						return;
 					}
+					for (int skill = 0; skill < c.playerLevel.length; skill++) {
+						if (skill == 3)
+							continue;
+						if (c.playerLevel[skill] < c.getLevelForXP(c.playerXP[skill])) {
+							c.playerLevel[skill] += 8 + (c.getLevelForXP(c.playerXP[skill]));
+							if (SkillcapePerks.PRAYER.isWearing(c) || SkillcapePerks.isWearingMaxCape(c))
+								c.playerLevel[skill] += 5;
+							if (c.playerLevel[skill] > c.getLevelForXP(c.playerXP[skill])) {
+								c.playerLevel[skill] = c.getLevelForXP(c.playerXP[skill]);
+							}
+							if (Boundary.isIn(c, Boundary.DEMONIC_RUINS_BOUNDARY)) {
+								c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DEMONIC_RUINS);
+							}
+							c.getPA().refreshSkill(skill);
+							c.getPA().setSkillLevel(skill, c.playerLevel[skill], c.playerXP[skill]);
+						}
+					}
+					c.lastHealChest = System.currentTimeMillis();
+					c.getPA().sendSound(2674);
+					c.healEverything();
+					c.getDH().sendItemStatement("Restored your HP, Prayer, Run Energy, and Spec", 4049);
+					c.nextChat = -1;
 				}
-				c.lastHealChest = System.currentTimeMillis();
-				c.getPA().sendSound(2674);
-				c.healEverything();
-				c.getDH().sendItemStatement("Restored your HP, Prayer, Run Energy, and Spec", 4049);
-				c.nextChat =  -1;
 				break;
 			case 7811:
 				if (!c.getPosition().inClanWarsSafe()) {
