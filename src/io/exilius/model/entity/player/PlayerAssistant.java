@@ -2205,7 +2205,6 @@ public class PlayerAssistant {
 			WildWarning.sendWildWarning(c, plr -> startTeleportFinal(x, y, height, teleportType, homeTeleport));
 			return;
 		}
-
 		startTeleportFinal(x, y, height, teleportType, homeTeleport);
 	}
 

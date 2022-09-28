@@ -1,5 +1,13 @@
 ---
-npc_id: 259
+npc_id:
+  - 252
+  - 253
+  - 254
+  - 255
+  - 256
+  - 257
+  - 258
+  - 259
 constant:
   accessibility: 0
   items:

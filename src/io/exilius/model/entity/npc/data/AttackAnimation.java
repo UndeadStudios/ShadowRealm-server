@@ -393,17 +393,50 @@ public class AttackAnimation extends NPCHandler {
 		case 2145:
 		case 6462: // Zombies
 		case 6465:
-		case 26:
-		case 27:
-		case 28:
-		case 29:
-		case 31:
-		case 32:
-		case 33:
-		case 34:
-		case 35:
-		case 36:
-		case 30:
+			case 23: // Monkey
+			case 26: // Zombie
+			case 27: // Zombie
+			case 28: // Zombie
+			case 29: // Zombie
+			case 30: // Zombie
+			case 31: // Zombie
+			case 32: // Zombie
+			case 33: // Zombie
+			case 34: // Zombie
+			case 35: // Zombie
+			case 36: // Zombie
+			case 37: // Zombie
+			case 38: // Zombie
+			case 39: // Zombie
+			case 40: // Zombie
+			case 41: // Zombie
+			case 42: // Zombie
+			case 43: // Zombie
+			case 44: // Zombie
+			case 45: // Zombie
+			case 46: // Zombie
+			case 47: // Zombie
+			case 48: // Zombie
+			case 49: // Zombie
+			case 50: // Zombie
+			case 51: // Zombie
+			case 52: // Zombie
+			case 53: // Zombie
+			case 54: // Zombie
+			case 55: // Zombie
+			case 56: // Zombie
+			case 57: // Zombie
+			case 58: // Zombie
+			case 59: // Zombie
+			case 60: // Zombie
+			case 61: // Zombie
+			case 62: // Zombie
+			case 63: // Zombie
+			case 64: // Zombie
+			case 65: // Zombie
+			case 66: // Zombie
+			case 67: // Zombie
+			case 68: // Zombie
 			return 5571;
 		case 1798:// White knights
 		case 1799:
@@ -501,16 +534,20 @@ public class AttackAnimation extends NPCHandler {
 				return 4234;
 			else if (npc.getAttackType() == CombatType.MAGE)
 				return 4237;
-		case 70:// Skeleton
-		case 71:
-		case 72:
-		case 73:
-		case 74:
-		case 75:
-		case 76:
-		case 77:
-		case 78:
-		case 79:
+			case 70: // Skeleton
+			case 71: // Skeleton
+			case 72: // Skeleton
+			case 73: // Skeleton
+			case 74: // Skeleton
+			case 75: // Skeleton
+			case 76: // Skeleton
+			case 77: // Skeleton
+			case 78: // Skeleton
+			case 79: // Skeleton
+			case 80: // Skeleton
+			case 81: // Skeleton
+			case 82: // Skeleton
+			case 83: // Skeleton
 			return 5485;
 		case 435: // Pyrefiend
 		case 7349:
@@ -681,10 +718,10 @@ public class AttackAnimation extends NPCHandler {
 		case 396:
 			return 284;
 		case 891: // moss
-		case 2090:
-		case 2091:
-		case 2092:
-		case 2093:
+			case 2090: // Moss giant
+			case 2091: // Moss giant
+			case 2092: // Moss giant
+			case 2093: // Moss giant
 			return 4658;
 		case 7258:
 			return 5540;
@@ -804,10 +841,29 @@ public class AttackAnimation extends NPCHandler {
 		case 245:
 		case 246:
 			return 80;
-		case 247:
-		case 259:
-		case 268:
-		case 264:
+			case 247: // Red dragon
+			case 248: // Red dragon
+			case 249: // Red dragon
+			case 250: // Red dragon
+			case 251: // Red dragon
+			case 252: // Black dragon
+			case 253: // Black dragon
+			case 254: // Black dragon
+			case 255: // Black dragon
+			case 256: // Black dragon
+			case 257: // Black dragon
+			case 258: // Black dragon
+			case 259: // Black dragon
+			case 260: // Green dragon
+			case 261: // Green dragon
+			case 262: // Green dragon
+			case 263: // Green dragon
+			case 264: // Green dragon
+			case 265: // Blue dragon
+			case 266: // Blue dragon
+			case 267: // Blue dragon
+			case 268: // Blue dragon
+			case 269: // Blue dragon
 		case 2919:
 		case 270:
 		case 1270:
@@ -851,16 +907,6 @@ public class AttackAnimation extends NPCHandler {
 		case 803: // monk
 			return 422;
 
-		case 52: // baby drag
-			return 25;
-
-		case 58: // Shadow Spider
-		case 59: // Giant Spider
-		case 60: // Giant Spider
-		case 61: // Spider
-		case 62: // Jungle Spider
-		case 63: // Deadly Red Spider
-		case 64: // Ice Spider
 		case 3021:
 			return 5327;
 
@@ -982,9 +1028,6 @@ public class AttackAnimation extends NPCHandler {
 		case 21: // hero
 			return 451;
 
-		case 41: // chicken
-			return 55;
-
 		case 9: // guard
 		case 20: // paladin
 			return 451;
@@ -1000,9 +1043,21 @@ public class AttackAnimation extends NPCHandler {
 		case 7538:
 			if (npc.getAttackType() == CombatType.MAGE)
 				return 7540;
-		case 2084:
 		case 111: // ice giant
-		case 2098:
+			case 2075: // Fire giant
+			case 2076: // Fire giant
+			case 2077: // Fire giant
+			case 2078: // Fire giant
+			case 2079: // Fire giant
+			case 2080: // Fire giant
+			case 2081: // Fire giant
+			case 2082: // Fire giant
+			case 2083: // Fire giant
+			case 2084: // Fire giant
+			case 2086: // Ice giant
+			case 2087: // Ice giant
+			case 2088: // Ice giant
+			case 2089: // Ice giant
 			case 7934:
 		case 2463:
 			return 4652;
@@ -1077,7 +1132,7 @@ public class AttackAnimation extends NPCHandler {
 		case 2266: // prime
 			return 2854;
 
-		case 2267: // rex
+			case 2267: // Dagannoth Rex
 			return 2851;
 
 		case 6342:

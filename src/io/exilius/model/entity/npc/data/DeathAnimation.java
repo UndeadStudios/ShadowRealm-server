@@ -889,17 +889,29 @@ public class DeathAnimation extends NPCHandler {
             case 239:// drags
             case 7940:
                 return 92;
-            case 247:
-            case 259:
-            case 268:
-            case 240:
-            case 241:
-            case 242:
-            case 243:
-            case 244:
-            case 245:
-            case 246:
-            case 264:
+            case 247: // Red dragon
+            case 248: // Red dragon
+            case 249: // Red dragon
+            case 250: // Red dragon
+            case 251: // Red dragon
+            case 252: // Black dragon
+            case 253: // Black dragon
+            case 254: // Black dragon
+            case 255: // Black dragon
+            case 256: // Black dragon
+            case 257: // Black dragon
+            case 258: // Black dragon
+            case 259: // Black dragon
+            case 260: // Green dragon
+            case 261: // Green dragon
+            case 262: // Green dragon
+            case 263: // Green dragon
+            case 264: // Green dragon
+            case 265: // Blue dragon
+            case 266: // Blue dragon
+            case 267: // Blue dragon
+            case 268: // Blue dragon
+            case 269: // Blue dragon
             case 270:
             case 2919:
             case 1270:

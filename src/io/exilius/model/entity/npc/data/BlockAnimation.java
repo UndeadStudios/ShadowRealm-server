@@ -787,18 +787,37 @@ public class BlockAnimation {
 
             case 239: // kbd
                 return 89;
-            case 264:// green dragon
-            case 268:
+            case 247: // Red dragon
+            case 248: // Red dragon
+            case 249: // Red dragon
+            case 250: // Red dragon
+            case 251: // Red dragon
+            case 252: // Black dragon
+            case 253: // Black dragon
+            case 254: // Black dragon
+            case 255: // Black dragon
+            case 256: // Black dragon
+            case 257: // Black dragon
+            case 258: // Black dragon
+            case 259: // Black dragon
+            case 260: // Green dragon
+            case 261: // Green dragon
+            case 262: // Green dragon
+            case 263: // Green dragon
+            case 264: // Green dragon
+            case 265: // Blue dragon
+            case 266: // Blue dragon
+            case 267: // Blue dragon
+            case 268: // Blue dragon
+            case 269: // Blue dragon
             case 2919:
             case 270:
             case 742:
             case 1589:
-            case 247:
             case 52:
             case 7273:
             case 7274:
             case 2918:
-            case 259:
             case 7275:
                 return 89;
             case 2889:
