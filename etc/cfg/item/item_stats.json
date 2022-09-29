@@ -69189,6 +69189,7 @@
       "dcrush": 3,
       "dmagic": 6,
       "drange": 4,
+      "arange": 5,
       "prayer": 0
     }
   },
@@ -69205,6 +69206,7 @@
       "dcrush": 38,
       "dmagic": 25,
       "drange": 33,
+      "arange": 30,
       "prayer": 0
     }
   },
@@ -69215,12 +69217,13 @@
     "equipment": {
       "slot": 7,
       "amagic": -2,
-      "arange": 27,
+      "arange": 73,
       "dstab": 26,
       "dslash": 24,
       "dcrush": 29,
       "dmagic": 19,
       "drange": 22,
+      "arange": 30,
       "prayer": 0
     }
   },

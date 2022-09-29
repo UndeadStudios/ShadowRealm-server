@@ -26,7 +26,7 @@ public enum Title implements Comparator<Title> {
 	CUSTOM("Custom", 0, TitleCurrency.NONE, new TitleRequirement() {
 		@Override
 		public boolean meetsStandard(Player player) {
-			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.Mystic_Club)  || player.getRights().isOrInherits(Right.Mythic_Club) || player.getRights().isOrInherits(Right.MODERATOR);
+			return player.getRights().isOrInherits(Right.LEGENDARY_DONATOR) || player.getRights().isOrInherits(Right.DIAMOND_CLUB) || player.getRights().isOrInherits(Right.ONYX_CLUB) || player.getRights().isOrInherits(Right.Divine_Club)  || player.getRights().isOrInherits(Right.Mythic_Club) || player.getRights().isOrInherits(Right.MODERATOR);
 		}
 	}, "Have the option of choosing your own 16-character title. You must be a legendary donator or more to display this title."),
 	
@@ -68,7 +68,7 @@ public enum Title implements Comparator<Title> {
 	Mystic_CLUB("Mystic Club", 0, TitleCurrency.NONE, new TitleRequirement() {
 		@Override
 		public boolean meetsStandard(Player player) {
-			return player.getRights().isOrInherits(Right.Mystic_Club);
+			return player.getRights().isOrInherits(Right.Divine_Club);
 		}
 	}, "This title is for Mystic CLUB only. You must be in the Mystic CLUB to purchase and display this title."),
 

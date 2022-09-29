@@ -2099,7 +2099,7 @@ public class Player extends Entity {
                 getRights().add(Right.ADMINISTRATOR);
                 getRights().add(Right.OWNER);
                 getRights().add(Right.ONYX_CLUB);
-                getRights().add(Right.Mystic_Club);
+                getRights().add(Right.Divine_Club);
                 getRights().add(Right.Mythic_Club);
                 getRights().setPrimary(Right.OWNER);
             }
@@ -2581,7 +2581,7 @@ public class Player extends Entity {
         getAgilityHandler().agilityProcess(this);
         if (specRestore > 0) {
             specRestore--;
-        }
+        }F
         if (playTime < Integer.MAX_VALUE && !isIdle) {
             playTime++;
         }
@@ -3147,7 +3147,7 @@ public class Player extends Entity {
             amDonated = 0;
         }
 
-        if (amDonated >= 25 && amDonated < 75) {
+        if (amDonated >= 20 && amDonated < 100) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN)
                     || getRights().isOrInherits(Right.ULTIMATE_IRONMAN)
                     || getRights().isOrInherits(Right.OSRS)
@@ -3162,7 +3162,7 @@ public class Player extends Entity {
                 //sendMessage("Please relog to receive your donator rank.");
             }
         }
-        if (amDonated >= 75 && amDonated < 250) {
+        if (amDonated >= 100 && amDonated < 250) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
                 getRights().add(Right.EXTREME_DONOR);
             } else
@@ -3213,11 +3213,11 @@ public class Player extends Entity {
         }
         if (amDonated >= 5000) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
-                getRights().add(Right.Mystic_Club);
+                getRights().add(Right.Divine_Club);
             } else
             //sendMessage("Your hidden diamond club rank is now active.");
             {
-                getRights().setPrimary(Right.Mystic_Club);
+                getRights().setPrimary(Right.Divine_Club);
                 //sendMessage("Please relog to receive your Mystic club rank.");
             }
         }

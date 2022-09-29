@@ -69,9 +69,6 @@ rare:
   - name: "archaic emblem tier 1"
     minimum: 1
     maximum: 1
-very_rare:
-  accessibility: 100
-  items:
   - name: "malediction ward"
     minimum: 1
     maximum: 1
@@ -81,3 +78,9 @@ very_rare:
   - item: 6792
     maximum: 3
     minimum: 2
+very_rare:
+  accessibility: 1000
+  items:
+  - item: 28347
+    maximum: 1
+    minimum: 1

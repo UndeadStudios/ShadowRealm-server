@@ -1,10 +1,5 @@
 package io.exilius.content.worldevent;
 
-import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.worldevent.impl.HesporiWorldEvent;
@@ -15,6 +10,12 @@ import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+
+import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 public class WorldEventContainer {
 
@@ -38,7 +39,7 @@ public class WorldEventContainer {
 
     public void initialise() throws IOException {
         if (Server.isDebug() || Server.isTest()) {
-            cyclesBetweenEvents = Misc.toCycles(15, TimeUnit.MINUTES);
+            cyclesBetweenEvents = Misc.toCycles(120, TimeUnit.MINUTES);
         } else {
             cyclesBetweenEvents = CYCLES_BETWEEN_EVENTS;
         }

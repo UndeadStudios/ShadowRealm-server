@@ -85,10 +85,12 @@ public class NexChest implements Lootable {
                 new GameItem(Items.BANDOS_CHESTPLATE, 1),
                 new GameItem(Items.ZARYTE_CROSSBOW, 1),
                 new GameItem(Items.ZARYTE_VAMBRACES, 1),
-                new GameItem(Items.TORVA_FULLHELM, 1),
-                new GameItem(Items.TORVA_PLATEBODY, 1),
-                new GameItem(Items.TORVA_PLATELEGS, 1),
+                new GameItem(Items.TORVA_FULL_HELM_DAMAGED,1),
+                new GameItem(Items.TORVA_PLATEBODY_DAMAGED , 1),
+                new GameItem(Items.TORVA_PLATELEGS_DAMAGED, 1),
                 new GameItem(Items.ZARYTE_CROSSBOW, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
                 new GameItem(Items.ZARYTE_VAMBRACES, 1)
 
         ));

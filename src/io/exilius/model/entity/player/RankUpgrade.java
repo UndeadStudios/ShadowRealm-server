@@ -1,13 +1,13 @@
 package io.exilius.model.entity.player;
 
 enum RankUpgrade {
-    REGULAR_DONATOR(Right.REGULAR_DONATOR, 50),
+    REGULAR_DONATOR(Right.REGULAR_DONATOR, 20),
     EXTREME_DONOR(Right.EXTREME_DONOR, 100),
     LEGENDARY_DONATOR(Right.LEGENDARY_DONATOR,250),
     DIAMOND_CLUB(Right.DIAMOND_CLUB, 500),
     ONYX_CLUB(Right.ONYX_CLUB, 1000),
     Mythic_Club(Right.Mythic_Club, 2500),
-    Mystic_Club(Right.Mystic_Club, 5000);
+    Divine_Club(Right.Divine_Club, 5000);
 
     /**
      * The rights that will be appended if upgraded

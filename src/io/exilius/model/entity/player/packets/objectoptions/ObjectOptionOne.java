@@ -21,7 +21,6 @@ import io.exilius.content.dialogue.impl.OutlastLeaderboard;
 import io.exilius.content.dialogue.impl.SkillingPortalDialogue;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.impl.*;
-import io.exilius.content.minigames.CastleWarObjects;
 import io.exilius.content.minigames.pest_control.PestControl;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
@@ -2326,13 +2325,13 @@ static int thirdFloorSos[][] = {
 				c.getPA().startTeleport(3088, 3504, 0, "modern", false);
 				break;
 			case 11803:
-				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
+				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Divine_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
 					AgilityHandler.delayEmote(c, "CLIMB_DOWN", 3577, 9927, 0, 2);
 					c.sendMessage("<img=4> Welcome to the donators only slayer cave.");
 				}
 				break;
 			case 17387:
-				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
+				if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Divine_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
 					AgilityHandler.delayEmote(c, "CLIMB_UP", 2125, 4913, 0, 2);
 				}
 				break;
@@ -3269,7 +3268,7 @@ static int thirdFloorSos[][] = {
 						c.sendMessage("You have to wait another " + seconds + " seconds to use this altar.");
 						return;
 					}
-					if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Mystic_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
+					if (c.getRights().isOrInherits(Right.ONYX_CLUB) && c.getRights().isOrInherits(Right.Divine_Club)&& c.getRights().isOrInherits(Right.Mythic_Club)) {
 						c.specRestore = 120;
 						c.specAmount = 10.0;
 						c.getItems().addSpecialBar(c.playerEquipment[Player.playerWeapon]);
@@ -3353,7 +3352,7 @@ static int thirdFloorSos[][] = {
 				}
 
 			case 11737:
-				if (!c.getRights().isOrInherits(Right.ONYX_CLUB)&& !c.getRights().isOrInherits(Right.Mythic_Club) && !c.getRights().isOrInherits(Right.Mystic_Club)) {
+				if (!c.getRights().isOrInherits(Right.ONYX_CLUB)&& !c.getRights().isOrInherits(Right.Mythic_Club) && !c.getRights().isOrInherits(Right.Divine_Club)) {
 					return;
 				}
 				c.getPA().movePlayer(3365, 9641, 0);

@@ -500,8 +500,6 @@ public class RaidsChestItems {
                 new GameItem(21021, 1),//ancestral top
                 new GameItem(21024, 1),//ancestral bottom
                 new GameItem(20997, 1),  //twisted bow			UNCOMMON
-                new GameItem(20997, 1),  //twisted bow			UNCOMMON
-                new GameItem(20997, 1),  //twisted bow			UNCOMMON
                 new GameItem(20851, 1)));  //olmlet pet
     }
 

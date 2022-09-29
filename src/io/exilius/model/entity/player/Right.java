@@ -41,7 +41,7 @@ public enum Right implements Comparator<Right> {
 	GROUP_IRONMAN(28, "60201f"),
 
 	//Mythic_Club(4, "F5FF0F", ONYX_CLUB),
-	Mystic_Club(29, "800080", Mythic_Club),
+	Divine_Club(29, "800080", Mythic_Club),
 
 	;
 
@@ -53,7 +53,7 @@ public enum Right implements Comparator<Right> {
 	 */
 	public static final EnumSet[] DISPLAY_GROUPS = {
 			EnumSet.of(HELPER, MODERATOR, ADMINISTRATOR, OWNER, Mythic_Club, REGULAR_DONATOR, EXTREME_DONOR,
-					 LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club, YOUTUBER),
+					 LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Divine_Club, YOUTUBER),
 			EnumSet.of(HITBOX, IRONMAN, ULTIMATE_IRONMAN, GAME_DEVELOPER, OSRS, HC_IRONMAN, ROGUE,
 					ROGUE_HARDCORE_IRONMAN, ROGUE_IRONMAN, GROUP_IRONMAN)
 	};
@@ -61,7 +61,7 @@ public enum Right implements Comparator<Right> {
 	/**
 	 * Donator rights.
 	 */
-	public static final EnumSet<Right> DONATOR_SET = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club, Mythic_Club);
+	public static final EnumSet<Right> DONATOR_SET = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Divine_Club, Mythic_Club);
 
 	//public static final EnumSet<Right> hiscorable = EnumSet.of(REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB);
 
@@ -75,7 +75,7 @@ public enum Right implements Comparator<Right> {
 	 * {@link #MODERATOR} because they have more power within the community.
 	 * </p>
 	 */
-	public static final Right[] PRIORITY = { PLAYER, OSRS, HC_IRONMAN, GROUP_IRONMAN, IRONMAN, ULTIMATE_IRONMAN, REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Mystic_Club, YOUTUBER, HITBOX, HELPER,
+	public static final Right[] PRIORITY = { PLAYER, OSRS, HC_IRONMAN, GROUP_IRONMAN, IRONMAN, ULTIMATE_IRONMAN, REGULAR_DONATOR, EXTREME_DONOR, LEGENDARY_DONATOR, DIAMOND_CLUB, ONYX_CLUB, Divine_Club, YOUTUBER, HITBOX, HELPER,
 			GAME_DEVELOPER, MODERATOR, ADMINISTRATOR, OWNER, Mythic_Club};
 
 
