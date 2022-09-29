@@ -170,7 +170,7 @@ public class NpcAggression {
                 case 11284:
                 case 11285:
                 case 11286:
-                    return 40;
+                    return 100;
                 case 5935:
                 case 135:
                     return 8;
@@ -204,6 +204,7 @@ public class NpcAggression {
                 || Boundary.isIn(npc, Boundary.HESPORI)
                 || (Boundary.isIn(npc, Boundary.CATACOMBS)
                 || ((Boundary.isIn(npc, Boundary.SARACHNIS_LAIR) && npc.getBehaviour().isAggressive())
+                || ((Boundary.isIn(npc, Boundary.Nex) && npc.getBehaviour().isAggressive()))
                 || ((Boundary.isIn(npc, Boundary.MIMIC_LAIR) && npc.getBehaviour().isAggressive()))
                 || ((Boundary.isIn(npc, Boundary.GROTESQUE_LAIR) && npc.getBehaviour().isAggressive())))
         )) {
@@ -214,7 +215,9 @@ public class NpcAggression {
             return true;
         }
 
+
         switch (npc.getNpcId()) {
+            case 11278:
             case 11283:
             case 11284:
             case 11285:
@@ -287,7 +290,6 @@ public class NpcAggression {
             case 2211:
             case 2212:
             case 2215:
-            case 11278:
             case 2216:
             case 2217:
             case 2218:

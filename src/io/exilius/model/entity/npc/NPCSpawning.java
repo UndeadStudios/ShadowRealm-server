@@ -138,6 +138,10 @@ public class NPCSpawning {
         return spawn(npcType, x, y, heightLevel, WalkingType, maxHit, attackPlayer, null);
     }
 
+    public static NPC spawnv2(int npcType, int x, int y, int heightLevel, int WalkingType, int maxHit, boolean attackPlayer, NpcStats npcStats) {
+        return spawn(npcType, x, y, heightLevel, WalkingType, maxHit, attackPlayer, npcStats);
+    }
+
     public static void spawn(NPC npc) {
         // first, search for a free slot
         int slot = -1;

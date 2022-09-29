@@ -1,6 +1,5 @@
 package io.exilius.content.bosses;
 
-import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.combat.Hitmark;
@@ -24,7 +23,8 @@ import org.apache.commons.lang3.Range;
 import java.util.*;
 
 public class Nex extends NPC {
-    private final List<NPC> npcs = Lists.newArrayList();
+
+    protected static Player player;
 
     public static final int KEY = 3460;
     public static long NEX = System.currentTimeMillis();
@@ -50,11 +50,6 @@ public class Nex extends NPC {
         nex = this;
     }
 
-    public static void spawnNPC() {
-        if (spawned = false) {
-            NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
-        }
-    }
     public static boolean isMissingRequirements(Player c) {
         if (c.totalLevel < c.getMode().getTotalLevelNeededForNex()) {
             c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForNex() + " to join this raid!");
@@ -83,9 +78,6 @@ public class Nex extends NPC {
                             p.getItems().addItemUnderAnyCircumstance(KEY, 2);
                             p.sendMessage("[WOGW] Double drops is activated and you received 2 extra keys!");
                         }
-                       // p.getEventCalendar().progress(EventChallenge.OBTAIN_X_WILDY_EVENT_KEYS);
-//					LeaderboardUtils.addCount(LeaderboardType.WILDY_EVENTS, p, 1);
-                      //  Achievements.increase(p, AchievementType.WILDY_EVENT, 1);
                         p.setNexDamageCounter(0);
                     } else {
                         p.sendMessage("@blu@You didn't do enough damage to the boss to receive a reward.");
@@ -100,7 +92,9 @@ public class Nex extends NPC {
     public static void init() {
        // spawned = true;
         healers = true;
-       NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
+        NPCSpawning.spawnNpcOld(11278, 2922, 5203, 0, 0, 3500, 70, 900, 900);
+       //NPCSpawning.spawn(11278, 2924, 5203, 0, 0, 70, true);
+        Nex.spawnHealer();
     }
     public static NPC getNex() {
         return nex;
@@ -108,22 +102,22 @@ public class Nex extends NPC {
 
     public static void spawnHealer() {
         NPC Nex = NPCHandler.getNpc(11278);
-        healers = true;
+        //healers = true;
+
         if (healers) {
             List<NPC> healer = Arrays.asList(NPCHandler.npcs);
-            if (!healer.stream().filter(Objects::nonNull).anyMatch((n) -> {
-                return n.getNpcId() == 11294 && !n.isDead() && n.getHealth().getCurrentHealth() > 0;
-            })) {
+            if (healer.stream().filter(Objects::nonNull).noneMatch((n) -> n.getNpcId() == 11294 && !n.isDead() && n.getHealth().getCurrentHealth() > 0)) {
+                assert Nex != null;
                 int maximumHealth = Nex.getHealth().getMaximumHealth();
                 int currentHealth = Nex.getHealth().getCurrentHealth();
                 int percentRemaining = (int)((double)currentHealth / (double)maximumHealth * 100.0D);
                 if (percentRemaining <= 85) {
                     if (Misc.passedProbability(Range.between(0, percentRemaining), 10, true)) {
                         if (stage == 0) {
-                            NPCSpawning.spawn(11283, 2914, 5214, 0, 1, 45, true);
-                            NPCSpawning.spawn(11284, 2936, 5214, 0, 1, 45, true);
-                            NPCSpawning.spawn(11285, 2914, 5192, 0, 1, 45, true);
-                            NPCSpawning.spawn(11286, 2936, 5192, 0, 1, 45, true);
+                            NPCSpawning.spawn(11283, 2914, 5214, 0, 4, 45, true);
+                            NPCSpawning.spawn(11284, 2936, 5214, 0, 4, 45, true);
+                            NPCSpawning.spawn(11285, 2914, 5192, 0, 4, 45, true);
+                            NPCSpawning.spawn(11286, 2936, 5192, 0, 4, 45, true);
                             stage = 1;
                         }
 
@@ -135,46 +129,40 @@ public class Nex extends NPC {
 
     public int modifyDamage(Player player, int damage) {
         super.modifyDamage(player, damage);
-        return player.getPosition().getDistance(this.getPosition()) > 8 ? 0 : damage;
+        return player.getPosition().getAbsDistance(this.getPosition()) > 8 ? 0 : damage;
     }
 
     public void process() {
-        PlayerHandler.nonNullStream().filter((p) -> {
-            return Boundary.isIn(p, Boundary.Nex);
-        }).forEach((p) -> {
-            Iterator var1 = deadlySpots.iterator();
+        PlayerHandler.nonNullStream().filter((p) -> Boundary.isIn(p, Boundary.Nex)).forEach((p) -> {
+            Iterator<Position> var1 = deadlySpots.iterator();
 
             while(true) {
+                Position pos;
                 do {
-                    Position pos;
                     do {
-                        do {
-                            if (!var1.hasNext()) {
-                                if (wrathDMGTimer.isFinished()) {
-                                    var1 = wrathLocations.iterator();
+                        if (!var1.hasNext()) {
+                            if (wrathDMGTimer.isFinished()) {
+                                var1 = wrathLocations.iterator();
 
-                                    while(true) {
-                                        do {
-                                            do {
-                                                if (!var1.hasNext()) {
-                                                    return;
-                                                }
+                                while(true) {
+                                    do {
+                                        if (!var1.hasNext()) {
+                                            return;
+                                        }
 
-                                                pos = (Position)var1.next();
-                                            } while(!p.getPosition().equals(pos));
-                                        } while(p == null && (p.isDead || wrathTimer.isFinished()));
+                                        pos = var1.next();
+                                    } while(!p.getPosition().equals(pos));
 
-                                        p.appendDamage(25, Hitmark.HIT);
-                                    }
+                                    p.appendDamage(25, Hitmark.HIT);
                                 }
-
-                                return;
                             }
 
-                            pos = (Position)var1.next();
-                        } while(!p.getPosition().equals(pos));
-                    } while(!finishedShadows);
-                } while(p == null && p.isDead);
+                            return;
+                        }
+
+                        pos = var1.next();
+                    } while(!p.getPosition().equals(pos));
+                } while(!finishedShadows);
 
                 p.appendDamage(Misc.random(10, 30), Hitmark.HIT);
             }
@@ -202,17 +190,7 @@ public class Nex extends NPC {
     public boolean isFreezable() {
         return false;
     }
-//    public void killNpcs() {
-//        npcs.forEach(it -> it.appendDamage(it.getHealth().getCurrentHealth(), Hitmark.HIT));
-//    }
 
-    public void onDeath() {
-        NPCHandler.kill(11283, 0);
-        NPCHandler.kill(11284, 0);
-        NPCHandler.kill(11285, 0);
-        NPCHandler.kill(11286, 0);
-        isDead();
-    }
 
     public static void attack(final NPC n) {
         if (n != null && !n.isDead) {
@@ -252,13 +230,11 @@ public class Nex extends NPC {
                                         n.forceChat("There is... NO ESCAPE!");
                                         n.teleport(new Position(2925, 5203));
                                     case 11:
-                                        ForceMovement forceMovement = new ForceMovement(n, 2, new Position(2925, 5203), Nex.chargePosition[Misc.random(3)], 15, 30);
+                                        ForceMovement forceMovement = new ForceMovement(n, 2, new Position(2937, 5203), Nex.chargePosition[Misc.random(3)], 15, 30);
                                         forceMovement.startForceMovement();
                                         n.startAnimation(9178);
-                                        PlayerHandler.nonNullStream().filter((p) -> {
-                                            return Boundary.isIn(p, Boundary.Nex);
-                                        }).forEach((p) -> {
-                                            if (p.getPosition().deepCopy().withinDistance(n.getPosition().deepCopy(), 5)) {
+                                        PlayerHandler.nonNullStream().filter((p) -> Boundary.isIn(p, Boundary.Nex)).forEach((p) -> {
+                                            if (p.getPosition().deepCopy().withinDistance(n.getPosition().deepCopy(), 15)) {
                                                 p.appendDamage(15, Hitmark.HIT);
                                             }
 
@@ -279,14 +255,10 @@ public class Nex extends NPC {
                                     case 4:
                                         n.forceChat("Fear the shadow!");
                                     case 6:
-                                        PlayerHandler.nonNullStream().filter((p) -> {
-                                            return Boundary.isIn(p, Boundary.Nex);
-                                        }).forEach((p) -> {
+                                        PlayerHandler.nonNullStream().filter((p) -> Boundary.isIn(p, Boundary.Nex)).forEach((p) -> {
                                             Nex.deadlyPosition.add(p.getPosition().deepCopy());
-                                            Iterator var1 = Nex.deadlyPosition.iterator();
 
-                                            while(var1.hasNext()) {
-                                                Position deadlyLocation = (Position)var1.next();
+                                            for (Position deadlyLocation : Nex.deadlyPosition) {
                                                 Server.playerHandler.sendStillGfx(new StillGraphic(383, deadlyLocation));
                                                 Nex.deadlySpots.add(deadlyLocation);
                                             }
@@ -319,29 +291,26 @@ public class Nex extends NPC {
     static {
         phases = Nex.NexPhase.SMOKE;
         currentAttack = -1;
-        chargePosition = new Position[]{new Position(2925, 5211), new Position(2934, 5203), new Position(2925, 5194), new Position(2916, 5203)};
-        deadlySpots = new ArrayList();
-        deadlyPosition = new ArrayList();
+        chargePosition = new Position[]{new Position(2925, 5215), new Position(2937, 5203), new Position(2925, 5192), new Position(2914, 5203)};
+        deadlySpots = new ArrayList<>();
+        deadlyPosition = new ArrayList<>();
         wrathTimer = new TickTimer();
         wrathDMGTimer = new TickTimer();
-        wrathLocations = new ArrayList();
+        wrathLocations = new ArrayList<>();
     }
 
-    static enum NexPhase {
+    enum NexPhase {
         SMOKE("Fill my soul with smoke!", 0),
         SHADOW("Darken my shadow!", 1),
         ZAROS("NOW, THE POWER OF ZAROS!", 2);
 
-        String shout;
-        int phase;
+        final String shout;
+        final int phase;
 
-        private NexPhase(String shout, int phase) {
+        NexPhase(String shout, int phase) {
             this.shout = shout;
             this.phase = phase;
         }
-
-
-
 
         public String getShout() {
             return this.shout;
@@ -352,8 +321,7 @@ public class Nex extends NPC {
             int var1 = var0.length;
             byte var2 = 0;
             if (var2 < var1) {
-                Nex.NexPhase n = var0[var2];
-                return n;
+                return var0[var2];
             } else {
                 return null;
             }

@@ -394,7 +394,14 @@ public class NPCHandler {
             case 2215:
                 return 6;
             case 11278:
-                return 10;
+            case 11299:
+            case 11294:
+            case 11283:
+            case 11308:
+            case 11284:
+            case 11285:
+            case 11286:
+                return 5;
 
         // saradomin gw boss
         case 2562: 
@@ -1455,7 +1462,7 @@ public class NPCHandler {
             case 11284:
             case 11285:
             case 11286:
-                return 18;
+                return 30;
         case 8622: 
         case 8621: 
         case 8620: 

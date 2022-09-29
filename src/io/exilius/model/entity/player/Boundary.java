@@ -397,7 +397,7 @@ public class Boundary {
 
 	public static final Boundary SKOTIZO_BOSSROOM = new Boundary(2240, 5632, 2303, 5695);
 
-	public static Boundary Nex = new Boundary(2909,5187,2943,5221);
+	public static Boundary Nex = new Boundary(2910,5188,2940,5217);
 	public static Boundary SandCrab = new Boundary(1730,3465,1772,3483);
 	public static final Boundary GODWARS_MAIN = new Boundary(2847, 5346, 2912, 5280);
 	public static final Boundary GODWARS_AREA = new Boundary(2815, 5245, 2954, 5377);

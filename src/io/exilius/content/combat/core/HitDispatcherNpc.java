@@ -68,7 +68,7 @@ public class HitDispatcherNpc extends HitDispatcher {
         }
         if (npcId == 11278) {
              if ((type == CombatType.RANGE)) {
-                maximumDamage /= 2.25;
+                maximumDamage /= 2.05;
             }
         }
 

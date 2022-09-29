@@ -2582,7 +2582,7 @@ public class Player extends Entity {
         getAgilityHandler().agilityProcess(this);
         if (specRestore > 0) {
             specRestore--;
-        }F
+        }
         if (playTime < Integer.MAX_VALUE && !isIdle) {
             playTime++;
         }
