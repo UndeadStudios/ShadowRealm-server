@@ -2902,9 +2902,20 @@ public class DialogueHandler {
 				c.dialogueAction = 907;
 				break;
 
+			case 10040:
+				sendOptions("Fighting boots", "Fancy boots");
+				c.dialogueAction = 10040;
+				break;
+
 		}
 	}
-
+	public static void sendItem2(Player player, String text1, String text2, int item1, int item2) {
+		player.getPA().sendFrame126(text1, 6232);
+		player.getPA().sendFrame126(text2, 6233);
+		player.getPA().sendFrame246(6235, 170, item1);
+		player.getPA().sendFrame246(6236, 170, item2);
+		player.getPA().sendChatboxInterface(6231);
+	}
 	public void sendStatement(String line1, String line2) {
 		c.getPA().sendString(line1, 360);
 		c.getPA().sendString(line2, 361);

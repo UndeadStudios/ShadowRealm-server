@@ -106,6 +106,13 @@ static int thirdFloorSos[][] = {
 			{2127, 5287}, {2127, 5288}, {2124, 5287}, {2124, 5288}, {2138, 5294}, {2138, 5295}, {2141, 5294}, {2141, 5295}
 
 };
+static int fourthFloorsos[][] = {
+		{2336, 5237}, {2336, 5238}, {2333, 5237}, {2333, 5238}, {2363, 5193}, {2363, 5194}, {2360, 5194}, {2362, 5189},
+		{2362, 5188}, {2359, 5189}, {2359, 5188}, {2347, 5187}, {2347, 5188}, {2344, 5188}, {2344, 5187}, {2336, 5194},
+		{2336, 5193}, {2333, 5194}, {2333, 5193}, {2312, 5205}, {2312, 5204}, {2309, 5205}, {2309, 5204}, {2356, 5245},
+		{2356, 5246}, {2353, 5245}, {2353, 5246}, {2311, 5225}, {2311, 5224}, {2308, 5225}, {2308, 5224}, {2336, 5227},
+		{2336, 5226}, {2333, 5227}, {2333, 5226}, {2311, 5225}, {2311, 5224}, {2308, 5225}, {2308, 5224}
+};
 	public static void handleOption(final Player c, int objectType, int obX, int obY) {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			return;
@@ -504,6 +511,62 @@ static int thirdFloorSos[][] = {
 					return;
 				}
 				break;
+			case 23727:
+			case 23728:
+				for(int i = 0; i < fourthFloorsos.length; i++) {
+					if (c.absX == fourthFloorsos[i][0] && c.absY == fourthFloorsos[i][1]) {
+						c.startAnimation(4282);
+						c.getPA().walkTo(-1, 0);//going west
+						return;
+					}
+				}//going south
+				if(c.absX == 2324 && c.absY == 5243 || c.absX == 2323 && c.absY == 5243
+						|| c.absX == 2324 && c.absY == 5240 || c.absX == 2323 && c.absY == 5240
+						|| c.absX == 2359 && c.absY == 5232 || c.absX == 2360 && c.absY == 5232
+						|| c.absX == 2359 && c.absY == 5235 || c.absX == 2360 && c.absY == 5235
+						|| c.absX == 2361 && c.absY == 5207 || c.absX == 2362 && c.absY == 5207
+						|| c.absX == 2361 && c.absY == 5204 || c.absX == 2362 && c.absY == 5204) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, -1);
+					//	c.sendMessage("test +1 0");
+					return;
+				} //going east
+				if(c.absX == 2336 && c.absY == 5238 || c.absX == 2336 && c.absY == 5237
+						|| c.absX == 2333 && c.absY == 5238 || c.absX == 2333 && c.absY == 5237) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(1, 0);
+					//	c.sendMessage("test +1 0");
+					return;
+				}
+				if(c.absX == 2356 && c.absY == 5221 || c.absX == 2355 && c.absY == 5221) {//going north
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
+					//c.sendMessage("test 0 1");
+					return;
+				}
+				if(c.absX == obX && c.absY == obY) {//going north
+					c.startAnimation(4282);
+					c.getPA().walkTo(0, 1);
+					//c.sendMessage("test 0 1");
+					return;
+				}
+				if(c.absY == obY && c.absX < obX) {
+					c.startAnimation(4282);
+					c.getPA().walkTo(+1, 0);
+					//c.sendMessage("test +1 0 v2");
+					return;
+				}
+				if(c.absY > obY && c.absX == obX) {
+					c.getPA().walkTo(0, -1);
+					//c.sendMessage("test 0 -1");
+					return;
+				}
+				if(c.absY < obY && c.absX == obX) {
+					c.getPA().walkTo(0, 1);
+					//c.sendMessage("test 0 1 v2");
+					return;
+				}
+				break;
 			case 42934:
 				if(c.getX() == 2900 && c.getY() == 5203){
 					c.getPA().movePlayer(2898, 5203, 0);
@@ -532,6 +595,13 @@ static int thirdFloorSos[][] = {
 					c.sendMessage("You need to complete the third floor to use this portal.");
 				}
 				break;
+			case 23922:
+				if(c.hasfourthfloorDone){
+					c.getPA().movePlayer(2345, 5211, 0);
+				} else {
+					c.sendMessage("You need to complete the fourth floor to use this portal.");
+				}
+				break;
 			case 20656:
 				if(!c.hasfirstfloorDone){
 					c.getItems().addItem(995, 20000);
@@ -552,6 +622,17 @@ static int thirdFloorSos[][] = {
 					c.getItems().addItem(995, 55000);
 					c.sendMessage("The grain of plenty gives you 55k.");
 					c.hassecoundfloorDone = true;
+				} else {
+					c.sendMessage("You allready claimed this reward.");
+				}
+				break;
+			case 23731:
+				if(!c.hasfourthfloorDone){
+					c.getDH().sendItem2(c,"You have to pick what ", "boots you want.", Items.FANCY_BOOTS, Items.FIGHTING_BOOTS);
+					c.nextChat = 10040;
+					//c.getItems().addItem(995, 155000);
+					//c.sendMessage("The Cradle of life gives you 155k.");
+					//c.hasfourthfloorDone = true;
 				} else {
 					c.sendMessage("You allready claimed this reward.");
 				}

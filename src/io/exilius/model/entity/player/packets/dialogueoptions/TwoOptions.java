@@ -23,6 +23,7 @@ import io.exilius.content.minigames.bounty_hunter.BountyHunterEmblem;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.crafting.SpinMaterial;
 import io.exilius.content.tournaments.TourneyManager;
+import io.exilius.model.Items;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerAssistant;
@@ -47,6 +48,13 @@ public class TwoOptions {
 		Player other = c.getItemOnPlayer();
 
 		switch (c.dialogueAction) {
+			case 10040:
+				c.getItems().addItem(Items.FANCY_BOOTS, 1);
+				c.getItems().addItem(995, 155000);
+				c.hasfourthfloorDone = true;
+				c.getPA().closeAllWindows();
+				c.nextChat = -1;
+				break;
 			case -500: // enter instance message
 				Player p2 = (Player) c.getAttributes().get("OTHER_INSTANCE");
 				if (p2 == null)
@@ -1103,6 +1111,13 @@ public class TwoOptions {
 	public static void handleOption2(Player c) { //under this code is the dialogues OpTion two codIng ooh okay, and its the same id
 
 		switch (c.dialogueAction) {
+			case 10040:
+				c.getItems().addItem(Items.FIGHTING_BOOTS, 1);
+				c.getItems().addItem(995, 155000);
+				c.hasfourthfloorDone = true;
+				c.getPA().closeAllWindows();
+				c.nextChat = -1;
+				break;
 		case 1004:
 			c.getPA().closeAllWindows();
 			break;
