@@ -681,8 +681,6 @@ public class AttackAnimation extends NPCHandler {
 		case 7398:
 		case 7397:
 			return 1552;
-		case 1678:
-			return 2070;
 		case 1679:
 			return 240;
 		case 1680:
@@ -833,7 +831,6 @@ public class AttackAnimation extends NPCHandler {
 		case 239:// drags
 			case 7940:
 			return npc.getAttackType() == CombatType.MELEE ? 80 : 81;
-		case 240:
 		case 241:
 		case 242:
 		case 243:
@@ -921,7 +918,7 @@ public class AttackAnimation extends NPCHandler {
 		case 2033: // rat
 			return 138;
 
-		case 2031: // bloodworm
+			case 1678: // Bloodworm 52
 			return 2070;
 
 		case 1769:
@@ -1079,12 +1076,45 @@ public class AttackAnimation extends NPCHandler {
 		case 291:
 			return 99;
 
-		case 2006:// Lesser Demon
-		case 2026:// Greater Demon
-		case 7244:
+			case 2005: // Lesser demon 82
+			case 2006: // Lesser demon 82
+			case 2007: // Lesser demon 82
+			case 2008: // Lesser demon 82
+			case 2018: // Lesser demon 82
+			case 2025: // Greater demon 92
+			case 2026: // Greater demon 92
+			case 2027: // Greater demon 92
+			case 2028: // Greater demon 92
+			case 2029: // Greater demon 92
+			case 2030: // Greater demon 92
+			case 2031: // Greater demon 92
+			case 2032: // Greater demon 92
+			case 7244: // Greater demon 101
+			case 7245: // Greater demon 100
+			case 7246: // Greater demon 113
+			case 7247: // Lesser demon 87
+			case 7248: // Lesser demon 94
 			case 7936:
 		case 1432:// Black Demon
+			case 5874: // Black demon 172
+			case 5875: // Black demon 172
+			case 5876: // Black demon 172
+			case 5877: // Black demon 172
+			case 2048: // Black demon 172
+			case 7242: // Black demon 184
+			case 7243: // Black demon 178
+			case 2049: // Black demon 172
+			case 2050: // Black demon 172
+			case 2051: // Black demon 172
+			case 2052: // Black demon 172
+			case 240: // Black demon 172
 		case 1472:// jungle demon
+			case 7871: // Greater demon 104
+			case 7872: // Greater demon 104
+			case 7873: // Greater demon 104
+			case 7874: // Black demon 188
+			case 7875: // Black demon 188
+			case 7876: // Black demon 188
 			return 64;
 		case 1443:
 			return npc.getAttackType() == CombatType.MELEE ? 64 : -1;
