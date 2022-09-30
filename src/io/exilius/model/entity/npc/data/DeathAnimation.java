@@ -775,8 +775,14 @@ public class DeathAnimation extends NPCHandler {
             case 2266:
             case 2267:
                 return 2856;
-            case 111: // ice giant
-                return 131;
+            case 2086: // Ice giant
+            case 2087: // Ice giant
+            case 2088: // Ice giant
+            case 7878: // Ice giant 67
+            case 7879: // Ice giant 67
+            case 7880: // Ice giant 67
+            case 2089: // Ice giant
+                return 4659;
 
             case 2841: // ice warrior
                 return 843;
@@ -928,11 +934,17 @@ public class DeathAnimation extends NPCHandler {
             case 257: // Black dragon
             case 258: // Black dragon
             case 259: // Black dragon
+            case 7861: // Black dragon 247
+            case 7862: // Black dragon 247
+            case 7863: // Black dragon 247
             case 260: // Green dragon
             case 261: // Green dragon
             case 262: // Green dragon
             case 263: // Green dragon
             case 264: // Green dragon
+            case 7868: // Green dragon 88
+            case 7869: // Green dragon 88
+            case 7870: // Green dragon 88
             case 265: // Blue dragon
             case 266: // Blue dragon
             case 267: // Blue dragon

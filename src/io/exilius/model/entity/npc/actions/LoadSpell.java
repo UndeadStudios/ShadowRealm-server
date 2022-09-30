@@ -1055,14 +1055,40 @@ public class LoadSpell {
                 npc.projectileId = 298;
                 npc.setAttackType(CombatType.RANGE);
                 break;
-            case 264:
-            case 259:
-            case 247:
-            case 268:
+            case 247: // Red dragon
+            case 248: // Red dragon
+            case 249: // Red dragon
+            case 250: // Red dragon
+            case 251: // Red dragon
+            case 252: // Black dragon
+            case 253: // Black dragon
+            case 254: // Black dragon
+            case 255: // Black dragon
+            case 256: // Black dragon
+            case 257: // Black dragon
+            case 258: // Black dragon
+            case 259: // Black dragon
+            case 7861: // Black dragon 247
+            case 7862: // Black dragon 247
+            case 7863: // Black dragon 247
+            case 260: // Green dragon
+            case 261: // Green dragon
+            case 262: // Green dragon
+            case 263: // Green dragon
+            case 264: // Green dragon
+            case 7868: // Green dragon 88
+            case 7869: // Green dragon 88
+            case 7870: // Green dragon 88
+            case 265: // Blue dragon
+            case 266: // Blue dragon
+            case 267: // Blue dragon
+            case 268: // Blue dragon
+            case 269: // Blue dragon
             case 270:
+            case 1270:
+            case 273:
             case 274:
             case 6593:
-            case 273:
                 int random3 = Misc.random(2);
                 if (random3 == 0) {
                     npc.projectileId = 393;
@@ -1111,8 +1137,7 @@ public class LoadSpell {
                 break;
             /*
              * brutal black dragons
-             */
-            case 7274:
+             */case 7274:
                 int bReddrandom2 = Misc.random(5);
                 int distanceToBrutalR = player.distanceToPoint(npc.getX(), npc.getY());
                 if (bReddrandom2 <= 4) {

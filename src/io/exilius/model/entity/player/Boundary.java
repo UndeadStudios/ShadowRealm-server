@@ -595,7 +595,7 @@ public class Boundary {
 	public static final Boundary OURIANA_ALTAR_BANK = new Boundary(3010, 5618, 3026, 5630);
 
 	public static final Boundary GROUP_IRONMAN_FORMING = new Boundary(new Position(3059, 3032, 0), new Position(3179, 3134, 0));
-
+	public static final Boundary wild_slayer_save = new Boundary(3320, 10029, 3473, 10192);
 	public static Location centerAsLocation(Boundary boundary) {
 		int x = (boundary.minX + boundary.highX) / 2;
 		int y = (boundary.minY + boundary.highY) / 2;

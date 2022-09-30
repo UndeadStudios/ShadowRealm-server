@@ -333,6 +333,7 @@ public final class Position {
 				|| Boundary.isIn(this, Boundary.OURIANA_ALTAR)
 				|| Boundary.isIn(this, Boundary.BRYOPHYTA_ROOM)
 				|| Boundary.isIn(this, Boundary.SandCrab)
+				|| Boundary.isIn(this, Boundary.wild_slayer_save)
 		) {
 			return true;
 		}
