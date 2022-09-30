@@ -92,7 +92,7 @@ public class Nex extends NPC {
     public static void init() {
        // spawned = true;
         healers = true;
-        NPCSpawning.spawnNpcOld(11278, 2922, 5203, 0, 0, 3500, 70, 900, 900);
+        NPCSpawning.spawnNpcOld(11278, 2924, 5203, 0, 0, 3500, 70, 900, 900);
        //NPCSpawning.spawn(11278, 2924, 5203, 0, 0, 70, true);
         Nex.spawnHealer();
     }
