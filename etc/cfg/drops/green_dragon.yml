@@ -5,6 +5,9 @@ npc_id:
   - 262
   - 263
   - 264
+  - 7868
+  - 7869
+  - 7870
 constant:
   accessibility: 0
   items:

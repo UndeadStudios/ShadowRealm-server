@@ -8,6 +8,9 @@ npc_id:
   - 257
   - 258
   - 259
+  - 7861
+  - 7862
+  - 7863
 constant:
   accessibility: 0
   items:
