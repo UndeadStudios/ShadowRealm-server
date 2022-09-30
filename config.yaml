@@ -1,4 +1,4 @@
-server_state: "DEBUG_SQL"
+server_state: "PUBLIC"
 embedded_password: null
 local_database:
   url: "jdbc:mysql://127.0.0.1/exilius?useSSL=false&serverTimezone=UTC"
