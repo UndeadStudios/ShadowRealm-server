@@ -45,6 +45,9 @@ import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -90,7 +93,37 @@ public class NPCHandler {
         //NPCSpawning.spawnNpc(11278, 2925, 5203, 0, 0, 70 );
        // NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
     }
-
+public static void addNPC(int npcType, int x, int y, int h) {
+    //x	y	height	walk	maxhit	attack	defence	desc
+    //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
+    try {
+        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Spawns.txt", true));
+        try {
+            out.write("  {");
+            out.newLine();
+            out.write("\"id\":"+npcType+",");
+            out.newLine();
+            out.write("    \"position\": {");
+            out.newLine();
+            out.write("      \"x\":"+x+",");
+            out.newLine();
+            out.write("      \"y\":"+y+",");
+            out.newLine();
+            out.write("      \"height\":"+h+"");
+            out.newLine();
+            out.write("    },");;
+            out.newLine();
+            out.write("    \"walkingType\": \"WALK\"");
+            out.newLine();
+            out.write("  },");;
+            out.newLine();
+        } finally {
+            out.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
     public void startGame() {
         for (int i = 0; i < PuroPuro.IMPLINGS.length; i++) {
             newNPC(PuroPuro.IMPLINGS[i][0], PuroPuro.IMPLINGS[i][1], PuroPuro.IMPLINGS[i][2], 0, 1, -1);

@@ -376,5 +376,86 @@
       "height": 0
    },
    "walkingType": "WALK"
-}
+},
+  {
+    "id":423,
+    "position": {
+      "x":3426,
+      "y":10106,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3430,
+      "y":10104,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3434,
+      "y":10106,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3438,
+      "y":10108,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3437,
+      "y":10104,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3434,
+      "y":10100,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3433,
+      "y":10097,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3425,
+      "y":10100,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id":423,
+    "position": {
+      "x":3429,
+      "y":10103,
+      "height":0
+    },
+    "walkingType": "WALK"
+  }
 ]
