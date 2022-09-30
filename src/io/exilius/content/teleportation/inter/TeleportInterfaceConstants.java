@@ -129,6 +129,7 @@ public class TeleportInterfaceConstants {
     private static final TeleportContainer WILDERNESS = new TeleportContainer(Lists.newArrayList(
 
             new TeleportButtonStandard("Mage Bank @yel@(Safe)", new Position(2539, 4716, 0)),
+            new TeleportButtonStandard("Ferox Enclave @yel@(Safe)", new Position(3135, 3629, 0)),
             new TeleportButtonStandard("West Dragons @red@(10)", new Position(2976, 3591, 0), true),
             new TeleportButtonStandard("Dark Castle @red@(15)", new Position(3020, 3632, 0), true),
             new TeleportButtonStandard("Elder Chaos Druids @red@(16)", new Position(3232, 3642, 0), true),

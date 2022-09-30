@@ -4,6 +4,9 @@ import io.exilius.content.bosses.hespori.Hespori;
 
 public enum Tree {
 	NORMAL(new int[] { 1276, 1278, 1279 }, 1342, 1511, 1, 5, 20, 25, 15, 12000),
+	NORMAL_ELF(new int[] { 36679 }, 36680, 1511, 1, 5, 20, 25, 15, 12000),
+	NORMAL_ELF_2(new int[] { 36683 }, 36684, 1511, 1, 5, 20, 25, 15, 12000),
+	NORMAL_ELF_3(new int[] { 36677 }, 36678, 1511, 1, 5, 20, 25, 15, 12000),
 	NORMAL2(new int[] { 40752 }, 40753, 1511, 1, 5, 20, 25, 15, 12000),
 	NORMAL3(new int[] { 40750 }, 40751, 1511, 1, 5, 20, 25, 15, 12000),
 	OAK(new int[] { 10820, 11756 }, 1356, 1521, 15, 8, 50, 38, 25, 11500),

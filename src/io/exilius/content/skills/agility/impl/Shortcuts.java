@@ -142,12 +142,12 @@ public class Shortcuts {
 					3);
 			return true;
 
-		case 26711:
-			AgilityHandler.delayFade(c, "CRAWL", 3748, 5849, 0, "You crawl into the crevice",
-					"and end up in the kalphite hive.", 3);
+		case 30180:
+			AgilityHandler.delayFade(c, "CRAWL", 3305, 9497, 0, "You crawl into the crevice",
+					"and end up in the kalphite cave.", 3);
 			return true;
 		case 26712:
-			AgilityHandler.delayFade(c, "CRAWL", 2436, 9824, 0, "You crawl into the crevice",
+			AgilityHandler.delayFade(c, "CRAWL", 3321, 3122, 0, "You crawl into the crevice",
 					"and end up back on the outside.", 3);
 			return true;
 

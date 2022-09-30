@@ -275,6 +275,16 @@ public class Boundary {
 			new Boundary(3264, 4928, 3327, 5119),
 			new Boundary(3392, 4928, 3455, 5119)
 	};
+	public static final Boundary[] FEROX_ENCLAVE = {
+			new Boundary(3123, 3622, 3144, 3632),
+			new Boundary(3125, 3617, 3144, 3621),
+			new Boundary(3124, 3633, 3145, 3639),
+			new Boundary(3145, 3627, 3154, 3632),
+			new Boundary(3146, 3633, 3154, 3646),
+			new Boundary(3155, 3640, 3155, 3646),
+			new Boundary(3138, 3640, 3145, 3645),
+			new Boundary(3155, 3627, 3160, 3633)
+	};
 	public static final Boundary DEMONIC_GORILLAS = new Boundary(2071, 5613, 2192, 5702);
 	public static final Boundary CRYSTAL_CAVE_STAIRS = new Boundary(3222, 12441, 3229, 12448);
 	public static final Boundary CRYSTAL_CAVE_ENTRANCE = new Boundary(3268, 6050, 3278, 6056);

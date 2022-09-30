@@ -226,7 +226,9 @@ public final class Position {
 			return false;
 		if (Boundary.isIn(this, Boundary.BRYOPHYTA_ROOM))
 			return false;
-
+		if(Boundary.isIn(this, Boundary.FEROX_ENCLAVE)){
+			return false;
+		}
 		if (Boundary.isIn(this, Boundary.LOBBY)) {
 			return false;
 		}

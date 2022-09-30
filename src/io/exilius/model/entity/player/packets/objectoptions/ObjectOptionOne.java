@@ -362,6 +362,38 @@ static int fourthFloorsos[][] = {
 			case 5581: // take axe from log
 				AxeInLog.pullAxeFromLog(c, obX, obY);
 				break;
+			case 36523://priff doors to outside
+				if(obX == 3264 && obY == 6022){
+					c.getPA().movePlayer(2241, 3269, 0);
+				}
+				break;
+			case 36522:
+				if(obX == 3262 && obY == 6022){
+					c.getPA().movePlayer(2238, 3269, 0);
+				}
+				break;
+			case 3922:
+				if(c.getX() == 2237 && c.getY() == 3181){
+					c.getPA().walkTo(-3, 0);
+				}
+				break;
+			case 3931:
+				if(c.getX() == 2202 && c.getY() == 3237){
+					c.getPA().walkTo(-6, 0);
+				} else if(c.getX() == 2196 && c.getY() == 3237){
+					c.getPA().walkTo(6, 0);
+				}
+				break;
+			case 36518:
+				if(obX == 2238 && obY == 3270){
+					c.getPA().movePlayer(3262, 6024, 0);
+				}
+				break;
+			case 36519:
+				if(obX == 2240 && obY == 3270){
+					c.getPA().movePlayer(3265, 6024, 0);
+				}
+				break;
 			case 19206:
 			case 19207:
 				for(int i = 0; i < FirstFloorSos.length; i++) {
@@ -1231,7 +1263,29 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(3196, 10056, 0);
 				break;
 			case 31558:
-				c.getPA().movePlayer(3126, 3833);
+				if(obX == 3218 && obY == 10058) {
+					c.getPA().movePlayer(3102, 3656);
+				}
+				break;
+			case 39652:
+			case 39653:
+				if(c.getX() == 3123) {
+					c.getPA().walkTo(-1, 0);
+				} else if (c.getX() == 3122) {
+					c.getPA().walkTo(1, 0);
+				} else if(c.getY() == 3617){
+					c.getPA().walkTo(0, -1);
+				} else if(c.getY() == 3616){
+					c.getPA().walkTo(0, 1);
+				} else if (c.getY() == 3639) {
+					c.getPA().walkTo(0, 1);
+				} else if (c.getY() == 3640) {
+					c.getPA().walkTo(0, -1);
+				} else if (c.getX() == 3154) {
+					c.getPA().walkTo(1, 0);
+				}else if (c.getX() == 3155) {
+					c.getPA().walkTo(-1, 0);
+				}
 				break;
 			case 43868:
 				c.getPA().movePlayer(3126, 3833);
