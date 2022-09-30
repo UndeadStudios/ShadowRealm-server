@@ -682,7 +682,10 @@ public class DeathAnimation extends NPCHandler {
                 return 146;
             case 2033: // rat
                 return 141;
-            case 2031: // bloodvel
+            case 484: // Bloodveld 76
+            case 485: // Bloodveld 76
+            case 486: // Bloodveld 76
+            case 487: // Bloodveld 76
                 return 2073;
             case 9756:
             case 9757:
@@ -772,8 +775,14 @@ public class DeathAnimation extends NPCHandler {
             case 2266:
             case 2267:
                 return 2856;
-            case 111: // ice giant
-                return 131;
+            case 2086: // Ice giant
+            case 2087: // Ice giant
+            case 2088: // Ice giant
+            case 7878: // Ice giant 67
+            case 7879: // Ice giant 67
+            case 7880: // Ice giant 67
+            case 2089: // Ice giant
+                return 4659;
 
             case 2841: // ice warrior
                 return 843;
@@ -792,13 +801,37 @@ public class DeathAnimation extends NPCHandler {
                 return 1548;
             case 1653: // hand
                 return 1590;
-            case 2006:// demons
-            case 7244:
-            case 2026:
-            case 2025:
-            case 1432:
-            case 7936:
-            case 1443:
+            case 2005: // Lesser demon 82
+            case 2006: // Lesser demon 82
+            case 2007: // Lesser demon 82
+            case 2008: // Lesser demon 82
+            case 2018: // Lesser demon 82
+            case 2025: // Greater demon 92
+            case 2026: // Greater demon 92
+            case 2027: // Greater demon 92
+            case 2028: // Greater demon 92
+            case 2029: // Greater demon 92
+            case 2030: // Greater demon 92
+            case 2031: // Greater demon 92
+            case 2032: // Greater demon 92
+            case 1432:// Black Demon
+            case 5874: // Black demon 172
+            case 5875: // Black demon 172
+            case 5876: // Black demon 172
+            case 5877: // Black demon 172
+            case 2048: // Black demon 172
+            case 2049: // Black demon 172
+            case 2050: // Black demon 172
+            case 2051: // Black demon 172
+            case 2052: // Black demon 172
+            case 240: // Black demon 172
+            case 7871: // Greater demon 104
+            case 7872: // Greater demon 104
+            case 7873: // Greater demon 104
+            case 7874: // Black demon 188
+            case 7875: // Black demon 188
+            case 7876: // Black demon 188
+            case 1472:// jungle demon
                 return 67;
             case 6:// abby spec
             case 7279: // Deviant spectre
@@ -812,7 +845,6 @@ public class DeathAnimation extends NPCHandler {
             case 1543: // Gargoyle
             case 7407:
                 return 1518;
-            case 484: // Bloodveld
             case 1619:
             case 7276:
             case 7398:
@@ -889,17 +921,35 @@ public class DeathAnimation extends NPCHandler {
             case 239:// drags
             case 7940:
                 return 92;
-            case 247:
-            case 259:
-            case 268:
-            case 240:
-            case 241:
-            case 242:
-            case 243:
-            case 244:
-            case 245:
-            case 246:
-            case 264:
+            case 247: // Red dragon
+            case 248: // Red dragon
+            case 249: // Red dragon
+            case 250: // Red dragon
+            case 251: // Red dragon
+            case 252: // Black dragon
+            case 253: // Black dragon
+            case 254: // Black dragon
+            case 255: // Black dragon
+            case 256: // Black dragon
+            case 257: // Black dragon
+            case 258: // Black dragon
+            case 259: // Black dragon
+            case 7861: // Black dragon 247
+            case 7862: // Black dragon 247
+            case 7863: // Black dragon 247
+            case 260: // Green dragon
+            case 261: // Green dragon
+            case 262: // Green dragon
+            case 263: // Green dragon
+            case 264: // Green dragon
+            case 7868: // Green dragon 88
+            case 7869: // Green dragon 88
+            case 7870: // Green dragon 88
+            case 265: // Blue dragon
+            case 266: // Blue dragon
+            case 267: // Blue dragon
+            case 268: // Blue dragon
+            case 269: // Blue dragon
             case 270:
             case 2919:
             case 1270:

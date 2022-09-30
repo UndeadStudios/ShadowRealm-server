@@ -264,7 +264,17 @@ public class Boundary {
 	public static final Boundary OUTLAST = new Boundary(3263, 4927, 3330, 4992);
 	public static final Boundary OUTLAST_LOBBY = new Boundary(3321, 4939, 3325, 4979);
 	public static final Boundary OUTLAST_HUT = new Boundary(3092, 3505, 3101, 3513);
-	public static final Boundary TOURNAMENT_LOBBIES_AND_AREAS = new Boundary(3134, 4673, 3638, 5121);
+	public static final Boundary[] TOURNAMENT_LOBBIES_AND_AREAS  = {
+			new Boundary(3264, 4736, 3391, 4863),
+			new Boundary(3392, 4672, 3455, 4799),
+			new Boundary(3456, 4736, 3527, 4783),
+			new Boundary(3392, 4800, 3455, 4863),
+			new Boundary(3456, 4800, 3583, 4927),
+			new Boundary(3136, 4928, 3198, 5119),
+			new Boundary(3392, 4864, 3455, 4927),
+			new Boundary(3264, 4928, 3327, 5119),
+			new Boundary(3392, 4928, 3455, 5119)
+	};
 	public static final Boundary DEMONIC_GORILLAS = new Boundary(2071, 5613, 2192, 5702);
 	public static final Boundary CRYSTAL_CAVE_STAIRS = new Boundary(3222, 12441, 3229, 12448);
 	public static final Boundary CRYSTAL_CAVE_ENTRANCE = new Boundary(3268, 6050, 3278, 6056);
@@ -595,7 +605,7 @@ public class Boundary {
 	public static final Boundary OURIANA_ALTAR_BANK = new Boundary(3010, 5618, 3026, 5630);
 
 	public static final Boundary GROUP_IRONMAN_FORMING = new Boundary(new Position(3059, 3032, 0), new Position(3179, 3134, 0));
-
+	public static final Boundary wild_slayer_save = new Boundary(3320, 10029, 3473, 10192);
 	public static Location centerAsLocation(Boundary boundary) {
 		int x = (boundary.minX + boundary.highX) / 2;
 		int y = (boundary.minY + boundary.highY) / 2;

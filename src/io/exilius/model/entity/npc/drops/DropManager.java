@@ -354,7 +354,9 @@ public class DropManager {
         } else {
             dropCoinBag(player, npcId, location.getX(), location.getY(), location.getZ());
         }
-
+         //   if (Misc.random(500) == 100) {
+           //     Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 5), player.getIndex());
+          //  }
         // Runecrafting pouches
         if (Misc.random(80) == 10 || Server.isDebug()) {
             if (player.getItems().getItemCount(5509, false) == 1 && player.getItems().getItemCount(5510, false) == 0) {
@@ -570,6 +572,8 @@ public class DropManager {
         if (player.getItems().isWearingItem(2572)) {
             modifier -= .03;
         } else if (player.getItems().isWearingItem(12785)) {
+            modifier -= .08;
+        } else if (player.getItems().isWearingItem(773)){
             modifier -= .08;
         }
         if (player.getItems().playerHasItem(30121) || (player.hasFollower && player.petSummonId == 30121)) {

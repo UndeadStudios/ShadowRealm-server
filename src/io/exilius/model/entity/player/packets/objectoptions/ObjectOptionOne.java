@@ -324,6 +324,26 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(2358, 5215, 0);
 				}
 				break;
+			case 40388:
+				if(obX == 3259 && obY == 3664){
+					c.getPA().movePlayer(3384, 10052, 0);
+				}
+				break;
+			case 40389:
+				if(obX == 3384 && obY == 10050){
+					c.getPA().movePlayer(3259, 3663, 0);
+				}
+				break;
+			case 40390:
+				if(obX == 3293 && obY == 3746){
+					c.getPA().movePlayer(3406, 10145, 0);
+				}
+				break;
+			case 40391:
+				if(obX == 3405 && obY == 10146){
+					c.getPA().movePlayer(3293, 3749, 0);
+				}
+				break;
 			case 23703:
 				if(obX == 2150 && obY == 5278){
 					c.getPA().movePlayer(2123, 5252, 0);
@@ -332,6 +352,11 @@ static int fourthFloorsos[][] = {
 			case 23921:
 				if(obX == 2358 && obY == 5216){
 					c.getPA().movePlayer(2147, 5284, 0);
+				}
+				break;
+			case 23732:
+				if(obX == 2350 && obY == 5215){
+					c.getPA().movePlayer(2358, 5215, 0);
 				}
 				break;
 			case 5581: // take axe from log
@@ -630,9 +655,6 @@ static int fourthFloorsos[][] = {
 				if(!c.hasfourthfloorDone){
 					c.getDH().sendItem2(c,"You have to pick what ", "boots you want.", Items.FANCY_BOOTS, Items.FIGHTING_BOOTS);
 					c.nextChat = 10040;
-					//c.getItems().addItem(995, 155000);
-					//c.sendMessage("The Cradle of life gives you 155k.");
-					//c.hasfourthfloorDone = true;
 				} else {
 					c.sendMessage("You allready claimed this reward.");
 				}

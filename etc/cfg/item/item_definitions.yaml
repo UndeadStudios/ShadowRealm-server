@@ -73671,6 +73671,11 @@
   requirements:
     - skill: "ATTACK"
       level: 70
+- id: 29280
+  name: "Halloween-token"
+  description: "A token for halloween."
+  shopValue: 10000
+  stackable: true
 
 
 

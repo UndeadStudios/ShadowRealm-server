@@ -1,5 +1,10 @@
 ---
-npc_id: 247
+npc_id:
+  - 247
+  - 248
+  - 249
+  - 250
+  - 251
 constant:
   accessibility: 0
   items:

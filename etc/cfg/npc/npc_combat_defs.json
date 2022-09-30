@@ -105992,7 +105992,7 @@
       "DEFENCE": 960,
       "RANGE": 450,
       "STRENGTH": 300,
-      "HITPOINTS": 1001
+      "HITPOINTS": 3400
     },
     "attackBonuses": {
       "ATTACK_MAGIC_BONUS": 122,
@@ -106154,7 +106154,7 @@
     "isPoisonous": false,
     "isImmuneToPoison": true,
     "isImmuneToVenom": true,
-    "isImmuneToCannons": false,
+    "isImmuneToCannons": true,
     "isImmuneToThralls": false,
     "levels": {
       "MAGIC": 30,
