@@ -222,8 +222,6 @@ public final class Position {
 
 	@JsonIgnore
 	public boolean inWild() {
-		if (inClanWars())
-			return false;
 		if (Boundary.isIn(this, Boundary.BRYOPHYTA_ROOM))
 			return false;
 		if(Boundary.isIn(this, Boundary.FEROX_ENCLAVE)){
@@ -234,6 +232,9 @@ public final class Position {
 		}
 		if (Boundary.isIn(this, Boundary.SAFE_ZONE_BLACK_KNIGHTS_FORTRESS)) {
 			return false;
+		}
+		if(Boundary.isIn(this, Boundary.CLAN_WARS_FREE_FOR_ALL)){
+			return true;
 		}
 		if (Boundary.isIn(this, Boundary.WILDERNESS_UNDERGROUND))
 			return true;
@@ -280,13 +281,13 @@ public final class Position {
     }
 
 	@JsonIgnore
-	public boolean inClanWars() {
+	public boolean inClanWarsSafe() {
         return x > 3272 && x < 3391 && y > 4759 && y < 4863;
     }
 
 	@JsonIgnore
-	public boolean inClanWarsSafe() {
-        return x > 3263 && x < 3390 && y > 4735 && y < 4761;
+	public boolean inClanWars() {
+        return x > 3391 && x < 3454 && y > 4671 && y < 4799;
     }
 
 	@JsonIgnore

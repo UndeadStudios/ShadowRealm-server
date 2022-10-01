@@ -2738,7 +2738,7 @@ public class Player extends Entity {
         }
 
         // Walkable interfaces in this if-else
-        if (getPosition().inWild() && !getPosition().inClanWars()) {
+        if (getPosition().inWild() && !getPosition().inClanWars() && !Boundary.isIn(this, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             int modY = absY > 6400 ? absY - 6400 : absY;
             wildLevel = (((modY - 3520) / 8) + 1);
             if (Configuration.SINGLE_AND_MULTI_ZONES) {
@@ -2764,6 +2764,10 @@ public class Player extends Entity {
         } else if (getPosition().inClanWars() && getPosition().inWild()) {
             getPA().walkableInterface(197);
             getPA().sendFrame126("@yel@3-126", 199);
+            wildLevel = 126;
+        } else if (Boundary.isIn(this, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+            getPA().walkableInterface(197);
+            getPA().sendFrame126("@gre@ffl (safe)", 199);
             wildLevel = 126;
         } else if (Boundary.isIn(this, Boundary.SCORPIA_LAIR)) {
             getPA().sendFrame126("@yel@Level: 54", 199);

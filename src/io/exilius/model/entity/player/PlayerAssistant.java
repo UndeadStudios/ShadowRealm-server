@@ -1679,7 +1679,7 @@ public class PlayerAssistant {
 	 **/
 	public void alchemy(int itemId, String alch) {
 
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@There is no need to do this here.");
 			return;
 		}
@@ -1926,7 +1926,7 @@ public class PlayerAssistant {
 				c.sendMessage("Please leave the outlast hut area to teleport.");
 				return ;
 			}
-			if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+			if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 				c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 				return;
 			}
@@ -2077,7 +2077,7 @@ public class PlayerAssistant {
 			return false;
 		}
 
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return false;
 		}
@@ -2329,7 +2329,7 @@ public class PlayerAssistant {
 			c.sendMessage("You cannot teleport from here, please exit the way you entered!");
 			return;
 		}
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}
@@ -3551,7 +3551,7 @@ public class PlayerAssistant {
 			break;
 
 		case 13136:
-			if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+			if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 				c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 				return;
 			}
@@ -3731,7 +3731,7 @@ public class PlayerAssistant {
 		case 1708:
 		case 1706:
 		case 19707:
-			if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+			if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 				c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 				return;
 			}
@@ -3745,7 +3745,7 @@ public class PlayerAssistant {
 		case 11107:
 		case 11109:
 		case 11111:
-			if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+			if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 				c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 				return;
 			}

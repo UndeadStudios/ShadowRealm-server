@@ -76,6 +76,9 @@ public class NpcOptionTwo {
 				player.sendMessage("@red@ You need a total level of 500 to start collecting your daily reward!");
 			}
 			break;
+			case 10389:
+				player.getItems().openUpBank();
+				break;
 		case 326:
 		case 327:
 			   player.gfx100(1028);

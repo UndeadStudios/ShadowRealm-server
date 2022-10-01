@@ -304,7 +304,7 @@ public class AttackEntity {
             targetPlayer.singleCombatDelay = System.currentTimeMillis();
             targetPlayer.killerId = attacker.getIndex();
 
-            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
                 if (!attacker.attackedPlayers.contains(attacker.playerAttackingIndex) && !PlayerHandler.players[attacker.playerAttackingIndex].attackedPlayers.contains(attacker.getIndex())) {
                     attacker.attackedPlayers.add(attacker.playerAttackingIndex);
                     attacker.isSkulled = true;

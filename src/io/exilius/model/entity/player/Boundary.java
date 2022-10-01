@@ -275,6 +275,8 @@ public class Boundary {
 			new Boundary(3264, 4928, 3327, 5119),
 			new Boundary(3392, 4928, 3455, 5119)
 	};
+
+	public static final Boundary CLAN_WARS_FREE_FOR_ALL = new Boundary(3275, 4760, 3378, 4852);
 	public static final Boundary[] FEROX_ENCLAVE = {
 			new Boundary(3123, 3622, 3144, 3632),
 			new Boundary(3125, 3617, 3144, 3621),

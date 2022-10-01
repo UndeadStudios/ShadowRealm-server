@@ -3,6 +3,7 @@ package io.exilius.content.commands.donator;
 import java.util.Optional;
 
 import io.exilius.content.commands.Command;
+import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -17,7 +18,7 @@ public class Dz extends Command {
 		if (c.inTrade || c.inDuel || c.getPosition().inWild()) {
 			return;
 		}
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@This player is currently at the pk district.");
 			return;
 		}

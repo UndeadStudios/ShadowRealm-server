@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import io.exilius.Server;
 import io.exilius.content.commands.Command;
+import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -18,7 +19,7 @@ public class Skill extends Command {
 		if (Server.getMultiplayerSessionListener().inAnySession(c)) {
 			return;
 		}
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}

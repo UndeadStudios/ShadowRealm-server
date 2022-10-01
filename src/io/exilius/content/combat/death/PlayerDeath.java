@@ -71,6 +71,14 @@ public class PlayerDeath {
         c.getPA().removeAllWindows();
         c.getPA().closeAllWindows();
         c.getPA().resetFollowers();
+        if (c.hasFollower) {
+            if (c.petSummonId > 0) {
+                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                if (pet != null) {
+                    PetHandler.spawn(c, pet, true, false);
+                }
+            }
+        }
         c.getItems().addSpecialBar(c.playerEquipment[Player.playerWeapon]);
         c.specAmount = 10;
         c.attackTimer = 10;
@@ -130,7 +138,8 @@ public class PlayerDeath {
                     || Boundary.isIn(c, Boundary.RAIDS)
                     || Boundary.isIn(c, Boundary.OLM)
                     || Boundary.isIn(c, Boundary.RAID_MAIN)
-                    || Boundary.isIn(c, Boundary.XERIC)) { // TODO: Other areas.
+                    || Boundary.isIn(c, Boundary.XERIC)
+                    || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) { // TODO: Other areas.
                 return;
             }
 
@@ -320,7 +329,7 @@ public class PlayerDeath {
         Server.getLogging().write(new DeathLog(c));
 
         // Unsafe death
-        if (c.getPosition().inWild()) {
+        if (c.getPosition().inWild() && !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             Entity killer = c.getKiller();
             Player playerKiller = killer != null && killer.isPlayer() ? killer.asPlayer() : null;
 
@@ -411,15 +420,26 @@ public class PlayerDeath {
             c.getPA().movePlayer(2657, 2639, 0);
         } else if (Boundary.isIn(c, PestControl.GAME_BOUNDARY)) {
             if (c.hasFollower) {
-            if (c.petSummonId > 0) {
-                PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
-                if (pet != null) {
-                    PetHandler.spawn(c, pet, true, false);
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
                 }
             }
-        }
             c.getItems().sendEquipmentContainer();
             c.getPA().movePlayer(2656 + Misc.random(2), 2614 - Misc.random(3), 0);
+        } else if (Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)){
+            c.getItems().sendEquipmentContainer();
+            if (c.hasFollower) {
+                if (c.petSummonId > 0) {
+                    PetHandler.Pets pet = PetHandler.forItem(c.petSummonId);
+                    if (pet != null) {
+                        PetHandler.spawn(c, pet, true, false);
+                    }
+                }
+            }
+            c.getPA().movePlayer(3128, 3627, 0);
         } else if (Boundary.isIn(c, Boundary.ZULRAH)) {
             c.getItems().sendEquipmentContainer();
             if (c.hasFollower) {
@@ -577,7 +597,7 @@ public class PlayerDeath {
                     }
                 }
             }
-        } else if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+        } else if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             c.getPA().movePlayer(c.absX, 4759, 0);
             c.getItems().sendEquipmentContainer();
             if (c.hasFollower) {
@@ -612,7 +632,7 @@ public class PlayerDeath {
                     }
                 }
                 c.getPA().movePlayer(new Coordinate(3080, 3510));
-            } else {
+            } else if(!Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
                 c.getItems().sendEquipmentContainer();
                 if (c.hasFollower) {
                     if (c.petSummonId > 0) {

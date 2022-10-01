@@ -551,7 +551,7 @@ public abstract class HitDispatcher {
                     if (defender.isNPC()) {
                         if (entity.isPlayer()) {
                             Player target = entity.asPlayer();
-                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA)  && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
                                 if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
                                     attacker.attackedPlayers.add(target.getIndex());
                                     attacker.isSkulled = true;
@@ -568,7 +568,7 @@ public abstract class HitDispatcher {
                     if (defender.isNPC()) {
                         if (entity.isPlayer()) {
                             Player target = entity.asPlayer();
-                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
                                 if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
                                     attacker.attackedPlayers.add(target.getIndex());
                                     attacker.isSkulled = true;
@@ -585,7 +585,7 @@ public abstract class HitDispatcher {
                     if (defender.isNPC()) {
                         if (entity.isPlayer()) {
                             Player target = entity.asPlayer();
-                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL)&& !TourneyManager.getSingleton().isInArena(attacker)) {
                                 if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
                                     attacker.attackedPlayers.add(target.getIndex());
                                     attacker.isSkulled = true;

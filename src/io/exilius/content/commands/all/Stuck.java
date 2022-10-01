@@ -10,6 +10,7 @@ import io.exilius.content.commands.Command;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
@@ -30,7 +31,7 @@ public class Stuck extends Command {
 			return;
 		}
 		
-		if (c.getPosition().inClanWars() || c.getPosition().inClanWarsSafe()) {
+		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}

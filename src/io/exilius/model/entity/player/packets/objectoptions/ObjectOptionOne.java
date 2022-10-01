@@ -1287,6 +1287,25 @@ static int fourthFloorsos[][] = {
 					c.getPA().walkTo(-1, 0);
 				}
 				break;
+			case 30386:
+				if(obX == 3140 && obY == 3626){
+					c.getPA().movePlayer(2441, 3089, 0);
+				}
+				break;
+			case 39650:
+				if(obX == 3132 && obY == 3621){
+					c.getPA().movePlayer(c.getX()+3, c.getY(), 0);
+				} else if (obX == 3136 && obY == 3621){
+					c.getPA().movePlayer(c.getX()-3, c.getY(), 0);
+				}
+				break;
+			case 39643:
+				if(obX == 3132 && obY == 3622){
+					c.getPA().movePlayer(c.getX()-3, c.getY(), 1);
+				} else if (obX == 3136 && obY == 3622){
+					c.getPA().movePlayer(c.getX()+3, c.getY(), 1);
+				}
+				break;
 			case 43868:
 				c.getPA().movePlayer(3126, 3833);
 				break;
@@ -1375,6 +1394,16 @@ static int fourthFloorsos[][] = {
 					c.healEverything();
 					c.getDH().sendItemStatement("Restored your HP, Prayer, Run Energy, and Spec", 4049);
 					c.nextChat = -1;
+				}
+				break;
+			case 26646:
+				if(obX == 3326 && obY == 4749) {
+					c.getPA().movePlayer(3128, 3627, 0);
+				}
+				break;
+			case 26645:
+				if(obX == 3127 && obY == 3626){
+					c.getPA().movePlayer(3327, 4751, 0);
 				}
 				break;
 			case 7811:
