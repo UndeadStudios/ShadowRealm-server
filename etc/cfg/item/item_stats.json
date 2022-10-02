@@ -15828,20 +15828,20 @@
     "weight": 0.453,
     "equipment": {
       "slot": 1,
-      "astab": 7,
-      "aslash": 7,
-      "acrush": 7,
-      "amagic": 9,
-      "arange": 8,
-      "dstab": 10,
-      "dslash": 10,
-      "dcrush": 10,
-      "dmagic": 10,
-      "drange": 10,
-      "str": 4,
-      "rstr": 3,
-      "mdmg": 3,
-      "prayer": 2
+      "astab": 24,
+      "aslash": 24,
+      "acrush": 24,
+      "amagic": 21,
+      "arange": 21,
+      "dstab": 22,
+      "dslash": 22,
+      "dcrush": 22,
+      "dmagic": 22,
+      "drange": 22,
+      "str": 20,
+      "rstr": 21,
+      "mdmg": 17,
+      "prayer": 15
     }
   },
   "4373": {
@@ -25133,8 +25133,8 @@
       "dstab": -2,
       "dslash": 8,
       "dcrush": 10,
-      "str": 205,
-      "aspeed": 5
+      "str": 225,
+      "aspeed": 4
     }
   },
   "6663": {
@@ -56098,10 +56098,10 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 200,
-      "rstr": 120,
+      "arange": 205,
+      "rstr": 100,
       "prayer": 4,
-      "aspeed": 5
+      "aspeed": 6
     }
   },
   "21000": {
@@ -60038,7 +60038,7 @@
       "dstab": -2,
       "dslash": 8,
       "dcrush": 10,
-      "str": 205,
+      "str": 215,
       "aspeed": 5
     }
   },
