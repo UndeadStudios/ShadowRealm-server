@@ -334,7 +334,7 @@ public class DialogueHandler {
 			break;
 		case 801:
 			sendOption5("What is this?", "I would like to "
-					+ (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) ? "go back to reality." : "go to pk district.") + "",
+					+ ((c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) ? "go back to reality." : "go to pk district.") + "",
 					"How do I transfer my blood money?", "I would like to view my safe-box", "Nevermind..");
 			c.dialogueAction = 801;
 			break;
