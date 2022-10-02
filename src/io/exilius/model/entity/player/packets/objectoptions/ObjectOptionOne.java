@@ -1398,6 +1398,7 @@ static int fourthFloorsos[][] = {
 				break;
 			case 26646:
 				if(obX == 3326 && obY == 4749) {
+					c.healEverything();
 					c.getPA().movePlayer(3128, 3627, 0);
 				}
 				break;

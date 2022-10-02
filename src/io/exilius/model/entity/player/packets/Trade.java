@@ -48,7 +48,7 @@ public class Trade implements PacketType {
 			c.getBankPin().open(2);
 			return;
 		}
-		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+		if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.stopMovement();
 			c.sendMessage("@cr10@You cannot trade from here.");
 			return;

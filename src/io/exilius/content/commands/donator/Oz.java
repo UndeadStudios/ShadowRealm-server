@@ -15,7 +15,7 @@ public class Oz extends Command {
         if (c.inTrade || c.inDuel || c.getPosition().inWild()) {
             return;
         }
-        if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+        if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             c.sendMessage("@cr10@This player is currently at the pk district.");
             return;
         }

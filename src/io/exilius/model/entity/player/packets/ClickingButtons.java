@@ -610,7 +610,7 @@ public class ClickingButtons implements PacketType {
 		case 135114:
 		case 92122:
 		case 118026:
-			if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+			if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 				c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 				return;
 			}

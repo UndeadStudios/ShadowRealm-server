@@ -597,7 +597,7 @@ public class PlayerDeath {
                     }
                 }
             }
-        } else if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+        } else if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             c.getPA().movePlayer(c.absX, 4759, 0);
             c.getItems().sendEquipmentContainer();
             if (c.hasFollower) {

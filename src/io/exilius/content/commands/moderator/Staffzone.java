@@ -13,7 +13,7 @@ public class Staffzone extends Command {
 
 	@Override
 	public void execute(Player c, String commandName, String input) {
-		if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+		if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}

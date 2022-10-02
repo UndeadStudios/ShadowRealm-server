@@ -103,7 +103,7 @@ public class PickupItem implements PacketType {
         if (c.teleportingToDistrict) {
             return;
         }
-        if (c.getPosition().inClanWars() || !Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
+        if (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) {
             if (!c.pkDistrict) {
                 return;
             }
