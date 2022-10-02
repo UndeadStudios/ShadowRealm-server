@@ -26,6 +26,8 @@ public class DeathAnimation extends NPCHandler {
                 return 8318;
             case Npcs.REVENANT_CYCLOPS:
                 return 4653;
+            case 11293:
+                return 9192;
             case 8194:
                 return 3262;
             case Npcs.BRYOPHYTA:

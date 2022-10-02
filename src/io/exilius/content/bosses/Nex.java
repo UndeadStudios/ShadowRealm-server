@@ -206,8 +206,10 @@ public class Nex extends NPC {
             if (n.getHealth().getCurrentHealth() >= 2000) {
                 phase = 0;
             } else if (n.getHealth().getCurrentHealth() >= 1800 && n.getHealth().getCurrentHealth() <= 2000) {
+                n.forceChat("Fumus, don't fail me!");
                 phase = 1;
             } else if (n.getHealth().getCurrentHealth() >= 680 && n.getHealth().getCurrentHealth() <= 1800) {
+                n.forceChat("Umbra, don't fail me!");
                 phase = 2;
             }
 
@@ -278,6 +280,9 @@ public class Nex extends NPC {
                     case 2:
                         phases = Nex.NexPhase.ZAROS;
                         n.forceChat(phases.getShout());
+                        for(int t = 0; t < 1+Misc.random(2); t++) {
+                            NPCSpawning.spawn(11293, (n.absX+1)+Misc.random(2), (n.absY+1)+Misc.random(2), 0, 4, 45, true);
+                        }
                         if (!nexHealed) {
                             n.appendHeal(500, Hitmark.HEAL_PURPLE);
                             nexHealed = true;

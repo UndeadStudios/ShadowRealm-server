@@ -18,6 +18,8 @@ public class BlockAnimation {
             case 2916:
             case 2917:
                 return 1581;
+            case 11293:
+                return 9196;
             case Hespori.NPC_ID:
                 return -1;
             //Inferno Npcs

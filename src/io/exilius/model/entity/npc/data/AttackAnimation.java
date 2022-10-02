@@ -40,6 +40,8 @@ public class AttackAnimation extends NPCHandler {
 			case 2837: // unicorn
 			case 2849:
 				return 6376;
+			case 11293:
+				return 9194;
 		case 7792: //longtailed
 		case 7793: //taloned
 		case 7794://spitting
