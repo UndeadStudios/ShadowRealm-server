@@ -1147,16 +1147,16 @@ public static void addNPC(int npcType, int x, int y, int h) {
             npc.underAttack = false;
             return;
         }
-        if (player.absX == npcs[npc.getNpcId()].absX && player.absY == npcs[npc.getNpcId()].absY) {
+        if (player.absX == npcs[npc.getIndex()].absX && player.absY == npcs[npc.getIndex()].absY) {
             stepAway(npc);
-            npcs[npc.getNpcId()].randomWalk = false;
-            npcs[npc.getNpcId()].facePlayer(player.getIndex());
+            npcs[npc.getIndex()].randomWalk = false;
+            npcs[npc.getIndex()].facePlayer(player.getIndex());
         }
-        if ((player.absX == npcs[npc.getNpcId()].absX-1 && player.absY == npcs[npc.getNpcId()].absY+1) || (player.absX == npcs[playerId].absX-1 && player.absY == npcs[playerId].absY-1)
-                || (player.absX == npcs[npc.getNpcId()].absX+1 && player.absY == npcs[npc.getNpcId()].absY-1) || (player.absX == npcs[playerId].absX+1 && player.absY == npcs[playerId].absY+1)){
+        if ((player.absX == npcs[npc.getIndex()].absX-1 && player.absY == npcs[npc.getIndex()].absY+1) || (player.absX == npcs[npc.getIndex()].absX-1 && player.absY == npcs[npc.getIndex()].absY-1)
+                || (player.absX == npcs[npc.getIndex()].absX+1 && player.absY == npcs[npc.getIndex()].absY-1) || (player.absX == npcs[npc.getIndex()].absX+1 && player.absY == npcs[npc.getIndex()].absY+1)){
             stepAway2(player,playerId);
-            npcs[npc.getNpcId()].randomWalk = false;
-            npcs[npc.getNpcId()].facePlayer(player.getIndex());
+            npcs[npc.getIndex()].randomWalk = false;
+            npcs[npc.getIndex()].facePlayer(player.getIndex());
         }
         // Vorkath doesn't follow player
         if (Arrays.stream(Vorkath.NPC_IDS).anyMatch(id -> npc.getNpcId() == id)) {
