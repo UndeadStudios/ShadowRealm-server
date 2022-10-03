@@ -366,6 +366,7 @@ public class NpcOptionTwo {
 			player.getDH().sendDialogues(2400, -1);
 			break;
 		case 3913: // BAIT + NET
+			case 7947:
 			Fishing.attemptdata(player, 2);
 			break;
 		case 310:
@@ -379,6 +380,7 @@ public class NpcOptionTwo {
 		case 6825:// BAIT + LURE
 			Fishing.attemptdata(player, 6);
 			break;
+			case 7946:
 		case 3657:
 		case 321:
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON

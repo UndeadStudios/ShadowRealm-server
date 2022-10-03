@@ -645,6 +645,7 @@ public class NpcOptionOne {
 			break;
 		// FISHING
 		case 3913: // NET + BAIT
+			case 7947:
 			player.clickNpcType = 1;
 			Fishing.attemptdata(player, 1);
 			break;
@@ -664,7 +665,8 @@ public class NpcOptionOne {
 			player.clickNpcType = 1;
 			Fishing.attemptdata(player, 4);
 			break;
-		case 3657:
+		case 3657://lobsters CAGE+HARPOON
+			case 7946:
 			player.clickNpcType = 1;
 			Fishing.attemptdata(player, 8);
 			break;
