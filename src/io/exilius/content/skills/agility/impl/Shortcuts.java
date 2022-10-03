@@ -183,7 +183,14 @@ public class Shortcuts {
 		case 10595:
 			AgilityHandler.delayEmote(c, "CRAWL", 3056, 9562, 0, 2);
 			return true;
-
+			case 31758:
+				if (c.getAgilityHandler().hotSpot(c, 2489, 2898))
+				c.getAgilityHandler().move(c, -4, 0, 1148, -1);
+				return true;
+			case 31759:
+				if (c.getAgilityHandler().hotSpot(c, 2485, 2898))
+				c.getAgilityHandler().move(c,  4, 0, 1148, -1);
+				return true;
 		case ARDOUGNE_LOG:
 			if (c.playerLevel[Player.playerAgility] < 32) {
 				c.sendMessage("You must have an agility level of at least 32 to cross here.");

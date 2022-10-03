@@ -50,7 +50,8 @@ public class AgilityHandler {
             WALL_EMOTE = 840,
             JUMP_EMOTE = 3067,
             FAIL_EMOTE = 770,
-            CRAWL_EMOTE = 844;
+            CRAWL_EMOTE = 844,
+            CRAWN_DOWN = 1148;
 
     public int jumping, jumpingTimer, agilityTimer = -1, moveHeight = -1, tropicalTreeUpdate = -1, zipLine = -1;
 
@@ -255,7 +256,9 @@ public class AgilityHandler {
             case GnomeAgility.NET1_OBJECT:
             case GnomeAgility.ROPE_OBJECT:
                 return 0;
-
+            case 31758:
+            case 31759:
+                return 2;
             case BarbarianAgility.BARBARIAN_SWING_ROPE_OBJECT:
             case BarbarianAgility.BARBARIAN_LOG_BALANCE_OBJECT:
             case BarbarianAgility.BARBARIAN_NET_OBJECT:
@@ -290,7 +293,9 @@ public class AgilityHandler {
             case WildernessAgility.WILDERNESS_ROCKS_OBJECT:
             case WildernessAgility.WILDERNESS_LOG_BALANCE_OBJECT:
                 return 52;
-
+            case 31758:
+            case 31759:
+                return 30;
             case Lighthouse.BASALT_ROCK:
                 return 40;
 
@@ -377,6 +382,8 @@ public class AgilityHandler {
             c.startAnimation(FAIL_EMOTE);
         if (emote == "CRAWL")
             c.startAnimation(CRAWL_EMOTE);
+        if(emote == "CRAWN_DOWN")
+            c.startAnimation(CRAWN_DOWN);
         if (emote == "NONE") {
 
         }
@@ -455,6 +462,9 @@ public class AgilityHandler {
                 break;
             case "CRAWL":
                 c.startAnimation(CRAWL_EMOTE);
+                break;
+            case "CRAWN_DOWN":
+                c.startAnimation(CRAWN_DOWN);
                 break;
         }
 
