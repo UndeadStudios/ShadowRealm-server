@@ -332,12 +332,21 @@ public class DialogueHandler {
 			sendNpcChat("How can I assist you?");
 			c.nextChat = 801;
 			break;
+<<<<<<< Updated upstream
 		case 801:
 			sendOption5("What is this?", "I would like to "
 					+ ((c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) ? "go back to reality." : "go to pk district.") + "",
 					"How do I transfer my blood money?", "I would like to view my safe-box", "Nevermind..");
 			c.dialogueAction = 801;
 			break;
+=======
+//		case 801:
+//			sendOption5("What is this?", "I would like to "
+//					+ (c.getPosition().inClanWars() || Boundary.isIn(c, Boundary.CLAN_WARS_FREE_FOR_ALL)) ? "go back to reality." : "go to pk district.") + "",
+//					"How do I transfer my blood money?", "I would like to view my safe-box", "Nevermind..");
+//			c.dialogueAction = 801;
+//			break;
+>>>>>>> Stashed changes
 		// What is this?
 		case 802:
 			sendNpcChat("I am in charge of the PK-District, whereas I invite you",

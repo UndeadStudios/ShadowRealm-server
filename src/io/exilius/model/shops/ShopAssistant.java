@@ -385,83 +385,47 @@ public class ShopAssistant {
 				}
 
 				switch (id) {
-					case 11936:
-						return 3;
-					case 11920:
-						return 60;
-					case 12797:
-						return 55;
-					case 6739:
+					case 12526: //fury or kit
 						return 25;
-					case 2577://ranger boots
-						return 40;
-					case 12526:
-						return 25;
-					case 20211:
-					case 20214:
-					case 20217:
-						return 20;
-					case 20050:
-						return 30;
-					case 13221:
-						return 100;
-					case 20756:
-						return 50;
-					case 21028:
-						return 60;
-					case 13241:
-					case 13242:
-					case 13243:
-						return 100;
-					case 6666:
-						return 15;
+					case 11920: //dragon pickaxe
+					case 6739://dragon axe
+					case 21028://dragon harpoon
+						return 160;
 					case 12783:
-						return 400;
-					case 12639:
-					case 12637:
-					case 12638:
-					case 24198:
-					case 24201:
-					case 24204:
-					case 24195:
-					case 24192:
-						return 45;
-					case 20836:
-						return 85;
-					case 5608:
-						return 150;
-					case 12600:
-						return 30;
-					case 19941:
-						return 85;
-					case 20056:
-						return 150;
-					case 10507:
-						return 50;
-					case 9920:
-						return 120;
-					case 21439:
-						return 45;
+						return 260;
 					case 13148:
 						return 15;
-					case 23677:
-						return 55;
-					case 23294:
-					case 23285:
-					case 23288:
-					case 23291:
 					case 776:
-						return 10;
 					case 2841:
-						return 15;
+						return 10;
 					case 22093:
 						return 55;
-					case 30023:
-						return 160;
 					case 12954:
-						return 10;
-					case 10551:
-						return 10;
+						return 50;
+					case 30023:
+					case 20756:
+						return 160;
+					case 13116:
+						return 320;
+					case 13233:
+						return 250;
+					case 1409:
+					case 12791:
+						return 60;
+					case 23804:
+						return 200;
+					case 2403:
+						return 600;
+					case 6199:
+						return 250;
+					case 6828:
+						return 850;
+					case 13346:
+						return 1000;
+
+
+
+
 
 				}
 				break;

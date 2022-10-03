@@ -15840,7 +15840,7 @@
       "drange": 22,
       "str": 20,
       "rstr": 21,
-      "mdmg": 17,
+      "mdmg": 21,
       "prayer": 15
     }
   },
@@ -69321,11 +69321,11 @@
       "weight": 2.0,
       "equipment": {
         "slot": 3,
-        "astab": 83,
+        "astab": 883,
         "aslash": -2,
-        "acrush": 97,
+        "acrush": 157,
         "dslash": 1,
-        "str": 96,
+        "str": 146,
         "prayer": 8,
         "aspeed": 3
       }

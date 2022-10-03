@@ -7,5 +7,158 @@
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 2545,
+    "position": {
+      "x": 2854,
+      "y": 5090,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2855,
+      "y": 5102,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2854,
+      "y": 5105,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2850,
+      "y": 5110,
+      "height": 0
+    },
+    "walkingType": "FACE_SOUTH"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2844,
+      "y": 5110,
+      "height": 0
+    },
+    "walkingType": "FACE_SOUTH"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2846,
+      "y": 5108,
+      "height": 0
+    },
+    "walkingType": "FACE_SOUTH"
+  },
+  {
+    "id": 1543,
+    "position": {
+      "x": 2850,
+      "y": 5105,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 11,
+    "position": {
+      "x": 2850,
+      "y": 5065,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 11,
+    "position": {
+      "x": 2853,
+      "y": 5067,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 11,
+    "position": {
+      "x": 2851,
+      "y": 5069,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 11,
+    "position": {
+      "x": 2850,
+      "y": 5072,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
+  },
+  {
+    "id": 11,
+    "position": {
+      "x": 2853,
+      "y": 5072,
+      "height": 0
+    },
+    "walkingType": "FACE_WEST"
   }
 ]

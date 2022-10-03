@@ -1,8 +1,5 @@
 package io.exilius.content.referral;
 
-import java.util.List;
-import java.util.Optional;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.dialogue.DialogueBuilder;
@@ -13,6 +10,9 @@ import io.exilius.model.items.GameItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+import java.util.Optional;
+
 public class EnterReferralDialogue extends DialogueBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(EnterReferralDialogue.class);
@@ -21,7 +21,7 @@ public class EnterReferralDialogue extends DialogueBuilder {
 
     public EnterReferralDialogue(Player player) {
         super(player);
-        int totalReq = (player.getMode().is5x() ? 100 : 500);
+        int totalReq = (0);
         setNpcId(Npcs.REFERRAL_TUTOR);
         npc(PHRASE);
         if (!Server.isDebug() && (!ReferralRegister.canGetReward(player) || player.usedReferral)) {

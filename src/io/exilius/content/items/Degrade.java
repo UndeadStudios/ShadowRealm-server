@@ -1,11 +1,5 @@
 package io.exilius.content.items;
 
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import com.google.common.base.Preconditions;
 import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
 import io.exilius.model.CombatType;
@@ -15,6 +9,12 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
+
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 
@@ -55,7 +55,7 @@ public class Degrade {
 		STATIUS_PLATEBODY(Items.STATIUSS_PLATEBODY, -1, 10_500_000, getPvPHitsToDegrade()),
 		STATIUS_PLATELEGS(Items.STATIUSS_PLATELEGS, -1, 10_500_000, getPvPHitsToDegrade()),
 		STATIUS_FULL_HELM(Items.STATIUSS_FULL_HELM, -1, 10_500_000, getPvPHitsToDegrade()),
-		STATIUS_WARHAMMER(Items.STATIUSS_WARHAMMER, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
+//		STATIUS_WARHAMMER(Items.STATIUSS_WARHAMMER, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_LONGSWORD(Items.VESTAS_LONGSWORD, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_SPEAR(Items.VESTAS_SPEAR, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		TENTACLE_WHIP(Items.ABYSSAL_TENTACLE, true, CombatType.MELEE, 12004, 2_000_000, 10_000);
