@@ -165,6 +165,15 @@
 				"locations": [ "Asgarnian Ice Dungeon" ],
 				"teleport": [3054, 9578, 0]
             },
+          {
+            "names": [ "ogre", "mogre", "ogress shaman", "ogress warrior", "skogre", "zogre" ],
+            "level": 40,
+            "experience": 55,
+            "minimum": 60,
+            "maximum": 120,
+            "locations": [ "Asgarnian Ice Dungeon" ],
+            "teleport": [3054, 9578, 0]
+          },
             {
                 "names": [ "ice giant" ],
                 "level": 1,

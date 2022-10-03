@@ -1,0 +1,86 @@
+---
+npc_id: 5418
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 5
+  items:
+  - name: "iron bolts"
+    minimum: 2
+    maximum: 12
+  - name: "potato seed"
+    minimum: 4
+    maximum: 4
+  - name: "onion seed"
+    minimum: 4
+    maximum: 4
+  - name: "coins"
+    minimum: 1
+    maximum: 4000
+  - name: "iron dagger"
+    minimum: 4
+    maximum: 4
+uncommon:
+  accessibility: 12
+  items:
+  - name: "steel arrow"
+    minimum: 1
+    maximum: 1
+  - name: "bronze arrow"
+    minimum: 1
+    maximum: 1
+  - name: "air rune"
+    minimum: 6
+    maximum: 6
+  - name: "earth rune"
+    minimum: 3
+    maximum: 3
+  - name: "fire rune"
+    minimum: 2
+    maximum: 2
+  - name: "bronze arrow"
+    minimum: 2
+    maximum: 2
+  - name: "cabbage seed"
+    minimum: 4
+    maximum: 4
+  - name: "tomato seed"
+    minimum: 3
+    maximum: 3
+  - name: "body talisman"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 12
+  items:
+  - name: "blood rune"
+    minimum: 1
+    maximum: 1
+  - name: "chaos rune"
+    minimum: 1
+    maximum: 1
+  - name: "nature rune"
+    minimum: 1
+    maximum: 1
+  - name: "steel arrow"
+    minimum: 5
+    maximum: 5
+  - name: "sweetcorn seed"
+    minimum: 3
+    maximum: 3
+  - name: "strawberry seed"
+    minimum: 2
+    maximum: 2
+  - name: "watermelon seed"
+    minimum: 2
+    maximum: 2
+  - name: "grain"
+    minimum: 1
+    maximum: 1
+  - name: "iron ore"
+    minimum: 1
+    maximum: 1
