@@ -55,7 +55,7 @@ public class Degrade {
 		STATIUS_PLATEBODY(Items.STATIUSS_PLATEBODY, -1, 10_500_000, getPvPHitsToDegrade()),
 		STATIUS_PLATELEGS(Items.STATIUSS_PLATELEGS, -1, 10_500_000, getPvPHitsToDegrade()),
 		STATIUS_FULL_HELM(Items.STATIUSS_FULL_HELM, -1, 10_500_000, getPvPHitsToDegrade()),
-//		STATIUS_WARHAMMER(Items.STATIUSS_WARHAMMER, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
+		STATIUS_WARHAMMER(Items.STATIUSS_WARHAMMER, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_LONGSWORD(Items.VESTAS_LONGSWORD, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_SPEAR(Items.VESTAS_SPEAR, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		TENTACLE_WHIP(Items.ABYSSAL_TENTACLE, true, CombatType.MELEE, 12004, 2_000_000, 10_000);
