@@ -61314,8 +61314,8 @@
   shopValue: 11600000
 - id: 13190
   name: "100m OSRS GP"
-  description: "Reedemable for 100m OSRS GP."
-  shopValue: 5000
+  description: "Reedemable for 100m GP."
+  shopValue: 100000000
   untradeable: true
   undroppable: true
   droppable: false

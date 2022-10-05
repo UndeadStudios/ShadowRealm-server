@@ -1,27 +1,18 @@
 package io.exilius.content.event.eventcalendar;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Server;
 import io.exilius.ServerState;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
-import io.exilius.sql.eventcalendar.queries.AddParticipantQuery;
-import io.exilius.sql.eventcalendar.queries.CheckForBlacklistQuery;
-import io.exilius.sql.eventcalendar.queries.GetParticipantsListQuery;
-import io.exilius.sql.eventcalendar.queries.GetWinnersListQuery;
-import io.exilius.sql.eventcalendar.queries.HasPlayerAlreadyParticipatedQuery;
+import io.exilius.sql.eventcalendar.queries.*;
 import io.exilius.util.Misc;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.*;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 /**
  * Event calendar.
@@ -54,7 +45,6 @@ public class EventCalendar {
      */
     public static final String MESSAGE_COLOUR = "<col=06629c>";
 
-    public static final String LOGIN_MESSAGE = MESSAGE_COLOUR + "The " + EVENT_NAME + " is in progress! 30 chances to win, total 6.2bil OSRS GP" + EventCalendar.MESSAGE_COLOUR + "! @red@::cal";
 
     /**
      * The {@link DateProvider}.

@@ -2166,9 +2166,6 @@ public class Player extends Entity {
             }
         }
         PollTab.updateInterface(this);
-        if (EventCalendar.isEventRunning()) {
-            sendMessage(EventCalendar.LOGIN_MESSAGE);
-        }
         if (Server.getConfiguration().getServerState().getLoginMessages() != null) {
             Arrays.stream(Server.getConfiguration().getServerState().getLoginMessages()).forEach(this::sendMessage);
         }
