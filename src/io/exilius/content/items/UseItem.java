@@ -601,6 +601,16 @@ public class UseItem {
 				c.sendMessage("You do not have the required items");
 			}
 		}
+		if(itemUsed == 24777 && useWith == 6585 || itemUsed == 6585 && useWith == 24777){
+			if(c.getItems().playerHasItem(24777) && c.getItems().playerHasItem(6585)){
+				c.getItems().deleteItem( 24777, 1);
+				c.getItems().deleteItem(6585, 1);
+				c.getItems().addItem(24780, 1);
+				c.sendMessage("You attached the blood shard to your amulet of fury.");
+			} else {
+				c.sendMessage("You do not have the required items");
+			}
+		}
 		if (itemUsed == 26713 && useWith == 11830 || itemUsed == 11830 && useWith == 26713) {
 			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11830)) {
 				c.getItems().deleteItem(26713, 1);
