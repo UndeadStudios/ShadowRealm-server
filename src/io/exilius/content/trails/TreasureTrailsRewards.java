@@ -1,10 +1,10 @@
 package io.exilius.content.trails;
 
-import java.util.*;
-
 import io.exilius.model.Items;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.*;
 
 public class TreasureTrailsRewards {
 
@@ -30,11 +30,11 @@ public class TreasureTrailsRewards {
 		List<TreasureTrailsRewardItem> result =new ArrayList<>();
 
 		if (difficulty == RewardLevel.MEDIUM) {
-			rolls += 1;
+			rolls += 2;
 		} else if (difficulty == RewardLevel.HARD) {
-			rolls += 2;
+			rolls += 3;
 		} else if (difficulty == RewardLevel.MASTER) {
-			rolls += 2;
+			rolls += 5;
 		}
 
 		double random = Math.random();

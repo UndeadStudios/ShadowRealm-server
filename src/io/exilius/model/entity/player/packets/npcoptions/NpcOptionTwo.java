@@ -1,15 +1,8 @@
 package io.exilius.model.entity.player.packets.npcoptions;
 
-import java.util.concurrent.TimeUnit;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.nightmare.NightmareActionHandler;
 import io.exilius.content.dailyrewards.DailyRewardsDialogue;
 import io.exilius.content.dialogue.impl.IronmanNpcDialogue;
@@ -28,6 +21,8 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerAssistant;
 import io.exilius.util.Misc;
+
+import java.util.concurrent.TimeUnit;
 
 /*
  * @author Matt
@@ -207,12 +202,6 @@ public class NpcOptionTwo {
 			AgilityHandler.delayFade(player, "NONE", 2674, 3274, 0, "The sailor brings you onto the ship.",
 					"and you end up in ardougne.", 3);
 			player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_ARDOUGNE);
-			break;
-
-		case 5034:
-			player.getPA().startTeleport(2929, 4813, 0, "modern", false);
-			player.getDiaryManager().getLumbridgeDraynorDiary()
-					.progress(LumbridgeDraynorDiaryEntry.TELEPORT_ESSENCE_LUM);
 			break;
 
 		case 5906:

@@ -7009,15 +7009,6 @@
   {
     "id": 1013,
     "position": {
-      "x": 2445,
-      "y": 3088,
-      "height": 0
-    },
-    "walkingType": "FACE_WEST"
-  },
-  {
-    "id": 1013,
-    "position": {
       "x": 3119,
       "y": 3504,
       "height": 0

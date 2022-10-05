@@ -1,7 +1,6 @@
 package io.exilius.model.entity.player.packets.dialogueoptions;
 
 import io.exilius.Configuration;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.construction.rooms.*;
 import io.exilius.model.entity.player.Player;
@@ -300,7 +299,7 @@ public class FourOptions {
 			} else if (c.getItems().playerHasItem(1712, 1)) {
 					c.getItems().deleteItem(1712, 1);
 					c.getItems().addItem(1710, 1);
-					c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//					c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 					c.getPA().startTeleport(Configuration.KARAMJA_X, Configuration.KARAMJA_Y, 0, "glory", false);
 				c.sendMessage("@red@You now have 3 charges left in your glory.");
 		
@@ -308,21 +307,21 @@ public class FourOptions {
 					c.getItems().deleteItem(1710, 1);
 					c.getItems().addItem(1708, 1);
 					c.getPA().startTeleport(Configuration.KARAMJA_X, Configuration.KARAMJA_Y, 0, "glory", false);
-					c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//					c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 				c.sendMessage("@red@You now have 2 charges left in your glory.");
 			
 			} else if (c.getItems().playerHasItem(1708, 1)) {							
 				c.getItems().deleteItem(1708, 1);
 				c.getItems().addItem(1706, 1);
 				c.getPA().startTeleport(Configuration.KARAMJA_X, Configuration.KARAMJA_Y, 0, "glory", false);
-				c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//				c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 			c.sendMessage("@red@You now have 1 charges left in your glory.");
 			
 			} else  if (c.getItems().playerHasItem(1706, 1)) {
 				c.getItems().deleteItem(1706, 1);
 				c.getItems().addItem(1704, 1);
 				c.getPA().startTeleport(Configuration.KARAMJA_X, Configuration.KARAMJA_Y, 0, "glory", false);
-				c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//				c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 				c.sendMessage("@red@You now have 0 charges left in your glory.");
 			}
 			c.potDelay = System.currentTimeMillis();

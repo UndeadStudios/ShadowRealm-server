@@ -6,8 +6,6 @@ import io.exilius.content.PlatinumTokens;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.bosses.bryophyta.BryophytaNPC;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.combat.magic.SanguinestiStaff;
@@ -454,6 +452,7 @@ public class UseItem {
 			break;
 		case 2783:
 		case 6150:
+		case 39620:
 		case 2097:
 			c.getSmithingInt().showSmithInterface(itemId);
 			

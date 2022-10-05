@@ -1,14 +1,14 @@
 package io.exilius.content.achievement_diary.impl;
 
-import java.util.EnumSet;
-import java.util.Set;
-
 import io.exilius.content.achievement_diary.StatefulAchievementDiary;
 import io.exilius.model.entity.player.Player;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 public final class KaramjaAchievementDiary extends StatefulAchievementDiary<KaramjaDiaryEntry> {
 	
-	public static final Set<KaramjaDiaryEntry> EASY_TASKS = EnumSet.of(KaramjaDiaryEntry.PICK_BANANAS, KaramjaDiaryEntry.TELEPORT_TO_KARAMJA, KaramjaDiaryEntry.SAIL_TO_ARDOUGNE, KaramjaDiaryEntry.FISH_LOBSTER_KAR);
+	public static final Set<KaramjaDiaryEntry> EASY_TASKS = EnumSet.of(KaramjaDiaryEntry.PICK_BANANAS, KaramjaDiaryEntry.SAIL_TO_ARDOUGNE, KaramjaDiaryEntry.FISH_LOBSTER_KAR);
 	
 	public static final Set<KaramjaDiaryEntry> MEDIUM_TASKS = EnumSet.of(KaramjaDiaryEntry.DURADEL, KaramjaDiaryEntry.STEEL_DRAGON, KaramjaDiaryEntry.DANCE_75_TIMES);
 	

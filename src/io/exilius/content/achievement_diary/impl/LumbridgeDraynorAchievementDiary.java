@@ -1,14 +1,14 @@
 package io.exilius.content.achievement_diary.impl;
 
-import java.util.EnumSet;
-import java.util.Set;
-
 import io.exilius.content.achievement_diary.StatefulAchievementDiary;
 import io.exilius.model.entity.player.Player;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 public final class LumbridgeDraynorAchievementDiary extends StatefulAchievementDiary<LumbridgeDraynorDiaryEntry> {
 	
-	public static final Set<LumbridgeDraynorDiaryEntry> EASY_TASKS = EnumSet.of(LumbridgeDraynorDiaryEntry.TELEPORT_ESSENCE_LUM, LumbridgeDraynorDiaryEntry.CRAFT_WATER, LumbridgeDraynorDiaryEntry.HANS, LumbridgeDraynorDiaryEntry.PICKPOCKET_MAN_LUM, LumbridgeDraynorDiaryEntry.BURN_OAK, LumbridgeDraynorDiaryEntry.COOK_SHRIMP, LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
+	public static final Set<LumbridgeDraynorDiaryEntry> EASY_TASKS = EnumSet.of(LumbridgeDraynorDiaryEntry.CRAFT_WATER, LumbridgeDraynorDiaryEntry.HANS, LumbridgeDraynorDiaryEntry.PICKPOCKET_MAN_LUM, LumbridgeDraynorDiaryEntry.BURN_OAK, LumbridgeDraynorDiaryEntry.COOK_SHRIMP, LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
 	
 	public static final Set<LumbridgeDraynorDiaryEntry> MEDIUM_TASKS = EnumSet.of(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT, LumbridgeDraynorDiaryEntry.RIVER_LUM_SHORTCUT, LumbridgeDraynorDiaryEntry.ATTRACTOR, LumbridgeDraynorDiaryEntry.CHOP_WILLOW_DRAY, LumbridgeDraynorDiaryEntry.PICKPOCKET_FARMER_DRAY);
 	

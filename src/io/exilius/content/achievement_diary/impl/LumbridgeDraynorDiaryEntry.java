@@ -6,7 +6,6 @@ import java.util.Set;
 
 public enum LumbridgeDraynorDiaryEntry {
 	//Easy
-	TELEPORT_ESSENCE_LUM("Have Sedridor teleport you to the essence mine"),
 	CRAFT_WATER("Craft some water runes"),
 	HANS("Have hans tell you how long you've played"),
 	PICKPOCKET_MAN_LUM("Pickpocket a man"),
