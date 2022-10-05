@@ -157,7 +157,7 @@ public class Walking implements PacketType {
 			c.gfx0(-1);
 			c.startAnimation(-1);
 		}
-
+		c.fillingWater = false;
 		c.walkingToItem = false;
 		c.isWc = false;
 		c.clickNpcType = 0;

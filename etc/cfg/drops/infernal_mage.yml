@@ -1,5 +1,10 @@
 ---
-npc_id: 446
+npc_id:
+  - 443
+  - 444
+  - 445
+  - 446
+  - 447
 constant:
   accessibility: 0
   items:

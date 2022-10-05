@@ -1,0 +1,63 @@
+---
+npc_id:
+  - 5421
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 5
+  items:
+  - name: "steel longsword"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 1
+    maximum: 4000
+uncommon:
+  accessibility: 12
+  items:
+  - name: "bronze arrow"
+    minimum: 4
+    maximum: 4
+  - name: "steel arrow"
+    minimum: 2
+    maximum: 2
+  - name: "air rune"
+    minimum: 8
+    maximum: 8
+  - name: "earth rune"
+    minimum: 4
+    maximum: 4
+  - name: "fire rune"
+    minimum: 6
+    maximum: 6
+  - name: "mind talisman"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 2000
+    maximum: 8000
+rare:
+  accessibility: 12
+  items:
+  - name: "blood rune"
+    minimum: 2
+    maximum: 2
+  - name: "chaos rune"
+    minimum: 3
+    maximum: 3
+  - name: "nature rune"
+    minimum: 2
+    maximum: 2
+  - name: "steel arrow"
+    minimum: 8
+    maximum: 8
+  - name: "steel med helm"
+    minimum: 1
+    maximum: 1
+  - name: "iron ore"
+    minimum: 1
+    maximum: 1

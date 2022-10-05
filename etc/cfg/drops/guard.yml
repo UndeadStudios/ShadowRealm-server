@@ -1,5 +1,8 @@
 ---
-npc_id: 5418
+npc_id:
+  - 5418
+  - 3010
+  - 3011
 constant:
   accessibility: 0
   items:

@@ -19,6 +19,7 @@ import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.warriors_guild.AnimatedArmour;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
+import io.exilius.content.objects.Fillables;
 import io.exilius.content.skills.Cooking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.crafting.*;
@@ -176,6 +177,91 @@ public class UseItem {
 			}
 		}
 		switch (objectID) {
+			case 884:
+			case 3264:
+			case 3305:
+			case 3359:
+			case 3485:
+			case 3646:
+			case 4004:
+			case 4005:
+			case 6249:
+			case 8747:
+			case 8927:
+			case 12201:
+			case 12897:
+			case 24150:
+			case 29100:
+			case 30930:
+			case 35881:
+			case 39720:
+			case 153:
+			case 879:
+			case 880:
+			case 2864:
+			case 3641:
+			case 5125:
+			case 6232:
+			case 7143:
+			case 10436:
+			case 10437:
+			case 10827:
+			case 11007:
+			case 12941:
+			case 22973:
+			case 24102:
+			case 27536:
+			case 39162:
+			case 42162:
+			case 43689:
+			case 3640:
+			case 20776:
+			case 24004:
+			case 15937:
+			case 35981:
+			case 15938:
+			case 36078:
+			case 41000:
+			case 41004:
+			case 873:
+			case 874:
+			case 1763:
+			case 3014:
+			case 4063:
+			case 6151:
+			case 7422:
+			case 8699:
+			case 9143:
+			case 9684:
+			case 10175:
+			case 12279:
+			case 12609:
+			case 12974:
+			case 13563:
+			case 13564:
+			case 14868:
+			case 15678:
+			case 16704:
+			case 16705:
+			case 20358:
+			case 22715:
+			case 25729:
+			case 25929:
+			case 27707:
+			case 27708:
+			case 28538:
+			case 34943:
+			case 39393:
+			case 39459:
+			case 39489:
+			case 40023:
+			case 42205:
+			case 5598:
+			case 5599:
+			case 8702:
+			case 8703:
+				Fillables.fillTheItem(c, itemId, objectID);
+				break;
 			case 42966:
 				switch(itemId){
 					case 11832:
@@ -329,28 +415,7 @@ public class UseItem {
 				}
 			}
 			break;
-		
-		case 8927:
-			switch (itemId) {
-			case 1925:
-			case 3727:
-				c.getItems().deleteItem(1925, 1);
-				c.getItems().addItem(1929, 1);
-				c.sendMessage("You fill the bucket with water.");
-				c.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.FILL_BUCKET);
-				break;
-			}
-		
-		case 3043:
-		case 7143:
-			if (itemId == 229) {
-				if (Boundary.isIn(c, Boundary.VARROCK_BOUNDARY)) {
-					c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.FILL_VIAL);
-					c.getItems().deleteItem(229, 1);
-					c.getItems().addItem(227, 1);
-				}
-			}
-			break;
+
 			
 		case 11744:
 			if (c.getMode().isUltimateIronman()) {

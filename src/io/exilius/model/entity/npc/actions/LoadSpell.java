@@ -1435,7 +1435,11 @@ public class LoadSpell {
                     npc.endGfx = -1;
                 }
                 break;
+            case 443:
+            case 444:
+            case 445:
             case 446:
+            case 447:
                 npc.setAttackType(CombatType.MAGE);
                 npc.projectileId = 100;
                 npc.hitDelayTimer = 3;

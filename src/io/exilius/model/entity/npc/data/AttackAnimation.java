@@ -72,8 +72,14 @@ public class AttackAnimation extends NPCHandler {
 				return 8499;
 			}
 			return 8499;
-		case 446:
+		case 443:
+			case 444:
+			case 445:
+			case 446:
+			case 447:
 			return 711;
+			case 2827:
+				return 4915;
 		case 8611:
 			return 8270;
 		case 8612:
@@ -708,7 +714,6 @@ public class AttackAnimation extends NPCHandler {
 		case 440:
 		case 441:
 		case 442: // Tree spirit
-		case 443:
 			return 94;
 		case 391:
 		case 392:
@@ -802,8 +807,17 @@ public class AttackAnimation extends NPCHandler {
 		case 7404:
 			return 1557;
 
-		case 448: // Crawling hand
-			return 1590;
+		case 448: // Crawling hand's
+			case 449:
+			case 450:
+			case 451:
+			case 452:
+			case 453:
+			case 454:
+			case 455:
+			case 456:
+			case 457:
+			return 1592;
 		case 7388:
 			return 1592;
 

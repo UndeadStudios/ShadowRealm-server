@@ -320,7 +320,11 @@ public class NpcMaxHit {
                 return 11;
             case 414:
                 return 2;
+            case 443:
+            case 444:
+            case 445:
             case 446:
+            case 447:
                 return 8;
             case 2167:
                 return 19;
