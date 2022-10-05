@@ -1,0 +1,1136 @@
+[
+	{
+		"id": 2003,
+	"position": {
+			"x": 2994,
+			"y": 3376,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 5007,
+	"position": {
+			"x": 2987,
+			"y": 3330,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 5007,
+	"position": {
+			"x": 2964,
+			"y": 3304,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 6529,
+	"position": {
+			"x": 2944,
+			"y": 3332,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3270,
+	"position": {
+			"x": 2942,
+			"y": 3376,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1618,
+	"position": {
+			"x": 2945,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1618,
+	"position": {
+			"x": 2946,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1305,
+	"position": {
+			"x": 2948,
+			"y": 3378,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 5007,
+	"position": {
+			"x": 2935,
+			"y": 3316,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1618,
+	"position": {
+			"x": 2947,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3269,
+	"position": {
+			"x": 2949,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1618,
+	"position": {
+			"x": 2948,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 6523,
+	"position": {
+			"x": 2949,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3272,
+	"position": {
+			"x": 2949,
+			"y": 3379,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 5007,
+	"position": {
+			"x": 2935,
+			"y": 3373,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 5896,
+	"position": {
+			"x": 2951,
+			"y": 3388,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 0,
+	"position": {
+			"x": 3005,
+			"y": 3370,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 278,
+	"position": {
+			"x": 2954,
+			"y": 3378,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3094,
+	"position": {
+			"x": 3010,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1315,
+	"position": {
+			"x": 2954,
+			"y": 3374,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 2820,
+	"position": {
+			"x": 2956,
+			"y": 3390,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3094,
+	"position": {
+			"x": 3011,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 295,
+	"position": {
+			"x": 3009,
+			"y": 3341,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3271,
+	"position": {
+			"x": 2961,
+			"y": 3378,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3094,
+	"position": {
+			"x": 3012,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1316,
+	"position": {
+			"x": 2954,
+			"y": 3368,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3094,
+	"position": {
+			"x": 3013,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 2819,
+	"position": {
+			"x": 2954,
+			"y": 3388,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3094,
+	"position": {
+			"x": 3014,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 6523,
+	"position": {
+			"x": 3015,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2959,
+			"y": 3360,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2961,
+			"y": 3358,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 7712,
+	"position": {
+			"x": 3019,
+			"y": 3341,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2967,
+			"y": 3340,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3102,
+	"position": {
+			"x": 3019,
+			"y": 3373,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3269,
+	"position": {
+			"x": 2963,
+			"y": 3379,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 7716,
+	"position": {
+			"x": 3018,
+			"y": 3337,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3271,
+	"position": {
+			"x": 2966,
+			"y": 3377,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 296,
+	"position": {
+			"x": 3021,
+			"y": 3334,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3269,
+	"position": {
+			"x": 2965,
+			"y": 3384,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3275,
+	"position": {
+			"x": 3019,
+			"y": 3368,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 3271,
+	"position": {
+			"x": 2963,
+			"y": 3389,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 7713,
+	"position": {
+			"x": 3022,
+			"y": 3337,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 10633,
+	"position": {
+			"x": 3022,
+			"y": 3342,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1173,
+	"position": {
+			"x": 2965,
+			"y": 3351,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2968,
+			"y": 3359,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 294,
+	"position": {
+			"x": 3027,
+			"y": 3347,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3272,
+	"position": {
+			"x": 2966,
+			"y": 3379,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2968,
+			"y": 3358,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 5422,
+	"position": {
+			"x": 3025,
+			"y": 3375,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2975,
+			"y": 3348,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 3264,
+	"position": {
+			"x": 3026,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2973,
+			"y": 3348,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3269,
+	"position": {
+			"x": 3036,
+			"y": 3353,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2976,
+			"y": 3357,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 10418,
+	"position": {
+			"x": 3037,
+			"y": 3366,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2978,
+			"y": 3342,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3270,
+	"position": {
+			"x": 3041,
+			"y": 3355,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 4737,
+	"position": {
+			"x": 2978,
+			"y": 3341,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 10417,
+	"position": {
+			"x": 3047,
+			"y": 3343,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 5524,
+	"position": {
+			"x": 2977,
+			"y": 3346,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3265,
+	"position": {
+			"x": 3049,
+			"y": 3363,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1838,
+	"position": {
+			"x": 2978,
+			"y": 3356,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 5792,
+	"position": {
+			"x": 3052,
+			"y": 3372,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2974,
+			"y": 3345,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1839,
+	"position": {
+			"x": 2967,
+			"y": 3360,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2978,
+			"y": 3360,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3214,
+	"position": {
+			"x": 2977,
+			"y": 3383,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1838,
+	"position": {
+			"x": 2973,
+			"y": 3360,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1839,
+	"position": {
+			"x": 2983,
+			"y": 3358,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 2002,
+	"position": {
+			"x": 2967,
+			"y": 3359,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2985,
+			"y": 3329,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2985,
+			"y": 3335,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2981,
+			"y": 3347,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3097,
+	"position": {
+			"x": 2981,
+			"y": 3370,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2985,
+			"y": 3344,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1831,
+	"position": {
+			"x": 2989,
+			"y": 3383,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1839,
+	"position": {
+			"x": 2989,
+			"y": 3382,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 6800,
+	"position": {
+			"x": 2990,
+			"y": 3345,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 10428,
+	"position": {
+			"x": 2992,
+			"y": 3363,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 2003,
+	"position": {
+			"x": 2993,
+			"y": 3374,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1838,
+	"position": {
+			"x": 2993,
+			"y": 3384,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1839,
+	"position": {
+			"x": 2992,
+			"y": 3382,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 2004,
+	"position": {
+			"x": 2991,
+			"y": 3383,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2995,
+			"y": 3339,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 7714,
+	"position": {
+			"x": 3019,
+			"y": 9734,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 7718,
+	"position": {
+			"x": 3029,
+			"y": 9746,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 7717,
+	"position": {
+			"x": 3032,
+			"y": 9748,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 4687,
+	"position": {
+			"x": 2997,
+			"y": 3373,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 2679,
+	"position": {
+			"x": 3002,
+			"y": 3373,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 7715,
+	"position": {
+			"x": 3044,
+			"y": 9730,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2956,
+			"y": 3339,
+			"height": 1
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2961,
+			"y": 3349,
+			"height": 1
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 7712,
+	"position": {
+			"x": 3047,
+			"y": 9759,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2959,
+			"y": 3339,
+			"height": 1
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2969,
+			"y": 3331,
+			"height": 1
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2969,
+			"y": 3340,
+			"height": 1
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2974,
+			"y": 3336,
+			"height": 1
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2980,
+			"y": 3330,
+			"height": 1
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 3100,
+	"position": {
+			"x": 2981,
+			"y": 3341,
+			"height": 1
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2982,
+			"y": 3346,
+			"height": 1
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2985,
+			"y": 3335,
+			"height": 1
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 2556,
+	"position": {
+			"x": 2967,
+			"y": 3337,
+			"height": 1
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1800,
+	"position": {
+			"x": 2985,
+			"y": 3347,
+			"height": 1
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2987,
+			"y": 3337,
+			"height": 1
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3267,
+	"position": {
+			"x": 2990,
+			"y": 3384,
+			"height": 0
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1829,
+	"position": {
+			"x": 2961,
+			"y": 3340,
+			"height": 2
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 4771,
+	"position": {
+			"x": 2957,
+			"y": 3336,
+			"height": 2
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 1800,
+	"position": {
+			"x": 2964,
+			"y": 3352,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1800,
+	"position": {
+			"x": 2966,
+			"y": 3328,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2974,
+			"y": 3328,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1800,
+	"position": {
+			"x": 2979,
+			"y": 3328,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1798,
+	"position": {
+			"x": 2980,
+			"y": 3340,
+			"height": 2
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 4736,
+	"position": {
+			"x": 2981,
+			"y": 3334,
+			"height": 2
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2984,
+			"y": 3348,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 1799,
+	"position": {
+			"x": 2983,
+			"y": 3343,
+			"height": 2
+	},
+"walkingType": "WALK"
+	},
+	{
+		"id": 1800,
+	"position": {
+			"x": 2989,
+			"y": 3344,
+			"height": 2
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 3269,
+	"position": {
+			"x": 2964,
+			"y": 3393,
+			"height": 0
+	},
+"walkingType": "FACE_NORTH"
+	},
+	{
+		"id": 3271,
+	"position": {
+			"x": 2961,
+			"y": 3395,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 1639,
+	"position": {
+			"x": 2941,
+			"y": 3393,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 7719,
+	"position": {
+			"x": 3018,
+			"y": 9723,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	},
+	{
+		"id": 3109,
+	"position": {
+			"x": 2957,
+			"y": 3307,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 5897,
+	"position": {
+			"x": 2971,
+			"y": 3311,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3254,
+	"position": {
+			"x": 3004,
+			"y": 3322,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3254,
+	"position": {
+			"x": 3008,
+			"y": 3323,
+			"height": 0
+	},
+"walkingType": "FACE_WEST"
+	},
+	{
+		"id": 3254,
+	"position": {
+			"x": 3008,
+			"y": 3323,
+			"height": 0
+	},
+"walkingType": "FACE_EAST"
+	}
+]

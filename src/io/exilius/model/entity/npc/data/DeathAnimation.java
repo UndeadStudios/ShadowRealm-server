@@ -879,14 +879,15 @@ public class DeathAnimation extends NPCHandler {
             case 7293:
                 return 1563;
             case 448: // Crawling hand
-            case 7388:
-            case 1649:
-            case 1650:
-            case 1651:
-            case 1652:
-            case 1655:
-            case 1656:
-            case 1657:
+            case 449:
+            case 450:
+            case 451:
+            case 452:
+            case 453:
+            case 454:
+            case 455:
+            case 456:
+            case 457:
                 return 1590;
             case 102:
                 return 313;
@@ -900,6 +901,8 @@ public class DeathAnimation extends NPCHandler {
             case 123:
             case 7933:
                 return 167;
+            case 2827:
+                return 4917;
             case 58:
             case 59:
             case 60:

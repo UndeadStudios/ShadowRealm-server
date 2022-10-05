@@ -543,7 +543,6 @@ public class BlockAnimation {
             case 440:
             case 441:
             case 442: // Tree spirit
-            case 443:
                 return 95;
             case 391:
             case 392:
@@ -552,7 +551,8 @@ public class BlockAnimation {
             case 395:// river troll
             case 396:
                 return 285;
-
+            case 2827:
+                return 4916;
             case 1153:
             case 1154:
             case 1155:
@@ -598,16 +598,15 @@ public class BlockAnimation {
                 return 1525;
 
             case 448:
-            case 7388:
-            case 1649:
-            case 1650:
-            case 1651:
-            case 1652:
-            case 1653:
-            case 1654:
-            case 1655:
-            case 1656:
-            case 1657:// crawling hand
+            case 449:
+            case 450:
+            case 451:
+            case 452:
+            case 453:
+            case 454:
+            case 455:
+            case 456:
+            case 457:
                 return 1591;
 
             case 484:
@@ -617,7 +616,11 @@ public class BlockAnimation {
             case 7397:
                 return 1550;
 
+            case 443:
+            case 444:
+            case 445:
             case 446:
+            case 447:
             case 7396:
             case 1644:
             case 1645:

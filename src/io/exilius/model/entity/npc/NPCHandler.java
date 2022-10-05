@@ -62,7 +62,7 @@ public class NPCHandler {
     }
 
     public static int maxNPCs = 30000;
-    public static int maxListedNPCs = 10000;
+    public static int maxListedNPCs = 30000;
     public static NPC[] npcs = new NPC[maxNPCs];
     public static boolean projectileClipping = true;
     /**
