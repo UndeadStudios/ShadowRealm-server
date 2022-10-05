@@ -7,7 +7,7 @@ import java.util.Set;
 public enum KaramjaDiaryEntry {
 	//Easy
 	PICK_BANANAS("Pick bananas: %totalstage", 32),
-	TELEPORT_TO_KARAMJA("Use a glory teleport to karamja"),
+//	TELEPORT_TO_KARAMJA("Use a glory teleport to karamja"),
 	SAIL_TO_ARDOUGNE("Travel to ardougne from the port in brimhaven"),
 	FISH_LOBSTER_KAR("Fish some lobsters: %totalstage", 58),	
 	//Medium

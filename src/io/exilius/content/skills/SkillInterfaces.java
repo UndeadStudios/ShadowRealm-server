@@ -1299,7 +1299,6 @@ public class SkillInterfaces {
 			menuLine("2", "Vegetable stall", 1965, 0);
 			menuLine("5", "Baker's stall", 2309, 1);
 			menuLine("5", "Ape Atoll general stall", 1933, 2);
-			menuLine("5", "Tea stall", 1978, 3);
 			menuLine("5", "Crafting stall", 1755, 4);
 			menuLine("5", "Monkey food stall", 1963, 5);
 			menuLine("15", "Rock cake stall", 2379, 6);

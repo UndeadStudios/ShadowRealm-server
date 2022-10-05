@@ -1,12 +1,7 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.combat.CombatItems;
 import io.exilius.content.combat.Damage;
 import io.exilius.content.combat.effects.damageeffect.impl.DragonfireShieldEffect;
@@ -17,14 +12,14 @@ import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCHandler;
-import io.exilius.model.entity.player.Boundary;
-import io.exilius.model.entity.player.PacketType;
-import io.exilius.model.entity.player.Player;
-import io.exilius.model.entity.player.PlayerAssistant;
-import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.entity.player.*;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.text.WordUtils;
+
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 
 public class OperateItem implements PacketType {
 
@@ -446,28 +441,28 @@ public class OperateItem implements PacketType {
 								c.getItems().equipItem(1710, 1, 2);
 								c.setAppearanceUpdateRequired(true);
 							c.getPA().startTeleport(2925, 3173, 0, "glory",false);
-							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 							c.sendMessage("@red@You now have 3 charges left in your glory.");
 					
 							} else if (c.playerEquipment[Player.playerAmulet] == 1710) { // new
 								c.getItems().equipItem(1708, 1, 2);
 								c.setAppearanceUpdateRequired(true);
 								c.getPA().startTeleport(2925, 3173, 0, "glory",false);
-								c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//								c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 							c.sendMessage("@red@You now have 2 charges left in your glory.");
 						
 						} else if (c.playerEquipment[Player.playerAmulet] == 1708) { // new
 							c.getItems().equipItem(1706, 1, 2);
 							c.setAppearanceUpdateRequired(true);
 							c.getPA().startTeleport(2925, 3173, 0, "glory",false);
-							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 						c.sendMessage("@red@You now have 1 charges left in your glory.");
 						
 						} else if (c.playerEquipment[Player.playerAmulet] == 1706) { // new
 							c.getItems().equipItem(1704, 1, 2);
 							c.setAppearanceUpdateRequired(true);
 							c.getPA().startTeleport(2925, 3173, 0, "glory",false);
-							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+//							c.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
 						c.sendMessage("@red@You now have 0 charges left in your glory.");
 						 } else if (c.playerEquipment[Player.playerAmulet] == 19707) { // new
 							 c.getPA().startTeleport(2925, 3173, 0, "glory",false);

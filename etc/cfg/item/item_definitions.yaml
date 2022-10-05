@@ -17678,6 +17678,7 @@
   name: "Common Raids Key"
   description: "A steel key with a brown painted eyelet."
   shopValue: 87
+  untradeable: true
   stackable: true
 - id: 3457
   name: "Steel key crimson"
@@ -17695,6 +17696,7 @@
   name: "Nex Key"
   description: "A black key with a blood-red painted eyelet."
   shopValue: 2000000
+  untradeable: true
 - id: 3461
   name: "Black key brown"
   description: "A black key with a brown painted eyelet."
@@ -17711,6 +17713,7 @@
   name: "Raids Rare Key"
   description: "A black key with a purple painted eyelet."
   shopValue: 95
+  untradeable: true
   stackable: true
 - id: 3465
   name: "Silver key red"
@@ -20940,6 +20943,7 @@
   name: "The Unbearable's Key"
   description: "Upon close examination, this seems to be a key."
   shopValue: 1
+  untradeable: true
   stackable: true
 - id: 4186
   name: "Shed key"
@@ -32875,6 +32879,7 @@
   name: "Seren's Key"
   description: "An ancient key from the shrine in Nardah."
   shopValue: 1
+  untradeable: true
   stackable: true
 - id: 6793
   name: "Ballad"
@@ -69196,6 +69201,7 @@
   name: "@cya@Chest rate bonus (+15%)"
   description: "A single use +15% chance from chests, or to receive a rare raids key."
   shopValue: 1
+  untradeable: true
   stackable: true
   untradeable: true
 - id: 21061
@@ -70181,6 +70187,7 @@
 - id: 22093
   name: "Vote Key"
   shopValue: 1
+  untradeable: true
 - id: 22106
   name: "Jar Of Decay"
   shopValue: 200000
@@ -70397,6 +70404,7 @@
   name: "Hespori Key"
   description: "A Hespori key."
   shopValue: 1
+  untradeable: true
   stackable: true
   undroppable: true
   droppable: false
@@ -70987,6 +70995,7 @@
 - id: 23083
   name: "Brimstone key"
   shopValue: 50000
+  untradeable: true
   stackable: true
   untradeable: true
 - id: 23091
@@ -71429,6 +71438,7 @@
 - id: 23776
   name: "Hunllef's Key"
   shopValue: 1
+  untradeable: true
   stackable: true
 - id: 23778
   name: "Uncut toxic gem"

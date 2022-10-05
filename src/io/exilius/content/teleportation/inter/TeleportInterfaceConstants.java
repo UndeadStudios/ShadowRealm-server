@@ -104,7 +104,7 @@ public class TeleportInterfaceConstants {
                 plr.getPA().startTeleport(2662, 3305, 0, "modern", false);
                 plr.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ARDOUGNE);
             }),
-
+            new TeleportButtonStandard("West Ardougne", new Position(2553, 3300, 0)),
             new TeleportButtonStandard("Neitiznot", new Position(2321, 3804, 0)),
             new TeleportButtonStandard("Karamja", new Position(2948, 3147, 0)),
             new TeleportButtonStandard("Brimhaven", new Position(2802, 3178, 0)),
@@ -192,7 +192,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Outlast", new Position(3096, 3509, 0)),
             new TeleportButtonStandard("Mage Arena", new Position(2541, 4716, 0)),
             new TeleportButtonStandard("Horror From The Deep [Quest]", new Position(2508, 3641, 0)),
-            new TeleportButtonStandard("Monkey Madness [Quest]", new Position(3100, 3471, 0))
+            new TeleportButtonStandard("Monkey Madness [Quest]", new Position(3097, 3473, 0))
     ));
     private static final TeleportContainer DONATOR = new TeleportContainer(Lists.newArrayList(
 
