@@ -282,6 +282,12 @@ public class NPCProcess {
                                 return;
                             }
                             npc.facePlayer(c.getIndex());
+                        }
+                        if ((c.absX == npc.absX-1 && c.absY == npc.absY+1) || (c.absX == npc.absX-1 && c.absY == npc.absY-1)
+                                    || (c.absX == npc.absX+1 && c.absY == npc.absY-1) || (c.absX == npc.absX+1 && c.absY == npc.absY+1)) {
+                                npcHandler.stepAway2(c, npc);
+                                npc.randomWalk = false;
+                                npc.facePlayer(c.getIndex());
                         } else {
                             if (c.getInferno() != null && c.getInferno().kill.contains(npc)) {
                                 return;

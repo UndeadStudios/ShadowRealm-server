@@ -1150,17 +1150,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
             npc.underAttack = false;
             return;
         }
-        if (player.absX == npcs[npc.getIndex()].absX && player.absY == npcs[npc.getIndex()].absY) {
-            stepAway(npc);
-            npcs[npc.getIndex()].randomWalk = false;
-            npcs[npc.getIndex()].facePlayer(player.getIndex());
-        }
-        if ((player.absX == npcs[npc.getIndex()].absX-1 && player.absY == npcs[npc.getIndex()].absY+1) || (player.absX == npcs[npc.getIndex()].absX-1 && player.absY == npcs[npc.getIndex()].absY-1)
-                || (player.absX == npcs[npc.getIndex()].absX+1 && player.absY == npcs[npc.getIndex()].absY-1) || (player.absX == npcs[npc.getIndex()].absX+1 && player.absY == npcs[npc.getIndex()].absY+1)){
-            stepAway2(player,playerId);
-            npcs[npc.getIndex()].randomWalk = false;
-            npcs[npc.getIndex()].facePlayer(player.getIndex());
-        }
         // Vorkath doesn't follow player
         if (Arrays.stream(Vorkath.NPC_IDS).anyMatch(id -> npc.getNpcId() == id)) {
             return;
@@ -1207,13 +1196,13 @@ public static void addNPC(int npcType, int x, int y, int h) {
             followTick(npc, player, distance, followDistance, true);
         }
     }
-    public void stepAway2(Player player, int i) {
+    public void stepAway2(Player player, NPC npc) {
         int[][] points = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
         for (int[] k : points) {
             int dir = NPCClipping.getDirection(k[0], k[1]);
-            if (NPCDumbPathFinder.canMoveTo(npcs[i], dir)) {
-                NPCDumbPathFinder.walkTowards(npcs[i], npcs[i].absX > player.absX ? player.absX-1 : player.absX+1 ,npcs[i].absY > player.absY ? player.absY+1 : player.absY-1);
+            if (NPCDumbPathFinder.canMoveTo(npc, dir)) {
+                NPCDumbPathFinder.walkTowards(npc, npc.absX > player.absX ? player.absX-1 : player.absX+1 ,npc.absY > player.absY ? player.absY+1 : player.absY-1);
                 break;
             }
         }
