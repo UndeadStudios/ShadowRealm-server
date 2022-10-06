@@ -368,13 +368,14 @@ public class Boundary {
 			new Boundary(2141, 2880, 2148, 2887),
 			new Boundary(2149, 2886, 2152, 2887)
 	};
+	public static final Boundary HUNTER_ICE = new Boundary(2679, 3748, 2748, 3844);
 	public static final Boundary HUNTER_JUNGLE = new Boundary(1486, 3392, 1685, 3520);
 	public static final Boundary HUNTER_LOVAK = new Boundary(1468, 3840, 1511, 3890);
 	public static final Boundary HUNTER_DONATOR = new Boundary(2124, 4917, 2157, 4946);
 	public static final Boundary HUNTER_LZ_DONATOR = new Boundary(2856, 5069, 2868, 5081);
 	public static final Boundary HUNTER_WILDERNESS = new Boundary(3128, 3755, 3172, 3796);
 	public static final Boundary PURO_PURO = new Boundary(2561, 4289, 2623, 4351);
-	public static final Boundary[] HUNTER_BOUNDARIES = {HUNTER_JUNGLE, HUNTER_WILDERNESS, HUNTER_LOVAK, HUNTER_DONATOR, HUNTER_LZ_DONATOR};
+	public static final Boundary[] HUNTER_BOUNDARIES = {HUNTER_JUNGLE, HUNTER_WILDERNESS, HUNTER_LOVAK, HUNTER_DONATOR, HUNTER_LZ_DONATOR, HUNTER_ICE, Feldip_hills};
 
 	public static final Boundary LAVA_DRAGON_ISLE = new Boundary(3174, 3801, 3233, 3855);
 
@@ -501,11 +502,21 @@ public class Boundary {
 	public static final Boundary[] MAGE_RAIDS = {MAGE_RAID_ROOM1, MAGE_RAID_ROOM2, MAGE_RAID_ROOM3, MAGE_RAID_ROOM4,
 	 MAGE_RAID_ROOM5, MAGE_RAID_BOSS};*/
 
-	public static final Boundary HESPORI = new Boundary(3025, 3475, 3068, 3508);
+	//public static final Boundary HESPORI = new Boundary(3025, 3475, 3068, 3508);
 	public static final Boundary HESPORI_EXIT = new Boundary(3066, 3497, 3067, 3501);
 	public static final Boundary HESPORI_ENTRANCE = new Boundary(3069, 3497,3072, 3501);
 	public static final Boundary INFERNO = new Boundary(2256, 5328, 2286, 5359);
-
+	public static final Boundary[] HESPORI = {
+			new Boundary(3034, 3476, 3065, 3489),
+			new Boundary(3030, 3483, 3033, 3490),
+			new Boundary(3034, 3490, 3044, 3496),
+			new Boundary(3045, 3490, 3065, 3496),
+			new Boundary(3031, 3491, 3033, 3493),
+			new Boundary(3037, 3497, 3042, 3500),
+			new Boundary(3035, 3497, 3036, 3498),
+			new Boundary(3043, 3497, 3065, 3500),
+			new Boundary(3039, 3501, 3065, 3507)
+	};
 
 
 
@@ -574,7 +585,21 @@ public class Boundary {
 	public static final Boundary TOURNY_LOBBY = new Boundary(3091, 3505, 3101, 3514);
 	public static final Boundary TOB_VERZIK = new Boundary(3150, 4293, 3184, 4329);
 	//public static final Boundary TBD_VERZIK = new Boundary(3250, 4293, 3284, 4329);
-
+	public static final Boundary[] MORT_MYRE_SWAMP = {
+			new Boundary(3415, 3328, 3518, 3456),
+			new Boundary(3462, 3457, 3483, 3469),
+			new Boundary(3484, 3457, 3505, 3460),
+			new Boundary(3506, 3457, 3519, 3466),
+			new Boundary(3519, 3371, 3528, 3466),
+			new Boundary(3529, 3378, 3542, 3466),
+			new Boundary(3543, 3386, 3587, 3521),
+			new Boundary(3588, 3401, 3644, 3520),
+			new Boundary(3518, 3467, 3542, 3521),
+			new Boundary(3404, 3421, 3414, 3453),
+			new Boundary(3402, 3382, 3414, 3420),
+			new Boundary(3393, 3339, 3414, 3381),
+			new Boundary(3416, 3258, 3459, 3327)
+	};
 	/**
 	 * Raids bosses
 	 */

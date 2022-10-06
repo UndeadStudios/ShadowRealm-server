@@ -39,6 +39,7 @@ import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.*;
 import io.exilius.model.items.EquipmentSet;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 
 import java.util.Arrays;
@@ -203,7 +204,6 @@ public abstract class HitDispatcher {
                 }
             }
 
-
             // melee accuracy roll
             if (!isAccurate) {
                 damage = 0;
@@ -253,6 +253,12 @@ public abstract class HitDispatcher {
                     attacker.playerLevel[3] = attacker.getPA().getLevelForXP(attacker.playerXP[3]);
                 }
                 attacker.getPA().refreshSkill(3);
+            }
+            if(attacker.getItems().isWearingItem(24780)){
+                if(Misc.random(100) == 25){
+                    attacker.getHealth().increase(damage);
+                    attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
+                }
             }
             boolean hasDarkPrayerVersion = attacker.petSummonId == 30119 || attacker.petSummonId == 30122;
             int prayerChance = hasDarkPrayerVersion ? 10 : 20;
@@ -379,6 +385,12 @@ public abstract class HitDispatcher {
                 attacker.getPA().refreshSkill(3);
 
             }
+            if(attacker.getItems().isWearingItem(24780)){
+                if(Misc.random(100) == 25){
+                    attacker.getHealth().increase(damage);
+                    attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
+                }
+            }
             boolean hasDarkPrayerVersion = attacker.petSummonId == 30119 || attacker.petSummonId == 30122;
             int prayerChance = hasDarkPrayerVersion ? 10 : 20;
             if (damage > 0 && attacker.hasFollower && (attacker.petSummonId == 30019 || attacker.petSummonId == 30022 || hasDarkPrayerVersion) && Misc.random(prayerChance) == 1) {
@@ -452,6 +464,12 @@ public abstract class HitDispatcher {
                 }
                 attacker.getPA().refreshSkill(3);
 
+            }
+            if(attacker.getItems().isWearingItem(24780)){
+                if(Misc.random(100) == 25){
+                    attacker.getHealth().increase(damage);
+                    attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
+                }
             }
             boolean hasDarkPrayerVersion = attacker.petSummonId == 30119 || attacker.petSummonId == 30122;
             int prayerChance = hasDarkPrayerVersion ? 10 : 20;

@@ -39,6 +39,8 @@ public class Cannon {
     public static void attemptPlace(Player player) {
         if (Arrays.stream(PROHIBITED_CANNON_AREAS).anyMatch(boundary -> boundary.in(player)) && !Arrays.stream(ALLOWED_REV_AREAS).anyMatch(boundary -> boundary.in(player))) {
             player.sendMessage("You can't place a cannon in this area.");
+        } else if (Boundary.isIn(player, Boundary.MORT_MYRE_SWAMP)) {
+            player.sendMessage("You can't place a cannon in this area.");
         } else if ((player.getInstance() != null || player.getHeight() > 3) && !Boundary.CORPOREAL_BEAST_LAIR.in(player) && !Boundary.CRYSTAL_CAVE_AREA.in(player)) {
             player.sendMessage("You can't place a cannon inside an instance.");
         } else if (Boundary.CRYSTAL_CAVE_AREA.in(player) && player.getPosition().getHeight() == 4) {

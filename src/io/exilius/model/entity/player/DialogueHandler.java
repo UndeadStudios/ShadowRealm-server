@@ -2903,7 +2903,7 @@ public class DialogueHandler {
 				break;
 
 			case 10040:
-				sendOptions("Fighting boots", "Fancy boots");
+				sendOptions("Fancy boots", "Fighting boots");
 				c.dialogueAction = 10040;
 				break;
 

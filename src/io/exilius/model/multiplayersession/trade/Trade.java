@@ -34,7 +34,7 @@ public class Trade extends Multiplayer {
 		if (requested.getBankPin().requiresUnlock()) {
 			return false;
 		}
-		if (Boundary.HESPORI.in(player) || Boundary.HESPORI.in(requested)) {
+		if (Boundary.isIn(player, Boundary.HESPORI) || Boundary.isIn(requested, Boundary.HESPORI)) {
 			player.sendMessage("You can't trade inside Hespori.");
 			return false;
 		}

@@ -145,7 +145,7 @@ public class NexChest implements Lootable {
                 c.getItems().addItem(reward.getId(), reward.getAmount() * 1);
                 if (reward.getId() != Items.ZARYTE_CROSSBOW) {
                     ItemDef def = ItemDef.forId(reward.getId());
-                    PlayerHandler.executeGlobalMessage("@gre@ ["+ c.getDisplayName() + "]@bla@[<col=3d7018>Nex@bla@] The Nex chest rewarded a<col=47831c> "+ ItemDef.forId(reward.getId()).getName() + "!" );                }
+                    PlayerHandler.executeGlobalMessage("<col=65280><shad=1>["+ c.getDisplayName() + "]</col></shad>@bla@[<col=3d7018>Nex@bla@] The Nex chest rewarded a<col=47831c> "+ ItemDef.forId(reward.getId()).getName() + "!" );                }
             } else {
                 c.sendMessage("@blu@The chest is locked, it won't budge!");
             }
