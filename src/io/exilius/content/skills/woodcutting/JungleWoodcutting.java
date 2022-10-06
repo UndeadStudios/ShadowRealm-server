@@ -4,21 +4,21 @@ import io.exilius.Server;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 
-public class Woodcutting {
+public class JungleWoodcutting {
 
-	private static final Woodcutting INSTANCE = new Woodcutting();
+	private static final JungleWoodcutting INSTANCE = new JungleWoodcutting();
 
 	public void chop(Player player, int objectId, int x, int y) {
-		Tree tree = Tree.forObject(objectId);
+		Jungle tree = Jungle.forObject(objectId);
 		player.facePosition(x, y);
 		if (player.playerLevel[Player.playerWoodcutting] < tree.getLevelRequired()) {
 			player.sendMessage("You do not have the woodcutting level required to cut this tree down.");
 			return;
 		}
 
-		Hatchet hatchet = Hatchet.getBest(player);
-		if (hatchet == null) {
-			player.sendMessage("You must have an axe and the level required to cut this tree down.");
+		Machete machete = Machete.getBest(player);
+		if (machete == null) {
+			player.sendMessage("You must have an machete and the level required to cut this tree down.");
 			return;
 		}
 		if (player.getItems().freeSlots() == 0) {
@@ -30,12 +30,12 @@ public class Woodcutting {
 			return;
 		}
 		player.getPA().stopSkilling();
-			player.sendMessage("You swing your axe at the "+ ObjectDef.getObjectDef(objectId).getName().toLowerCase()+".");
-		player.startAnimation(hatchet.getAnimation());
-		Server.getEventHandler().submit(new WoodcuttingEvent(player, tree, hatchet, objectId, x, y));
+			player.sendMessage("You swing your machete at the "+ ObjectDef.getObjectDef(objectId).getName().toLowerCase()+".");
+		player.startAnimation(machete.getAnimation());
+		Server.getEventHandler().submit(new JungleWoodcuttingEvent(player, tree, machete, objectId, x, y));
 	}
 
-	public static Woodcutting getInstance() {
+	public static JungleWoodcutting getInstance() {
 		return INSTANCE;
 	}
 

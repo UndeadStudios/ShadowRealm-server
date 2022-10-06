@@ -24,10 +24,10 @@ import io.exilius.util.Misc;
 
 import java.util.Optional;
 
-public class WoodcuttingEvent extends Event<Player> {
-	private static boolean woodcuttingTree;
-	private final Tree tree;
-	private final Hatchet hatchet;
+public class JungleWoodcuttingEvent extends Event<Player> {
+	private static boolean woodcuttingJungle;
+	private final Jungle tree;
+	private final Machete hatchet;
 	private final int objectId;
 	private final int x;
 	private final int y;
@@ -35,7 +35,7 @@ public class WoodcuttingEvent extends Event<Player> {
 	
 	private final int[] lumberjackOutfit = { 10933, 10939, 10940, 10941 };
 
-	public WoodcuttingEvent(Player player, Tree tree, Hatchet hatchet, int objectId, int x, int y) {
+	public JungleWoodcuttingEvent(Player player, Jungle tree, Machete hatchet, int objectId, int x, int y) {
 		super("skilling", player, 1);
 		this.tree = tree;
 		this.hatchet = hatchet;
@@ -62,33 +62,7 @@ public class WoodcuttingEvent extends Event<Player> {
 		if (Boundary.isIn(attachment, Boundary.WOODCUTTING_GUILD_BOUNDARY)){
 			chopChance *= 1.5;
 		}
-		if (tree.equals(Tree.HESPORI)) {
-			int randomTele = 1;
-			if (attachment.getItems().playerHasItem(Hespori.KEY)) {
-				attachment.moveTo(new Position(3072 + randomTele, 3505 + randomTele));
-				Hespori.deleteEventItems(attachment);
-				return;
-			}
-			int randomTele2 = Misc.random(2);
-			attachment.canLeaveHespori = true;
-			attachment.moveTo(new Position(3072 + randomTele2, 3505 + randomTele2, 0));
-			//attachment.getPA().teleport(3072 + randomTele2, 3505 + randomTele2, 0, "modern",false);
-			attachment.getItems().addItem(tree.getWood(), 1);
-			if ((Configuration.DOUBLE_DROPS_TIMER > 0 || Configuration.DOUBLE_DROPS) && Misc.random(2) == 1) {
-				attachment.getItems().addItem(tree.getWood(), 1);
-			}
-			attachment.getPA().addSkillXPMultiplied((int)osrsExperience, Skill.WOODCUTTING.getId(), true);
-			handleRewards();
-			Hespori.deleteEventItems(attachment);
-			if (!attachment.getMode().isOsrs() && !attachment.getMode().is5x()) {
-				attachment.getPA().addSkillXP(60000 , 19, true);
-			} else {
-				attachment.getPA().addSkillXP(3300 , 19, true);
-			}
-			super.stop();
-			return;
-		}
-		if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Tree.NORMAL) && Misc.random(chopChance) == 0) {
+		if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Jungle.LIGHT_JUNGLE) && Misc.random(chopChance) == 0) {
 			int face = 0;
 			Optional<WorldObject> worldObject = attachment.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
 			if (worldObject.isPresent()) {
@@ -103,7 +77,7 @@ public class WoodcuttingEvent extends Event<Player> {
 					stumpId = 29671;
 			}
 
-			Server.getGlobalObjects().add(new GlobalObject(tree.equals(Tree.REDWOOD) ? stumpId : tree.getStumpId(), x, y, attachment.heightLevel, face, 10, tree.getRespawnTime(), objectId));
+			Server.getGlobalObjects().add(new GlobalObject(tree.getStumpId(), x, y, attachment.heightLevel, face, 10, tree.getRespawnTime(), objectId));
 			attachment.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
 			attachment.getItems().addItem(tree.getWood(), 1);
 			attachment.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
@@ -115,7 +89,7 @@ public class WoodcuttingEvent extends Event<Player> {
 			super.stop();
 			return;
 		}
-		if (!tree.equals(Tree.NORMAL)) {
+		if (!tree.equals(Jungle.LIGHT_JUNGLE)) {
 			if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
 				chops = 0;
 				int random = Misc.random(4);
@@ -126,8 +100,8 @@ public class WoodcuttingEvent extends Event<Player> {
 					return;
 				}
 				handleDiary(tree);
-				foeArtefact(attachment);
-				handleWildernessRewards();
+				//foeArtefact(attachment);
+				//handleWildernessRewards();
 				handleRewards();
 				if ((SkillcapePerks.WOODCUTTING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment)) && attachment.getItems().freeSlots() < 2) {
 					attachment.sendMessage("You have run out of free inventory space.");
@@ -188,54 +162,8 @@ public class WoodcuttingEvent extends Event<Player> {
 		}
 	}
 
-	private void handleDiary(Tree tree) {
+	private void handleDiary(Jungle tree) {
 		switch (tree) {
-			case MAGIC:
-				attachment.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS, 2);
-				if (Boundary.isIn(attachment, Boundary.AL_KHARID_BOUNDARY)) {
-					attachment.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_MAGIC_AL);
-				}
-				if (Boundary.isIn(attachment, Boundary.RESOURCE_AREA_BOUNDARY)) {
-					attachment.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MAGIC_LOG_WILD);
-				}
-				if (Boundary.isIn(attachment, Boundary.SEERS_BOUNDARY)) {
-					attachment.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CUT_MAGIC_SEERS);
-				}
-				break;
-			case MAPLE:
-				break;
-			case NORMAL:
-				break;
-			case OAK:
-				if (Boundary.isIn(attachment, Boundary.LUMRIDGE_BOUNDARY) || Boundary.isIn(attachment, Boundary.DRAYNOR_BOUNDARY)) {
-					attachment.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_OAK);
-				}
-				if (Boundary.isIn(attachment, Boundary.RELLEKKA_BOUNDARY)) {
-					attachment.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_OAK_FREM);
-				}
-				break;
-			case WILLOW:
-			case WILLOW2:
-				if (Boundary.isIn(attachment, Boundary.FALADOR_BOUNDARY)) {
-					attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.CHOP_WILLOW);
-				}
-				if (Boundary.isIn(attachment, Boundary.DRAYNOR_BOUNDARY)) {
-					attachment.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_WILLOW_DRAY);
-				}
-				break;
-			case YEW:
-				if (Boundary.isIn(attachment, Boundary.FALADOR_BOUNDARY)) {
-					attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.CHOP_YEW);
-				}
-				if (Boundary.isIn(attachment, Boundary.VARROCK_BOUNDARY)) {
-					attachment.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.YEWS_AND_BURN);
-				}
-				break;
-			case TEAK:
-				if (Boundary.isIn(attachment, Boundary.DESERT_BOUNDARY)) {
-					attachment.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.CHOP_TEAK);
-				}
-				break;
 			default:
 				break;
 
@@ -267,27 +195,12 @@ public class WoodcuttingEvent extends Event<Player> {
 		if (Hespori.activeGolparSeed) {
 			clueAmount = 2;
 		}
-			if (Misc.random(tree.getPetChance() / dropRate) == 10) {
-				switch (Misc.random(2)) {
-					case 0:
-						attachment.getItems().addItemUnderAnyCircumstance(19712, clueAmount);
-						break;
-					case 1:
-						attachment.getItems().addItemUnderAnyCircumstance(19714, clueAmount);
-						break;
-					case 2:
-						attachment.getItems().addItemUnderAnyCircumstance(19716, clueAmount);
-						break;
-				}
-				attachment.sendMessage("@blu@You appear to see a clue nest fall from the tree, and pick it up.");
-			}
+			if(Misc.random(tree.getPetChance() / dropRate) == 10){
+				NPCSpawning.spawn(6408, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
+		}
 		if (Misc.random(500) == 1) {
 			attachment.getItems().addItemUnderAnyCircumstance(lumberjackOutfit[Misc.random(lumberjackOutfit.length - 1)], 1);
 			attachment.sendMessage("You notice a lumberjack piece falling from the tree and pick it up.");
-		}
-			if (Misc.random(175) == 1) {
-				attachment.getItems().addItemUnderAnyCircumstance(Items.BIRD_NEST, 1);
-				attachment.sendMessage("You notice a Bird's nest falling from the tree and pick it up.");
 		}
 
 		int petRate = attachment.skillingPetRateScroll ? (int) (tree.getPetChance() * .75) : tree.getPetChance();

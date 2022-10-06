@@ -2,22 +2,11 @@ package io.exilius.content.skills.woodcutting;
 
 import io.exilius.model.entity.player.Player;
 
-enum Hatchet {
-	BRONZE(1351, 1, 879, 1.0), 
-	IRON(1349, 1, 877, 1.0), 
-	STEEL(1353, 6, 875, .9), 
-	BLACK(1361, 6, 873, .9), 
-	MITHRIL(1355, 21, 871, .80), 
-	ADAMANT(1357, 31, 869, .65),
-	RUNE(1359, 41, 867, .55),
-	GILDED_AXE(23279, 41, 8303, .55),
-	DRAGON(6739, 61, 2846, .45),
-	DRAGON_OR(25378, 61, 24, .45),
-	INFERNAL_AXE(13241, 61, 2117, .45),
-	INFERNAL_AXE_OR(25066, 61, 7264, .45),
-	THIRD_AGE(20011, 61, 7264, .45),
-	CRYSTAL_AXE(23673, 71, 8324, .45),
-	TRAILBLAZER_AXE(25110, 71, 8778, -45);
+enum Machete {
+	MACHETE(975, 1, 2382, 1.0),
+	OPAL_MACHETE(6313, 1, 6085, .9),
+	JADE_MACHETE(6315, 1, 6086, .65),
+	RED_TOPAZ_MACHETE(6317, 1, 6087, .45);
 
 	private final int itemId;
     private final int levelRequired;
@@ -25,14 +14,14 @@ enum Hatchet {
 	private final double chopSpeed;
 
 	/**
-	 * Constructs a new {@link Hatchet} used to cut down trees.
-	 * 
+	 * Constructs a new {@link Machete} used to cut down trees.
+	 *
 	 * @param itemId the item identification value of the hatchet
 	 * @param levelRequired the level required for use
 	 * @param animation the animation displayed during use
 	 * @param chopSpeed the effectiveness of the hatchet when determining a log has been cut
 	 */
-    Hatchet(int itemId, int levelRequired, int animation, double chopSpeed) {
+    Machete(int itemId, int levelRequired, int animation, double chopSpeed) {
 		this.itemId = itemId;
 		this.levelRequired = levelRequired;
 		this.animation = animation;
@@ -81,20 +70,19 @@ enum Hatchet {
 	 * @param player the player we're trying to find the best axe for
 	 * @return null if the player doesn't have a hatchet they can operate, otherwise the best hatchet on their person.
 	 */
-	public static Hatchet getBest(Player player) {
-		Hatchet hatchet = null;
-		Tree tree = null;
-		for (Hatchet h : values()) {
+	public static Machete getBest(Player player) {
+		Machete machete = null;
+		for (Machete h : values()) {
 			if ((player.getItems().playerHasItem(h.itemId) || player.getItems().isWearingItem(h.itemId)) && player.playerLevel[Player.playerWoodcutting] >= h.levelRequired) {
-				if (hatchet == null) {
-					hatchet = h;
+				if (machete == null) {
+					machete = h;
 					continue;
 				}
-				if (hatchet.levelRequired < h.levelRequired) {
-					hatchet = h;
+				if (machete.levelRequired < h.levelRequired) {
+					machete = h;
 				}
 			}
 		}
-		return hatchet;
+		return machete;
 	}
 }
