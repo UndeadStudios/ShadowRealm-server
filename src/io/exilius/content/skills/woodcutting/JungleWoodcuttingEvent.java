@@ -13,6 +13,7 @@ import io.exilius.content.skills.firemake.Firemaking;
 import io.exilius.model.Items;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.Event;
+import io.exilius.model.entity.npc.NPCCacheDefinition;
 import io.exilius.model.entity.npc.NPCSpawning;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
@@ -196,7 +197,19 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 			clueAmount = 2;
 		}
 			if(Misc.random(tree.getPetChance() / dropRate) == 10){
-				NPCSpawning.spawn(6408, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
+				int npcid = 6409;
+				NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
+				attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
+		}
+		if(Misc.random(tree.getPetChance() / dropRate) == 10){
+			int npcid = 6411;
+			NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
+			attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
+		}
+		if(Misc.random(tree.getPetChance() / dropRate) == 10){
+			int npcid = 6413;
+			NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
+			attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
 		}
 		if (Misc.random(500) == 1) {
 			attachment.getItems().addItemUnderAnyCircumstance(lumberjackOutfit[Misc.random(lumberjackOutfit.length - 1)], 1);

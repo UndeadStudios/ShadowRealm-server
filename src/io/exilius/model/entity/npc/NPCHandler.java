@@ -694,7 +694,10 @@ public static void addNPC(int npcType, int x, int y, int h) {
             return 0;
         case 3021: 
             return 5;
-        case 957: 
+        case 957:
+            case 6409:
+            case 6411:
+            case 6413:
             return 4;
         case 959: 
             return 6;

@@ -116,7 +116,18 @@ public class NPCProcess {
             npc.getBehaviour().isAggressive();
             npc.getBehaviour().setRespawn(false);
         }
-
+        if(npc.getNpcId() == 6409){
+            npc.getBehaviour().isAggressive();
+            npc.getBehaviour().setRespawn(false);
+        }
+        if(npc.getNpcId() == 6411){
+            npc.getBehaviour().isAggressive();
+            npc.getBehaviour().setRespawn(false);
+        }
+        if(npc.getNpcId() == 6413){
+            npc.getBehaviour().isAggressive();
+            npc.getBehaviour().setRespawn(false);
+        }
         if (npc.getNpcId() == 306) {
             if (Misc.random(50) == 3) {
                 npc.forceChat("Speak to me if you wish to learn more about this land!");
