@@ -2,14 +2,8 @@
 npc_id:
 - 100
 - 5935
-constant:
-  accessibility: 0
-  items:
-  - name: "bones"
-    minimum: 1
-    maximum: 1
 common:
-  accessibility: 10
+  accessibility: 5
   items:
   - name: "coins"
     minimum: 1000
@@ -17,3 +11,60 @@ common:
   - name: "uncut sapphire"
     minimum: 1
     maximum: 1
+  - name: "bronze pickaxe"
+    minimum: 1
+    maximum: 1
+  - name: "oyster"
+    minimum: 1
+    maximum: 1
+uncommon:
+  accessibility: 10
+  items:
+    - name: "iron pickaxe"
+      minimum: 1
+      maximum: 1
+    - name: "seaweed"
+      minimum: 1
+      maximum: 1
+    - name: "seaweed"
+      minimum: 2
+      maximum: 2
+    - name: "seaweed"
+      minimum: 5
+      maximum: 5
+    - name: "edible seaweed"
+      minimum: 2
+      maximum: 2
+    - name: "tin ore"
+      minimum: 3
+      maximum: 3
+    - name: "iron ore"
+      minimum: 1
+      maximum: 1
+    - name: "coal"
+      minimum: 2
+      maximum: 2
+    - name: "copper ore"
+      minimum: 2
+      maximum: 2
+    - name: "empty oyster"
+      minimum: 1
+      maximum: 1
+    - name: "fishing bait"
+      minimum: 10
+      maximum: 10
+    - name: "opal bolt tips"
+      minimum: 5
+      maximum: 5
+rare:
+  accessibility: 75
+  items:
+    - name: "empty oyster"
+      minimum: 3
+      maximum: 3
+    - name: "spinach roll"
+      minimum: 1
+      maximum: 1
+    - name: "casket"
+      minimum: 1
+      maximum: 1
