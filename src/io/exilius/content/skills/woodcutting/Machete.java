@@ -4,9 +4,9 @@ import io.exilius.model.entity.player.Player;
 
 enum Machete {
 	MACHETE(975, 1, 2382, 1.0),
-	OPAL_MACHETE(6313, 1, 6085, .9),
-	JADE_MACHETE(6315, 1, 6086, .65),
-	RED_TOPAZ_MACHETE(6317, 1, 6087, .45);
+	OPAL_MACHETE(6313, 10, 6085, .9),
+	JADE_MACHETE(6315, 20, 6086, .65),
+	RED_TOPAZ_MACHETE(6317, 30, 6087, .45);
 
 	private final int itemId;
     private final int levelRequired;
