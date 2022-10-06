@@ -59,7 +59,14 @@ public class MarkOfGrace {
 					  : player.getRechargeItems().hasItem(13140) ? 30 : 17;
 			chance = player.playerLevel[Player.playerAgility] / seers;
 			break;
-			
+
+			case "PRIFF":
+				int priff = player.getRechargeItems().hasItem(13137) ? 20
+						: player.getRechargeItems().hasItem(13138) ? 23
+						: player.getRechargeItems().hasItem(13139) ? 25
+						: player.getRechargeItems().hasItem(13140) ? 30 : 17;
+				chance = player.playerLevel[Player.playerAgility] / priff;
+				break;
 		case "VARROCK":
 			int varrock = player.getRechargeItems().hasItem(13104) ? 20 
 					 	: player.getRechargeItems().hasItem(13105) ? 23

@@ -17,6 +17,6 @@ public class Sz extends Command {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}
-		c.getPA().startTeleport(3164	, 3490, 3, "modern", false);
+		c.getPA().startTeleport(3164, 3490, 3, "modern", false);
 	}
 }

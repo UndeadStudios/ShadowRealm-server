@@ -480,6 +480,7 @@ public class Player extends Entity {
     public int[] historyPrice = new int[15];
     private final RooftopAlkharid rooftopAlkharid = new RooftopAlkharid();
     private final RooftopFalador rooftopFalador = new RooftopFalador();
+    private RooftopPrifddinas rooftopPrifddinas = new RooftopPrifddinas();
     private final RooftopDraynor rooftopDraynor = new RooftopDraynor();
     private final RooftopCanafis rooftopCanafis = new RooftopCanafis();
     private final RooftopPollnivneach rooftopPollnivneach = new RooftopPollnivneach();
@@ -2967,7 +2968,9 @@ public class Player extends Entity {
     public RooftopAlkharid getRooftopAlkharid() {
         return this.rooftopAlkharid;
     }
-
+    public RooftopPrifddinas getRooftopPrifddinas() {
+        return rooftopPrifddinas;
+    }
     public RooftopFalador getRooftopFalador() {
         return this.rooftopFalador;
     }

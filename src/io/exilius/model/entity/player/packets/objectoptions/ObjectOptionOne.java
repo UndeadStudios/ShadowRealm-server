@@ -159,6 +159,9 @@ static int fourthFloorsos[][] = {
 		if (c.getRooftopFalador().execute(c, objectType)) {
 			return;
 		}
+		if(c.getRooftopPrifddinas().execute(c, objectType)){
+			return;
+		}
 		if (RooftopVarrock.execute(c, objectType)) {
 			return;
 		}
@@ -184,7 +187,23 @@ static int fourthFloorsos[][] = {
 		}
 
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
-
+		if ((def!=null ? def.name : null) != null && def.name.toLowerCase().equals("anvil")) {
+			if (c.getItems().playerHasItem(barType[0])) {
+				c.getSmithingInt().showSmithInterface(barType[0]);
+			} else if (c.getItems().playerHasItem(barType[1])) {
+				c.getSmithingInt().showSmithInterface(barType[1]);
+			} else if (c.getItems().playerHasItem(barType[2])) {
+				c.getSmithingInt().showSmithInterface(barType[2]);
+			} else if (c.getItems().playerHasItem(barType[3])) {
+				c.getSmithingInt().showSmithInterface(barType[3]);
+			} else if (c.getItems().playerHasItem(barType[4])) {
+				c.getSmithingInt().showSmithInterface(barType[4]);
+			} else if (c.getItems().playerHasItem(barType[5])) {
+				c.getSmithingInt().showSmithInterface(barType[5]);
+			} else {
+				c.sendMessage("You don't have any bars.");
+			}
+		}
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().contains("bank") && !Boundary.isIn(c, Boundary.OURIANA_ALTAR)) {
 			c.getPA().c.itemAssistant.openUpBank();
 			c.inBank = true;
@@ -1142,23 +1161,7 @@ static int fourthFloorsos[][] = {
 				c.sendMessage("You feel rejuvinated.");
 				break;
 
-			case 6150:
-				if (c.getItems().playerHasItem(barType[0])) {
-					c.getSmithingInt().showSmithInterface(barType[0]);
-				} else if (c.getItems().playerHasItem(barType[1])) {
-					c.getSmithingInt().showSmithInterface(barType[1]);
-				} else if (c.getItems().playerHasItem(barType[2])) {
-					c.getSmithingInt().showSmithInterface(barType[2]);
-				} else if (c.getItems().playerHasItem(barType[3])) {
-					c.getSmithingInt().showSmithInterface(barType[3]);
-				} else if (c.getItems().playerHasItem(barType[4])) {
-					c.getSmithingInt().showSmithInterface(barType[4]);
-				} else if (c.getItems().playerHasItem(barType[5])) {
-					c.getSmithingInt().showSmithInterface(barType[5]);
-				} else {
-					c.sendMessage("You don't have any bars.");
-				}
-				break;
+
 			case 11846:
 				if (c.combatLevel >= 100) {
 					if (c.getY() > 5175) {
