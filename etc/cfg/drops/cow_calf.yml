@@ -1,10 +1,8 @@
 ---
 npc_id:
-  - 5842
-  - 2790
-  - 2791
-  - 2793
-  - 2795
+  - 2792
+  - 2794
+  - 2801
 constant:
   accessibility: 0
   items:

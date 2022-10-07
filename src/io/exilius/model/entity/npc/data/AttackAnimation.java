@@ -42,6 +42,30 @@ public class AttackAnimation extends NPCHandler {
 				return 6376;
 			case 11293:
 				return 9194;
+			case 2098:
+			case 2099:
+			case 2100:
+			case 2101:
+			case 2102:
+			case 2103:
+			case 7261:
+			case 10374:
+			case 10375:
+			case 10376:
+			case 11195:
+				return 4652;
+			case 2790:
+			case 2791:
+			case 2793:
+			case 2795:
+			case 5842:
+			case 6401:
+			case 10598:
+				return 5782;
+			case 2792:
+			case 2794:
+			case 2801:
+				return 5849;
 		case 7792: //longtailed
 		case 7793: //taloned
 		case 7794://spitting
@@ -1015,18 +1039,6 @@ public class AttackAnimation extends NPCHandler {
 			case 9761:
 			case 9763:
 				return 8705;
-			case 2790:
-			case 2791:
-			case 2793:
-			case 2795:
-			case 5842:
-			case 6401:
-			case 10598:
-				return 5782;
-			case 2481:
-			case 2482:
-			case 2483:
-				return 4266;
 			case 2490:
 			case 2491:
 				return 6559;

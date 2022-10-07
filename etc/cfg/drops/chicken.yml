@@ -1,9 +1,28 @@
 ---
-npc_id: 2805
+npc_id:
+  - 1173
+  - 1174
+  - 2804
+  - 2805
+  - 2806
+  - 3316
+  - 3661
+  - 3662
+  - 9488
+  - 10494
+  - 10495
+  - 10496
+  - 10497
+  - 10498
+  - 10499
+  - 10556
 constant:
   accessibility: 0
   items:
   - name: "bones"
+    minimum: 1
+    maximum: 1
+  - name: "raw chicken"
     minimum: 1
     maximum: 1
 common:

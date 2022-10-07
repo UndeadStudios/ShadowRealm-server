@@ -18,6 +18,18 @@ public class DeathAnimation extends NPCHandler {
             return 836;
         }
         switch (npcId) {
+            case 2098:
+            case 2099:
+            case 2100:
+            case 2101:
+            case 2102:
+            case 2103:
+            case 7261:
+            case 10374:
+            case 10375:
+            case 10376:
+            case 11195:
+                return 4653;
             case Npcs.THE_MIMIC_2:
                 return 8310;
             case Npcs.SARACHNIS:
@@ -147,8 +159,6 @@ public class DeathAnimation extends NPCHandler {
             case InfernoWaveData.TZKAL_ZUK:
             case InfernoWaveData.JAL_MEJJAK:
                 return 2865;
-            case 5842:
-                return 5784;
             case 8622:
                 return HydraStage.ENRAGED.getDeathAnimation();
             case 8781:
@@ -643,7 +653,18 @@ public class DeathAnimation extends NPCHandler {
             case 6274:
             case 7937:
                 return 4321;
-            case 2098:
+            case 2790:
+            case 2791:
+            case 2793:
+            case 2795:
+            case 5842:
+            case 6401:
+            case 10598:
+                return 5784;
+            case 2792:
+            case 2794:
+            case 2801:
+                return 5851;
             case 2463:
             case Npcs.OBOR:
                 return 4653;

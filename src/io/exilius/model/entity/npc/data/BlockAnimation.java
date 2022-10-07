@@ -10,6 +10,18 @@ public class BlockAnimation {
 
     public static int getAnimation(int npcId) {
         switch (npcId) {
+            case 2098:
+            case 2099:
+            case 2100:
+            case 2101:
+            case 2102:
+            case 2103:
+            case 7261:
+            case 10374:
+            case 10375:
+            case 10376:
+            case 11195:
+                return 6370;
             case 2837: // unicorn
             case 2849:
                 return 6375;
@@ -818,15 +830,18 @@ public class BlockAnimation {
             case 7880: // Ice giant 67
             case 2089: // Ice giant
                 return 4671;
-            case 2098:
-            case 2090:
-            case 2091:
-            case 2092:
-            case 2093:
-            case 2463:
-            case 116:
-            case 891:
-                return 4651;
+            case 2790:
+            case 2791:
+            case 2793:
+            case 2795:
+            case 5842:
+            case 6401:
+            case 10598:
+                return 5783;
+            case 2792:
+            case 2794:
+            case 2801:
+                return 5850;
 
             case 239: // kbd
                 return 89;
