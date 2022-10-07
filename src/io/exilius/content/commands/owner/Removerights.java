@@ -1,4 +1,4 @@
-package io.exilius.content.commands.admin;
+package io.exilius.content.commands.owner;
 
 import io.exilius.content.commands.Command;
 import io.exilius.model.entity.player.Player;

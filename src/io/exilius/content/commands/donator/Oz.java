@@ -28,7 +28,7 @@ public class Oz extends Command {
 
     @Override
     public Optional<String> getDescription() {
-        return Optional.of("Teleports you to legendary zone.");
+        return Optional.of("Teleports you to Onyx zone.");
     }
 
 }

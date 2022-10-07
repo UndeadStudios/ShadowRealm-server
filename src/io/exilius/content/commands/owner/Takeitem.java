@@ -1,4 +1,4 @@
-package io.exilius.content.commands.admin;
+package io.exilius.content.commands.owner;
 
 import java.util.Optional;
 

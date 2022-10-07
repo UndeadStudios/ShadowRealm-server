@@ -1,10 +1,5 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.LootRarity;
@@ -15,6 +10,11 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HesporiChest implements Lootable {
 
@@ -111,10 +111,10 @@ public class HesporiChest implements Lootable {
 
     @Override
     public void roll(Player c) {
-        int random = Misc.random(1000);
-        int rareChance = 950;
+        int random = Misc.random(2000);
+        int rareChance = 1950;
         if (c.getItems().playerHasItem(21046)) {
-            rareChance = 920;
+            rareChance = 1910;
             c.getItems().deleteItem(21046, 1);
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
