@@ -519,7 +519,7 @@ public class Boundary {
 	};
 
 
-
+	public static final Boundary ROCK_CRABS = new Boundary(2651, 3702, 2734, 3741);
 	public static final Boundary EDGE_BANK = new Boundary(3091, 3488, 3098, 3499);
 	public static final Boundary EDGE_TRADING_AREA = new Boundary(3085, 3478, 3109, 3504);
 	public static final Boundary EDGE_NORTH_BUILDING = new Boundary(3088, 3502, 3108, 3520);
