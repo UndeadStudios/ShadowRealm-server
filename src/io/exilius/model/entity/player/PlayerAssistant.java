@@ -529,7 +529,7 @@ public class PlayerAssistant {
 			c.outStream.writeByte(255);
 			c.outStream.writeDWord(amount);
 			c.outStream.endFrameVarSizeWord();
-			System.out.println("ItemOnInterface");
+			//System.out.println("ItemOnInterface");
 		}
 	}
 
@@ -1543,7 +1543,7 @@ public class PlayerAssistant {
 		c.outStream.writeByte(255);
 		c.outStream.writeDWord(amount);
 		c.outStream.endFrameVarSizeWord();
-		System.out.println("itemtoslotwithopactiy");
+		//System.out.println("itemtoslotwithopactiy");
 	}
 
 
