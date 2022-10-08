@@ -163,7 +163,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Vorkath", new Position(2272, 4050, 0)),
             new TeleportButtonStandard("Alchemical hydra", new Position(1354, 10259, 0)),
             new TeleportButtonStandard("The Nightmare", new Position(3808, 9755, 1)),
-            new TeleportButtonStandard("Nex", new Position(2903, 5203, 0)),
+            new TeleportButtonStandard("Nex", new Position(2856, 5220, 0)),
             new TeleportButtonStandard("King Black Dragon @red@(42 Wild)", new Position(3005, 3849, 0), true),
             new TeleportButtonStandard("Vet'ion @red@(40 Wild)", new Position(3200, 3794, 0), true),
             new TeleportButtonStandard("Callisto @red@(43 Wild)", new Position(3325, 3845, 0), true),
