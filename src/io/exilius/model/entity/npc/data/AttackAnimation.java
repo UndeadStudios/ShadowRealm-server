@@ -139,10 +139,7 @@ public class AttackAnimation extends NPCHandler {
 		case 2479:
 		case 2480:
 			return 6261;
-		case 9031://wolf
-		case 107:
-		case 108:
-			return 6581;
+
 		case 2241:
 		case 132:
 		case 3049:
@@ -622,8 +619,6 @@ public class AttackAnimation extends NPCHandler {
 		case 2217:
 		case 2218:
 			return 6154;
-		case 2233:
-			return 359;
 		case 2234:
 			return 2930;
 		case 2235:
@@ -953,9 +948,6 @@ public class AttackAnimation extends NPCHandler {
 		case 3021:
 			return 5327;
 
-		case 105: // Bear
-		case 106:// Bear
-			return 41;
 
 		case 412:
 			// case 2834:
@@ -1039,8 +1031,31 @@ public class AttackAnimation extends NPCHandler {
 			case 9761:
 			case 9763:
 				return 8705;
+			case 2095://ogre
+			case 2096:
+			case 2233:
+			case 4368:
+			case 4369:
+			case 4370:
+			case 4371:
+			case 4372:
+			case 4373:
+				return 359;
 			case 2490:
 			case 2491:
+			case 106:
+			case 9031://wolf
+			case 107:
+			case 108:
+			case 109:
+			case 110:
+			case 111:
+			case 112:
+			case 113:
+			case 114:
+			case 115:
+			case 116:
+			case 117:
 				return 6559;
 			case 2498:
 			case 2499:
@@ -1074,7 +1089,6 @@ public class AttackAnimation extends NPCHandler {
 		case 7538:
 			if (npc.getAttackType() == CombatType.MAGE)
 				return 7540;
-		case 111: // ice giant
 			case 7878: // Ice giant 67
 			case 7879: // Ice giant 67
 			case 7880: // Ice giant 67

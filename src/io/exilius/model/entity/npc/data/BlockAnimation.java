@@ -84,10 +84,6 @@ public class BlockAnimation {
             case 2479:
             case 2480:
                 return 6259;
-            case 9031://wolf
-            case 107:
-            case 108:
-                return 6578;
             case 9032://bear
             case 2838:
             case 3423:
@@ -418,10 +414,6 @@ public class BlockAnimation {
                 return 2561;
             case 10775:
                 return 13154;
-            case 113:
-                return 129;
-            case 114:
-                return 360;
             case 3058:
                 return 2937;
             case 3061:
@@ -715,6 +707,19 @@ public class BlockAnimation {
                 return 4266;
             case 2490:
             case 2491:
+            case 106:
+            case 9031://wolf
+            case 107:
+            case 108:
+            case 109:
+            case 110:
+            case 111:
+            case 112:
+            case 113:
+            case 114:
+            case 115:
+            case 116:
+            case 117:
                 return 6557;
             case 2498:
             case 2499:
@@ -821,7 +826,16 @@ public class BlockAnimation {
             case 2083: // Fire giant
             case 2084: // Fire giant
                 return 4671;
-            case 111:
+            case 2095://ogre
+            case 2096:
+            case 2233:
+            case 4368:
+            case 4369:
+            case 4370:
+            case 4371:
+            case 4372:
+            case 4373:
+                return 360;
             case 2086: // Ice giant
             case 2087: // Ice giant
             case 2088: // Ice giant

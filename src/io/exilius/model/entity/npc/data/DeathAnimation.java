@@ -111,10 +111,6 @@ public class DeathAnimation extends NPCHandler {
             case 2479:
             case 2480:
                 return 6256;
-            case 9031://wolf
-            case 107:
-            case 108:
-                return 6576;
             case 9032://bear
             case 2838:
             case 3423:
@@ -436,8 +432,6 @@ public class DeathAnimation extends NPCHandler {
             case 2211:
             case 2212:
                 return 2304;
-            case 2233:
-                return 361;
             case 2234:
                 return 2938;
             case 2235:
@@ -765,6 +759,19 @@ public class DeathAnimation extends NPCHandler {
                 return 4265;
             case 2490:
             case 2491:
+            case 106:
+            case 9031://wolf
+            case 107:
+            case 108:
+            case 109:
+            case 110:
+            case 111:
+            case 112:
+            case 113:
+            case 114:
+            case 115:
+            case 116:
+            case 117:
                 return 6558;
             case 2498:
             case 2499:
@@ -873,6 +880,16 @@ public class DeathAnimation extends NPCHandler {
             case 7398:
             case 7397:
                 return 1553;
+            case 2095://ogre
+            case 2096:
+            case 2233:
+            case 4368:
+            case 4369:
+            case 4370:
+            case 4371:
+            case 4372:
+            case 4373:
+                return 361;
             case 419: // Cockatrice
             case 1621:
             case 7393:
@@ -912,9 +929,6 @@ public class DeathAnimation extends NPCHandler {
                 return 1590;
             case 102:
                 return 313;
-            case 105:
-            case 106:
-                return 44;
             case 412:
                 // case 2834:
                 return 36;

@@ -222,6 +222,28 @@ public class NpcAggression {
             case 6413:
             case 100:
             case 3050:
+            case 2095://ogre
+            case 2096:
+            case 2233:
+            case 4368:
+            case 4369:
+            case 4370:
+            case 4371:
+            case 4372:
+            case 4373:
+            case 106:
+            case 9031://wolf
+            case 107:
+            case 108:
+            case 109:
+            case 110:
+            case 111:
+            case 112:
+            case 113:
+            case 114:
+            case 115:
+            case 116:
+            case 117:
                 case 11278:
             case 11283:
             case 11284:
@@ -298,7 +320,6 @@ public class NpcAggression {
             case 2216:
             case 2217:
             case 2218:
-            case 2233:
             case 2234:
             case 2235:
             case 2237:
