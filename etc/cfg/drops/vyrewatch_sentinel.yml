@@ -69,7 +69,7 @@ uncommon:
     minimum: 1
     maximum: 1
 rare:
-  accessibility: 80
+  accessibility: 25
   items:
   - name: "grimy guam leaf"
     minimum: 1
@@ -108,8 +108,101 @@ rare:
     minimum: 6
     maximum: 14
 very_rare:
-  accessibility: 1500
+  accessibility: 80
   items:
   - name: "blood shard"
     minimum: 1
     maximum: 1
+  - name: "grimy ranarr weed"
+    minimum: 1
+    maximum: 1
+  - name: "grimy irit leaf"
+    minimum: 1
+    maximum: 1
+  - name: "grimy avantoe"
+    minimum: 1
+    maximum: 1
+  - name: "grimy kwuarm"
+    minimum: 1
+    maximum: 1
+  - name: "grimy cadantine"
+    minimum: 1
+    maximum: 1
+  - name: "grimy lantadyme"
+    minimum: 1
+    maximum: 1
+  - name: "grimy dwarf weed"
+    minimum: 1
+    maximum: 1
+  - name: "jangerberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "tarromin seed"
+    minimum: 1
+    maximum: 1
+  - name: "wildblood seed"
+    minimum: 1
+    maximum: 1
+  - name: "watermelon seed"
+    minimum: 1
+    maximum: 1
+  - name: "harralander seed"
+    minimum: 1
+    maximum: 1
+  - name: "ranarr seed"
+    minimum: 1
+    maximum: 1
+  - name: "whiteberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "mushroom spore"
+    minimum: 1
+    maximum: 1
+  - name: "toadflax seed"
+    minimum: 1
+    maximum: 1
+  - name: "belladonna seed"
+    minimum: 1
+    maximum: 1
+  - name: "irit seed"
+    minimum: 1
+    maximum: 1
+  - name: "poison ivy seed"
+    minimum: 1
+    maximum: 1
+  - name: "avantoe seed"
+    minimum: 1
+    maximum: 1
+  - name: "kwuarm seed"
+    minimum: 1
+    maximum: 1
+  - name: "snapdragon seed"
+    minimum: 1
+    maximum: 1
+  - name: "cadantine seed"
+    minimum: 1
+    maximum: 1
+  - name: "lantadyme seed"
+    minimum: 1
+    maximum: 1
+  - name: "dwarf weed seed"
+    minimum: 1
+    maximum: 1
+  - name: "torstol seed"
+    minimum: 1
+    maximum: 1
+  - name: "emerald bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "jade bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "topaz bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "sapphire bolt tips"
+    minimum: 6
+    maximum: 14
+  - name: "onyx bolt tips"
+    minimum: 6
+    maximum: 14
