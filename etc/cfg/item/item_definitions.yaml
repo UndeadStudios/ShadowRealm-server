@@ -73690,6 +73690,27 @@
   name: "Amulet of blood fury"
   description: "A very powerful onyx amulet, imbued with blood magic."
   shopValue: 402000
-
+- id: 26225
+  name: "Ancient ceremonial mask"
+  description: "A ceremonial mask dedicated to an ancient god."
+  shopValue: 60000
+  equipmentModelType: "FULL_MASK"
+- id: 26221
+  name: "Ancient ceremonial top"
+  description: "A ceremonial top dedicated to an ancient god."
+  shopValue: 100000
+  equipmentModelType: "FULL_BODY"
+- id: 26223
+  name: "Ancient ceremonial legs"
+  description: "A ceremonial legs dedicated to an ancient god."
+  shopValue: 80000
+- id: 26227
+  name: "Ancient ceremonial gloves"
+  description: "A ceremonial gloves dedicated to an ancient god."
+  shopValue: 40000
+- id: 26229
+  name: "Ancient ceremonial boots"
+  description: "A ceremonial boots dedicated to an ancient god."
+  shopValue: 40000
 
 

@@ -69570,5 +69570,72 @@
       "str": 8,
       "prayer": 5
     }
+  },
+  "26225": {
+    "name": "Ancient ceremonial mask",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26221": {
+    "name": "Ancient ceremonial top",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26223": {
+    "name": "Ancient ceremonial legs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26227": {
+    "name": "Ancient ceremonial gloves",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 9,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "26229": {
+    "name": "Ancient ceremonial boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
   }
 }

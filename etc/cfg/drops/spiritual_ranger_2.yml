@@ -1,9 +1,6 @@
 ---
 npc_id:
-- 2211
-- 2243
-- 3160
-- 3167
+- 11291
 common:
   accessibility: 1
   items:
@@ -59,5 +56,20 @@ rare:
     minimum: 1
     maximum: 15
   - name: "magic shortbow"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial mask"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial top"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial legs"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial gloves"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial boots"
     minimum: 1
     maximum: 1

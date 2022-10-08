@@ -70,3 +70,19 @@ rare:
   - name: "rune kiteshield"
     minimum: 1
     maximum: 1
+  - name: "ancient ceremonial mask"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial top"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial legs"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial gloves"
+    minimum: 1
+    maximum: 1
+  - name: "ancient ceremonial boots"
+    minimum: 1
+    maximum: 1
+
