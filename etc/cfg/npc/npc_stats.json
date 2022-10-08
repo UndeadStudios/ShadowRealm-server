@@ -38382,6 +38382,26 @@
     "bonusRangeStrength": 0,
     "bonusMagicDamage": 0
   },
+  "9762": {
+    "name": "Vyrewatch Sentinel",
+    "hitpoints": 150,
+    "combatLevel": 151,
+    "attackSpeed": 4,
+    "attackLevel": 120,
+    "strengthLevel": 160,
+    "defenceLevel": 180,
+    "rangeLevel": 120,
+    "magicLevel": 120,
+    "range": 0,
+    "magic": 0,
+    "stabDef": 0,
+    "slashDef": 0,
+    "crushDef": 0,
+    "rangeDef": 0,
+    "magicDef": 0,
+    "bonusRangeStrength": 0,
+    "bonusMagicDamage": 0
+  },
   "9763": {
     "name": "Vyrewatch Sentinel",
     "hitpoints": 150,

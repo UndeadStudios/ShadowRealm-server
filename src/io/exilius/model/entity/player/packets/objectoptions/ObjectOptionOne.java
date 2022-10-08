@@ -647,7 +647,7 @@ static int fourthFloorsos[][] = {
 				if(c.getX() == 2900 && c.getY() == 5203){
 					c.getPA().movePlayer(2898, 5203, 0);
 				} else if(c.getX() == 2898 && c.getY() == 5203){
-					c.getPA().movePlayer(2900, 5203, 0);
+					c.getGodwars().enterBossRoom(God.ZAROS);
 				}
 				break;
 			case 20786:

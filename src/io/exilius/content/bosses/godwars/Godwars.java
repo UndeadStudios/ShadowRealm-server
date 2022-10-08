@@ -79,6 +79,9 @@ public class Godwars {
 		case ARMADYL:
 			player.getPA().movePlayer(2839, 5296, getInstanceHeight() + 2);
 			break;
+			case ZAROS:
+				player.getPA().movePlayer(2900, 5203, 0);
+				break;
 		}
 		if (player.heightLevel != previousHeight) {
 			Server.itemHandler.reloadItems(player);
@@ -118,9 +121,10 @@ public class Godwars {
 	 */
 	public void drawInterface() {
 		PlayerAssistant assistant = player.getPA();
-		assistant.sendFrame126(Integer.toString(killcount.get(God.ARMADYL)), 16216);
-		assistant.sendFrame126(Integer.toString(killcount.get(God.BANDOS)), 16217);
-		assistant.sendFrame126(Integer.toString(killcount.get(God.SARADOMIN)), 16218);
-		assistant.sendFrame126(Integer.toString(killcount.get(God.ZAMORAK)), 16219);
+		assistant.sendFrame126(Integer.toString(killcount.get(God.ARMADYL)), 16217);
+		assistant.sendFrame126(Integer.toString(killcount.get(God.BANDOS)), 16218);
+		assistant.sendFrame126(Integer.toString(killcount.get(God.SARADOMIN)), 16219);
+		assistant.sendFrame126(Integer.toString(killcount.get(God.ZAMORAK)), 16220);
+		assistant.sendFrame126(Integer.toString(killcount.get(God.ZAROS)), 16221);
 	}
 }

@@ -122,7 +122,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Al Kharid", new Position(3293, 3179, 0)),
             new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
             new TeleportButtonStandard("Rimmington", new Position(2958, 3215, 0)),
-            new TeleportButtonStandard("Darkmeyer", new Position(3598, 3361, 0)),
+            new TeleportButtonStandard("Darkmeyer", new Position(3592, 3337, 0)),
             new TeleportButtonStandard("Kebos Lowlands", new Position(1310, 3618, 0))
     ));
 

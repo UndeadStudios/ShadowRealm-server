@@ -4,5 +4,6 @@ public enum God {
 	SARADOMIN,
 	ZAMORAK,
 	BANDOS,
-	ARMADYL
+	ARMADYL,
+	ZAROS
 }
