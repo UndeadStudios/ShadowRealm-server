@@ -1029,6 +1029,7 @@ public class AttackAnimation extends NPCHandler {
 			case 9759:
 			case 9760:
 			case 9761:
+			case 9762:
 			case 9763:
 				return 8705;
 			case 2095://ogre

@@ -230,6 +230,14 @@ public class NpcAggression {
             case 4370:
             case 4371:
             case 4372:
+            case 9756:
+            case 9757:
+            case 9758:
+            case 9759:
+            case 9760:
+            case 9761:
+            case 9762:
+            case 9763:
             case 4373:
             case 106:
             case 9031://wolf

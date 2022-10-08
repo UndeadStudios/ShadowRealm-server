@@ -31,6 +31,7 @@ public class RespawnTime {
         switch (id) {
             case Npcs.SARACHNIS:
                     return 20;
+
             case 6600:
             case 6601:
             case 6602:
@@ -153,6 +154,7 @@ public class RespawnTime {
             case 9759:
             case 9760:
             case 9761:
+            case 9762:
             case 9763:
                 return 25;
             case 1046:
