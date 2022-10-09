@@ -321,7 +321,7 @@ public class Thieving {
 				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1500), new GameItem(995, 1800), new GameItem(995, 3500)));
 				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(560, 2), new GameItem(565), new GameItem(444), new GameItem(1601)));
 			}
-		}), VYRE(82, 306, 17000, new HashMap<Rarity, List<GameItem>>() {
+		}), VYRE(95, 300, 12000, new HashMap<Rarity, List<GameItem>>() {
 			{
 				put(Rarity.COMMON, Arrays.asList(new GameItem(995, 1500), new GameItem(995, 1800), new GameItem(995, 3500), new GameItem(Items.BLOOD_PINT, 1)));
 				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.UNCUT_RUBY, 1), new GameItem(Items.BLOOD_RUNE, 4)));

@@ -110,9 +110,9 @@ uncommon:
       maximum: 500
     - name: "runite bar noted"
       minimum: 150
-      maximum: 400
+      maximum: 300
 very_rare:
-  accessibility: 155
+  accessibility: 255
   items:
   - name: "torva platebody broken"
     minimum: 1

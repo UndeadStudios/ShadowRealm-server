@@ -63,7 +63,7 @@ public class NexChest implements Lootable {
                 new GameItem(Items.DWARF_WEED_POTION_UNF_NOTED, 21),
                 new GameItem(Items.HARRALANDER_POTION_UNF_NOTED, 31),
 
-                new GameItem(Items.DRAGON_BONES_NOTED, 150),
+                new GameItem(Items.DRAGON_BONES_NOTED, 30),
                 new GameItem(Items.RANARR_WEED_NOTED, 12),
                 new GameItem(Items.HARRALANDER_NOTED, 24),
                 new GameItem(Items.TORSTOL_NOTED, 120),
@@ -79,9 +79,17 @@ public class NexChest implements Lootable {
         items.put(LootRarity.RARE, Arrays.asList(
                 // UPDATE HESPORICHESTITEMS TOO
                 new GameItem(26376, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
                 new GameItem(26378, 1),
                 new GameItem(26380, 1),
                 new GameItem(26376, 1),
+                new GameItem(Items.BANDOS_TASSETS, 1),
+                new GameItem(Items.BANDOS_CHESTPLATE, 1),
                 new GameItem(26378, 1),
                 new GameItem(26380, 1),
                 new GameItem(Items.BANDOS_TASSETS, 1),

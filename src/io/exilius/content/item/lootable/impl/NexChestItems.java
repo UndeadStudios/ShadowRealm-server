@@ -53,7 +53,7 @@ public class NexChestItems {
                 new GameItem(Items.DWARF_WEED_POTION_UNF_NOTED, 21),
                 new GameItem(Items.HARRALANDER_POTION_UNF_NOTED, 31),
 
-                new GameItem(Items.DRAGON_BONES_NOTED, 150),
+                new GameItem(Items.DRAGON_BONES_NOTED, 30),
                 new GameItem(Items.RANARR_WEED_NOTED, 12),
                 new GameItem(Items.HARRALANDER_NOTED, 24),
                 new GameItem(Items.TORSTOL_NOTED, 120),
