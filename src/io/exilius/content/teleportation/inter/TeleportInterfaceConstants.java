@@ -93,37 +93,42 @@ public class TeleportInterfaceConstants {
             ));
 
     private static final TeleportContainer CITIES = new TeleportContainer(Lists.newArrayList(
-            new TeleportButtonStandard("Varrock", new Position(3210, 3424, 0)),
-            new TeleportButtonStandard("Yanille", new Position(2606, 3093, 0)),
-            new TeleportButtonStandard("Edgeville", new Position(3093, 3493, 0)),
-            new TeleportButton("Lumbridge", plr -> {
-                plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
-                plr.getPA().startTeleport(3222, 3218, 0, "modern", false);
-            }),
+             new TeleportButtonStandard("Al Kharid", new Position(3293, 3179, 0)),
+            new TeleportButtonStandard("Arceuus", new Position(1686,3746,0)),
             new TeleportButton("Ardougne", plr -> {
                 plr.getPA().startTeleport(2662, 3305, 0, "modern", false);
                 plr.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ARDOUGNE);
             }),
-            new TeleportButtonStandard("West Ardougne", new Position(2553, 3300, 0)),
-            new TeleportButtonStandard("Neitiznot", new Position(2321, 3804, 0)),
-            new TeleportButtonStandard("Karamja", new Position(2948, 3147, 0)),
-            new TeleportButtonStandard("Brimhaven", new Position(2802, 3178, 0)),
-            new TeleportButton("Falador", plr -> {
-                plr.getPA().startTeleport(2964, 3378, 0, "modern", false);
-                plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_TO_FALADOR);
-            }),
             new TeleportButtonStandard("Barbarian Village", new Position(3083, 3424, 0)),
-            new TeleportButtonStandard("Taverley", new Position(2928, 3451, 0)),
+            new TeleportButtonStandard("Brimhaven", new Position(2802, 3178, 0)),
             new TeleportButton("Camelot", plr -> {
                 plr.getPA().startTeleport(2757, 3478, 0, "modern", false);
                 plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CAMELOT_TELEPORT);
             }),
             new TeleportButtonStandard("Catherby", new Position(2804, 3432, 0)),
-            new TeleportButtonStandard("Al Kharid", new Position(3293, 3179, 0)),
-            new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
-            new TeleportButtonStandard("Rimmington", new Position(2958, 3215, 0)),
             new TeleportButtonStandard("Darkmeyer", new Position(3592, 3337, 0)),
-            new TeleportButtonStandard("Kebos Lowlands", new Position(1310, 3618, 0))
+            new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
+            new TeleportButtonStandard("Edgeville", new Position(3093, 3493, 0)),
+            new TeleportButton("Falador", plr -> {
+                plr.getPA().startTeleport(2964, 3378, 0, "modern", false);
+                plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_TO_FALADOR);
+            }),
+            new TeleportButtonStandard("Hosidius", new Position(1758,3604,0)),
+            new TeleportButtonStandard("Karamja", new Position(2948, 3147, 0)),
+            new TeleportButtonStandard("Kebos Lowlands", new Position(1310, 3618, 0)),
+            new TeleportButtonStandard("Lovakengj", new Position(1508,3783,0)),
+            new TeleportButton("Lumbridge", plr -> {
+                plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
+                plr.getPA().startTeleport(3222, 3218, 0, "modern", false);
+            }),
+            new TeleportButtonStandard("Neitiznot", new Position(2321, 3804, 0)),
+            new TeleportButtonStandard("Port Piscarilius", new Position(1809,3776,0)),
+            new TeleportButtonStandard("Rimmington", new Position(2958, 3215, 0)),
+            new TeleportButtonStandard("Shayzien", new Position(1558,3561,0)),
+            new TeleportButtonStandard("Taverley", new Position(2928, 3451, 0)),
+            new TeleportButtonStandard("West Ardougne", new Position(2553, 3300, 0)),
+            new TeleportButtonStandard("Yanille", new Position(2606, 3093, 0)),
+            new TeleportButtonStandard("Varrock", new Position(3210, 3424, 0))
     ));
 
     private static final TeleportContainer WILDERNESS = new TeleportContainer(Lists.newArrayList(
@@ -149,7 +154,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Dagannoth Kings", new Position(1913, 4367, 0)),
             new TeleportButtonStandard("Giant Mole", new Position(2993, 3376, 0)),
             new TeleportButtonStandard("Kalphite Queen", new Position(3510, 9496, 2)),
-            new TeleportButtonStandard("Lizardman Shaman", new Position(1558, 3696, 0)),
+            new TeleportButtonStandard("Lizardman Shaman", new Position(1453,3692,0)),
             new TeleportButtonStandard("Sarachnis", new Position(1842, 9926, 0)),
             new TeleportButtonStandard("Grotesque Guardians", new Position(3428, 3541, 2)),
             new TeleportButtonStandard("Thermonuclear Smoke Devil", new Position(2404, 9415, 0)),
@@ -191,6 +196,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Clan Wars", new Position(3387, 3158, 0)),
             new TeleportButtonStandard("Outlast", new Position(3096, 3509, 0)),
             new TeleportButtonStandard("Mage Arena", new Position(2541, 4716, 0)),
+            new TeleportButtonStandard("Wintertodt", new Position(1631,3947,0)),
             new TeleportButtonStandard("Horror From The Deep [Quest]", new Position(2508, 3641, 0)),
             new TeleportButtonStandard("Monkey Madness [Quest]", new Position(3097, 3473, 0))
     ));

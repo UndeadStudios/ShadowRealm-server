@@ -318,6 +318,41 @@ public class NpcOptionTwo {
 		case 6094:
 			player.getThieving().steal(Thieving.Pickpocket.GNOME, npc);
 			break;
+			case 9685: // Valentin Rasputin 0
+			case 9686: // Von van Von 0
+			case 9687: // Vlad Bechstein 0
+			case 9688: // Draconis Sanguine 0
+			case 9689: // Mort Nightshade 0
+			case 9690: // Vampyrus Diaemus 0
+			case 9691: // Carnivus Belamorta 0
+			case 9692: // Vormar Vakan 0
+			case 9693: // Misdrievus Shadum 0
+			case 9694: // Vlad Diaemus 0
+			case 9695: // Noctillion Lugosi 0
+			case 9696: // Alek Constantine 0
+			case 9697: // Grigor Rasputin 0
+			case 9698: // Haemas Lamescus 0
+			case 9699: // Remus Kaninus 0
+			case 9700: // Vallessia Dracyula 0
+			case 9701: // Violetta Sanguine 0
+			case 9702: // Diphylla Bechstein 0
+			case 9703: // Episcula Helsing 0
+			case 9704: // Vampyressa van Von 0
+			case 9705: // Vallessia von Pitt 0
+			case 9706: // Vonnetta Varnis 0
+			case 9707: // Natalidae Shadum 0
+			case 9708: // Mortina Daubenton 0
+			case 9709: // Lasenna Rasputin 0
+			case 9710: // Caninelle Draynar 0
+			case 9711: // Valentina Diaemus 0
+			case 9712: // Nakasa Jovkai 0
+			case 9713: // Crimsonette van Marr 0
+			case 9714: // Pipistrelle Draynar 0
+			case 9715: // Lady Nadezhda Shadum 0
+			case 9716: // Lord Mischa Myrmel 0
+			case 9717: // Lord Alexei Jovkai 0
+				player.getThieving().steal(Thieving.Pickpocket.VYRE, npc);
+				break;
 		case 3106:
 			player.getThieving().steal(Thieving.Pickpocket.HERO, npc);
 			break;

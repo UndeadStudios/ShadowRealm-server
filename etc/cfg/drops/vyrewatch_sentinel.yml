@@ -108,7 +108,7 @@ rare:
     minimum: 6
     maximum: 14
 very_rare:
-  accessibility: 80
+  accessibility: 1500
   items:
   - name: "blood shard"
     minimum: 1
