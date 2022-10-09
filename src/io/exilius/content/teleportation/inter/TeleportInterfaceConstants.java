@@ -154,7 +154,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Dagannoth Kings", new Position(1913, 4367, 0)),
             new TeleportButtonStandard("Giant Mole", new Position(2993, 3376, 0)),
             new TeleportButtonStandard("Kalphite Queen", new Position(3510, 9496, 2)),
-            new TeleportButtonStandard("Lizardman Shaman", new Position(1558, 3696, 0)),
+            new TeleportButtonStandard("Lizardman Shaman", new Position(1453,3692,0)),
             new TeleportButtonStandard("Sarachnis", new Position(1842, 9926, 0)),
             new TeleportButtonStandard("Grotesque Guardians", new Position(3428, 3541, 2)),
             new TeleportButtonStandard("Thermonuclear Smoke Devil", new Position(2404, 9415, 0)),

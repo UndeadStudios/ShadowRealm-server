@@ -255,10 +255,16 @@ public abstract class HitDispatcher {
                 attacker.getPA().refreshSkill(3);
             }
             if(attacker.getItems().isWearingItem(24780)){
-                if(Misc.random(100) == 50){
-                    attacker.getHealth().increase(damage);
-                    attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
-                }
+                    switch(Misc.random(100)){
+                        case 25:
+                            attacker.getHealth().increase(damage);
+                            attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
+                            break;
+                        case 75:
+                            attacker.getHealth().increase(damage);
+                            attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
+                            break;
+                    }
             }
             boolean hasDarkPrayerVersion = attacker.petSummonId == 30119 || attacker.petSummonId == 30122;
             int prayerChance = hasDarkPrayerVersion ? 10 : 20;
