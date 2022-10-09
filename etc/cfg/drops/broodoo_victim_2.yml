@@ -1,0 +1,8 @@
+---
+npc_id: 6411
+constant:
+  accessibility: 0
+  items:
+  - name: "tribal mask yellow"
+    minimum: 1
+    maximum: 1
