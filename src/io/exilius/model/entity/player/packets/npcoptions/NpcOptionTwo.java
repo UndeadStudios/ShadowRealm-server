@@ -296,12 +296,12 @@ public class NpcOptionTwo {
 			break;
 		case 5730:
 			if(player.getMode().isIronmanType()){
-				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+				player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 				if (Boundary.isIn(player, Boundary.FALADOR_BOUNDARY)) {
-					player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+					player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 				}
 				if (Boundary.isIn(player, Boundary.DRAYNOR_BOUNDARY)) {
-					player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+					player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 					player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_FARMER_DRAY);
 				}
 				player.sendMessage("@red@Restricted accounts can only steal from this npc.");
@@ -352,6 +352,83 @@ public class NpcOptionTwo {
 			case 9716: // Lord Mischa Myrmel 0
 			case 9717: // Lord Alexei Jovkai 0
 				player.getThieving().steal(Thieving.Pickpocket.VYRE, npc);
+				break;
+			case 9052: // Rhiannon 0
+			case 9053: // Amrod 0
+			case 9054: // Miriel 0
+			case 9055: // Curufin 0
+			case 9056: // Enerdhil 0
+			case 9057: // Tatie 0
+			case 9058: // Finduilas 0
+			case 9059: // Gelmir 0
+			case 9060: // Mithrellas 0
+			case 9061: // Erestor 0
+			case 9062: // Lindir 0
+			case 9063: // Idril 0
+			case 9064: // Ingwion 0
+			case 9065: // Thingol 0
+			case 9066: // Elenwe 0
+			case 9067: // Orophin 0
+			case 9068: // Vaire 0
+			case 9069: // Elladan 0
+			case 9070: // Guilin 0
+			case 9071: // Ingwe 0
+			case 9072: // Cirdan 0
+			case 9073: // Glorfindel 0
+			case 9074: // Aredhel 0
+			case 9075: // Celegorm 0
+			case 9076: // Anaire 0
+			case 9077: // Maeglin 0
+			case 9078: // Edrahil 0
+			case 9079: // Fingon 0
+			case 9080: // Salgant 0
+			case 9081: // Celebrian 0
+			case 9082: // Imin 0
+			case 9083: // Oropher 0
+			case 9084: // Fingolfin 0
+			case 9085: // Mahtan 0
+			case 9086: // Indis 0
+			case 9087: // Iminye 0
+			case 9088: // Feanor 0
+			case 9089: // Saeros 0
+			case 9090: // Nellas 0
+			case 9091: // Rhyfel 0
+			case 9092: // Gwyl 0
+			case 9093: // Enilly 0
+			case 9094: // Ffoni 0
+			case 9095: // Ymladd 0
+			case 9096: // Sadwrn 0
+			case 9097: // Diol 0
+			case 9098: // Ysbeid 0
+			case 9099: // Cleddyf 0
+			case 9100: // Saeth 0
+			case 9101: // Nimrodel 0
+			case 9102: // Maedhros 0
+			case 9103: // Finarfin 0
+			case 9104: // Gwindor 0
+			case 9105: // Eldalote 0
+			case 9106: // Enelye 0
+			case 9107: // Nerdanel 0
+			case 9108: // Nimloth 0
+			case 9109: // Findis 0
+			case 9110: // Earwen 0
+			case 9111: // Caranthir 0
+			case 9112: // Enel 0
+			case 9113: // Hendor 0
+			case 9114: // Galathil 0
+			case 9115: // Turgon 0
+			case 9116: // Lenwe 0
+			case 9117: // Aranwe 0
+				player.getThieving().steal(Thieving.Pickpocket.ELF, npc);
+				break;
+			case 3293: // Paladin 62
+			case 3294: // Paladin 62
+				player.getThieving().steal(Thieving.Pickpocket.PALADIN, npc);
+				break;
+			case 3114: // Farmer 7
+			case 3243: // Farmer 7
+			case 3244: // Farmer 7
+				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
 				break;
 		case 3106:
 			player.getThieving().steal(Thieving.Pickpocket.HERO, npc);

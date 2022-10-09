@@ -175,7 +175,7 @@ public class Thieving {
 		 * Incorporate chance for failure
 		 */
 		switch (pickpocket) {
-		case FARMER:
+		case MASTER_FARMER:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.PICKPOCKET_ARD);
 			}
@@ -253,6 +253,12 @@ public class Thieving {
 				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 750), new GameItem(995, 1000), new GameItem(995, 1250)));
 			}
 		}),
+		FARMER(10, 14, 20000, new HashMap<Rarity, List<GameItem>>() {
+			{
+				put(Rarity.COMMON, Arrays.asList(new GameItem(995, 750)));
+				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.POTATO_SEED, 1)));
+			}
+		}),
 
 		DRUNKEN_DWARF(75, 90, 20000, new HashMap<Rarity, List<GameItem>>() {
 			{
@@ -275,7 +281,7 @@ public class Thieving {
 			}
 		}),
 
-		FARMER(60, 80, 20000, new HashMap<Rarity, List<GameItem>>() {
+		MASTER_FARMER(38, 43, 20000, new HashMap<Rarity, List<GameItem>>() {
 			{
 				put(Rarity.COMMON, Lists.newArrayList(
 						new GameItem(Items.GUAM_SEED, 3), new GameItem(Items.MARRENTILL_SEED, 3),new GameItem(Items.TARROMIN_SEED, 3),
@@ -296,16 +302,21 @@ public class Thieving {
 				));
 			}
 
-		}), MENAPHITE_THUG(65, 75, 18000, new HashMap<Rarity, List<GameItem>>() {
+		}), MENAPHITE_THUG(65, 137, 18000, new HashMap<Rarity, List<GameItem>>() {
 			{
 				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1000), new GameItem(995, 800), new GameItem(995, 950)));
 			} 
-		}), GNOME(75, 85, 18000, new HashMap<Rarity, List<GameItem>>() {
+		}),PALADIN(70, 151, 18000, new HashMap<Rarity, List<GameItem>>() {
+			{
+				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 180), new GameItem(Items.CHAOS_RUNE, 2)));
+			}
+		}),
+		GNOME(75, 198, 18000, new HashMap<Rarity, List<GameItem>>() {
 			{
 				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1200), new GameItem(995, 800), new GameItem(995, 1250)));
 				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(444), new GameItem(557), new GameItem(13431, 5)));
 			}
-		}), HERO(80, 100, 17000, new HashMap<Rarity, List<GameItem>>() {
+		}), HERO(80, 273, 17000, new HashMap<Rarity, List<GameItem>>() {
 			{
 				put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1500), new GameItem(995, 1800), new GameItem(995, 3500)));
 				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(560, 2), new GameItem(565), new GameItem(444), new GameItem(1601)));
@@ -316,6 +327,13 @@ public class Thieving {
 				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.UNCUT_RUBY, 1), new GameItem(Items.BLOOD_RUNE, 4)));
 				put(Rarity.RARE, Arrays.asList(new GameItem(Items.DIAMOND, 1), new GameItem(Items.COOKED_MYSTERY_MEAT, 1)));
 				put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.BLOOD_SHARD, 1)));
+			}
+		}), ELF(85, 353, 17000, new HashMap<Rarity, List<GameItem>>() {
+			{
+				put(Rarity.COMMON, Arrays.asList(new GameItem(995, 1500), new GameItem(995, 1800), new GameItem(995, 3500), new GameItem(Items.DEATH_RUNE, 2), new GameItem(Items.JUG_OF_WINE, 2)));
+				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.NATURE_RUNE, 3), new GameItem(Items.FIRE_ORB, 1), new GameItem(Items.CRYSTAL_SHARD, 1)));
+				put(Rarity.RARE, Arrays.asList(new GameItem(Items.DIAMOND, 1), new GameItem(Items.GOLD_ORE, 1)));
+				put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.ENHANCED_CRYSTAL_TELEPORT_SEED, 1)));
 			}
 		});
 
