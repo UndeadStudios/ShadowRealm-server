@@ -213,7 +213,7 @@ public class UseItem {
 			c.getPA().sendEnterAmount(0);
 			c.unNoteItemId = itemId;
 			c.settingUnnoteAmount = true;
-		} else if (!c.getItems().isNoted(itemId)) {
+		} else if (!c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 			c.getPA().noteItems(c, itemId);
 		}
 		switch (objectID) {
