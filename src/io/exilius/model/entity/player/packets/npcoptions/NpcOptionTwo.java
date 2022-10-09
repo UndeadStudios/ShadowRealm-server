@@ -213,7 +213,7 @@ public class NpcOptionTwo {
 			break;
 
 			case 4642:
-				player.getShops().openShop(2134);
+				player.getShops().openShop(250);
 				break;
 		case 401:
 		case 402:

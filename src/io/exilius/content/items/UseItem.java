@@ -139,7 +139,7 @@ public class UseItem {
 			c.getItems().addItem(counterpartId, amount);
 			c.getDH().sendStatement("You unnote x" + amount + " of " + name + ".");
 			c.settingUnnoteAmount = false;
-			c.sendMessage("You do not have enough coins to un-note your bones.44");
+			c.sendMessage("You do not have enough inventory space"+ name + " x " + amount );
 			c.unNoteItemId = 0;
 			return;
 		}

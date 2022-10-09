@@ -146,7 +146,7 @@ public class NpcOptionOne {
 				player.getShops().openShop(130);
 				break;
 			case 4642:
-				player.getShops().openShop(2134);
+				player.getShops().openShop(250);
 				break;
 		case 1306:
 			if (player.getItems().isWearingItems()) {
