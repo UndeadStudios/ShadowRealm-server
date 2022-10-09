@@ -139,7 +139,7 @@ public class UseItem {
 			c.getItems().addItem(counterpartId, amount);
 			c.getDH().sendStatement("You unnote x" + amount + " of " + name + ".");
 			c.settingUnnoteAmount = false;
-			c.sendMessage("You do not have enough inventory space"+ name + " x " + amount );
+			//c.sendMessage("You do not have enough inventory space"+ name + " x " + amount );
 			c.unNoteItemId = 0;
 			return;
 		}
@@ -164,8 +164,8 @@ public class UseItem {
 //			//unnote noted items fix? restart later and test @sniper
 //			if (def.name != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 //					//ItemDefinition definition = ItemDefinition.forId(itemId);
-//					boolean stackable = ItemDef.forId(itemId).isStackable();
-//					if (stackable) {
+//					boolean noted = ItemDef.forId(itemId).isNoted();
+//					if (noted) {
 //						c.getPA().sendEnterAmount(0);
 //						c.unNoteItemId = itemId;
 //						c.settingUnnoteAmount = true;
