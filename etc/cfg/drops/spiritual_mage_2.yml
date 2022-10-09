@@ -46,24 +46,27 @@ uncommon:
   - name: "antipoison3"
     minimum: 1
     maximum: 1
-very_rare:
+rare:
   accessibility: 128
   items:
   - name: "dragon boots"
     minimum: 1
     maximum: 1
-  - name: "ancient ceremonial mask"
-    minimum: 1
-    maximum: 1
-  - name: "ancient ceremonial top"
-    minimum: 1
-    maximum: 1
-  - name: "ancient ceremonial legs"
-    minimum: 1
-    maximum: 1
-  - name: "ancient ceremonial gloves"
-    minimum: 1
-    maximum: 1
-  - name: "ancient ceremonial boots"
-    minimum: 1
-    maximum: 1
+very_rare:
+  accessibility: 700
+  items:
+    - name: "ancient ceremonial mask"
+      minimum: 1
+      maximum: 1
+    - name: "ancient ceremonial top"
+      minimum: 1
+      maximum: 1
+    - name: "ancient ceremonial legs"
+      minimum: 1
+      maximum: 1
+    - name: "ancient ceremonial gloves"
+      minimum: 1
+      maximum: 1
+    - name: "ancient ceremonial boots"
+      minimum: 1
+      maximum: 1
