@@ -255,7 +255,7 @@ public abstract class HitDispatcher {
                 attacker.getPA().refreshSkill(3);
             }
             if(attacker.getItems().isWearingItem(24780)){
-                if(Misc.random(100) == 25){
+                if(Misc.random(100) == 50){
                     attacker.getHealth().increase(damage);
                     attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
                 }
@@ -386,7 +386,7 @@ public abstract class HitDispatcher {
 
             }
             if(attacker.getItems().isWearingItem(24780)){
-                if(Misc.random(100) == 25){
+                if(Misc.random(100) == 50){
                     attacker.getHealth().increase(damage);
                     attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
                 }
@@ -466,7 +466,7 @@ public abstract class HitDispatcher {
 
             }
             if(attacker.getItems().isWearingItem(24780)){
-                if(Misc.random(100) == 25){
+                if(Misc.random(100) == 50){
                     attacker.getHealth().increase(damage);
                     attacker.sendMessage("@red@The "+ ItemCacheDefinition.forID(24780).getName().toLowerCase()+" heals you for "+damage+" hp.");
                 }
