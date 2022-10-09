@@ -160,20 +160,20 @@ public class UseItem {
 		c.clickObjectType = 0;
 		ObjectDef def = ObjectDef.getObjectDef(objectID);
 
-		if (def != null) {
-			//unnote noted items fix? restart later and test @sniper
-			if (def.name != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading post") || def.name.toLowerCase().contains("bank booth")) {
-					//ItemDefinition definition = ItemDefinition.forId(itemId);
-					boolean stackable = ItemDef.forId(itemId).isStackable();
-					if (stackable) {
-						c.getPA().sendEnterAmount(0);
-						c.unNoteItemId = itemId;
-						c.settingUnnoteAmount = true;
-					} else {
-						PlayerAssistant.noteItems(c, itemId);
-				}
-			}
-		}
+//		if (def != null) {
+//			//unnote noted items fix? restart later and test @sniper
+//			if (def.name != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
+//					//ItemDefinition definition = ItemDefinition.forId(itemId);
+//					boolean stackable = ItemDef.forId(itemId).isStackable();
+//					if (stackable) {
+//						c.getPA().sendEnterAmount(0);
+//						c.unNoteItemId = itemId;
+//						c.settingUnnoteAmount = true;
+//					} else {
+//						PlayerAssistant.noteItems(c, itemId);
+//				}
+//			}
+//		}
 		//Handle coins <-> platinum tokens.
 		if (itemId == 995 && (def.getName().toLowerCase().equals("bank booth") || def.getName().toLowerCase().equals("bank chest"))) {
 			final int COIN_SIZE = c.getItems().getItemAmount(995);
@@ -209,7 +209,7 @@ public class UseItem {
 			c.sendMessage("You exchange " + Misc.format(PLATINUM_TOKEN_SIZE) + " Platinum tokens for " + Misc.format(c.getItems().getItemAmount(995)) + " Coins.");
 			return;
 		}
-		if (c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading post") || def.name.toLowerCase().contains("bank booth")) {
+		if (c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 			c.getPA().sendEnterAmount(0);
 			c.unNoteItemId = itemId;
 			c.settingUnnoteAmount = true;
