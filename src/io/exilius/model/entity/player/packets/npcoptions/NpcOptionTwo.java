@@ -296,12 +296,12 @@ public class NpcOptionTwo {
 			break;
 		case 5730:
 			if(player.getMode().isIronmanType()){
-				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+				player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 				if (Boundary.isIn(player, Boundary.FALADOR_BOUNDARY)) {
-					player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+					player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 				}
 				if (Boundary.isIn(player, Boundary.DRAYNOR_BOUNDARY)) {
-					player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
+					player.getThieving().steal(Thieving.Pickpocket.MASTER_FARMER, npc);
 					player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_FARMER_DRAY);
 				}
 				player.sendMessage("@red@Restricted accounts can only steal from this npc.");
@@ -420,6 +420,15 @@ public class NpcOptionTwo {
 			case 9116: // Lenwe 0
 			case 9117: // Aranwe 0
 				player.getThieving().steal(Thieving.Pickpocket.ELF, npc);
+				break;
+			case 3293: // Paladin 62
+			case 3294: // Paladin 62
+				player.getThieving().steal(Thieving.Pickpocket.PALADIN, npc);
+				break;
+			case 3114: // Farmer 7
+			case 3243: // Farmer 7
+			case 3244: // Farmer 7
+				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
 				break;
 		case 3106:
 			player.getThieving().steal(Thieving.Pickpocket.HERO, npc);
