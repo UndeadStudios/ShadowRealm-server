@@ -3,6 +3,6 @@ npc_id: 6413
 constant:
   accessibility: 0
   items:
-  - name: "tribal mask blue"
+  - name: "tribal mask 3"
     minimum: 1
     maximum: 1
