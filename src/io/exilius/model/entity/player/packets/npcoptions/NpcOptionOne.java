@@ -1,7 +1,5 @@
 package io.exilius.model.entity.player.packets.npcoptions;
 
-import java.util.*;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.PetCollector;
@@ -11,12 +9,16 @@ import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.bosses.nightmare.NightmareActionHandler;
 import io.exilius.content.dailyrewards.DailyRewardsDialogue;
 import io.exilius.content.dialogue.DialogueBuilder;
-import io.exilius.content.dialogue.impl.*;
+import io.exilius.content.dialogue.impl.IronmanNpcDialogue;
+import io.exilius.content.dialogue.impl.MacDialogue;
+import io.exilius.content.dialogue.impl.MonkChaosAltarDialogue;
+import io.exilius.content.dialogue.impl.PineAwayDialogue;
 import io.exilius.content.minigames.inferno.Inferno;
 import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.miniquests.magearenaii.dialogue.KolodionDialogue;
 import io.exilius.content.referral.EnterReferralDialogue;
-import io.exilius.content.skills.*;
+import io.exilius.content.skills.Fishing;
+import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.crafting.Tanning;
 import io.exilius.content.skills.farming.FarmingTeleport;
 import io.exilius.content.skills.hunter.impling.Impling;
@@ -36,6 +38,8 @@ import io.exilius.model.entity.player.mode.group.GroupIronmanDialogue;
 import io.exilius.model.entity.player.mode.group.contest.GroupIronmanContest;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
+
+import java.util.Objects;
 
 /*
  * @author Matt //dogshit
@@ -138,9 +142,12 @@ public class NpcOptionOne {
 				player.getShops().openShop(147);
 			}
 			break;
-		case 1013:
-			player.getShops().openShop(130);
-			break;
+			case 1013:
+				player.getShops().openShop(130);
+				break;
+			case 4642:
+				player.getShops().openShop(2134);
+				break;
 		case 1306:
 			if (player.getItems().isWearingItems()) {
 				player.sendMessage("You must remove your equipment before changing your appearance.");

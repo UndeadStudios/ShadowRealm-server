@@ -32,8 +32,8 @@ public class Votes implements Runnable  {
 //        EmbedBuilder builder = new EmbedBuilder();
 //        builder.setTitle(String.format("Vote system:"));
 //
-//        builder.addField("Name: ", player.getDisplayName(), true);
-//        builder.addField(player.getDisplayName(), " Has Just voted for exilius thank you!", true);
+//        builder.addField("Name: ", player.getLoginName(), true);
+//        builder.addField(player.getLoginName(), " Has Just voted for exilius thank you!", true);
         //DiscordConnection.post(DiscordConnection.ANNOUNCE, builder.build());
         //Broadcast..sendNews(Icon.YELLOW_INFO_BADGE, "Vote System:", player.getName() + " Has Just voted for exilius thank you!!.");
         System.out.println("votes running");
@@ -47,7 +47,7 @@ public class Votes implements Runnable  {
                 return;
             }
 
-            String name = player.getDisplayName();//.replace(" ", "_");
+            String name = player.getLoginName();//.replace(" ", "_");
             ResultSet rs = executeQuery("SELECT * FROM votes WHERE username='"+name+"' AND claimed=0 AND voted_on != -1");
 
             while (rs.next()) {
@@ -57,8 +57,8 @@ public class Votes implements Runnable  {
 
 
                     case 1: // example
-                        String message = "Vote System:" + player.getDisplayName() + " has just voted on Rune-locus";
-                        String message2 = "Vote System:" + player.getDisplayName() + " has got the voting pet!";
+                        String message = "Vote System:" + player.getLoginName() + " has just voted on Rune-locus";
+                        String message2 = "Vote System:" + player.getLoginName() + " has got the voting pet!";
                         int petroll = Misc.random(150);
                      //   player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 5));
@@ -77,7 +77,7 @@ public class Votes implements Runnable  {
                         Discord.writeannounceMessage(message);
                         break;
                     case 2: // example                    builder.setTitle(String.format("Donation system:"));
-                        String message3 = "Vote System:" + player.getDisplayName() + " has just voted on Top 100";
+                        String message3 = "Vote System:" + player.getLoginName() + " has just voted on Top 100";
                         int petroll2 = Misc.random(100);
                      //   player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 3));
@@ -92,7 +92,7 @@ public class Votes implements Runnable  {
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
                     case 3: // example
-                        String message4 = "Vote System:" + player.getDisplayName() + " has just voted on RSPS-List";
+                        String message4 = "Vote System:" + player.getLoginName() + " has just voted on RSPS-List";
                         int petroll3 = Misc.random(100);
                        // player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 3));
@@ -107,7 +107,7 @@ public class Votes implements Runnable  {
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
                     case 5: // example
-                        String message5 = "Vote System:" + player.getDisplayName() + " has just voted on TopG";
+                        String message5 = "Vote System:" + player.getLoginName() + " has just voted on TopG";
                         int petroll4 = Misc.random(100);
                        // player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 4));
@@ -123,7 +123,7 @@ public class Votes implements Runnable  {
                         break;
 
                     case 6: // example
-                        String message6 = "Vote System:" + player.getDisplayName() + " has just voted on Runelist";
+                        String message6 = "Vote System:" + player.getLoginName() + " has just voted on Runelist";
                         int petroll5 = Misc.random(100);
                       //  player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 5));

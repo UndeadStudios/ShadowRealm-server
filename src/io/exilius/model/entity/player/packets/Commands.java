@@ -692,7 +692,7 @@ public class Commands implements PacketType {
                 new Thread(() -> {
                     try {
                         Donation[] donations = Donation.donations("MLLnFosU8sgebEdogXuricTJPJnDPz6QSLjLZpMdnDjFlojMhTfWEfHmwTsesBF1yqFIvg1B",
-                                c.getDisplayName());
+                                c.getLoginName());
                         if (donations.length == 0) {
                             c.sendMessage("You currently don't have any items waiting. You must donate first!");
                             return;

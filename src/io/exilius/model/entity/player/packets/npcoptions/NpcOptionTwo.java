@@ -212,6 +212,9 @@ public class NpcOptionTwo {
 			player.getDH().sendDialogues(70, 2180);
 			break;
 
+			case 4642:
+				player.getShops().openShop(2134);
+				break;
 		case 401:
 		case 402:
 		case 405:

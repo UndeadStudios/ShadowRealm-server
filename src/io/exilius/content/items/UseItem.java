@@ -162,7 +162,7 @@ public class UseItem {
 
 		if (def != null) {
 			//unnote noted items fix? restart later and test @sniper
-			if (def.name != null && def.name.toLowerCase().contains("bank") && def.name.toLowerCase().contains("trading post") && def.name.toLowerCase().contains("bank booth")) {
+			if (def.name != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading post") || def.name.toLowerCase().contains("bank booth")) {
 					//ItemDefinition definition = ItemDefinition.forId(itemId);
 					boolean stackable = ItemDef.forId(itemId).isStackable();
 					if (stackable) {
@@ -208,6 +208,13 @@ public class UseItem {
 			c.getItems().addItem(995, PLATINUM_TOKEN_SIZE * 1000);
 			c.sendMessage("You exchange " + Misc.format(PLATINUM_TOKEN_SIZE) + " Platinum tokens for " + Misc.format(c.getItems().getItemAmount(995)) + " Coins.");
 			return;
+		}
+		if (c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading post") || def.name.toLowerCase().contains("bank booth")) {
+			c.getPA().sendEnterAmount(0);
+			c.unNoteItemId = itemId;
+			c.settingUnnoteAmount = true;
+		} else if (!c.getItems().isNoted(itemId)) {
+			c.getPA().noteItems(c, itemId);
 		}
 		switch (objectID) {
 			case 884:
