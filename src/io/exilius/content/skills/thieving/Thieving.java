@@ -317,6 +317,12 @@ public class Thieving {
 				put(Rarity.RARE, Arrays.asList(new GameItem(Items.DIAMOND, 1), new GameItem(Items.COOKED_MYSTERY_MEAT, 1)));
 				put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.BLOOD_SHARD, 1)));
 			}
+		}), ELF(85, 353, 17000, new HashMap<Rarity, List<GameItem>>() {
+			{
+				put(Rarity.COMMON, Arrays.asList(new GameItem(995, 1500), new GameItem(995, 1800), new GameItem(995, 3500), new GameItem(Items.DEATH_RUNE, 2), new GameItem(Items.JUG_OF_WINE, 2)));
+				put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.NATURE_RUNE, 3), new GameItem(Items.FIRE_ORB, 1)));
+				put(Rarity.RARE, Arrays.asList(new GameItem(Items.DIAMOND, 1), new GameItem(Items.GOLD_ORE, 1)));
+			}
 		});
 
 		/**
