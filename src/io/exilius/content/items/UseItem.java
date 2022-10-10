@@ -209,13 +209,14 @@ public class UseItem {
 			c.sendMessage("You exchange " + Misc.format(PLATINUM_TOKEN_SIZE) + " Platinum tokens for " + Misc.format(c.getItems().getItemAmount(995)) + " Coins.");
 			return;
 		}
-		if (c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
+		//this is broken. if u use a item on a diffent object then it crashs the client
+/*		if (c.getItems().isNoted(itemId) || (def!=null ? def.name : null) != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 			c.getPA().sendEnterAmount(0);
 			c.unNoteItemId = itemId;
 			c.settingUnnoteAmount = true;
-		} else if (!c.getItems().isNoted(itemId) && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
+		} else if (!c.getItems().isNoted(itemId) || (def!=null ? def.name : null) != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 			c.getPA().noteItems(c, itemId);
-		}
+		}*/
 		switch (objectID) {
 			case 884:
 			case 3264:
