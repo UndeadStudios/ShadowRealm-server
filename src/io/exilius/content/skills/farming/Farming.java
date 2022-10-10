@@ -109,7 +109,7 @@ public class Farming {
 				FarmingPatches.MAZE_FRUIT_TREE,
 				FarmingPatches.LLETYA_FRUIT_TREE,
 				FarmingPatches.ETCETRIA_SPIRIT_TREE,
-				FarmingPatches.FARMING_GUILD_REDWOOD,
+				FarmingPatches.FARMING_GUILD_CELASTRUS,
 				FarmingPatches.FARMING_GUILD_SPIRIT_TREE,
 				FarmingPatches.FARMING_GUILD_HERB,
 				FarmingPatches.LUMBRIDGE_TREE
@@ -203,8 +203,10 @@ public class Farming {
 				config = (config(FarmingPatches.FARMING_GUILD_SPIRIT_TREE));
 				configv2 = 529;
 				break;
-			case FARMING_GUILD_REDWOOD:
-				config = (config(FarmingPatches.FARMING_GUILD_REDWOOD));
+			case FARMING_GUILD_CELASTRUS:
+				config = (config(FarmingPatches.FARMING_GUILD_CELASTRUS) << 24)
+						+ (config(FarmingPatches.FARMING_GUILD_FRUIT_TREE) << 16)
+						+ (config(FarmingPatches.FARMING_GUILD_REDWOOD));
 				configv2 = 2077;
 				break;
 			case FARMING_GUILD_HERB:

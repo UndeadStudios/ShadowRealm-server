@@ -43,7 +43,8 @@ public enum FarmingPatches {
 	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	FARMING_GUILD_SPIRIT_TREE(new Position(1251, 3748, 0), new Position(1255, 3752, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	FARMING_GUILD_HERB(new Position(1237, 3725, 0), new Position(1240, 3725, 0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
-
+	FARMING_GUILD_CELASTRUS(new Position(1242, 3748, 0), new Position(1246, 3752, 0),Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
+	FARMING_GUILD_FRUIT_TREE(new Position(1241, 3757, 0), new Position(1244, 3760, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	/**
 	 * StrongHold Fruit tree - 2473, 3443, 0
 	 * Maze Fruit Tree - 2489, 3182, 0
