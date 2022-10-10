@@ -112,7 +112,8 @@ public class Farming {
 				FarmingPatches.FARMING_GUILD_CELASTRUS,
 				FarmingPatches.FARMING_GUILD_SPIRIT_TREE,
 				FarmingPatches.FARMING_GUILD_HERB,
-				FarmingPatches.LUMBRIDGE_TREE
+				FarmingPatches.LUMBRIDGE_TREE,
+				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
 
@@ -200,7 +201,7 @@ public class Farming {
 				configv2 = 529;
 				break;
 			case FARMING_GUILD_SPIRIT_TREE:
-				config = (config(FarmingPatches.FARMING_GUILD_SPIRIT_TREE));
+				config = (config(FarmingPatches.FARMING_GUILD_ALLOTMENT_SOUTH) << 24) + (config(FarmingPatches.FARMING_GUILD_ALLOTMENT_NORTH) << 16) + (config(FarmingPatches.FARMING_GUILD_SPIRIT_TREE));
 				configv2 = 529;
 				break;
 			case FARMING_GUILD_CELASTRUS:
@@ -209,8 +210,12 @@ public class Farming {
 						+ (config(FarmingPatches.FARMING_GUILD_REDWOOD));
 				configv2 = 2077;
 				break;
+			case FARMING_GUILD_ANIMA:
+				config = (config(FarmingPatches.FARMING_GUILD_ANIMA));
+				configv2 = 2078;
+				break;
 			case FARMING_GUILD_HERB:
-				config = (config(FarmingPatches.FARMING_GUILD_HERB));
+				config = (config(FarmingPatches.FARMING_GUILD_FLOWER) << 24) + (config(FarmingPatches.FARMING_GUILD_TREE) << 16) + (config(FarmingPatches.FARMING_GUILD_HERB));
 				configv2 = 1057;
 				break;
 			case LUMBRIDGE_TREE:
