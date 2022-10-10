@@ -25,7 +25,7 @@ common:
     minimum: 30
     maximum: 80
 uncommon:
-  accessibility: 35
+  accessibility: 25
   items:
   - name: "dragon platelegs"
     minimum: 1
@@ -39,11 +39,11 @@ uncommon:
   - name: "amethyst arrow"
     minimum: 70
     maximum: 100
-  - name: "runite bar"
+  - name: "runite bar noted"
     minimum: 20
     maximum: 50
 rare:
-  accessibility: 50
+  accessibility: 1000
   items:
   - name: "imbue dust"
     minimum: 1
@@ -72,7 +72,7 @@ rare:
   - item: 10941
     minimum: 1
     maximum: 1
-  - item: 10945
+  - item: 12922
     minimum: 1
     maximum: 1
   - item: 11850
@@ -111,14 +111,14 @@ rare:
   - item: 22006
     minimum: 1
     maximum: 1
-  - item: 13756
+  - item: 6199
     minimum: 1
     maximum: 1
   - item: 13233
     minimum: 1
     maximum: 1
 very_rare:
-  accessibility: 1050
+  accessibility: 8000
   items:
   - item: 22966
     minimum: 1
@@ -142,5 +142,8 @@ very_rare:
     minimum: 1
     maximum: 1
   - item: 13229
+    minimum: 1
+    maximum: 1
+  - item: 13346
     minimum: 1
     maximum: 1

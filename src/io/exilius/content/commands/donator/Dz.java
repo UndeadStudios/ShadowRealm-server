@@ -1,10 +1,10 @@
 package io.exilius.content.commands.donator;
 
-import java.util.Optional;
-
 import io.exilius.content.commands.Command;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
+
+import java.util.Optional;
 
 /**
  * Teleports the player to the donator zone.
@@ -22,7 +22,7 @@ public class Dz extends Command {
 			c.sendMessage("@cr10@This player is currently at the pk district.");
 			return;
 		}
-		c.getPA().startTeleport(3809, 2844, 0, "modern", false);
+		c.getPA().startTeleport(3798, 2873, 0, "modern", false);
 	}
 
 	@Override
