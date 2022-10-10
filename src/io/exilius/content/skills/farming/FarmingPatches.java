@@ -10,7 +10,6 @@ public enum FarmingPatches {
 	CATHERBY_ALLOTMENT_SOUTH(new Position(2805, 3458), new Position(2815, 3461), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
 	CATHERBY_HERB(new Position(2813, 3462), new Position(2815, 3464), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
 	CATHERBY_FLOWER(new Position(2808, 3462), new Position(2811, 3465), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
-	FARMING_GUILD_HERB(new Position(1237, 3728, 0), new Position(1240, 3725, 0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
 	FALADOR_HERB(new Position(3058, 3310), new Position(3060, 3313), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
 	FALADOR_FLOWER(new Position(3054, 3306), new Position(3056, 3307), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
 	FALADOR_ALLOTMENT_NORTH(new Position(3050, 3306), new Position(3055, 3312), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
@@ -37,10 +36,13 @@ public enum FarmingPatches {
 	MAZE_FRUIT_TREE(new Position(2488, 3178, 0), new Position(2491, 3181, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	BRIMHAVEN_FRUIT_TREE(new Position(2763, 3211, 0), new Position(2766, 3214, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	LLETYA_FRUIT_TREE(new Position(2345, 3160, 0), new Position(2348, 3163, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
-	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	PORT_SARIM_SPIRIT_TREE(new Position(3058, 3256, 0), new Position(3062, 3260, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	BRIMHAVEN_SPIRIT_TREE(new Position(2800, 3201, 0), new Position(2804, 3205, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	ETCETRIA_SPIRIT_TREE(new Position(2611, 3856, 0), new Position(2615, 3860, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
+
+	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
+	FARMING_GUILD_SPIRIT_TREE(new Position(1251, 3748, 0), new Position(1255, 3752, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
+	FARMING_GUILD_HERB(new Position(1237, 3725, 0), new Position(1240, 3725, 0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
 
 	/**
 	 * StrongHold Fruit tree - 2473, 3443, 0

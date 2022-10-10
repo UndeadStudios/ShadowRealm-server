@@ -109,7 +109,10 @@ public class Farming {
 				FarmingPatches.MAZE_FRUIT_TREE,
 				FarmingPatches.LLETYA_FRUIT_TREE,
 				FarmingPatches.ETCETRIA_SPIRIT_TREE,
-				FarmingPatches.FARMING_GUILD_REDWOOD
+				FarmingPatches.FARMING_GUILD_REDWOOD,
+				FarmingPatches.FARMING_GUILD_SPIRIT_TREE,
+				FarmingPatches.FARMING_GUILD_HERB,
+				FarmingPatches.LUMBRIDGE_TREE
 
 		};
 
@@ -172,10 +175,6 @@ public class Farming {
 						+ (config(FarmingPatches.PHAS_ALLOTMENT_WEST));
 				configv2 = 529;
 				break;
-			case FARMING_GUILD_HERB:
-				config = (config(FarmingPatches.FARMING_GUILD_HERB) << 24);
-				configv2 = 529;
-				break;
 			case ETCETRIA_SPIRIT_TREE:
 				config = (config(FarmingPatches.ETCETRIA_SPIRIT_TREE));
 				configv2 = 529;
@@ -200,9 +199,21 @@ public class Farming {
 				config = (config(FarmingPatches.LLETYA_FRUIT_TREE));
 				configv2 = 529;
 				break;
+			case FARMING_GUILD_SPIRIT_TREE:
+				config = (config(FarmingPatches.FARMING_GUILD_SPIRIT_TREE));
+				configv2 = 529;
+				break;
 			case FARMING_GUILD_REDWOOD:
 				config = (config(FarmingPatches.FARMING_GUILD_REDWOOD));
 				configv2 = 2077;
+				break;
+			case FARMING_GUILD_HERB:
+				config = (config(FarmingPatches.FARMING_GUILD_HERB));
+				configv2 = 1057;
+				break;
+			case LUMBRIDGE_TREE:
+				config = (config(FarmingPatches.LUMBRIDGE_TREE));
+				configv2 = 529;
 				break;
 		}
 
