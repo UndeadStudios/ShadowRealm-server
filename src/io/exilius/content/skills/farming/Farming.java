@@ -102,7 +102,14 @@ public class Farming {
 				FarmingPatches.FALADOR_HERB,
 				FarmingPatches.CATHERBY_HERB,
 				FarmingPatches.ARDOUGNE_HERB,
-				FarmingPatches.PHAS_HERB
+				FarmingPatches.PHAS_HERB,
+				FarmingPatches.CATHERBY_FRUIT_TREE,
+				FarmingPatches.BRIMHAVEN_FRUIT_TREE,
+				FarmingPatches.STRONGHOLD_FRUIT_TREE,
+				FarmingPatches.MAZE_FRUIT_TREE,
+				FarmingPatches.LLETYA_FRUIT_TREE,
+				FarmingPatches.ETCETRIA_SPIRIT_TREE,
+				FarmingPatches.FARMING_GUILD_REDWOOD
 
 		};
 
@@ -126,6 +133,7 @@ public class Farming {
 		}
 
 		int config = 0;
+		int configv2 = 0;
 
 		switch (closest) {
 			case FALADOR_HERB:
@@ -133,6 +141,7 @@ public class Farming {
 						+ (config(FarmingPatches.FALADOR_FLOWER) << 16)
 						+ (config(FarmingPatches.FALADOR_ALLOTMENT_SOUTH) << 8)
 						+ (config(FarmingPatches.FALADOR_ALLOTMENT_NORTH));
+				configv2 = 529;
 				break;
 			case CATHERBY_HERB:
 				/**
@@ -147,25 +156,57 @@ public class Farming {
 						+ (config(FarmingPatches.CATHERBY_FLOWER) << 16)
 						+ (config(FarmingPatches.CATHERBY_ALLOTMENT_SOUTH) << 8)
 						+ (config(FarmingPatches.CATHERBY_ALLOTMENT_NORTH));
+				configv2 = 529;
 				break;
 			case ARDOUGNE_HERB:
 				config = (config(FarmingPatches.ARDOUGNE_HERB) << 24)
 						+ (config(FarmingPatches.ARDOUGNE_FLOWER) << 16)
 						+ (config(FarmingPatches.ARDOUGNE_ALLOTMENT_SOUTH) << 8)
 						+ (config(FarmingPatches.ARDOUGNE_ALLOTMENT_NORTH));
+				configv2 = 529;
 				break;
 			case PHAS_HERB:
 				config = (config(FarmingPatches.PHAS_HERB) << 24)
 						+ (config(FarmingPatches.PHAS_FLOWER) << 16)
 						+ (config(FarmingPatches.PHAS_ALLOTMENT_EAST) << 8)
 						+ (config(FarmingPatches.PHAS_ALLOTMENT_WEST));
+				configv2 = 529;
 				break;
 			case FARMING_GUILD_HERB:
 				config = (config(FarmingPatches.FARMING_GUILD_HERB) << 24);
+				configv2 = 529;
+				break;
+			case ETCETRIA_SPIRIT_TREE:
+				config = (config(FarmingPatches.ETCETRIA_SPIRIT_TREE));
+				configv2 = 529;
+				break;
+			case CATHERBY_FRUIT_TREE:
+				config = (config(FarmingPatches.CATHERBY_FRUIT_TREE));
+				configv2 = 529;
+				break;
+			case BRIMHAVEN_FRUIT_TREE:
+				config = (config(FarmingPatches.BRIMHAVEN_FRUIT_TREE));
+				configv2 = 529;
+				break;
+			case STRONGHOLD_FRUIT_TREE:
+				config = (config(FarmingPatches.STRONGHOLD_FRUIT_TREE));
+				configv2 = 529;
+				break;
+			case MAZE_FRUIT_TREE:
+				config = (config(FarmingPatches.MAZE_FRUIT_TREE));
+				configv2 = 529;
+				break;
+			case LLETYA_FRUIT_TREE:
+				config = (config(FarmingPatches.LLETYA_FRUIT_TREE));
+				configv2 = 529;
+				break;
+			case FARMING_GUILD_REDWOOD:
+				config = (config(FarmingPatches.FARMING_GUILD_REDWOOD));
+				configv2 = 2077;
 				break;
 		}
 
-		player.getPA().sendConfig(529, config);
+		player.getPA().sendConfig(configv2, config);
 	}
 
 	public boolean fillWateringCans(int item, int objectId, int x, int y) {
@@ -541,3 +582,5 @@ public class Farming {
 //		529(<<0) = Bush
 //		Al Kharid
 //		529(<<0) = Cactus
+//		farming guild redwood
+//		2077(<<0)

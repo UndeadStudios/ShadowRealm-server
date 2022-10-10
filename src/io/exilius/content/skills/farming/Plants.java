@@ -11,7 +11,6 @@ public enum Plants {
 	Magic_TREE(Items.MAGIC_SEED, Items.MAGIC_ROOTS, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 75, 80, SeedType.TREE, 107.0, 5000.0, 50.9, 4),
 	BANANA_TREE(Items.BANANA_SAPLING, Items.BANANA, 35, 35 + 13, 35 + 19, 35 + 25, 35 + 26, 33, 80, SeedType.FRUIT_TREE, 28.0, 1750.5, 10.5, 7),
 	ORANGE_TREE(Items.ORANGE_SAPLING, Items.ORANGE, 62, 62 + 13, 62 + 19, 62 + 25, 62 + 26, 39, 80, SeedType.FRUIT_TREE, 35.0, 2470.2, 13.5, 7),
-
 	GUAM(5291, 199, 4, 173, 170, 9, 80, SeedType.HERB, 11, 12, 4), //24
 	//test_tree(Items.APPLE_SAPLING,  Items.COOKING_APPLE, 8, 173, 170, 9, 80, SeedType.FRUIT_TREE, 22, 13.5, 4), //24
 	MARENTILL(5292, 201, 11, 173, 170, 14, 80, SeedType.HERB, 13, 15, 4), //24
