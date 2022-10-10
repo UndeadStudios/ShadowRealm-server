@@ -38,7 +38,7 @@ import io.exilius.content.skills.crafting.JewelryMaking;
 import io.exilius.content.skills.hunter.Hunter;
 import io.exilius.content.skills.runecrafting.Runecrafting;
 import io.exilius.content.skills.smithing.CannonballSmelting;
-import io.exilius.content.skills.thieving.Thieving.Stall;
+import io.exilius.content.skills.thieving.StallData;
 import io.exilius.content.skills.woodcutting.Tree;
 import io.exilius.content.skills.woodcutting.Woodcutting;
 import io.exilius.content.tournaments.ViewingOrb;
@@ -758,7 +758,7 @@ static int fourthFloorsos[][] = {
 				break;
 			case 4874:
 			case 11730:
-				c.getThieving().steal(Stall.Crafting, location);
+				c.getThieving().steal(StallData.Baker, objectType, location);
 				c.objectDistance = 1;
 				break;
 			case 8929:
