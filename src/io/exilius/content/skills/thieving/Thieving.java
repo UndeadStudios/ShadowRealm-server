@@ -1,6 +1,7 @@
 package io.exilius.content.skills.thieving;
 
 import com.google.common.collect.Lists;
+import io.exilius.Server;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -14,6 +15,8 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.GameItem;
+import io.exilius.model.items.ItemCacheDefinition;
+import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
 import org.apache.commons.lang3.RandomUtils;
@@ -69,7 +72,7 @@ public class Thieving {
 	 * @param stall the stall being stolen from
 	 * @param location the location of the stall
 	 */
-	public void steal(Stall stall, Location3D location) {
+	public void steal(StallData stall, int objectId, Location3D location) {
 		if (System.currentTimeMillis() - lastInteraction < INTERACTION_DELAY) {
 			//player.sendMessage("You must wait a few more seconds before you can steal again.");
 			return;
@@ -89,12 +92,12 @@ public class Thieving {
 //		}
 		player.getEventCalendar().progress(EventChallenge.THIEVE_X_STALLS);
 		switch (stall) {
-		case Crafting:
+		case Baker:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_CAKE);
 			}
 			break;
-		case Magic:
+			case Gem2:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_GEM_ARD);
 			}
@@ -104,25 +107,24 @@ public class Thieving {
 			break;
 		case Scimitar:
 			break;
-		case Fur:
+		case FUR:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_FUR);
 			}
 			break;
-		case Gold:
+//		case Gold:
 		default:
 			break;
 		}
 		player.facePosition(location.getX(), location.getY());
-/**		if (Misc.random(stall.depletionProbability) == 0) {
+		if (Misc.random(stall.depletionProbability) == 0) {
 			GlobalObject stallObj = Server.getGlobalObjects().get(objectId, location.getX(), location.getY(), location.getZ());
 			if (stallObj != null) {
-				Server.getGlobalObjects().add(new GlobalObject(4797, location.getX(), location.getY(), location.getZ(), stallObj.getFace(), 10, 8, stallObj.getObjectId()));
+				Server.getGlobalObjects().add(new GlobalObject(stall.depletionobject, location.getX(), location.getY(), location.getZ(), stallObj.getFace(), 10, 8, stallObj.getObjectId()));
 			}
 		}
- */
-		GameItem item = stall.item;
-		ItemDef definition = ItemDef.forId(item.getId());
+
+		GameItem item = stall.getRandomItem();
 		int petRate = player.skillingPetRateScroll ? (int) (stall.petChance * .75) : stall.petChance;
 		if (Misc.random(petRate) == 20 && player.getItems().getItemCount(20663, false) == 0 && player.petSummonId != 20663) {
 			 PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] <col=255>" + player.getDisplayName() + "</col> now goes hand in hand with a <col=CC0000>Rocky</col> pet!");
@@ -131,9 +133,14 @@ public class Thieving {
 		 }
 
 		player.startAnimation(ANIMATION);
-		player.getItems().addItem(item.getId(), item.getAmount());
+		boolean maxCape = SkillcapePerks.THIEVING.isWearing(player) || SkillcapePerks.isWearingMaxCape(player);
+		if (item != null) {
+			player.getItems().addItem(item.getId(), maxCape ? item.getAmount() * 2 : item.getAmount());
+			player.sendMessage("You steal a " + ItemCacheDefinition.forID(item.getId()).getName() + " from the stall.");
+		} else {
+			player.sendMessage("You were unable to find anything useful.");
+		}
 		player.getPA().addSkillXPMultiplied((int) (stall.experience * (1 + (getRoguesPieces() * 0.12))), Skill.THIEVING.getId(), true);
-		player.sendMessage("You steal a " + definition.getName() + " from the stall.");
 		Achievements.increase(player, AchievementType.THIEV, 1);
 		lastInteraction = System.currentTimeMillis();
 	}
@@ -399,58 +406,6 @@ public class Thieving {
 			}
 
 			return null;
-		}
-	}
-
-	public enum Stall {
-		Crafting(new GameItem(1893), 1, 16, 20, 15000),
-		Silk(new GameItem(950), 25, 30, 10, 13000),
-		Silver(new GameItem(2961), 50, 54, 10, 12000),
-		Fur(new GameItem(6814), 65, 80, 10, 11000),
-		Magic(new GameItem(1613), 90, 100, 10, 10000),
-		Food(new GameItem(712), 25, 30, 10, 13000),
-		General(new GameItem(2961), 50, 54, 10, 12000),
-		Scimitar(new GameItem(1993), 90, 100, 10, 10000),
-		Spice(new GameItem(2007), 50, 54, 10, 12000),
-		Gold(new GameItem(4692), 95, 110, 10, 9000),
-		LZ_GOLD(new GameItem(19473), 99, 120, 10, 8500);
-
-		/**
-		 * The item received from the stall
-		 */
-		private final GameItem item;
-
-		/**
-		 * The experience gained in thieving from a single stall thieve
-		 */
-		private final double experience;
-
-		/**
-		 * The probability that the stall will deplete
-		 */
-		private final int depletionProbability;
-
-		/**
-		 * The level required to steal from the stall
-		 */
-		private final int level;
-		
-		/**
-		 * The chance of receiving a pet
-		 */
-		private final int petChance;
-
-		/**
-		 * Constructs a new {@link Stall} object with a single parameter, {@link GameItem} which is the item received when interacted with.
-		 * 
-		 * @param item the item received upon interaction
-		 */
-		Stall(GameItem item, int level, int experience, int depletionProbability, int petChance) {
-			this.item = item;
-			this.level = level;
-			this.experience = experience;
-			this.depletionProbability = depletionProbability;
-			this.petChance = petChance;
 		}
 	}
 

@@ -37,7 +37,7 @@ public enum FarmingPatches {
 	MAZE_FRUIT_TREE(new Position(2488, 3178, 0), new Position(2491, 3181, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	BRIMHAVEN_FRUIT_TREE(new Position(2763, 3211, 0), new Position(2766, 3214, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	LLETYA_FRUIT_TREE(new Position(2345, 3160, 0), new Position(2348, 3163, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
-
+	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	PORT_SARIM_SPIRIT_TREE(new Position(3058, 3256, 0), new Position(3062, 3260, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	BRIMHAVEN_SPIRIT_TREE(new Position(2800, 3201, 0), new Position(2804, 3205, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	ETCETRIA_SPIRIT_TREE(new Position(2611, 3856, 0), new Position(2615, 3860, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),

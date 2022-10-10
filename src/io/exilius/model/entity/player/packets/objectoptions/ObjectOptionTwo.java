@@ -15,7 +15,7 @@ import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.hunter.Hunter;
 import io.exilius.content.skills.smithing.CannonballSmelting;
-import io.exilius.content.skills.thieving.Thieving.Stall;
+import io.exilius.content.skills.thieving.StallData;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.Items;
 import io.exilius.model.collisionmap.ObjectDef;
@@ -217,49 +217,54 @@ public class ObjectOptionTwo {
 			break;
 			case 4874:
 		case 11730:
-			c.getThieving().steal(Stall.Crafting, location);
+			c.getThieving().steal(StallData.Baker, objectType, location);
 			c.objectDistance = 1;
 			break;
-		case 4877:
+		//case 4877:
 		case 11731:
 			if (Boundary.isIn(c, Boundary.FALADOR_BOUNDARY)) {
 				c.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.STEAL_GEM_FAL);
-				c.getThieving().steal(Stall.Magic, location);
+				c.getThieving().steal(StallData.Gem2,objectType,  location);
 				c.objectDistance = 1;
 				return;
 			}
-			c.getThieving().steal(Stall.Magic, location);
+			c.getThieving().steal(StallData.Gem2,objectType,  location);
 			break;
+			case 28823:
+				c.getThieving().steal(StallData.Fruit, objectType, location);
+				break;
 		case 11729:
-			c.getThieving().steal(Stall.Silk, location);
+			c.getThieving().steal(StallData.Silk, objectType, location);
 			c.objectDistance = 1;
 			break;
 		case 4876:
-			c.getThieving().steal(Stall.General, location);
+			c.getThieving().steal(StallData.General,objectType,  location);
 			c.objectDistance = 1;
 			break;
 		case 4878:
-			c.getThieving().steal(Stall.Scimitar, location);
+			c.getThieving().steal(StallData.Scimitar,objectType,  location);
 			c.objectDistance = 1;
 			break;
 		case 4875:
-			c.getThieving().steal(Stall.Food, location);
+			c.getThieving().steal(StallData.food, objectType, location);
 			c.objectDistance = 1;
 			break;
 		case 11734:
-			c.getThieving().steal(Stall.Silver, location);
+			c.getThieving().steal(StallData.Silver, objectType, location);
 			break;
 		case 11732:
-			c.getThieving().steal(Stall.Fur, location);
+			c.getThieving().steal(StallData.FUR, objectType, location);
 			break;
 		case 11733:
-			c.getThieving().steal(Stall.Spice, location);
+			c.getThieving().steal(StallData.Spice, objectType, location);
 			break;
 		case 29165:
-			c.getThieving().steal(Stall.Gold, location);
+			//c.getThieving().steal(StallData.Gold, objectType, location);
+			c.sendMessage("This needs to be fixed.");
 			break;
 		case 6162:
-			c.getThieving().steal(Stall.LZ_GOLD, location);
+			//c.getThieving().steal(StallData.LZ_GOLD, objectType, location);
+			c.sendMessage("This needs to be fixed.");
 			break;
 		case 23609:
 			c.getPA().movePlayer(3507, 9494, 0);
