@@ -32,6 +32,13 @@ public enum StallData {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(712, 1)));
         }
     }, 65, 67, 30, 43000, 634),
+    Fruit(new HashMap<Rarity, List<GameItem>>() {
+        {
+        put(Rarity.COMMON, Arrays.asList(new GameItem(Items.COOKING_APPLE), new GameItem(Items.BANANA, 1), new GameItem(Items.STRAWBERRY, 1), new GameItem(Items.JANGERBERRIES, 1), new GameItem(Items.LEMON, 1), new GameItem(Items.REDBERRIES, 1), new GameItem(Items.PINEAPPLE, 1), new GameItem(Items.LIME, 1), new GameItem(Items.STRANGE_FRUIT, 1)));
+        put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.GOLOVANOVA_FRUIT)));
+        put(Rarity.RARE, Arrays.asList(new GameItem(Items.PAPAYA_FRUIT)));
+        }
+    }, 25, 28, 30, 43000, 27537),
     Silver(new HashMap<Rarity, List<GameItem>>() {
         {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(Items.SILVER_ORE, 1)));
@@ -42,7 +49,6 @@ public enum StallData {
             put(Rarity.COMMON, Arrays.asList(new GameItem(1623, 1), new GameItem(1621, 1)));
             put(Rarity.UNCOMMON, Arrays.asList(new GameItem(1619, 1)));
             put(Rarity.RARE, Arrays.asList(new GameItem(1617, 1)));
-            put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.UNCUT_ONYX, 1)));
         }
     }, 75, 80, 30, 38000, 4797),
     Gem2(new HashMap<Rarity, List<GameItem>>() {
@@ -50,6 +56,7 @@ public enum StallData {
             put(Rarity.COMMON, Arrays.asList(new GameItem(1623, 1), new GameItem(1621, 1)));
             put(Rarity.UNCOMMON, Arrays.asList(new GameItem(1619, 1)));
             put(Rarity.RARE, Arrays.asList(new GameItem(1617, 1)));
+            put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.UNCUT_ONYX, 1)));
         }
     }, 75, 80, 30, 38000, 634),
     Scimitar(new HashMap<Rarity, List<GameItem>>() {

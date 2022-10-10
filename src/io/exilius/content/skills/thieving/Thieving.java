@@ -97,7 +97,7 @@ public class Thieving {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_CAKE);
 			}
 			break;
-			case Gem:
+			case Gem2:
 			if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
 				player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_GEM_ARD);
 			}

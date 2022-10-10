@@ -224,12 +224,15 @@ public class ObjectOptionTwo {
 		case 11731:
 			if (Boundary.isIn(c, Boundary.FALADOR_BOUNDARY)) {
 				c.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.STEAL_GEM_FAL);
-				c.getThieving().steal(StallData.Gem,objectType,  location);
+				c.getThieving().steal(StallData.Gem2,objectType,  location);
 				c.objectDistance = 1;
 				return;
 			}
-			c.getThieving().steal(StallData.Gem,objectType,  location);
+			c.getThieving().steal(StallData.Gem2,objectType,  location);
 			break;
+			case 28823:
+				c.getThieving().steal(StallData.Fruit, objectType, location);
+				break;
 		case 11729:
 			c.getThieving().steal(StallData.Silk, objectType, location);
 			c.objectDistance = 1;
