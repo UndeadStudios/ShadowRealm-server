@@ -1,7 +1,5 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Objects;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.CompletionistCape;
@@ -15,6 +13,8 @@ import io.exilius.model.multiplayersession.MultiplayerSessionFinalizeType;
 import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
+
+import java.util.Objects;
 
 /**
  * Wear Item
@@ -101,8 +101,8 @@ public class WearItem implements PacketType {
 			
 		}
 		if(wearId == 8817) {
-			if(!c.getRights().getPrimary().isOwner() && !c.getLoginName().equalsIgnoreCase("Osiris")) {
-				c.sendMessage("Only Osiris can wear this.");
+			if(!c.getRights().getPrimary().isOwner() && !c.getLoginName().equalsIgnoreCase("Anubis")) {
+				c.sendMessage("Only Anubis can wear this.");
 				c.getItems().deleteItem(8817, 1);
 				c.getItems().addItem(995, 10000000);
 				return;

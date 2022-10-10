@@ -236,7 +236,7 @@ public class Thieving {
 	}
 
 	private enum Rarity {
-		ALWAYS(0), COMMON(5), UNCOMMON(10), RARE(15), VERY_RARE(25), SUPER_RARE(1500);
+		ALWAYS(0), COMMON(5), UNCOMMON(10), RARE(15), VERY_RARE(25), SUPER_RARE(5000);
 
 		/**
 		 * The rarity
