@@ -4,53 +4,143 @@ common:
   accessibility: 1
   items:
   - name: "coins"
-    minimum: 300000
-    maximum: 325000
-  - name: "wrath rune"
-    minimum: 200
-    maximum: 250
-  - name: "chaos rune"
-    minimum: 100
-    maximum: 250
+    minimum: 100000
+    maximum: 250000
+  - name: "Rune Axe"
+    minimum: 1
+    maximum: 1
+  - name: "rune pickaxe"
+    minimum: 1
+    maximum: 1
   - name: "dragon bones noted"
-    minimum: 50
-    maximum: 150
+    minimum: 30
+    maximum: 40
+  - name: "mithril dart tip"
+    minimum: 30
+    maximum: 100
+  - name: "adamant dart tip"
+    minimum: 30
+    maximum: 80
+  - name: "rune dart tip"
+    minimum: 30
+    maximum: 80
 uncommon:
-  accessibility: 4
+  accessibility: 35
   items:
-  - name: "runite ore"
-    minimum: 10
-    maximum: 20
-  - name: "magic logs"
-    minimum: 40
+  - name: "dragon platelegs"
+    minimum: 1
+    maximum: 1
+  - name: "dragon plateskirt"
+    minimum: 1
+    maximum: 1
+  - name: "Dragon Chainbody"
+    minimum: 1
+    maximum: 1
+  - name: "amethyst arrow"
+    minimum: 70
     maximum: 100
-  - name: "shark"
+  - name: "runite bar"
     minimum: 20
-    maximum: 100
-  - name: "grimy ranarr weed"
-    minimum: 4
-    maximum: 9
+    maximum: 50
 rare:
-  accessibility: 40
+  accessibility: 50
   items:
-  - name: "dark infinity hat"
-    minimum: 1
-    maximum: 1
-  - name: "dark infinity top"
-    minimum: 1
-    maximum: 1
-  - name: "dark infinity bottoms"
-    minimum: 1
-    maximum: 1
-  - name: "light infinity hat"
-    minimum: 1
-    maximum: 1
-  - name: "light infinity top"
-    minimum: 1
-    maximum: 1
-  - name: "light infinity bottoms"
-    minimum: 1
-    maximum: 1
   - name: "imbue dust"
+    minimum: 1
+    maximum: 1
+  - item: 4151
+    minimum: 1
+    maximum: 1
+  - item: 6739
+    minimum: 1
+    maximum: 1
+  - item: 11920
+    minimum: 1
+    maximum: 1
+  - item: 21028
+    minimum: 1
+    maximum: 1
+  - item: 10933
+    minimum: 1
+    maximum: 1
+  - item: 10939
+    minimum: 1
+    maximum: 1
+  - item: 10940
+    minimum: 1
+    maximum: 1
+  - item: 10941
+    minimum: 1
+    maximum: 1
+  - item: 10945
+    minimum: 1
+    maximum: 1
+  - item: 11850
+    minimum: 1
+    maximum: 1
+  - item: 11852
+    minimum: 1
+    maximum: 1
+  - item: 11854
+    minimum: 1
+    maximum: 1
+  - item: 11856
+    minimum: 1
+    maximum: 1
+  - item: 11858
+    minimum: 1
+    maximum: 1
+  - item: 11860
+    minimum: 1
+    maximum: 1
+  - item: 11840
+    minimum: 1
+    maximum: 1
+  - item: 2577
+    minimum: 1
+    maximum: 1
+  - item: 6920
+    minimum: 1
+    maximum: 1
+  - item: 11907
+    minimum: 1
+    maximum: 1
+  - item: 23528
+    minimum: 1
+    maximum: 1
+  - item: 22006
+    minimum: 1
+    maximum: 1
+  - item: 13756
+    minimum: 1
+    maximum: 1
+  - item: 13233
+    minimum: 1
+    maximum: 1
+very_rare:
+  accessibility: 1050
+  items:
+  - item: 22966
+    minimum: 1
+    maximum: 1
+  - item: 12819
+    minimum: 1
+    maximum: 1
+  - item: 12827
+    minimum: 1
+    maximum: 1
+  - item: 28347
+    minimum: 1
+    maximum: 1
+  - item: 26901
+    minimum: 1
+    maximum: 1
+  - item: 13231
+    minimum: 1
+    maximum: 1
+  - item: 13227
+    minimum: 1
+    maximum: 1
+  - item: 13229
     minimum: 1
     maximum: 1
