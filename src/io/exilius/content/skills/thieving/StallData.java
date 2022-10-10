@@ -35,7 +35,7 @@ public enum StallData {
     Fruit(new HashMap<Rarity, List<GameItem>>() {
         {
         put(Rarity.COMMON, Arrays.asList(new GameItem(Items.COOKING_APPLE), new GameItem(Items.BANANA, 1), new GameItem(Items.STRAWBERRY, 1), new GameItem(Items.JANGERBERRIES, 1), new GameItem(Items.LEMON, 1), new GameItem(Items.REDBERRIES, 1), new GameItem(Items.PINEAPPLE, 1), new GameItem(Items.LIME, 1), new GameItem(Items.STRANGE_FRUIT, 1)));
-        put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.GOLOVANOVA_FRUIT)));
+        put(Rarity.UNCOMMON, Arrays.asList(new GameItem(Items.GOLOVANOVA_FRUIT_TOP)));
         put(Rarity.RARE, Arrays.asList(new GameItem(Items.PAPAYA_FRUIT)));
         }
     }, 25, 28, 30, 43000, 27537),
