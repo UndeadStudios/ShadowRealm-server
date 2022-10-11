@@ -123,6 +123,10 @@ public class Farming {
 				FarmingPatches.FARMING_GUILD_SPIRIT_TREE,
 				FarmingPatches.FARMING_GUILD_HERB,
 				FarmingPatches.LUMBRIDGE_TREE,
+				FarmingPatches.VARROCK_TREE,
+				FarmingPatches.FALADOR_TREE,
+				FarmingPatches.TAVERLY_TREE,
+				FarmingPatches.STRONGHOLD_TREE,
 				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
@@ -236,6 +240,22 @@ public class Farming {
 				break;
 			case LUMBRIDGE_TREE:
 				config = (config(FarmingPatches.LUMBRIDGE_TREE));
+				configv2 = 529;
+				break;
+			case VARROCK_TREE:
+				config = (config(FarmingPatches.VARROCK_TREE));
+				configv2 = 529;
+				break;
+			case FALADOR_TREE:
+				config = (config(FarmingPatches.FALADOR_TREE));
+				configv2 = 529;
+				break;
+			case TAVERLY_TREE:
+				config = (config(FarmingPatches.TAVERLY_TREE));
+				configv2 = 529;
+				break;
+			case STRONGHOLD_TREE:
+				config = (config(FarmingPatches.STRONGHOLD_TREE));
 				configv2 = 529;
 				break;
 		}

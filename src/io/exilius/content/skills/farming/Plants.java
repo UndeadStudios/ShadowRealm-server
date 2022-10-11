@@ -24,6 +24,7 @@ public enum Plants {
 	PAPAYA_TREE(Items.PAPAYA_SAPLING, Items.PAPAYA_FRUIT, 163, 163 + 13, 163 + 19, 163 + 25, 163 + 26, 57, 80, SeedType.FRUIT_TREE, 72, 6146.6, 27, 7),
 	PALM_TREE(Items.PALM_SAPLING, Items.COCONUT, 200, 200 + 13, 200 + 19, 200 + 25, 200 + 26, 68, 80, SeedType.FRUIT_TREE, 110.5, 10150.1, 41.5, 7),
 
+    celastrus_TREE(Items.CELASTRUS_SAPLING, Items.CELASTRUS_BARK, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 85, 80, SeedType.CELASTRUS, 200, 14130, 23.5, 6),
 	GUAM(5291, 199, 4, 173, 170, 9, 80, SeedType.HERB, 11, 12, 4), //24
 	//test_tree(Items.APPLE_SAPLING,  Items.COOKING_APPLE, 8, 173, 170, 9, 80, SeedType.FRUIT_TREE, 22, 13.5, 4), //24
 	MARENTILL(5292, 201, 11, 173, 170, 14, 80, SeedType.HERB, 13, 15, 4), //24
