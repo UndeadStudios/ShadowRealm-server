@@ -6,9 +6,13 @@ import java.util.Map;
 import io.exilius.model.Items;
 
 public enum Plants {
-
+	REDBERRY_BUSH(Items.REDBERRY_SEED, Items.REDBERRIES, 5, 5 + 13, 5 + 19, 8 + 25, 5 + 26, 10, 80, SeedType.BUSH, 11.5, 64, 93.5, 6),
+	Cadavaberry_bush(Items.CADAVABERRY_SEED, Items.CADAVA_BERRIES, 15,  15 + 13, 15 + 19, 15 + 25, 15 + 26, 22, 80, SeedType.BUSH, 18, 102.5, 7, 6),
+	DWELLBERRY_BUSH(Items.DWELLBERRY_SEED, Items.DWELLBERRIES, 26,  26 + 13, 26 + 19, 26 + 25, 26 + 26, 36, 80, SeedType.BUSH, 31.5, 177.5, 12, 6),
 	APPLE_TREE(Items.APPLE_SAPLING, Items.COOKING_APPLE, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 27, 80, SeedType.FRUIT_TREE, 22.0, 1199.0, 8.5, 7),
-	Magic_TREE(Items.MAGIC_SEED, Items.MAGIC_ROOTS, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 75, 80, SeedType.TREE, 107.0, 5000.0, 50.9, 4),
+	OAK_TREE(Items.OAK_SAPLING, Items.OAK_ROOTS, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 15, 80, SeedType.TREE, 14, 467, 0, 4),
+	WILLOW_TREE(Items.WILLOW_SAPLING, Items.WILLOW_ROOTS, 15, 15 + 13, 15 + 19, 15 + 25, 15 + 26, 30, 80, SeedType.TREE, 25, 1456.5, 0, 6),
+	Magic_TREE(Items.MAGIC_SAPLING, Items.MAGIC_ROOTS, 48, 48 + 13, 48 + 19, 48 + 25, 48 + 26, 75, 80, SeedType.TREE, 107.0, 5000.0, 50.9, 12),
 	REDWOOD_TREE(Items.REDWOOD_SAPLING, Items.REDWOOD_LOGS, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 90, 80, SeedType.REDWOOD, 230, 22450, 0, 10),
 	BANANA_TREE(Items.BANANA_SAPLING, Items.BANANA, 35, 35 + 13, 35 + 19, 35 + 25, 35 + 26, 33, 80, SeedType.FRUIT_TREE, 28.0, 1750.5, 10.5, 7),
 	ORANGE_TREE(Items.ORANGE_SAPLING, Items.ORANGE, 62, 62 + 13, 62 + 19, 62 + 25, 62 + 26, 39, 80, SeedType.FRUIT_TREE, 35.0, 2470.2, 13.5, 7),
