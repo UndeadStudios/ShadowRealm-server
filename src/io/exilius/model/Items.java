@@ -25233,6 +25233,7 @@ public class Items {
     public static final int BLACK_CRYSTAL_SHIELD = 28_333;
     public static final int BLACK_HWEEN_MASK_3 = 28_334;
     public static final int YELLOW_HWEEN_MASK = 28_335;
+    public static final int DEATH_CAPE = 28_347;
     public static final int LIME_GREEN_ABYSSAL_WHIP = 28_472;
     public static final int UNKNOWED_WHITE_ABYSSAL_WHIP = 28_473;
     public static final int DEEP_PURPLE_ABYSSAL_WHIP = 28_474;
@@ -25385,5 +25386,4 @@ public class Items {
     public static final int CONSTRUCTION_MASTER_CAPE = 33_055;
     public static final int COMPLETIONIST_CAPE = 33_056;
     public static final int COMPLETIONIST_HOOD = 33_057;
-
 }

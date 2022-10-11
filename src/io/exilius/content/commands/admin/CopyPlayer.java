@@ -1,4 +1,4 @@
-package io.exilius.content.commands.owner;
+package io.exilius.content.commands.admin;
 
 import io.exilius.content.combat.melee.MeleeData;
 import io.exilius.content.commands.Command;

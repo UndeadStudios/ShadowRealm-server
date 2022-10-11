@@ -741,19 +741,9 @@ public class ShopAssistant {
 			case 9: //Donator Point Shop
 				switch (id) {
 					case 21295:
-						return 100;
-					case 962:
-						return 60;
-					case 11862:
-						return 100;
-					case 1050:
-						return 40;
-					case 13343:
-						return 60;
-					case 4084:
-						return 80;
-					case 1419:
-						return 45;
+						return 75;
+					case 28347:
+						return 150;
 					case 6199:
 						return 5;
 					case 13346:
@@ -762,31 +752,16 @@ public class ShopAssistant {
 						return 15;
 					case 12785:
 						return 65;
-					case 10556:
-					case 10557:
-					case 10558:
-					case 10559:
-						return 100;
-					case 12006:
-						return 9;
 					case 13263:
 						return 20;
-					case 13271:
-						return 15;
 					case 11802:
 						return 40;
-					case 12809:
-						return 25;
-					case 12817:
-						return 110;
 					case 11284:
 						return 15;
-					case 12806:
-					case 12807:
-						return 10;
 					case 11785:
 						return 20;
 					case 8167:
+					case 24780:
 						return 50;
 					case 19481:
 						return 30;
@@ -812,9 +787,7 @@ public class ShopAssistant {
 					case 15098:
 					case 21079:
 					case 21034:
-						return 50;
-					case 21259:
-						return 10;
+						return 30;
 					case 8899:
 						return 10;
 					case 12954:
@@ -823,6 +796,7 @@ public class ShopAssistant {
 						return 10;
 					case 11666:
 						return 35;
+
 				}
 				break;
 			case 10: //slayer Shop
