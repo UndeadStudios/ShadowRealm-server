@@ -458,6 +458,9 @@ public class Farming {
 								player.startAnimation(new Animation(2291));
 								player.sendMessage("You plant the "+ ItemCacheDefinition.forID(plant.seed).getName().toLowerCase()+" in the dirt.");
 								player.getItems().deleteItem(seed, 1);
+								if(ItemCacheDefinition.forID(plant.seed).getName().toLowerCase().contains("sapling")){
+									player.getItems().addItem(Items.EMPTY_PLANT_POT, 1);
+								}
 								Plant planted = new Plant(patch.ordinal(), plant.ordinal());
 								planted.setTime();
 								insert(planted);

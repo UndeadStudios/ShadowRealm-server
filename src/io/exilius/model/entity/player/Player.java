@@ -2078,6 +2078,7 @@ public class Player extends Entity {
         getPA().resetFollow();
         getPA().setClanData();
         updateRank();
+        getPA().sendConfig(491, 0);
         getBank().onLogin();
         getRunePouch().sendPouchRuneInventory();
         getPA().updatePoisonStatus();
