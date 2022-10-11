@@ -40,7 +40,7 @@ public enum FarmingPatches {
 	BRIMHAVEN_SPIRIT_TREE(new Position(2800, 3201, 0), new Position(2804, 3205, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	ETCETRIA_SPIRIT_TREE(new Position(2611, 3856, 0), new Position(2615, 3860, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 
-	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
+	FARMING_GUILD_REDWOOD(new Position(1224, 3750, 0), new Position(1233, 3759, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.REDWOOD),
 	FARMING_GUILD_SPIRIT_TREE(new Position(1251, 3748, 0), new Position(1255, 3752, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.SPIRIT_TREE),
 	FARMING_GUILD_HERB(new Position(1237, 3725, 0), new Position(1240, 3728, 0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
 	FARMING_GUILD_CELASTRUS(new Position(1242, 3748, 0), new Position(1246, 3752, 0),Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
@@ -50,6 +50,8 @@ public enum FarmingPatches {
 	FARMING_GUILD_FLOWER(new Position(1259, 3724, 0), new Position(1262, 3727, 0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
 	FARMING_GUILD_ALLOTMENT_SOUTH(new Position(1266, 3722, 0), new Position(1273, 3728), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
 	FARMING_GUILD_ALLOTMENT_NORTH(new Position(1266,3731,0), new Position(1272,3737,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
+	FARMING_GUILD_BUSH(new Position(1259, 3732, 0), new Position(1262, 3735, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
+	FARMING_GUILD_CACTUS(new Position(1263, 3746, 0), new Position(1266, 3749, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
 	/**
 	 * StrongHold Fruit tree - 2473, 3443, 0
 	 * Maze Fruit Tree - 2489, 3182, 0
