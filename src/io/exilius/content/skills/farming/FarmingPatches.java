@@ -31,6 +31,10 @@ public enum FarmingPatches {
 	TAVERLY_TREE(new Position(2934, 3436, 0), new Position(2938, 3440, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	STRONGHOLD_TREE(new Position(2434, 3413, 0), new Position(2438, 3417, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 
+	RIMMINGTON_BUSH(new Position(2939, 3220, 0), new Position(2942, 3223, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
+	ARDOUGNE_BUSH(new Position(2616, 3224, 0), new Position(2619, 3227, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
+	ETCETRIA_BUSH(new Position(2590, 3862, 0), new Position(2593, 3865, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
+
 	STRONGHOLD_FRUIT_TREE(new Position(2474, 3444, 0), new Position(2477, 3447, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	CATHERBY_FRUIT_TREE(new Position(2859, 3432, 0), new Position(2862, 3435, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
 	MAZE_FRUIT_TREE(new Position(2488, 3178, 0), new Position(2491, 3181, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.FRUIT_TREE),
@@ -51,7 +55,7 @@ public enum FarmingPatches {
 	FARMING_GUILD_ALLOTMENT_SOUTH(new Position(1266, 3722, 0), new Position(1273, 3728), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
 	FARMING_GUILD_ALLOTMENT_NORTH(new Position(1266,3731,0), new Position(1272,3737,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
 	FARMING_GUILD_BUSH(new Position(1259, 3732, 0), new Position(1262, 3735, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
-	FARMING_GUILD_CACTUS(new Position(1263, 3746, 0), new Position(1266, 3749, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
+	FARMING_GUILD_CACTUS(new Position(1263, 3746, 0), new Position(1266, 3749, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.CACTUS),
 	/**
 	 * StrongHold Fruit tree - 2473, 3443, 0
 	 * Maze Fruit Tree - 2489, 3182, 0

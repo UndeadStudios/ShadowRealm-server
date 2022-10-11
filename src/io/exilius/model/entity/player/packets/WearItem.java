@@ -6,6 +6,7 @@ import io.exilius.content.CompletionistCape;
 import io.exilius.content.DiceHandler;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.runecrafting.Pouches;
+import io.exilius.content.skills.runecrafting.Tiaras;
 import io.exilius.model.Items;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
@@ -143,6 +144,7 @@ public class WearItem implements PacketType {
 		if (!Server.getMultiplayerSessionListener().inSession(c, MultiplayerSessionType.TRADE)) {
 			c.getPlayerAssistant().resetFollow();
 			c.attacking.reset();
+			Tiaras.handleTiara(c, wearId);
 			c.getItems().equipItem(wearId, c.wearSlot);
 		}
 	}

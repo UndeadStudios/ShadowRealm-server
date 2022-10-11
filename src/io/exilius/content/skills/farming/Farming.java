@@ -127,6 +127,8 @@ public class Farming {
 				FarmingPatches.FALADOR_TREE,
 				FarmingPatches.TAVERLY_TREE,
 				FarmingPatches.STRONGHOLD_TREE,
+				FarmingPatches.RIMMINGTON_BUSH,
+				FarmingPatches.ARDOUGNE_BUSH,
 				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
@@ -191,7 +193,8 @@ public class Farming {
 				configv2 = 529;
 				break;
 			case ETCETRIA_SPIRIT_TREE:
-				config = (config(FarmingPatches.ETCETRIA_SPIRIT_TREE));
+				config = (config(FarmingPatches.ETCETRIA_SPIRIT_TREE) << 8)
+						+ (config(FarmingPatches.ETCETRIA_BUSH));
 				configv2 = 529;
 				break;
 			case CATHERBY_FRUIT_TREE:
@@ -256,6 +259,14 @@ public class Farming {
 				break;
 			case STRONGHOLD_TREE:
 				config = (config(FarmingPatches.STRONGHOLD_TREE));
+				configv2 = 529;
+				break;
+			case RIMMINGTON_BUSH:
+				config = (config(FarmingPatches.RIMMINGTON_BUSH));
+				configv2 = 529;
+				break;
+			case ARDOUGNE_BUSH:
+				config = (config(FarmingPatches.ARDOUGNE_BUSH));
 				configv2 = 529;
 				break;
 		}

@@ -121,6 +121,7 @@ public class TeleportInterfaceConstants {
                 plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
                 plr.getPA().startTeleport(3222, 3218, 0, "modern", false);
             }),
+            new TeleportButtonStandard("Miscellania", new Position(2531, 3856, 0)),
             new TeleportButtonStandard("Neitiznot", new Position(2321, 3804, 0)),
             new TeleportButtonStandard("Port Piscarilius", new Position(1809,3776,0)),
             new TeleportButtonStandard("Rimmington", new Position(2958, 3215, 0)),
