@@ -8,6 +8,14 @@ items:
 - name: "super mystery box"
 - name: "ultra mystery box"
 - name: "armadyl godsword"
+  price: 40
+- name: "bandos godsword"
+  price: 40
+- name: "saradomin godsword"
+  price: 40
+- name: "zamorak godsword"
+  price: 40
+- name: "dragon crossbow"
 - name: "armadyl crossbow"
 - name: "primordial boots"
 - name: "eternal boots"
@@ -15,5 +23,8 @@ items:
 - name: "dexterous prayer scroll"
 - name: "arcane prayer scroll"
 - name: "ring of wealth i"
-- id: 24780
-- id: 28347
+- name: "amulet_of_blood_fury"
+- name: "death cape"
+- name: "dragon warhammer"
+- id: 24271
+- id: 22978

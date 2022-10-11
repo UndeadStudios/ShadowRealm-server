@@ -750,11 +750,19 @@ public class ShopAssistant {
 						return 25;
 					case 6828:
 						return 15;
+					case 21902:
+						return 10;
 					case 12785:
+					case 22978:
 						return 65;
 					case 13263:
 						return 20;
 					case 11802:
+					case 11804:
+					case 11806:
+					case 11808:
+					case 13577:
+					case 24271:
 						return 40;
 					case 11284:
 						return 15;
@@ -763,40 +771,13 @@ public class ShopAssistant {
 					case 8167:
 					case 24780:
 						return 50;
-					case 19481:
-						return 30;
-					case 11235:
-						return 5;
-					case 11770:
-					case 11772:
-						return 8;
-					case 11771:
-					case 11773:
-						return 12;
-					case 12691:
-					case 12692:
-						return 5;
-					case 12853:
-						return 10;
-					case 6585:
-						return 5;
 					case 13239:
 					case 13235:
 					case 13237:
 						return 35;
-					case 15098:
 					case 21079:
 					case 21034:
 						return 30;
-					case 8899:
-						return 10;
-					case 12954:
-						return 10;
-					case 10551:
-						return 10;
-					case 11666:
-						return 35;
-
 				}
 				break;
 			case 10: //slayer Shop
@@ -1005,9 +986,11 @@ public class ShopAssistant {
 					case 12806:
 						return 300;
 
-					case 11804: //Godswords
+					case 11804://Godswords
 					case 11806:
 					case 11808:
+						if (c.myShopId == 9)
+							return 40;
 						return 500;
 
 					case 12902: //Tsotd
@@ -1406,7 +1389,10 @@ public class ShopAssistant {
 				else
 					return 500;
 			case 11804:
-				return 700;
+				if (c.myShopId == 9)
+					return 40;
+				else
+					return 700;
 			case 11808:
 			case 11806:
 				return 600;
