@@ -22,7 +22,11 @@ public class Tiaras {
         };
         for (int[] t : tiaras) {
             if (t[0] == id) {
-                player.getPA().sendConfig(t[3],  t[1]);
+                if(player.getItems().isWearingItem(t[0])) {
+                    player.getPA().sendConfig(t[3], t[1]);
+                } else if(!player.getItems().isWearingItem(t[0])) {
+                    player.getPA().sendConfig(t[3], t[2]);
+                }
                 return;
             }
             player.getPA().sendConfig(t[3], t[2]);
