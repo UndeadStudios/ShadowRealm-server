@@ -185,7 +185,7 @@ public class Plant {
 			player.getFarming().remove(this);
 			player.setTickable((container, player1) -> {
 				if (container.getTicks() == 2) {
-					player.sendMessage("You remove your plants from the plot.");
+					player.sendMessage("You remove your plants from the patch.");
 					player.startAnimation(new Animation(65535));
 					container.stop();
 				}

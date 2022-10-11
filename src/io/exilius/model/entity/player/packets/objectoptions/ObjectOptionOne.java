@@ -279,6 +279,16 @@ static int fourthFloorsos[][] = {
 			case 25216:
 				c.getPA().movePlayer(2531, 3442, 0);
 				break;
+			case 34477:
+				if(obX == 1233 && obY == 3755) {
+				c.getPA().movePlayer(1232, 3755, 1);
+				}
+					break;
+			case 34478:
+				if(obX == 1233 && obY == 3755) {
+					c.getPA().movePlayer(1234, 3755, 0);
+				}
+				break;
 			case 20790:
 				if(c.getX() == 3081 && c.getY() == 3421){
 					c.facePosition(obX, obY);

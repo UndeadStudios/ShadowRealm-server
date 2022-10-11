@@ -206,6 +206,7 @@ public class Walking implements PacketType {
 
 		}
 		c.viewingPresets = false;
+		c.getFarming().regionChanged();
 		c.closedInterface();
 		if (packetType == 248) {
 			packetSize -= 14;

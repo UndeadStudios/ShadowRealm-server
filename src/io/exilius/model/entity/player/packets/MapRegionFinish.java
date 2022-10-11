@@ -8,9 +8,9 @@ public class MapRegionFinish implements PacketType {
 
 	@Override
 	public void processPacket(Player c, int packetType, int packetSize) {
+		c.getFarming().regionChanged();
 		Server.itemHandler.reloadItems(c);
 		Server.getGlobalObjects().updateRegionObjects(c);
-		c.getFarming().doConfig();
 		if (c.getPA().viewingOtherBank) {
 			c.getPA().resetOtherBank();
 		}

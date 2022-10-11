@@ -14,6 +14,7 @@ import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 
 public class Farming {
@@ -54,6 +55,15 @@ public class Farming {
 	}
 
 	public void handleObjectClick(int objectId, int x, int y, int option) {
+		switch(objectId){
+			case 34477:
+			case 34478:
+			case 34637:
+			case 34633:
+			case 34635:
+			case 34639:
+			return;
+		}
 		player.getFarming().click(player, x, y, option);
 	}
 
@@ -415,7 +425,7 @@ public class Farming {
 
 							if (player.getItems().playerHasItem(patch.planter)) {
 								player.startAnimation(new Animation(2291));
-								player.sendMessage("You bury the seed in the dirt.");
+								player.sendMessage("You plant the "+ ItemCacheDefinition.forID(plant.seed).getName().toLowerCase()+" in the dirt.");
 								player.getItems().deleteItem(seed, 1);
 								Plant planted = new Plant(patch.ordinal(), plant.ordinal());
 								planted.setTime();
