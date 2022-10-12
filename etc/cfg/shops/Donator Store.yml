@@ -8,13 +8,9 @@ items:
 - name: "super mystery box"
 - name: "ultra mystery box"
 - name: "armadyl godsword"
-  price: 40
 - name: "bandos godsword"
-  price: 40
 - name: "saradomin godsword"
-  price: 40
 - name: "zamorak godsword"
-  price: 40
 - name: "dragon crossbow"
 - name: "armadyl crossbow"
 - name: "primordial boots"
@@ -26,5 +22,24 @@ items:
 - name: "amulet_of_blood_fury"
 - name: "death cape"
 - name: "dragon warhammer"
+- id: 12924
+- id: 12899
+- id: 20517
+- id: 20520
+- id: 20595
 - id: 24271
 - id: 22978
+- id: 22613
+- id: 22610
+- id: 22628
+- id: 22631
+- id: 22625
+- id: 22619
+- id: 22616
+- id: 22625
+- id: 11283
+- id: 11834
+- id: 11832
+- id: 11826
+- id: 11828
+- id: 11830

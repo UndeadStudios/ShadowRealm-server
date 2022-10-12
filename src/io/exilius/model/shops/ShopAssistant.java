@@ -747,13 +747,31 @@ public class ShopAssistant {
 					case 6199:
 						return 5;
 					case 13346:
+					case 22613:
+					case 22610:
 						return 25;
 					case 6828:
+					case 11283:
+					case 11834:
+					case 11830:
+					case 11828:
+					case 11826:
+					case 11832:
+					case 20517:
+					case 20595:
+					case 20520:
+					case 12899:
 						return 15;
 					case 21902:
+					case 22631:
+					case 22619:
+					case 22616:
+					case 22625:
+					case 22628:
 						return 10;
 					case 12785:
 					case 22978:
+					case 13576:
 						return 65;
 					case 13263:
 						return 20;
@@ -770,6 +788,7 @@ public class ShopAssistant {
 						return 20;
 					case 8167:
 					case 24780:
+					case 12924:
 						return 50;
 					case 13239:
 					case 13235:
@@ -1369,14 +1388,14 @@ public class ShopAssistant {
 			case 11283:
 			case 1959:
 			case 9703:
-				if (c.myShopId == 9)
-					return 50;
-				else
+				if (c.myShopId ==  9) {
+					return 300;
+				}
 					return 400;
 			case 11802:
-				if (c.myShopId == 9)
-					return 50;
-				else
+				if (c.myShopId ==  9) {
+					return 300;
+				}
 					return 900;
 			case 2581:
 				return 40;
@@ -1384,14 +1403,14 @@ public class ShopAssistant {
 				return 40;
 			case 11832:
 			case 11834:
-				if (c.myShopId == 9)
-					return 30;
-				else
+				if (c.myShopId ==  80) {
+					return 300;
+				}
 					return 500;
 			case 11804:
-				if (c.myShopId == 9)
-					return 40;
-				else
+				if (c.myShopId ==  80) {
+					return 300;
+				}
 					return 700;
 			case 11808:
 			case 11806:
