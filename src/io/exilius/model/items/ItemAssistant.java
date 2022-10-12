@@ -386,6 +386,7 @@ public class ItemAssistant {
 		if (ItemDef.forId(itemId).isNoted()) {
 			item = new BankItem(Server.itemHandler.getCounterpart(itemId) + 1, amount);
 		}
+
 		Iterator<BankTab> iterator = Arrays.asList(player.getBank().getBankTab()).iterator();
 		outer: while (iterator.hasNext()) {
 			BankTab t = iterator.next();

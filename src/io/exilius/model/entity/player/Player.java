@@ -90,6 +90,7 @@ import io.exilius.content.skills.agility.impl.rooftop.*;
 import io.exilius.content.skills.construction.House;
 import io.exilius.content.skills.construction.Room;
 import io.exilius.content.skills.farming.Farming;
+import io.exilius.content.skills.farming.Seedling;
 import io.exilius.content.skills.fletching.Fletching;
 import io.exilius.content.skills.herblore.Herblore;
 import io.exilius.content.skills.hunter.Hunter;
@@ -381,11 +382,14 @@ public class Player extends Entity {
         }
         return System.currentTimeMillis() - aggressionTimer >= TimeUnit.MINUTES.toMillis(15);
     }
+    private  final Seedling seedling = new Seedling(this);
     private final ItemUpgrading itemUpgradeSystem = new ItemUpgrading(this);
     public ItemUpgrading getItemUpgradeSystem() {
         return itemUpgradeSystem;
     }
-
+    public Seedling getSeedling(){
+        return seedling;
+    }
     private boolean receivedCalendarCosmeticJune2021;
     public long serpHelmCombatTicks;
     //FOE

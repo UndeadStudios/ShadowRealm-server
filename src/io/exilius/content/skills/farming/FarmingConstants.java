@@ -12,4 +12,7 @@ public class FarmingConstants {
 	public static final int SECATEURS = 5329;
 	public static final int WATERING_CAN = 5331;
 	public static final int DISEASE_CHANCE = 5;
+	public static final int TROWEL = 5325;
+	public static final int FILLING_POT_ANIM = 2287;
+	public static final int PLANTING_POT_ANIM = 2272;
 }
