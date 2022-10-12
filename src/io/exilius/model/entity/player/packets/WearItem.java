@@ -144,7 +144,6 @@ public class WearItem implements PacketType {
 		if (!Server.getMultiplayerSessionListener().inSession(c, MultiplayerSessionType.TRADE)) {
 			c.getPlayerAssistant().resetFollow();
 			c.attacking.reset();
-			Tiaras.handleTiara(c, wearId);
 			c.getItems().equipItem(wearId, c.wearSlot);
 		}
 	}

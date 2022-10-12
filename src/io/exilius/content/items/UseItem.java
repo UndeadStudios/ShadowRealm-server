@@ -612,7 +612,10 @@ public class UseItem {
 			c.getRunePouch().addRunesFromInventory(itemUsed == RunePouch.RUNE_POUCH_ID ? useWith : itemUsed, Integer.MAX_VALUE);
 			return;
 		}
-
+		if(c.getSeedling().placeSeedInPot(itemUsed, useWith))
+			return;
+		if(c.getSeedling().waterSeedling(itemUsed, useWith))
+			return;
 		if (MaxCapeCombinations.mix(c, itemUsed, useWith))
 			return;
 		if (OrnamentedItem.ornament(c, itemUsed, useWith))

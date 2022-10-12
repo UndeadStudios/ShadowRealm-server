@@ -18,6 +18,7 @@ import io.exilius.content.items.Degrade.DegradableItem;
 import io.exilius.content.lootbag.LootingBagItem;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
+import io.exilius.content.skills.runecrafting.Tiaras;
 import io.exilius.model.Bonus;
 import io.exilius.model.Items;
 import io.exilius.model.SkillLevel;
@@ -385,6 +386,7 @@ public class ItemAssistant {
 		if (ItemDef.forId(itemId).isNoted()) {
 			item = new BankItem(Server.itemHandler.getCounterpart(itemId) + 1, amount);
 		}
+
 		Iterator<BankTab> iterator = Arrays.asList(player.getBank().getBankTab()).iterator();
 		outer: while (iterator.hasNext()) {
 			BankTab t = iterator.next();
@@ -1450,7 +1452,7 @@ public class ItemAssistant {
 			if (player.getPosition().inGodwars()) {
 				player.updateGodItems();
 			}
-
+			Tiaras.handleTiaraEquip(player, wearID);
 			player.getPA().sendSound(Sounds.getEquipItemSound(wearID));
 			this.addContainerUpdate(ContainerUpdate.EQUIPMENT);
 			this.addContainerUpdate(ContainerUpdate.INVENTORY);
@@ -1573,6 +1575,7 @@ public class ItemAssistant {
 					player.getOutStream().writeByte(0);
 					player.flushOutStream();
 				}
+				Tiaras.handleTiaraunEquip(player, wearID);
 				player.getPA().sendSound(Sounds.getEquipItemSound(wearID));
 				player.setUpdateRequired(true);
 				player.setAppearanceUpdateRequired(true);
