@@ -25327,6 +25327,7 @@ public class Items {
     public static final int BANDOS_CHESTPLATE_G = 29_163;
     public static final int BANDOS_TASSETS_G = 29_164;
     public static final int BANDOS_BOOTS_G = 29_165;
+    public static final int OSIRIS_CHAINMACE = 29_180;
     public static final int RICOS_PLATEBODY = 29_395;
     public static final int RICOS_PLATELEGS = 29_396;
     public static final int RICOS_BOOTS = 29_397;
