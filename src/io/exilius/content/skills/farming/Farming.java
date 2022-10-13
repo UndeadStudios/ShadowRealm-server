@@ -29,8 +29,8 @@ public class Farming {
 	private static final int[] farmingOutfit = { 13646, 13642, 13640, 13644 };
 
 	private final Player player;
-	private Plant[] plants = new Plant[50];
-	private GrassyPatch[] patches = new GrassyPatch[50];
+	private Plant[] plants = new Plant[70];
+	private GrassyPatch[] patches = new GrassyPatch[70];
 
 	public Farming(Player player) {
 		this.player = player;
