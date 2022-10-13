@@ -130,6 +130,7 @@ public class Farming {
 				FarmingPatches.RIMMINGTON_BUSH,
 				FarmingPatches.ARDOUGNE_BUSH,
 				FarmingPatches.LUMBRIDGE_HOPS,
+				FarmingPatches.CAMELOT_HOPS,
 				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
@@ -275,6 +276,9 @@ public class Farming {
 				config = (config(FarmingPatches.LUMBRIDGE_HOPS));
 				configv2 = 529;
 				break;
+			case CAMELOT_HOPS:
+				config = (config(FarmingPatches.CAMELOT_HOPS));
+				configv2 = 529;
 		}
 
 		player.getPA().sendConfig(configv2, config);
@@ -458,11 +462,15 @@ public class Farming {
 								player.sendMessage("You can't plant this type of seed here.");
 								return true;
 							}
+							if(!player.getItems().playerHasItem(seed, plant.seedAmount)){
+								player.sendMessage("You need "+plant.seedAmount+" of "+ItemCacheDefinition.forID(seed).getName().toLowerCase()+" to plant this.");
+								return false;
+							}
 							String type = sapling ? "sapling" : "seed";
 							if (player.getItems().playerHasItem(sapling ? 5325 : 5343, 1)) {
 								player.startAnimation(new Animation(sapling ? 830 : 2291));
 								player.sendMessage("You plant the "+ ItemCacheDefinition.forID(plant.seed).getName().toLowerCase()+" in the dirt.");
-								player.getItems().deleteItem(seed, 1);
+								player.getItems().deleteItem(seed, plant.seedAmount);
 								if(ItemCacheDefinition.forID(plant.seed).getName().toLowerCase().contains("sapling")){
 									player.getItems().addItem(Items.EMPTY_PLANT_POT, 1);
 								}
