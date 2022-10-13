@@ -30,6 +30,7 @@ public enum FarmingPatches {
 	FALADOR_TREE(new Position(3002, 3371, 0), new Position(3006, 3375, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	TAVERLY_TREE(new Position(2934, 3436, 0), new Position(2938, 3440, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
 	STRONGHOLD_TREE(new Position(2434, 3413, 0), new Position(2438, 3417, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.TREE),
+	LUMBRIDGE_HOPS(new Position(3226, 3312, 0), new Position(3232, 3318, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.HOPS),
 
 	RIMMINGTON_BUSH(new Position(2939, 3220, 0), new Position(2942, 3223, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
 	ARDOUGNE_BUSH(new Position(2616, 3224, 0), new Position(2619, 3227, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),

@@ -43,11 +43,16 @@ public class Plant {
 			return;
 		}
 
-		if (getPatch().seedType == SeedType.HERB) {
+		if (getPatch().seedType == SeedType.HERB ||
+				getPatch().seedType == SeedType.BUSH ||
+				getPatch().seedType == SeedType.TREE ||
+				getPatch().seedType == SeedType.CACTUS ||
+				getPatch().seedType == SeedType.CELASTRUS ||
+				getPatch().seedType == SeedType.FRUIT_TREE ||
+				getPatch().seedType == SeedType.SPIRIT_TREE) {
 			player.sendMessage("This patch doesn't need watering.");
 			return;
 		}
-
 		if (isWatered()) {
 			player.sendMessage("Your plants have already been watered.");
 			return;
@@ -75,13 +80,21 @@ public class Plant {
 	public void click(Player player, int option) {
 		Plants plant = Plants.values()[this.plant];
 		if (option == 1) {
-			if (stage == plant.stages) {
+			if (stage == plant.stages && plant.type != SeedType.TREE && plant.type != SeedType.SPIRIT_TREE) {
 				harvest(player);
+			} else if(stage == plant.stages && plant.type == SeedType.SPIRIT_TREE){
+				player.getDH().sendDialogues(55874, 2200);
 			} else if (plant.type == SeedType.HERB) {
 				statusMessage(player, plant);
 			}
 		} else if ((option == 2)) {
-			statusMessage(player, plant);
+			if (plant.type != SeedType.SPIRIT_TREE) {
+				statusMessage(player, plant);
+			}
+		} else if (option == 3){
+			if (stage == plant.stages && plant.type == SeedType.SPIRIT_TREE) {
+				statusMessage(player, plant);
+			}
 		}
 	}
 
@@ -90,17 +103,21 @@ public class Plant {
 			player.sendMessage("Oh dear, your plants have died!");
 		} else if (isDiseased()) {
 			player.sendMessage("Your plants are diseased!");
-		} else if (stage == plant.stages) {
+		} else if (stage == plant.stages && getPatch().seedType != SeedType.SPIRIT_TREE) {
 			player.sendMessage("Your plants are healthy and ready to harvest.");
 		} else {
-			int stagesLeft = plant.stages - stage;
-			String s = "Your plants are healthy";
-			if(!isWatered() && getPatch().seedType != SeedType.HERB)
-				s += " but need some water to survive.";
-			else {
-				s += " and are currently growing (about " + (stagesLeft * (plant.getMinutes() / plant.stages)) + " minutes remain).";
+			if (stage == plant.stages && getPatch().seedType == SeedType.SPIRIT_TREE) {
+				player.sendMessage("Your Spirit tree is fully grown and operational.");
+			} else {
+				int stagesLeft = plant.stages - stage;
+				String s = "Your plants are healthy";
+				if (!isWatered() && getPatch().seedType != SeedType.HERB)
+					s += " but need some water to survive.";
+				else {
+					s += " and are currently growing (about " + (stagesLeft * (plant.getMinutes() / plant.stages)) + " minutes remain).";
+				}
+				player.sendMessage(s);
 			}
-			player.sendMessage(s);
 		}
 	}
 

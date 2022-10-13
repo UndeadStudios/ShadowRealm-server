@@ -129,6 +129,7 @@ public class Farming {
 				FarmingPatches.STRONGHOLD_TREE,
 				FarmingPatches.RIMMINGTON_BUSH,
 				FarmingPatches.ARDOUGNE_BUSH,
+				FarmingPatches.LUMBRIDGE_HOPS,
 				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
@@ -267,6 +268,11 @@ public class Farming {
 				break;
 			case ARDOUGNE_BUSH:
 				config = (config(FarmingPatches.ARDOUGNE_BUSH));
+				configv2 = 529;
+				break;
+
+			case LUMBRIDGE_HOPS:
+				config = (config(FarmingPatches.LUMBRIDGE_HOPS));
 				configv2 = 529;
 				break;
 		}
@@ -430,7 +436,7 @@ public class Farming {
 		if (!Plants.isSeed(seed)) {
 			return false;
 		}
-
+		boolean sapling = false;
 		for (FarmingPatches patch : FarmingPatches.values()) {
 			if ((x >= patch.bottomLeft.getX()) && (y >= patch.bottomLeft.getY()) && (x <= patch.topLeft.getX()) && (y <= patch.topLeft.getY())) {
 				if (isPatchException(x, y, patch)) {
@@ -448,14 +454,13 @@ public class Farming {
 								player.sendMessage("There are already seeds planted here.");
 								return true;
 							}
-
 							if (patch.seedType != plant.type) {
 								player.sendMessage("You can't plant this type of seed here.");
 								return true;
 							}
-
-							if (player.getItems().playerHasItem(patch.planter)) {
-								player.startAnimation(new Animation(2291));
+							String type = sapling ? "sapling" : "seed";
+							if (player.getItems().playerHasItem(sapling ? 5325 : 5343, 1)) {
+								player.startAnimation(new Animation(sapling ? 830 : 2291));
 								player.sendMessage("You plant the "+ ItemCacheDefinition.forID(plant.seed).getName().toLowerCase()+" in the dirt.");
 								player.getItems().deleteItem(seed, 1);
 								if(ItemCacheDefinition.forID(plant.seed).getName().toLowerCase().contains("sapling")){
@@ -473,7 +478,7 @@ public class Farming {
 								player.getPA().addSkillXPMultiplied((int)plant.plantExperience, Skill.FARMING.getId(), true);
 							} else {
 								String name = ItemDef.forId(patch.planter).getName();
-								player.sendMessage("You need " + Misc.anOrA(name) + " " +name+ " to plant seeds.");
+								player.sendMessage("You need a " + (sapling ? "gardening trowel" : "seed dibber") + " to plant " + type +"s.");
 							}
 
 						} else {

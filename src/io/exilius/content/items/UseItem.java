@@ -361,6 +361,14 @@ public class UseItem {
 						break;
 				}
 				break;
+			case 152:
+			case 303:
+			case 3051:
+			case 3052:
+			case 3053:
+			case 3054:
+				c.getSeedling().fillPotWithSoil(itemId, objectX, objectY);
+				break;
 			case 33311:
 				c.objectYOffset = 5;
 				c.objectXOffset = 5;
@@ -616,6 +624,7 @@ public class UseItem {
 			return;
 		if(c.getSeedling().waterSeedling(itemUsed, useWith))
 			return;
+
 		if (MaxCapeCombinations.mix(c, itemUsed, useWith))
 			return;
 		if (OrnamentedItem.ornament(c, itemUsed, useWith))
