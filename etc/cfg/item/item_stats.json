@@ -69321,13 +69321,13 @@
       "weight": 2.0,
       "equipment": {
         "slot": 3,
-        "astab": 883,
+        "astab": 103,
         "aslash": -2,
-        "acrush": 157,
+        "acrush": 207,
         "dslash": 1,
-        "str": 146,
-        "prayer": 8,
-        "aspeed": 3
+        "str": 266,
+        "prayer": 12,
+        "aspeed": 2
       }
   },
   "27440": {

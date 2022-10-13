@@ -40,7 +40,7 @@ public class HitDispatcherNpc extends HitDispatcher {
             if (PvpWeapons.activateEffect(attacker, Items.VIGGORAS_CHAINMACE))
                 PvpWeapons.degradeWeaponAfterCombat(attacker, false);
 
-        } else if (type == CombatType.RANGE) {
+            } else if (type == CombatType.RANGE) {
             // Craws bow
             if (PvpWeapons.activateEffect(attacker, Items.CRAWS_BOW))
                 PvpWeapons.degradeWeaponAfterCombat(attacker, false);

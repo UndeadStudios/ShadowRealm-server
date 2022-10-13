@@ -208,6 +208,7 @@ public class MeleeData {
 			c.playerWalkIndex = 2064;
 			break;
 		case 22545:
+		case 29180:
 			c.playerStandIndex = 244;
 			c.playerWalkIndex = 247;
 			c.playerRunIndex = 248;
@@ -419,6 +420,7 @@ public class MeleeData {
 		case 9703:
 			return 412;
 			case 22545:
+			case 29180:
 				return 245;
 		case 13263:
 			return 3298;

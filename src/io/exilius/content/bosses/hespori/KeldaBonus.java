@@ -12,7 +12,7 @@ public class KeldaBonus implements HesporiBonus {
         Hespori.activeKeldaSeed = true;
         Hespori.KELDA_TIMER += TimeUnit.HOURS.toMillis(1) / 600;
         PlayerHandler.executeGlobalMessage("@bla@[@gre@Hespori@bla@] @red@" + player.getDisplayNameFormatted() + " @bla@planted a Kelda seed which" +
-                " granted @red@1 hour of 2x Larren's keys.");
+                " granted @red@1 hour of 2x Nex keys.");
         QuestTab.updateAllQuestTabs();
     }
 
