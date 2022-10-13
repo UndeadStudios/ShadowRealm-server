@@ -26,6 +26,11 @@ public enum Plants {
 	Spirit_TREE(Items.SPIRIT_SAPLING, -1,8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 83, 80, SeedType.SPIRIT_TREE, 199.5, 19301, 0, 12),
     celastrus_TREE(Items.CELASTRUS_SAPLING, Items.CELASTRUS_BARK, 8, 8 + 13, 8 + 19, 8 + 25, 8 + 26, 85, 80, SeedType.CELASTRUS, 200, 14130, 23.5, 6),
 	HAMMERSTONE_HOPS(Items.HAMMERSTONE_SEED, Items.HAMMERSTONE_HOPS, 4, 173, 170, 4, 80, SeedType.HOPS, 9, 10, 5), //24
+	ASGARNIAN_HOPS(Items.ASGARNIAN_SEED, Items.ASGARNIAN_HOPS, 11, 173, 170, 8, 80, SeedType.HOPS, 10.9, 12, 6), //24
+	BARLEY_HOPS(Items.BARLEY_SEED, Items.BARLEY, 49, 173, 170, 8, 80, SeedType.HOPS, 8.5, 6.5, 5), //24
+	JUTE_HOPS(Items.JUTE_SEED, Items.JUTE_FIBRE, 46, 173, 170, 13, 80, SeedType.HOPS, 13, 14.5, 6), //24
+	KRANDORIAN_HOPS(Items.KRANDORIAN_SEED, Items.KRANDORIAN_HOPS, 28, 173, 170, 21, 80, SeedType.HOPS, 17.5, 19.6, 8), //24
+	WILDBLOOD_HOPS(Items.WILDBLOOD_SEED, Items.WILDBLOOD_HOPS, 38, 173, 170, 21, 80, SeedType.HOPS, 23, 26, 9), //24
 	GUAM(5291, 199, 4, 173, 170, 9, 80, SeedType.HERB, 11, 12, 4), //24
 	//test_tree(Items.APPLE_SAPLING,  Items.COOKING_APPLE, 8, 173, 170, 9, 80, SeedType.FRUIT_TREE, 22, 13.5, 4), //24
 	MARENTILL(5292, 201, 11, 173, 170, 14, 80, SeedType.HERB, 13, 15, 4), //24
@@ -143,6 +148,8 @@ public enum Plants {
 				return 7;
 			case FLOWER:
 				return 5;
+			case HOPS:
+				return 6;
 			default:
 				return 3;
 		}
