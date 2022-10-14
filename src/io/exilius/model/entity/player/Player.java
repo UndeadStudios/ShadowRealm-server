@@ -91,6 +91,7 @@ import io.exilius.content.skills.construction.House;
 import io.exilius.content.skills.construction.Room;
 import io.exilius.content.skills.farming.Farming;
 import io.exilius.content.skills.farming.Seedling;
+import io.exilius.content.skills.farming.ToolLeprechaun;
 import io.exilius.content.skills.fletching.Fletching;
 import io.exilius.content.skills.herblore.Herblore;
 import io.exilius.content.skills.hunter.Hunter;
@@ -240,6 +241,7 @@ public class Player extends Entity {
     public boolean hasthirdfloorDone;
     public boolean hasfourthfloorDone;
     public boolean fillingWater;
+    public boolean tempBoolean;
 
     public void saveItemsForMinigame() {
         /**
@@ -362,7 +364,7 @@ public class Player extends Entity {
     private Controller loadedController;
     private boolean joinedIronmanGroup;
     private long lastDatabaseAccess;
-
+    private ToolLeprechaun toolLeprechaun = new ToolLeprechaun(this);
     private PlayerLock lock = new Unlocked();
 
     /**
@@ -5845,7 +5847,9 @@ public class Player extends Entity {
     public PvpWeapons getPvpWeapons() {
         return pvpWeapons;
     }
-
+    public ToolLeprechaun getFarmingTools() {
+        return toolLeprechaun;
+    }
     @Override
     public int getBonus(Bonus bonus) {
         return this.getItems().getBonus(bonus);

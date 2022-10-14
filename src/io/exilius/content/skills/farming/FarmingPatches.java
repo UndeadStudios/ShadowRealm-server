@@ -33,6 +33,7 @@ public enum FarmingPatches {
 
 	LUMBRIDGE_HOPS(new Position(3226, 3312, 0), new Position(3232, 3318, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.HOPS),
 	CAMELOT_HOPS(new Position(2663, 3522, 0), new Position(2670, 3529, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.HOPS),
+	YANILLE_HOPS(new Position(2573, 3102, 0), new Position(2578, 3107, 0), Farming.HARVEST_CHOPPING, 952, 952, SeedType.HOPS),
 
 	RIMMINGTON_BUSH(new Position(2939, 3220, 0), new Position(2942, 3223, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
 	ARDOUGNE_BUSH(new Position(2616, 3224, 0), new Position(2619, 3227, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
@@ -59,6 +60,12 @@ public enum FarmingPatches {
 	FARMING_GUILD_ALLOTMENT_NORTH(new Position(1266,3731,0), new Position(1272,3737,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
 	FARMING_GUILD_BUSH(new Position(1259, 3732, 0), new Position(1262, 3735, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.BUSH),
 	FARMING_GUILD_CACTUS(new Position(1263, 3746, 0), new Position(1266, 3749, 0), Farming.HARVEST_ANIMATION, 952, 952, SeedType.CACTUS),
+
+	HOSIDIUS_HERB(new Position(1737,3549,0), new Position(1740,3552,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.HERB),
+	HOSIDIUS_FLOWER(new Position(1733,3553,0), new Position(1736,3556,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.FLOWER),
+	HOSIDIUS_ALLOTMENT_NORTH(new Position(1737,3553,0), new Position(1740,3560,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
+	HOSIDIUS_ALLOTMENT_SOUTH(new Position(1729,3549,0), new Position(1733,3553,0), Farming.HARVEST_ANIMATION, Items.SEED_DIBBER, Items.SECATEURS, SeedType.ALLOTMENT),
+
 	/**
 	 * StrongHold Fruit tree - 2473, 3443, 0
 	 * Maze Fruit Tree - 2489, 3182, 0

@@ -131,6 +131,8 @@ public class Farming {
 				FarmingPatches.ARDOUGNE_BUSH,
 				FarmingPatches.LUMBRIDGE_HOPS,
 				FarmingPatches.CAMELOT_HOPS,
+				FarmingPatches.YANILLE_HOPS,
+				FarmingPatches.HOSIDIUS_HERB,
 				FarmingPatches.FARMING_GUILD_ANIMA
 
 		};
@@ -279,6 +281,18 @@ public class Farming {
 			case CAMELOT_HOPS:
 				config = (config(FarmingPatches.CAMELOT_HOPS));
 				configv2 = 529;
+				break;
+			case YANILLE_HOPS:
+				config = (config(FarmingPatches.YANILLE_HOPS));
+				configv2 = 529;
+				break;
+			case HOSIDIUS_HERB:
+				config = (config(FarmingPatches.HOSIDIUS_HERB) << 24)
+						+ (config(FarmingPatches.HOSIDIUS_FLOWER) << 16)
+						+ (config(FarmingPatches.HOSIDIUS_ALLOTMENT_SOUTH) << 8)
+						+ (config(FarmingPatches.HOSIDIUS_ALLOTMENT_NORTH));
+				configv2 = 529;
+				break;
 		}
 
 		player.getPA().sendConfig(configv2, config);

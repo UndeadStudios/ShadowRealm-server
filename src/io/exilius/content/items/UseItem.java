@@ -1806,6 +1806,11 @@ public class UseItem {
 			return;
 		}
 		switch (npcId) {
+			case 0:
+				if (player.getFarmingTools().noteItem(itemId)) {
+					return;
+				}
+				break;
 			case 8583:
 				switch (itemId) {
 					case 23783://lowers Hespori def
