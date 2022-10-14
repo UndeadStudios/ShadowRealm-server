@@ -316,6 +316,13 @@ public class NpcOptionTwo {
 				player.getShops().openShop(16);
 			}
 			break;
+			case 500:
+			case 501:
+			case 502:
+			case 503:
+			case 504:
+				player.getShops().openShop(16);
+				break;
 		case 6987:
 			player.getThieving().steal(Thieving.Pickpocket.MAN, npc);
 			break;
