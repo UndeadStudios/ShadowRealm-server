@@ -308,14 +308,14 @@ public class FireOfExchangeBurnPrice {
             case Items.RING_OF_WEALTH_I:
             case 23995://crystal blade
             case Items.GHRAZI_RAPIER:
-                return 75_000;
+                return 125_000;
             case Items.ZURIELS_HOOD:
             case Items.ZURIELS_ROBE_BOTTOM:
             case Items.ZURIELS_ROBE_TOP:
             case Items.STATIUSS_FULL_HELM:
             case Items.STATIUSS_PLATEBODY:
             case Items.STATIUSS_PLATELEGS:
-                return 125_000;
+                return 50_000;
             case Items.VESTAS_CHAINBODY:
             case Items.VESTAS_PLATESKIRT:
             case Items.MORRIGANS_COIF:
@@ -323,10 +323,10 @@ public class FireOfExchangeBurnPrice {
             case Items.MORRIGANS_LEATHER_CHAPS:
             case Items.VESTAS_SPEAR:
             case Items.ZURIELS_STAFF:
-                return 150_000;
+                return 50_000;
             case Items.VESTAS_LONGSWORD:
             case Items.STATIUSS_WARHAMMER:
-                return 200_000;
+                return 1000_000;
             case 12817://ely
 
                 return 250_000;

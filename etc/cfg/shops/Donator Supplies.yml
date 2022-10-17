@@ -5,4 +5,38 @@ items:
 - name: "anglerfish noted"
 - name: "cooked karambwan"
 - name: "overload 4"
-- name: "mithril seeds"
+  price: 500000
+- id: 6686
+  price: 10000
+- id: 3025
+  price: 5000
+- id: 12914
+  price: 6000
+- id: 21979
+  price: 6000
+- name: "divine ranging potion4 noted"
+  price: 150000
+- name: "divine magic potion4 noted"
+  price: 150000
+- name: "divine super combat potion4 noted"
+  price: 150000
+- name: "rune pouch"
+  price: 25000000
+- name: "ammo mould"
+  price: 5000000
+- name: "dragon arrow"
+  price: 2500
+- name: "dragon dart"
+  price: 2500
+- id: 12786
+  price: 20000000
+- id: 24315
+  price: 10000000
+- id: 24317
+  price: 10000000
+- id: 24319
+  price: 10000000
+- id: 24321
+  price: 10000000
+- id: 24323
+  price: 10000000

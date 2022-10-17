@@ -1,10 +1,5 @@
 package io.exilius;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringJoiner;
-import java.util.function.Consumer;
-
 import io.exilius.content.instances.InstanceHeight;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
@@ -16,6 +11,11 @@ import io.exilius.net.login.RS2LoginProtocol;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.function.Consumer;
 
 public class GameThread extends Thread {
 
@@ -52,7 +52,7 @@ public class GameThread extends Thread {
                 tickable.accept(this);
             } catch (Exception e) {
                 logger.error("Error caught in GameThread, should be caught up the chain and handled.", e);
-                e.printStackTrace();
+//                e.printStackTrace();
             }
         }
 

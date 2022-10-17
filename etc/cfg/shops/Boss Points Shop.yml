@@ -36,7 +36,7 @@ items:
   price: 1000
 - name: "uncut onyx"
   price: 1000
-- name: "Gem Bag"
+- id: 12020
   price: 1000
 
 - name: "darklight"
@@ -61,6 +61,6 @@ items:
 - name: "ring of wealth"
   price: 5400
 - name: "ammo mould"
-  price: 7500
+  price: 250
 - name: "ring of wealth scroll"
   price: 25000
