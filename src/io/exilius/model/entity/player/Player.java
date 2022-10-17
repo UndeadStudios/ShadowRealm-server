@@ -242,6 +242,12 @@ public class Player extends Entity {
     public boolean hasfourthfloorDone;
     public boolean fillingWater;
     public boolean tempBoolean;
+    public boolean playerIsCooking;
+    public int doAmount;
+    public int cookingItem;
+    public int cookingObject;
+    public boolean below459;
+    public int breadID;
 
     public void saveItemsForMinigame() {
         /**

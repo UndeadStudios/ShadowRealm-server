@@ -3,8 +3,13 @@ package io.exilius.content.skills;
 import io.exilius.model.entity.player.Player;
 
 public class SkillHandler {
-
+	public static boolean view190 = false;
 	public static boolean[] isSkilling = new boolean[25];
+	public static boolean FISHING = true, AGILITY = true, COOKING = true,
+			FIREMAKING = true, HERBLORE = true, MINING = true,
+			RUNECRAFTING = true, THIEVING = true, WOODCUTTING = true,
+			PRAYER = true, FLETCHING = true, CRAFTING = true, MAGIC = true,
+			FARMING = false, SLAYER = true, SMITHING = true;
 
 	public static boolean noInventorySpace(Player c, String skill) {
 		if (c.getItems().freeSlots() == 0) {
@@ -35,4 +40,9 @@ public class SkillHandler {
 	public static void deleteTime(Player c) {
 		c.amountToCook--;
 	}
+
+	public static String getLine(Player c) {
+		return c.below459 ? "\\n\\n\\n\\n" : "\\n\\n\\n\\n\\n";
+	}
+
 }

@@ -1108,7 +1108,7 @@ public class PlayerSave {
                     if (line.equals("[ACCOUNT]")) {
                         ReadMode = 1;
                     } else if (line.equals("[CHARACTER]")) {
-                        ReadMode = 2;
+                         ReadMode = 2;
                     } else if (line.equals("[EQUIPMENT]")) {
                         ReadMode = 3;
                     } else if (line.equals("[LOOK]")) {
@@ -2441,6 +2441,8 @@ public class PlayerSave {
                     }
                 }
             }
+            characterfile.newLine();
+            characterfile.write("");
             characterfile.write("[EOF]", 0, 5);
             characterfile.newLine();
             characterfile.newLine();

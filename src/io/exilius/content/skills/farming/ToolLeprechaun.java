@@ -29,8 +29,8 @@ public class ToolLeprechaun {
 
     /* setting up the store item array and the player item array */
 
-    public List<GameItem> storeItems = Arrays.asList(new GameItem[]{new GameItem(5341), new GameItem(5343), new GameItem(952),
-            new GameItem(5329), new GameItem(5331), new GameItem(5325)});
+    public List<GameItem> storeItems = Arrays.asList(new GameItem[]{new GameItem(5341, 0), new GameItem(5343, 0), new GameItem(952, 0),
+            new GameItem(5329, 0), new GameItem(5331, 0), new GameItem(5325, 0)});
     public List<GameItem> storeItems2 = Arrays.asList(new GameItem[]{new GameItem(1925), new GameItem(6032),
             new GameItem(6034)});
     public List<GameItem> storeItemsClient = Arrays.asList(new GameItem[]{new GameItem(5341), new GameItem(5343),

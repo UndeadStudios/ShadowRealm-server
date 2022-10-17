@@ -8,6 +8,7 @@ import io.exilius.content.combat.melee.CombatPrayer;
 import io.exilius.content.items.UseItem;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.TabletCreation;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.ContainerAction;
 import io.exilius.model.ContainerActionType;
@@ -47,7 +48,11 @@ public class EnterAmountInput implements PacketType {
 		if (Xamount > Integer.MAX_VALUE) {
 			Xamount = 1;
 		}
-
+		if (!c.isBanking) {
+			if (c.playerIsCooking && c.doAmount > 0) {
+				Cooking.cookItem(c, c.cookingItem, Xamount, c.cookingObject);
+			}
+		}
 		if (c.amountInputHandler != null) {
 			c.amountInputHandler.handle(c, Xamount);
 			return;

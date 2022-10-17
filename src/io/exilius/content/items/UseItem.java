@@ -18,7 +18,7 @@ import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.warriors_guild.AnimatedArmour;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
 import io.exilius.content.objects.Fillables;
-import io.exilius.content.skills.Cooking;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.firemake.Firemaking;
@@ -60,7 +60,7 @@ public class UseItem {
 	public static void unNoteItems(Player c, int itemId, int amount) {
 		String name = ItemDef.forId(itemId).getName();
 		int counterpartId = Server.itemHandler.getCounterpart(itemId);
-		
+
 		/**
 		 * If a player enters an amount which is greater than the amount of the item they have it will set it to the amount
 		 * they currently have.
@@ -69,12 +69,12 @@ public class UseItem {
 		if (amount > amountOfNotes) {
 			amount = amountOfNotes;
 		}
-		
+
 		/**
 		 * Stops if you are trying to unnote an unnotable item
 		 */
-		
-		if (counterpartId < 0) { 
+
+		if (counterpartId < 0) {
 			//c.sendMessage("You can only use unnotable items on this bank to un-note them.");
 			return;
 		}
@@ -97,7 +97,7 @@ public class UseItem {
 		if (amount > c.getItems().freeSlots()) {
 			amount = c.getItems().freeSlots();
 		}
-		
+
 		/**
 		 * Stops if you do not have any space available
 		 */
@@ -147,7 +147,7 @@ public class UseItem {
 
 	/**
 	 * Using items on an object.
-	 * 
+	 *
 	 * @param c
 	 * @param objectID
 	 * @param objectX
@@ -389,7 +389,7 @@ public class UseItem {
 			case 6097:
 				Wogw.donateItem(c, itemId);
 				break;
-		case 26782: 
+		case 26782:
 			c.objectYOffset = 5;
 			c.objectXOffset = 5;
 			c.objectDistance = 5;
@@ -422,7 +422,7 @@ public class UseItem {
 			c.objectDistance = 3;
 			//FireOfExchange.getExchangePrice(c, itemId);
 		break;
-		
+
 		case 16469:
 		case 2030: //Allows for ores to be used on the furnace instead of going though the interface.
 				c.getSmithing().sendSmelting();
@@ -444,7 +444,7 @@ public class UseItem {
 				c.getItems().deleteItem(6055, 28);
 			}
 			break;
-		
+
 		case 9380:
 		case 9385:
 		case 9344:
@@ -455,7 +455,7 @@ public class UseItem {
 				c.sendMessage("@cr10@Attempting to remove object..");
 			}
 			break;
-		
+
 		case 27029:
 			if (itemId == 13273) {
 				if (c.getItems().playerHasItem(13273)) {
@@ -465,13 +465,13 @@ public class UseItem {
 			}
 			break;
 
-			
+
 		case 11744:
 			if (c.getMode().isUltimateIronman()) {
 
 			}
 			break;
-			
+
 		case 14888:
 			if (itemId == 19529) {
 				if (c.getItems().playerHasItem(6571)) {
@@ -506,9 +506,9 @@ public class UseItem {
 		case 39620:
 		case 2097:
 			c.getSmithingInt().showSmithInterface(itemId);
-			
+
 			switch (itemId) {
-			
+
 			case 11286:
 			case 1540:
 					if (c.playerLevel[Player.playerSmithing] >= 90) {
@@ -542,7 +542,7 @@ public class UseItem {
 			case 7184:
 		case 26181:
 			c.facePosition(objectX, objectY);
-			Cooking.cookThisFood(c, itemId, objectID);
+			Cooking.startCooking(c, itemId, objectID);
 			break;
 
 		case 409:
@@ -580,7 +580,7 @@ public class UseItem {
 
 	/**
 	 * Using items on items.
-	 * 
+	 *
 	 * @param c
 	 * @param itemUsed
 	 * @param useWith
@@ -715,7 +715,76 @@ public class UseItem {
 				c.sendMessage("You do not have the required items");
 			}
 		}
-
+		/**
+		 * Pizza Creation
+		 */
+		if (itemUsed == 1982 && useWith == 2283 || itemUsed == 2283
+				&& useWith == 1982) {
+			Cooking.pastryCreation(c, 1982, 2283, 2285, "");
+		}
+		if (itemUsed == 2285 && useWith == 1985 || itemUsed == 1985
+				&& useWith == 2285) {
+			Cooking.pastryCreation(c, 2285, 1985, 2287, "");
+		}
+		if (itemUsed == 2140 && useWith == 2289 || itemUsed == 2289
+				&& useWith == 2140) {
+			Cooking.cookingAddon(c, 2140, 2289, 2293, 45, 26);
+		}
+		if (itemUsed == 319 && useWith == 2289 || itemUsed == 2289
+				&& useWith == 319) {
+			Cooking.cookingAddon(c, 319, 2289, 2297, 55, 39);
+		}
+		if (itemUsed == 2116 && useWith == 2289 || itemUsed == 2289
+				&& useWith == 2116) {
+			Cooking.cookingAddon(c, 2116, 2289, 2301, 65, 45);
+		}
+		/**
+		 * Pie Making
+		 */
+		if (itemUsed == 2313 && useWith == 1953 || itemUsed == 1953
+				&& useWith == 2313) {
+			Cooking.pastryCreation(c, 2313, 1953, 2315,
+					"You put the pastry dough into the pie dish to make a pie shell.");
+		}
+		if (itemUsed == 2315 && useWith == 1955 || itemUsed == 1955
+				&& useWith == 2315) {
+			Cooking.pastryCreation(c, 2315, 1955, 2317,
+					"You fill the pie with cooking apple.");
+		}
+		if (itemUsed == 2315 && useWith == 5504 || itemUsed == 5504
+				&& useWith == 2315) {
+			Cooking.pastryCreation(c, 2315, 5504, 7212, "");
+		}
+		if (itemUsed == 7212 && useWith == 5982 || itemUsed == 5982
+				&& useWith == 7212) {
+			Cooking.pastryCreation(c, 7212, 5982, 7214, "");
+		}
+		if (itemUsed == 1955 && useWith == 7214 || itemUsed == 7214
+				&& useWith == 1955) {
+			Cooking.pastryCreation(c, 1955, 7214, 7216, "");
+		}
+		if (itemUsed == 2315 && useWith == 1951 || itemUsed == 1951 && useWith == 2315) {
+			Cooking.pastryCreation(c, 1951, 2315, 2321, "");
+		}
+		/**
+		 * Pitta/ Ugthanki Kebab
+		 */
+		if (itemUsed == 1865 && useWith == 1881 || itemUsed == 1881
+				&& useWith == 1865) {
+			Cooking.cookingAddon(c, 1865, 1881, 1883, 0, 40);
+		}
+		if (itemUsed == 1987 && useWith == 1937 || itemUsed == 1937
+				&& useWith == 1987) {
+			if (c.playerLevel[c.playerCooking] >= 35) {
+				c.getItems().addItem(1993, 1);
+				c.getItems().deleteItem(1937, 1);
+				c.getItems().deleteItem(1987, 1);
+				c.getPlayerAssistant().addSkillXP(200, c.playerCooking, true);
+			} else {
+				c.sendMessage(
+						"You need grapes and a jug of water to make wine.");
+			}
+		}
 		//ornament kits end
 
 		if (itemUsed == 2 && useWith == 21726 || itemUsed == 21726 && useWith == 2) {
@@ -960,7 +1029,7 @@ public class UseItem {
 				}
 			}
 		}
-		
+
 		switch (useWith) {
 		case 3016:
 		case 12640:
@@ -982,15 +1051,15 @@ public class UseItem {
 			}
 			break;
 		//case 12791:
-			
+
 				//c.getRunePouch().addItemToRunePouch(itemUsed, c.getItems().getItemAmount(itemUsed));
-			
+
 			//break;
-			
+
 		case 590:
 			Firemaking.lightFire(c, itemUsed, "tinderbox");
 			break;
-		
+
 		case 12773:
 		case 12774:
 			if (itemUsed == 3188) {
@@ -999,7 +1068,7 @@ public class UseItem {
 				c.sendMessage("You cleaned the whip.");
 			}
 			break;
-		
+
 
 			/**
 			 * Light ballista
@@ -1012,7 +1081,7 @@ public class UseItem {
 				c.sendMessage("You combined the two items and got an incomplete ballista.");
 			}
 			break;
-			
+
 			/**
 			 * Heavy Ballista
 			 */
@@ -1024,7 +1093,7 @@ public class UseItem {
 				c.sendMessage("You combined the two items and got an incomplete ballista.");
 			}
 			break;
-			
+
 			/**
 			 * Both heavy and light ballista
 			 */
@@ -1056,17 +1125,17 @@ public class UseItem {
 				c.sendMessage("You combined the two items and got a light ballista.");
 			}
 			break;
-		
+
 		case LootingBag.LOOTING_BAG:
 		case LootingBag.LOOTING_BAG_OPEN:
 			c.getLootingBag().useItemOnBag(itemUsed);
 			break;
-		
-			
+
+
 		case 13226:
 			c.getHerbSack().addItemToHerbSack(itemUsed, c.getItems().getItemAmount(itemUsed));
 			break;
-			
+
 		case 12020:
 			c.getGemBag().addItemToGemBag(itemUsed, c.getItems().getItemAmount(itemUsed));
 			break;
@@ -1077,11 +1146,11 @@ public class UseItem {
 		case 987:
 		CrystalChest.makeKey(c);
 			break;
-		
+
 		case 590:
 			Firemaking.lightFire(c, useWith, "tinderbox");
 			break;
-			
+
 		case 12792:
 			RecolourGraceful.ITEM_TO_RECOLOUR = useWith;
 			c.getDH().sendDialogues(55, -1);
@@ -1201,7 +1270,7 @@ public class UseItem {
 		if (itemUsed == 554 || itemUsed == 560 || itemUsed == 562 || itemUsed == 12934) {
 			if (useWith == 12899)
 				c.getDH().sendDialogues(53, -1);
-			
+
 		}
 
 		if (itemUsed == 12927 && useWith == 1755 || itemUsed == 1755 && useWith == 12927) {
@@ -1835,11 +1904,11 @@ public class UseItem {
 				break;
 			}
 			break;
-		
+
 		case 7303:
 			MasterClue.exchangeClue(player);
 			break;
-			
+
 		/*case 7439: //Plain rock golem
 			PetHandler.recolor(player, player.npcType, itemId);
 			break;*/
@@ -1871,7 +1940,7 @@ public class UseItem {
 			case 11824:
 				player.getDH().sendDialogues(11824, -1);
 				break;
-				
+
 			case 11889:
 				player.getDH().sendDialogues(11889, -1);
 				break;

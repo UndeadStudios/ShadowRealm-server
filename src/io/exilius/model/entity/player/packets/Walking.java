@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import io.exilius.Server;
 import io.exilius.content.skills.SkillHandler;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.PacketType;
@@ -150,7 +151,9 @@ public class Walking implements PacketType {
 		c.getPA().stopSkilling();
 		c.getPA().resetVariables();
 		SkillHandler.isSkilling[12] = false;
-
+		if (c.playerIsCooking) {// cooking
+			Cooking.setCooking(c, false);
+		}
 		if (c.teleporting) {
 			c.startAnimation(65535);
 			c.teleporting = false;

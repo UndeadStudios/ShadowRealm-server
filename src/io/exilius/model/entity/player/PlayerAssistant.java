@@ -23,7 +23,7 @@ import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.inferno.Inferno;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
-import io.exilius.content.skills.Cooking;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.Fishing;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.SkillHandler;
@@ -4159,10 +4159,6 @@ public class PlayerAssistant {
 		}
 		for (int[] fish : Fishing.data) {
 			if (fish[4] == item)
-				return true;
-		}
-		for (int cookFish : Cooking.fishIds) {
-			if (cookFish == item)
 				return true;
 		}
 		for (Bars b : Smelting.Bars.values()) {

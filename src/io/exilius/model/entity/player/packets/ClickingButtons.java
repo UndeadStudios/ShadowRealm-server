@@ -21,7 +21,7 @@ import io.exilius.content.itemskeptondeath.ItemsKeptOnDeathInterface;
 //import io.exilius.content.leaderboards.LeaderboardInterface;
 import io.exilius.content.polls.PollTab;
 import io.exilius.content.preset.PresetManager;
-import io.exilius.content.skills.Cooking;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.crafting.CraftingData.tanningData;
 import io.exilius.content.skills.slayer.SlayerRewardsInterface;
@@ -1480,16 +1480,16 @@ public class ClickingButtons implements PacketType {
 			 */
 
 		case 53152:
-			Cooking.getAmount(c, 1);
+			Cooking.cookItem(c, c.cookingItem, 1, c.cookingObject);
 			break;
 		case 53151:
-			Cooking.getAmount(c, 5);
+			Cooking.cookItem(c, c.cookingItem, 5, c.cookingObject);
 			break;
 		case 53150:
-			Cooking.getAmount(c, 10);
+			Cooking.cookItem(c, c.cookingItem, 10, c.cookingObject);
 			break;
 		case 53149:
-			Cooking.getAmount(c, 28);
+			Cooking.cookItem(c, c.cookingItem, 28, c.cookingObject);
 			break;
 			case 33206:
 				if (c.getPosition().inClanWarsSafe()) {

@@ -18,7 +18,7 @@ import io.exilius.content.item.lootable.impl.NexChest;
 import io.exilius.content.item.lootable.impl.SerenChest;
 import io.exilius.content.item.lootable.impl.UnbearableChest;
 import io.exilius.content.minigames.tob.TobConstants;
-import io.exilius.content.skills.Cooking;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.hunter.impling.PuroPuro;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaAltar;
@@ -210,9 +210,6 @@ public class ClickObject implements PacketType {
                     return;
                 }
 
-                if (Cooking.clickRange(c, c.objectId)) {
-                    return;
-                }
 
                 if (Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 1)) {
                     return;
