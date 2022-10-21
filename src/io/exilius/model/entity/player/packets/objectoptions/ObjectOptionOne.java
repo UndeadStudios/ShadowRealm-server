@@ -28,6 +28,7 @@ import io.exilius.content.minigames.raids.CoxParty;
 import io.exilius.content.minigames.raids.Raids;
 import io.exilius.content.objects.AxeInLog;
 import io.exilius.content.objects.FlourMill;
+import io.exilius.content.objects.Ladders;
 import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
@@ -209,6 +210,178 @@ static int fourthFloorsos[][] = {
 			c.getPA().c.itemAssistant.openUpBank();
 			c.inBank = true;
 			return;
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("ladder")) {
+			if(def.actions[0].toLowerCase().equals("climb-up")) {
+				if(obX == 3069 && obY == 10256) { //KBD LAIR
+					Ladders.climbLadder(c, 3017, 3850, 0);
+					return;
+				}
+				if(obX == 2899 && obY == 4449) {
+					return;
+				}
+				if(obX == 1913 && obY == 5226) { //sos
+					return;
+				}
+				if(obX == 2042 && obY == 5246) { //sos
+					return;
+				}
+				if(obX == 1859 && obY == 5244) { //sos
+					return;
+				}
+				if(obX == 3020 && obY == 9739) { // Mining guild
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				}
+				if(obX == 3018 && obY == 9739) { // Mining guild
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				}
+				if(obX == 3019 && obY == 9740) { // Mining guild
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				}
+				if(obX == 3019 && obY == 9738) { // Mining guild
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				}
+				if(obX == 3019 && obY == 9850){
+					Ladders.climbLadder(c, 3018, 3450, 0);
+					return;
+				}
+				if(obX == 3017 && obY == 10249) { // custom locations
+					Ladders.climbLadder(c, 3069, 3857, 0);
+					return;
+				}
+				if(obX == 3084 && obY == 9672) { // custom locations
+					Ladders.climbLadder(c, 3083, 3272, 0);
+					return;
+				}
+				if(obX == 3118 && obY == 9643) { // custom locations
+					Ladders.climbLadder(c, 3117, 3244, 0);
+					return;
+				}
+				if(obX == 3149 && obY == 9653) { // H.A.M Cave
+					Ladders.climbLadder(c, 3166, 3251, 0);
+					return;
+				}
+				if(obX == 3209 && obY == 9616) { // Lumby Basement
+					Ladders.climbLadder(c, 3210, 3216, 0);
+					return;
+				}
+				if(c.getY() > 6400) {
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				} else {
+					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+					return;
+				}
+			}
+			if(def.actions[0].toLowerCase().equals("climb-down")) {
+				if(obX == 3017 && obY == 3849) { // custom locations
+					Ladders.climbLadder(c, 3069, 10257, 0);
+					return;
+				}
+				if(obX == 1902 && obY == 5222) { //KBD LAIR
+					Ladders.climbLadder(c, 2042, 5245, 0);
+					return;
+				}
+				if(obX == 3020 && obY == 3339 || obX == 3018 && obY == 3339 || obX == 3019 && obY == 3340 || obX == 3019 && obY == 3338) { // Mining guild
+					if(c.playerLevel[c.playerMining] >= 60) {
+						Ladders.climbLadder(c, c.getX(), c.getY()+6400, c.heightLevel);
+						c.sendMessage("You enter the guild.");
+					} else {
+						c.sendMessage("You need a mining level of 60 to enter this guild.");
+					}
+					return;
+				}
+				if(obX == 3019 && obY == 3450){
+					Ladders.climbLadder(c, 3019, 9849, 0);
+					return;
+				}
+				if(obX == 3069 && obY == 3856) { // custom locations
+					Ladders.climbLadder(c, 3017, 10248, 0);
+					return;
+				}
+				if(obX == 1570 && obY == 2829 && c.heightLevel == 1) {
+					Ladders.climbLadder(c, 1570, 2830, 0);
+					return;
+				}
+				if(obX == 1560 && obY == 2829 && c.heightLevel == 1) {
+					Ladders.climbLadder(c,1560, 2830, 0);
+					return;
+				}
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					Ladders.climbLadder(c, c.getX(), c.getY()+6400, c.heightLevel);
+					return;
+				} else {
+					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+					return;
+				}
+			}
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("staircase")) {
+			if(def.actions[0].toLowerCase().equals("climb-up")) {
+				if(obX == 3059 && obY == 9776) { // Dwarf mine stairs
+					c.getPA().movePlayer(c.getX()+3, c.getY()-6400, c.heightLevel);
+					return;
+				}
+				if(obX == 3103 && obY == 3159) { // Wizard tower
+					c.getPA().movePlayer(3104, 3161, 1);
+					return;
+				}
+
+				if(obX == 3557 && obY == 9718 && c.getHeight() == 3){
+					c.getPA().movePlayer(3575, 3298, 0);
+				}
+				if(obX == 3534 && obY == 9705 && c.getHeight() == 3){
+					c.getPA().movePlayer(3575, 3282, 0);
+				}
+				if(obX == 3546 && obY == 9685 && c.getHeight() == 3){
+					c.getPA().movePlayer(3565, 3276, 0);
+				}
+				if(obX == 3565 && obY == 9683 && c.heightLevel == 3){
+					c.getPA().movePlayer(3553, 3282, 0);
+				}
+				if(obX == 3578 && obY == 9703 && c.heightLevel == 3){
+					c.getPA().movePlayer(3555, 3297, 0);
+				}
+				if(obX == 3558 && obY == 9703 && c.heightLevel == 3){
+					c.getPA().movePlayer(3565, 3289, 0);
+				}
+				if(c.getY() > 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
+					return;
+				}
+			}
+			if(def.actions[0].toLowerCase().equals("climb-down")) {
+				if(obX == 3103 && obY == 3259) { // Wizard tower
+					c.getPA().movePlayer(3104, 3161, 0);
+					return;
+				}
+				if(obX == 3058 && obY == 3376) { // Dwarf mine stairs
+					c.getPA().movePlayer(c.getX()-3, c.getY()+6400, c.heightLevel);
+					return;
+				}
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+					return;
+				}
+			}
+		}
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("entrance")) {
+			if(def.actions[0].toLowerCase().equals("climb-down")) {
+				if(obX == 3081 && obY == 3420) { // custom locations
+					c.getPA().movePlayer(1859, 5243, 0);
+					return;
+				}
+			}
 		}
 		final int[] HUNTER_OBJECTS = { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721 };
 		if (IntStream.of(HUNTER_OBJECTS).anyMatch(id -> objectType == id)) {
