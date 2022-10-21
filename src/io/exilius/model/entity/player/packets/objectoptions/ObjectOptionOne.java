@@ -27,6 +27,7 @@ import io.exilius.content.minigames.pk_arena.Lowpkarena;
 import io.exilius.content.minigames.raids.CoxParty;
 import io.exilius.content.minigames.raids.Raids;
 import io.exilius.content.objects.AxeInLog;
+import io.exilius.content.objects.FlourMill;
 import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
@@ -3022,7 +3023,18 @@ static int fourthFloorsos[][] = {
 				}
 				c.getPA().movePlayer(2687, 9506, 0);
 				break;
-
+			case 1782:// full flour bin
+					FlourMill.emptyFlourBin(c);
+				break;
+			case 1781:
+				c.sendMessage("The Flour bin is empty.");
+				break;
+			case 24961:
+					FlourMill.grainOnHopper(c, objectType, 1947);
+				break;
+			case 24964: // Hopper
+					FlourMill.hopperControl(c);
+				break;
 			case 6097:
 				c.getWogwContributeInterface().open();
 				break;
