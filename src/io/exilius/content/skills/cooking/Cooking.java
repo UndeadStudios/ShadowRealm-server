@@ -9,6 +9,7 @@ import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
 import io.exilius.content.skills.SkillHandler;
+import io.exilius.model.Items;
 import io.exilius.model.SlottedItem;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
@@ -59,8 +60,10 @@ public class Cooking extends SkillHandler {
 		MANTA_RAY(389, 391, 393, 91, 169, 100, 100, "manta ray"),
 		SEAWEED(401, 1781, 1781, 1, 1, 1, 1, "sea weed"),
 		CURRY(2009, 2011, 2013, 60, 280, 74, 74, "curry"),
-		ANGLERFISH(13439, 13441, 13443, 84, 230, 98, 98, "anglerfish"),
-		DARK_CRAB(11934, 11936, 11938, 90, 215, 100, 100, "darkcrab");
+		ANGLERFISH(13439, 13441, 13443, 84, 230, 98, 98, "angler fish"),
+		DARK_CRAB(11934, 11936, 11938, 90, 215, 100, 100, "dark crab"),
+		SEA_TURTLE(Items.RAW_SEA_TURTLE, Items.SEA_TURTLE, Items.BURNT_SEA_TURTLE, 82, 211, 150, 150, "sea turtle");
+
 		int rawItem, cookedItem, burntItem, levelReq, xp, stopBurn, stopBurnGloves;
 		String name;
 
