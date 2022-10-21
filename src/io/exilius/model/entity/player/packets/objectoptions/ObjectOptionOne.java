@@ -207,7 +207,7 @@ static int fourthFloorsos[][] = {
 			}
 		}
 		if ((def != null ? def.name : null) != null && def.name.toLowerCase().contains("bank") && !Boundary.isIn(c, Boundary.OURIANA_ALTAR)) {
-			c.getPA().c.itemAssistant.openUpBank();
+			c.getItems().openUpBank();
 			c.inBank = true;
 			return;
 		}
