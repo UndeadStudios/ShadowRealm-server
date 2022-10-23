@@ -1403,7 +1403,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 7936: 
         //start of revs
         case 7940: 
-        case 7931: 
+        case 7931:
+        case 7881:
         case 7932: 
         case 7937: 
         case 7939: 

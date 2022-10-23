@@ -1,11 +1,5 @@
 package io.exilius.model.entity.npc.actions;
 
-import java.rmi.UnexpectedException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Server;
 import io.exilius.content.bosses.Scorpia;
@@ -43,6 +37,12 @@ import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+
+import java.rmi.UnexpectedException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class NPCHitPlayer {
 
@@ -328,6 +328,7 @@ public class NPCHitPlayer {
                                     }
                                     break;
                                 case 7930:
+                                case 7881:
                                 case 7931:
                                 case 7932:
                                 case 7933:

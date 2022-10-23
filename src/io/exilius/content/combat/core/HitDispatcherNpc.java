@@ -186,6 +186,7 @@ public class HitDispatcherNpc extends HitDispatcher {
 
                 switch (defender.getNpcId()) {
                     case 7930:
+                    case 7881:
                     case 7931:
                     case 7932:
                     case 7933:

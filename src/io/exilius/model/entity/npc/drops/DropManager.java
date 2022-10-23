@@ -163,7 +163,7 @@ public class DropManager {
 
     static int[] wildybosses = { 6611, 6609, 6615, 6609, 6615, 6610, 6619, 2054, 6618, 6607};
     public static int[] wildybossesforgiveaway = { 6611, 6609, 6615, 6609, 6615, 6610, 6619, 2054, 6618, 6607};
-    static int[] revs = {7930, 7931, 7932, 7933, 7934, 7935, 7936, 7937, 7938, 7939, 7940};
+    static int[] revs = {7930, 7931, 7932, 7933, 7934, 7935, 7936, 7937, 7938, 7939, 7881, 7940};
 
     public static void dropCoinBag(Player player, int npcId, int dropX, int dropY, int dropZ) {
         NpcDef npcDefinition = NpcDef.forId(npcId);

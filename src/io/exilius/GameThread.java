@@ -96,7 +96,7 @@ public class GameThread extends Thread {
                     e.printStackTrace();
                 }
             } else {
-                logger.error("Game thread took " + Misc.insertCommas(pastTime + "") + "ms to process!");
+//                logger.error("Game thread took " + Misc.insertCommas(pastTime + "") + "ms to process!");
             }
         }
     }

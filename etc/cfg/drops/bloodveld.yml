@@ -1,6 +1,7 @@
 ---
 npc_id:
 - 484
+- 485
 - 3138
 constant:
   accessibility: 0

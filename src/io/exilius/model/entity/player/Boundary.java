@@ -566,7 +566,7 @@ public class Boundary {
 	public static final Boundary HUNLLEF_CAVE = new Boundary(1161, 9924, 1183, 9946);
 	public static final Boundary EDGEVILLE_PERIMETER = new Boundary(3072, 3451, 3138, 3520);
 	public static final Boundary WILDY_BONE_ALTAR = new Boundary(2945, 3813, 2960, 3827);
-	public static final Boundary[] DUEL_ARENA = {new Boundary(3332, 3244, 3359, 3259), new Boundary(3364, 3244, 3389, 3259)};
+	public static final Boundary[] DUEL_ARENA = {new Boundary(3335, 3247, 3351, 3256), new Boundary(3364, 3244, 3389, 3259)};
 	public static final Boundary EMPTY = new Boundary(0, 0, 0, 0);
 
 	/*

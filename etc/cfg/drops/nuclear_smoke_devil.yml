@@ -3,15 +3,27 @@ npc_id: 7406
 rare:
   accessibility: 18
   items:
+  - name: "coins"
+    minimum: 500000
+    maximum: 1000000
   - name: "mist battlestaff"
     minimum: 1
     maximum: 1
   - name: "dust battlestaff"
     minimum: 1
     maximum: 1
+  - name: "occult necklace"
+    minimum: 1
+    maximum: 1
+  - name: "dragon chainbody"
+    minimum: 1
+    maximum: 1
 very_rare:
   accessibility: 80
   items:
   - name: "imbued heart"
+    minimum: 1
+    maximum: 1
+  - name: "eternal gem"
     minimum: 1
     maximum: 1

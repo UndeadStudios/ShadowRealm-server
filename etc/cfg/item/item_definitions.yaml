@@ -69201,9 +69201,7 @@
   name: "@cya@Chest rate bonus (+15%)"
   description: "A single use +15% chance from chests, or to receive a rare raids key."
   shopValue: 1
-  untradeable: true
   stackable: true
-  untradeable: true
 - id: 21061
   name: "Graceful hood"
   description: "A sign of your grace."
@@ -70294,6 +70292,26 @@
   noteId: 22246
   noted: true
   stackable: true
+- id: 22251
+  name: "Oak shield"
+  noted: false
+  stackable: false
+- id: 22254
+  name: "Willow shield"
+  noted: false
+  stackable: false
+- id: 22257
+  name: "Maple shield"
+  noted: false
+  stackable: false
+- id: 22260
+  name: "Yew shield"
+  noted: false
+  stackable: false
+- id: 22263
+  name: "Magic shield"
+  noted: false
+  stackable: false  
 - id: 22249
   name: "Necklace of anguish (or)"
   description: "A deep sense of anguish burns within this powerful necklace."
@@ -70995,9 +71013,7 @@
 - id: 23083
   name: "Brimstone key"
   shopValue: 50000
-  untradeable: true
   stackable: true
-  untradeable: true
 - id: 23091
   name: "Ornate gloves"
   description: "A pair of very nice gloves."
@@ -73712,5 +73728,30 @@
   name: "Ancient ceremonial boots"
   description: "A ceremonial boots dedicated to an ancient god."
   shopValue: 40000
-
-
+- id: 26230
+  name: "burning Skeleton boots"
+  description: "Null"
+  shopValue: 1
+  untradeable: true
+- id: 26231
+  name: "burning Skeleton gloves"
+  description: "Null"
+  shopValue: 1
+  untradeable: true
+- id: 26232
+  name: "burning Skeleton mask"
+  description: "Null"
+  shopValue: 1
+  untradeable: true
+  equipmentModelType: "FULL_MASK"
+- id: 26233
+  name: "burning Skeleton leggings"
+  description: "Null"
+  shopValue: 1
+  untradeable: true
+- id: 26234
+  name: "burning Skeleton shirt"
+  description: "Null"
+  shopValue: 1
+  untradeable: true
+  equipmentModelType: "FULL_BODY"

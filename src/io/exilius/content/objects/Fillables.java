@@ -1,6 +1,7 @@
 package io.exilius.content.objects;
 
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
+import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
@@ -76,6 +77,10 @@ public class Fillables  {
                                 if (Boundary.isIn(c, Boundary.VARROCK_BOUNDARY)) {
                                     c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.FILL_VIAL);
                                 }
+
+                                if (Boundary.isIn(c, Boundary.RELLEKKA_BOUNDARY)) {
+                                    c.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.FILL_BUCKET);
+                                }
                                 c.startAnimation(832);
                                 c.getItems().deleteItem(g.getEmptyId(), 1);
                                 c.getItems().addItem(g.getFilledId(), 1);
@@ -86,6 +91,7 @@ public class Fillables  {
 
 
                         }
+
                         public void stop() {
                             c.stopAnimation();
                             c.fillingWater = false;

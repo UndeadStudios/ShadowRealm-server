@@ -445,7 +445,7 @@ public class NpcOptionTwo {
 				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
 				break;
 		case 3106:
-			player.getThieving().steal(Thieving.Pickpocket.HERO, npc);
+			player.getThieving().steal(Thieving.Pickpocket.MAN, npc);
 			break;
 		case 637:
 			player.getShops().openShop(6);

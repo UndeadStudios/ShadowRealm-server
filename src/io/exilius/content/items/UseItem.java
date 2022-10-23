@@ -1564,6 +1564,13 @@ public class UseItem {
 				c.getDH().sendStatement("You have combined 2 salve amulets to create the (e) version..");
 				c.nextChat = -1;
 			}
+		if (itemUsed == 10588 && useWith == 10588) {
+			c.getItems().deleteItem2(itemUsed, 1);
+			c.getItems().deleteItem2(useWith, 1);
+			c.getItems().addItem(12018, 1);
+			c.getDH().sendStatement("You have combined 2 salve amulets to create the (e) version..");
+			c.nextChat = -1;
+		}
 		if (itemUsed == 12804 && useWith == 11838 || itemUsed == 11838 && useWith == 12804) {
 			// c.getDH().sendDialogues(550, -1);
 		}

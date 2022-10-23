@@ -24,7 +24,7 @@ public class Configuration {
 	public static final String VOTE_LINK = "https://exilius-osrs.com/vote";
 	public static final String HISCORES_LINK = "https://exiliusosrs.everythingrs.com/services/hiscores";
 	public static final String STORE_LINK = "https://exiliusosrsps.everythingrs.com/services/store";
-	public static final String DISCORD_INVITE = "https://discord.gg/exiliusrsps";
+	public static final String DISCORD_INVITE = "https://discord.gg/rRd5Gbmy4K";
 	public static final String RULES_LINK = "https://www.exilius-osrs.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
 	public static final String GUIDES_LINK = "https://www.exilius-osrs.com/index.php?/forum/11-guides/";
 	public static final String DONATOR_BENEFITS_LINK = "https://www.exilius-osrs.com/index.php?/topic/14-donator-benefits-guide/";
@@ -166,7 +166,7 @@ public class Configuration {
 	 */
 	public static final int[] UNDEAD_NPCS = {
 			2,3,4,5,6,7,2514,2515,2516,2517,2518,2519,6608,7257,7296,7864,414,120,448,449,450,451,452,453,454,455,456,
-			457,945,946,5622,5623,5624,5625,5626,5627,85,86,87,88,89,90,717,718,719,720,721,722,723,724,725,726,727,728,
+			457,945,946,5622,5623,5624,5625,5626,5627,85,86,87,88,89,90,717,718,719,720,721,722,723,724,725,726,727,728,7881,
 			7881,7931,7932,7933,7934,7935,7936,7937,7938,7939,7940,5633,6740,7258,70,71,72,73,74,75,76,77,78,79,80,872,878,
 			879,2999,2993,4421,3969,3970,3971,8026,8058,8059,8060,8061,4500,4505,882,5353,5354,5355,3616,547,1163,8359,6611,
 			6612,1672,1673,1674,1675,1676,1677,1042,1043,1044,1045,1046,1047,1048,1049,1050,1051,26,27,28,29,30,31,32,33,34,
