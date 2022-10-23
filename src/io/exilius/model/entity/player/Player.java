@@ -248,6 +248,7 @@ public class Player extends Entity {
     public int cookingObject;
     public boolean below459;
     public int breadID;
+    public int flourAmount, grain;
 
     public void saveItemsForMinigame() {
         /**

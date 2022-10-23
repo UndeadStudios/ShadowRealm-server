@@ -263,9 +263,25 @@ public class ObjectOptionTwo {
 			c.sendMessage("This needs to be fixed.");
 			break;
 		case 6162:
-			//c.getThieving().steal(StallData.LZ_GOLD, objectType, location);
-			c.sendMessage("This needs to be fixed.");
+			c.getThieving().steal(StallData.Gem3, objectType, location);
+			//c.sendMessage("This needs to be fixed.");
 			break;
+			case 6165:
+				c.sendMessage("You don't really see anything you'd want to steal from this stall.");
+				break;
+			case 6164:
+				c.getThieving().steal(StallData.Silver2, objectType, location);
+				break;
+			case 6163:
+				c.getThieving().steal(StallData.Baker2, objectType, location);
+				break;
+			case 6166:
+				c.getThieving().steal(StallData.crafting2, objectType, location);
+				break;
+			case 17031:
+				c.getThieving().steal(StallData.Crossbow, objectType, location);
+				//c.sendMessage("This needs to be fixed.");
+				break;
 		case 23609:
 			c.getPA().movePlayer(3507, 9494, 0);
 			break;

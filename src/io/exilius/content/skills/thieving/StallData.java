@@ -22,6 +22,11 @@ public enum StallData {
             put(Rarity.COMMON, Arrays.asList(new GameItem(Items.CAKE, 1), new GameItem(Items.BREAD, 1), new GameItem(1901, 1)));
         }
     }, 5, 16, 30, 45000, 634),
+    Baker2(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.COMMON, Arrays.asList(new GameItem(Items.CAKE, 1), new GameItem(Items.BREAD, 1), new GameItem(1901, 1)));
+        }
+    }, 5, 16, 30, 45000, 6984),
     food(new HashMap<Rarity, List<GameItem>>() {
         {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(Items.BANANA, 1)));
@@ -39,11 +44,21 @@ public enum StallData {
         put(Rarity.RARE, Arrays.asList(new GameItem(Items.PAPAYA_FRUIT)));
         }
     }, 25, 28, 30, 43000, 27537),
+    crafting2(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.COMMON, Arrays.asList(new GameItem(Items.CHISEL, 1), new GameItem(Items.NECKLACE_MOULD, 1), new GameItem(Items.RING_MOULD, 1)));
+        }
+    }, 5, 16, 30, 45000, 6984),
     Silver(new HashMap<Rarity, List<GameItem>>() {
         {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(Items.SILVER_ORE, 1)));
         }
     }, 50, 54, 30, 40000, 634),
+    Silver2(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(Items.SILVER_ORE, 1)));
+        }
+    }, 50, 54, 30, 40000, 6984),
     Gem(new HashMap<Rarity, List<GameItem>>() {
         {
             put(Rarity.COMMON, Arrays.asList(new GameItem(1623, 1), new GameItem(1621, 1)));
@@ -59,6 +74,19 @@ public enum StallData {
             put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.UNCUT_ONYX, 1)));
         }
     }, 75, 80, 30, 38000, 634),
+    Gem3(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.COMMON, Arrays.asList(new GameItem(1623, 1), new GameItem(1621, 1)));
+            put(Rarity.UNCOMMON, Arrays.asList(new GameItem(1619, 1)));
+            put(Rarity.RARE, Arrays.asList(new GameItem(1617, 1)));
+            put(Rarity.SUPER_RARE, Arrays.asList(new GameItem(Items.UNCUT_ONYX, 1)));
+        }
+    }, 75, 80, 30, 38000, 6984),
+    Crossbow(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.COMMON, Arrays.asList(new GameItem(Items.BRONZE_BOLTS, 3), new GameItem(Items.BRONZE_LIMBS, 1), new GameItem(Items.WOODEN_STOCK, 1)));
+        }
+    }, 49, 52, 30, 45000, 6984),
     Scimitar(new HashMap<Rarity, List<GameItem>>() {
         {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(1325, 1)));
