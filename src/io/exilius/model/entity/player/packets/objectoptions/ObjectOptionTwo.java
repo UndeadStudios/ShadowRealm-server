@@ -50,7 +50,65 @@ public class ObjectOptionTwo {
 			c.inBank = true;
 			return;
 		}
+        if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
+            if(def.actions[1].equals("Climb-up")) {
+                if(obX == 3069 && obY == 10256) { // custom locations
+                    c.getPA().movePlayer(3017, 3850, 0);
+                    return;
+                }
+                if(obX == 3017 && obY == 10249) { // custom locations
+                    c.getPA().movePlayer(3069, 3857, 0);
+                    return;
+                }
+                if(c.getX() > 6400) {
+                    c.getPA().movePlayer(c.getX(), c.getX()-6400, c.heightLevel);
+                    return;
+                } else {
+                    c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
+                    return;
+                }
+            }
+            if(def.actions[1].equals("Climb-down")) {
+                if(obX == 3017 && obY == 3849) { // custom locations
+                    c.getPA().movePlayer(3069, 10257, 0);
+                    return;
+                }
+                if(obX == 3069 && obY == 3856) { // custom locations
+                    c.getPA().movePlayer(3017, 10248, 0);
+                    return;
+                }
+                if(obX == 1570 && obY == 2829 && c.heightLevel == 1) {
+                    c.getPA().movePlayer(1570, 2830, 0);
+                    return;
+                }
+                if(obX == 1560 && obY == 2829 && c.heightLevel == 1) {
+                    c.getPA().movePlayer(1560, 2830, 0);
+                    return;
+                }
+                if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+                    c.getPA().movePlayer(c.getX(), c.getX()+6400, c.heightLevel);
+                    return;
+                } else {
+                    c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+                    return;
+                }
+            }
+        }
+        if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("staircase")) {
+            if(def.actions[1].equals("Climb-up")) {
+                if(obX == 3103 && obY == 3159) { // Wizard tower
+                    c.getPA().movePlayer(3104, 3161, 2);
+                    return;
+                }
+                c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
+                return;
 
+            }
+            if(def.actions[1].equals("Climb-down")) {
+                c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+                return;
+            }
+        }
 		if (c.getRights().isOrInherits(Right.OWNER) && c.debugMessage)
 			c.sendMessage("Clicked Object Option 2:  "+objectType+"");
 
