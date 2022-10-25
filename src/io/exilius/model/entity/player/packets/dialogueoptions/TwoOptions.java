@@ -20,6 +20,7 @@ import io.exilius.content.items.Degrade;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.barrows.RoomLocation;
 import io.exilius.content.minigames.bounty_hunter.BountyHunterEmblem;
+import io.exilius.content.objects.Ladders;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.crafting.SpinMaterial;
 import io.exilius.content.tournaments.TourneyManager;
@@ -81,6 +82,15 @@ public class TwoOptions {
 
 
 			break;
+			case 35000:
+				if(c.getY() > 6400) {
+					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+					c.getPA().closeAllWindows();
+				} else {
+					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+					c.getPA().closeAllWindows();
+				}
+				break;
 		case 130135:
 			c.currentExchangeItemAmount = 1;
 			FireOfExchange.exchangeItemForPoints(c);
@@ -1117,6 +1127,15 @@ public class TwoOptions {
 				c.hasfourthfloorDone = true;
 				c.getPA().closeAllWindows();
 				c.nextChat = -1;
+				break;
+			case 35000:
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					Ladders.climbLadder(c, c.getX(), c.getY()+6400, c.heightLevel);
+					c.getPA().closeAllWindows();
+				} else {
+					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+					c.getPA().closeAllWindows();
+				}
 				break;
 		case 1004:
 			c.getPA().closeAllWindows();

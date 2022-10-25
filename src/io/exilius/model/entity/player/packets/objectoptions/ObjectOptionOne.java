@@ -212,6 +212,10 @@ static int fourthFloorsos[][] = {
 			return;
 		}
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().contains("ladder")) {
+			if(def.actions[0].toLowerCase().equals("climb")) {
+				c.getDH().sendOption2("Climb up", "Climb down");
+				c.dialogueAction = 35000;
+			}
 			if(def.actions[0].toLowerCase().equals("climb-up")) {
 				if(obX == 3069 && obY == 10256) { //KBD LAIR
 					Ladders.climbLadder(c, 3017, 3850, 0);
