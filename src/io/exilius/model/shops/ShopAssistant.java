@@ -777,8 +777,11 @@ public class ShopAssistant {
 						return 20;
 					case 11802:
 					case 11804:
+						return 20;
 					case 11806:
+						return 15;
 					case 11808:
+						return 10;
 					case 13577:
 					case 24271:
 						return 40;

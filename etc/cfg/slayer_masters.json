@@ -818,7 +818,7 @@
 				"teleport": [2980, 3712, 0]
             },
 			{
-			"names": [ "revenant", "revenant ork", "revenant knight", "revenant dragon", "revenant demon", "revenant cyclops", "revenant dark beast", "revenant pyrefiend", "revenant goblin" ],
+			"names": [ "revenant", "revenant ork", "revenant knight", "revenant dragon", "revenant demon", "revenant cyclops", "revenant dark beast", "revenant pyrefiend", "revenant goblin", "revenant imp" ],
                 "level": 1,
                 "experience": 115,
                 "minimum": 13,

@@ -663,6 +663,9 @@ public abstract class HitDispatcher {
         if (weaponId == Items.CRAWS_BOW) {
             return;
         }
+        if (weaponId == 25865) {
+            return;
+        }
         if (type == RangedWeaponType.NO_ARROWS) {
             return;
         }

@@ -84,6 +84,10 @@ public class AchievementDiaryKills {
 		case 891:
 			break;
 		case 2167:
+		case 2168:
+		case 2169:
+		case 2170:
+		case 2171:
 			player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_TZHAAR_XIL);
 			break;
 		case 1798:

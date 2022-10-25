@@ -1,5 +1,9 @@
 ---
-npc_id: 5
+npc_id:
+- 5
+- 3
+- 2
+- 4
 common:
   accessibility: 1
   items:

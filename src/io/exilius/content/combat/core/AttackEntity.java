@@ -699,7 +699,7 @@ public class AttackEntity {
         if (!attacker.usingMagic) {
             // Disable attack if pvp weapon out of charge
             if (weapon == Items.CRAWS_BOW || weapon == Items.CRAWS_BOW_U
-                    || weapon == Items.VIGGORAS_CHAINMACE || weapon == Items.VIGGORAS_CHAINMACE_U) {
+                    || weapon == Items.VIGGORAS_CHAINMACE || weapon == Items.VIGGORAS_CHAINMACE_U|| weapon == Items.BOW_OF_FAERDHINEN) {
                 if (attacker.getPvpWeapons().getCharges(weapon) <= 0) {
                     attacker.stopMovement();
                     attacker.sendMessage("Your weapon needs charges to function properly.");
@@ -769,13 +769,13 @@ public class AttackEntity {
             }
 
             if (!attacker.usingBallista && !attacker.usingCross && !attacker.usingArrows && attacker.usingBow && (((attacker.playerEquipment[Player.playerWeapon] < 4212) || (attacker.playerEquipment[Player.playerWeapon] > 4223)))
-                    && !(attacker.playerEquipment[Player.playerWeapon] == 22550)) {
+                    && !(attacker.playerEquipment[Player.playerWeapon] == 22550) && !(attacker.playerEquipment[Player.playerWeapon] == 25865) ) {
                 attacker.sendMessage("You have run out of arrows!");
                 reset();
                 return false;
             }
 
-            if (!Bow.canUseArrow(attacker) && Configuration.CORRECT_ARROWS && attacker.usingBow && !attacker.getCombatItems().usingCrystalBow() && !(attacker.playerEquipment[Player.playerWeapon] == 22550) && attacker.playerEquipment[Player.playerWeapon] != 9185
+            if (!Bow.canUseArrow(attacker) && Configuration.CORRECT_ARROWS && attacker.usingBow && !attacker.getCombatItems().usingCrystalBow() && !(attacker.playerEquipment[Player.playerWeapon] == 22550) && !(attacker.playerEquipment[Player.playerWeapon] == 25865) && attacker.playerEquipment[Player.playerWeapon] != 9185
                     && attacker.playerEquipment[Player.playerWeapon] != 4734 && attacker.playerEquipment[Player.playerWeapon] != 26374 && attacker.playerEquipment[Player.playerWeapon] != 11785 && attacker.playerEquipment[Player.playerWeapon] != 21012 && attacker.playerEquipment[Player.playerWeapon] != 25916 && attacker.playerEquipment[Player.playerWeapon] != 12926 && attacker.playerEquipment[Player.playerWeapon] != 19478 && attacker.playerEquipment[Player.playerWeapon] != 19481 && attacker.playerEquipment[Player.playerWeapon] != 21902) {
                 attacker.sendMessage("You can't use " + ItemAssistant.getItemName(attacker.playerEquipment[Player.playerArrows]).toLowerCase() + "'s with a "
                         + ItemAssistant.getItemName(attacker.playerEquipment[Player.playerWeapon]).toLowerCase() + ".");

@@ -610,6 +610,9 @@ public class UseItem {
 		// Handles Pvp weapon item on item interaction
 		if (PvpWeapons.handleItemOnItem(c, itemUsed, useWith))
 			return;
+		if (PvpWeapons.handleItemOnItem2(c, itemUsed, useWith)) {
+			return;
+		}
 
 		if (BryophytaStaff.handleItemOnItem(c, itemUsed, useWith))
 			return;

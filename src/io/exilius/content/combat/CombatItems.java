@@ -159,6 +159,9 @@ public class CombatItems {
 	public boolean wearingCrawsBow() {
 		return c.getItems().getWeapon() == Items.CRAWS_BOW;
 	}
+	public boolean wearingbofa() {
+		return c.getItems().getWeapon() == Items.BOW_OF_FAERDHINEN;
+	}
 
 	/**
 	 * Determines if the player is wearing a chainmace
@@ -192,6 +195,9 @@ public class CombatItems {
 
 	public boolean usingCrawsBow() {
 		return c.playerEquipment[Player.playerWeapon] == Items.CRAWS_BOW;
+	}
+	public boolean usingbofa() {
+		return c.playerEquipment[Player.playerWeapon] == 25865;
 	}
 
 	public boolean usingBlowPipe() {

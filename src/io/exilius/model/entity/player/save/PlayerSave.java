@@ -1,34 +1,12 @@
 package io.exilius.model.entity.player.save;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.time.LocalDate;
-import java.util.*;
-import java.util.Map.Entry;
-
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementTier;
 import io.exilius.content.achievement_diary.DifficultyAchievementDiary;
-import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
-import io.exilius.content.achievement_diary.impl.DesertDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.MorytaniaDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.combat.pvp.Killstreak;
 import io.exilius.content.event.eventcalendar.EventCalendar;
 import io.exilius.content.event.eventcalendar.EventChallengeKey;
@@ -54,6 +32,12 @@ import io.exilius.util.PasswordHashing;
 import io.exilius.util.Reflection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class PlayerSave {
 
@@ -948,6 +932,8 @@ public class PlayerSave {
                             for (int i = 0; i < p.playerStats.length; i++) p.playerStats[i] = Integer.parseInt(token3[i]);
                         } else if (token.equals("crawsbowCharge")) {
                             p.getPvpWeapons().setCrawsBowCharges(Integer.parseInt(token2));
+                        } else if (token.equals("bofaCharge")) {
+                            p.getPvpWeapons().setbofaCharges(Integer.parseInt(token2));
                         } else if (token.equals("thammaronCharge")) {
                             p.getPvpWeapons().setThammaronSceptreCharges(Integer.parseInt(token2));
                         } else if (token.equals("viggoraCharge")) {
@@ -1675,6 +1661,10 @@ public class PlayerSave {
             characterfile.write("viggoraCharge = ");
             characterfile.write(Integer.toString(p.getPvpWeapons().getViggoraChainmaceCharges()));
             characterfile.newLine();
+            characterfile.write("bofaCharge = ");
+            characterfile.write(Integer.toString(p.getPvpWeapons().getbofaCharges()));
+            characterfile.newLine();
+
 
             characterfile.write("bossPoints = ");
             characterfile.write(Integer.toString(p.bossPoints));

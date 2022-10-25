@@ -107,7 +107,10 @@ public class TeleportInterfaceConstants {
                 plr.getPA().startTeleport(2757, 3478, 0, "modern", false);
                 plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CAMELOT_TELEPORT);
             }),
-            new TeleportButtonStandard("Catherby", new Position(2804, 3432, 0)),
+            new TeleportButton("Catherby", plr -> {
+                plr.getPA().startTeleport(2804, 3432, 0, "modern", false);
+                plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CATHERBY_TELEPORT);
+            }),
             new TeleportButtonStandard("Darkmeyer", new Position(3592, 3337, 0)),
             new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
             new TeleportButtonStandard("Edgeville", new Position(3093, 3493, 0)),

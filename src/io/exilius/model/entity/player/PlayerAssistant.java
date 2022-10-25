@@ -2479,7 +2479,7 @@ public class PlayerAssistant {
 		boolean projectile = false;
 		if (c.combatFollowing) {
 			projectile = c.usingOtherRangeWeapons || c.usingBow || c.usingMagic || c.autocasting
-					|| c.getCombatItems().usingCrystalBow() || c.playerEquipment[Player.playerWeapon] == 22550;
+					|| c.getCombatItems().usingCrystalBow() || c.playerEquipment[Player.playerWeapon] == 22550|| c.playerEquipment[Player.playerWeapon] == 25865;
 			if (!projectile
 					|| PathChecker.raycast(c, npc, true)
 					|| PathChecker.raycast(npc, c, true)) {

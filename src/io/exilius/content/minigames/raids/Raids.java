@@ -1,8 +1,5 @@
 package io.exilius.content.minigames.raids;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import io.exilius.Server;
@@ -10,8 +7,6 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.event.eventcalendar.EventChallenge;
-//import io.exilius.content.leaderboards.LeaderboardType;
-//import io.exilius.content.leaderboards.LeaderboardUtils;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
@@ -27,6 +22,9 @@ import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Raids {
 
@@ -228,7 +226,7 @@ public class Raids {
             lobbyPlayer.setRaidsInstance(this);
             //lobbyPlayer.setInstance(instance);
             lobbyPlayer.getPA().movePlayer(getStartLocation().getX(), getStartLocation().getY(), currentHeight);
-            lobbyPlayer.sendMessage("@red@The raid has now started! Good Luck! type ::leaveraid to leave!");
+            lobbyPlayer.sendMessage("@red@The raid has now started! Good Luck! type ::leaveraids to leave!");
             lobbyPlayer.sendMessage("[TEMP] @blu@If you get stuck in a wall, type ::stuckraids to be sent back to room 1!");
         }
         RaidConstants.raidGames.add(this);

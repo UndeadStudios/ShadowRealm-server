@@ -33267,6 +33267,26 @@
     "bonusAttack": 29,
     "bonusStrength": 31
   },
+  "7881": {
+    "name": "Revenant imp",
+    "hitpoints": 20,
+    "combatLevel": 7,
+    "attackSpeed": 5,
+    "attackLevel": 13,
+    "strengthLevel": 14,
+    "defenceLevel": 14,
+    "rangeLevel": 15,
+    "magicLevel": 12,
+    "range": 21,
+    "magic": 37,
+    "stabDef": 25,
+    "slashDef": 28,
+    "crushDef": 31,
+    "rangeDef": 31,
+    "magicDef": 1,
+    "bonusAttack": 8,
+    "bonusStrength": 6
+  },
   "7882": {
     "name": "Dusk",
     "hitpoints": 450,

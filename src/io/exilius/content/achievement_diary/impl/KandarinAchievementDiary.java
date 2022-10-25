@@ -1,10 +1,10 @@
 package io.exilius.content.achievement_diary.impl;
 
-import java.util.EnumSet;
-import java.util.Set;
-
 import io.exilius.content.achievement_diary.StatefulAchievementDiary;
 import io.exilius.model.entity.player.Player;
+
+import java.util.EnumSet;
+import java.util.Set;
 
 public final class KandarinAchievementDiary extends StatefulAchievementDiary<KandarinDiaryEntry> {
 	
@@ -14,7 +14,7 @@ public final class KandarinAchievementDiary extends StatefulAchievementDiary<Kan
 	
 	public static final Set<KandarinDiaryEntry> HARD_TASKS = EnumSet.of(KandarinDiaryEntry.SEERS_AGILITY, KandarinDiaryEntry.KILL_MITHRIL_DRAGON_KAN, KandarinDiaryEntry.CUT_MAGIC_SEERS, KandarinDiaryEntry.FLETCH_MAGIC_BOW);
 	
-	public static final Set<KandarinDiaryEntry> ELITE_TASKS = EnumSet.of(KandarinDiaryEntry.WEAPON_POISON_PLUS_PLUS, KandarinDiaryEntry.CATHERY_TELEPORT);
+	public static final Set<KandarinDiaryEntry> ELITE_TASKS = EnumSet.of(KandarinDiaryEntry.WEAPON_POISON_PLUS_PLUS, KandarinDiaryEntry.CATHERBY_TELEPORT);
 	
 	public static final String NAME = "Kandarin area";
 

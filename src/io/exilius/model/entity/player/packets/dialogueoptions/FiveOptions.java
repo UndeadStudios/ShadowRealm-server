@@ -1053,7 +1053,7 @@ public class FiveOptions {
 			 c.getPA().spellTeleport(2924, 3148, 0, false);
 		} else if (c.teleAction == 258369) { //Edge
 			 c.getPA().spellTeleport(2809, 3440, 0, false);
-			 c.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CATHERY_TELEPORT);
+			 c.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CATHERBY_TELEPORT);
 		} else if (c.teleAction == 33) { //Shaman
 			c.getPA().spellTeleport(1469, 3687, 0, false);
 		} else if (c.teleAction == 3434) { //Arch

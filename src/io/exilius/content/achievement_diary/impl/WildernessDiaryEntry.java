@@ -12,11 +12,11 @@ public enum WildernessDiaryEntry {
 	KILL_EARTH_WARRIOR("Kill some earth warriors: %totalstage", 50),
 	DEMONIC_RUINS("Restore some prayer at the demonic ruins"),
 	KBD_LAIR("Enter the king black dragon lair"),
-	MINE_IRON_WILD("Mine some iron ore"),
+	MINE_IRON_WILD("Mine some iron ore",50),
 	ABYSS_TELEPORT("Have the mage of zamorak teleport you to the abyss"),
 	
 	//Medium
-	MINE_MITHRIL_WILD("Mine some mithril ore"),
+	MINE_MITHRIL_WILD("Mine some mithril ore", 50),
 	WILDERNESS_GODWARS("Enter the wilderness god wars dungeon"),
 	KILL_GREEN_DRAGON("Kill some green dragons: %totalstage", 128),
 	KILL_BLOODVELD("Kill a bloodveld in the wilderness god wars dungeon"),

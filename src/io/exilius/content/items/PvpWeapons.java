@@ -23,14 +23,18 @@ public class PvpWeapons {
      * All the Pvp Weapons
      */
     private static final int[] PVP_WEAPONS = {
-            Items.CRAWS_BOW, Items.THAMMARONS_SCEPTRE, Items.VIGGORAS_CHAINMACE,
+            Items.CRAWS_BOW, Items.THAMMARONS_SCEPTRE, Items.VIGGORAS_CHAINMACE,25865
+    };
+    private static final int[] bofa = {
+            25865,
     };
 
     /**
      * All the uncharges Pvp weapons
      */
     private static final int[] U_PVP_WEAPONS = {Items.CRAWS_BOW_U, Items.THAMMARONS_SCEPTRE_U,
-            Items.VIGGORAS_CHAINMACE_U};
+            Items.VIGGORAS_CHAINMACE_U, Items.BOW_OF_FAERDHINEN};
+    private static final int[] u_bofa = {25862};
 
     /**
      * The player assodciated with this handler
@@ -49,6 +53,7 @@ public class PvpWeapons {
      * The amount of charges the player has for Craw's Bow
      */
     private int crawsBowCharges;
+    private int bofaCharges;
 
     /**
      * Manages the Pvp weapons information for the player
@@ -76,10 +81,11 @@ public class PvpWeapons {
                 return this.thammaronSceptreCharges;
             case Items.CRAWS_BOW:
                 return this.crawsBowCharges;
+            case 25865:
+                return this.bofaCharges;
         }
         return 0;
     }
-
     public int getViggoraChainmaceCharges() {
         return viggoraChainmaceCharges;
     }
@@ -99,9 +105,15 @@ public class PvpWeapons {
     public int getCrawsBowCharges() {
         return crawsBowCharges;
     }
+    public int getbofaCharges() {
+        return bofaCharges;
+    }
 
     public void setCrawsBowCharges(int crawsBowCharges) {
         this.crawsBowCharges = crawsBowCharges;
+    }
+    public void setbofaCharges(int bofaCharges) {
+        this.bofaCharges = bofaCharges;
     }
 
     /**
@@ -113,6 +125,7 @@ public class PvpWeapons {
         player.getPvpWeapons().setCrawsBowCharges(0);
         player.getPvpWeapons().setViggoraChainmaceCharges(0);
         player.getPvpWeapons().setThammaronSceptreCharges(0);
+        player.getPvpWeapons().setbofaCharges(0);
     }
 
     /**
@@ -124,6 +137,10 @@ public class PvpWeapons {
     private static boolean isPvpWeapon(int itemId) {
         return Arrays.stream(U_PVP_WEAPONS).anyMatch(pvpWeaponId -> pvpWeaponId == itemId)
                 ||Arrays.stream(PVP_WEAPONS).anyMatch(pvpWeaponId -> pvpWeaponId == itemId);
+    }
+    private static boolean isbofa(int itemId) {
+        return Arrays.stream(u_bofa).anyMatch(bofaid -> bofaid == itemId)
+                ||Arrays.stream(bofa).anyMatch(bofaid -> bofaid == itemId);
     }
 
     /**
@@ -141,6 +158,9 @@ public class PvpWeapons {
                 break;
             case Items.VIGGORAS_CHAINMACE:
                 player.getPvpWeapons().setViggoraChainmaceCharges(0);
+                break;
+            case 25865:
+                player.getPvpWeapons().setbofaCharges(0);
                 break;
         }
     }
@@ -164,8 +184,19 @@ public class PvpWeapons {
             case Items.VIGGORAS_CHAINMACE:
                 player.getPvpWeapons().setViggoraChainmaceCharges(charges + amount);
                 break;
+                case 25865:
+                player.getPvpWeapons().setbofaCharges(charges + amount);
+                break;
         }
     }
+//    public static void manipulatebCharges(Player player, int weaponId2, int amount) {
+//        int charges = player.getPvpWeapons().bofaCharges(weaponId2);
+//        switch (weaponId2) {
+//            case 25865:
+//                player.getPvpWeapons().setbofaCharges(charges + amount);
+//                break;
+//        }
+//    }
 
     /**
      * Handles all item interactions with the Pvp weapon
@@ -247,6 +278,13 @@ public class PvpWeapons {
         }
         return false;
     }
+    private static boolean isbofa(int... itemsUsed) {
+        for (int itemUsed : itemsUsed) {
+            if (Arrays.stream(bofa).anyMatch(id -> id == itemUsed)) return true;
+            if (Arrays.stream(u_bofa).anyMatch(id -> id == itemUsed)) return true;
+        }
+        return false;
+    }
 
     /**
      * Finds the replacement id for an uncharged pvp weapon
@@ -261,6 +299,13 @@ public class PvpWeapons {
         }
         return -1;
     }
+    private static int getReplacementId2(int pvpWeapon) {
+        if (Arrays.stream(u_bofa).anyMatch(id -> pvpWeapon == id)) {
+            int weaponIdx = ArrayUtils.indexOf(u_bofa, pvpWeapon);
+            return bofa[weaponIdx];
+        }
+        return -1;
+    }
 
     /**
      * Handles the item on item action for pvp weapons and ether
@@ -272,7 +317,9 @@ public class PvpWeapons {
      */
     public static boolean handleItemOnItem(Player player, int itemUsed, int itemUsedWith) {
         boolean hasEther = itemUsed == Items.REVENANT_ETHER || itemUsedWith == Items.REVENANT_ETHER;
+        //boolean hasCoins = itemUsed2 == 995 || itemUsedWith2 == 995;
         boolean hasPvpWeapon = isPvpWeapon(itemUsed, itemUsedWith);
+        //boolean hasbofa = isbofa(itemUsed2, itemUsedWith2);
 
         // Check if items used are ether and pvp weapon
         if (hasEther && hasPvpWeapon) {
@@ -308,7 +355,51 @@ public class PvpWeapons {
                 player.sendMessage("Your " + definition.getName() + " already has the maximum amount of charges.");
 
             return true;
-        }
+        }      // Check if items used are ether and pvp weapon
+
+        return false;
+    }
+    public static boolean handleItemOnItem2(Player player, int itemUsed, int itemUsedWith) {
+        boolean hasCoins = itemUsed == Items.COINS || itemUsedWith == Items.COINS;
+        //boolean hasCoins = itemUsed2 == 995 || itemUsedWith2 == 995;
+        boolean hasbofa = isbofa(itemUsed, itemUsedWith);
+        //boolean hasbofa = isbofa(itemUsed2, itemUsedWith2);
+
+        // Check if items used are ether and pvp weapon
+        if (hasCoins && hasbofa) {
+            // Determine what item is what
+            final int bofa = isbofa(itemUsed) ? itemUsed : itemUsedWith;
+            int coins = bofa == itemUsed ? itemUsedWith : itemUsed;
+
+            // Determine if the uncharged variant should be replaced with charged variant
+            int replacementId = PvpWeapons.getReplacementId(bofa);
+
+            ItemDef definition = ItemDef.forId(bofa);
+
+            int charges = player.getPvpWeapons().getCharges(bofa);
+            int coinsAmount = player.getItems().getItemAmount(coins);
+
+            int chargeSpace = MAX_CHARGES - charges;
+            // Check if the player can add more charges
+            if (chargeSpace > 0) {
+                // Replace uncharged variant with charged variant
+                if (replacementId != -1) {
+                    player.getItems().deleteItem(bofa, 1);
+                    player.getItems().addItem(replacementId, 1);
+                }
+
+                // Remove ether add charges
+                int coinstoadd = Math.min(coinsAmount, chargeSpace);
+                player.getItems().deleteItem(coins, coinstoadd);
+                PvpWeapons.manipulateCharges(player, replacementId != -1 ? replacementId : bofa, coinstoadd);
+
+                player.sendMessage("You have added " + coinstoadd + " coins  to your " + definition.getName());
+
+            } else
+                player.sendMessage("Your " + definition.getName() + " already has the maximum amount of charges.");
+
+            return true;
+        }      // Check if items used are ether and pvp weapon
 
         return false;
     }

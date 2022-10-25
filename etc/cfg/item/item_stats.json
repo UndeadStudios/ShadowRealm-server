@@ -68243,7 +68243,7 @@
       "aspeed": 5
     }
   },
-  "26233": {
+  "26999": {
     "name": "Ancient godsword",
     "equipable": true,
     "weight": 11.0,
@@ -69636,6 +69636,82 @@
       "dstab": 0,
       "dslash": 0,
       "dcrush": 0
+    }
+  },
+  "26230": {
+    "name": "burning skeleton boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26231": {
+    "name": "burning skeleton Gloves",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 9,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26232": {
+    "name": "burning skeleton mask",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 0,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26233": {
+    "name": "burning skeleton leggins",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26234": {
+    "name": "burning skeleton shirt",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "25865": {
+    "name": "Bow of Faerdhinen",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 3,
+      "arange": 128,
+      "rstr": 166,
+      "aspeed": 4
     }
   }
 }

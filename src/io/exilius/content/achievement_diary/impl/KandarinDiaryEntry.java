@@ -26,7 +26,7 @@ public enum KandarinDiaryEntry {
 	
 	//Elite
 	WEAPON_POISON_PLUS_PLUS("Mix weapon poison++ in catherby: %totalstage", 10),
-	CATHERY_TELEPORT("Teleport to catherby 100 times.", 100);
+	CATHERBY_TELEPORT("Teleport to catherby 100 times.", 100);
 	
 	private final String description;
 	

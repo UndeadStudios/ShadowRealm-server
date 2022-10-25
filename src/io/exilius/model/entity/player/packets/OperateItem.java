@@ -136,6 +136,8 @@ public class OperateItem implements PacketType {
 				int charge = itemId == 11907 ? c.getTridentCharge() : c.getToxicTridentCharge();
 				c.sendMessage("The " + def.getName() + " has " + charge + " charges remaining.");
 				break;
+			case 25865:
+				c.sendMessage("Your Bow of faedrdhinen has "+ c.getbofaCharge() +" charges remaining.");
 			case 12926:
 				c.getCombatItems().checkBlowpipeShotsRemaining();
 				break;

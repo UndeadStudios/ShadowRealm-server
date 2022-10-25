@@ -249,6 +249,7 @@ public class Player extends Entity {
     public boolean below459;
     public int breadID;
     public int flourAmount, grain;
+    private int bofacharges;
 
     public void saveItemsForMinigame() {
         /**
@@ -5134,6 +5135,13 @@ public class Player extends Entity {
         this.toxicBlowpipeCharge = charge;
     }
 
+    public void setBofaCharge(int charge) {
+        this.bofacharges = charge;
+    }
+    public int getbofaCharge() {
+        return bofacharges;
+    }
+
     public int getToxicBlowpipeAmmo() {
         return toxicBlowpipeAmmo;
     }
@@ -5899,5 +5907,9 @@ public class Player extends Entity {
             return true;
         }
         return false;
+    }
+
+    public String bofacharges() {
+
     }
 }

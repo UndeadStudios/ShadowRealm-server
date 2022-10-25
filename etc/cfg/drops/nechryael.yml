@@ -1,5 +1,7 @@
 ---
-npc_id: 11
+npc_id:
+- 11
+- 8
 constant:
   accessibility: 0
   items:

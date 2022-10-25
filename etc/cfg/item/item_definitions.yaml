@@ -70813,14 +70813,17 @@
 - id: 22881
   name: "Attas seed"
   stackable: true
+  description: "plant this seed for Bonus EXP."
   untradeable: true
 - id: 22883
   name: "Iasor seed"
   stackable: true
+  description: "plant this seed for X2 Double Drops."
   untradeable: true
 - id: 22885
   name: "Kronos seed"
   stackable: true
+  description: "plant this seed for Double raid keys and nex keys."
   untradeable: true
 - id: 22954
   name: "Devout Boots"
@@ -73755,3 +73758,13 @@
   shopValue: 1
   untradeable: true
   equipmentModelType: "FULL_BODY"
+- id: 25865
+  name: "bow of faerdonhein"
+  description: "a magic elven bow."
+  shopValue: 1000000
+  untradeable: true
+  requirements:
+    - skill: "RANGED"
+      level: 80
+    - skill: "AGILITY"
+      level: 80  

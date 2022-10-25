@@ -224,7 +224,7 @@ public class AttackNpcCheck {
                 return false;
             }
         }
-        if (c.playerEquipment[Player.playerWeapon] == 22547 || c.playerEquipment[Player.playerWeapon] == 22542 || c.playerEquipment[Player.playerWeapon] == 22552 ) {
+        if (c.playerEquipment[Player.playerWeapon] == 25865|| c.playerEquipment[Player.playerWeapon] == 25862 || c.playerEquipment[Player.playerWeapon] == 22547 || c.playerEquipment[Player.playerWeapon] == 22542 || c.playerEquipment[Player.playerWeapon] == 22552 ) {
             sendCheckMessage(c, sendMessages, "Your weapon needs more then 1000 charges to function properly.");
             return false;
         }

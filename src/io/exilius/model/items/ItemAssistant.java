@@ -458,7 +458,7 @@ public class ItemAssistant {
 
 				if (ammoIsRangeAmmo) {
 					if (player.getCombatItems().usingCrystalBow()
-							|| player.getCombatItems().usingCrawsBow()
+							|| player.getCombatItems().usingbofa()
 							|| player.getCombatItems().usingBlowPipe()
 							|| weaponIsAmmo) {
 
@@ -836,7 +836,8 @@ public class ItemAssistant {
 		case 12424:
 		case 20784:
 		case 20997:
-		case 22550:
+			case 22550:
+			case 25865:
 			return true;
 		}
 		return false;
