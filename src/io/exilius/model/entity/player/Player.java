@@ -5909,7 +5909,4 @@ public class Player extends Entity {
         return false;
     }
 
-    public String bofacharges() {
-
-    }
 }
