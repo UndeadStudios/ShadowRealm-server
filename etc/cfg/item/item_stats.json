@@ -69713,5 +69713,65 @@
       "rstr": 166,
       "aspeed": 4
     }
+  },
+  "27473": {
+    "name": "Witch hat",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 0,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "27475": {
+    "name": "WItch top",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "27477": {
+    "name": "Witch robes",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "27479": {
+    "name": "Witch boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "27481": {
+    "name": "Witch cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
   }
 }
