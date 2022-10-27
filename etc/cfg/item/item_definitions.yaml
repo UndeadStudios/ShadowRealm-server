@@ -73771,4 +73771,25 @@
     - skill: "RANGED"
       level: 80
     - skill: "AGILITY"
-      level: 80  
+      level: 80
+- id: 27473
+  name: "Witch hat"
+  description: "A spooky hate complete with an even spookier nose."
+  shopValue: 0
+- id: 27475
+  name: "Witch top"
+  description: "Might help me turn people into newts."
+  shopValue: 0
+  equipmentModelType: "FULL_BODY"
+- id: 27477
+  name: "Witch robes"
+  description: "Protects the legs when brewing concoctions."
+  shopValue: 0
+- id: 27479
+  name: "Witch boots"
+  description: "Wickedly pointy!"
+  shopValue: 0
+- id: 27481
+  name: "Witch cape"
+  description: "A thick cape covered in feathers... and probably spiders."
+  shopValue: 0

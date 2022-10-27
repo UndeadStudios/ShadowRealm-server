@@ -2,6 +2,7 @@ package io.exilius.model.entity.player.packets.objectoptions;
 
 import io.exilius.Server;
 import io.exilius.content.dialogue.impl.OutlastLeaderboard;
+import io.exilius.content.objects.Ladders;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.collisionmap.ObjectDef;
@@ -26,18 +27,18 @@ public class ObjectOptionThree {
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
 			if(def.actions[2].toLowerCase().equals("climb-up")) {
 				if(obX == 3069 && obY == 10256) { // custom locations
-					c.getPA().movePlayer(3017, 3850, 0);
+					Ladders.climbLadder(c,3017, 3850, 0);
 					return;
 				}
 				if(obX == 3017 && obY == 10249) { // custom locations
-					c.getPA().movePlayer(3069, 3857, 0);
+					Ladders.climbLadder(c,3069, 3857, 0);
 					return;
 				}
-				if(c.getX() > 6400) {
-					c.getPA().movePlayer(c.getX(), c.getX()-6400, c.heightLevel);
+				if(c.getY() > 6400) {
+					Ladders.climbLadder(c,c.getX(), c.getY()-6400, c.heightLevel);
 					return;
 				} else {
-					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
+					Ladders.climbLadder(c,c.absX, c.absY, c.heightLevel+1);
 					return;
 				}
 			}

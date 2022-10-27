@@ -10,6 +10,7 @@ import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.item.lootable.impl.RaidsChestCommon;
 import io.exilius.content.item.lootable.impl.RaidsChestRare;
 import io.exilius.content.minigames.raids.Raids;
+import io.exilius.content.objects.Ladders;
 import io.exilius.content.objects.Pickable;
 import io.exilius.content.skills.FlaxPicking;
 import io.exilius.content.skills.agility.AgilityHandler;
@@ -53,43 +54,43 @@ public class ObjectOptionTwo {
         if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("ladder")) {
             if(def.actions[1].equals("Climb-up")) {
                 if(obX == 3069 && obY == 10256) { // custom locations
-                    c.getPA().movePlayer(3017, 3850, 0);
+					Ladders.climbLadder(c,3017, 3850, 0);
                     return;
                 }
                 if(obX == 3017 && obY == 10249) { // custom locations
-                    c.getPA().movePlayer(3069, 3857, 0);
+					Ladders.climbLadder(c,3069, 3857, 0);
                     return;
                 }
-                if(c.getX() > 6400) {
-                    c.getPA().movePlayer(c.getX(), c.getX()-6400, c.heightLevel);
+                if(c.getY() > 6400) {
+					Ladders.climbLadder(c,c.getX(), c.getY()-6400, c.heightLevel);
                     return;
                 } else {
-                    c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
+					Ladders.climbLadder(c,c.absX, c.absY, c.heightLevel+1);
                     return;
                 }
             }
             if(def.actions[1].equals("Climb-down")) {
                 if(obX == 3017 && obY == 3849) { // custom locations
-                    c.getPA().movePlayer(3069, 10257, 0);
+					Ladders.climbLadder(c,3069, 10257, 0);
                     return;
                 }
                 if(obX == 3069 && obY == 3856) { // custom locations
-                    c.getPA().movePlayer(3017, 10248, 0);
+					Ladders.climbLadder(c,3017, 10248, 0);
                     return;
                 }
                 if(obX == 1570 && obY == 2829 && c.heightLevel == 1) {
-                    c.getPA().movePlayer(1570, 2830, 0);
+					Ladders.climbLadder(c,1570, 2830, 0);
                     return;
                 }
                 if(obX == 1560 && obY == 2829 && c.heightLevel == 1) {
-                    c.getPA().movePlayer(1560, 2830, 0);
+					Ladders.climbLadder(c,1560, 2830, 0);
                     return;
                 }
                 if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
-                    c.getPA().movePlayer(c.getX(), c.getX()+6400, c.heightLevel);
+					Ladders.climbLadder(c,c.getX(), c.getX()+6400, c.heightLevel);
                     return;
                 } else {
-                    c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+					Ladders.climbLadder(c,c.absX, c.absY, c.heightLevel-1);
                     return;
                 }
             }
