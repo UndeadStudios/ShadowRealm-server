@@ -91,6 +91,7 @@ public class IronmanMode extends Mode {
 		case 114:
 		case 190:
 		case 147:
+			case 143:
 			return true;
 		}
 		return false;
@@ -133,6 +134,7 @@ public class IronmanMode extends Mode {
 		case 114:
 		case 190:
 			case 147:
+			case 143:
 			return true;
 		case 6:
 			if (ItemDef.forId(itemId).getName().contains("rune")) {
@@ -230,6 +232,7 @@ public class IronmanMode extends Mode {
 		case 18:
 		case 115:
 		case 116:
+			case 143:
 			return true;
 		case 44:
 			if (ItemDef.forId(itemId).getName().contains("head")) {

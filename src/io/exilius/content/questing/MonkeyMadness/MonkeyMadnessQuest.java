@@ -1,7 +1,5 @@
 package io.exilius.content.questing.MonkeyMadness;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueExpression;
@@ -13,7 +11,8 @@ import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
-import io.exilius.model.entity.player.mode.ModeType;
+
+import java.util.List;
 
 public class MonkeyMadnessQuest extends Quest {
 
@@ -242,17 +241,17 @@ public class MonkeyMadnessQuest extends Quest {
     @Override
     public boolean handleItemClick(int itemId) {
         switch (itemId) {
-            case 4587:
-            case 20000:
-                if (!isQuestCompleted() && (player.getMode().getType() == ModeType.IRON_MAN ||
-                        player.getMode().getType() == ModeType.ULTIMATE_IRON_MAN ||
-                        player.getMode().getType() == ModeType.HC_IRON_MAN ||
-                        player.getMode().getType() == ModeType.ROGUE_IRONMAN ||
-                        player.getMode().getType() == ModeType.ROGUE_HARDCORE_IRONMAN)) {
-                    player.sendMessage("Monkey Madness is required to wield this weapon for your game mode.");
-                    return true;
-                }
-                return false;
+//            case 4587:
+//            case 20000:
+//                if (!isQuestCompleted() && (player.getMode().getType() == ModeType.IRON_MAN ||
+//                        player.getMode().getType() == ModeType.ULTIMATE_IRON_MAN ||
+//                        player.getMode().getType() == ModeType.HC_IRON_MAN ||
+//                        player.getMode().getType() == ModeType.ROGUE_IRONMAN ||
+//                        player.getMode().getType() == ModeType.ROGUE_HARDCORE_IRONMAN)) {
+//                    player.sendMessage("Monkey Madness is required to wield this weapon for your game mode.");
+//                    return true;
+//                }
+//                return false;
             case 4035:
                 if (getStage() == 3 && !player.getPosition().inWild()) {
                     player.start(getGarkor()

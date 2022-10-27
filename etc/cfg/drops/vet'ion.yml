@@ -69,7 +69,7 @@ uncommon:
     maximum: 15
     minimum: 5
 rare:
-  accessibility: 128
+  accessibility: 175
   items:
   - name: "dragon pickaxe"
     minimum: 1
@@ -77,10 +77,6 @@ rare:
   - name: "dragon 2h sword"
     minimum: 1
     maximum: 1
-
-very_rare:
-  accessibility: 175
-  items:
   - item: 4185
     maximum: 3
     minimum: 2
@@ -90,3 +86,13 @@ very_rare:
   - name: "ring of the gods"
     minimum: 1
     maximum: 1
+  - item: 29280
+    maximum: 10
+    minimum: 5
+very_rare:
+  accessibility: 2750
+  items:
+  - item: 26399
+    maximum: 1
+    minimum: 1
+

@@ -204,6 +204,10 @@ public class ShopAssistant {
 			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " Raid points.");
 			return;
 		}
+		if (c.myShopId == 143) {
+			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " Tokens.");
+			return;
+		}
 		if (c.myShopId == 44) {
 			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " slayer points.");
 			return;
@@ -329,6 +333,46 @@ public class ShopAssistant {
 					
 			}
 			break;
+			case 143:
+				switch(id) {
+					case 9925:
+					case 9924:
+					case 9923:
+					case 9922:
+					case 9921:
+					case 9920:
+					case 12845:
+					case 1419:
+					case 6722:
+					case 11847:
+					case 12383:
+					case 13284:
+					case 13285:
+					case 13286:
+					case 13287:
+					case 20773:
+					case 20775:
+					case 20777:
+					case 20779:
+					case 1959:
+					case 21719:
+					case 26260:
+					case 26254:
+						return 75;
+					case 2528:
+						return 100;
+					case 26230:
+					case 26231:
+					case 26232:
+					case 26233:
+					case 26234:
+						return 1_000;
+					case 20997:
+					case 22325:
+						return 15_000;
+
+				}
+				break;
 			case 120:
 				switch(id) {
 					case 13317:
@@ -1540,6 +1584,10 @@ public class ShopAssistant {
 			c.sendMessage("You can't sell items here.");
 			return;
 		}
+		if (c.myShopId == 143) {
+			c.sendMessage("You can't sell items here.");
+			return;
+		}
 
 		if (c.myShopId != 116 && c.myShopId != 115 && CANNOT_SELL) {
 			c.sendMessage("You can't sell " + ItemAssistant.getItemName(removeId).toLowerCase() + ".");
@@ -1595,6 +1643,8 @@ public class ShopAssistant {
 				}
 			} else if (c.myShopId == 18) {
 				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " marks of grace" + ShopAdd);
+			} else if (c.myShopId == 143) {
+				c.sendMessage(ItemAssistant.getItemName(removeId) + ": shop will buy for " + ShopValue + " tokens" + ShopAdd);
 			} else if (c.myShopId == 172 || c.myShopId == 173) {
 				c.sendMessage("You cannot sell items to this shop.");
 			} else if (c.myShopId == 116) {
@@ -1692,6 +1742,7 @@ public class ShopAssistant {
 			case 147:
 			case 117:
 			case 18:
+			case 143:
 				c.sendMessage("You cannot sell items to this shop.");
 				return false;
 		}
@@ -1764,6 +1815,9 @@ public class ShopAssistant {
 					} else if (c.myShopId == 18) {
 						c.getItems().addItem(11849, TotPrice2);
 						logShop("received", 11849, TotPrice2);
+					} else if (c.myShopId == 143) {
+						c.getItems().addItem(29280, TotPrice2);
+						logShop("received", 29280, TotPrice2);
 					} else if (c.myShopId == 83) {
 						c.getItems().addItem(995, TotPrice4);
 						logShop("received", 995, TotPrice4);
@@ -1795,6 +1849,9 @@ public class ShopAssistant {
 					} else if (c.myShopId == 18) {
 						c.getItems().addItem(11849, TotPrice2);
 						logShop("received", 995, TotPrice2);
+					} else if (c.myShopId == 143) {
+						c.getItems().addItem(29280, TotPrice2);
+						logShop("received", 29280, TotPrice2);
 					} else if (c.myShopId == 83) {
 						c.getItems().addItem(995, TotPrice4);
 						logShop("received", 995, TotPrice4);
@@ -2158,6 +2215,7 @@ public class ShopAssistant {
 				case 12:
 				case 13:
 				case 18:
+				case 143:
 				case 40:
 				case 44:
 				case 75:
@@ -2531,6 +2589,18 @@ public class ShopAssistant {
 				return;
 			}
 			c.getItems().deleteItem(11849, itemValue);
+			c.getItems().addItem(itemID, amount);
+			c.getItems().sendInventoryInterface(3823);
+			logShop("bought", itemID, amount);
+			return;
+		}
+		if (c.myShopId == 143) {
+			int itemValue = getSpecialItemValue(itemID) * amount;
+			if (!c.getItems().playerHasItem(29280, itemValue)) {
+				c.sendMessage("You do not have tokens to purchase this.");
+				return;
+			}
+			c.getItems().deleteItem(29280, itemValue);
 			c.getItems().addItem(itemID, amount);
 			c.getItems().sendInventoryInterface(3823);
 			logShop("bought", itemID, amount);

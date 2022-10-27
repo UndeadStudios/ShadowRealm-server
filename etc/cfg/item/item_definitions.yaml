@@ -66084,6 +66084,10 @@
   name: "Lil Mimic"
   description: "Its a lil mimic."
   untradeable: true
+- id: 24997
+  name: "Magical Pumpkin"
+  description: "Its a Magical Pumpkin."
+  untradeable: true
 - id: 19943
   name: "Arceuus house scarf"
   description: "A blue scarf adorned with a dark crystal."

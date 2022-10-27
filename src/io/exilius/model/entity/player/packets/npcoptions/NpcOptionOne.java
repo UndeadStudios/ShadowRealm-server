@@ -743,9 +743,17 @@ public class NpcOptionOne {
 		case 1986:
 			player.getDH().sendDialogues(2244, player.npcType);
 			break;
-		case 1576:
-			player.getShops().openShop(4);
-			break;
+			case 1576:
+				player.getShops().openShop(4);
+				break;
+			case 390:
+				if (player.getMode().isIronmanType()
+						|| player.getRights().contains(Right.OWNER) || player.getRights().contains(Right.ADMINISTRATOR)) {
+					player.getShops().openShop(143);
+				} else {
+					player.getShops().openShop(143);
+				}
+				break;
 		case 1577:
 			player.getShops().openShop(8);
 			break;
@@ -783,8 +791,7 @@ public class NpcOptionOne {
 
 
 		case 7913:
-			if (player.getMode().isIronmanType()
-					|| player.getRights().contains(Right.OWNER) || player.getRights().contains(Right.ADMINISTRATOR)) {
+			if (player.getMode().isIronmanType()) {
 				player.getShops().openShop(41);
 			} else {
 				player.sendMessage("You must be an Iron Man to access this shop.");

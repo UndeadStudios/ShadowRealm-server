@@ -2946,7 +2946,7 @@ static int fourthFloorsos[][] = {
 			case 2119:
 				if (c.heightLevel == 1) {
 					if (c.absX == 3412 && (c.absY == 3540 || c.absY == 3541)) {
-						c.getPA().movePlayer(3417, c.absY, 2);
+						c.getPA().movePlayer(3417, 3541, 2);
 					}
 				}
 				break;
@@ -2954,7 +2954,7 @@ static int fourthFloorsos[][] = {
 			case 2120:
 				if (c.heightLevel == 2) {
 					if (c.absX == 3417 && (c.absY == 3540 || c.absY == 3541)) {
-						c.getPA().movePlayer(3412, c.absY, 1);
+						c.getPA().movePlayer(3412, 3540, 1);
 					}
 				}
 				break;
