@@ -1,5 +1,7 @@
 ---
-npc_id: 2167
+npc_id:
+- 2167
+- 2170
 constant:
   accessibility: 0
   items:

@@ -108,6 +108,10 @@
 		"god": "SARADOMIN"
 	},
 	{
+		"id": 20220,
+		"god": "SARADOMIN"
+	},
+	{
 		"id": 12808,
 		"god": "SARADOMIN"
 	},
@@ -248,6 +252,10 @@
 		"god": "ZAMORAK"
 	},
 	{
+		"id": 20223,
+		"god": "ZAMORAK"
+	},
+	{
 		"id": 12904,
 		"god": "ZAMORAK"
 	},
@@ -281,6 +289,10 @@
 	},
 	{
 		"id": 12273,
+		"god": "BANDOS"
+	},
+	{
+		"id": 20232,
 		"god": "BANDOS"
 	},
 	{

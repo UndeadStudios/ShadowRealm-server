@@ -2,6 +2,7 @@
 npc_id:
 - 6914
 - 6918
+- 6919
 constant:
   accessibility: 0
   items:

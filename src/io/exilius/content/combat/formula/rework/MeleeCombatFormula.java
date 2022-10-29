@@ -301,7 +301,7 @@ public class MeleeCombatFormula implements CombatFormula {
                 effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
             }
             if (LavaScythe.usingScythe(attacker.asPlayer())) {
-                effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
+                effectiveAttackLevel += SetAccuracyBonus.SCYTHEL_ATTACK_BONUS;
             }
         }
 

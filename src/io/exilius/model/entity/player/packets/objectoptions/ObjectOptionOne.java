@@ -2047,6 +2047,8 @@ static int fourthFloorsos[][] = {
 			case 17385:
 				if (Boundary.isIn(c, Boundary.EDGE_DUNG_LADDER)) {
 					c.sendMessage("This area is currently closed.");
+				} else if (Boundary.isIn(c, Boundary.EDGE_DUNGexit_LADDER)) {
+					AgilityHandler.delayEmote(c, "CLIMB_UP", 3091, 34910, 0, 2);
 				} else if (Boundary.isIn(c, Boundary.EDGE_DUNG_ENTRANCE_LADDER)){
 					AgilityHandler.delayEmote(c, "CLIMB_UP", 3084, 3501, 0, 2);
 				} else if (Boundary.isIn(c, Boundary.FOE_DUNGEON)) {
@@ -2950,7 +2952,7 @@ static int fourthFloorsos[][] = {
 			case 2119:
 				if (c.heightLevel == 1) {
 					if (c.absX == 3412 && (c.absY == 3540 || c.absY == 3541)) {
-						c.getPA().movePlayer(3417, 3541, 2);
+						c.getPA().movePlayer(3417, 3540, 2);
 					}
 				}
 				break;
@@ -2958,7 +2960,7 @@ static int fourthFloorsos[][] = {
 			case 2120:
 				if (c.heightLevel == 2) {
 					if (c.absX == 3417 && (c.absY == 3540 || c.absY == 3541)) {
-						c.getPA().movePlayer(3412, 3540, 1);
+						c.getPA().movePlayer(3417, 3541, 1);
 					}
 				}
 				break;

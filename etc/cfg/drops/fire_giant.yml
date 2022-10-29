@@ -1,5 +1,8 @@
 ---
-npc_id: 2084
+npc_id:
+- 2084
+- 7251
+- 7252
 constant:
   accessibility: 0
   items:

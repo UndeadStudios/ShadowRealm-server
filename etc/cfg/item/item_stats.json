@@ -60051,11 +60051,11 @@
       "astab": 190,
       "aslash": 180,
       "acrush": 70,
-      "amagic": -6,
-      "dstab": -2,
+      "amagic": 6,
+      "dstab": 2,
       "dslash": 18,
       "dcrush": 20,
-      "str": 215,
+      "str": 230,
       "aspeed": 5
     }
   },

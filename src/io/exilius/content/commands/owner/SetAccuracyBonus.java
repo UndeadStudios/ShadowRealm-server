@@ -12,6 +12,7 @@ public class SetAccuracyBonus extends Command {
     public static int RANGE_ATTACK = 64;
     public static int MAGE_ATTACK = 64;
     public static int SCYTHE_ATTACK_BONUS = 130;
+    public static int SCYTHEL_ATTACK_BONUS = 140;
 
     @Override
     public void execute(Player player, String commandName, String input) {

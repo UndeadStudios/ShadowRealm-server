@@ -524,6 +524,7 @@ public class Boundary {
 	public static final Boundary EDGE_TRADING_AREA = new Boundary(3085, 3478, 3109, 3504);
 	public static final Boundary EDGE_NORTH_BUILDING = new Boundary(3088, 3502, 3108, 3520);
 	public static final Boundary EDGE_DUNG_LADDER = new Boundary(3083, 9966, 3098, 9978);
+	public static final Boundary EDGE_DUNGexit_LADDER = new Boundary(3095, 9867, 3099, 9869);
 	public static final Boundary EDGE_DUNG_ENTRANCE_LADDER = new Boundary(3092, 9863, 3102, 9870);
 	public static final Boundary FOE_DUNGEON = new Boundary(2545, 9947, 2556, 9956);
 
