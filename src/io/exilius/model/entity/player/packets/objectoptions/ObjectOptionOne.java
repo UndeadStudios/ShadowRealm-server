@@ -15,6 +15,8 @@ import io.exilius.content.bosses.hydra.AlchemicalHydra;
 import io.exilius.content.bosses.nex.Nex;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.weapon.WeaponDataConstants;
+import io.exilius.content.dialogue.DialogueBuilder;
+import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dialogue.impl.CrystalCaveEntryDialogue;
 import io.exilius.content.dialogue.impl.FireOfDestructionDialogue;
 import io.exilius.content.dialogue.impl.OutlastLeaderboard;
@@ -47,6 +49,7 @@ import io.exilius.content.tournaments.ViewingOrb;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.content.wilderness.SpiderWeb;
 import io.exilius.model.Items;
+import io.exilius.model.Npcs;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.collisionmap.doors.DoorDefinition;
 import io.exilius.model.collisionmap.doors.DoorHandler;
@@ -54,6 +57,7 @@ import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.entity.HealthStatus;
+import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.*;
 import io.exilius.model.entity.player.mode.group.GroupIronmanBank;
 import io.exilius.model.entity.player.mode.group.GroupIronmanGroup;
@@ -417,8 +421,40 @@ static int fourthFloorsos[][] = {
 				c.getItemUpgradeSystem().openInterface();
 				break;
 			case 42967:
-				Nex instance = new Nex(c, Boundary.Nex);
-				Nex.enter(c, instance);
+					c.start(new DialogueBuilder(c).setNpcId(11278).option(new DialogueOption("Start Instance", p -> {
+						Nex instance = new Nex(p, Boundary.Nex);
+						Nex.enter(p, instance);
+						p.getPA().closeAllWindows();
+					}), new DialogueOption("Join friend's Instance", plr -> {
+						plr.getPA().sendEnterString("Enter friend's name", (plr1, str) -> {
+							for (Player player : PlayerHandler.getPlayers()) {
+								if (player.getDisplayName().equalsIgnoreCase(str)) {
+									if (player.getInstance() != null && !player.getInstance().isDisposed()) {
+										for (NPC npc : player.getInstance().getNpcs()) {
+											if (npc.getNpcId() == Npcs.NEX && npc.getHealth().getCurrentHealth() < (npc.getHealth().getMaximumHealth() - 100))  {
+												plr1.getPA().closeAllWindows();
+												plr1.sendMessage("You cannot enter an instance that has already begun!");
+												return;
+											}
+										}
+										if (player.getInstance().getPlayers().size() >= 3) {
+											plr1.getPA().closeAllWindows();
+											plr1.sendMessage("You cannot enter an instance that is full!");
+											return;
+										}
+										player.getInstance().add(plr1);
+										plr1.moveTo(new Position(2910, 5203,player.getInstance().getHeight()));
+									} else {
+										plr1.sendMessage("There is nobody with an instance open by the name " + str);
+									}
+									plr1.getPA().closeAllWindows();
+								}
+							}
+						});
+					})));
+				if (c.absX == 2910 && c.absY == 5202 || c.absX == 2910 && c.absY == 5203 || c.absX == 2910 && c.absY == 5204) {
+					c.getPA().movePlayer(2908, 5203, 0);
+				}
 				break;
 			case 4387:
 				 Server.castleWars.joinWait(c,1);

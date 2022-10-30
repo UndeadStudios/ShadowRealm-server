@@ -345,7 +345,7 @@ public class ShopAssistant {
 					case 1419:
 					case 6722:
 					case 11847:
-					case 12383:
+					case 13283:
 					case 13284:
 					case 13285:
 					case 13286:
@@ -370,6 +370,12 @@ public class ShopAssistant {
 					case 20997:
 					case 22325:
 						return 15_000;
+					case 27473:
+					case 27475:
+					case 27477:
+					case 27479:
+					case 27481:
+						return 500;
 
 				}
 				break;

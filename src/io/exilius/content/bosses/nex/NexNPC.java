@@ -834,7 +834,6 @@ public class NexNPC extends NPC {
     public void process() {
         if (!isAttacking)
             return;
-
         postHitDefend(this);
 //        setAttacks();
         if (currentPlayersize != instance.getPlayers().size()) {
