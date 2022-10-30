@@ -510,7 +510,7 @@ public class MeleeData {
 				return 435;
 			case Items.SCYTHE_OF_OSIRIS:
 				return 435;
-			case 46399:
+			case 26399:
 				return 435;
 		case Items.DRAGON_HUNTER_LANCE:
 			return 420;

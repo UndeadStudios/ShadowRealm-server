@@ -8,11 +8,11 @@ import io.exilius.model.entity.player.Player;
  */
 public class SetAccuracyBonus extends Command {
 
-    public static int MELEE_ATTACK = 64;
-    public static int RANGE_ATTACK = 64;
-    public static int MAGE_ATTACK = 64;
+    public static int MELEE_ATTACK = 74;
+    public static int RANGE_ATTACK = 54;
+    public static int MAGE_ATTACK = 75;
     public static int SCYTHE_ATTACK_BONUS = 130;
-    public static int SCYTHEL_ATTACK_BONUS = 140;
+    public static int SCYTHEL_ATTACK_BONUS = 150;
 
     @Override
     public void execute(Player player, String commandName, String input) {

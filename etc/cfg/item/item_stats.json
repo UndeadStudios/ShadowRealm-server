@@ -60048,15 +60048,15 @@
     "weight": 3.175,
     "equipment": {
       "slot": 3,
-      "astab": 190,
+      "astab": 170,
       "aslash": 180,
-      "acrush": 70,
+      "acrush": 130,
       "amagic": 6,
       "dstab": 2,
       "dslash": 18,
       "dcrush": 20,
-      "str": 230,
-      "aspeed": 5
+      "str": 215,
+      "aspeed": 4
     }
   },
   "22326": {
