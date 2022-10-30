@@ -18,9 +18,9 @@ public class Nex extends LegacySoloPlayerInstance {
     public static void enter(Player player, Nex instance) {
         try {
             instance.add(player);
-            NexNPC npc = new NexNPC(Npcs.NEX, new Position(2924, 5202, instance.getHeight()), instance);
+            NexNPC npc = new NexNPC(Npcs.NEX, new Position(2924, 5202, 0), instance);
             System.out.println("npc pos: " + npc.getPosition());
-            player.moveTo(new Position(2910, 5203, instance.getHeight()));
+            player.moveTo(new Position(2910, 5203, 0));
         } catch (Exception e) {
             e.printStackTrace();
         }
