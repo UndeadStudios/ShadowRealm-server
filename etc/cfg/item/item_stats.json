@@ -69857,5 +69857,148 @@
       "drange": 0,
       "prayer": 0
     }
+  },
+  "28472": {
+    "name": "Lime Green Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28473": {
+    "name": "Unknowed White Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28474": {
+    "name": "Deep Purple Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28475": {
+    "name": "Deeper Purple Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28476": {
+    "name": "Deep Green Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28477": {
+    "name": "Dull Orange Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28478": {
+    "name": "Bright Yellow Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28479": {
+    "name": "Bright Pink Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28480": {
+    "name": "Bright Blue Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28481": {
+    "name": "Bright Gray Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28482": {
+    "name": "Bright Sky Blue Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28483": {
+    "name": "Teal Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28484": {
+    "name": "Dark Gray Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
   }
 }

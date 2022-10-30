@@ -73835,3 +73835,94 @@
   requirements:
     - skill: "DEFENCE"
       level: 1
+- id: 28472
+  name: "Lime Green abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28473
+  name: "Unknowed White abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28474
+  name: "Deep Purple abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28475
+  name: "Deeper Purple abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28476
+  name: "Deep Green abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28477
+  name: "Dull Orange abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28478
+  name: "Bright Yellow abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28479
+  name: "Bright Pink abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28480
+  name: "Bright Blue abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28481
+  name: "Bright Gray abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28482
+  name: "Bright Sky Blue abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28483
+  name: "Teal abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28484
+  name: "Dark Gray abyssal whip"
+  description: "A weapon from the abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
