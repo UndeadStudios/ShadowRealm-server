@@ -73795,7 +73795,7 @@
   shopValue: 0
 - id: 29160
   name: "Golden halo"
-  description: "Golden halo."
+  description: "A Golden halo for halo."
   shopValue: 1
   requirements:
     - skill: "DEFENCE"
