@@ -70119,5 +70119,187 @@
     "equipment": {
       "slot": 0
     }
+  },
+  "28648": {
+    "name": "Lime Green halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28649": {
+    "name": "Unknowed White halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28650": {
+    "name": "Deep Purple halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28651": {
+    "name": "Deeper Purple halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28652": {
+    "name": "Unknowed White halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28653": {
+    "name": "Deep Green halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28654": {
+    "name": "Bright Yellow halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28655": {
+    "name": "Bright Pink halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28656": {
+    "name": "Bright Blue halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28657": {
+    "name": "Bright Gray halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28658": {
+    "name": "Bright Sky Blue halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28659": {
+    "name": "Teal halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28660": {
+    "name": "Dark Gray halloween mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28673": {
+    "name": "Lime Green beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28674": {
+    "name": "Unknowed White beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28675": {
+    "name": "Deep Purple beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28676": {
+    "name": "Deeper Purple beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28677": {
+    "name": "Unknowed White beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28678": {
+    "name": "Deep Green beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28679": {
+    "name": "Bright Yellow beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28680": {
+    "name": "Bright Pink beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28681": {
+    "name": "Bright Blue beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28682": {
+    "name": "Bright Gray beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28683": {
+    "name": "Bright Sky Blue beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28684": {
+    "name": "Teal beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28685": {
+    "name": "Dark Gray beret",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
   }
 }

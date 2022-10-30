@@ -73994,3 +73994,120 @@
   name: "Dark Gray cavalier"
   description: "All for one and one for all!"
   shopValue: 1500000
+- id: 28648
+  name: "Lime Green h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28649
+  name: "Unknowed White h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28650
+  name: "Deep Purple h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28651
+  name: "Deeper Purple h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28652
+  name: "Deep Green h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28653
+  name: "Dull Orange h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28654
+  name: "Bright Yellow h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28655
+  name: "Bright Pink h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28656
+  name: "Bright Blue h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28657
+  name: "Bright Gray h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28658
+  name: "Bright Sky Blue h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28659
+  name: "Teal h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28660
+  name: "Dark Gray h'ween mask"
+  description: "Aaaarrrghhh ... I'm a monster."
+  shopValue: 11200000
+  equipmentModelType: "FULL_MASK"
+- id: 28673
+  name: "Lime Green beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28674
+  name: "Unknowed White beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28675
+  name: "Deep Purple beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28676
+  name: "Deeper Purple beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28677
+  name: "Deep Green beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28678
+  name: "Dull Orange beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28679
+  name: "Bright Yellow beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28680
+  name: "Bright Pink beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28681
+  name: "Bright Blue beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28682
+  name: "Bright Gray beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28683
+  name: "Bright Sky Blue beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28684
+  name: "Teal beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
+- id: 28685
+  name: "Dark Gray beret"
+  description: "Parlez-voius francais?"
+  shopValue: 80
