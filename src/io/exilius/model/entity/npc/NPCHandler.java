@@ -86,10 +86,6 @@ public class NPCHandler {
             npcs[i] = null;
         }
         startGame();
-        //new Nex(11278, new Position(2925, 5203, 0));
-        //new Nex(11278, new Position(2925, 5203, 0));
-        //NPCSpawning.spawnNpc(11278, 2925, 5203, 0, 0, 70 );
-       // NPCSpawning.spawn(11278, 2925, 5203, 0, 0, 70, true);
     }
 public static void addNPC(int npcType, int x, int y, int h) {
     //x	y	height	walk	maxhit	attack	defence	desc
@@ -250,7 +246,14 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 7605: 
         case 7606: 
         case 7544: 
-        case 5129: 
+        case 5129:
+            case 11246:
+            case Npcs.NEX:
+            case 11283:
+            case 11284:
+            case 11285:
+            case 11286:
+            case 11293:
         case FragmentOfSeren.NPC_ID: 
         case 8781: 
             return true;
@@ -325,7 +328,10 @@ public static void addNPC(int npcType, int x, int y, int h) {
         }
         return false;
     }
-
+    public static boolean isNex(NPC npc) {
+        if (npc == null) return false;
+        return npc.getNpcId() == Npcs.NEX;
+    }
     public static boolean isSkotizoNpc(NPC npc) {
         if (npc == null) return false;
         switch (npc.getNpcId()) {
@@ -356,7 +362,9 @@ public static void addNPC(int npcType, int x, int y, int h) {
      */
     public int getNpcDelay(NPC npc) {
         switch (npc.getNpcId()) {
-        case InfernoWaveData.JAL_NIB: 
+                case Npcs.NEX:
+                    return 4;
+        case InfernoWaveData.JAL_NIB:
             return 4;
         case InfernoWaveData.JAL_MEJRAH: 
             return 7;
@@ -424,15 +432,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 2561:
             case 2215:
                 return 6;
-            case 11278:
-            case 11299:
-            case 11294:
-            case 11283:
-            case 11308:
-            case 11284:
-            case 11285:
-            case 11286:
-                return 5;
 
         // saradomin gw boss
         case 2562: 
@@ -721,6 +720,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
             return 0;
         }
         switch (npc.getNpcId()) {
+            case Npcs.NEX:
+                return npc.getAttackType() == CombatType.MELEE ? 2 : 20;
         case 319: 
         case 239: 
         case 8031: 
@@ -852,9 +853,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
                             case Hespori.NPC_ID: 
                                 damage *= 0.6;
                                 break;
-                                case 11278:
-                                    if (c.protectingMagic()) damage /= 2;
-                                    break;
                             case 319: 
                                 if (c.protectingMagic()) damage /= 2;
                                 break;
@@ -905,12 +903,13 @@ public static void addNPC(int npcType, int x, int y, int h) {
             return npc.getAttackType() == CombatType.SPECIAL || npc.getAttackType() == CombatType.MAGE || npc.getAttackType() == CombatType.RANGE;
         case FragmentOfSeren.NPC_ID: 
             return true;
-            case 11278:
+            case 1257:
+            case 11246:
+            case Npcs.NEX:
             case 11283:
             case 11284:
             case 11285:
             case 11286:
-            case 11294:
                 return true;
         case 6611: 
         case 6612: 
@@ -1243,6 +1242,17 @@ public static void addNPC(int npcType, int x, int y, int h) {
             return npc.getCurrentAttack().getDistanceRequiredForAttack();
         }
         switch (npc.getNpcId()) {
+            case 11293:
+                return 1;
+            case 11283:
+            case 11284:
+            case 11285:
+            case 11286:
+                return 100;
+            case 11246:
+                return 20;
+            case Npcs.NEX:
+                return npc.getAttackType() == CombatType.MELEE ? 2 : 100;
         case Npcs.ABYSSAL_SIRE: 
             return npc.getAttackType() == CombatType.MELEE ? 3 : 14;
         case 1443: 
@@ -1499,15 +1509,15 @@ public static void addNPC(int npcType, int x, int y, int h) {
             return 128;
         }
         switch (npc.getNpcId()) {
-            case 11278:
-            case 11299:
-            case 11294:
             case 11283:
-            case 11308:
             case 11284:
             case 11285:
             case 11286:
-                return 30;
+                return -1;
+            case 11246:
+                return 20;
+            case Npcs.NEX:
+                return 20;
         case 8622: 
         case 8621: 
         case 8620: 
@@ -1593,7 +1603,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 2207: 
         case 2208:
             case 2215:
-            //case 11278:
             case 2216:
         case 2217: 
         case 2218: 
@@ -1687,7 +1696,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
     public static boolean ignoresProjectile(NPC npc) {
         if (npc == null) return false;
         switch (npc.getNpcId()) {
-            case 11278:
             case 11299:
             case 11294:
             case 11283:
@@ -1990,7 +1998,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
     public boolean prayerProtectionIgnored(NPC npc) {
 
         switch (npc.getNpcId()) {
-            case 11278:
         case 1610: 
         case 1611: 
         case 1612: 

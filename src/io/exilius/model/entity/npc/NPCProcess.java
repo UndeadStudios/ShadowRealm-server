@@ -164,7 +164,7 @@ public class NPCProcess {
                 if (spawnedBy == null || spawnedBy.heightLevel != npc.heightLevel || spawnedBy.respawnTimer > 0
                         || !spawnedBy.goodDistance(npc.getX(), npc.getY(), spawnedBy.getX(),
                         spawnedBy.getY(),
-                        NPCHandler.isFightCaveNpc(npc) ? 60 : NPCHandler.isSkotizoNpc(npc) ? 60 : 20)) {
+                        NPCHandler.isFightCaveNpc(npc) ? 60 : NPCHandler.isSkotizoNpc(npc) ? 60 : NPCHandler.isNex(npc) ? 60 : 20)) {
                     npc.unregister();
                 }
             }
@@ -412,10 +412,6 @@ public class NPCProcess {
                 if (npc.getNpcId() == 6618) {
                     npc.forceChat("Ow!");
                 }
-                if(npc.getNpcId() == 11278) {
-                    npc.forceChat("Taste my wrath!");
-                }
-
                 if (npc.getNpcId() == 8781) {
                     npc.forceChat("You will pay for this!");
                     npc.startAnimation(-1);

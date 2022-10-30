@@ -25,14 +25,6 @@ public class AttackAnimation extends NPCHandler {
 		}
 		
 		switch (npc.getNpcId()) {
-			case 11278:
-				if (npc.getAttackType() == CombatType.MELEE) {
-					return 9180;
-				}
-
-				if (npc.getAttackType() == CombatType.MAGE) {
-					return 9189;
-				}
 			case 3254: // Guard
 			case Npcs.ZAMORAK_WARRIOR:
 			case Npcs.ZAMORAK_WARRIOR_2:

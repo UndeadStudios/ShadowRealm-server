@@ -396,7 +396,7 @@ public class NPCHitPlayer {
                             if (c.protectingMelee() && !protectionIgnored) {
                                 if (npc.getNpcId() == 5890)
                                     damage /= 3;
-                                else if (npc.getNpcId() == 963 || npc.getNpcId() == 11278 || npc.getNpcId() == 11299 || npc.getNpcId() == 965 || npc.getNpcId() == 8349
+                                else if (npc.getNpcId() == 963 || npc.getNpcId() == 11299 || npc.getNpcId() == 965 || npc.getNpcId() == 8349
                                         || npc.getNpcId() == 8133 || npc.getNpcId() == 6342 || npc.getNpcId() == 2054
                                         || npc.getNpcId() == 239 || npc.getNpcId() == 998 || npc.getNpcId() == 999 ||
                                         npc.getNpcId() == 1000 || npc.getNpcId() == 7554 || npc.getNpcId() == 319
@@ -416,13 +416,9 @@ public class NPCHitPlayer {
                                 damage /= 0.5;
                             }
                             if (c.protectingRange() && !protectionIgnored) {
-                                if (npc.getNpcId() == 7554 || npc.getNpcId() == 11278)
+                                if (npc.getNpcId() == 7554)
                                     damage /= 2;
                             }
-                            if (c.protectingMagic() && protectionIgnored) {
-                                if (npc.getNpcId() == 11278)
-                                    damage /= 2;
-                        }
                             /**
                              * Specials and defenders
                              */
@@ -540,9 +536,6 @@ public class NPCHitPlayer {
                              * Attacks
                              */
                             switch (npc.getNpcId()) {
-                                case 11278:
-                                    damage /= 2;
-                                    break;
                                 case 6373:
                                 case 6375:
                                 case 6376:

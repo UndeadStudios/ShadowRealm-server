@@ -42,7 +42,7 @@ public class NexNPC extends NPC {
     final int SIPHON_ANIM = 9183;
     private int attackSpeed = 4;
     private boolean isAttacking = false;
-    private boolean canAttack;
+    private boolean canAttack = false;
     private boolean healthIncreased;
 
     final int CRUOR = 11285;
@@ -832,6 +832,9 @@ public class NexNPC extends NPC {
 
     @Override
     public void process() {
+        if (!isAttacking)
+            return;
+
         postHitDefend(this);
 //        setAttacks();
         if (currentPlayersize != instance.getPlayers().size()) {

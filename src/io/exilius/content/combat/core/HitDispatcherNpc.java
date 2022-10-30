@@ -66,11 +66,6 @@ public class HitDispatcherNpc extends HitDispatcher {
                         TimeUnit.MINUTES.toMillis(10));
             }
         }
-        if (npcId == 11278) {
-             if ((type == CombatType.RANGE)) {
-                maximumDamage /= 2.05;
-            }
-        }
 
         // Demonic gorilla
         if (type == CombatType.MELEE && npcId == Npcs.DEMONIC_GORILLA

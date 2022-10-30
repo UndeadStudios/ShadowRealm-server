@@ -104,10 +104,6 @@ public class HitExecutorNpc extends HitExecutor {
                 attacker.setIceQueenDamageCounter(attacker.getIceQueenDamageCounter() + damage.getAmount());
                 FragmentOfSeren.handleSpecialAttack(attacker);
                 break;
-            case 11278:
-                attacker.setNexDamageCounter(attacker.getNexDamageCounter() + damage.getAmount());
-
-                break;
             case 6617:
             case 6616:
             case 6615:

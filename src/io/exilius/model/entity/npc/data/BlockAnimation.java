@@ -319,8 +319,6 @@ public class BlockAnimation {
                 return 13771;
             case 2215:
                 return 7019;
-            case 11278:// nex anims block
-                return 9185;
             case 1377:
                 return 1758;
             case 2216:
