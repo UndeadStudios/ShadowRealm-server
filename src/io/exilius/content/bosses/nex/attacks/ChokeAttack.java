@@ -5,6 +5,7 @@ import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.PlayerHandler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,13 +41,13 @@ public class ChokeAttack {
                 }
                 target.nexVirusTimer -= 15;
 
-/*                for (Player player : PlayerHandler.getPlayers()) {
+                for (Player player : PlayerHandler.getPlayers()) {
                     if (player != target && !player.hasNexVirus && player.getPosition().withinDistance(target.getPosition(), 2)) {
                         if (!player.hasHadNexVirus && player.TimeSinceVirus <= System.currentTimeMillis()) {
                             new ChokeAttack(player);
                         }
                     }
-                }*/
+                }
             }
         }, 15);
     }
