@@ -73926,3 +73926,71 @@
   requirements:
     - skill: "ATTACK"
       level: 70
+- id: 28630
+  name: "Orange cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28631
+  name: "Purple cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28632
+  name: "Unknown Color cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28633
+  name: "Red cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28634
+  name: "Lime Green cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28635
+  name: "Unknowed White cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28636
+  name: "Deep Purple cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28637
+  name: "Deeper Purple cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28638
+  name: "Deep Green cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28640
+  name: "Dull Orange cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28641
+  name: "Bright Yellow cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28642
+  name: "Bright Pink cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28643
+  name: "Bright Blue cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28644
+  name: "Bright Gray cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28645
+  name: "Bright Sky Blue cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28646
+  name: "Teal cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000
+- id: 28647
+  name: "Dark Gray cavalier"
+  description: "All for one and one for all!"
+  shopValue: 1500000

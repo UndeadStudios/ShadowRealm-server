@@ -70000,5 +70000,124 @@
       "str": 82,
       "aspeed": 4
     }
+  },
+  "28630": {
+    "name": "Orange cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28631": {
+    "name": "Purple cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28632": {
+    "name": "Unknown Color cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28633": {
+    "name": "Red cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28634": {
+    "name": "Lime Green cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28635": {
+    "name": "Unknowed White cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28636": {
+    "name": "Deep Purple cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28637": {
+    "name": "Deeper Purple cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28638": {
+    "name": "Deep Green cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28640": {
+    "name": "Dull Orange cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28641": {
+    "name": "Bright Yellow cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28642": {
+    "name": "Bright Pink cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28643": {
+    "name": "Bright Blue cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28644": {
+    "name": "Bright Gray cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28645": {
+    "name": "Bright Sky Blue cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28646": {
+    "name": "Teal cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28647": {
+    "name": "Dark Gray cavalier",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
   }
 }
