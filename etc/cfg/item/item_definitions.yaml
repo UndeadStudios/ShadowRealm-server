@@ -73793,3 +73793,45 @@
   name: "Witch cape"
   description: "A thick cape covered in feathers... and probably spiders."
   shopValue: 0
+- id: 29160
+  name: "Golden halo"
+  description: "Golden halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1
+- id: 28816
+  name: "Blue halo"
+  description: "Blue halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1
+- id: 28817
+  name: "Green halo"
+  description: "Green halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1
+- id: 28818
+  name: "Pink halo"
+  description: "Pink halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1
+- id: 28819
+  name: "Red halo"
+  description: "Red halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1
+- id: 28820
+  name: "Yellow halo"
+  description: "Yellow halo."
+  shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 1

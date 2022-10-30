@@ -69773,5 +69773,89 @@
     "equipment": {
       "slot": 1
     }
+  },
+  "29160": {
+    "name": "Golden halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28816": {
+    "name": "Blue halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28817": {
+    "name": "Green halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28818": {
+    "name": "Pink halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28819": {
+    "name": "Red halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28820": {
+    "name": "Yellow halo",
+    "equipable": true,
+    "weight": 0.3,
+    "equipment": {
+      "slot": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
   }
 }
