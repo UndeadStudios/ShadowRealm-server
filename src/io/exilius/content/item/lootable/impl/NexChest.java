@@ -1,6 +1,7 @@
 package io.exilius.content.item.lootable.impl;
 
-import io.exilius.content.bosses.Nex;
+//import io.exilius.content.bosses.Nex;
+import io.exilius.content.bosses.nex.NexNPC;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.item.lootable.LootRarity;
 import io.exilius.content.item.lootable.Lootable;
@@ -20,7 +21,7 @@ import java.util.Map;
 
 public class NexChest implements Lootable {
 
-    private static final int KEY = Nex.KEY;
+    private static final int KEY = NexNPC.Loot_KEY;
     private static final int ANIMATION = 881;
 
     private static final Map<LootRarity, List<GameItem>> items = new HashMap<>();

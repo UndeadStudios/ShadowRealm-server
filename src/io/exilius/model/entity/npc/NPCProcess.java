@@ -191,19 +191,6 @@ public class NPCProcess {
             }
             Scorpia.spawnHealer();
         }
-        if (type == 11278) {
-            if (npc.walkingHome) {
-                npc.getHealth().setCurrentHealth(2500);
-            }
-            Nex.spawnHealer();
-        }
-        if (type == 11299) {
-            if (npc.walkingHome) {
-                npc.getHealth().setCurrentHealth(2500);
-            }
-            Nex.spawnHealer();
-        }
-
         if (type == Npcs.CORPOREAL_BEAST) {
             CorporealBeast.checkCore(npc);
             CorporealBeast.healWhenNoPlayers(npc);
@@ -533,17 +520,6 @@ public class NPCProcess {
                 NPCDeath.dropItems(npc);
 
                 npc.onDeath();
-                if (this.npc.getNpcId() == 11278) {
-                    Nex.wrathTimer.setDuration(4);
-                    Nex.wrathDMGTimer.setDuration(4);
-
-                    for(int x = this.npc.getX(); x < this.npc.getX() + 5; ++x) {
-                        for(int y = this.npc.getY(); y < this.npc.getY() + 5; ++y) {
-                            Server.playerHandler.sendStillGfx(new StillGraphic(2013, new Position(x, y)));
-                            Nex.wrathLocations.add(new Position(x, y));
-                        }
-                    }
-                }
                 if (killerIndex <= PlayerHandler.players.length - 1) {
                     Player target = PlayerHandler.players[npc.killedBy];
 
@@ -610,20 +586,6 @@ public class NPCProcess {
                         }
                         npc.unregister();
                         break;
-                    case 11278: {
-                        Nex.spawned = false;
-                        Nex.stage = 0;
-                        Nex.nexHealed = false;
-                        Nex.currentAttack = 0;
-                        Nex.phase = -1;
-                        Nex.rewardPlayers();
-                        NPCHandler.kill(11283, 0);
-                        NPCHandler.kill(11284, 0);
-                        NPCHandler.kill(11285, 0);
-                        NPCHandler.kill(11286, 0);
-                }
-                   // npc.unregister();
-                    break;
                     case 494:
                       if  (!playerOwner.getSlayer().getTask().get().getPrimaryName().contains("kraken") && playerOwner.getRights().getPrimary() != Right.OWNER){
                           playerOwner.getPA().movePlayer(new Coordinate(3080, 3510));

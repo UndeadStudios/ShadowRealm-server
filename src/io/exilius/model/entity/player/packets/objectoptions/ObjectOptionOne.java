@@ -7,12 +7,12 @@ import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.Cerberus;
 import io.exilius.content.bosses.Kraken;
-import io.exilius.content.bosses.Nex;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.godwars.God;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hespori.HesporiSpawner;
 import io.exilius.content.bosses.hydra.AlchemicalHydra;
+import io.exilius.content.bosses.nex.Nex;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.weapon.WeaponDataConstants;
 import io.exilius.content.dialogue.impl.CrystalCaveEntryDialogue;
@@ -417,27 +417,8 @@ static int fourthFloorsos[][] = {
 				c.getItemUpgradeSystem().openInterface();
 				break;
 			case 42967:
-				if (Nex.isMissingRequirements(c)) {
-					return;
-				}
-			if (Nex.spawned) {
-				if (c.absX == 2908) {
-				c.getPA().movePlayer(2910, 5203, 0);
-			}
-				if (c.absX == 2910) {
-					c.getPA().movePlayer(2908, 5203, 0);
-				}
-			}
-			if (!Nex.spawned) {
-				Nex.init();
-				Nex.spawned = true;
-				if (c.absX == 2908) {
-					c.getPA().movePlayer(2910, 5203, 0);
-				}
-					if (c.absX == 2910) {
-						c.getPA().movePlayer(2908, 5203, 0);
-					}
-			}
+				Nex instance = new Nex(c, Boundary.Nex);
+				Nex.enter(c, instance);
 				break;
 			case 4387:
 				 Server.castleWars.joinWait(c,1);

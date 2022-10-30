@@ -1,7 +1,6 @@
 package io.exilius.model.entity.npc.actions;
 
 import io.exilius.Server;
-import io.exilius.content.bosses.Nex;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Tekton;
 import io.exilius.content.bosses.hespori.Hespori;
@@ -46,40 +45,6 @@ public class LoadSpell {
     public static void loadSpell(Player player, NPC npc) {
         int chance = 0;
         switch (npc.getNpcId()) {
-            case 11278:
-            case 11283:
-            case 11284:
-            case 11285:
-            case 11286:
-            case 11294:
-                chance = Misc.random(10);
-                if (chance > 1 && chance < 9) {
-                    npc.setAttackType(CombatType.MAGE);
-                    npc.attackTimer = 7;
-                    npc.hitDelayTimer = 4;
-                    int endGfx = -1;
-                    int projectileId = -1;
-                    if (Nex.phase == 0) {
-                        projectileId = 1997;
-                        endGfx = 1998;
-                    } else if (Nex.phase == 1) {
-                        projectileId = 2002;
-                        endGfx = 2003;
-                    } else if (Nex.phase == 2) {
-                        projectileId = 2007;
-                        endGfx = 2008;
-                    }
-
-                    npc.endGfx = endGfx;
-                    npc.projectileId = projectileId;
-                } else {
-                    npc.setAttackType(CombatType.MELEE);
-                    npc.attackTimer = 5;
-                    npc.hitDelayTimer = 3;
-                    npc.projectileId = -1;
-                    npc.endGfx = -1;
-                }
-                break;
             case 7931:
             case 7932:
             case 7933:

@@ -2,11 +2,11 @@ package io.exilius.model.entity.player.packets;
 
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.bosses.Nex;
 import io.exilius.content.bosses.bryophyta.Bryophyta;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hespori.HesporiSpawner;
 import io.exilius.content.bosses.mimic.StrangeCasketDialogue;
+import io.exilius.content.bosses.nex.NexNPC;
 import io.exilius.content.bosses.obor.OborInstance;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
@@ -407,7 +407,7 @@ public class ClickObject implements PacketType {
                         c.getDH().sendStatement("@red@You need at least 3 free slot to open this.");
                         return;
                     }
-                        if (c.getItems().playerHasItem(Nex.KEY, 1)) {
+                        if (c.getItems().playerHasItem(NexNPC.Loot_KEY, 1)) {
                             c.objectDistance = 3;
                             c.getEventCalendar().progress(EventChallenge.OPEN_X_WILDY_CHESTS);
                             new NexChest().roll(c);

@@ -249,6 +249,10 @@ public class Player extends Entity {
     public boolean below459;
     public int breadID;
     public int flourAmount, grain;
+    public int nexVirusTimer;
+    public boolean hasNexVirus;
+    public boolean hasHadNexVirus;
+    public long TimeSinceVirus;
     private int bofacharges;
 
     public void saveItemsForMinigame() {

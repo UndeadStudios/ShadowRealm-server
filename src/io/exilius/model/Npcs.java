@@ -2,6 +2,30 @@ package io.exilius.model;
 
 public class Npcs {
 
+    public static final int NEXLING = 11_276;
+    public static final int NEXLING_2 = 11_277;
+    public static final int NEX = 11_278;
+    public static final int NEX_2 = 11_279;
+    public static final int NEX_3 = 11_280;
+    public static final int NEX_4 = 11_281;
+    public static final int NEX_5 = 11_282;
+    public static final int FUMUS = 11_283;
+    public static final int UMBRA = 11_284;
+    public static final int CRUOR = 11_285;
+    public static final int GLACIES = 11_286;
+    public static final int MESSENGER = 11_287;
+    public static final int ASHUELOT_REIS = 11_288;
+    public static final int ASHUELOT_REIS_2 = 11_289;
+    public static final int SPIRITUAL_WARRIOR_5 = 11_290;
+    public static final int SPIRITUAL_RANGER_5 = 11_291;
+    public static final int SPIRITUAL_MAGE_5 = 11_292;
+    public static final int BLOOD_REAVER = 11_293;
+    public static final int BLOOD_REAVER_2 = 11_294;
+    public static final int GULL_14 = 11_297;
+    public static final int MOSSCHIN_2 = 11_298;
+    public static final int REDEYES_2 = 11_299;
+    public static final int STRONGBONES_2 = 11_300;
+
     private Npcs() {}
 
     public static final int TOOL_LEPRECHAUN = 0;

@@ -6,7 +6,6 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.AchievementDiaryKills;
 import io.exilius.content.bosses.Cerberus;
-import io.exilius.content.bosses.Nex;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.godwars.GodwarsNPCs;
@@ -87,7 +86,6 @@ public class NPCHandler {
             npcs[i] = null;
         }
         startGame();
-        Nex.spawned = false;
         //new Nex(11278, new Position(2925, 5203, 0));
         //new Nex(11278, new Position(2925, 5203, 0));
         //NPCSpawning.spawnNpc(11278, 2925, 5203, 0, 0, 70 );
@@ -1886,9 +1884,6 @@ public static void addNPC(int npcType, int x, int y, int h) {
                     if (hydraInstance.isPresent()) {
                         hydraInstance.get().doAttack();
                         return;
-                    }
-                    if (npc.getNpcId() == 11278) {
-                        Nex.attack(npc);
                     }
                     npc.attackTimer = getNpcDelay(npc);
                     if (npc.getNpcId() == Npcs.CERBERUS && Cerberus.cerberusSpecials(npc, c)) {
