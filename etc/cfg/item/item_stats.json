@@ -70466,5 +70466,117 @@
       "dmagic": 0,
       "drange": 0
     }
+  },
+  "26822": {
+    "name": "Abyssal lantern",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26824": {
+    "name": "Abyssal lantern (normal logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26826": {
+    "name": "Abyssal lantern (blue logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26828": {
+    "name": "Abyssal lantern (red logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26830": {
+    "name": "Abyssal lantern (white logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26832": {
+    "name": "Abyssal lantern (purple logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26834": {
+    "name": "Abyssal lantern (green logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26836": {
+    "name": "Abyssal lantern (oak logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26838": {
+    "name": "Abyssal lantern (willow logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26840": {
+    "name": "Abyssal lantern (maple logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26842": {
+    "name": "Abyssal lantern (yew logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26844": {
+    "name": "Abyssal lantern (blisterwood logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26846": {
+    "name": "Abyssal lantern (magic logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26848": {
+    "name": "Abyssal lantern (redwood logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
   }
 }
