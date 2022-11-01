@@ -47756,6 +47756,8 @@
   requirements:
     - skill: "RANGED"
       level: 55
+    - skill: "ATTACK"
+      level: 55  
 - id: 9978
   name: "Raw bird meat"
   description: "Null"
@@ -48000,11 +48002,17 @@
   description: "Null"
   shopValue: 3750
   stackable: true
+  requirements:
+    - skill: "RANGED"
+      level: 45
 - id: 10034
   name: "Red chinchompa"
   description: "Null"
   shopValue: 7875
   stackable: true
+  requirements:
+    - skill: "RANGED"
+      level: 55
 - id: 10035
   name: "Kyatt legs"
   description: "Null"
