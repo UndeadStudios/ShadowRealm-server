@@ -74243,3 +74243,85 @@
   name: "Abyssal lantern (redwood logs)"
   description: "A lantern containing power from the Abyss. It's been lit with some redwood logs."
   shopValue: 100
+- id: 26784
+  name: "Colossal pouch"
+  description: "A colossal-sized pouch used for storing essence."
+  shopValue: 1200
+- id: 26786
+  name: "Colossal pouch"
+  description: "A colossal-sized pouch used for storing essence."
+  shopValue: 1200
+- id: 26788
+  name: "Gold tiara"
+  description: "Makes me feel like a wealthy Princess."
+  shopValue: 100
+  noteId: 26789
+- id: 26789
+  name: "Gold tiara"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 26788
+  noted: true
+- id: 26792
+  name: "Abyssal pearls"
+  description: "Some strange pearls from the Abyss."
+  shopValue: 50
+  stackable: true
+- id: 26801
+  name: "Catalytic tiara"
+  description: "A tiara infused with the properties of every catalytic rune."
+  shopValue: 100
+  noteId: 26802
+- id: 26802
+  name: "Catalytic tiara"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 26801
+  noted: true
+- id: 26804
+  name: "Elemental tiara"
+  description: "A tiara infused with the properties of every elemental rune."
+  shopValue: 100
+  noteId: 26805
+- id: 26805
+  name: "Elemental tiara"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 26804
+  noted: true
+- id: 26807
+  name: "Abyssal green dye"
+  description: "A strange green dye made from abyssal materials."
+  shopValue: 3000
+- id: 26809
+  name: "Abyssal blue dye"
+  description: "A strange blue dye made from abyssal materials."
+  shopValue: 3000
+- id: 26811
+  name: "Abyssal red dye"
+  description: "A strange red dye made from abyssal materials."
+  shopValue: 3000
+- id: 26813
+  name: "Abyssal needle"
+  description: "A needle designed for use with abyssal materials."
+  shopValue: 3000
+- id: 26876
+  name: "Atlax's diary"
+  description: "An old diary."
+  shopValue: 30
+- id: 26878
+  name: "Guardian fragments"
+  description: "Highly potent rune guardian remnants. It looks like it could enhance the powers of pure essence."
+  shopValue: 20
+  stackable: true
+- id: 26879
+  name: "Guardian essence"
+  description: "Pure essence combined with rune guardian remnants. It looks like it can be imbued with energy."
+  shopValue: 30
+- id: 26880
+  name: "Catalytic guardian stone"
+  description: "Highly potent essence, imbued with catalytic energy."
+  shopValue: 30
+  stackable: true
+- id: 26881
+  name: "Elemental guardian stone"
+  description: "Highly potent essence, imbued with elemental energy."
+  shopValue: 30
+  stackable: true
