@@ -58,7 +58,7 @@ public abstract class InstancedArea extends RegionProvider {
     /**
      * The height level that the instance takes place in.
      */
-    private final int height;
+    private int height;
 
     /**
      * Determines if the {@link InstancedArea#height} should be automatically freed when the
@@ -252,7 +252,9 @@ public abstract class InstancedArea extends RegionProvider {
     public int getHeight() {
         return height + configuration.getRelativeHeight();
     }
-
+public int setHeight(int height1){
+        return height = height1;
+}
     /**
      * If you used the {@link InstancedArea#InstancedArea(InstanceConfiguration, int, Boundary...)}
      * constructor this will return the height you supplied to that constructor. If you used the

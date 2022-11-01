@@ -70301,5 +70301,170 @@
     "equipment": {
       "slot": 0
     }
+  },
+  "26850": {
+    "name": "Hat of the eye",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26852": {
+    "name": "Robe top of the eye",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26854": {
+    "name": "Robe bottoms of the eye",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26856": {
+    "name": "Boots of the eye",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26858": {
+    "name": "Hat of the eye (red)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26860": {
+    "name": "Robe top of the eye (red)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26862": {
+    "name": "Robe bottoms of the eye (red)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26864": {
+    "name": "Hat of the eye (green)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26866": {
+    "name": "Robe top of the eye (green)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26868": {
+    "name": "Robe bottoms of the eye (green)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26870": {
+    "name": "Hat of the eye (blue)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26872": {
+    "name": "Robe top of the eye (blue)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26874": {
+    "name": "Robe bottoms of the eye (blue)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
   }
 }

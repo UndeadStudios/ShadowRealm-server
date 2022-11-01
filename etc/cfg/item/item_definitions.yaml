@@ -74111,3 +74111,59 @@
   name: "Dark Gray beret"
   description: "Parlez-voius francais?"
   shopValue: 80
+- id: 26850
+  name: "Hat of the eye"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26852
+  name: "Robe top of the eye"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26854
+  name: "Robe bottoms of the eye"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26856
+  name: "Boots of the eye"
+  description: "The perfect boots for runecrafting."
+  shopValue: 350
+- id: 26858
+  name: "Hat of the eye (red)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26860
+  name: "Robe top of the eye (red)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26862
+  name: "Robe bottoms of the eye (red)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26864
+  name: "Hat of the eye (green)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26866
+  name: "Robe top of the eye (green)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26868
+  name: "Robe bottoms of the eye (green)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26870
+  name: "Hat of the eye (blue)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26872
+  name: "Robe top of the eye (blue)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26874
+  name: "Robe bottoms of the eye (blue)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
