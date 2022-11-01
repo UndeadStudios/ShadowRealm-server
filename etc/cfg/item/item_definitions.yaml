@@ -74119,3 +74119,127 @@
   name: "Dark Gray beret"
   description: "Parlez-voius francais?"
   shopValue: 80
+- id: 26850
+  name: "Hat of the eye"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26852
+  name: "Robe top of the eye"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26854
+  name: "Robe bottoms of the eye"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26856
+  name: "Boots of the eye"
+  description: "The perfect boots for runecrafting."
+  shopValue: 350
+- id: 26858
+  name: "Hat of the eye (red)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26860
+  name: "Robe top of the eye (red)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26862
+  name: "Robe bottoms of the eye (red)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26864
+  name: "Hat of the eye (green)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26866
+  name: "Robe top of the eye (green)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26868
+  name: "Robe bottoms of the eye (green)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26870
+  name: "Hat of the eye (blue)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 26872
+  name: "Robe top of the eye (blue)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 26874
+  name: "Robe bottoms of the eye (blue)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 26815
+  name: "Ring of the elements"
+  description: "A mystical ring."
+  shopValue: 2000
+- id: 26818
+  name: "Ring of the elements"
+  description: "A mystical ring."
+  shopValue: 2000
+- id: 26820
+  name: "Guardian's eye"
+  description: "The eye of a rune guardian."
+  shopValue: 350
+- id: 26822
+  name: "Abyssal lantern"
+  description: "A lantern containing power from the Abyss."
+  shopValue: 100
+- id: 26824
+  name: "Abyssal lantern (normal logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some logs."
+  shopValue: 100
+- id: 26826
+  name: "Abyssal lantern (blue logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some blue logs."
+  shopValue: 100
+- id: 26828
+  name: "Abyssal lantern (red logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some red logs."
+  shopValue: 100
+- id: 26830
+  name: "Abyssal lantern (white logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some white logs."
+  shopValue: 100
+- id: 26832
+  name: "Abyssal lantern (purple logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some purple logs."
+  shopValue: 100
+- id: 26834
+  name: "Abyssal lantern (green logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some green logs."
+  shopValue: 100
+- id: 26836
+  name: "Abyssal lantern (oak logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some oak logs."
+  shopValue: 100
+- id: 26838
+  name: "Abyssal lantern (willow logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some willow logs."
+  shopValue: 100
+- id: 26840
+  name: "Abyssal lantern (maple logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some maple logs."
+  shopValue: 100
+- id: 26842
+  name: "Abyssal lantern (yew logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some yew logs."
+  shopValue: 100
+- id: 26844
+  name: "Abyssal lantern (blisterwood logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some blisterwood logs."
+  shopValue: 100
+- id: 26846
+  name: "Abyssal lantern (magic logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some magic logs."
+  shopValue: 100
+- id: 26848
+  name: "Abyssal lantern (redwood logs)"
+  description: "A lantern containing power from the Abyss. It's been lit with some redwood logs."
+  shopValue: 100

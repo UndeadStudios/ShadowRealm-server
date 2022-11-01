@@ -70301,5 +70301,282 @@
     "equipment": {
       "slot": 0
     }
+  },
+  "26850": {
+    "name": "Hat of the eye",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26852": {
+    "name": "Robe top of the eye",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26854": {
+    "name": "Robe bottoms of the eye",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26856": {
+    "name": "Boots of the eye",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "26858": {
+    "name": "Hat of the eye (red)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26860": {
+    "name": "Robe top of the eye (red)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26862": {
+    "name": "Robe bottoms of the eye (red)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26864": {
+    "name": "Hat of the eye (green)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26866": {
+    "name": "Robe top of the eye (green)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26868": {
+    "name": "Robe bottoms of the eye (green)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26870": {
+    "name": "Hat of the eye (blue)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26872": {
+    "name": "Robe top of the eye (blue)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26874": {
+    "name": "Robe bottoms of the eye (blue)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "26822": {
+    "name": "Abyssal lantern",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26824": {
+    "name": "Abyssal lantern (normal logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26826": {
+    "name": "Abyssal lantern (blue logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26828": {
+    "name": "Abyssal lantern (red logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26830": {
+    "name": "Abyssal lantern (white logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26832": {
+    "name": "Abyssal lantern (purple logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26834": {
+    "name": "Abyssal lantern (green logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26836": {
+    "name": "Abyssal lantern (oak logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26838": {
+    "name": "Abyssal lantern (willow logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26840": {
+    "name": "Abyssal lantern (maple logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26842": {
+    "name": "Abyssal lantern (yew logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26844": {
+    "name": "Abyssal lantern (blisterwood logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26846": {
+    "name": "Abyssal lantern (magic logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
+  },
+  "26848": {
+    "name": "Abyssal lantern (redwood logs)",
+    "equipable": true,
+    "weight": 2.267,
+    "equipment": {
+      "slot": 5
+    }
   }
 }
