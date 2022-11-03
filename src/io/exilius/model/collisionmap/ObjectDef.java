@@ -19,7 +19,7 @@ public final class ObjectDef {
 		}
 
 		cacheIndex = (cacheIndex + 1) % 20;
-		ObjectDef class46 = cache[cacheIndex];
+		ObjectDef objectDef = cache[cacheIndex];
 
 		if (id > streamIndices.length - 1 || id < 0) {
 			return null;
@@ -27,16 +27,21 @@ public final class ObjectDef {
 		
 		stream.currentOffset = streamIndices[id];
 
-		class46.type = id;
-		class46.setDefaults();
-		class46.readValues(stream);
+		objectDef.type = id;
+		objectDef.setDefaults();
+		objectDef.readValues(stream);
 		switch(id){
 			case 591:
-				class46.name = "Item Upgrades Table";
-				class46.actions = new String[]{"Forge", null, null, null, null};
+				objectDef.name = "Item Upgrades Table";
+				objectDef.actions = new String[]{"Forge", null, null, null, null};
+				break;
+			case 10061:
+			case 10060:
+				objectDef.name = "Trading Post";
+				objectDef.actions = new String[] { "Bank", "Open", "Collect", null, null };
 				break;
 		}
-		return class46;
+		return objectDef;
 	}
 
 	private void setDefaults() {
