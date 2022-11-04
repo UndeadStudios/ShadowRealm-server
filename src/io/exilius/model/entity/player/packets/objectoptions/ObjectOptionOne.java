@@ -338,6 +338,14 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(3104, 3161, 1);
 					return;
 				}
+				if(obX == 3413 && obY == 3540 && c.getHeight() == 1) { // Slayer tower
+					c.getPA().movePlayer(3417, 3540, 2);
+					return;
+				}
+				if(obX == 3415 && obY == 3540 && c.getHeight() == 2) { // Slayer tower 2
+					c.getPA().movePlayer(3412, 3540, 1);
+					return;
+				}
 
 				if(obX == 3557 && obY == 9718 && c.getHeight() == 3){
 					c.getPA().movePlayer(3575, 3298, 0);
