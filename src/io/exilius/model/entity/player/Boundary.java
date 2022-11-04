@@ -534,7 +534,7 @@ public class Boundary {
 	public static final Boundary PRESET_GAMBLING_BANK = new Boundary(3118, 3504, 3121, 3509);
 
 	public static final Boundary[] ALLOWED_PRESET_LOAD_AREAS = {EDGE_NORTH_BUILDING, PRESET_SKILLING, PRESET_HOME_MAIN_BANK,PRESET_HOME_TRADING_POST,PRESET_GAMBLING_BANK};
-
+	public static final Boundary WINTERTODT = new Boundary(1600, 3968, 1663, 4031);
 	public static final Boundary WILDY_CHAOS_HUT = new Boundary(2942, 3804, 2964, 3831);
 	public static final Boundary WILDY_CHAOS_INSIDE_HUT= new Boundary(2948, 3819, 2957, 3824);
 	public static final Boundary WILDY_CHAOS_INSIDE_HUT2= new Boundary(2949, 3817, 2952, 3824);
