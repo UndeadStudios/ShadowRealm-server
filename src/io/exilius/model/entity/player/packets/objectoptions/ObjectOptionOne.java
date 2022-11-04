@@ -225,6 +225,11 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3017, 3850, 0);
 					return;
 				}
+
+				if(obX == 2547 && obY == 9951) { // foe ladder up
+					AgilityHandler.delayEmote(c, "CLIMB_UP", 3086, 3496, 0, 2);
+					return;
+				}
 				if(obX == 2899 && obY == 4449) {
 					return;
 				}
@@ -290,6 +295,11 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3069, 10257, 0);
 					return;
 				}
+
+				if(obX == 3087 && obY == 3496) { // foe ladder
+					AgilityHandler.delayEmote(c, "CLIMB_DOWN", 2548, 9951, 0, 2);
+					return;
+				}
 				if(obX == 1902 && obY == 5222) { //KBD LAIR
 					Ladders.climbLadder(c, 2042, 5245, 0);
 					return;
@@ -334,16 +344,13 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(c.getX()+3, c.getY()-6400, c.heightLevel);
 					return;
 				}
+
 				if(obX == 3103 && obY == 3159) { // Wizard tower
 					c.getPA().movePlayer(3104, 3161, 1);
 					return;
 				}
 				if(obX == 3413 && obY == 3540 && c.getHeight() == 1) { // Slayer tower
 					c.getPA().movePlayer(3417, 3540, 2);
-					return;
-				}
-				if(obX == 3415 && obY == 3540 && c.getHeight() == 2) { // Slayer tower 2
-					c.getPA().movePlayer(3412, 3540, 1);
 					return;
 				}
 
@@ -376,6 +383,11 @@ static int fourthFloorsos[][] = {
 			if(def.actions[0].toLowerCase().equals("climb-down")) {
 				if(obX == 3103 && obY == 3259) { // Wizard tower
 					c.getPA().movePlayer(3104, 3161, 0);
+					return;
+				}
+
+				if(obX == 3415 && obY == 3540 && c.getHeight() == 2) { // Slayer tower 2
+					c.getPA().movePlayer(3412, 3540, 1);
 					return;
 				}
 				if(obX == 3058 && obY == 3376) { // Dwarf mine stairs

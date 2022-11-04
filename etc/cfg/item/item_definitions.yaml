@@ -71540,12 +71540,10 @@
   name: "Crystal Shard"
   shopValue: 1
   stackable: true
-  untradeable: true
 - id: 23861
   name: "Crystal Acorn"
   shopValue: 1
   stackable: true
-  untradeable: true
 - id: 23888
   name: "Crystal Helm perfected"
   description: "Crystal Helm (perfected)."
