@@ -358,7 +358,7 @@ public class DropManager {
 //            Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 3), player.getIndex());
 //            player.sendMessage("You have received some tokens for halloween!");
 //            }
-        if (Misc.random(450) < 75) {
+        if (Misc.random(470) < 90) {
             smallNpc = npc.getDefinition().getCombatLevel() < 50;
             mediumNpc = npc.getDefinition().getCombatLevel() > 51 && npc.getDefinition().getCombatLevel() < 99 ;
             largeNpc = npc.getDefinition().getCombatLevel() > 100;
