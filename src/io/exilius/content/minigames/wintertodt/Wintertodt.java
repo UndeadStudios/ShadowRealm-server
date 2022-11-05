@@ -60,10 +60,9 @@ public class Wintertodt {
         PlayerHandler.nonNullStream()
                 .filter(p -> Boundary.isIn(c, Boundary.FLOWER_POKER_AREA) && p.heightLevel == 0);
         if (c.getX() <= 3987 || Misc.random(25) == 1) {
-            return;
+            c.appendDamage(getColdDamage(c), Hitmark.HIT);
+            c.sendMessage("The cold of the Wintertodt seeps into your bones.");
         }
-        c.appendDamage(getColdDamage(c), Hitmark.HIT);
-        c.sendMessage("The cold of the Wintertodt seeps into your bones.");
     };
     public static int getColdDamage(Player player) {
         return (int) ((16.0 - getWarmItemsWorn(player) - (2 * Math.min(3, getBraziersLit()))) * (player.playerLevel[3] + 1) / player.playerLevel[11]);
