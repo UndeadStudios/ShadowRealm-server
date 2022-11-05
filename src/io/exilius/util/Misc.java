@@ -741,7 +741,6 @@ public class Misc {
 		seed ^= (seed << 4);
 		return seed;
 	}
-
 	public static int random(int range) {
 		return (int) (java.lang.Math.random() * (range + 1));
 	}
