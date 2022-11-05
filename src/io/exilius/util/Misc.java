@@ -742,7 +742,7 @@ public class Misc {
 		return seed;
 	}
 	
-	public static boolean random(int range) {
+	public static int random(int range) {
 		return (int) (java.lang.Math.random() * (range + 1));
 	}
 

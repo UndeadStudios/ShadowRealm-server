@@ -58,8 +58,8 @@ public class Wintertodt {
 
     private static void applyColdDamage(Player c) {
         PlayerHandler.nonNullStream()
-                .filter(p -> Boundary.isIn(p, Boundary.WINTERTODT) && p.heightLevel == 0);
-        if (c.getX() <= 3987 || !Misc.random(25)) {
+                .filter(p -> Boundary.isIn(c, Boundary.FLOWER_POKER_AREA) && p.heightLevel == 0);
+        if (c.getX() <= 3987 || Misc.random(25) == 1) {
             return;
         }
         c.appendDamage(getColdDamage(c), Hitmark.HIT);
