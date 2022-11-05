@@ -363,13 +363,13 @@ public class DropManager {
             mediumNpc = npc.getDefinition().getCombatLevel() > 51 && npc.getDefinition().getCombatLevel() < 99 ;
             largeNpc = npc.getDefinition().getCombatLevel() > 100;
             if (smallNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 3), player.getIndex());
+                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 5), player.getIndex());
                 player.sendMessage("You have received some tokens for halloween!");
             } else if (mediumNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(5, 8), player.getIndex());
+                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(5, 10), player.getIndex());
                 player.sendMessage("You have received some tokens for halloween!");
             } else if (largeNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(10, 13), player.getIndex());
+                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(10, 15), player.getIndex());
                 player.sendMessage("You have received some tokens for halloween!");
             }
         }
