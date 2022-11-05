@@ -1,5 +1,18 @@
 package io.exilius.util;
 
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+import com.google.common.reflect.ClassPath;
+import com.google.common.reflect.ClassPath.ClassInfo;
+import com.google.gson.Gson;
+import io.exilius.model.entity.player.Player;
+import io.exilius.model.items.GameItem;
+import io.netty.buffer.ByteBuf;
+import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.Range;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.lang3.text.WordUtils;
+
 import java.io.*;
 import java.math.BigInteger;
 import java.nio.file.Files;
@@ -20,19 +33,6 @@ import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPInputStream;
-
-import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
-import com.google.common.reflect.ClassPath;
-import com.google.common.reflect.ClassPath.ClassInfo;
-import com.google.gson.Gson;
-import io.netty.buffer.ByteBuf;
-import io.exilius.model.entity.player.Player;
-import io.exilius.model.items.GameItem;
-import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.Range;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.commons.lang3.text.WordUtils;
 
 public class Misc {
 
@@ -741,8 +741,8 @@ public class Misc {
 		seed ^= (seed << 4);
 		return seed;
 	}
-	
-	public static boolean random(int range) {
+
+	public static int random(int range) {
 		return (int) (java.lang.Math.random() * (range + 1));
 	}
 
