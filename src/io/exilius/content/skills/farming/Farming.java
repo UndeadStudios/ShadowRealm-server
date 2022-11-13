@@ -110,6 +110,7 @@ public class Farming {
 	public void doConfig() {
 		FarmingPatches[] patches = {
 				FarmingPatches.FALADOR_HERB,
+				FarmingPatches.HOME_HERB,
 				FarmingPatches.CATHERBY_HERB,
 				FarmingPatches.ARDOUGNE_HERB,
 				FarmingPatches.PHAS_HERB,
@@ -165,6 +166,13 @@ public class Farming {
 						+ (config(FarmingPatches.FALADOR_FLOWER) << 16)
 						+ (config(FarmingPatches.FALADOR_ALLOTMENT_SOUTH) << 8)
 						+ (config(FarmingPatches.FALADOR_ALLOTMENT_NORTH));
+				configv2 = 529;
+				break;
+			case HOME_HERB:
+				config = (config(FarmingPatches.HOME_HERB) << 24)
+						+ (config(FarmingPatches.HOME_FLOWER) << 16)
+						+ (config(FarmingPatches.HOME_ALLOTMENT_SOUTH) << 8)
+						+ (config(FarmingPatches.HOME_ALLOTMENT_NORTH));
 				configv2 = 529;
 				break;
 			case CATHERBY_HERB:

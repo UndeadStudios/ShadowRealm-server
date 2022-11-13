@@ -54,7 +54,7 @@ public class Wintertodt {
 
     private static void applyColdDamage(Player c) {
         PlayerHandler.nonNullStream()
-                .filter(p -> Boundary.isIn(c, Boundary.FLOWER_POKER_AREA) && p.heightLevel == 0);
+                .filter(p -> Boundary.isIn(c, Boundary.WINTERTODT) && p.heightLevel == 0);
         if (c.getX() <= 3987 || Misc.random(25) == 1) {
             c.appendDamage(getColdDamage(c), Hitmark.HIT);
             c.sendMessage("The cold of the Wintertodt seeps into your bones.");

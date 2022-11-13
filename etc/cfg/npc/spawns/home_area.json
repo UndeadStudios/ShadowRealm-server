@@ -448,5 +448,14 @@
       "height": 0
     },
     "walkingType": "WALK"
+  },
+  {
+    "id":0,
+    "position": {
+      "x":3082,
+      "y":3465,
+      "height":0
+    },
+    "walkingType": "WALK"
   }
 ]

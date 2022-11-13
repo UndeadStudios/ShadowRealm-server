@@ -53,8 +53,8 @@ public class Hespori {
 
 	public static final int NPC_ID = 8583;
 
-	public static final int X = 3046;
-	public static final int Y = 3489;
+	public static final int X = 3813;
+	public static final int Y = 7766;
 	public static final int SPAWN_ANIMATION = 8221;
 	public static final int DEATH_ANIMATION = 8225;
 
@@ -97,7 +97,7 @@ public class Hespori {
 			if (!eventCompleted) {
 				p.sendMessage("@blu@Hespori event was ended before she was killed!");
 				p.canLeaveHespori = true;
-				p.getPA().startTeleport2(3087, 3491, 0);
+				p.getPA().startTeleport2(3072, 3499, 0);
 				p.setHesporiDamageCounter(0);
 				deleteEventItems(p);
 			} else {
@@ -114,7 +114,7 @@ public class Hespori {
 				} else {
 					p.sendMessage("@blu@You were not active enough to receive a reward.");
 					p.canLeaveHespori = true;
-					p.getPA().startTeleport2(3087, 3491, 0);
+					p.getPA().startTeleport2(3072, 3499, 0);
 					p.setHesporiDamageCounter(0);
 					deleteEventItems(p);
 				}

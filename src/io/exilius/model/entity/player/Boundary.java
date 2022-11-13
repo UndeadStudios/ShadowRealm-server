@@ -507,15 +507,8 @@ public class Boundary {
 	public static final Boundary HESPORI_ENTRANCE = new Boundary(3069, 3497,3072, 3501);
 	public static final Boundary INFERNO = new Boundary(2256, 5328, 2286, 5359);
 	public static final Boundary[] HESPORI = {
-			new Boundary(3034, 3476, 3065, 3489),
-			new Boundary(3030, 3483, 3033, 3490),
-			new Boundary(3034, 3490, 3044, 3496),
-			new Boundary(3045, 3490, 3065, 3496),
-			new Boundary(3031, 3491, 3033, 3493),
-			new Boundary(3037, 3497, 3042, 3500),
-			new Boundary(3035, 3497, 3036, 3498),
-			new Boundary(3043, 3497, 3065, 3500),
-			new Boundary(3039, 3501, 3065, 3507)
+			new Boundary(3776, 7744, 3839, 7807
+			)
 	};
 
 

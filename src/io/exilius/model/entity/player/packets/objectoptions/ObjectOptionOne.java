@@ -1145,7 +1145,7 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(2958, 9679, 0);
 				}
 				break;
-			case 190:
+			case 34499:
 				c.canEnterHespori = true;
 				c.objectDistance = 3;
 				PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.HESPORI))
@@ -1163,34 +1163,43 @@ static int fourthFloorsos[][] = {
 						return;
 					}
 					if (Boundary.isIn(c, Boundary.HESPORI_ENTRANCE)) {
-					if  (c.playerLevel[19] < 50 || c.playerLevel[8] < 50 || c.playerLevel[14] < 50
-							|| c.playerLevel[20] < 50 || c.playerLevel[12] < 50 ) {
-						c.sendMessage("You need a level of 50 in Farming, Crafting, Firemaking, Runecrafting, Mining,");
-						c.sendMessage("& Woodcutting to participate in this event. Use @red@::hespori @bla@to open the guide.");
-						return;
-					}
-					if (HesporiSpawner.isSpawned()) {
-						c.canLeaveHespori = false;
-						if (c.getRights().isOrInherits(Right.HC_IRONMAN)){
-							c.sendMessage("@bla@[@red@HC WARNING@bla] This area is not safe for HCs and teleports are not allowed!");
-							c.sendMessage("@bla@[@red@HC WARNING@bla] You have been warned.");
+						if (c.playerLevel[19] < 50 || c.playerLevel[8] < 50 || c.playerLevel[14] < 50
+								|| c.playerLevel[20] < 50 || c.playerLevel[12] < 50) {
+							c.sendMessage("You need a level of 50 in Farming, Crafting, Firemaking, Runecrafting, Mining,");
+							c.sendMessage("& Woodcutting to participate in this event. Use @red@::hespori @bla@to open the guide.");
+							return;
 						}
-						c.sendMessage("@red@Gather tools from the crate box if you are ever missing any!");
-						boolean axe = c.getItems().hasItemOnOrInventory(WeaponDataConstants.AXES);
-						boolean pickaxe = c.getItems().hasItemOnOrInventory(WeaponDataConstants.PICKAXES);
-						boolean chisel = c.getItems().playerHasItem(Items.CHISEL);
+						if (HesporiSpawner.isSpawned()) {
+							c.canLeaveHespori = false;
+							if (c.getRights().isOrInherits(Right.HC_IRONMAN)) {
+								c.sendMessage("@bla@[@red@HC WARNING@bla] This area is not safe for HCs and teleports are not allowed!");
+								c.sendMessage("@bla@[@red@HC WARNING@bla] You have been warned.");
+							}
+							c.sendMessage("@red@Gather tools from the crate box if you are ever missing any!");
+							boolean axe = c.getItems().hasItemOnOrInventory(WeaponDataConstants.AXES);
+							boolean pickaxe = c.getItems().hasItemOnOrInventory(WeaponDataConstants.PICKAXES);
+							boolean chisel = c.getItems().playerHasItem(Items.CHISEL);
 
-						if (!axe) { c.getItems().addItem(Items.BRONZE_AXE, 1); }
-						if (!pickaxe) { c.getItems().addItem(Items.BRONZE_PICKAXE, 1); }
-						if (!chisel) { c.getItems().addItem(Items.CHISEL, 1); }
+							if (!axe) {
+								c.getItems().addItem(Items.BRONZE_AXE, 1);
+							}
+							if (!pickaxe) {
+								c.getItems().addItem(Items.BRONZE_PICKAXE, 1);
+							}
+							if (!chisel) {
+								c.getItems().addItem(Items.CHISEL, 1);
+							}
 
-						c.getPA().movePlayer(3067, 3499);
-						return;
-					} else {
-						c.sendMessage("The Hespori World Event is currently not active.");
-						return;
+							c.getPA().movePlayer(3802, 7785);
+							return;
+						} else {
+							c.sendMessage("The Hespori World Event is currently not active.");
+							return;
+						}
 					}
-				} else if (Boundary.isIn(c, Boundary.HESPORI_EXIT)) {
+				break;
+			case 34435:
+				if (obX == 3802 && obY == 7786) {
 					if (c.getItems().playerHasItem(9698) || c.getItems().playerHasItem(9699)
 							|| c.getItems().playerHasItem(23778) || c.getItems().playerHasItem(23783)
 							|| c.getItems().playerHasItem(9017)) {
@@ -1200,7 +1209,7 @@ static int fourthFloorsos[][] = {
 						c.getItems().deleteItem2(923783, 28);
 						c.getItems().deleteItem2(9017, 28);
 					}
-					c.getPA().movePlayer(3070, 3499);
+					c.getPA().movePlayer(3072, 3499);
 					return;
 				}
 				break;

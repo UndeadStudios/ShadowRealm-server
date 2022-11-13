@@ -2,6 +2,8 @@ package io.exilius.model;
 
 public class Items {
 
+    public static final int DEATH_CAPE = 28347;
+
     private Items() {}
 
     // Customs
@@ -20153,7 +20155,6 @@ public class Items {
     public static final int JAR_OF_DECAY_NOTED = 22_107;
     public static final int JAR_OF_DECAY_2 = 22_108;
     public static final int AVAS_ASSEMBLER = 22_109;
-    public static final int DEATH_CAPE = 28_347;
     public static final int AVAS_ASSEMBLER_2 = 22_110;
     public static final int DRAGONBONE_NECKLACE = 22_111;
     public static final int DRAGONBONE_NECKLACE_NOTED = 22_112;

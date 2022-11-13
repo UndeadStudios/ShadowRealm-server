@@ -1,6 +1,7 @@
 package io.exilius.content.skills.farming;
 
 import com.everythingrs.marketplace.Item;
+import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
@@ -44,7 +45,7 @@ public class ToolLeprechaun {
             255, 257, 259, 261, 263, 265, 267, 269, 3000, 2481, 592, 1965,
             1967, 6004, 5980, 5976, 1955, 1963, 2108, 5972, 2114, 754, 2126,
             248, 1951, 240, 2367, 1942, 1957, 1965, 1982, 5986, 5504, 5982,
-            6006, 5994, 5996, 5931, 5998, 6000, 6002, 6016, 6055, 3051 };
+            6006, 5994, 5996, 5931, 5998, 6000, 6002, 6016, 6055, 3051, Items.GRIMY_AVANTOE, Items.GRIMY_RANARR_WEED, Items.GRIMY_CADANTINE, Items.GRIMY_DWARF_WEED, Items.GRIMY_GUAM_LEAF };
 
     public static final int LEPRECHAUN_INTERFACE = 15614;
     public static final int LEPRECHAUN_INTERFACE_CONTAINER = 15682;//
