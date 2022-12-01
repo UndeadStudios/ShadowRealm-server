@@ -9,24 +9,6 @@
     "walkingType": "FACE_NORTH"
   },
   {
-    "id": 3894,
-    "position": {
-      "x": 3085,
-      "y": 3468,
-      "height": 0
-    },
-    "walkingType": "FACE_EAST"
-  },
-  {
-    "id": 390,
-    "position": {
-      "x": 3076,
-      "y": 3502,
-      "height": 0
-    },
-    "walkingType": "FACE_SOUTH"
-  },
-  {
     "id": 1578,
     "position": {
       "x": 3111,
@@ -34,6 +16,15 @@
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
+  },
+  {
+    "id":7413,
+    "position": {
+      "x":3094,
+      "y":3482,
+      "height":0
+    },
+    "walkingType": "FACE_NORTH"
   },
   {
     "id": 1577,

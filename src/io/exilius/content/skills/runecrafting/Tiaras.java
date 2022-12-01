@@ -4,7 +4,20 @@ import io.exilius.model.entity.player.Player;
 
 public class Tiaras {
 
-
+    public static boolean bindTiara(Player player, int itemId, int objectId) {
+        for (int[] ruin : RealRunecrafting.RC_DATA) {
+            if (itemId == ruin[0] && objectId == ruin[2]) {
+                if (player.getItems().playerHasItem(5525)) {
+                    player.getItems().deleteItem(ruin[0], 1);
+                    player.getItems().deleteItem(5525, 1);
+                    player.getItems().addItem(ruin[1], 1);
+                    player.sendMessage("You bind the power of the talisman into the tiara.");
+                }
+                return true;
+            }
+        }
+        return false;
+    }
     public static void handleTiaraEquip(Player player, int id) {
         int[][] tiaras = {
                 { 5527, 1073799169, 1073799168, 491 },

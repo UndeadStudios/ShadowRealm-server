@@ -1,10 +1,6 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
 import io.exilius.content.item.lootable.LootRarity;
@@ -13,6 +9,11 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Revamped a simple means of receiving a random item based on chance.
@@ -169,6 +170,7 @@ public class PvmCasket implements Lootable {
 					Arrays.asList(
 							new GameItem(TheUnbearable.KEY, 1),//unbearable key
 							new GameItem(FragmentOfSeren.KEY, 1),//serens key
+							new GameItem(Hespori.KEY, 1),
 							new GameItem(22374, 1),//hespori key
 							new GameItem(4566), //rubber chicken
 							new GameItem(990, 10),//crystal key

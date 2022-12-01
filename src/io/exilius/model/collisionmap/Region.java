@@ -6,6 +6,7 @@ import io.exilius.Server;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.world.objects.GlobalObject;
+import io.exilius.util.discord.Discord;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -500,6 +501,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
     public static void load() {
         try {
             System.out.println("Loading mapdata..");
+            Discord.writeServerSyncMessage("Server is loading mapdata.");
             verifyCustomMaps();
             File f = new File(Server.getDataDirectory() + "/mapdata/map_index");
             byte[] buffer = new byte[(int) f.length()];
@@ -524,6 +526,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             Arrays.stream(data).forEach(Region::loadMap);
             Arrays.asList(EXISTANT_OBJECTS).forEach(object -> RegionProvider.getGlobal().get(object.getX(), object.getY()).addWorldObject(object));
             log.info("Loaded " + customMapFiles + " custom maps.");
+            Discord.writeServerSyncMessage("Server loaded mapdata.");
              } catch (Exception e) {
             e.printStackTrace();
             log.info("Error loading map files: " + errors.toString());
@@ -596,7 +599,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
                 if (fileData != null) {
                     return fileData;
                 }
-            } else if (file.getName().equals(fileId + ".gz")) {
+            } else if (file.getName().equals(fileId + ".Gz")) {
                 return getBuffer(file);
             }
         }
@@ -608,12 +611,12 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             byte[] file1 = getCustomFile(CUSTOM_MAPS_DIR, regionData.getObjects());
             byte[] file2 = getCustomFile(CUSTOM_MAPS_DIR, regionData.getLandscape());
             if (file1 == null) {
-                file1 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getObjects() + ".gz"));
+                file1 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getObjects() + ".Gz"));
             } else {
                 customMapFiles++;
             }
             if (file2 == null) {
-                file2 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getLandscape() + ".gz"));
+                file2 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getLandscape() + ".Gz"));
             } else {
                 customMapFiles++;
             }

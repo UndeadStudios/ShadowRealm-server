@@ -20528,6 +20528,14 @@
       "slot": 0
     }
   },
+  "5549": {
+    "name": "Blood tiara",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "5553": {
     "name": "Rogue top",
     "equipable": true,
@@ -37742,6 +37750,174 @@
       "slot": 7
     }
   },
+  "29020": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29021": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29022": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29023": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29024": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29025": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29026": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29027": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29028": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29029": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29030": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29031": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29032": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29033": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29034": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29035": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29036": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29037": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29038": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29039": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "29040": {
+    "name": "Flared trousers",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 7
+    }
+  },
   "10396": {
     "name": "Pantaloons",
     "equipable": true,
@@ -42671,6 +42847,48 @@
     "equipable": true,
     "equipment": {
       "slot": 7
+    }
+  },
+  "27444": {
+    "name": "Graceful hood",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "27447": {
+    "name": "Graceful cape",
+    "equipable": true,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "27450": {
+    "name": "Graceful top",
+    "equipable": true,
+    "equipment": {
+      "slot": 4
+    }
+  },
+  "27453": {
+    "name": "Graceful legs",
+    "equipable": true,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "27456": {
+    "name": "Graceful gloves",
+    "equipable": true,
+    "equipment": {
+      "slot": 9
+    }
+  },
+  "27459": {
+    "name": "Graceful boots",
+    "equipable": true,
+    "equipment": {
+      "slot": 10
     }
   },
   "11857": {
@@ -56104,6 +56322,66 @@
       "aspeed": 6
     }
   },
+  "29041": {
+    "name": "Twisted bow (Blue)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 100,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
+  "29042": {
+    "name": "Twisted bow (Purple)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 100,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
+  "29043": {
+    "name": "Twisted bow (Red)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 100,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
+  "29044": {
+    "name": "Twisted bow (Green)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 100,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
+  "29045": {
+    "name": "Twisted bow (Yellow)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 100,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
   "21000": {
     "name": "Twisted buckler",
     "equipable": true,
@@ -60044,6 +60322,23 @@
   },
   "26399": {
     "name": "Lava Scythe",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 3,
+      "astab": 170,
+      "aslash": 180,
+      "acrush": 130,
+      "amagic": 6,
+      "dstab": 2,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 215,
+      "aspeed": 4
+    }
+  },
+  "29047": {
+    "name": "Ice Scythe",
     "equipable": true,
     "weight": 3.175,
     "equipment": {
@@ -68732,6 +69027,30 @@
       "slot": 1
     }
   },
+  "28728": {
+    "name": "Veteran Cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28821": {
+    "name": "Justin's cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "29570": {
+    "name": "Justin's Mythical cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
   "28716": {
     "name": "Dr Cape (Blue)",
     "equipable": true,
@@ -69001,6 +69320,73 @@
   },
   "29099": {
     "name": "Epic crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+
+  "28874": {
+    "name": "Justin's platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28875": {
+    "name": "Justin's platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28876": {
+    "name": "Justin's boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28877": {
+    "name": "Justin's kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28878": {
+    "name": "Justin crown",
     "equipable": true,
     "equipment": {
       "slot": 0
@@ -69321,13 +69707,15 @@
       "weight": 2.0,
       "equipment": {
         "slot": 3,
-        "astab": 103,
-        "aslash": -2,
-        "acrush": 207,
-        "dslash": 1,
-        "str": 206,
-        "prayer": 12,
-        "aspeed": 4
+        "astab": 170,
+        "aslash": 180,
+        "acrush": 130,
+        "amagic": 6,
+        "dstab": 2,
+        "dslash": 18,
+        "dcrush": 20,
+        "str": 225,
+        "aspeed": 2
       }
   },
   "27440": {
@@ -70454,6 +70842,272 @@
   },
   "26874": {
     "name": "Robe bottoms of the eye (blue)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28971": {
+    "name": "Hat of the eye (purple)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28972": {
+    "name": "Robe top of the eye (purple)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28973": {
+    "name": "Robe bottoms of the eye (purple)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28974": {
+    "name": "Hat of the eye (yellow)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28975": {
+    "name": "Robe top of the eye (yellow)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28976": {
+    "name": "Robe bottoms of the eye (yellow)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28977": {
+    "name": "Hat of the eye (Dark Blue)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28978": {
+    "name": "Robe top of the eye (Dark Blue)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28979": {
+    "name": "Robe bottoms of the eye (Dark Blue)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28980": {
+    "name": "Hat of the eye (Gold)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28981": {
+    "name": "Robe top of the eye (Gold)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28982": {
+    "name": "Robe bottoms of the eye (Gold)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28983": {
+    "name": "Hat of the eye (Teal)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28984": {
+    "name": "Robe top of the eye (Teal)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28985": {
+    "name": "Robe bottoms of the eye (Teal)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29017": {
+    "name": "Hat of the eye (Gray)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "29018": {
+    "name": "Robe top of the eye (Gray)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29019": {
+    "name": "Robe bottoms of the eye (Gray)",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29392": {
+    "name": "Hat of the eye (White)",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "29393": {
+    "name": "Robe top of the eye (White)",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29394": {
+    "name": "Robe bottoms of the eye (White)",
     "equipable": true,
     "weight": 10.432,
     "equipment": {

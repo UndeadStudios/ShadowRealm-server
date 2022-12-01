@@ -1,0 +1,18 @@
+---
+npc_id:
+  - 518
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+  - name: "black cape"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 20
+  items:
+    - name: "Iron bolts"
+      minimum: 2
+      maximum: 12

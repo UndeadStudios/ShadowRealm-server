@@ -6,7 +6,6 @@ import io.exilius.content.CompletionistCape;
 import io.exilius.content.DiceHandler;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.runecrafting.Pouches;
-import io.exilius.content.skills.runecrafting.Tiaras;
 import io.exilius.model.Items;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
@@ -102,9 +101,17 @@ public class WearItem implements PacketType {
 			
 		}
 		if(wearId == 8817) {
-			if(!c.getRights().getPrimary().isOwner() && !c.getLoginName().equalsIgnoreCase("Anubis")) {
-				c.sendMessage("Only Anubis can wear this.");
+			if(!c.getLoginName().equalsIgnoreCase("osiris") && !c.getLoginName().equalsIgnoreCase("Anubis")) {
+				c.sendMessage("Only Osiris or Anubis can wear this.");
 				c.getItems().deleteItem(8817, 1);
+				c.getItems().addItem(995, 10000000);
+				return;
+			}
+		}
+		if(wearId == 29180) {
+			if(!c.getLoginName().equalsIgnoreCase("osiris") && !c.getLoginName().equalsIgnoreCase("Anubis")) {
+				c.sendMessage("Only Osiris or Anubis can wear this.");
+				c.getItems().deleteItem(29180, 1);
 				c.getItems().addItem(995, 10000000);
 				return;
 			}

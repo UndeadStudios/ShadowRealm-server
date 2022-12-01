@@ -1,0 +1,16 @@
+---
+npc_id:
+  - 2838
+  - 3908
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+  - name: "raw bear meat"
+    minimum: 1
+    maximum: 1
+  - name: "bear fur"
+    minimum: 1
+    maximum: 1

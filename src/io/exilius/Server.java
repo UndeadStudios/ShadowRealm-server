@@ -1,24 +1,8 @@
 package io.exilius;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.net.InetSocketAddress;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.exilius.content.minigames.CastleWars;
-import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.exilius.model.AttributesSerializable;
 import io.exilius.model.cycleevent.EventHandler;
 import io.exilius.model.entity.npc.NPCHandler;
@@ -35,16 +19,29 @@ import io.exilius.punishments.Punishments;
 import io.exilius.sql.DatabaseCredentials;
 import io.exilius.sql.DatabaseManager;
 import io.exilius.sql.EmbeddedDatabase;
-import io.exilius.util.JsonUtil;
-import io.exilius.util.TeeOutputStream;
-import io.exilius.util.TimeStampedPrintStream;
+import io.exilius.util.*;
 import io.exilius.util.dateandtime.GameCalendar;
-import io.exilius.util.OutstreamStyle;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.GameLogging;
+import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.flywaydb.core.Flyway;
 import org.slf4j.LoggerFactory;
 import sun.misc.Unsafe;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.net.InetSocketAddress;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The main class needed to start the server.
@@ -174,7 +171,7 @@ public class Server {
                 root.setLevel(isDebug() || isTest() ? ch.qos.logback.classic.Level.ALL : ch.qos.logback.classic.Level.INFO);
 
                 loadData();
-                Discord.writeServerSyncMessage("Server is now online.");
+                Discord.writeServerStatus("Server is now online!");
 
                 if (isDebug()) {
                     Configuration.DISABLE_NEW_ACCOUNT_CAPTCHA = true;

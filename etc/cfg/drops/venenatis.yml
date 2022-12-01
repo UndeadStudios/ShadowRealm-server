@@ -81,18 +81,15 @@ rare:
   - name: "dragon 2h sword"
     minimum: 1
     maximum: 1
-  - item: 4185
-    maximum: 3
-    minimum: 2
-  - item: 6792
-    maximum: 3
-    minimum: 2
-  - item: 29280
-    maximum: 10
-    minimum: 5
 very_rare:
-  accessibility: 2750
+  accessibility: 175
   items:
-  - item: 26399
-    maximum: 1
-    minimum: 1
+    - item: 4185
+      maximum: 3
+      minimum: 2
+    - item: 6792
+      maximum: 3
+      minimum: 2
+    - item: 29280
+      maximum: 10
+      minimum: 5

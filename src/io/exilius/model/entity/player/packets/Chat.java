@@ -1,6 +1,7 @@
 package io.exilius.model.entity.player.packets;
 
 import io.exilius.Server;
+import io.exilius.content.BadWords;
 import io.exilius.content.Censor;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
@@ -48,7 +49,10 @@ public class Chat implements PacketType {
 			c.sendMessage("Invalid chat message.");
 			return;
 		}
-
+		if (BadWords.containsBadWord(message)) {
+			c.sendMessage("Don't say bad words!");
+			return;
+		}
 		for (byte b : chatText) {
 			if (b >= Misc.validChars.length) {
 				c.sendMessage("Invalid chat message.");

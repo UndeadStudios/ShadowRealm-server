@@ -11,7 +11,7 @@ import io.exilius.util.logging.player.RollDiceLog;
 public class DiceHandler {
 
 	public static final int ROLL_TIMER = 1000, DICE_BAG = 15094;
-	public static final Boundary DICING_AREA = new Boundary(2432, 3077, 2477, 3126);
+	public static final Boundary DICING_AREA = new Boundary(2112, 9482, 2175, 9535);
 
 
 	enum Dice {

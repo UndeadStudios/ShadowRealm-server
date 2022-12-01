@@ -75,14 +75,17 @@ public class HesporiChest implements Lootable {
                 new GameItem(Items.TOADFLAX_SEED, 5),
                 new GameItem(Items.IRIT_SEED, 11)
         ));
+        items.put(LootRarity.UNCOMMON, Arrays.asList(
+                // UPDATE HESPORICHESTITEMS TOO
+                new GameItem(Items.KRONOS_SEED, 1)
 
+        ));
         items.put(LootRarity.RARE, Arrays.asList(
                 // UPDATE HESPORICHESTITEMS TOO
                 new GameItem(Items.TOME_OF_FIRE_EMPTY, 1),
                 new GameItem(Items.TOME_OF_FIRE_EMPTY, 1),
                 new GameItem(Items.ATTAS_SEED, 1),
                 new GameItem(Items.IASOR_SEED, 1),
-                new GameItem(Items.KRONOS_SEED, 1),
                 new GameItem(Items.GOLPAR_SEED, 1),
                 new GameItem(Items.NOXIFER_SEED, 1),
                 new GameItem(Items.BUCHU_SEED, 1),
@@ -142,7 +145,9 @@ public class HesporiChest implements Lootable {
                 c.getItems().addItem(reward.getId(), reward.getAmount() * 1);
                 if (reward.getId() != Items.TOME_OF_FIRE_EMPTY) {
                     ItemDef def = ItemDef.forId(reward.getId());
-                    PlayerHandler.executeGlobalMessage("@bla@[<col=3d7018>HESPORI@bla@] The Hespori chest rewarded a <col=47831c>rare seed!");
+                    if(LootRarity.RARE.name().equals("RARE")) {
+                        PlayerHandler.executeGlobalMessage("@bla@[<col=3d7018>HESPORI@bla@] The Hespori chest rewarded a <col=47831c>rare seed!");
+                    }
                 }
             } else {
                 c.sendMessage("@blu@The chest is locked, it won't budge!");

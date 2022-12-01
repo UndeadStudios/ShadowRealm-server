@@ -17,13 +17,10 @@ import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.items.Degrade;
 import io.exilius.content.items.Degrade.DegradableItem;
 import io.exilius.content.items.pouch.RunePouch;
-//import io.exilius.content.leaderboards.LeaderboardType;
-//import io.exilius.content.leaderboards.LeaderboardUtils;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.inferno.Inferno;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
-import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.Fishing;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.SkillHandler;
@@ -99,7 +96,14 @@ public class PlayerAssistant {
 		c.getOutStream().endFrameVarSize();
 		c.flushOutStream();
 	}
-
+	public void sendFrame230(int i1, int i2, int i3, int i4) { // i2 being negative logs you out, otherwise it doesn't log you out :O
+		c.getOutStream().createFrame(230);
+		c.getOutStream().writeWordA(i1);
+		c.getOutStream().writeWord(i2); // interface id?
+		c.getOutStream().writeWord(i3);
+		c.getOutStream().writeWordBigEndianA(i4); // junk? not sure
+		c.flushOutStream();
+	}
 	public void resetQuestInterface() {
 		for(int i = 8145; i < 8196; i++)
 			sendString("", i);

@@ -6,6 +6,7 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.save.PlayerAddresses;
 import io.exilius.punishments.PunishmentType;
 import io.exilius.util.dateandtime.TimeSpan;
+import io.exilius.util.discord.Discord;
 
 public class NetMute extends OnlinePlayerPCP {
     @Override
@@ -28,6 +29,8 @@ public class NetMute extends OnlinePlayerPCP {
             Server.getPunishments().add(PunishmentType.NET_MUTE, duration, addresses.getUUID());
         staff.sendMessage("Muted all '{}' addresses for {}.", player.getDisplayNameFormatted(), duration);
         player.sendMessage("You've been muted by {} for {}.", staff.getDisplayNameFormatted(), duration.toString());
+        Discord.writepunishments(staff.getDisplayName()+ " Muted all addresses for `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
+
     }
 
     @Override

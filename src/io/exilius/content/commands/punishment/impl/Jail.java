@@ -4,6 +4,7 @@ import io.exilius.Server;
 import io.exilius.content.commands.punishment.OnlinePlayerPCP;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.dateandtime.TimeSpan;
+import io.exilius.util.discord.Discord;
 
 public class Jail extends OnlinePlayerPCP {
 
@@ -31,6 +32,8 @@ public class Jail extends OnlinePlayerPCP {
         player.setTeleportToY(4466);
         player.heightLevel = 0;
         player.jailEnd = duration.offsetCurrentTimeMillis();
+        Discord.writepunishments(staff.getDisplayName() + " Jailed `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
+
 
         player.sendMessage("@red@You have been jailed by {} for {}.", staff.getDisplayNameFormatted(), duration.toString());
         player.sendMessage("@red@Type ::unjail after having served your time to be unjailed.");

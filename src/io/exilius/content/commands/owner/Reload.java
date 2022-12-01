@@ -1,7 +1,5 @@
 package io.exilius.content.commands.owner;
 
-import java.io.IOException;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.commands.Command;
@@ -11,10 +9,13 @@ import io.exilius.content.referral.ReferralCode;
 import io.exilius.model.collisionmap.doors.DoorDefinition;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.definitions.ItemStats;
+import io.exilius.model.definitions.NpcStats;
 import io.exilius.model.definitions.ShopDef;
 import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.world.ShopHandler;
+
+import java.io.IOException;
 
 /**
  * Reloading certain objects by {String input}
@@ -109,6 +110,7 @@ public class Reload extends Command {
 		case "npcs":
 			Server.npcHandler = null;
 			Server.npcHandler = new NPCHandler();
+			NpcStats.load();
 			player.sendMessage("@blu@Reloaded NPCs");
 			break;
 			

@@ -1,12 +1,14 @@
 package io.exilius.model.world;
 
-import java.util.*;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
+import io.exilius.content.BadWords;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * This class stores all information about the clan. This includes active members, banned members, ranked members and their ranks, clan title, and clan founder. All clan joining,
@@ -235,6 +237,10 @@ public class Clan {
 	public void sendChat(Player paramClient, String paramString) {
 		if (getRank(paramClient.getLoginName()) < this.whoCanTalk) {
 			paramClient.sendMessage("Only " + getRankTitle(this.whoCanTalk) + "s+ may talk in this chat.");
+			return;
+		}
+		if (BadWords.containsBadWord(paramString)) {
+			paramClient.sendMessage("Don't say bad words!");
 			return;
 		}
 		if (paramClient.isHelpCcMuted() && "help".equalsIgnoreCase(paramClient.getLastClanChat())) {

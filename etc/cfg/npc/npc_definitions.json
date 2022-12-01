@@ -14866,6 +14866,21 @@
     "combatLevel": 21,
     "size": 1
   },
+  "11913": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11914": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11917": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
   "3011": {
     "name": "Guard",
     "combatLevel": 21,
@@ -57757,31 +57772,6 @@
     "size": 1
   },
   "11912": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
-  },
-  "11913": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
-  },
-  "11914": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
-  },
-  "11915": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
-  },
-  "11916": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
-  },
-  "11917": {
     "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1

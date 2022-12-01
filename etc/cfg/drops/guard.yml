@@ -1,8 +1,9 @@
 ---
 npc_id:
   - 5418
-  - 3010
-  - 3011
+  - 11913
+  - 11914
+  - 11917
 constant:
   accessibility: 0
   items:

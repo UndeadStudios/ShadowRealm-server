@@ -1,0 +1,69 @@
+---
+npc_id:
+  - 1401
+  - 1402
+  - 1403
+  - 1404
+  - 1405
+  - 1406
+  - 1407
+  - 1408
+  - 1409
+  - 1410
+  - 1411
+  - 1412
+  - 1413
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 1
+  items:
+  - name: "bronze pickaxe"
+    minimum: 1
+    maximum: 1
+  - name: "bronze bolts"
+    minimum: 2
+    maximum: 12
+  - name: "coins"
+    minimum: 400
+    maximum: 30000
+  - name: "hammer"
+    minimum: 1
+    maximum: 1
+  - name: "bronze bar"
+    minimum: 1
+    maximum: 1
+uncommon:
+  accessibility: 2
+  items:
+  - name: "bronze med helm"
+    minimum: 1
+    maximum: 1
+  - name: "bronze battleaxe"
+    minimum: 1
+    maximum: 1
+  - name: "chaos rune"
+    minimum: 2
+    maximum: 2
+  - name: "nature rune"
+    minimum: 2
+    maximum: 2
+  - name: "tin ore"
+    minimum: 1
+    maximum: 1
+  - name: "iron ore"
+    minimum: 1
+    maximum: 1
+  - name: "copper ore"
+    minimum: 1
+    maximum: 1
+  - name: "iron bar"
+    minimum: 1
+    maximum: 1
+  - name: "coal"
+    minimum: 1
+    maximum: 1

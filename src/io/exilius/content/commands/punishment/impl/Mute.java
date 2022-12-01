@@ -4,6 +4,7 @@ import io.exilius.content.commands.punishment.OnlinePlayerPunishmentPCP;
 import io.exilius.model.entity.player.Player;
 import io.exilius.punishments.PunishmentType;
 import io.exilius.util.dateandtime.TimeSpan;
+import io.exilius.util.discord.Discord;
 
 public class Mute extends OnlinePlayerPunishmentPCP {
 
@@ -21,6 +22,8 @@ public class Mute extends OnlinePlayerPunishmentPCP {
     public void onPunishment(Player staff, Player player, TimeSpan duration) {
         player.muteEnd = System.currentTimeMillis() + duration.toMillis();
         player.sendMessage("@red@You have been muted by {} for {}.", staff.getDisplayNameFormatted(), duration.toString());
+        Discord.writepunishments(staff.getDisplayName()+ " Muted `"+ player.getDisplayNameFormatted() + "` for the time of " + duration);
+
     }
 
     @Override

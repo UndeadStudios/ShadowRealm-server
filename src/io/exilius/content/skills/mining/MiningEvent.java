@@ -224,6 +224,7 @@ public class MiningEvent extends Event<Player> {
 		case ADAMANT:
 			break;
 		case COAL:
+			case COAL2:
 			if (Boundary.isIn(attachment, Boundary.RELLEKKA_BOUNDARY)) {
 				attachment.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
 			}
@@ -237,6 +238,7 @@ public class MiningEvent extends Event<Player> {
 			attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.MINE_GEM_FAL);
 			break;
 		case GOLD:
+			case GOLD2:
 			if (Boundary.isIn(attachment, Boundary.TZHAAR_CITY_BOUNDARY)) {
 				attachment.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.MINE_GOLD_KAR);
 			}
@@ -244,6 +246,7 @@ public class MiningEvent extends Event<Player> {
 			}
 			break;
 		case IRON:
+			case IRON2:
 			if (attachment.getPosition().inWild()) {
 				attachment.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_IRON_WILD);
 			}
@@ -254,7 +257,7 @@ public class MiningEvent extends Event<Player> {
 				attachment.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
 			}
 			break;
-		case MITHRIL:
+			case MITHRIL2:
 			if (attachment.getPosition().inWild()) {
 				attachment.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_MITHRIL_WILD);
 			}
@@ -262,6 +265,7 @@ public class MiningEvent extends Event<Player> {
 		case TIN:
 			break;
 		case CLAY:
+			case CLAY2:
 			attachment.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.MINE_CLAY);
 			break;
 		default:

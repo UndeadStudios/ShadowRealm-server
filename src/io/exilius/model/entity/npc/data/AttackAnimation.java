@@ -25,6 +25,8 @@ public class AttackAnimation extends NPCHandler {
 		}
 		
 		switch (npc.getNpcId()) {
+			case 9118:
+				return 6090;
 			case 3254: // Guard
 			case Npcs.ZAMORAK_WARRIOR:
 			case Npcs.ZAMORAK_WARRIOR_2:
@@ -1207,7 +1209,7 @@ public class AttackAnimation extends NPCHandler {
 			return 2854;
 
 			case 2267: // Dagannoth Rex
-			return 2851;
+			return 2853;
 
 		case 6342:
 			int test = Misc.random(2);

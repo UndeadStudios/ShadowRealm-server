@@ -1,11 +1,11 @@
 package io.exilius.content.combat.range;
 
+import io.exilius.model.entity.player.Player;
+
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Optional;
 import java.util.Set;
-
-import io.exilius.model.entity.player.Player;
 
 public enum Bow {
 
@@ -28,6 +28,11 @@ public enum Bow {
 	DARK_BOW_YELLOW(12767, Arrow.DRAGON), 
 	DARK_BOW_WHITE(12768, Arrow.DRAGON), 
 	TWISTED_BOW(20997, Arrow.DRAGON),
+	TWISTED_BOW_BLUE(29041, Arrow.DRAGON),
+	TWISTED_BOW_PURPLE(29042, Arrow.DRAGON),
+	TWISTED_BOW_RED(29043, Arrow.DRAGON),
+	TWISTED_BOW_GREEN(29044, Arrow.DRAGON),
+	TWISTED_BOW_YELLOW(29045, Arrow.DRAGON),
 	MAGIC_SHORTBOW_I(12788, Arrow.AMETHYST);
 
 	private final int bowId;

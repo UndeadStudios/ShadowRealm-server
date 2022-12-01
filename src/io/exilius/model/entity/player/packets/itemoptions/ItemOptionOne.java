@@ -1,10 +1,5 @@
 package io.exilius.model.entity.player.packets.itemoptions;
 
-import java.util.Calendar;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.DiceHandler;
@@ -34,6 +29,8 @@ import io.exilius.content.skills.prayer.Prayer;
 import io.exilius.content.skills.runecrafting.Pouches;
 import io.exilius.content.skills.slayer.SlayerUnlock;
 import io.exilius.content.teleportation.TeleportTablets;
+import io.exilius.content.trails.CoordinateScrolls;
+import io.exilius.content.trails.Sextant;
 import io.exilius.content.trails.TreasureTrails;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
@@ -44,6 +41,11 @@ import io.exilius.model.multiplayersession.duel.DuelSessionRules.Rule;
 import io.exilius.model.multiplayersession.flowerpoker.FlowerData;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.discord.Discord;
+
+import java.util.Calendar;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 import static io.exilius.content.DiceHandler.DICING_AREA;
 
@@ -111,6 +113,9 @@ public class ItemOptionOne implements PacketType {
             c.getPotions().handlePotion(itemId, itemSlot);
             return;
         }
+        if (CoordinateScrolls.loadClueInterface(c, itemId)) {
+            return;
+        }
         if (c.getQuesting().handleItemClick(itemId)) {
             return;
         }
@@ -160,6 +165,9 @@ public class ItemOptionOne implements PacketType {
                 } else {
                     c.sendMessage("You need a knife to open this.");
                 }
+                break;
+            case 2574 : // sextant
+                Sextant.initializeRandomSextantInterface(c);
                 break;
         case ResourceBoxSmall.BOX_ITEM:
             new ResourceBoxSmall().roll(c);
@@ -395,6 +403,11 @@ public class ItemOptionOne implements PacketType {
             case 13438: //slayer m chest
                 if (c.getItems().playerHasItem(13438)) {
                     new SlayerMysteryBox(c).quickOpen();
+                }
+                break;
+            case 29326:
+                if(c.getItems().playerHasItem(29326)){
+                    new DrCapeMysteryBox(c).openInterface();
                 }
                 break;
             case 21027: //dark relic

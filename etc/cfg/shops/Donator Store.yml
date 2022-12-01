@@ -7,6 +7,8 @@ items:
 - name: "mystery box"
 - name: "super mystery box"
 - name: "ultra mystery box"
+- id: 22323
+- id: 26219
 - name: "armadyl godsword"
 - name: "bandos godsword"
 - name: "saradomin godsword"
@@ -36,3 +38,6 @@ items:
 - id: 22625
 - id: 22619
 - id: 22616
+- id: 27226
+- id: 27229
+- id: 27232

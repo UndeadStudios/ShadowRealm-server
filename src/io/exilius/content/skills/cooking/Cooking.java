@@ -1,6 +1,5 @@
 package io.exilius.content.skills.cooking;
 
-import io.exilius.Server;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -10,19 +9,15 @@ import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
 import io.exilius.content.skills.SkillHandler;
 import io.exilius.model.Items;
-import io.exilius.model.SlottedItem;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
-import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
-import io.exilius.util.ItemConstants;
 import io.exilius.util.Misc;
 
 import java.security.SecureRandom;
-import java.util.Random;
 
 /**
  * Class Cooking Handles Cooking
@@ -240,7 +235,7 @@ public class Cooking extends SkillHandler {
 						return;
 					}
 					boolean burn;
-					if (player.playerEquipment[9] == 775) {
+					if (player.playerEquipment[9] == 775 || SkillcapePerks.COOKING.isWearing(player) || SkillcapePerks.isWearingMaxCape(player)) {
 						burn = !getSuccess(player, 3, item.getLevelReq(), item.getStopBurnGloves());
 					} else {
 						burn = !getSuccess(player, 3, item.getLevelReq(), item.getStopBurn());
@@ -249,11 +244,29 @@ public class Cooking extends SkillHandler {
 							player.getItems().getItemSlot(itemId), 1);
 					if (!burn) {
 						player.sendMessage("You successfully cook the " + item.getName().toLowerCase() + ".");
-					//	if (GameConstants.SOUND) {
-						//	player.sendSound(SoundList.COOK_ITEM, 100, 0);
-						//}
+						switch (itemId) {
+							case 7944:
+								player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.COOK_MONK);
+								break;
+							case 377:
+								if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
+									player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.COOK_LOBSTER);
+								}
+								break;
+							case 317:
+								if (Boundary.isIn(player, Boundary.LUMRIDGE_BOUNDARY)) {
+									player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.COOK_SHRIMP);
+								}
+								break;
+							case 11934:
+								if (Boundary.isIn(player, Boundary.RESOURCE_AREA_BOUNDARY)) {
+									player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DARK_CRAB);
+								}
+								break;
+						}
 						player.getPlayerAssistant().addSkillXPMultiplied(item.getXp(), player.playerCooking, true);
 						player.getItems().addItem(item.getCookedItem(), 1);
+						Achievements.increase(player, AchievementType.COOK, 1);
 					} else {
 						player.sendMessage(
 								"Oops! You accidentally burnt the "

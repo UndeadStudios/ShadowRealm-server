@@ -435,8 +435,8 @@ public class FlowerPokerHand {
         GlobalObject flower = new GlobalObject(chosenFlower.objectId, person.getX(), person.getY(), person.getHeight(), 3, 10, 100, -1);
         spawnedFlowers.add(flower);
         Server.getGlobalObjects().add(flower);
-        PathFinder.getPathFinder().findRoute(person, person.getX(), person.getY() + 1, false, 1, 1, true);
-        person.facePosition(person.absX, person.absY - 1);
+        PathFinder.getPathFinder().findRoute(person, person.getX() - 1, person.getY(), false, 1, 1, true);
+        person.facePosition(person.absX- 1, person.absY);
         if (finishedPlanting()) {
 
             CycleEventHandler.getSingleton().addEvent(FLOWER_OBJECT, new CycleEvent() {

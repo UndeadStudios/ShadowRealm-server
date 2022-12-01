@@ -386,7 +386,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(10) == 0 && specialTimer <= 0)//&& !isImmune(attack.getEntity().asPlayer()))
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MAGE_ANIM))
                                 .setMaxHit(0)
                                 .setAttackDelay(2)
@@ -404,7 +404,7 @@ public class NexNPC extends NPC {
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
                                 .setHitDelay(4)
-                                .setMaxHit(33)
+                                .setMaxHit(33) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMultiAttack(true)
                                 .setAnimation(new Animation(MAGE_ANIM))//magic attack
                                 .setAttackDelay(6)
@@ -423,7 +423,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(1) == 0)
                                 .setCombatType(CombatType.MELEE)
                                 .setDistanceRequiredForAttack(1)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MELEE_ANIM))
                                 .setMaxHit(30)
                                 .setAttackDelay(6)
@@ -437,7 +437,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(10) == 0 && specialTimer <= 0)//&& !isImmune(attack.getEntity().asPlayer()))
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MAGE_ANIM))
                                 .setProjectile(new ProjectileBaseBuilder().setProjectileId(390).setCurve(16).setSpeed(10).setSendDelay(3).createProjectileBase())//SMOKE
                                 .setMaxHit(0)
@@ -457,7 +457,7 @@ public class NexNPC extends NPC {
                                 .setCombatType(CombatType.RANGE)
                                 .setDistanceRequiredForAttack(2)
                                 .setHitDelay(4)
-                                .setMaxHit(33)
+                                .setMaxHit(33) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMultiAttack(true)
                                 .setAnimation(new Animation(RANGE_ANIM))
                                 .setAttackDelay(6)
@@ -473,7 +473,7 @@ public class NexNPC extends NPC {
                                 .setDistanceRequiredForAttack(1)
                                 .setHitDelay(2)
                                 .setAnimation(new Animation(MELEE_ANIM))
-                                .setMaxHit(30)
+                                .setMaxHit(30) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAttackDelay(6)
                                 .createNPCAutoAttack()
                 ));
@@ -484,7 +484,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(10) == 2 && specialTimer <= 0)//&& !isImmune(attack.getEntity().asPlayer()))
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(-1))
                                 .setMaxHit(0)
                                 .setAttackDelay(2)
@@ -499,7 +499,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(10) == 2 && specialTimer <= 0)//&& !isImmune(attack.getEntity().asPlayer()))
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(-1))
                                 .setMaxHit(0)
                                 .setAttackDelay(2)
@@ -519,7 +519,7 @@ public class NexNPC extends NPC {
                         new NPCAutoAttackBuilder()
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(4)
+                                .setHitDelay(4) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMaxHit(33)
                                 .setMultiAttack(false)
                                 .setAnimation(new Animation(MAGE_ANIM))
@@ -538,7 +538,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(1) == 0)
                                 .setCombatType(CombatType.MELEE)
                                 .setDistanceRequiredForAttack(1)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MELEE_ANIM))
                                 .setMaxHit(30)
                                 .setAttackDelay(6)
@@ -548,13 +548,14 @@ public class NexNPC extends NPC {
                 break;
             case ICE:
                 setNpcAutoAttacks(Lists.newArrayList(
-/*
+
                         new NPCAutoAttackBuilder()
                                 .setSelectAutoAttack(attack -> Misc.trueRand(6) == 2 && specialTimer <= 0)//&& !isImmune(attack.getEntity().asPlayer()))
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
                                 .setHitDelay(2)
                                 .setAnimation(new Animation(-1))
+                                .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMaxHit(0)
                                 .setAttackDelay(2)
                                 .setOnAttack(attack -> {
@@ -571,6 +572,7 @@ public class NexNPC extends NPC {
                                 .setDistanceRequiredForAttack(2)
                                 .setHitDelay(2)
                                 .setAnimation(new Animation(-1))
+                                .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMaxHit(0)
                                 .setAttackDelay(2)
                                 .setOnAttack(attack -> {
@@ -580,7 +582,7 @@ public class NexNPC extends NPC {
                                     specialTimer = 75;
                                 })
                                 .createNPCAutoAttack(),
-*/
+
 
 
                         /**
@@ -592,6 +594,7 @@ public class NexNPC extends NPC {
                                 .setHitDelay(4)
                                 .setMaxHit(33)
                                 .setMultiAttack(false)
+                                .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MAGE_ANIM))
                                 .setAttackDelay(6)
                                 .setProjectile(new ProjectileBaseBuilder().setProjectileId(-1).setCurve(16).setSpeed(50).setSendDelay(3).createProjectileBase())
@@ -606,7 +609,7 @@ public class NexNPC extends NPC {
 
                         new NPCAutoAttackBuilder()
                                 .setSelectAutoAttack(attack -> Misc.trueRand(1) == 0)
-                                .setCombatType(CombatType.MELEE)
+                                .setCombatType(CombatType.MELEE) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setDistanceRequiredForAttack(1)
                                 .setHitDelay(2)
                                 .setAnimation(new Animation(MELEE_ANIM))
@@ -624,7 +627,7 @@ public class NexNPC extends NPC {
                         new NPCAutoAttackBuilder()
                                 .setCombatType(CombatType.MAGE)
                                 .setDistanceRequiredForAttack(2)
-                                .setHitDelay(4)
+                                .setHitDelay(4) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setMaxHit(33)
                                 .setMultiAttack(false)
                                 .setAnimation(new Animation(MAGE_ANIM))
@@ -643,7 +646,7 @@ public class NexNPC extends NPC {
                                 .setSelectAutoAttack(attack -> Misc.trueRand(1) == 0)
                                 .setCombatType(CombatType.MELEE)
                                 .setDistanceRequiredForAttack(1)
-                                .setHitDelay(2)
+                                .setHitDelay(2) .setSelectPlayersForMultiAttack(NPCAutoAttack.getDefaultSelectPlayersForAttack())
                                 .setAnimation(new Animation(MELEE_ANIM))
                                 .setMaxHit(40)
                                 .setAttackDelay(6)
@@ -835,7 +838,7 @@ public class NexNPC extends NPC {
         if (!isAttacking)
             return;
         postHitDefend(this);
-//        setAttacks();
+        setAttacks();
         if (currentPlayersize != instance.getPlayers().size()) {
             int hp = (int) ((instance.getPlayers().size() == 3 ? 4250 : 3400) * 1.25);
             asNPC().getHealth().setMaximumHealth(hp);
@@ -1094,17 +1097,12 @@ public class NexNPC extends NPC {
     }
 
     public void getReward(Player player) {
-        for (GameItem randomItem : getRandomItems()) {
             if (player.getInventory().freeInventorySlots() < 1) {
-                player.getInventory().addToBank(new ImmutableItem(randomItem));
-                player.sendMessage(randomItem.getDef().getName() + ", Has been added to your bank!");
+                player.getInventory().addToBank(new ImmutableItem(Loot_KEY));
+                player.sendMessage("A loot key Has been added to your bank!");
             } else {
-                player.getInventory().addOrDrop(new ImmutableItem(randomItem));
+                player.getInventory().addOrDrop(new ImmutableItem(Loot_KEY));
             }
-            if (items.get(LootRarity.RARE).contains(randomItem)) {
-                player.getCollectionLog().handleDrop(player, 11278, randomItem.getId(), randomItem.getAmount(), true);
-            }
-        }
     }
 
     public List<GameItem> getRandomItems() {

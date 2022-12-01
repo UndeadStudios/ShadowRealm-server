@@ -11,7 +11,22 @@ import java.util.concurrent.TimeUnit;
 
 public class Configuration {
 
-	public static final int CLIENT_VERSION = 230;
+	public static final int CLIENT_VERSION = 232;
+	public static final int MAX_NPCS = 11957;
+	public static final boolean DOUBLE_EXP = false;
+	public static String LOGOUT_MESSAGE = "Click here to logout!";
+	public static String DEATH_MESSAGE = "Oh dear you are dead!";
+
+	public static boolean ADMIN_CAN_TRADE = false;
+
+	public static boolean ADMIN_DROP_ITEMS = false;
+
+	public static boolean ADMIN_CAN_SELL_ITEMS = false;
+
+	public static boolean MINI_GAMES = true;
+
+	public static boolean LOCK_EXPERIENCE = false;
+
 	public static String SERVER_NAME = "Exilius";
 	public static final int PORT_DEFAULT = 52777;
 	public static final int PORT_TEST = 43595;
@@ -375,6 +390,6 @@ public class Configuration {
 	 */
 	public static final int BUFFER_SIZE = 512;
 
-	public static final Position ONYX_ZONE_TELEPORT = new Position(2780, 4846, 0);
+	public static final Position ONYX_ZONE_TELEPORT = new Position(2783, 4903, 0);
 	public static long DOUBLE_DROPS_TIMER;
 }

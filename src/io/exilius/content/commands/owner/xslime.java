@@ -3,6 +3,7 @@ package io.exilius.content.commands.owner;
 import io.exilius.content.commands.Command;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.npc.NPCCacheDefinition;
+import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
@@ -22,6 +23,15 @@ public class xslime extends Command {
 //                    c.sendMessage("@cr10@This player is currently at the pk district.");
                 return;
             }
+        }
+        if(c2.getRights().getPrimary().isOwner()){
+            c.sendMessage("ERROR: Can't slime this person.");
+            return;
+        }
+        if(Boundary.isIn(c2, Boundary.OLM) || Boundary.isIn(c2, Boundary.RAIDS) || Boundary.isIn(c2, Boundary.RAIDS_LOBBY)
+                || Boundary.isIn(c2, Boundary.RAIDS_LOBBY_ENTRANCE) || Boundary.isIn(c2, Boundary.RAIDS_LOBBY)){
+            c.sendMessage("cant do this command when the people is doing raids");
+            return;
         }
         c2.npcId2 = Npcs.PIG;
         c2.playerStandIndex = NPCCacheDefinition.forID(Npcs.PIG).getStandAnim();

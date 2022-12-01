@@ -968,7 +968,9 @@ public class SkillInterfaces {
 			menuLine("54", "Law runes", 563, 15);
 			menuLine("65", "Death runes", 560, 16);
 			menuLine("77", "Blood runes", 565, 17);
-			optionTab("RuneCrafting", "Runes", "Runes", "Multiples", "Equipment", "Milestones", "", "", "", "", "", "", "", "", "");
+			menuLine("90", "Soul runes", 566, 18);
+			menuLine("95", "Wrath runes", 22208, 19);
+			optionTab("RuneCrafting", "Runes", "Runes", "Multiples", "Equipment", "Infusing", "Milestones", "", "", "", "", "", "", "", "");
 		}
 
 		else if (screen == 2) {
@@ -1004,7 +1006,8 @@ public class SkillInterfaces {
 			menuLine("95", "6 Water runes per essence", 555, 28);
 			menuLine("98", "8 Mind runes per essence", 558, 29);
 			menuLine("99", "10 Air runes per essence", 556, 30);
-			optionTab("RuneCrafting", "Multiples", "Runes", "Multiples", "Equipment", "Milestones", "", "", "", "", "", "", "", "", "");
+			menuLine("99", "2 Death runes per essence", 560, 31);
+			optionTab("RuneCrafting", "Multiples", "Runes", "Multiples", "Equipment", "Infusing", "Milestones", "", "", "", "", "", "", "", "");
 		}
 
 		else if (screen == 3) {
@@ -1013,13 +1016,19 @@ public class SkillInterfaces {
 			menuLine("25", "Medium Pouch(6 Essence)", 5510, 1);
 			menuLine("50", "Large Pouch(9 Essence)", 5512, 2);
 			menuLine("75", "Giant Pouch(12 Essence)", 5514, 3);
-			optionTab("RuneCrafting", "Equipment", "Runes", "Multiples", "Equipment", "Milestones", "", "", "", "", "", "", "", "", "");
+			optionTab("RuneCrafting", "Equipment", "Runes", "Multiples", "Equipment", "Infusing", "Milestones", "", "", "", "", "", "", "", "");
 		}
-
 		else if (screen == 4) {
 			clearMenu();
+			menuLine("42", "Swampbark boots and gauntlets", 25395, 0);
+			menuLine("46", "Swampbark helm", 25398, 1);
+			menuLine("48", "Swampbark body and legs", 25389, 2);
+			optionTab("RuneCrafting", "Equipment", "Runes", "Multiples", "Equipment", "Infusing", "Milestones", "", "", "", "", "", "", "", "");
+		}
+		else if (screen == 5) {
+			clearMenu();
 			menuLine("99", "Skill Mastery", c.getItems().skillcapes[Player.playerRunecrafting][0], 0);
-			optionTab("RuneCrafting", "Milestones", "Runes", "Multiples", "Equipment", "Milestones", "", "", "", "", "", "", "", "", "");
+			optionTab("RuneCrafting", "Milestones", "Runes", "Multiples", "Equipment", "Infusing", "Milestones", "", "", "", "", "", "", "", "");
 		}
 	}
 

@@ -150,7 +150,7 @@ public class WeaponDataConstants {
             Items.DARK_BOW_BLUE, Items.DARK_BOW_GREEN,Items.DARK_BOW_YELLOW,Items.DARK_BOW_WHITE, Items.THIRD_AGE_BOW,
 
             // Crystal bows
-            412, 4213, 4214, 4215, 4216, 4217, 4218, 4219, 4220, 4221, 4222, 25865, 4223,
+            412, 4213, 4214, 4215, 4216, 4217, 4218, 4219, 4220, 4221, 4222, 25865, 4223, 29041, 29042, 29043, 29044, 29045,
 
     };
 

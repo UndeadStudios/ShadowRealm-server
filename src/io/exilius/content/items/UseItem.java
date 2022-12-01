@@ -18,8 +18,8 @@ import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.warriors_guild.AnimatedArmour;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
 import io.exilius.content.objects.Fillables;
-import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.Skill;
+import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.firemake.Firemaking;
 import io.exilius.content.skills.herblore.Crushable;
@@ -28,6 +28,7 @@ import io.exilius.content.skills.herblore.PoisonedWeapon;
 import io.exilius.content.skills.herblore.PotionDecanting;
 import io.exilius.content.skills.prayer.Bone;
 import io.exilius.content.skills.prayer.Prayer;
+import io.exilius.content.skills.runecrafting.Tiaras;
 import io.exilius.content.skills.slayer.SlayerUnlock;
 import io.exilius.content.trails.MasterClue;
 import io.exilius.content.wogw.Wogw;
@@ -228,7 +229,28 @@ public class UseItem {
 		} else if (!c.getItems().isNoted(itemId) || (def!=null ? def.name : null) != null && def.name.toLowerCase().contains("bank") || def.name.toLowerCase().contains("trading") || def.name.toLowerCase().contains("bank booth")) {
 			c.getPA().noteItems(c, itemId);
 		}*/
+		if (Tiaras.bindTiara(c, itemId, objectID)) {
+			return;
+		}
 		switch (objectID) {
+			case 2452:
+			case 2453:
+			case 2454:
+			case 2455:
+			case 2456:
+			case 2457:
+			case 2458:
+			case 2459:
+			case 2460:
+			case 2461:
+			case 2462:
+			case 1438:
+			case 1440:
+			case 1442:
+			case 1444:
+			case 1446:
+				c.getRC().enterAltar(objectID, itemId);
+				break;
 			case 884:
 			case 3264:
 			case 3305:

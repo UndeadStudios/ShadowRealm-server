@@ -47,7 +47,8 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
-
+    compile group: 'net.openhft', name: 'zero-allocation-hashing', version: '0.8'
+    compile group: 'it.unimi.dsi', name: 'fastutil', version: '8.2.2'
     testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.0'
 

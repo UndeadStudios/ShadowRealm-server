@@ -18,7 +18,6 @@ import io.exilius.content.dialogue.DialogueConstants;
 import io.exilius.content.help.HelpDatabase;
 import io.exilius.content.item.lootable.LootableInterface;
 import io.exilius.content.itemskeptondeath.ItemsKeptOnDeathInterface;
-//import io.exilius.content.leaderboards.LeaderboardInterface;
 import io.exilius.content.polls.PollTab;
 import io.exilius.content.preset.PresetManager;
 import io.exilius.content.skills.cooking.Cooking;
@@ -28,6 +27,7 @@ import io.exilius.content.skills.slayer.SlayerRewardsInterface;
 import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.content.tournaments.TourneyManager;
 import io.exilius.content.tradingpost.Listing;
+import io.exilius.content.trails.Sextant;
 import io.exilius.content.tutorial.TutorialDialogue;
 import io.exilius.content.vote_panel.VotePanelInterface;
 import io.exilius.model.Items;
@@ -105,6 +105,9 @@ public class ClickingButtons implements PacketType {
 			return;
 		}
 		if (c.getPrestige().prestigeClicking(actionButtonId)) {
+			return;
+		}
+		if (Sextant.handleSextantButtons(c, actionButtonId)) {
 			return;
 		}
 		if (TourneyManager.getSingleton().handleActionButtons(c, actionButtonId)) {

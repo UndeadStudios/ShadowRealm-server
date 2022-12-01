@@ -275,6 +275,20 @@ public class PlayerSave {
                             p.horrorFromDeep = Integer.parseInt(token2);
                         } else if (token.equals("breakVials")) {
                             p.breakVials = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasclaimedsanta")) {
+                            p.hasclaimedsanta = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasclaimedredphat")) {
+                            p.hasclaimedredphat = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasclaimedYelphat")) {
+                            p.hasclaimedYelphat = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasclaimedbluphat")) {
+                            p.hasclaimedbluphat = Boolean.parseBoolean(token2);
+                        } else if (token.equals("hasclaimedgrephat")) {
+                            p.hasclaimedgrephat = Boolean.parseBoolean(token2);
+                        } else if(token.equals("hasclaimedpurphat")) {
+                            p.hasclaimedpurphat = Boolean.parseBoolean(token2);
+                        } else if(token.equals("hasclaimedwhiphat")) {
+                            p.hasclaimedwhiphat = Boolean.parseBoolean(token2);
                         } else if (token.equals("hasfirstfloorDone")) {
                             p.hasfirstfloorDone = Boolean.parseBoolean(token2);
                         } else if (token.equals("hassecoundfloorDone")) {
@@ -1448,6 +1462,27 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("breakVials = ", 0, 13);
             characterfile.write(Boolean.toString(p.breakVials), 0, Boolean.toString(p.breakVials).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedsanta = ", 0, 18);
+            characterfile.write(Boolean.toString(p.hasclaimedsanta), 0, Boolean.toString(p.hasclaimedsanta).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedredphat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedredphat), 0, Boolean.toString(p.hasclaimedredphat).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedYelphat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedYelphat), 0, Boolean.toString(p.hasclaimedYelphat).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedbluphat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedbluphat), 0, Boolean.toString(p.hasclaimedbluphat).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedgrephat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedgrephat), 0, Boolean.toString(p.hasclaimedgrephat).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedpurphat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedpurphat), 0, Boolean.toString(p.hasclaimedpurphat).length());
+            characterfile.newLine();
+            characterfile.write("hasclaimedwhiphat = ", 0, 20);
+            characterfile.write(Boolean.toString(p.hasclaimedwhiphat), 0, Boolean.toString(p.hasclaimedwhiphat).length());
             characterfile.newLine();
             characterfile.write("hasfirstfloorDone = ", 0, 20);
             characterfile.write(Boolean.toString(p.hasfirstfloorDone), 0, Boolean.toString(p.hasfirstfloorDone).length());

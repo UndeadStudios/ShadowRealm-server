@@ -1,14 +1,14 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.content.item.lootable.LootRarity;
 import io.exilius.content.item.lootable.MysteryBoxLootable;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SuperMysteryBox extends MysteryBoxLootable {
 
@@ -50,29 +50,14 @@ public class SuperMysteryBox extends MysteryBoxLootable {
                         new GameItem(11771),//archers (i)
                         new GameItem(11772),//warrior (i)
                         new GameItem(11773),//berserker (i)
-                        new GameItem(10346),//3rd age platelegs
-                        new GameItem(10348),//3rd age platebody
-                        new GameItem(10350),//3rd age helm
-                        new GameItem(10352),//3rd age kite
-                        new GameItem(10330),//3rd age range top
-                        new GameItem(10332),//3rd age range bottom
-                        new GameItem(10338),//3rd age robe top
-                        new GameItem(10340),//3rd age robe bottom
                         new GameItem(11804),//BGS
                         new GameItem(11806),//SGS
                         new GameItem(11808),//ZGS
                         new GameItem(11770),//seers (i)
                         new GameItem(11771),//archers (i)
                         new GameItem(11772),//warrior (i)
-                        new GameItem(11773),//berserker (i)
-                        new GameItem(10346),//3rd age platelegs
-                        new GameItem(10348),//3rd age platebody
-                        new GameItem(10350),//3rd age helm
-                        new GameItem(10352),//3rd age kite
-                        new GameItem(10330),//3rd age range top
-                        new GameItem(10332),//3rd age range bottom
-                        new GameItem(10338),//3rd age robe top
-                        new GameItem(10340)//3rd age robe bottom
+                        new GameItem(11773)//berserker (i)
+
                 ));
 
         items.put(LootRarity.UNCOMMON,//40% Chance
@@ -98,29 +83,13 @@ public class SuperMysteryBox extends MysteryBoxLootable {
                         new GameItem(11771),//archers (i)
                         new GameItem(11772),//warrior (i)
                         new GameItem(11773),//berserker (i)
-                        new GameItem(10346),//3rd age platelegs
-                        new GameItem(10348),//3rd age platebody
-                        new GameItem(10350),//3rd age helm
-                        new GameItem(10352),//3rd age kite
-                        new GameItem(10330),//3rd age range top
-                        new GameItem(10332),//3rd age range bottom
-                        new GameItem(10338),//3rd age robe top
-                        new GameItem(10340),//3rd age robe bottom
                         new GameItem(11804),//BGS
                         new GameItem(11806),//SGS
                         new GameItem(11808),//ZGS
                         new GameItem(11770),//seers (i)
                         new GameItem(11771),//archers (i)
                         new GameItem(11772),//warrior (i)
-                        new GameItem(11773),//berserker (i)
-                        new GameItem(10346),//3rd age platelegs
-                        new GameItem(10348),//3rd age platebody
-                        new GameItem(10350),//3rd age helm
-                        new GameItem(10352),//3rd age kite
-                        new GameItem(10330),//3rd age range top
-                        new GameItem(10332),//3rd age range bottom
-                        new GameItem(10338),//3rd age robe top
-                        new GameItem(10340)//3rd age robe bottom
+                        new GameItem(11773)//berserker (i)
                 )
         );
 
@@ -135,11 +104,6 @@ public class SuperMysteryBox extends MysteryBoxLootable {
                         new GameItem(4084),//sled
                         new GameItem(13346),//ultra mystery box
                         new GameItem(11785),//armadyl crossbow
-                        new GameItem(12437, 1),//3rd age cape
-                        new GameItem(12424, 1),//3rd age bow
-                        new GameItem(12426, 1),//3rd age longsword
-                        new GameItem(12422, 1),//3rd age wand
-                        new GameItem(20014, 1),//3rd age pickaxe
                         new GameItem(2403, 1),//10 dollar scroll
                         new GameItem(13239, 1),//primordial boots
                         new GameItem(13235, 1),//eternal boots

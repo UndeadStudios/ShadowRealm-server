@@ -1,7 +1,5 @@
 package io.exilius.content.trails;
 
-import java.util.List;
-
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.model.Items;
@@ -12,12 +10,14 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
 
+import java.util.List;
+
 public class TreasureTrails {
 
-	public static final int EASY_CASKET = 2714;
-	public static final int MEDIUM_CASKET = 2802;
-	public static final int HARD_CASKET = 2775;
-	public static final int MASTER_CASKET = 19841;
+	public static final int EASY_CASKET = 20546;
+	public static final int MEDIUM_CASKET = 20545;
+	public static final int HARD_CASKET = 20544;
+	public static final int MASTER_CASKET = 19836;
 
 	public static final int EASY_CLUE_SCROLL = 2677;
 	public static final int MEDIUM_CLUE_SCROLL = 2801;

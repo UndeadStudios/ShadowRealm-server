@@ -126,3 +126,6 @@ rare:
   - name: "nature rune"
     minimum: 1
     maximum: 1
+  - name: "air talisman"
+    minimum: 1
+    maximum: 1

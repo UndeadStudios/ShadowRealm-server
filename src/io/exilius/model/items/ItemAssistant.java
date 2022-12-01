@@ -836,6 +836,11 @@ public class ItemAssistant {
 		case 12424:
 		case 20784:
 		case 20997:
+			case 29041:
+			case 29042:
+			case 29043:
+			case 29044:
+			case 29045:
 			case 22550:
 			case 25865:
 			return true;

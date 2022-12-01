@@ -57,13 +57,13 @@ uncommon:
   - name: "grimy lantadyme noted"
     minimum: 4
     maximum: 15
+  - name: "casket"
+    minimum: 1
+    maximum: 1
 rare:
   accessibility: 75
   items:
   - name: "ancient staff"
-    minimum: 1
-    maximum: 1
-  - name: "casket"
     minimum: 1
     maximum: 1
   - name: "archaic emblem tier 1"

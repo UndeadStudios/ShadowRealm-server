@@ -205,7 +205,7 @@ public class DropManager {
         int correctPetId = 30012;
         int box = Items.RESOURCE_BOXSMALL;
         NpcDef npcDefinition = NpcDef.forId(npcId);
-        if (npcDefinition != null && Misc.random(20) == 1) {
+        if (npcDefinition != null && Misc.random(10) == 1) {
             int combatLevel = npcDefinition.getCombatLevel();
             if (combatLevel >= 96) {
                 box = Items.RESOURCE_BOXLARGE;
@@ -282,7 +282,11 @@ public class DropManager {
                         player.sendMessage("@red@You receive a brittle key.");
                         logger.debug("Grotesque guardians key received because server is on debug mode.");
                     }
+                    if(Misc.random(150) == 1){
+                        player.sendMessage("@bla@You notice a @blu@slayer casket@bla@ on the floor.");
+                        Server.itemHandler.createGroundItem(player, 13438, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
+                    }
                     if (npc.getPosition().inWild() && m.getId() == 7663) {
                         int slayerChance = 650;
                         int emblemChance = 100;
@@ -299,6 +303,7 @@ public class DropManager {
                             //"@red@" + Misc.capitalize(player.playerName) + " received a drop: Slayer's Enchantment.</col>.");
                             //PlayerHandler.executeGlobalMessage("<col=FF0000>[Lootations] @cr19@ </col><col=255>"+ Misc.capitalize(player.playerName) + "</col> received a <col=255>Slayer's Enchantment</col>.");
                         }
+
                     }
                 });
             }
@@ -348,31 +353,31 @@ public class DropManager {
         /**
          * Coin Bags and resource boxes
          */
+    if(Misc.random(25) == 1){
+        player.sendMessage("@bla@You notice a @blu@Pvm casket@bla@ on the floor.");
+        Server.itemHandler.createGroundItem(player, 405, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
+    }
         if (Misc.random(1) == 1 || Hespori.activeGolparSeed) {
             dropResourcePack(player, npcId, location.getX(), location.getY(), location.getZ());
         } else {
             dropCoinBag(player, npcId, location.getX(), location.getY(), location.getZ());
         }
-//            if (Misc.random(150) < 45) {
-//            Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 3), player.getIndex());
-//            player.sendMessage("You have received some tokens for halloween!");
+//        if (Misc.random(470) < 90) {
+//            smallNpc = npc.getDefinition().getCombatLevel() < 50;
+//            mediumNpc = npc.getDefinition().getCombatLevel() > 51 && npc.getDefinition().getCombatLevel() < 99 ;
+//            largeNpc = npc.getDefinition().getCombatLevel() > 100;
+//            if (smallNpc) {
+//                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 5), player.getIndex());
+//                player.sendMessage("You have received some tokens for halloween!");
+//            } else if (mediumNpc) {
+//                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(5, 10), player.getIndex());
+//                player.sendMessage("You have received some tokens for halloween!");
+//            } else if (largeNpc) {
+//                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(10, 15), player.getIndex());
+//                player.sendMessage("You have received some tokens for halloween!");
 //            }
-        if (Misc.random(470) < 90) {
-            smallNpc = npc.getDefinition().getCombatLevel() < 50;
-            mediumNpc = npc.getDefinition().getCombatLevel() > 51 && npc.getDefinition().getCombatLevel() < 99 ;
-            largeNpc = npc.getDefinition().getCombatLevel() > 100;
-            if (smallNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(1, 5), player.getIndex());
-                player.sendMessage("You have received some tokens for halloween!");
-            } else if (mediumNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(5, 10), player.getIndex());
-                player.sendMessage("You have received some tokens for halloween!");
-            } else if (largeNpc) {
-                Server.itemHandler.createGroundItem(player, 29280, location.getX(), location.getY(), location.getZ(), 1 + Misc.random(10, 15), player.getIndex());
-                player.sendMessage("You have received some tokens for halloween!");
-            }
-        }
+//        }
         // Runecrafting pouches
         if (Misc.random(80) == 10 || Server.isDebug()) {
             if (player.getItems().getItemCount(5509, false) == 1 && player.getItems().getItemCount(5510, false) == 0) {

@@ -97,6 +97,7 @@ import io.exilius.content.skills.herblore.Herblore;
 import io.exilius.content.skills.hunter.Hunter;
 import io.exilius.content.skills.mining.Mining;
 import io.exilius.content.skills.prayer.Prayer;
+import io.exilius.content.skills.runecrafting.RealRunecrafting;
 import io.exilius.content.skills.slayer.Slayer;
 import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.content.skills.smithing.Smithing;
@@ -219,7 +220,11 @@ public class Player extends Entity {
     public static final int playerFarming = 19;
     public static final int playerRunecrafting = 20;
 
-
+    public double sextantBarDegree;
+    public int sextantSunCoords;
+    public int rotationFactor;
+    public int sextantGlobalPiece;
+    public int sextantLandScapeCoords;
     public int[] tempInventory = new int[28], tempInventoryN = new int[28], tempEquipment = new int[28], tempEquipmentN = new int[28];
     public boolean rubyBoltSpecial;
     public boolean rubydragonBoltSpecial;
@@ -253,6 +258,13 @@ public class Player extends Entity {
     public boolean hasNexVirus;
     public boolean hasHadNexVirus;
     public long TimeSinceVirus;
+    public boolean hasclaimedsanta;
+    public boolean hasclaimedredphat;
+    public boolean hasclaimedYelphat;
+    public boolean hasclaimedbluphat;
+    public boolean hasclaimedgrephat;
+    public boolean hasclaimedpurphat;
+    public boolean hasclaimedwhiphat;
     private int bofacharges;
 
     public void saveItemsForMinigame() {
@@ -361,6 +373,7 @@ public class Player extends Entity {
     public int headIconPk = -1;
     protected RightGroup rights;
     public AttackEntity attacking = new AttackEntity(this);
+    public RealRunecrafting realrcing = new RealRunecrafting(this);
     private DialogueBuilder dialogueBuilder = null;
     public StringInput stringInputHandler;
     public AmountInput amountInputHandler;
@@ -512,6 +525,7 @@ public class Player extends Entity {
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
     private final SlayerMysteryBox slayerMysteryBox = new SlayerMysteryBox(this);
+    private final DrCapeMysteryBox drCapeMysteryBox = new DrCapeMysteryBox(this);
     private final CoinBagSmall coinBagSmall = new CoinBagSmall(this);
     private final CoinBagMedium coinBagMedium = new CoinBagMedium(this);
     private final CoinBagLarge coinBagLarge = new CoinBagLarge(this);
@@ -1875,7 +1889,6 @@ public class Player extends Entity {
     public void finishLogin() {
         Server.getLogging().write(new ConnectionLog(this, true, null));
         queuedLoginActions.forEach(it -> it.accept(this));
-
         if (getMode() == Mode.forType(ModeType.STANDARD) && getRights().isIronman()) {
             System.err.println(getLoginName() + " has ironman rights with standard mode, removing ironman rights.");
             Right.IRONMAN_SET.forEach(it -> getRights().remove(it));
@@ -1922,6 +1935,7 @@ public class Player extends Entity {
         getYoutubeMysteryBox().canMysteryBox();
         getFoeMysteryBox().canMysteryBox();
         getSlayerMysteryBox().canMysteryBox();
+        getDrCapeMysteryBox().canMysteryBox();
         getPA().updateRunEnergy();
         isFullHelm = ItemDef.forId(playerEquipment[playerHat]).getEquipmentModelType() == EquipmentModelType.FULL_HELMET;
         isFullMask = ItemDef.forId(playerEquipment[playerHat]).getEquipmentModelType() == EquipmentModelType.FULL_MASK;
@@ -1962,18 +1976,18 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@red@Mod@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.GAME_DEVELOPER)) {
             PlayerHandler.executeGlobalMessage("[@red@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR)) {
-            PlayerHandler.executeGlobalMessage("[@red@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && (getLoginName().equalsIgnoreCase("osiris"))) {
+            PlayerHandler.executeGlobalMessage("[@yel@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("epic")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("exilius")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equals("fearful")) {
-            PlayerHandler.executeGlobalMessage("[@red@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        } else if (getLoginName().equalsIgnoreCase("rico")) {
+            PlayerHandler.executeGlobalMessage("[@blu@Security manager@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
             PlayerHandler.executeGlobalMessage("[@red@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("sgsrocks")) {
-            PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
             PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }
@@ -3320,6 +3334,9 @@ public class Player extends Entity {
 
     public SlayerMysteryBox getSlayerMysteryBox() {
         return slayerMysteryBox;
+    }
+    public DrCapeMysteryBox getDrCapeMysteryBox() {
+        return drCapeMysteryBox;
     }
 
     public VoteMysteryBox getVoteMysteryBox() {
@@ -5913,4 +5930,7 @@ public class Player extends Entity {
         return false;
     }
 
+    public RealRunecrafting getRC() {
+        return realrcing;
+    }
 }

@@ -845,11 +845,17 @@ public class ShopAssistant {
 						return 50;
 					case 13239:
 					case 13235:
+					case 26219:
 					case 13237:
+					case 22323:
 						return 35;
 					case 21079:
 					case 21034:
 						return 30;
+					case 27226:
+					case 27229:
+					case 27232:
+						return 160;
 				}
 				break;
 			case 10: //slayer Shop

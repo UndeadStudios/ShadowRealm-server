@@ -1,0 +1,153 @@
+---
+npc_id:
+  - 9118
+constant:
+  accessibility: 0
+  items:
+  - name: "crystal grail"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 1
+  items:
+    - name: "steel battleaxe"
+      minimum: 1
+      maximum: 1
+    - name: "mithril axe"
+      minimum: 1
+      maximum: 1
+    - name: "mithril spear"
+      minimum: 1
+      maximum: 1
+    - name: "steel platelegs"
+      minimum: 1
+      maximum: 1
+    - name: "mithril kiteshield"
+      minimum: 1
+      maximum: 1
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+    - name: "adamantite ore noted"
+      minimum: 1
+      maximum: 1
+    - name: "clue scroll hard"
+      minimum: 1
+      maximum: 1
+    - name: "coins"
+      minimum: 500000
+      maximum: 1000000
+uncommon:
+  accessibility: 2
+  items:
+    - name: "adamant full helm"
+      minimum: 1
+      maximum: 1
+    - name: "water rune"
+      minimum: 125
+      maximum: 125
+    - name: "nature rune"
+      minimum: 25
+      maximum: 25
+    - name: "fire rune"
+      minimum: 75
+      maximum: 75
+    - name: "law rune"
+      minimum: 15
+      maximum: 15
+    - name: "bass"
+      minimum: 1
+      maximum: 1
+    - name: "rune dagger"
+      minimum: 1
+      maximum: 1
+    - name: "mystic hat"
+      minimum: 1
+      maximum: 1
+    - name: "mystic hat dark"
+      minimum: 1
+      maximum: 1
+    - name: "mystic hat light"
+      minimum: 1
+      maximum: 1
+    - name: "mystic boots"
+      minimum: 1
+      maximum: 1
+    - name: "mystic boots dark"
+      minimum: 1
+      maximum: 1
+    - name: "mystic boots light"
+      minimum: 1
+      maximum: 1
+rare:
+  accessibility: 80
+  items:
+    - name: "dragon longsword"
+      minimum: 1
+      maximum: 1
+    - name: "ancient staff"
+      minimum: 1
+      maximum: 1
+    - name: "archaic emblem tier 1"
+      minimum: 1
+      maximum: 1
+    - name: "malediction ward"
+      minimum: 1
+      maximum: 1
+    - item: 4185
+      maximum: 3
+      minimum: 2
+    - item: 6792
+      maximum: 3
+      minimum: 2
+    - name: "zamorak monk bottom"
+      minimum: 1
+      maximum: 1
+    - name: "zamorak monk top"
+      minimum: 1
+      maximum: 1
+    - name: "splitbark body"
+      minimum: 1
+      maximum: 1
+    - name: "splitbark legs"
+      minimum: 1
+      maximum: 1
+    - name: "fire rune"
+      minimum: 250
+      maximum: 500
+    - name: "chaos rune"
+      minimum: 175
+      maximum: 475
+    - name: "blood rune"
+      minimum: 50
+      maximum: 300
+    - name: "grimy lantadyme noted"
+      minimum: 4
+      maximum: 15
+    - name: "casket"
+      minimum: 1
+      maximum: 1
+very_rare:
+  accessibility: 4500
+  items:
+    - item: 28347
+      maximum: 1
+      minimum: 1
+    - item: 29326
+      maximum: 1
+      minimum: 1
+    - name: "dragon axe"
+      minimum: 1
+      maximum: 1
+    - name: "seers ring"
+      minimum: 1
+      maximum: 1
+    - name: "berserker ring"
+      minimum: 1
+      maximum: 1
+    - name: "warrior ring"
+      minimum: 1
+      maximum: 1
+    - name: "air talisman"
+      minimum: 1
+      maximum: 1

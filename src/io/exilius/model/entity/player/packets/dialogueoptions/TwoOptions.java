@@ -1,21 +1,13 @@
 package io.exilius.model.entity.player.packets.dialogueoptions;
 
-import java.util.Map.Entry;
-import java.util.Optional;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
-import io.exilius.content.fireofexchange.FireOfExchange;
 import io.exilius.content.LootValue;
 import io.exilius.content.SkillcapePerks;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.Hunllef;
 import io.exilius.content.bosses.Skotizo;
-//import io.exilius.content.commands.all.Claim;
+import io.exilius.content.fireofexchange.FireOfExchange;
 import io.exilius.content.items.Degrade;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.barrows.RoomLocation;
@@ -35,6 +27,9 @@ import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.player.EmptyInventoryLog;
 import org.apache.commons.lang3.text.WordUtils;
+
+import java.util.Map.Entry;
+import java.util.Optional;
 
 /*
  * @author Matt
@@ -88,6 +83,15 @@ public class TwoOptions {
 					c.getPA().closeAllWindows();
 				} else {
 					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+					c.getPA().closeAllWindows();
+				}
+				break;
+			case 35001:
+				if(c.getY() > 6400) {
+					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
+					c.getPA().closeAllWindows();
+				} else {
+					c.getPA().movePlayer( c.absX, c.absY, c.heightLevel+1);
 					c.getPA().closeAllWindows();
 				}
 				break;
@@ -1134,6 +1138,15 @@ public class TwoOptions {
 					c.getPA().closeAllWindows();
 				} else {
 					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+					c.getPA().closeAllWindows();
+				}
+				break;
+			case 35001:
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
+					c.getPA().closeAllWindows();
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
 					c.getPA().closeAllWindows();
 				}
 				break;

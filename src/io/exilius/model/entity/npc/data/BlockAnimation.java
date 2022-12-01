@@ -10,6 +10,8 @@ public class BlockAnimation {
 
     public static int getAnimation(int npcId) {
         switch (npcId) {
+            case 9118:
+                return 6091;
             case 2098:
             case 2099:
             case 2100:

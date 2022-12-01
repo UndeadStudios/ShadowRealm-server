@@ -4,6 +4,7 @@ import io.exilius.content.commands.punishment.OnlinePlayerPunishmentPCP;
 import io.exilius.model.entity.player.Player;
 import io.exilius.punishments.PunishmentType;
 import io.exilius.util.dateandtime.TimeSpan;
+import io.exilius.util.discord.Discord;
 
 public class Ban extends OnlinePlayerPunishmentPCP {
 
@@ -20,6 +21,7 @@ public class Ban extends OnlinePlayerPunishmentPCP {
     @Override
     public void onPunishment(Player staff, Player player, TimeSpan duration) {
         player.forceLogout();
+        Discord.writepunishments(staff.getDisplayName() + " Banned `" + player.getDisplayNameFormatted() + "`for the time of " + duration);
     }
 
     @Override

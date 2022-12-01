@@ -40,6 +40,7 @@ import io.exilius.content.skills.agility.impl.rooftop.RooftopVarrock;
 import io.exilius.content.skills.crafting.BraceletMaking;
 import io.exilius.content.skills.crafting.JewelryMaking;
 import io.exilius.content.skills.hunter.Hunter;
+import io.exilius.content.skills.runecrafting.RuneCraftingActions;
 import io.exilius.content.skills.runecrafting.Runecrafting;
 import io.exilius.content.skills.smithing.CannonballSmelting;
 import io.exilius.content.skills.thieving.StallData;
@@ -191,7 +192,6 @@ static int fourthFloorsos[][] = {
 		if (c.getLighthouse().execute(c, objectType)) {
 			return;
 		}
-
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
 		if ((def!=null ? def.name : null) != null && def.name.toLowerCase().equals("anvil")) {
 			if (c.getItems().playerHasItem(barType[0])) {
@@ -246,6 +246,10 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
 					return;
 				}
+				if(obX == 3103 && obY == 9576){
+					Ladders.climbLadder(c, 3105, 3162, 0);
+					return;
+				}
 				if(obX == 3018 && obY == 9739) { // Mining guild
 					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
 					return;
@@ -282,6 +286,10 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3210, 3216, 0);
 					return;
 				}
+				if(obX == 2981 && obY == 9916){
+					Ladders.climbLadder(c, 2960, 3506, 0);
+					return;
+				}
 				if(c.getY() > 6400) {
 					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
 					return;
@@ -295,7 +303,10 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3069, 10257, 0);
 					return;
 				}
-
+				if(obX == 3104 && obY == 3162) {
+					Ladders.climbLadder(c, 3104, 9576, 0);
+					return;
+				}
 				if(obX == 3087 && obY == 3496) { // foe ladder
 					AgilityHandler.delayEmote(c, "CLIMB_DOWN", 2548, 9951, 0, 2);
 					return;
@@ -321,6 +332,10 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3017, 10248, 0);
 					return;
 				}
+				if(obX == 2960 && obY == 3507){
+					Ladders.climbLadder(c, 2981,9915, 0);
+					return;
+				}
 				if(obX == 1570 && obY == 2829 && c.heightLevel == 1) {
 					Ladders.climbLadder(c, 1570, 2830, 0);
 					return;
@@ -339,38 +354,109 @@ static int fourthFloorsos[][] = {
 			}
 		}
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("staircase")) {
+			if(def.actions[0].toLowerCase().equals("climb")) {
+				c.getDH().sendOption2("Climb up", "Climb down");
+				c.dialogueAction = 35001;
+			}
 			if(def.actions[0].toLowerCase().equals("climb-up")) {
 				if(obX == 3059 && obY == 9776) { // Dwarf mine stairs
 					c.getPA().movePlayer(c.getX()+3, c.getY()-6400, c.heightLevel);
 					return;
 				}
-
+				if(obX == 3187 && obY == 9833) {
+					if(c.getX() == 3190 && c.getY() == 9833 || c.getX() == 3190 && c.getY() == 9834) {
+						c.getPA().movePlayer(c.getX() - 4, c.getY() - 6400, c.heightLevel);
+					}
+					return;
+				}
 				if(obX == 3103 && obY == 3159) { // Wizard tower
 					c.getPA().movePlayer(3104, 3161, 1);
+					return;
+				}
+				if(obX == 2971 && obY == 3370) {
+					c.getPA().movePlayer(c.getX(), c.getY()+4, 1);
+					return;
+				}
+				if(obX == 3266 && obY == 3452) {
+					if(c.getX() == 3267 && c.getY() == 3451 || c.getX() == 3266 && c.getY() == 3451) {
+						c.getPA().movePlayer(c.getX(), c.getY() + 4, 1);
+					}
+					return;
+				}
+				if(obX == 3285 && obY == 3493){
+					if(c.getX() == 3285 && c.getY() == 3496 || c.getX() == 3286 && c.getY() == 3296) {
+						c.getPA().movePlayer(c.getX(), c.getY() - 4, 1);
+						return;
+					}
+				}
+				if(obX == 3156 && obY == 3435) {
+					c.getPA().movePlayer(c.getX()-4, c.getY(), 1);
+					return;
+				}
+				if(obX == 3227 && obY == 3393) {
+					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
+					return;
+				}
+				if(obX == 3253 && obY == 3443) {
+					if (c.getX() == 3254 && c.getY() == 3442 || c.getX() == 3253 && c.getY() == 3442) {
+						c.getPA().movePlayer(c.getX(), c.getY() + 4, 2);
+					}
+					return;
+				}
+				if(obX == 3212 && obY == 3473){
+					if (c.getX() == 3212 && c.getY() == 3472 || c.getX() == 3213 && c.getY() == 3472) {
+						c.getPA().movePlayer(c.getX(), c.getY() + 4, 1);
+					}
+					return;
+				}
+				if(obX == 2959 && obY == 3369) {
+					c.getPA().movePlayer(c.getX(), c.getY()+4, 1);
+					return;
+				}
+				if(obX == 3045 && obY == 3363) {
+					c.getPA().movePlayer(c.getX(), c.getY()+4, 1);
+					return;
+				}
+				if(obX == 3018 && obY == 3343) {
+					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
+					return;
+				}
+				if(obX == 3021 && obY == 3332) {
+					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
 					return;
 				}
 				if(obX == 3413 && obY == 3540 && c.getHeight() == 1) { // Slayer tower
 					c.getPA().movePlayer(3417, 3540, 2);
 					return;
 				}
+				if(obX == 3230 && obY == 3383 && c.getHeight() == 2) {
+					c.getPA().movePlayer(c.getX(), c.getY()-4, 1);
+					return;
+				}
 
 				if(obX == 3557 && obY == 9718 && c.getHeight() == 3){
 					c.getPA().movePlayer(3575, 3298, 0);
+					return;
 				}
 				if(obX == 3534 && obY == 9705 && c.getHeight() == 3){
 					c.getPA().movePlayer(3575, 3282, 0);
+					return;
 				}
 				if(obX == 3546 && obY == 9685 && c.getHeight() == 3){
 					c.getPA().movePlayer(3565, 3276, 0);
+					return;
 				}
 				if(obX == 3565 && obY == 9683 && c.heightLevel == 3){
 					c.getPA().movePlayer(3553, 3282, 0);
+					return;
 				}
 				if(obX == 3578 && obY == 9703 && c.heightLevel == 3){
 					c.getPA().movePlayer(3555, 3297, 0);
+					return;
 				}
 				if(obX == 3558 && obY == 9703 && c.heightLevel == 3){
 					c.getPA().movePlayer(3565, 3289, 0);
+					return;
 				}
 				if(c.getY() > 6400 && (c.heightLevel & 3) == 0) {
 					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
@@ -381,6 +467,65 @@ static int fourthFloorsos[][] = {
 				}
 			}
 			if(def.actions[0].toLowerCase().equals("climb-down")) {
+				if(obX == 2971 && obY == 3371) {
+					c.getPA().movePlayer(c.getX(), c.getY()-4, 0);
+					return;
+				}
+				if(obX == 2959 && obY == 3370) {
+					c.getPA().movePlayer(c.getX(), c.getY()-4, 0);
+					return;
+				}
+				if(obX == 3212 && obY == 3474){
+					if (c.getX() == 3212 && c.getY() == 3476 || c.getX() == 3213 && c.getY() == 3476) {
+						c.getPA().movePlayer(c.getX(), c.getY() - 4, 0);
+					}
+					return;
+				}
+				if(obX == 3285 && obY == 3493 && c.getHeight() == 1){
+					if(c.getX() == 3285 && c.getY() == 3493 || c.getX() == 3286 && c.getY() == 3493) {
+						c.getPA().movePlayer(c.getX(), c.getY() + 4, 0);
+						return;
+					}
+				}
+				if(obX == 3253 && obY == 3444) {
+					if(c.getX() == 3253 && c.getY() == 3446 || c.getX() == 3254 && c.getY() == 3446) {
+						c.getPA().movePlayer(c.getX(), c.getY() - 4, 1);
+					}
+					return;
+				}
+				if(obX == 3266 && obY == 3453 && c.getHeight() == 1) {
+					if(c.getX() == 3267 && c.getY() == 3455 || c.getX() == 3266 && c.getY() == 3455) {
+						c.getPA().movePlayer(c.getX(), c.getY() - 4, 0);
+					}
+					return;
+				}
+				if(obX == 3228 && obY == 3393) {
+					c.getPA().movePlayer(c.getX()-4, c.getY(), 0);
+					return;
+				}
+				if(obX == 3156 && obY == 3435) {
+					c.getPA().movePlayer(c.getX()+4, c.getY(), 0);
+					return;
+				}
+				if(obX == 3045 && obY == 3364) {
+					c.getPA().movePlayer(c.getX(), c.getY()-4, 0);
+					return;
+				}
+				if(obX == 3019 && obY == 3343) {
+					c.getPA().movePlayer(c.getX()-4, c.getY(), 0);
+					return;
+				}
+				if(obX == 3022 && obY == 3332) {
+					c.getPA().movePlayer(c.getX()-4, c.getY(), 0);
+					return;
+				}
+
+				if(obX == 3187 && obY == 3433) {
+					if(c.getX() == 3186 && c.getY() == 3434 || c.getX() == 3186 && c.getY() == 3433) {
+						c.getPA().movePlayer(c.getX() + 4, c.getY() + 6400, c.heightLevel);
+					}
+					return;
+				}
 				if(obX == 3103 && obY == 3259) { // Wizard tower
 					c.getPA().movePlayer(3104, 3161, 0);
 					return;
@@ -422,6 +567,7 @@ static int fourthFloorsos[][] = {
 		}
 		c.getMining().mine(objectType, new Location3D(obX, obY, c.heightLevel));
 		Obelisks.get().activate(c, objectType);
+		RuneCraftingActions.handleRuneCrafting(c, objectType, obX, obY);
 		Runecrafting.execute(c, objectType);
 		Server.castleWars.handleObjects(c, objectType, obX, obY);
 
@@ -437,6 +583,105 @@ static int fourthFloorsos[][] = {
 		}
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
+			case 6910://part of xmas event will be adding the others around the world
+					if (c.getItems().playerHasItem(995, 10_000_000)) {
+						if (!c.hasclaimedsanta) {
+							c.getItems().deleteItem2(995, 10000000);
+							c.getItems().addItem(1050, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedsanta = true;
+						}
+					} else {
+						c.sendMessage("You need 10m of coins");
+					}
+				break;
+			case 15693:
+				if(obX == 3144 && obY == 3176){
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedredphat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1038, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedredphat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				}
+				break;
+			case 375:
+				if(obX == 3114 && obY == 3160){
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedYelphat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1040, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedYelphat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				} else if (obX == 3041 && obY == 3361){
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedbluphat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1042, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedbluphat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				}
+				break;
+			case 7431:
+				if(obX == 3158 && obY == 3433) {
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedgrephat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1044, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedgrephat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				}
+				break;
+			case 39993:
+				if(obX == 3242 && obY == 3454) {
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedpurphat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1046, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedpurphat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				}
+				break;
+			case 7194:
+				if(obX == 3216 && obY == 3487) {
+					if (c.getItems().playerHasItem(995, 5_000_000)) {
+						if (!c.hasclaimedwhiphat) {
+							c.getItems().deleteItem2(995, 5000000);
+							c.getItems().addItem(1048, 1);
+							c.sendMessage("Enjoy! Go find the next item.");
+							c.hasclaimedwhiphat = true;
+						}
+					} else {
+						c.sendMessage("You need 5m of coins");
+					}
+				}
+				break;
+			case 24427:
+				c.getPA().movePlayer(3258, 3452, 0);
+				break;
+			case 24428:
+				c.getPA().movePlayer(1631, 4957, 0);
+				break;
 			case 591:
 				c.getItemUpgradeSystem().openInterface();
 				break;
@@ -3286,7 +3531,6 @@ static int fourthFloorsos[][] = {
 				}
 				break;
 
-			case 5110:
 			case 21738:
 				if (c.playerLevel[16] < 12) {
 					c.sendMessage("You need an Agility level of 12 to pass this.");
@@ -3294,7 +3538,6 @@ static int fourthFloorsos[][] = {
 				}
 				c.getPA().movePlayer(2647, 9557, 0);
 				break;
-			case 5111:
 			case 21739:
 				if (c.playerLevel[16] < 12) {
 					c.sendMessage("You need an Agility level of 12 to pass this.");

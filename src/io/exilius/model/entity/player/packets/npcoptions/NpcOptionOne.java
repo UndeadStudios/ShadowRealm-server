@@ -32,7 +32,6 @@ import io.exilius.model.entity.npc.pets.PetHandler;
 import io.exilius.model.entity.npc.pets.Probita;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
-import io.exilius.model.entity.player.Right;
 import io.exilius.model.entity.player.mode.group.GroupIronman;
 import io.exilius.model.entity.player.mode.group.GroupIronmanDialogue;
 import io.exilius.model.entity.player.mode.group.contest.GroupIronmanContest;
@@ -747,12 +746,12 @@ public class NpcOptionOne {
 				player.getShops().openShop(4);
 				break;
 			case 390:
-				if (player.getMode().isIronmanType()
+				/*if (player.getMode().isIronmanType()
 						|| player.getRights().contains(Right.OWNER) || player.getRights().contains(Right.ADMINISTRATOR)) {
 					player.getShops().openShop(143);
 				} else {
 					player.getShops().openShop(143);
-				}
+				}*/
 				break;
 		case 1577:
 			player.getShops().openShop(8);

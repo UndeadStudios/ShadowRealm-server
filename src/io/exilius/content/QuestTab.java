@@ -1,12 +1,5 @@
 package io.exilius.content;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement.inter.TasksInterface;
@@ -30,6 +23,13 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class QuestTab {
 
@@ -155,9 +155,11 @@ public class QuestTab {
         player.getPA().sendFrame126("@or1@- KDR: @gre@"+ (double)(player.deathcount == 0 ? player.killcount + player.deathcount : player.killcount/player.deathcount), lines.get(index++));
 
         if (player.getSlayer().getTask().isEmpty()) {
-            player.getPA().sendFrame126("@or1@- Slayer Task: @gre@ None", lines.get(index++));
+            player.getPA().sendFrame126("@or1@- Slayer Task:", lines.get(index++));
+            player.getPA().sendFrame126("@gre@ None", lines.get(index++));
         } else {
-            player.getPA().sendFrame126("@or1@- Slayer Task: @gre@" +player.getSlayer().getTaskAmount()+" "+player.getSlayer().getTask().get().getFormattedName()+"s", lines.get(index++));
+            player.getPA().sendFrame126("@or1@- Slayer Task:", lines.get(index++));
+            player.getPA().sendFrame126("@gre@" + player.getSlayer().getTaskAmount()+" "+player.getSlayer().getTask().get().getFormattedName()+"s", lines.get(index++));
         }
 
         points(player.donatorPoints, "Donator Points", lines.get(index++));

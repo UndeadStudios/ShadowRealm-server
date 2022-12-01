@@ -35,6 +35,14 @@ public class Discord {
     public static void writeBugMessage(String message, Object...args) {
         sendChannelMessage("bug-sync", message, args);
     }
+
+    public static void writetickets(String message, Object...args) {
+        sendChannelMessage("ingame-tickets", message, args);
+    }
+
+    public static void writepunishments(String message, Object...args) {
+        sendChannelMessage("ingame-punishments", message, args);
+    }
     public static void writePickupMessage(String message, Object...args) {
         sendChannelMessage("pickup-sync", message, args);
     }
@@ -68,7 +76,10 @@ public class Discord {
         writeServerSyncMessage(message, args);
         sendChannelMessage("address-swap-sync", message, args);
     }
-
+    public static void writeServerStatus(String message, Object...args) {
+        writeServerSyncMessage(message, args);
+        sendChannelMessage("server-status", message, args);
+    }
     private static void sendChannelMessage(String channelName, String message, Object...args) {
         if (Configuration.DISABLE_DISCORD_MESSAGING || !enabled())
             return;

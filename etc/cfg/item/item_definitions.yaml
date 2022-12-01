@@ -4772,7 +4772,7 @@
 - id: 958
   name: "Grey wolf fur"
   description: "This would make warm clothing."
-  shopValue: 50
+  shopValue: 3150
   noteId: 959
 - id: 959
   name: "Grey wolf fur"
@@ -5130,23 +5130,24 @@
   noted: true
   stackable: true
 - id: 1033
-  name: "Zamorak robe"
+  name: "Zamorak robe bottom"
   description: "A robe worn by worshippers of Zamorak."
   shopValue: 30
   noteId: 1034
 - id: 1034
-  name: "Zamorak robe"
+  name: "Zamorak robe bottom"
   description: "Swap this note at any bank for the equivalent item."
   noteId: 1033
   noted: true
   stackable: true
 - id: 1035
-  name: "Zamorak robe"
+  name: "Zamorak robe top"
   description: "A robe worn by worshippers of Zamorak."
   shopValue: 40
+  equipmentModelType: "FULL_BODY"
   noteId: 1036
 - id: 1036
-  name: "Zamorak robe"
+  name: "Zamorak robe top"
   description: "Swap this note at any bank for the equivalent item."
   noteId: 1035
   noted: true
@@ -32243,7 +32244,6 @@
   name: "Camo helmet"
   description: "Examine what?"
   shopValue: 1
-  equipmentModelType: "FULL_MASK"
 - id: 6657
   name: "Camo top"
   description: "Examine what?"
@@ -33049,6 +33049,10 @@
   shopValue: 1
 - id: 6828
   name: "Super Mystery Box"
+  description: "An unpainted bauble shaped like a gift."
+  shopValue: 1
+- id: 29326
+  name: "Dr Cape Mystery Box"
   description: "An unpainted bauble shaped like a gift."
   shopValue: 1
 - id: 6829
@@ -67754,22 +67758,31 @@
   description: "This can be used to claim items from vending shrines."
   shopValue: 1
   stackable: true
+- id: 19836
+  name: "Reward casket (master)"
+  description: "Cross your fingers and your toes."
+  shopValue: 50
+  stackable: true
 - id: 20543
   name: "Reward casket (elite)"
   description: "Cross your fingers and your toes."
   shopValue: 50
+  stackable: true
 - id: 20544
   name: "Reward casket (hard)"
   description: "Cross your fingers and your toes."
   shopValue: 50
+  stackable: true
 - id: 20545
   name: "Reward casket (medium)"
   description: "Cross your fingers and your toes."
   shopValue: 50
+  stackable: true
 - id: 20546
   name: "Reward casket (easy)"
   description: "Cross your fingers and your toes."
   shopValue: 50
+  stackable: true
 - id: 20547
   name: "Monkfish"
   description: "A tasty fish."
@@ -69033,6 +69046,41 @@
   noteId: 20997
   noted: true
   stackable: true
+- id: 29041
+  name: "Twisted bow (Blue)"
+  description: "A mystical bow carved from the twisted remains of the Great Olm."
+  shopValue: 18200000
+  requirements:
+    - skill: "RANGED"
+      level: 75
+- id: 29042
+  name: "Twisted bow (Purple)"
+  description: "A mystical bow carved from the twisted remains of the Great Olm."
+  shopValue: 18200000
+  requirements:
+    - skill: "RANGED"
+      level: 75
+- id: 29043
+  name: "Twisted bow (Red)"
+  description: "A mystical bow carved from the twisted remains of the Great Olm."
+  shopValue: 18200000
+  requirements:
+    - skill: "RANGED"
+      level: 75
+- id: 29044
+  name: "Twisted bow (Green)"
+  description: "A mystical bow carved from the twisted remains of the Great Olm."
+  shopValue: 18200000
+  requirements:
+    - skill: "RANGED"
+      level: 75
+- id: 29045
+  name: "Twisted bow (Yellow)"
+  description: "A mystical bow carved from the twisted remains of the Great Olm."
+  shopValue: 18200000
+  requirements:
+    - skill: "RANGED"
+      level: 75
 - id: 21000
   name: "Twisted buckler"
   description: "A buckler carved from the twisted remains of the Great Olm."
@@ -70401,6 +70449,20 @@
   requirements:
     - skill: "ATTACK"
       level: 75
+- id: 29047
+  name: "Ice Scythe"
+  description: "Scythe of ice."
+  shopValue: 12800000
+  requirements:
+    - skill: "ATTACK"
+      level: 75
+- id: 22481
+  name: "Sanguinesti staff (uncharged)"
+  description: "A sacred staff imbued with the power of blood. It is currently uncharged."
+  shopValue: 5000000
+  requirements:
+    - skill: "MAGIC"
+      level: 82
 - id: 22326
   name: "Justiciar faceguard"
   description: "Justiciar faceguard."
@@ -73075,6 +73137,10 @@
       level: 85
     - skill: "PRAYER"
       level: 85
+- id: 28728
+  name: "Veteran Cape"
+  description: "Cape For Exilius Veteran's."
+  shopValue: 51200000
 - id: 28221
   name: "Purple Santa hat"
   description: "It's a Purple Santa hat."
@@ -73178,6 +73244,27 @@
   shopValue: 54400
 - id: 29099
   name: "Epic's crown"
+  description: "Who said I'd never be royal?"
+  shopValue: 6000
+- id: 28874
+  name: "Justin's platebody"
+  description: "Provides excellent protection."
+  shopValue: 560
+  equipmentModelType: "FULL_BODY"
+- id: 28875
+  name: "Justin's platelegs"
+  description: "These look pretty heavy."
+  shopValue: 64000
+- id: 28876
+  name: "Justin's boots"
+  description: "Comfortable shoes."
+  shopValue: 20
+- id: 28877
+  name: "Justin's kiteshield"
+  description: "A large metal shield."
+  shopValue: 54400
+- id: 28878
+  name: "Justin's crown"
   description: "Who said I'd never be royal?"
   shopValue: 6000
 - id: 29395
@@ -73809,6 +73896,14 @@
   name: "Witch cape"
   description: "A thick cape covered in feathers... and probably spiders."
   shopValue: 0
+- id: 28821
+  name: "Justin's cape"
+  description: "justins cape."
+  shopValue: 0
+- id: 29570
+  name: "Justin's Mythical cape"
+  description: "justins cape."
+  shopValue: 0
 - id: 29160
   name: "Golden halo"
   description: "A Golden halo for halo."
@@ -74183,6 +74278,97 @@
   name: "Robe bottoms of the eye (blue)"
   description: "The perfect robe bottoms for runecrafting."
   shopValue: 350
+- id: 28971
+  name: "Hat of the eye (purple)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 28972
+  name: "Robe top of the eye (purple)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 28973
+  name: "Robe bottoms of the eye (purple)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 28974
+  name: "Hat of the eye (yellow)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 28975
+  name: "Robe top of the eye (yellow)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 28976
+  name: "Robe bottoms of the eye (yellow)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 28977
+  name: "Hat of the eye (Dark Blue)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 28978
+  name: "Robe top of the eye (Dark Blue)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 28979
+  name: "Robe bottoms of the eye (Dark Blue)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 28980
+  name: "Hat of the eye (Gold)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 28981
+  name: "Robe top of the eye (Gold)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 28982
+  name: "Robe bottoms of the eye (Gold)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 28983
+  name: "Hat of the eye (Teal)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 28984
+  name: "Robe top of the eye (Teal)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 28985
+  name: "Robe bottoms of the eye (Teal)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 29017
+  name: "Hat of the eye (Gray)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 29018
+  name: "Robe top of the eye (Gray)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 29019
+  name: "Robe bottoms of the eye (Gray)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
+- id: 29392
+  name: "Hat of the eye (White)"
+  description: "The perfect hood for runecrafting."
+  shopValue: 400
+- id: 29393
+  name: "Robe top of the eye (White)"
+  description: "The perfect robe top for runecrafting."
+  shopValue: 350
+  equipmentModelType: "FULL_BODY"
+- id: 29394
+  name: "Robe bottoms of the eye (White)"
+  description: "The perfect robe bottoms for runecrafting."
+  shopValue: 350
 - id: 26815
   name: "Ring of the elements"
   description: "A mystical ring."
@@ -74333,3 +74519,133 @@
   description: "Highly potent essence, imbued with elemental energy."
   shopValue: 30
   stackable: true
+- id: 27444
+  name: "Graceful hood"
+  description: "Hoodr."
+  shopValue: 35
+  untradeable: true
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 27447
+  name: "Graceful cape"
+  description: "Cape."
+  shopValue: 40
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 27450
+  name: "Graceful top"
+  description: "Top."
+  shopValue: 55
+  untradeable: true
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 27453
+  name: "Graceful legs"
+  description: "Legs."
+  shopValue: 60
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 27456
+  name: "Graceful gloves"
+  description: "Gloves"
+  shopValue: 30
+  untradeable: true
+- id: 27459
+  name: "Graceful boots"
+  description: "Boots."
+  shopValue: 40
+  untradeable: true
+- id: 29020
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29021
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29022
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29023
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29024
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29025
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29026
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29027
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29028
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29029
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29030
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29031
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29032
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29033
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29034
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29035
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29036
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29037
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29038
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29039
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000
+- id: 29040
+  name: "Flared trousers"
+  description: "These'll help me stay alive."
+  shopValue: 2000

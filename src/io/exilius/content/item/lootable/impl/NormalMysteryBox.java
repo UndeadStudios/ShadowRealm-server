@@ -1,14 +1,14 @@
 package io.exilius.content.item.lootable.impl;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.exilius.content.item.lootable.LootRarity;
 import io.exilius.content.item.lootable.MysteryBoxLootable;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Revamped a simple means of receiving a random item based on chance.
@@ -41,16 +41,20 @@ public class NormalMysteryBox extends MysteryBoxLootable {
                         new GameItem(11937, 500),//dark crab
                         new GameItem(13442, 500),//anglerfish
                         new GameItem(3145, 500),//cooked karambwan
-                        new GameItem(6570),//fire cape
                         new GameItem(535, 500),//babydragon bones
-                        new GameItem(11235),//dark bow
-                        new GameItem(4151),//abyssal whip
-                        new GameItem(12873),//guthan set
-                        new GameItem(12875),//verac set
-                        new GameItem(12877),//dharok set
-                        new GameItem(12879),//torags set
-                        new GameItem(12881),//ahrim set
-                        new GameItem(12883)//karil set
+                        new GameItem(990, 15),//crystal key
+                        new GameItem(268, 150),//dwarf weed
+                        new GameItem(270, 150),//torstol
+                        new GameItem(3001, 150),//snapdragon
+                        new GameItem(12696, 150),//super combat potion(4)
+                        new GameItem(3025, 200),//super restore(4)
+                        new GameItem(11937, 500),//dark crab
+                        new GameItem(13442, 500),//anglerfish
+                        new GameItem(3145, 500),//cooked karambwan
+                        new GameItem(6570),//fire cape
+                        new GameItem(535, 500)//babydragon bones
+
+
 
                 ));
 
@@ -73,6 +77,7 @@ public class NormalMysteryBox extends MysteryBoxLootable {
                         new GameItem(1514, 500),// magic logs
                         new GameItem(1632, 250),//uncut dragonstone
                         new GameItem(2577),//ranger boots
+                        new GameItem(6570),//,fire cape
                         new GameItem(12596),//rangers tunic
                         new GameItem(11920),//dragon pickaxe
                         new GameItem(6739),//dragon axe
@@ -90,21 +95,23 @@ public class NormalMysteryBox extends MysteryBoxLootable {
                         new GameItem(11808),//ZGS
                         new GameItem(11832),//bandos chestplate
                         new GameItem(11834),//bandos tassets
-
                         new GameItem(11826),//armadyl helmet
                         new GameItem(11828),//armadyl chestplate
                         new GameItem(11830),//armadyl chainskirt
-                        new GameItem(10346),//3rd age platelegs
-                        new GameItem(10348),//3rd age platebody
-                        new GameItem(10350),//3rd age helm
-                        new GameItem(10352),//3rd age kite
-                        new GameItem(10330),//3rd age range top
-                        new GameItem(10332),//3rd age range bottom
-                        new GameItem(10338),//3rd age robe top
-                        new GameItem(10340),//3rd age robe bottom
-                        new GameItem(10334),//3rd age range coif
-                        new GameItem(10342),//3rd age mage hat
-                        new GameItem(10344)));//3rd age amulet
+                        new GameItem(12002),//occult necklace
+                        new GameItem(11804),//BGS
+                        new GameItem(6828),//super mystery box
+        new GameItem(11806),//SGS
+                new GameItem(11808),//ZGS
+                new GameItem(11832),//bandos chestplate
+                new GameItem(11834),//bandos tassets
+                new GameItem(11826),//armadyl helmet
+                new GameItem(11828),//armadyl chestplate
+                new GameItem(11830),//armadyl chainskirt
+                new GameItem(6828)//super mystery box
+                )
+        );
+
 
     }
 

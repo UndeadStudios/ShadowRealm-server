@@ -1,9 +1,5 @@
 package io.exilius.model.entity.player.packets.itemoptions;
 
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.Consumer;
-
 import io.exilius.Server;
 import io.exilius.content.combat.magic.SanguinestiStaff;
 import io.exilius.content.dialogue.DialogueBuilder;
@@ -19,6 +15,7 @@ import io.exilius.content.items.TomeOfFire;
 import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.crafting.BryophytaStaff;
+import io.exilius.content.skills.runecrafting.RealRunecrafting;
 import io.exilius.content.teleportation.TeleportTablets;
 import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
@@ -30,6 +27,10 @@ import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.util.Misc;
+
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Consumer;
 
 /**
  * Item Click 3 Or Alternative Item Option 1
@@ -97,7 +98,24 @@ public class ItemOptionThree implements PacketType {
             case LootingBag.LOOTING_BAG_OPEN:
                 c.getDH().sendDialogues(LootingBag.OPTIONS_DIALOGUE_ID, 0);
                 break;
-
+            case 1438:// Air Talisman
+                RealRunecrafting.locate(c, 2985, 3292);
+                break;
+            case 1440:// Earth Talisman
+                RealRunecrafting.locate(c, 3306, 3474);
+                break;
+            case 1442:// Fire Talisman
+                RealRunecrafting.locate(c, 3313, 3255);
+                break;
+            case 1444:// Water Talisman
+                RealRunecrafting.locate(c, 3185, 3165);
+                break;
+            case 1446:// Body Talisman
+                RealRunecrafting.locate(c, 3053, 3445);
+                break;
+            case 1448:// Mind Talisman
+                RealRunecrafting.locate(c, 2982, 3514);
+                break;
             case 21183:
                 if (c.getItems().freeSlots() < 1) {
                     c.sendMessage("@blu@You need at least 1 free slot to do this.");

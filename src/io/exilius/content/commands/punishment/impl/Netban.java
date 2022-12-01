@@ -10,6 +10,7 @@ import io.exilius.model.entity.player.Right;
 import io.exilius.model.entity.player.save.PlayerAddresses;
 import io.exilius.model.entity.player.save.PlayerSaveOffline;
 import io.exilius.util.dateandtime.TimeSpan;
+import io.exilius.util.discord.Discord;
 
 import java.io.File;
 
@@ -36,6 +37,7 @@ public class Netban implements PunishmentCommandParser {
 
         PlayerHandler.nonNullStream().filter(it -> addresses.equals(it.getValidAddresses()) && it.getRights().isNot(Right.OWNER)).forEach(Player::forceLogout);
         staff.sendMessage("Banned all known addresses for {}.", player.getDisplayNameFormatted());
+        Discord.writepunishments(staff.getDisplayName()+ " Banned all known addresses for {}. `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
     }
 
     @Override
