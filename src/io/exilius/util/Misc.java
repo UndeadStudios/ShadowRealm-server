@@ -735,6 +735,11 @@ public class Misc {
 			br.close();
 		}
 	}
+
+	public static int randomMinusOne(int range) {
+		int number = (int) (Math.random() * range);
+		return number < 0 ? 0 : number;
+	}
     public long randomLong() {
 		seed ^= (seed << 21);
 		seed ^= (seed >>> 35);

@@ -9,6 +9,7 @@ import io.exilius.content.combat.magic.SanguinestiStaff;
 import io.exilius.content.items.ItemCombinations;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
 import io.exilius.content.tournaments.TourneyManager;
+import io.exilius.content.trails.Puzzle;
 import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.npc.pets.PetHandler;
@@ -45,20 +46,21 @@ public class DropItem implements PacketType {
 		c.getInStream().readUnsignedByte();
 		c.getInStream().readUnsignedByte();
 		int slot = c.getInStream().readUnsignedWordA();
-
+		if(Puzzle.moveSlidingPiece(c, itemId))
+			return;
 		if (c.debugMessage) {
 			c.sendMessage(String.format("DropItem[item=%d, slot=%d]", itemId, slot));
 		}
 
 		if (!c.getItems().isItemInInventorySlot(itemId, slot))
 			return;
-
 		if (c.getPA().viewingOtherBank) {
 			c.getPA().resetOtherBank();
 		}
 		if (!c.getItems().playerHasItem(itemId)) {
 			return;
 		}
+
 		if (c.getLootingBag().isWithdrawInterfaceOpen() || c.getLootingBag().isDepositInterfaceOpen() || c.viewingRunePouch) {
 			return;
 		}

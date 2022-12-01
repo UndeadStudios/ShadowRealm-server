@@ -83,18 +83,18 @@ public class Sextant {
     /* checks if everything matches to get the player position */
     public static boolean everythingMatches(Player c) {
         if (Math.abs(c.sextantLandScapeCoords) > 7) {
-           // c.getPA().sendMessage("You need to get the horizon in the middle of the eye piece.");
+            c.sendMessage("You need to get the horizon in the middle of the eye piece.");
             return false;
         }
         if (c.sextantSunCoords != 0) {
-          //  c.getPA().sendMessage("You need to get the sun in the middle of the eye piece.");
+            c.sendMessage("You need to get the sun in the middle of the eye piece.");
             return false;
         }
-      //  if (!c.getInventory().getItemContainer().contains(CoordinateScrolls.SEXTANT) || !c.getInventory().getItemContainer().contains(CoordinateScrolls.CHART)) {
-        //    c.getDialogue().sendStatement("You need a watch and navigator's chart to work out your Position.");
-        //    return false;
+       if (!c.getItems().playerHasItem(CoordinateScrolls.SEXTANT) || !c.getItems().playerHasItem(CoordinateScrolls.CHART)) {
+            c.getDH().sendStatement("You need a watch and navigator's chart to work out your Position.");
+            return false;
 
-      //  }
+        }
         return true;
     }
 

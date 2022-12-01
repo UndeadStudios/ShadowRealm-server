@@ -228,7 +228,7 @@ public class CoordinateScrolls {
                 player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV3, 1);
                 break;
         }
-       // player.getDH().sendStatement("You've found a casket!", ClueScroll.CASKET_LV1);
+        player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);
         return true;
     }
 

@@ -8,6 +8,7 @@ import io.exilius.content.bosses.mimic.MimicCasket;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.magic.NonCombatSpellData;
 import io.exilius.content.combat.magic.SanguinestiStaff;
+import io.exilius.content.commands.all.Barrows;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.impl.ClaimDonatorScrollDialogue;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -29,12 +30,15 @@ import io.exilius.content.skills.prayer.Prayer;
 import io.exilius.content.skills.runecrafting.Pouches;
 import io.exilius.content.skills.slayer.SlayerUnlock;
 import io.exilius.content.teleportation.TeleportTablets;
-import io.exilius.content.trails.CoordinateScrolls;
-import io.exilius.content.trails.Sextant;
-import io.exilius.content.trails.TreasureTrails;
+import io.exilius.content.trails.*;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
+import io.exilius.model.cycleevent.CycleEvent;
+import io.exilius.model.cycleevent.CycleEventContainer;
+import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.entity.player.*;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.multiplayersession.duel.DuelSessionRules.Rule;
@@ -113,7 +117,27 @@ public class ItemOptionOne implements PacketType {
             c.getPotions().handlePotion(itemId, itemSlot);
             return;
         }
+        if (ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("clue scroll") || ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("challenge scroll")) {
+            ClueScroll.cleanClueInterface(c);
+        }
+        if (Puzzle.loadClueInterface(c, itemId)) {
+            c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (MapScrolls.loadClueInterface(c, itemId)) {
+            c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (SearchScrolls.loadClueInterface(c, itemId)) {
+            c.sendMessage("clue id: "+itemId);
+            return;
+        }
         if (CoordinateScrolls.loadClueInterface(c, itemId)) {
+            c.sendMessage("clue id: "+itemId);
+            return;
+        }
+        if (DiggingScrolls.loadClueInterface(c, itemId)) {
+            c.sendMessage("clue id: "+itemId);
             return;
         }
         if (c.getQuesting().handleItemClick(itemId)) {
@@ -706,20 +730,22 @@ public class ItemOptionOne implements PacketType {
                 Pouches.fill(c, Pouches.Pouch.forId(itemId), 2);
                 break;
 
-            /*case 952: //Spade
-                int x = c.absX;
-                int y = c.absY;
-                if (Boundary.isIn(c, Barrows.GRAVEYARD)) {
-                    c.getBarrows().digDown();
-                }
-                if (x == 3005 && y == 3376 || x == 2999 && y == 3375 || x == 2996 && y == 3377) {
-                    if (!c.getRechargeItems().hasItem(13120)) {
-                        c.sendMessage("You must have the elite falador shield to do this.");
-                        return;
+            case 952: //Spade
+                c.startAnimation(830);
+                c.sendMessage("You dig into the ground...");
+                CycleEventHandler.getSingleton().addEvent(c, new CycleEvent() {
+                    @Override
+                    public void execute(CycleEventContainer container) {
+                        if (!MapScrolls.digClue(c) && !DiggingScrolls.digClue(c) &&  !CoordinateScrolls.digClue(c)) {
+                            c.sendMessage("but do not find anything.");
+                            container.stop();
+                        }
                     }
-                    c.getPA().movePlayer(1760, 5163, 0);
-                }
-                break;*/
+                    public void onStopped() {
+                        c.stopAnimation();
+                    }
+                }, AnimationLength.getFrameLength(830));
+                break;
         }
 
         if (itemId == 2678) {

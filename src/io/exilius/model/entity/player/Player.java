@@ -106,6 +106,7 @@ import io.exilius.content.skills.thieving.Thieving;
 import io.exilius.content.teleportation.inter.TeleportInterface;
 import io.exilius.content.titles.Titles;
 import io.exilius.content.tournaments.TourneyManager;
+import io.exilius.content.trails.ClueScroll;
 import io.exilius.content.trails.TreasureTrails;
 import io.exilius.content.tutorial.ModeSelection;
 import io.exilius.content.tutorial.TutorialDialogue;
@@ -219,12 +220,15 @@ public class Player extends Entity {
     public static final int playerSlayer = 18;
     public static final int playerFarming = 19;
     public static final int playerRunecrafting = 20;
-
+    public GameItem[] puzzleStoredItems = new GameItem[ClueScroll.PUZZLE_LENGTH];
     public double sextantBarDegree;
     public int sextantSunCoords;
     public int rotationFactor;
     public int sextantGlobalPiece;
     public int sextantLandScapeCoords;
+    public int clue1Amount;
+    public int clue2Amount;
+    public int clue3Amount;
     public int[] tempInventory = new int[28], tempInventoryN = new int[28], tempEquipment = new int[28], tempEquipmentN = new int[28];
     public boolean rubyBoltSpecial;
     public boolean rubydragonBoltSpecial;

@@ -48,6 +48,7 @@ import io.exilius.content.skills.woodcutting.Tree;
 import io.exilius.content.skills.woodcutting.Woodcutting;
 import io.exilius.content.tournaments.ViewingOrb;
 import io.exilius.content.tradingpost.Listing;
+import io.exilius.content.trails.SearchScrolls;
 import io.exilius.content.wilderness.SpiderWeb;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
@@ -555,6 +556,9 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 			}
+		}
+		if (SearchScrolls.handleObject(c, object)) {
+			return;
 		}
 		final int[] HUNTER_OBJECTS = { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721 };
 		if (IntStream.of(HUNTER_OBJECTS).anyMatch(id -> objectType == id)) {
