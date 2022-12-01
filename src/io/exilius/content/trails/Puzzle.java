@@ -68,8 +68,12 @@ public class Puzzle {// todo maybe hovering button message
                 return 3;
             case ClueScroll.ZULRAH_PUZZLE :
                 return 4;
-                case ClueScroll.CERBERUS_PUZZLE:
-                    return 5;
+            case ClueScroll.CERBERUS_PUZZLE:
+                return 5;
+                case ClueScroll.GNOME_CHILD_PUZZLE:
+                    return 6;
+                    case ClueScroll.TOB_PUZZLE:
+                        return 7;
         }
         return 0;
     }
@@ -88,6 +92,10 @@ public class Puzzle {// todo maybe hovering button message
                 return ClueScroll.fouthPuzzle;
             case 5:
                 return ClueScroll.fifthPuzzle;
+            case 6:
+                return ClueScroll.sixthPuzzle;
+            case 7:
+                return ClueScroll.seventhPuzzle;
         }
         return null;
     }
