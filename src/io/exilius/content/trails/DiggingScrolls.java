@@ -1,5 +1,6 @@
 package io.exilius.content.trails;
 
+import io.exilius.model.Items;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
 
@@ -15,7 +16,7 @@ public class DiggingScrolls {
 
     public static enum DigData {
 
-        DIG1(new String[]{"Dig near some giant mushrooms ", " behind the GrandTree"}, 3618, new Position(2458, 3504), 1),
+        DIG1(new String[]{"Dig near some giant mushrooms ", " behind the GrandTree"}, Items.CLUE_SCROLL_EASY_55, new Position(2458, 3504), 1),
         DIG2(new String[]{"46 is my number, and fire is my ", "blood. I have created over a ", "thousand blades. Unknown to life, ", "nor known to death."}, 7274, new Position(3170, 3885), 3),
         DIG3(new String[]{"As you desert this town, keep ", "that could ruin nearby rugs: ", "dig carefully around the ", "greenery"}, 3609, new Position(3397, 2915), 3),
         DIG4(new String[]{"By the town of the dead, ", "walk south down a rickety ", "bridge, then dig near the ", "slime-covered tree."}, 3611, new Position(3647, 3496), 3),

@@ -15,6 +15,7 @@ import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.slayer.SlayerMaster;
 import io.exilius.content.skills.slayer.Task;
+import io.exilius.content.trails.ClueScroll;
 import io.exilius.content.trails.RewardLevel;
 import io.exilius.content.vote_panel.VotePanelManager;
 import io.exilius.content.wogw.Wogw;
@@ -339,14 +340,14 @@ public class DropManager {
                         extraKey = 1;
                     }
                     player.sendMessage("@bla@[@red@Pet@bla@] Your pet found a @blu@clue scroll!");
-                    player.getItems().addItem(specialItemId, clueAmount + extraKey);
+                    ClueScroll.dropClue(player, npc);
                 } else {
                     player.sendMessage("@bla@[@red@Pet@bla@] Your pet noticed a @blu@clue scroll,@bla@ but your inventory is full!");
-                    Server.itemHandler.createGroundItem(player, specialItemId, location.getX(), location.getY(), location.getZ(), clueAmount, player.getIndex());
+                    ClueScroll.dropClue(player, npc);
                 }
             } else {
                 player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
-                Server.itemHandler.createGroundItem(player, specialItemId, location.getX(), location.getY(), location.getZ(), clueAmount, player.getIndex());
+                ClueScroll.dropClue(player, npc);
             }
         }
 

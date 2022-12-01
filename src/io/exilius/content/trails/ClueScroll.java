@@ -1,6 +1,9 @@
 package io.exilius.content.trails;
 
+import io.exilius.Server;
+import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.Position;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
 
@@ -130,7 +133,7 @@ public class ClueScroll {
         }
     }
     private static void addNewClue(Player player, int clueLevel) {
-        player.getItems().addItemToBankOrDrop(getRandomClue(clueLevel), 1);
+        player.getItems().addItem(getRandomClue(clueLevel), 1);
     }
     public static void itemReward(Player player, int clueLevel) {
         ArrayList<Integer> array = new ArrayList<Integer>();
@@ -192,6 +195,36 @@ public class ClueScroll {
 
         player.sendMessage("Well done, you've completed the Treasure Trail!");
     }
+    public static void dropClue(Player player, NPC npc) {
+        if (Misc.random(25) != 0) { //1% chance
+            return;
+        }
+        //if (player.hasClueScroll()) {
+            //return;
+     //   }
+        for (String element : levelOneClueNpc) {
+            if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
+                //GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(1)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
+                Server.itemHandler.createGroundItem(player, getRandomClue(1), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+                return;
+            }
+        }
+        for (String element : levelTwoClueNpc) {
+            if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
+                Server.itemHandler.createGroundItem(player, getRandomClue(2), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+               // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(2)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
+                return;
+            }
+        }
+        for (String element : levelThreeClueNpc) {
+            if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
+                Server.itemHandler.createGroundItem(player, getRandomClue(3), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+               // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(3)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
+                return;
+            }
+        }
+    }
+
     public static int getRandomClue(int clueLevel) {
         ArrayList<Integer> array = new ArrayList<Integer>();
         switch (clueLevel) {
