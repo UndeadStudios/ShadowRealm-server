@@ -321,35 +321,7 @@ public class DropManager {
         if (Hespori.activeGolparSeed) {
             clueAmount = 2;
         }
-        if (Misc.random(chance) == 1) {
-            specialItemId = Items.CLUE_SCROLL_EASY;
-            mediumNpc = npc.getDefinition().getCombatLevel() > 40 && npc.getDefinition().getCombatLevel() <= 100;
-            largeNpc = npc.getDefinition().getCombatLevel() > 100;
-            if (mediumNpc) {
-                specialItemId = Items.CLUE_SCROLL_MEDIUM;
-            } else if (largeNpc) {
-                specialItemId = Items.CLUE_SCROLL_HARD;
-            }
-            boolean hasDarkVersion = player.petSummonId == 30111 || player.petSummonId == 30122;
-            int extraKey = 0;
-            if (player.hasFollower &&
-                    ((player.petSummonId == 30011 || player.petSummonId == 30022) && petPerkChance < 80)
-            || (hasDarkVersion)) {
-                if (player.getItems().freeSlots() > 0) {
-                    if (hasDarkVersion && petPerkChance < 25) {
-                        extraKey = 1;
-                    }
-                    player.sendMessage("@bla@[@red@Pet@bla@] Your pet found a @blu@clue scroll!");
-                    ClueScroll.dropClue(player, npc);
-                } else {
-                    player.sendMessage("@bla@[@red@Pet@bla@] Your pet noticed a @blu@clue scroll,@bla@ but your inventory is full!");
-                    ClueScroll.dropClue(player, npc);
-                }
-            } else {
-                player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
-                ClueScroll.dropClue(player, npc);
-            }
-        }
+        ClueScroll.dropClue(player, npc, location);
 
         /**
          * Coin Bags and resource boxes

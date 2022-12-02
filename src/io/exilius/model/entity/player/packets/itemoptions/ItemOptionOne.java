@@ -117,6 +117,7 @@ public class ItemOptionOne implements PacketType {
             c.getPotions().handlePotion(itemId, itemSlot);
             return;
         }
+        ClueScroll.handleCasket(c, itemId);
         if (ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("clue scroll") || ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("challenge scroll")) {
             ClueScroll.cleanClueInterface(c);
         }
@@ -167,9 +168,9 @@ public class ItemOptionOne implements PacketType {
         if (SanguinestiStaff.clickItem(c, itemId, 1)) {
             return;
         }
-        if (TreasureTrails.firstClickItem(c, itemId)) {
-            return;
-        }
+       // if (TreasureTrails.firstClickItem(c, itemId)) {
+         //   return;
+     //   }
 
         switch (itemId) {
             case MageArenaII.SYMBOL_ID:

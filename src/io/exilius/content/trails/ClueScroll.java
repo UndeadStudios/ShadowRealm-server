@@ -5,6 +5,7 @@ import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.items.GameItem;
+import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
 
 import java.util.ArrayList;
@@ -21,13 +22,13 @@ public class ClueScroll {
 
     public static final int CLUE_SCROLL_INTERFACE = 6965;
 
-    public static final int CASKET_LV1 = 2724;
-    public static final int CASKET_LV2 = 2726;
-    public static final int CASKET_LV3 = 2728;
+    public static final int CASKET_LV1 = 2714;
+    public static final int CASKET_LV2 = 2802;
+    public static final int CASKET_LV3 = 3521;
 
-    public static final int REWARD_CASKET_LV1 = 2717;
-    public static final int REWARD_CASKET_LV2 = 2714;
-    public static final int REWARD_CASKET_LV3 = 2715;
+    public static final int REWARD_CASKET_LV1 = 20546;
+    public static final int REWARD_CASKET_LV2 = 20545;
+    public static final int REWARD_CASKET_LV3 = 20544;
 
     public static final int CLUE_ITEM = 2701;
 
@@ -135,6 +136,35 @@ public class ClueScroll {
     private static void addNewClue(Player player, int clueLevel) {
         player.getItems().addItem(getRandomClue(clueLevel), 1);
     }
+    public static void handleCasket(Player player, int itemId) {
+        switch (itemId) {
+            case REWARD_CASKET_LV1 :
+                player.getItems().deleteItem2(itemId, 1);
+                itemReward(player, 1);
+                break;
+            case REWARD_CASKET_LV2 :
+                player.getItems().deleteItem2(itemId, 1);
+                itemReward(player, 2);
+                break;
+            case REWARD_CASKET_LV3 :
+                player.getItems().deleteItem2(itemId, 1);
+                itemReward(player, 3);
+                break;
+            case CASKET_LV1 :
+                player.getItems().deleteItem2(itemId, 1);
+                clueReward(player, 1, "You've found another clue!", false, "Here is your reward!");
+                break;
+            case CASKET_LV2 :
+                player.getItems().deleteItem2(itemId, 1);
+                clueReward(player, 2, "You've found another clue!", false, "Here is your reward!");
+                break;
+            case CASKET_LV3 :
+                player.getItems().deleteItem2(itemId, 1);
+                clueReward(player, 3, "You've found another clue!", false, "Here is your reward!");
+                break;
+        }
+
+    }
     public static void itemReward(Player player, int clueLevel) {
         ArrayList<Integer> array = new ArrayList<Integer>();
         int random = Misc.random(4) + 2;
@@ -188,14 +218,14 @@ public class ClueScroll {
                 amounts[i] = 1;
             }
             item[i] = new GameItem(items[i], amounts[i]);
-            player.getItems().addItemToBankOrDrop(items[i], amounts[i]);
+            player.getItems().addItem(items[i], amounts[i]);
         }
         player.getPA().sendItems(player, 6963, Arrays.asList(item), 0);
         player.getPA().showInterface(6960);
 
         player.sendMessage("Well done, you've completed the Treasure Trail!");
     }
-    public static void dropClue(Player player, NPC npc) {
+    public static void dropClue(Player player, NPC npc, Location3D location) {
         if (Misc.random(25) != 0) { //1% chance
             return;
         }
@@ -205,20 +235,23 @@ public class ClueScroll {
         for (String element : levelOneClueNpc) {
             if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
                 //GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(1)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
-                Server.itemHandler.createGroundItem(player, getRandomClue(1), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+                Server.itemHandler.createGroundItem(player, getRandomClue(1), location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
+                player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
                 return;
             }
         }
         for (String element : levelTwoClueNpc) {
             if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
-                Server.itemHandler.createGroundItem(player, getRandomClue(2), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+                Server.itemHandler.createGroundItem(player, getRandomClue(2),location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
+                player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
                // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(2)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
                 return;
             }
         }
         for (String element : levelThreeClueNpc) {
             if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
-                Server.itemHandler.createGroundItem(player, getRandomClue(3), npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getHeight(), 1, player.getIndex());
+                Server.itemHandler.createGroundItem(player, getRandomClue(3), location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
+                player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
                // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(3)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
                 return;
             }
