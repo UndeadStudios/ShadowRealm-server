@@ -8,7 +8,6 @@ import io.exilius.content.bosses.mimic.MimicCasket;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.magic.NonCombatSpellData;
 import io.exilius.content.combat.magic.SanguinestiStaff;
-import io.exilius.content.commands.all.Barrows;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.impl.ClaimDonatorScrollDialogue;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -122,23 +121,23 @@ public class ItemOptionOne implements PacketType {
             ClueScroll.cleanClueInterface(c);
         }
         if (Puzzle.loadClueInterface(c, itemId)) {
-            c.sendMessage("clue id: "+itemId);
+           // c.sendMessage("clue id: "+itemId);
             return;
         }
         if (MapScrolls.loadClueInterface(c, itemId)) {
-            c.sendMessage("clue id: "+itemId);
+         //   c.sendMessage("clue id: "+itemId);
             return;
         }
         if (SearchScrolls.loadClueInterface(c, itemId)) {
-            c.sendMessage("clue id: "+itemId);
+         //   c.sendMessage("clue id: "+itemId);
             return;
         }
         if (CoordinateScrolls.loadClueInterface(c, itemId)) {
-            c.sendMessage("clue id: "+itemId);
+        //    c.sendMessage("clue id: "+itemId);
             return;
         }
         if (DiggingScrolls.loadClueInterface(c, itemId)) {
-            c.sendMessage("clue id: "+itemId);
+           // c.sendMessage("clue id: "+itemId);
             return;
         }
         if (c.getQuesting().handleItemClick(itemId)) {

@@ -18,9 +18,9 @@ enum class UpgradeData(
     GHRAZI_RAPIER(Categories.WEAPON, 22324, GameItem(26219, 1), 250_000_000, 5.0),
     DRAGON_WARRHAMER(Categories.WEAPON, 13576, GameItem(22622, 1), 100_000_000, 15.0),
 
-//    TORVA_PLATELEGS(Categories.ARMOUR, 26386, GameItem(8812, 1), 150_000_000, 5.0),
-//    TORVA_PLATEBODY(Categories.ARMOUR, 26384, GameItem(8813, 1), 150_000_000, 5.0),
-//    TORVA_FULL_HELM(Categories.ARMOUR, 26382, GameItem(8814, 1), 150_000_000, 5.0),
+    TORVA_PLATELEGS(Categories.ARMOUR, 26386, GameItem(8812, 1), 150_000_000, 5.0),
+    TORVA_PLATEBODY(Categories.ARMOUR, 26384, GameItem(8813, 1), 150_000_000, 5.0),
+    TORVA_FULL_HELM(Categories.ARMOUR, 26382, GameItem(8814, 1), 150_000_000, 5.0),
     CORRUPTED_HELM_PERFECTED(Categories.ARMOUR, 23842, GameItem(27226, 1), 100_000_000, 15.0),//into masori
     CORRUPTED_BODY_PERFECTED(Categories.ARMOUR, 23845, GameItem(27229, 1), 100_000_000, 15.0),//into masori
     CORRUPTED_LEGS_PERFECTED(Categories.ARMOUR, 23848, GameItem(27232, 1), 100_000_000, 15.0),//into masori

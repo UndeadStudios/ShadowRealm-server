@@ -96,12 +96,12 @@ public class PlayerAssistant {
 		c.getOutStream().endFrameVarSize();
 		c.flushOutStream();
 	}
-	public void sendFrame230(int i1, int i2, int i3, int i4) { // i2 being negative logs you out, otherwise it doesn't log you out :O
+	public void sendFrame230(int interfaceId, int rotation1, int rotation2, int zoom) { // i2 being negative logs you out, otherwise it doesn't log you out :O
 		c.getOutStream().createFrame(230);
-		c.getOutStream().writeWordA(i1);
-		c.getOutStream().writeWord(i2); // interface id?
-		c.getOutStream().writeWord(i3);
-		c.getOutStream().writeWordBigEndianA(i4); // junk? not sure
+		c.getOutStream().writeWordA(zoom);
+		c.getOutStream().writeWord(interfaceId); // interface id?
+		c.getOutStream().writeWord(rotation1);
+		c.getOutStream().writeWordBigEndianA(rotation2); // junk? not sure
 		c.flushOutStream();
 	}
 	public void resetQuestInterface() {

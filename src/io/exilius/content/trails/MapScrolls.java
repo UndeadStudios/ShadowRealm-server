@@ -22,7 +22,7 @@ public class MapScrolls {
         CHAMPION_GUILD(Items.CLUE_SCROLL_MEDIUM_2, 6994, new Position(3166, 3360), false, 2),
         FALADOR_ROCK(Items.CLUE_SCROLL_MEDIUM_3, 7271, new Position(3043, 3399), false, 2),
         DRAYNOR(Items.CLUE_SCROLL_MEDIUM_4, 7113, new Position(3092, 3226), false, 2),
-        GOBLIN_VILLAGE(Items.CLUE_SCROLL_HARD_32, 9454, new Position(2459, 3179), true, 3),
+        GOBLIN_VILLAGE(Items.CLUE_SCROLL_HARD_32, 9454, new Position(2457, 3182), true, 3),
         NECROMANCER(Items.CLUE_SCROLL_HARD_33, 9632, new Position(2654, 3233), false, 3),
         LUMBERYARD(Items.CLUE_SCROLL_EASY_2, 7221, new Position(3309, 3503), true, 1),
         VARROCK_MINE(Items.CLUE_SCROLL_EASY_3, 7045, new Position(3290, 3373), false, 1),
