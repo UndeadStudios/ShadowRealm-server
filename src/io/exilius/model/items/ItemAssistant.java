@@ -666,6 +666,14 @@ public class ItemAssistant {
 		return addItem(item, amount, true);
 	}
 
+	public boolean addItemorDrop(int item, int amount){
+		if (freeSlots() == 0) {
+			player.sendMessage("The item has been dropped on the floor.");
+			Server.itemHandler.createGroundItem(player, item, player.absX, player.absY, player.heightLevel, amount,
+					player.getIndex());
+		}
+		return addItem(item, amount, true);
+	}
 	/**
 	 * Adds an item to a player's inventory. Will not add a partial amount of the item,
 	 * it always adds the full item or nothing.

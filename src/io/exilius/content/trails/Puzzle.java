@@ -325,6 +325,6 @@ public class Puzzle {// todo maybe hovering button message
 
     public static void addRandomPuzzle(Player player) {
         int[] items = {2800, 3565, 3571, 20280};
-        player.getItems().addItem(items[Misc.randomMinusOne(items.length)], 1);
+        player.getItems().addItemorDrop(items[Misc.randomMinusOne(items.length)], 1);
     }
 }

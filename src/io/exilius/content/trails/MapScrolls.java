@@ -127,13 +127,13 @@ public class MapScrolls {
         player.getItems().deleteItem2(mapCluesData.getClueId(), 1);
         switch (mapCluesData.getLevel()) {
             case 1 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV1, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV1, 1);
                 break;
             case 2 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV2, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV2, 1);
                 break;
             case 3 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV3, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV3, 1);
                 break;
         }
         player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);

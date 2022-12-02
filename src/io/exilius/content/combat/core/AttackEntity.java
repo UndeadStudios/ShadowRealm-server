@@ -699,7 +699,7 @@ public class AttackEntity {
         if (!attacker.usingMagic) {
             // Disable attack if pvp weapon out of charge
             if (weapon == Items.CRAWS_BOW || weapon == Items.CRAWS_BOW_U
-                    || weapon == Items.VIGGORAS_CHAINMACE || weapon == Items.VIGGORAS_CHAINMACE_U|| weapon == Items.BOW_OF_FAERDHINEN) {
+                    || weapon == Items.VIGGORAS_CHAINMACE || weapon == Items.VIGGORAS_CHAINMACE_U || weapon == Items.BOW_OF_FAERDHINEN) {
                 if (attacker.getPvpWeapons().getCharges(weapon) <= 0) {
                     attacker.stopMovement();
                     attacker.sendMessage("Your weapon needs charges to function properly.");

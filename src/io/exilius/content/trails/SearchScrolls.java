@@ -226,9 +226,9 @@ public class SearchScrolls {
         if (!player.getItems().playerHasItem(searchData.getClueId()) || player.getPosition().getHeight() != searchData.getObjectPosition().getHeight()) {
             return false;
         }
-        //if (!KeyToClue.handleKey(player, searchData.getClueId())) {
-         //   return true;
-      //  }
+        if (!KeyToClue.handleKey(player, searchData.getClueId())) {
+            return true;
+        }
         if (searchData.getNewObject() > 0) {
             new GlobalObject(searchData.getNewObject(), p.getPosition().getX(), p.getPosition().getY(), player.getPosition().getHeight(), p.getFace(), p.getType(), p.getObjectId(), 30);
         }

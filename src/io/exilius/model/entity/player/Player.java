@@ -229,6 +229,7 @@ public class Player extends Entity {
     public int clue1Amount;
     public int clue2Amount;
     public int clue3Amount;
+    public int clue4Amount;
     public int[] tempInventory = new int[28], tempInventoryN = new int[28], tempEquipment = new int[28], tempEquipmentN = new int[28];
     public boolean rubyBoltSpecial;
     public boolean rubydragonBoltSpecial;
@@ -4972,6 +4973,13 @@ public class Player extends Entity {
 
     public void setDuelLossCounter(int counters) {
         this.counters[6] = counters;
+    }
+    public int getEliteClueCounter() {
+        return counters[7];
+    }
+
+    public void setEliteClueCounter(int counters) {
+        this.counters[7] = counters;
     }
 
     public String getLastClanChat() {

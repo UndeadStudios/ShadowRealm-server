@@ -16,6 +16,7 @@ import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.slayer.SlayerMaster;
 import io.exilius.content.skills.slayer.Task;
 import io.exilius.content.trails.ClueScroll;
+import io.exilius.content.trails.KeyToClue;
 import io.exilius.content.trails.RewardLevel;
 import io.exilius.content.vote_panel.VotePanelManager;
 import io.exilius.content.wogw.Wogw;
@@ -322,7 +323,7 @@ public class DropManager {
             clueAmount = 2;
         }
         ClueScroll.dropClue(player, npc, location);
-
+KeyToClue.dropKey(player, npc, location);
         /**
          * Coin Bags and resource boxes
          */

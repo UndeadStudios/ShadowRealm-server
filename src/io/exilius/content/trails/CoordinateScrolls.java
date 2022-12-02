@@ -96,7 +96,26 @@ public class CoordinateScrolls {
         COORDINATE_61(Items.CLUE_SCROLL_MEDIUM_31, 0, 18, 9, 28, "south", "east", 2),
         COORDINATE_62(Items.CLUE_SCROLL_MEDIUM_32, 0, 13, 13, 15, "south", "east", 2),
         COORDINATE_63(Items.CLUE_SCROLL_MEDIUM_33, 0, 5, 1, 13, "south", "east", 2),
-        //COORDINATE_64(2803, 0, 0, 7, 13, "north", "west", 3),
+
+        COORDINATE_64(Items.CLUE_SCROLL_ELITE, 0, 18, 2, 35, "south", "west", 4),
+        COORDINATE_65(Items.CLUE_SCROLL_ELITE_2, 0, 35, 35, 50, "north", "east", 4),
+        COORDINATE_66(Items.CLUE_SCROLL_ELITE_3, 2, 35, 11, 52, "south", "east", 4),
+        COORDINATE_67(Items.CLUE_SCROLL_ELITE_4, 3, 9, 42, 50, "south", "east", 4),
+        COORDINATE_68(Items.CLUE_SCROLL_ELITE_5, 3, 9, 42, 50, "south", "east", 4),
+        COORDINATE_69(Items.CLUE_SCROLL_ELITE_6, 3, 36, 8, 7, "north", "west", 4),
+        COORDINATE_70(Items.CLUE_SCROLL_ELITE_7, 5, 7, 13, 26, "south", "east", 4),
+        COORDINATE_71(Items.CLUE_SCROLL_ELITE_8, 5, 18, 6, 48, "north", "west", 4),
+        COORDINATE_72(Items.CLUE_SCROLL_ELITE_9, 5, 24, 26, 56, "south", "east", 4),
+        COORDINATE_73(Items.CLUE_SCROLL_ELITE_10, 5, 39, 2, 13, "south", "east", 4),
+        COORDINATE_74(Items.CLUE_SCROLL_ELITE_11, 6, 28, 3, 48, "south", "east", 4),
+        COORDINATE_75(Items.CLUE_SCROLL_ELITE_12, 6, 35, 9, 7, "north", "east", 4),
+        COORDINATE_76(Items.CLUE_SCROLL_ELITE_13, 8, 15, 35, 24, "north", "east", 4),
+        COORDINATE_77(Items.CLUE_SCROLL_ELITE_14, 8, 30, 10, 48, "south", "west", 4),
+        COORDINATE_78(Items.CLUE_SCROLL_ELITE_15, 9, 46, 43, 22, "south", "east", 4),
+        COORDINATE_79(Items.CLUE_SCROLL_ELITE_16, 10, 5, 24, 31, "south", "east", 4),
+        COORDINATE_80(Items.CLUE_SCROLL_ELITE_17, 10, 52, 30, 54, "north", "west", 4),
+        COORDINATE_81(Items.CLUE_SCROLL_ELITE_18, 10, 54, 20, 50, "north", "west", 4),
+        COORDINATE_82(Items.CLUE_SCROLL_ELITE_19, 12, 31, 43, 11, "north", "east", 4),
         ;
         private int clueId;
         private int degree1;
@@ -220,13 +239,13 @@ public class CoordinateScrolls {
         player.getItems().deleteItem(coordinateData.getClueId(), 1);
         switch (coordinateData.getLevel()) {
             case 1 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV1, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV1, 1);
                 break;
             case 2 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV2, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV2, 1);
                 break;
             case 3 :
-                player.getItems().addItemToBankOrDrop(ClueScroll.CASKET_LV3, 1);
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV3, 1);
                 break;
         }
         player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);

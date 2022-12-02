@@ -1,5 +1,6 @@
 package io.exilius.content.trails;
 
+import com.everythingrs.marketplace.Item;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -32,7 +33,7 @@ public class ClueScroll {
     public static final int REWARD_CASKET_LV1 = 20546;
     public static final int REWARD_CASKET_LV2 = 20545;
     public static final int REWARD_CASKET_LV3 = 20544;
-
+    private static final int REWARD_CASKET_LV4 = Items.REWARD_CASKET_ELITE;
     public static final int CLUE_ITEM = 2701;
 
     /* the puzzle class constants */
@@ -64,6 +65,7 @@ public class ClueScroll {
     public static final int[] fifthPuzzle = {20307, 20308, 20309, 20310, 20311, 20312, 20313, 20314, 20315, 20316, 20317, 20318, 20319, 20320, 20321, 20322, 20323, 20324, 20325, 20326, 20327, 20328, 20329, 20330, -1};
     public static final int[] sixthPuzzle = {20331, 20332, 20333, 20334, 20335, 20336, 20337, 20338, 20339, 20340, 20341, 20342, 20343, 20344, 20345, 20346, 20347, 20348, 20349, 20350, 20351, 20352, 20353, 20354, -1};
     public static final int[] seventhPuzzle = {23418, 23419, 23420, 23421, 23422, 23423, 23424, 23425, 23426, 23427, 23428, 23429, 23430, 23431, 23432, 23433, 23434, 23435, 23436, 23437, 23438, 23439, 23440, 23441, -1};
+
     public static String[] levelOneClueNpc = {"Man", "Woman", "Goblin", "Mugger", "Barbarian", "Farmer", "Al-Kharid", "Thug", "Rock Crabs", "Rogue", "Thief", "H.A.M", "Banshees", "Cave Slime", "Afflicted", "Borrakar", "Freidar", "Freygerd", "Inga", "Jennella", "Lensa", "Lanzig"};
 
     public static String[] levelTwoClueNpc = {"Guard", "Tribesman", "Bandit Camp Humans", "Cockatrice", "Abyssal Leech", "Pyrefiend", "Harpie Bug Swarm", "Black Guard", "Rellekka Warriors", "Market Guard", "Jogre", "Ice Warrior", "Abyssal Guardian", "Paladin", "Vampire", "Dagannoth", "Giant Skeleton", "Abyssal Walker", "Dagannoth", "Wallasalki", "Mummy", "Giant Rock Crab"};
@@ -76,13 +78,15 @@ public class ClueScroll {
     public static int[] junkItem1 = {1367, 1217, 1179, 1151, 1107, 1077, 1269, 1089, 1125, 1165, 1195, 1283, 1297, 1313, 1327, 1341, 1367, 1426, 334, 330, 851, 853, 855, 857, 859, 4821, 1765};
     public static int[] junkItem2 = {1430, 1371, 1345, 1331, 1317, 1301, 1287, 1271, 1211, 1199, 1073, 1161, 1183, 1091, 1111, 1123, 1145, 1199, 1681, 4823};
     public static int[] junkItem3 = {1432, 1373, 1347, 1333, 1319, 1303, 1289, 1275, 1213, 1079, 1093, 1113, 1127, 1147, 1163, 1185, 1201, 4824, 386, 2491, 2497, 2503};
-
+    public static int[] junkItem4 = {Items.RUNE_PLATEBODY, Items.RUNE_PLATELEGS, Items.RUNE_KITESHIELD, Items.RUNE_CROSSBOW, Items.DRAGON_DAGGER, Items.DRAGON_MACE, Items.DRAGON_LONGSWORD, Items.ONYX_BOLT_TIPS, Items.LAW_RUNE, Items.DEATH_RUNE, Items.BLOOD_RUNE, Items.SOUL_RUNE, Items.DRAGONSTONE_BRACELET, Items.DRAGON_NECKLACE, Items.DRAGONSTONE_RING, Items.TUNA_POTATO_NOTED, Items.SUMMER_PIE_NOTED, Items.OAK_PLANK_NOTED, Items.TEAK_PLANK_NOTED, Items.MAHOGANY_PLANK_NOTED, Items.RUNITE_BAR_NOTED, Items.TOOTH_HALF_OF_KEY, Items.LOOP_HALF_OF_KEY, Items.PALM_TREE_SEED, Items.YEW_SEED, Items.MAGIC_SEED};
     public static int[] levelOneRewards = {2583, 2585, 2587, 2589, 2591, 2593, 2595, 2597, 3472, 3473, 2579, 2633, 2635, 2637, 2631, 7362, 7364, 7366, 7368, 7386, 7388, 7390, 7392, 7394, 7396, 7329, 7330, 7331, 7332, 7338, 7344, 7350, 7356, 3827, 3831, 3835, 3827, 3831, 3835, 3827, 3831, 3835, Items.BLACK_PICKAXE, Items.BLACK_CANE, Items.BLUE_ELEGANT_BLOUSE, Items.BLUE_ELEGANT_LEGS, Items.BLUE_ELEGANT_SHIRT, Items.BLUE_ELEGANT_SKIRT, Items.GREEN_ELEGANT_BLOUSE, Items.GREEN_ELEGANT_LEGS, Items.GREEN_ELEGANT_SHIRT, Items.GREEN_ELEGANT_SKIRT, Items.RED_ELEGANT_BLOUSE, Items.RED_ELEGANT_LEGS, Items.RED_ELEGANT_SHIRT, Items.RED_ELEGANT_SKIRT, Items.BOBS_BLUE_SHIRT, Items.BOBS_BLACK_SHIRT, Items.BOBS_GREEN_SHIRT, Items.BOBS_PURPLE_SHIRT, Items.BOBS_RED_SHIRT, Items.STAFF_OF_BOB_THE_CAT, Items.A_POWDERED_WIG, Items.FLARED_TROUSERS, Items.PANTALOONS, Items.SLEEPING_CAP, Items.AMULET_OF_MAGIC_T, Items.AMULET_OF_POWER_T, Items.RAIN_BOW, Items.HAM_JOINT, Items.GUTHIX_ROBE_TOP, Items.GUTHIX_ROBE_LEGS, Items.SARADOMIN_ROBE_TOP, Items.SARADOMIN_ROBE_LEGS, Items.ZAMORAK_ROBE_TOP, Items.ZAMORAK_ROBE_LEGS, Items.ANCIENT_ROBE_TOP, Items.ANCIENT_ROBE_LEGS, Items.BANDOS_ROBE_TOP, Items.BANDOS_ROBE_LEGS, Items.ARMADYL_ROBE_TOP, Items.ARMADYL_ROBE_LEGS, Items.IMP_MASK, Items.GOBLIN_MASK, Items.TEAM_CAPE_I, Items.TEAM_CAPE_X, Items.TEAM_CAPE_ZERO, Items.CAPE_OF_SKULLS, Items.WOODEN_SHIELD_G, Items.GOLDEN_CHEFS_HAT, Items.GOLDEN_APRON, Items.MONKS_ROBE_G, Items.MONKS_ROBE_G_2, Items.LARGE_SPADE};
 
     public static int[] levelTwoRewards = {7329, 7330, 7331, 7319, 7321, 7323, 7325, 7327, 7370, 7372, 7378, 7380, 2645, 2647, 2649, 2579, 2577, 2599, 2601, 2603, 2605, 2607, 2609, 2611, 2613, 7334, 7340, 7346, 7352, 7358, 3828, 3832, 3836, 3829, 3833, 3837, 3829, 3833, 3837, 3829, 3833, 3837, Items.CLIMBING_BOOTS_G, Items.SPIKED_MANACLES, Items.HOLY_SANDALS, Items.BLACK_ELEGANT_LEGS, Items.BLACK_ELEGANT_SHIRT, Items.WHITE_ELEGANT_BLOUSE, Items.WHITE_ELEGANT_SKIRT, Items.PURPLE_ELEGANT_BLOUSE, Items.PURPLE_ELEGANT_LEGS, Items.PURPLE_ELEGANT_SHIRT, Items.PURPLE_ELEGANT_SKIRT, Items.PINK_ELEGANT_BLOUSE, Items.PINK_ELEGANT_LEGS, Items.PINK_ELEGANT_SHIRT, Items.PINK_ELEGANT_SKIRT, Items.GOLD_ELEGANT_BLOUSE, Items.GOLD_ELEGANT_LEGS, Items.GOLD_ELEGANT_SHIRT, Items.GOLD_ELEGANT_SKIRT, Items.WOLF_MASK, Items.WOLF_CLOAK, Items.STRENGTH_AMULET_T, Items.ADAMANT_CANE, Items.GUTHIX_MITRE, Items.SARADOMIN_MITRE, Items.ZAMORAK_MITRE, Items.ANCIENT_MITRE, Items.BANDOS_MITRE, Items.ARMADYL_MITRE, Items.GUTHIX_CLOAK, Items.SARADOMIN_CLOAK, Items.ZAMORAK_CLOAK, Items.ANCIENT_CLOAK, Items.BANDOS_CLOAK, Items.ARMADYL_CLOAK, Items.ANCIENT_STOLE, Items.ANCIENT_CROZIER, Items.ARMADYL_STOLE, Items.ARMADYL_CROZIER, Items.BANDOS_STOLE, Items.BANDOS_CROZIER, Items.CAT_MASK, Items.PENGUIN_MASK, Items.GNOMISH_FIRELIGHTER, Items.CRIER_HAT, Items.CRIER_BELL, Items.CRIER_COAT, Items.LEPRECHAUN_HAT, Items.BLACK_LEPRECHAUN_HAT, Items.BLACK_UNICORN_MASK, Items.WHITE_UNICORN_MASK, Items.ARCEUUS_BANNER, Items.HOSIDIUS_BANNER, Items.LOVAKENGJ_BANNER, Items.PISCARILIUS_BANNER, Items.SHAYZIEN_BANNER, Items.CABBAGE_ROUND_SHIELD, Items.CLUELESS_SCROLL};
 
 
     public static int[] levelThreeRewards = {3480, 3481, 3483, 3486, 3488, 2653, 2655, 2657, 2659, 2661, 2663, 2665, 2667, 2669, 2671, 2673, 2675, 2581, 2651, 7398, 7399, 7400, 7329, 7330, 7331, 7374, 7376, 7382, 7384, 2615, 2617, 2619, 2621, 2623, 2625, 2627, 2629, 7336, 7342, 7348, 7354, 7360, 3830, 3834, 3838, 3830, 3834, 3838, 3830, 3834, 3838, 2639, 2640, 2643, Items.GILDED_MED_HELM, Items.GILDED_CHAINBODY, Items.GILDED_SQ_SHIELD, Items.GILDED_2H_SWORD, Items.GILDED_SPEAR, Items.GILDED_HASTA, 10286, 10288, 10190, 10292, 10294, 23209, 23212, 23215, 23218, 23221, 12321, 12323, 12325, 10350, 10348, 10346, 23242, 10352};
+    public static int[] levelFourRewards = {Items.DRAGON_FULL_HELM_ORNAMENT_KIT, Items.DRAGON_CHAINBODY_ORNAMENT_KIT, Items.DRAGON_LEGS_OF_SKIRT_ORNAMENT_KIT, Items.DRAGON_SCIMITAR_ORNAMENT_KIT, Items.FURY_ORNAMENT_KIT, Items.LIGHT_INFINITY_COLOUR_KIT, Items.DARK_INFINITY_COLOUR_KIT, Items.ROYAL_CROWN, Items.ROYAL_GOWN_TOP, Items.ROYAL_GOWN_BOTTOM, Items.ROYAL_SCEPTRE, Items.MUSKETEER_HAT, Items.MUSKETEER_TABARD, Items.MUSKETEER_PANTS, Items.BLACK_DHIDE_BODY_G, Items.BLACK_DHIDE_BODY_T, Items.BLACK_DHIDE_CHAPS_G, Items.BLACK_DHIDE_CHAPS_T, Items.RANGERS_TUNIC, Items.RANGER_GLOVES, Items.HOLY_WRAPS, Items.BRONZE_DRAGON_MASK, Items.IRON_DRAGON_MASK, Items.STEEL_DRAGON_MASK, Items.MITHRIL_DRAGON_MASK, Items.ADAMANT_DRAGON_MASK, Items.RUNE_DRAGON_MASK, Items.ARCEUUS_SCARF, Items.HOSIDIUS_SCARF, Items.LOVAKENGJ_SCARF, Items.PISCARILIUS_SCARF, Items.SHAYZIEN_SCARF, Items.KATANA, Items.DRAGON_CANE, Items.BUCKET_HELM, Items.BLACKSMITHS_HELM, Items.DEERSTALKER, Items.AFRO, Items.BIG_PIRATE_HAT, Items.TOP_HAT, Items.MONOCLE, Items.BRIEFCASE, Items.SAGACIOUS_SPECTACLES, Items.RANGERS_TIGHTS, Items.URIS_HAT, Items.GIANT_BOOT, Items.FREMENNIK_KILT, Items.DARK_BOW_TIE, Items.DARK_TUXEDO_JACKET, Items.DARK_TUXEDO_CUFFS, Items.DARK_TROUSERS, Items.DARK_TUXEDO_SHOES, Items.LIGHT_BOW_TIE, Items.LIGHT_TUXEDO_JACKET, Items.LIGHT_TUXEDO_CUFFS, Items.LIGHT_TROUSERS, Items.LIGHT_TUXEDO_SHOES};
+
     public static void cleanClueInterface(Player player) {
         for (int i = 6968; i <= 6975; i++) {
             player.getPA().sendString("", i);
@@ -136,6 +140,21 @@ public class ClueScroll {
                     player.clue3Amount++;
                 }
                 break;
+            case 4:
+                if (player.clue4Amount < 7 && Misc.random(6) == 0 || player.clue4Amount == 7) {
+                    player.clue4Amount = 0;
+                    if (isDialogue) {
+
+                    } else {
+                        itemReward(player, clueLevel);
+                    }
+                } else {
+                    player.getDH().sendItemStatement(string, CLUE_ITEM);
+                    // player.getDialogue().endDialogue();
+                    addNewClue(player, clueLevel);
+                    player.clue4Amount++;
+                }
+                break;
         }
     }
     private static void addNewClue(Player player, int clueLevel) {
@@ -157,6 +176,11 @@ public class ClueScroll {
                 Achievements.increase(player, AchievementType.CLUES, 1);
                 player.getItems().deleteItem2(itemId, 1);
                 itemReward(player, 3);
+                break;
+            case REWARD_CASKET_LV4:
+                Achievements.increase(player, AchievementType.CLUES, 1);
+                player.getItems().deleteItem2(itemId, 1);
+                itemReward(player, 4);
                 break;
             case CASKET_LV1 :
                 player.getItems().deleteItem2(itemId, 1);
@@ -214,6 +238,18 @@ public class ClueScroll {
                     }
                 }
                 break;
+            case 4 :
+                for (int i = 0; i < random; i++) {
+                    int percent = Misc.random(100);
+                    if (percent <= 7) {
+                        array.add(levelFourRewards[Misc.random(levelFourRewards.length - 1)]);
+                    } else if (percent > 7 && percent <= 30 && !array.contains(995)) {
+                        array.add(995);
+                    } else {
+                        array.add(Misc.random(2) == 1 ? junkItem4[Misc.random(junkItem4.length - 1)] : mainJunk[Misc.random(mainJunk.length - 1)]);
+                    }
+                }
+                break;
         }
 
         int[] items = new int[random];
@@ -226,14 +262,14 @@ public class ClueScroll {
                 amounts[i] = 1;
             }
             item[i] = new GameItem(items[i], amounts[i]);
-            player.getItems().addItem(items[i], amounts[i]);
+            player.getItems().addItemorDrop(items[i], amounts[i]);
         }
         player.getPA().sendItems(player, 6963, Arrays.asList(item), 0);
         player.getPA().showInterface(6960);
         switch (clueLevel) {
             case 1:
                 player.setEasyClueCounter(player.getEasyClueCounter() + 1);
-                player.sendMessage("<col=2d256d>You have completed " + player.getEasyClueCounter() + " Easy Treasure Trails.");
+                player.sendMessage("<col=2d256d>You have completed " + player.getEasyClueCounter() + " easy Treasure Trails.");
                 break;
             case 2:
                 player.setMediumClueCounter(player.getMediumClueCounter() + 1);
@@ -244,6 +280,11 @@ public class ClueScroll {
                 player.sendMessage("<col=2d256d>You have completed " + player.getHardClueCounter() + " hard Treasure Trails.");
                 break;
             case 4:
+                player.setMasterClueCounter(player.getEliteClueCounter() + 1);
+                player.sendMessage("<col=2d256d>You have completed " + player.getEliteClueCounter() + " elite Treasure Trails.");
+               // PetHandler.roll(player, PetHandler.Pets.BLOODHOUND);
+                break;
+            case 5:
                 player.setMasterClueCounter(player.getMasterClueCounter() + 1);
                 player.sendMessage("<col=2d256d>You have completed " + player.getMasterClueCounter() + " master Treasure Trails.");
                 PetHandler.roll(player, PetHandler.Pets.BLOODHOUND);
