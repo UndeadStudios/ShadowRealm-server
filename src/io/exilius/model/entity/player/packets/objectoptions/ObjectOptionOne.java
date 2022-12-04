@@ -422,6 +422,12 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
 					return;
 				}
+				if(obX == 3044 && obY == 10324){
+					if(c.getX() == 3044 && c.getY() == 10323 || c.getX() == 3045 && c.getY() == 10323){
+						c.getPA().movePlayer(c.getX(), c.getY()-6400+4);
+					}
+					return;
+				}
 				if(obX == 3021 && obY == 3332) {
 					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
 					return;
@@ -474,6 +480,12 @@ static int fourthFloorsos[][] = {
 				}
 				if(obX == 2959 && obY == 3370) {
 					c.getPA().movePlayer(c.getX(), c.getY()-4, 0);
+					return;
+				}
+				if(obX == 3044 && obY == 3924){
+					if(c.getX() == 3044 && c.getY() == 3927 || c.getX() == 3045 && c.getY() == 3927){
+						c.getPA().movePlayer(c.getX(), c.getY()+6400-4);
+					}
 					return;
 				}
 				if(obX == 3212 && obY == 3474){
