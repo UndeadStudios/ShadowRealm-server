@@ -87,7 +87,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Slayer Masters", new Position(3083, 3499, 0)),
             new TeleportButtonStandard("Mount Karuulm (Slayer)", new Position(1311, 3795, 0)),
             new TeleportButtonStandard("Skilling Island", new Position(3803, 3538, 0)),
-            new TeleportButtonStandard("Agility", new Position(3091, 3474, 0)),
+            new TeleportButtonStandard("Agility", new Position(3091, 3478, 0)),
             new TeleportButtonStandard("Hunter", new Position(3560, 4010, 0)),
             new TeleportButtonStandard("Farming", new Position(3053, 3301, 0)),
             new TeleportButtonStandard("Puro-Puro", new Position(2594, 4320, 0)),

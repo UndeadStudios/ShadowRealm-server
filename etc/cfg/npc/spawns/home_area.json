@@ -317,11 +317,11 @@
   {
     "id": 5919,
     "position": {
-      "x": 3092,
-      "y": 3475,
+      "x": 3091,
+      "y": 3478,
       "height": 0
     },
-    "walkingType": "WALK"
+    "walkingType": "FACE_EASY"
   },
   {
     "id": 3291,
