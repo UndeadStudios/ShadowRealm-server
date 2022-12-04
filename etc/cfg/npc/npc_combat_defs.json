@@ -1,4 +1,5 @@
-[{
+[
+  {
   "id": 1,
   "attackSpeed": 4,
   "attackStyle": "Melee",
@@ -2242,6 +2243,176 @@
     "CRUSH_BONUS": -5
   }
 },
+  {
+    "id": 10717,
+    "attackSpeed": 4,
+    "attackStyle": "Crush",
+    "aggressive": true,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 17,
+      "DEFENCE": 17,
+      "RANGE": 1,
+      "STRENGTH": 17,
+      "HITPOINTS": 24
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 0,
+      "STRENGTH_BONUS": 0,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 5,
+      "STAB_BONUS": 5,
+      "RANGE_BONUS": 5,
+      "MAGIC_BONUS": 0,
+      "CRUSH_BONUS": -5
+    }
+  },
+  {
+    "id": 10718,
+    "attackSpeed": 4,
+    "attackStyle": "Crush",
+    "aggressive": true,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 17,
+      "DEFENCE": 17,
+      "RANGE": 1,
+      "STRENGTH": 17,
+      "HITPOINTS": 24
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 0,
+      "STRENGTH_BONUS": 0,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 5,
+      "STAB_BONUS": 5,
+      "RANGE_BONUS": 5,
+      "MAGIC_BONUS": 0,
+      "CRUSH_BONUS": -5
+    }
+  },
+  {
+    "id": 10719,
+    "attackSpeed": 4,
+    "attackStyle": "Crush",
+    "aggressive": true,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 17,
+      "DEFENCE": 17,
+      "RANGE": 1,
+      "STRENGTH": 17,
+      "HITPOINTS": 24
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 0,
+      "STRENGTH_BONUS": 0,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 5,
+      "STAB_BONUS": 5,
+      "RANGE_BONUS": 5,
+      "MAGIC_BONUS": 0,
+      "CRUSH_BONUS": -5
+    }
+  },
+  {
+    "id": 10720,
+    "attackSpeed": 4,
+    "attackStyle": "Crush",
+    "aggressive": true,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 17,
+      "DEFENCE": 17,
+      "RANGE": 1,
+      "STRENGTH": 17,
+      "HITPOINTS": 24
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 0,
+      "STRENGTH_BONUS": 0,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 5,
+      "STAB_BONUS": 5,
+      "RANGE_BONUS": 5,
+      "MAGIC_BONUS": 0,
+      "CRUSH_BONUS": -5
+    }
+  },
+  {
+    "id": 10721,
+    "attackSpeed": 4,
+    "attackStyle": "Crush",
+    "aggressive": true,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 17,
+      "DEFENCE": 17,
+      "RANGE": 1,
+      "STRENGTH": 17,
+      "HITPOINTS": 24
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 0,
+      "STRENGTH_BONUS": 0,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 5,
+      "STAB_BONUS": 5,
+      "RANGE_BONUS": 5,
+      "MAGIC_BONUS": 0,
+      "CRUSH_BONUS": -5
+    }
+  },
 {
   "id": 81,
   "attackSpeed": 4,
