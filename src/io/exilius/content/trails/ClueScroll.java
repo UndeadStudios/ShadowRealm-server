@@ -158,7 +158,7 @@ public class ClueScroll {
         }
     }
     private static void addNewClue(Player player, int clueLevel) {
-        player.getItems().addItem(getRandomClue(clueLevel), 1);
+        player.getItems().addItemorDrop(getRandomClue(clueLevel), 1);
     }
     public static void handleCasket(Player player, int itemId) {
         switch (itemId) {
