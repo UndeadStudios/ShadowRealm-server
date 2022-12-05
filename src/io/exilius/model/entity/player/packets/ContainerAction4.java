@@ -75,7 +75,7 @@ public class ContainerAction4 implements PacketType {
 		case GroupIronmanBank.INTERFACE_ITEM_CONTAINER_ID:
 			GroupIronmanBank.processContainerAction(c, action);
 			break;
-		case 26022:
+		case 36022:
 			Sale sales = Listing.getSale(c.saleResults.get(removeSlot));
 			c.start(new DialogueBuilder(c).option(
 					new DialogueOption("Yes, I want to buy @red@ALL " + sales.getQuantity() + " " +ItemDef.forId(sales.getId()).getName()  +".", p -> {

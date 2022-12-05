@@ -73,7 +73,7 @@ public class ContainerAction3 implements PacketType {
 		case ItemSpawner.CONTAINER_ID:
 			ItemSpawner.spawn(c, removeId, -1);
 			break;
-		case 26022:
+		case 36022:
 			Listing.buyListing(c, removeSlot, 10);
 			break;
 		case 48500: //Listing interface

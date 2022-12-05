@@ -127,7 +127,7 @@ public class EnterAmountInput implements PacketType {
 		}
 
 		switch (c.xInterfaceId) {
-		case 26022:
+		case 36022:
 			Listing.buyListing(c, c.xRemoveSlot, Xamount);
 			break;
 		case 191072:

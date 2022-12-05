@@ -566,7 +566,7 @@ public class Listing {
 				break;
 			}
 		}
-		PlayerAssistant.sendItems(c, 26022, result, 250);
+		PlayerAssistant.sendItems(c, 36022, result, 250);
 		for(int i = start; i < 27023; i++) {
 			c.getPA().sendFrame126("", i);
 		}

@@ -130,7 +130,7 @@ public class ContainerAction1 implements PacketType {
 			break;
 
 
-			case 26022:
+			case 36022:
 			Listing.buyListing(c, removeSlot, 1);
 			break;
 		case 21578:
