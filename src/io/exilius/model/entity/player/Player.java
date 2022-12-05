@@ -270,7 +270,7 @@ public class Player extends Entity {
     public boolean hasclaimedgrephat;
     public boolean hasclaimedpurphat;
     public boolean hasclaimedwhiphat;
-    public boolean doinguri;
+    public boolean doinguri = false;
     private int bofacharges;
 
     public void saveItemsForMinigame() {

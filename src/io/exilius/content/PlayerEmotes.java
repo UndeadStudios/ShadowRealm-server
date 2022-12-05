@@ -207,6 +207,7 @@ public class PlayerEmotes {
 							}
 							if (player == null || time >= 15) {
 								if(player.doinguri) {
+									player.doinguri = false;
 									container.stop();
 									return;
 								}
@@ -215,7 +216,6 @@ public class PlayerEmotes {
 								time++;
 							}
 						}
-
 						public void stop() {
 							player.doinguri = false;
 						}
