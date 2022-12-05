@@ -32,6 +32,9 @@ public class Walking implements PacketType {
 			 */
 			return;
 		}
+		if(c.doinguri){
+			return;
+		}
 		c.nextChat = 0;
 		c.dialogueOptions = 0;
 		c.homeTeleport = 50;

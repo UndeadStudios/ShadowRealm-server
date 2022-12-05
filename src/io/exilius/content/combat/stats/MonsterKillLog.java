@@ -8,10 +8,10 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class MonsterKillLog {
 
-    private static final int INTERFACE_ID = 24_430;
-    private static final int NAMES_CONTAINER = 24_436;
-    private static final int KILLS_CONTAINER = 24_438;
-    private static final int KILL_TIME_CONTAINER = 24_440;
+    private static final int INTERFACE_ID = 34_430;
+    private static final int NAMES_CONTAINER = 34_436;
+    private static final int KILLS_CONTAINER = 34_438;
+    private static final int KILL_TIME_CONTAINER = 34_440;
 
     public static void openInterface(Player player) {
         List<String> names = Lists.newArrayList();

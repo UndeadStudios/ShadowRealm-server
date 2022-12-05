@@ -57,7 +57,7 @@ public class DropManager {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DropManager.class);
     private static final int DEFAULT_NPC = 9425; // Vorkath
     private static final int NPC_RESULTS_CONTAINER_INTERFACE_ID = 39507;
-    private static final int DROP_TABLE__CONTAINER_INTERFACE_ID = 34000;
+    private static final int DROP_TABLE__CONTAINER_INTERFACE_ID = 38000;
     private static final int DROP_AMOUNT_CONFIG_ID = 1356;
     private static final String LAST_OPENED_TABLE_KEY = "drop_manager_last_opened";
 
@@ -665,11 +665,11 @@ KeyToClue.dropKey(player, npc, location);
         player.getPA().sendFrame126("", 43113);
 
         for(int i = 0;i<80;i++){
-            player.getPA().itemOnInterface(-1, 0, 34010+i, 0);
-            player.getPA().sendString("", 34200+i);
-            player.getPA().sendString("", 34300+i);
-            player.getPA().sendString("", 34100+i);
-            player.getPA().sendString("", 34400+i);
+            player.getPA().itemOnInterface(-1, 0, 38010+i, 0);
+            player.getPA().sendString("", 38200+i);
+            player.getPA().sendString("", 38300+i);
+            player.getPA().sendString("", 38100+i);
+            player.getPA().sendString("", 38400+i);
         }
     }
 
@@ -912,11 +912,11 @@ KeyToClue.dropKey(player, npc, location);
             //If the game has displayed all drops and there are empty slots that haven't been filled, clear them
             if(player.dropSize < 80) {
                 for(int i = player.dropSize; i<80; i++){
-                    player.getPA().sendString("", 34200+i);
-                    player.getPA().itemOnInterface(-1, 0, 34010+i, 0);
-                    player.getPA().sendString("", 34300+i);
-                    player.getPA().sendString("", 34100+i);
-                    player.getPA().sendString("", 34400+i);
+                    player.getPA().sendString("", 38200+i);
+                    player.getPA().itemOnInterface(-1, 0, 38010+i, 0);
+                    player.getPA().sendString("", 38300+i);
+                    player.getPA().sendString("", 38100+i);
+                    player.getPA().sendString("", 38400+i);
                 }
             }
             player.dropSize = 0;
@@ -942,7 +942,7 @@ KeyToClue.dropKey(player, npc, location);
     }
 
     private boolean writeItem(Player player, int itemId, int minAmount, int maxAmount, String rarityString, int dropChance) {
-        int frame = (34200 + player.dropSize);//collumnOffset + (index * 2);
+        int frame = (38200 + player.dropSize);//collumnOffset + (index * 2);
 
         //if max = min, just send the max
         if (maxAmount == maxAmount) {
@@ -957,16 +957,16 @@ KeyToClue.dropKey(player, npc, location);
             itemName = itemName.substring(0, 17) + "..";
         }
 
-        player.getPA().itemOnInterface(itemId, minAmount, 34010+player.dropSize, 0);
-        player.getPA().sendString(Misc.optimizeText(rarityString.toLowerCase().replaceAll("_", " ")), 34300+player.dropSize);
-        player.getPA().sendString(itemName == null ? "Unknown" : itemName, 34100 + player.dropSize);
+        player.getPA().itemOnInterface(itemId, minAmount, 38010+player.dropSize, 0);
+        player.getPA().sendString(Misc.optimizeText(rarityString.toLowerCase().replaceAll("_", " ")), 38300+player.dropSize);
+        player.getPA().sendString(itemName == null ? "Unknown" : itemName, 38100 + player.dropSize);
 
         if(dropChance == -10){
-            player.getPA().sendString(1 + "/?", 34400 + player.dropSize);
+            player.getPA().sendString(1 + "/?", 38400 + player.dropSize);
         } else {
             if (dropChance == 0)
                 dropChance = 1;
-            player.getPA().sendString(1 + "/"+dropChance, 34400 + player.dropSize);
+            player.getPA().sendString(1 + "/"+dropChance, 38400 + player.dropSize);
         }
 
         player.dropSize++;

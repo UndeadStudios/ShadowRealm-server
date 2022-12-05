@@ -270,6 +270,7 @@ public class Player extends Entity {
     public boolean hasclaimedgrephat;
     public boolean hasclaimedpurphat;
     public boolean hasclaimedwhiphat;
+    public boolean doinguri;
     private int bofacharges;
 
     public void saveItemsForMinigame() {
@@ -2064,7 +2065,7 @@ public class Player extends Entity {
         setSidebarInterface(9, 5715);
         setSidebarInterface(10, 2449);
         setSidebarInterface(11, 42500); // wrench tab
-        setSidebarInterface(12, 147); // run tab
+        setSidebarInterface(12, 26041); // run tab
         getPA().showOption(4, 0, "Follow");
         getPA().showOption(5, 0, "Trade with");
         getItems().sendInventoryInterface(3214);

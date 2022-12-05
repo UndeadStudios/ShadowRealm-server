@@ -550,7 +550,7 @@ public class ClickingButtons implements PacketType {
 			c.setSidebarInterface(9, 5715);
 			c.setSidebarInterface(10, 2449);
 			c.setSidebarInterface(11, 23000); // wrench tab
-			c.setSidebarInterface(12, 147); // run tab
+			c.setSidebarInterface(12, 26041); // run tab
 			c.setSidebarInterface(0, 2423);
 			// if (c.playerEquipment[c.playerRing] == 7927) {
 			// c.getItems().deleteEquipment(c.playerEquipment[c.playerRing], c.playerRing);
@@ -2011,7 +2011,7 @@ public class ClickingButtons implements PacketType {
 			 * case 152: c.isRunning2 = !c.isRunning2; int frame = c.isRunning2 == true ? 1
 			 * : 0; c.getPA().sendFrame36(173,frame); break;
 			 */
-		case 154:
+		case 101229:
 			System.out.println("Setting cape: " + c.playerEquipment[Player.playerCape]);
 			if (c.playerEquipment[Player.playerCape] == -1) {
 				c.sendMessage("You must be wearing a skillcape in order to do this emote.");
