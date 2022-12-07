@@ -29,10 +29,12 @@ public class ClueScroll {
     public static final int CASKET_LV1 = 2714;
     public static final int CASKET_LV2 = 2802;
     public static final int CASKET_LV3 = 3521;
+    public static final int CASKET_LV4 = 12084;
 
     public static final int REWARD_CASKET_LV1 = 20546;
     public static final int REWARD_CASKET_LV2 = 20545;
     public static final int REWARD_CASKET_LV3 = 20544;
+
     private static final int REWARD_CASKET_LV4 = Items.REWARD_CASKET_ELITE;
     public static final int CLUE_ITEM = 2701;
 
@@ -193,6 +195,10 @@ public class ClueScroll {
             case CASKET_LV3 :
                 player.getItems().deleteItem2(itemId, 1);
                 clueReward(player, 3, "You've found another clue!", false, "Here is your reward!");
+                break;
+            case CASKET_LV4 :
+                player.getItems().deleteItem2(itemId, 1);
+                clueReward(player, 4, "You've found another clue!", false, "Here is your reward!");
                 break;
         }
 
@@ -357,6 +363,15 @@ public class ClueScroll {
                // array.add(SpeakToScrolls.getRandomScroll(3));
                 array.add(DiggingScrolls.getRandomScroll(3));
                 array.add(CoordinateScrolls.getRandomScroll(3));
+
+                return array.get(Misc.random(array.size() - 1));
+            case 4 :
+                //array.add(AnagramsScrolls.getRandomScroll(3));
+                array.add(MapScrolls.getRandomScroll(4));
+                //array.add(SearchScrolls.getRandomScroll(4));
+                // array.add(SpeakToScrolls.getRandomScroll(3));
+               // array.add(DiggingScrolls.getRandomScroll(4));
+                array.add(CoordinateScrolls.getRandomScroll(4));
 
                 return array.get(Misc.random(array.size() - 1));
 

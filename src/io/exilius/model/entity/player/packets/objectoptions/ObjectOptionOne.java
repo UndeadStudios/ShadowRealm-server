@@ -48,6 +48,7 @@ import io.exilius.content.skills.woodcutting.Tree;
 import io.exilius.content.skills.woodcutting.Woodcutting;
 import io.exilius.content.tournaments.ViewingOrb;
 import io.exilius.content.tradingpost.Listing;
+import io.exilius.content.trails.MapScrolls;
 import io.exilius.content.trails.SearchScrolls;
 import io.exilius.content.wilderness.SpiderWeb;
 import io.exilius.model.Items;
@@ -160,7 +161,6 @@ static int fourthFloorsos[][] = {
 		if (c.getAgilityShortcuts().agilityShortcuts(c, objectType)) {
 			return;
 		}
-
 		if (RooftopSeers.execute(c, objectType)) {
 			return;
 		}
@@ -568,6 +568,9 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 			}
+		}
+		if (MapScrolls.handleCrate(c, obX, obY)) {
+			return;
 		}
 		if (SearchScrolls.handleObject(c, object)) {
 			return;

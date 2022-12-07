@@ -109,6 +109,9 @@ public class DiggingScrolls {
             case 3 :
                 player.getItems().addItemorDrop(ClueScroll.CASKET_LV3, 1);
                 break;
+            case 4 :
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV4, 1);
+                break;
         }
         player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);
         return true;

@@ -22,7 +22,7 @@ public class MapScrolls {
         CHAMPION_GUILD(Items.CLUE_SCROLL_MEDIUM_2, 6994, new Position(3166, 3360), false, 2),
         FALADOR_ROCK(Items.CLUE_SCROLL_MEDIUM_3, 7271, new Position(3043, 3399), false, 2),
         DRAYNOR(Items.CLUE_SCROLL_MEDIUM_4, 7113, new Position(3092, 3226), false, 2),
-        GOBLIN_VILLAGE(Items.CLUE_SCROLL_HARD_32, 9454, new Position(2457, 3182), true, 3),
+        GOBLIN_VILLAGE(Items.CLUE_SCROLL_HARD_32, 26422, new Position(2457, 3182), true, 3),
         NECROMANCER(Items.CLUE_SCROLL_HARD_33, 9632, new Position(2654, 3233), false, 3),
         LUMBERYARD(Items.CLUE_SCROLL_EASY_2, 7221, new Position(3309, 3503), true, 1),
         VARROCK_MINE(Items.CLUE_SCROLL_EASY_3, 7045, new Position(3290, 3373), false, 1),
@@ -41,7 +41,11 @@ public class MapScrolls {
         LEGEND_GUILD(Items.CLUE_SCROLL_HARD_37, 17634, new Position(2723, 3339), false, 3),
         FALADOR_STATUE(Items.CLUE_SCROLL_MEDIUM_9, 17537, new Position(2970, 3414), false, 2),
         RELLEKA(Items.CLUE_SCROLL_MEDIUM_10, 17907, new Position(2579, 3597), false, 2),
-        CRAFTING_GUILD_EAST(Items.CLUE_SCROLL_EASY_9, 7162, new Position(2702, 3428), false, 1);
+        CRAFTING_GUILD_EAST(Items.CLUE_SCROLL_EASY_9, 7162, new Position(2702, 3428), false, 1),
+        Zul_Andra(Items.CLUE_SCROLL_ELITE_20, 26869, new Position(2202, 3061), false, 4),
+        APE_ATOLL(Items.CLUE_SCROLL_ELITE_21, 26877, new Position(2703, 2716), true,4),
+        SOUL_ALTAR(Items.CLUE_SCROLL_ELITE_22, 26873, new Position(1815, 3852), false, 4),
+        CASTLE_WARS(Items.CLUE_SCROLL_ELITE_23, 26885, new Position(2449, 3130), false, 4);
 
         private int clueId;
         private int interfaceId;
@@ -134,6 +138,9 @@ public class MapScrolls {
                 break;
             case 3 :
                 player.getItems().addItemorDrop(ClueScroll.CASKET_LV3, 1);
+                break;
+            case 4 :
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV4, 1);
                 break;
         }
         player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);

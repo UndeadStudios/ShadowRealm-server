@@ -224,11 +224,11 @@ public class CoordinateScrolls {
         if (!player.getItems().playerHasItem(coordinateData.getClueId())) {
             return false;
         }
-		/*if (!player.getItems().getItemContainer().contains(CHART) || !player.getItems().getItemContainer().contains(SEXTANT) || !player.getItems().getItemContainer().contains(WATCH)) {
-			player.getPA().sendMessage("You need a chart, sextant, and watch in order to find the clue.");
-			player.getPA().sendMessage("You can get these from the observatory professor.");
+		if (!player.getItems().playerHasItem(CHART) || !player.getItems().playerHasItem(SEXTANT) || !player.getItems().playerHasItem(WATCH)) {
+			player.sendMessage("You need a chart, sextant, and watch in order to find the clue.");
+			player.sendMessage("You can get these from the general store.");
 			return false;
-		}*/
+		}
         /*if (!player.hasKilledClueAttacker() && coordinateData.getLevel() == 3) {
             ClueScroll.spawnAttacker(player);
             player.getPA().sendMessage("You must kill the wizard before continuing the search!");
@@ -246,6 +246,9 @@ public class CoordinateScrolls {
                 break;
             case 3 :
                 player.getItems().addItemorDrop(ClueScroll.CASKET_LV3, 1);
+                break;
+            case 4 :
+                player.getItems().addItemorDrop(ClueScroll.CASKET_LV4, 1);
                 break;
         }
         player.getDH().sendItemStatement("You've found a casket!", ClueScroll.CASKET_LV1);
