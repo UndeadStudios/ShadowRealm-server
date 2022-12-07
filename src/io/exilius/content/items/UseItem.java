@@ -17,6 +17,7 @@ import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.minigames.warriors_guild.AnimatedArmour;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
+import io.exilius.content.objects.BondFIres;
 import io.exilius.content.objects.Fillables;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.cooking.Cooking;
@@ -336,6 +337,8 @@ public class UseItem {
 			case 8703:
 				Fillables.fillTheItem(c, itemId, objectID);
 				break;
+			case 31722:
+				BondFIres.BurnLog(c, itemId, objectID);
 			case 42966:
 				switch(itemId){
 					case 11832:
