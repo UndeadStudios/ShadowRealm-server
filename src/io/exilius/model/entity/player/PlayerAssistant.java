@@ -105,16 +105,14 @@ public class PlayerAssistant {
 		c.flushOutStream();
 	}
 	public void resetQuestInterface() {
-		for(int i = 8145; i < 8196; i++)
-			sendString("", i);
-		for(int i = 21614; i < 21614 + 100; i++)
+		for(int i = 26484; i < 26658; i++)
 			sendString("", i);
 	}
 
     public void openQuestInterface() {
-        setScrollableMaxHeight(8140, 1600);
-        resetScrollBar(8140);
-        showInterface(8134);
+        setScrollableMaxHeight(26483, 3500);
+        resetScrollBar(26483);
+        showInterface(26480);
     }
 
     public void openQuestInterface(String header, List<String> lines) {
@@ -146,18 +144,10 @@ public class PlayerAssistant {
         Preconditions.checkArgument(lines.length <= 151, new IllegalArgumentException("Too many lines: " + lines.length));
 
         resetQuestInterface();
-        sendString(header, 8144);
+        sendString(header, 26659);
 
         int index = 0;
-        for (int i = 8145; i < 8196; i++) {
-            if (index >= lines.length) {
-                break;
-            }
-            sendString(lines[index], i);
-            index++;
-        }
-
-        for (int i = 21614; i < 21614 + 100; i++) {
+        for (int i = 26484; i < 26658; i++) {
             if (index >= lines.length) {
                 break;
             }
@@ -166,10 +156,10 @@ public class PlayerAssistant {
         }
 
 
-        setScrollableMaxHeight(8140, 218 + (lines.length > 10 ? (lines.length - 10) * 20 : 0));
-        resetScrollBar(8140);
+        setScrollableMaxHeight(26483, 218 + (lines.length > 10 ? (lines.length - 10) * 20 : 0));
+        resetScrollBar(26483);
 
-        showInterface(8134);
+        showInterface(26480);
     }
 
 	/**

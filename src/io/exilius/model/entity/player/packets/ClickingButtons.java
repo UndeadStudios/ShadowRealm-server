@@ -2036,7 +2036,9 @@ public class ClickingButtons implements PacketType {
 		case 9154:
 			c.attemptLogout();
 			break;
-
+			case 104036:
+				c.getPA().closeAllWindows();
+				break;
 		case 226146:
 			if (!c.swaping) {
 				c.sendMessage("You can't disable this, please select the other option!");
