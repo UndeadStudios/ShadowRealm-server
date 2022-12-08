@@ -5,6 +5,7 @@ import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -73,7 +74,7 @@ public class BondFIres {
                                 c.startAnimation(733);
                                 c.getItems().deleteItem(g.getLogID(), 1);
                                 c.getPA().addSkillXPMultiplied(g.getXP(), Skill.FIREMAKING.getId(), true);
-                                c.sendMessage("You fill "+c.getItems().getItemName(g.getLogID())+" from the "+ ObjectDef.getObjectDef(objectID).name+".");
+                                //c.sendMessage("You fill "+c.getItems().getItemName(g.getLogID())+" from the "+ ObjectDef.getObjectDef(objectID).name+".");
                             }else {
                                 container.stop();
                             }
@@ -83,9 +84,9 @@ public class BondFIres {
 
                         public void stop() {
                             c.stopAnimation();
-                            c.fillingWater = false;
+                            c.playerIsFiremaking = false;
                         }
-                    }, 3);
+                    }, AnimationLength.getFrameLength(733));
                 }
             }
         }

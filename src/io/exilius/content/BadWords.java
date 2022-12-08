@@ -55,7 +55,8 @@ public final class BadWords {
             "slut",
 
             /* Advertisement basics */
-            "www",
+            "www.",
+            "wwwdot",
             ".com",
             ".org",
             ".net",
