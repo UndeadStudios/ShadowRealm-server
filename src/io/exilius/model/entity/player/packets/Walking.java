@@ -150,7 +150,9 @@ public class Walking implements PacketType {
 		if (c.canChangeAppearance) {
 			c.canChangeAppearance = false;
 		}
-
+		if(c.playerIsFiremaking) {
+			c.playerIsFiremaking = false;
+		}
 		c.getPA().stopSkilling();
 		c.getPA().resetVariables();
 		SkillHandler.isSkilling[12] = false;

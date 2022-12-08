@@ -8,13 +8,6 @@ import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.entity.player.Player;
 
-/**
- * Class Fillables
- * Handles Filling water in unfilled item's
- * @author Genesis/Organic
- * 11:00 2:14 7/2/2012
- */
-
 public class BondFIres {
     public enum logData {
         LOGS(1511, 40),
