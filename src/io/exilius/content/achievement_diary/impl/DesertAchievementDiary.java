@@ -191,18 +191,19 @@ public final class DesertAchievementDiary extends StatefulAchievementDiary<Deser
 	int amount = frameIndex == 10 || frameIndex == 16 || frameIndex == 20 ? 2 : 1;
 	public final void display() {
 		Set<DesertDiaryEntry> all = getAll();
-		int[] frames = { 26484, 26485, 26486, 26487, 26488, 26489, 26490, 26491, 26492, 26493, 26494, 26495, 26496, 26497, 26498,
-				26499, 26500, 26501, 26502, 26503, 26504, 26505, 26506, 26507, 26508, 26509, 26510, 26511, 26512, 26513,
-				26514, 26515, 26516, 26517, 26518, 26519, 26520, 26521, 26522, 26523, 26524, 26525, 26526 };
+		int[] frames = { 26485, 26486, 26487, 26488, 26489, 26491, 26492, 26493, 26494, 26495, 26496, 26497, 26498, 26500, 26501,
+				26503, 26504, 26505, 26506, 26507, 26508, 26509, 26510, 26511, 26512, 26513, 26514, 26515, 26516, 26517,
+				26518, 26519, 26520, 26521, 26522, 26523, 26524, 26525, 26526, 26527, 26528, 26529, 26530 };
 
 		player.getPA().resetQuestInterface();
 		frameIndex = 0;
 		
-		player.getPA().sendFrame126("@dre@Desert Diary", 36659);
-		player.getPA().sendFrame126(hasCompleted("EASY") ? "@blu@<str=1>Easy</str>" : "@blu@Easy", 8147);
-		player.getPA().sendFrame126(hasCompleted("MEDIUM") ? "@blu@<str=1>Medium</str>" : "@blu@Medium", 8153);
-		player.getPA().sendFrame126(hasCompleted("HARD") ? "@blu@<str=1>Hard</str>" : "@blu@Hard", 8162);
-		player.getPA().sendFrame126(hasCompleted("ELITE") ? "@blu@<str=1>Elite</str>" : "@blu@Elite", 8165);
+		player.getPA().sendFrame126("@dre@Desert Diary", 26659);
+		player.getPA().sendFrame126("", 8145);
+		player.getPA().sendFrame126(hasCompleted("EASY") ? "@blu@<str=1>Easy</str>" : "@blu@Easy", 26484);
+		player.getPA().sendFrame126(hasCompleted("MEDIUM") ? "@blu@<str=1>Medium</str>" : "@blu@Medium", 26490);
+		player.getPA().sendFrame126(hasCompleted("HARD") ? "@blu@<str=1>Hard</str>" : "@blu@Hard", 26499);
+		player.getPA().sendFrame126(hasCompleted("ELITE") ? "@blu@<str=1>Elite</str>" : "@blu@Elite", 26502);
 		
 		all.forEach(entry -> {
 			String description = entry.getDescription();

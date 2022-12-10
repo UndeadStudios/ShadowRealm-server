@@ -1059,7 +1059,7 @@ public class ClickingButtons implements PacketType {
 			break;
 		case 39244:
 			break;
-		case 10252:
+		case 98246:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1070,7 +1070,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 0;
 			c.sendMessage("You select Attack");
 			break;
-		case 10253:
+		case 98247:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1081,7 +1081,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 2;
 			c.sendMessage("You select Strength");
 			break;
-		case 10254:
+		case 98248:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1092,7 +1092,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 4;
 			c.sendMessage("You select Ranged");
 			break;
-		case 10255:
+		case 98249:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1103,7 +1103,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 6;
 			c.sendMessage("You select Magic");
 			break;
-		case 11000:
+		case 98250:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1114,10 +1114,10 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 1;
 			c.sendMessage("You select Defence");
 			break;
-		case 116181:
+		case 99037:
 			c.getPA().closeAllWindows();
 			break;
-		case 11001:
+		case 98251:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1128,7 +1128,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 3;
 			c.sendMessage("You select Hitpoints");
 			break;
-		case 11002:
+		case 98252:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1139,7 +1139,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 5;
 			c.sendMessage("You select Prayer");
 			break;
-		case 11003:
+		case 98253:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1150,7 +1150,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 16;
 			c.sendMessage("You select Agility");
 			break;
-		case 11004:
+		case 98254:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1161,7 +1161,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 15;
 			c.sendMessage("You select Herblore");
 			break;
-		case 11005:
+		case 98255:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1172,7 +1172,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 17;
 			c.sendMessage("You select Thieving");
 			break;
-		case 11006:
+		case 99000:
 			if (c.inLamp == false && c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1183,7 +1183,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 12;
 			c.sendMessage("You select Crafting");
 			break;
-		case 11007:
+		case 99001:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1194,7 +1194,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 20;
 			c.sendMessage("You select Runecrafting");
 			break;
-		case 47002:
+		case 99009:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1205,7 +1205,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 18;
 			c.sendMessage("You select Slayer");
 			break;
-		case 54090:
+		case 99010:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1216,7 +1216,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 19;
 			c.sendMessage("You select Farming");
 			break;
-		case 11008:
+		case 99002:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1227,7 +1227,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 14;
 			c.sendMessage("You select Mining");
 			break;
-		case 11009:
+		case 99003:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1238,7 +1238,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 13;
 			c.sendMessage("You select Smithing");
 			break;
-		case 11010:
+		case 99004:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1249,7 +1249,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 10;
 			c.sendMessage("You select Fishing");
 			break;
-		case 11011:
+		case 99005:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1260,7 +1260,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 7;
 			c.sendMessage("You select Cooking");
 			break;
-		case 11012:
+		case 99006:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1271,7 +1271,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 11;
 			c.sendMessage("You select Firemaking");
 			break;
-		case 11013:
+		case 99007:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1282,7 +1282,7 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 8;
 			c.sendMessage("You select Woodcutting");
 			break;
-		case 11014:
+		case 99008:
 			if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}
@@ -1293,7 +1293,29 @@ public class ClickingButtons implements PacketType {
 			c.antiqueItemResetSkillId = 9;
 			c.sendMessage("You select Fletching");
 			break;
-		case 11015:
+			case 99012:
+				if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
+					return;
+				}
+				if (c.inLamp == false) {
+					CheatEngineBlock.ExperienceAbuseAlert(c);
+					return;
+				}
+				c.antiqueItemResetSkillId = 21;
+				c.sendMessage("You select Hunter.");
+				break;
+			case 99011:
+				if (c.inLamp == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
+					return;
+				}
+				if (c.inLamp == false) {
+					CheatEngineBlock.ExperienceAbuseAlert(c);
+					return;
+				}
+				c.antiqueItemResetSkillId = 22;
+				c.sendMessage("You select Construction.");
+				break;
+		case 99013:
 			if (c.inLamp == false && Hespori.activeKronosSeed == false && System.currentTimeMillis() - c.clickDelay <= 2200) {
 				return;
 			}

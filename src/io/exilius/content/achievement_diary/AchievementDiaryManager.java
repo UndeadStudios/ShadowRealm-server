@@ -104,37 +104,37 @@ public final class AchievementDiaryManager {
 
 	public boolean clickButton(int buttonId) {
 		switch (buttonId) {
-			case 24601:
+			case 35601:
 				getVarrockDiary().display();
 				return true;
-			case 24617:
+			case 35617:
 				getArdougneDiary().display();
 				return true;
-			case 24633:
+			case 35633:
 				getDesertDiary().display();
 				return true;
-			case 24649:
+			case 35649:
 				getFaladorDiary().display();
 				return true;
-			case 24665:
+			case 35665:
 				getFremennikDiary().display();
 				return true;
-			case 24681:
+			case 35681:
 				getKandarinDiary().display();
 				return true;
-			case 24697:
+			case 35697:
 				getKaramjaDiary().display();
 				return true;
-			case 24713:
+			case 35713:
 				getLumbridgeDraynorDiary().display();
 				return true;
-			case 24729:
+			case 35729:
 				getMorytaniaDiary().display();
 				return true;
-			case 24745:
+			case 35745:
 				getWesternDiary().display();
 				return true;
-			case 24761:
+			case 35761:
 				getWildernessDiary().display();
 				return true;
 		}

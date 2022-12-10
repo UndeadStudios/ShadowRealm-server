@@ -88,12 +88,12 @@ public class HerbSack extends Pouch {
 	 * Checks the amount and of what herb you have stored in the sack
 	 */
 	public void check() {
-		int frame = 8149;
+		int frame = 26484;
 		int totalAmount = 0;
 		player.getPA().resetQuestInterface();
-		player.getPA().sendFrame126("@dre@                   Herb Sack", 8144);
+		player.getPA().sendFrame126("@dre@                   Herb Sack", 26659);
 		player.getPA().sendFrame126("", 8145);
-		player.getPA().sendFrame126("", 8148);
+		player.getPA().sendFrame126("", 26485);
 		for (int i = 0; i < 14; i++) {
 			int id = 0;
 			int amt = 0;
@@ -105,7 +105,7 @@ public class HerbSack extends Pouch {
 					amt = item.getAmount();
 				}
 				totalAmount += amt;
-				player.getPA().sendFrame126("@red@Total Amount: "+totalAmount+"/700", 8147);
+				player.getPA().sendFrame126("@red@Total Amount: "+totalAmount+"/700", 26484);
 				player.getPA().sendFrame126("@blu@x" + amt + " " + ItemAssistant.getItemName(id) + "", frame);
 				frame++;
 			}

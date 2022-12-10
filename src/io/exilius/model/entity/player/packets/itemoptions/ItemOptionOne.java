@@ -440,7 +440,7 @@ public class ItemOptionOne implements PacketType {
                   c.normalLamp = true;
                   c.antiqueLamp = false;
                   c.sendMessage("You rub the lamp...");
-                  c.getPA().showInterface(2808);
+                  c.getPA().showInterface(25330);
             	break;
 
             case 13148:
@@ -450,7 +450,7 @@ public class ItemOptionOne implements PacketType {
                     c.normalLamp = true;
                     c.antiqueLamp = false;
                     c.sendMessage("You have rubbed the skill reset lamp.");
-                    c.getPA().showInterface(2808);
+                    c.getPA().showInterface(25330);
                 }));
           	break;
             case 12789:
@@ -921,7 +921,7 @@ public class ItemOptionOne implements PacketType {
             c.normalLamp = true;
             c.antiqueLamp = false;
             c.sendMessage("You rub the lamp...");
-            c.getPA().showInterface(2808);
+            c.getPA().showInterface(25330);
         }
 
    }

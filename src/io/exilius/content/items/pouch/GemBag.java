@@ -100,14 +100,14 @@ public class GemBag extends Pouch {
 	 * Checks the amount and of what gem you have stored in the sack
 	 */
 	public void check() {
-		int frame = 8149;
+		int frame = 26484;
 		int totalAmount = 0;
 		player.getPA().resetQuestInterface();
-		player.getPA().sendFrame126("@dre@                   Gem Bag", 8144);
+		player.getPA().sendFrame126("@dre@                   Gem Bag", 26659);
 		player.getPA().sendFrame126("", 8145);
-		player.getPA().sendFrame126("", 8148);
+		player.getPA().sendFrame126("", 26485);
 		if (totalAmount == 0) {
-			player.getPA().sendFrame126("@red@EMPTY", 8147);
+			player.getPA().sendFrame126("@red@EMPTY", 26484);
 		}
 		for (int i = 0; i < 14; i++) {
 			int id = 0;
@@ -120,7 +120,7 @@ public class GemBag extends Pouch {
 					amt = item.getAmount();
 				}
 				totalAmount += amt;
-				player.getPA().sendFrame126("@red@Total Amount: "+totalAmount+"/600", 8147);
+				player.getPA().sendFrame126("@red@Total Amount: "+totalAmount+"/600", 26484);
 				player.getPA().sendFrame126("@blu@x" + amt + " " + ItemAssistant.getItemName(id) + "", frame);
 				frame++;
 			}

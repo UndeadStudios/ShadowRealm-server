@@ -110,7 +110,7 @@ public class PlayerAssistant {
 	}
 
     public void openQuestInterface() {
-        setScrollableMaxHeight(26483, 3500);
+        setScrollableMaxHeight(26483, 1500);
         resetScrollBar(26483);
         showInterface(26480);
     }
@@ -808,14 +808,8 @@ public class PlayerAssistant {
 
 	public void setSkillLevel(int skillNum, int currentLevel, int XP) {
 		if (c.getOutStream() != null && c != null) {
-			if (skillNum == 22) { 	// Client hunter id, it's 21 in server
-				return;
-			}
 
 			c.getOutStream().createFrame(134);
-			if(skillNum==21) { 		// Server hunter id
-				skillNum=22;		// Convert to client hunter id
-			}
 			c.getOutStream().writeByte(skillNum);
 			c.getOutStream().writeDWord_v1(XP);
 			c.getOutStream().writeByte(currentLevel);
@@ -3024,8 +3018,16 @@ public class PlayerAssistant {
 			break;
 
 			case 21:
+				sendFrame126("Congratulations, you just advanced a hunter level!", 25886);
+				sendFrame126("Your hunter level is now " + getLevelForXP(c.playerXP[skill]) + ".", 25887);
+				c.sendMessage("Congratulations, you just advanced a hunter level.");
+				sendChatboxInterface(25885);
+				break;
 		case 22:
-			c.sendMessage("Congratulations! You've just advanced a Hunter level.");
+			sendFrame126("Congratulations, you just advanced a Construction level!", 25892);
+			sendFrame126("Your Construction level is now " + getLevelForXP(c.playerXP[skill]) + ".", 25893);
+			c.sendMessage("Congratulations, you just advanced a Construction level.");
+			sendChatboxInterface(25891);
 			break;
 		}
 		if (c.totalLevel >= 2000) {

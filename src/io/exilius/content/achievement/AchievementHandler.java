@@ -22,7 +22,7 @@ public class AchievementHandler {
 
     public static final String COLOR = "074091";
 
-    private static final int START_BUTTON_ID = 34_901;
+    private static final int START_BUTTON_ID = 35_901;
     private static final int BUTTON_SEPARATION = 13;
 
     private static final int MAXIMUM_TIER_ACHIEVEMENTS = 100;

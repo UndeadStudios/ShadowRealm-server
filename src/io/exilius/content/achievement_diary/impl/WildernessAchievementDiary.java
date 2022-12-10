@@ -168,19 +168,19 @@ public final class WildernessAchievementDiary extends StatefulAchievementDiary<W
 	int frameIndex;
 	public final void display() {
 		Set<WildernessDiaryEntry> all = getAll();
-		int[] frames = { 8148, 8149, 8150, 8151, 8152, 8153, 8154, 8155, 8157, 8158, 8159, 8160, 8161, 8162, 8163,
-				8165, 8166, 8167, 8168, 8169, 8170, 8171, 8172, 8174, 8175, 8176, 8177, 8178, 8179, 8180, 8181,
-				8182, 8183, 8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192, 8193, 8194 };
+		int[] frames = { 26485, 26486, 26487, 26488, 26489, 26490, 26491, 26492, 26494, 26495, 26496, 26497, 26498, 26499, 26500,
+				26502, 26503, 26504, 26505, 26506, 26507, 26508, 26509, 26511, 26512, 26513, 26514, 26515, 26516, 26517,
+				26518, 26519, 26520, 26521, 26522, 26523, 26524, 26525, 26526, 26527, 26528, 26529, 26530 };
 
 		player.getPA().resetQuestInterface();
 		frameIndex = 0;
 		
-		player.getPA().sendFrame126("@dre@Wilderness Diary", 8144);
+		player.getPA().sendFrame126("@dre@Wilderness Diary", 26659);
 		player.getPA().sendFrame126("", 8145);
-		player.getPA().sendFrame126(hasCompleted("EASY") ? "@blu@<str=1>Easy</str>" : "@blu@Easy", 8147);
-		player.getPA().sendFrame126(hasCompleted("MEDIUM") ? "@blu@<str=1>Medium</str>" : "@blu@Medium", 8156);
-		player.getPA().sendFrame126(hasCompleted("HARD") ? "@blu@<str=1>Hard</str>" : "@blu@Hard", 8164);
-		player.getPA().sendFrame126(hasCompleted("ELITE") ? "@blu@<str=1>Elite</str>" : "@blu@Elite", 8173);
+		player.getPA().sendFrame126(hasCompleted("EASY") ? "@blu@<str=1>Easy</str>" : "@blu@Easy", 26484);
+		player.getPA().sendFrame126(hasCompleted("MEDIUM") ? "@blu@<str=1>Medium</str>" : "@blu@Medium", 26493);
+		player.getPA().sendFrame126(hasCompleted("HARD") ? "@blu@<str=1>Hard</str>" : "@blu@Hard", 26501);
+		player.getPA().sendFrame126(hasCompleted("ELITE") ? "@blu@<str=1>Elite</str>" : "@blu@Elite", 26510);
 		
 		all.forEach(entry -> {
 			String description = entry.getDescription();

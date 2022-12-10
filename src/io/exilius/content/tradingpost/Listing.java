@@ -541,7 +541,7 @@ public class Listing {
 		c.sendMessage(":resetpost:");
 		List<GameItem> result = new ArrayList<GameItem>();
 		List<Integer> idk = new ArrayList<Integer>();
-		int total = 0, skipped = 0, start = 36023;
+		int total = 0, skipped = 0, start = 44023;
 		/** Sort highest price **/
 		if (!loadRecent) {
 			sales.sort(Comparator.comparingInt(Sale::getPrice));
@@ -566,8 +566,8 @@ public class Listing {
 				break;
 			}
 		}
-		PlayerAssistant.sendItems(c, 36022, result, 250);
-		for(int i = start; i < 37023; i++) {
+		PlayerAssistant.sendItems(c, 44022, result, 250);
+		for(int i = start; i < 44023; i++) {
 			c.getPA().sendFrame126("", i);
 		}
 		c.saleResults = idk;
