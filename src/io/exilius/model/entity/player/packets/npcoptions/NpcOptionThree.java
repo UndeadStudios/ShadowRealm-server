@@ -38,6 +38,9 @@ public class NpcOptionThree {
 		}
 
 		switch (npcType) {
+			case 3101:
+				player.getShops().openShop(45);
+				break;
 //		case 6637:
 //            if (player.getItems().freeSlots() < 1) {
 //                player.sendMessage("Your inventory is full.");

@@ -4,6 +4,7 @@ import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.PlayerEmotes;
 import io.exilius.content.QuestTab;
+import io.exilius.content.Sawmill;
 import io.exilius.content.UimStorageChest;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.cheatprevention.CheatEngineBlock;
@@ -235,6 +236,7 @@ public class ClickingButtons implements PacketType {
 		DuelSession duelSession = null;
 		c.getFletching().select(actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
+		Sawmill.HandleBottons(c, actionButtonId);
 		//SplitbarkCrafting.craft(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
 		// int[] teleportButtons = { 4140, 4143, 4146, 4150, 6004, 6005, 29031,

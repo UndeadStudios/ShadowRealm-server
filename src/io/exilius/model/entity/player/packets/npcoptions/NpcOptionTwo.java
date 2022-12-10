@@ -2,6 +2,7 @@ package io.exilius.model.entity.player.packets.npcoptions;
 
 import io.exilius.Configuration;
 import io.exilius.Server;
+import io.exilius.content.Sawmill;
 import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.nightmare.NightmareActionHandler;
 import io.exilius.content.dailyrewards.DailyRewardsDialogue;
@@ -64,6 +65,10 @@ public class NpcOptionTwo {
 				} else {
 					player.sendMessage("This is being worked on. u can note items tho.");
 				}
+				break;
+			case 3101:
+				player.sawmill = true;
+				Sawmill.OpemSawMill(player);
 				break;
 		case Npcs.DONATOR_SHOP:
 			//player.getDonationRewards().openInterface();

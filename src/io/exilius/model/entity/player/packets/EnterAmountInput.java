@@ -12,6 +12,7 @@ import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.ContainerAction;
 import io.exilius.model.ContainerActionType;
+import io.exilius.model.Items;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.PacketType;
@@ -130,6 +131,90 @@ public class EnterAmountInput implements PacketType {
 		case 36022:
 			Listing.buyListing(c, c.xRemoveSlot, Xamount);
 			break;
+			case 97057:
+				if(c.sawmill) {
+					if (c.getItems().playerHasItem(995, Xamount*100)) {
+						if (c.getItems().playerHasItem(Items.LOGS, Xamount)) {
+							c.getItems().deleteItem2(995, Xamount*100);
+							c.getItems().deleteItem2(Items.LOGS, Xamount);
+							c.getItems().addItem(Items.PLANK, Xamount);
+							c.getPA().closeAllWindows();
+							c.sawmill = false;
+							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
+								Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
+							}
+							c.sendMessage("You make "+Xamount+" planks.");
+						} else {
+							c.sendMessage("You need "+Xamount+" logs to do this.");
+						}
+					} else {
+						c.sendMessage("You don't have enough coins.");
+					}
+				}
+				break;
+			case 97063:
+				if(c.sawmill) {
+					if (c.getItems().playerHasItem(995, Xamount*250)) {
+						if (c.getItems().playerHasItem(Items.OAK_LOGS, Xamount)) {
+							c.getItems().deleteItem2(995, Xamount*250);
+							c.getItems().deleteItem2(Items.OAK_LOGS, Xamount);
+							c.getItems().addItem(Items.OAK_PLANK, Xamount);
+							c.getPA().closeAllWindows();
+							c.sawmill = false;
+							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
+								Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
+							}
+							c.sendMessage("You make "+Xamount+" oak planks.");
+						} else {
+							c.sendMessage("You need "+Xamount+" oak logs to do this.");
+						}
+					} else {
+						c.sendMessage("You don't have enough coins.");
+					}
+				}
+				break;
+			case 97068:
+				if(c.sawmill) {
+					if (c.getItems().playerHasItem(995, Xamount*500)) {
+						if (c.getItems().playerHasItem(Items.TEAK_LOGS, Xamount)) {
+							c.getItems().deleteItem2(995, Xamount*500);
+							c.getItems().deleteItem2(Items.TEAK_LOGS, Xamount);
+							c.getItems().addItem(Items.TEAK_PLANK, Xamount);
+							c.getPA().closeAllWindows();
+							c.sawmill = false;
+							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
+								Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
+							}
+							c.sendMessage("You make "+Xamount+" teak planks.");
+						} else {
+							c.sendMessage("You need "+Xamount+" teak logs to do this.");
+						}
+					} else {
+						c.sendMessage("You don't have enough coins.");
+					}
+				}
+				break;
+			case 97073:
+				if(c.sawmill) {
+					if (c.getItems().playerHasItem(995, Xamount*1500)) {
+						if (c.getItems().playerHasItem(Items.MAHOGANY_LOGS, Xamount)) {
+							c.getItems().deleteItem2(995, Xamount*1500);
+							c.getItems().deleteItem2(Items.MAHOGANY_LOGS, Xamount);
+							c.getItems().addItem(Items.MAHOGANY_PLANK, Xamount);
+							c.getPA().closeAllWindows();
+							c.sawmill = false;
+							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
+								Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
+							}
+							c.sendMessage("You make "+Xamount+" mahogany planks.");
+						} else {
+							c.sendMessage("You need "+Xamount+" mahogany logs to do this.");
+						}
+					} else {
+						c.sendMessage("You don't have enough coins.");
+					}
+				}
+				break;
 		case 191072:
 			if(c.isListing) {
 				if (c.debugMessage)

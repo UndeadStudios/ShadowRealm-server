@@ -271,6 +271,7 @@ public class Player extends Entity {
     public boolean hasclaimedpurphat;
     public boolean hasclaimedwhiphat;
     public boolean doinguri = false;
+    public boolean sawmill = false;
     private int bofacharges;
 
     public void saveItemsForMinigame() {

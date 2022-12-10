@@ -59,7 +59,7 @@ public class PacketHandler {
 	}
 
 	public static final int[] PACKET_SIZES = {
-			0, 0, 0, 1, -1, 3, 0, 0, 4, 0, //0 - 9
+			0, 0, 0, 1, -1, 3, 4, 0, 4, 0, //0 - 9
 			0, 0, 0, 0, 8, 0, 6, 2, 2, 0, //10 - 19
 			0, 2, 0, 6, 0, 12, 0, 0, 0, 0, //20 - 29
 			0, 0, 0, 0, 0, 10, 4, 0, 0, 2, //30 - 39
@@ -73,7 +73,7 @@ public class PacketHandler {
 			0, 0, 0, 0, 0, 0, 0, 6, 0, 0, //110 - 119
 			1, 0, 6, 0, 16, 0, -1, -1, 2, 6, //120 - 129
 			0, 4, 8, 8, 8, 6, 0, 2, 2, 2, //130 - 139
-			6, 10, -1, 0, 0, 6, 0, 0, 0, 0, //140 - 149
+			6, 10, -1, 0, 0, 6, 6, 0, 0, 0, //140 - 149
 			0, 0, 1, 2, 0, 2, 6, 0, 0, 0, //150 - 159
 			0, 0, 0, 0, -1, -1, 0, 0, 0, 0, //160 - 169
 			0, 0, 0, 0, 0, 0, 0, 2, 0, 0, //170 - 179
@@ -127,6 +127,8 @@ public class PacketHandler {
 		packetId[252] = co;
 		packetId[70] = co;
 		packetId[228] = co;
+		packetId[146] = new ObjectExamine();
+        packetId[6] = new NpcExamine();
 		packetId[57] = new ItemOnNpc();
 		ClickNPC cn = new ClickNPC();
 		packetId[72] = cn;

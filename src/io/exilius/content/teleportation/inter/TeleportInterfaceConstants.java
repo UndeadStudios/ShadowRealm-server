@@ -15,7 +15,7 @@ public class TeleportInterfaceConstants {
     public static final List<Integer> TELEPORT_MESSAGE_ID_LIST;
 
     private static final int TELEPORT_LIST_LENGTH = 40;
-    private static final int TELEPORT_LIST_START_ID = 44_745;
+    private static final int TELEPORT_LIST_START_ID = 46045;
     private static final int TELEPORT_LIST_ID_INTERVAL = 4;
 
     /**
@@ -25,7 +25,7 @@ public class TeleportInterfaceConstants {
 
     static {
         List<Integer> buttonList = Lists.newArrayList();
-        for (int buttonId = 44_742; buttonId <= (44_742 + (TELEPORT_LIST_COUNT * 4)); buttonId += 4)
+        for (int buttonId = 46_042; buttonId <= (46_141 + (TELEPORT_LIST_COUNT * 4)); buttonId += 4)
             buttonList.add(buttonId);
         TELEPORT_BUTTON_ID_LIST = Collections.unmodifiableList(Lists.newArrayList(buttonList));
 
@@ -36,16 +36,16 @@ public class TeleportInterfaceConstants {
         TELEPORT_MESSAGE_ID_LIST = Collections.unmodifiableList(Lists.newArrayList(messageIdList));
     }
 
-    public static final int[] TAB_SELECTION_BUTTON_IDS = {39_706, 39_711, 39_716, 39_721, 39_726, 39_731, 39_736};
+    public static final int[] TAB_SELECTION_BUTTON_IDS = {41006, 41011, 41016, 41021, 41026, 41031, 41036};
 
-    public static final int INTERFACE_ID = 39_700;
-    public static final int INTERFACE_SCROLLABLE_ID = 44_741;
+    public static final int INTERFACE_ID = 41000;
+    public static final int INTERFACE_SCROLLABLE_ID = 46_041;
 
     private static final TeleportContainer MONSTERS = new TeleportContainer(Lists.newArrayList(
             new TeleportButton("Catacombs", plr -> {
                 if (plr.getPA().canTeleport()) {
                     plr.getPA().movePlayer(1664, 10050);
-                    plr.getPA().showInterface(33900);
+                    plr.getPA().showInterface(41000);
                     plr.sendMessage("@cr10@ Use @pur@::level2@bla@ to be sent to @pur@next catacombs level.");
                 }
             }),
