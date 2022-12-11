@@ -2110,7 +2110,7 @@ public class Player extends Entity {
          */
         getQuestTab().updateInformationTab();
         getPA().sendFrame126("Combat Level: " + combatLevel + "", 3983);
-        getPA().sendFrame126("Total\nlevel: "+totalLevel, 25544);
+        getPA().sendFrame126("Total level: \n"+totalLevel, 25544);
        // getPA().sendFrame126(totalLevel + "", 3984);
         getPA().resetFollow();
         getPA().clearClanChat();

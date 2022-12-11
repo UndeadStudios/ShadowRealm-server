@@ -528,7 +528,7 @@ public class ClickingButtons implements PacketType {
 			break;
 
 		case 23132:
-			c.setSidebarInterface(1, 13917); // Skilltab > 3917
+			c.setSidebarInterface(1, 25402); // Skilltab > 3917
 			//c.setSidebarInterface(2, 638); // 638
 			c.setSidebarInterface(2, QuestTab.INTERFACE_ID);
 			c.setSidebarInterface(3, 3213);
@@ -1070,6 +1070,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 0;
+			c.getPA().sendConfig(261, 1);
 			c.sendMessage("You select Attack");
 			break;
 		case 98247:
@@ -1081,6 +1082,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 2;
+			c.getPA().sendConfig(261, 2);
 			c.sendMessage("You select Strength");
 			break;
 		case 98248:
@@ -1092,6 +1094,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 4;
+			c.getPA().sendConfig(261, 3);
 			c.sendMessage("You select Ranged");
 			break;
 		case 98249:
@@ -1103,6 +1106,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 6;
+			c.getPA().sendConfig(261, 4);
 			c.sendMessage("You select Magic");
 			break;
 		case 98250:
@@ -1114,6 +1118,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 1;
+			c.getPA().sendConfig(261, 5);
 			c.sendMessage("You select Defence");
 			break;
 		case 99037:
@@ -1128,6 +1133,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 3;
+			c.getPA().sendConfig(261, 6);
 			c.sendMessage("You select Hitpoints");
 			break;
 		case 98252:
@@ -1139,6 +1145,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 5;
+			c.getPA().sendConfig(261, 7);
 			c.sendMessage("You select Prayer");
 			break;
 		case 98253:
@@ -1150,6 +1157,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 16;
+			c.getPA().sendConfig(261, 8);
 			c.sendMessage("You select Agility");
 			break;
 		case 98254:
@@ -1161,6 +1169,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 15;
+			c.getPA().sendConfig(261, 9);
 			c.sendMessage("You select Herblore");
 			break;
 		case 98255:
@@ -1172,6 +1181,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 17;
+			c.getPA().sendConfig(261, 10);
 			c.sendMessage("You select Thieving");
 			break;
 		case 99000:
@@ -1183,6 +1193,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 12;
+			c.getPA().sendConfig(261, 11);
 			c.sendMessage("You select Crafting");
 			break;
 		case 99001:
@@ -1194,6 +1205,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 20;
+			c.getPA().sendConfig(261, 12);
 			c.sendMessage("You select Runecrafting");
 			break;
 		case 99009:
@@ -1205,6 +1217,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 18;
+			c.getPA().sendConfig(261, 20);
 			c.sendMessage("You select Slayer");
 			break;
 		case 99010:
@@ -1216,6 +1229,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 19;
+			c.getPA().sendConfig(261, 21);
 			c.sendMessage("You select Farming");
 			break;
 		case 99002:
@@ -1227,6 +1241,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 14;
+			c.getPA().sendConfig(261, 13);
 			c.sendMessage("You select Mining");
 			break;
 		case 99003:
@@ -1238,6 +1253,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 13;
+			c.getPA().sendConfig(261, 14);
 			c.sendMessage("You select Smithing");
 			break;
 		case 99004:
@@ -1249,6 +1265,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 10;
+			c.getPA().sendConfig(261, 15);
 			c.sendMessage("You select Fishing");
 			break;
 		case 99005:
@@ -1260,6 +1277,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 7;
+			c.getPA().sendConfig(261, 16);
 			c.sendMessage("You select Cooking");
 			break;
 		case 99006:
@@ -1271,6 +1289,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 11;
+			c.getPA().sendConfig(261, 17);
 			c.sendMessage("You select Firemaking");
 			break;
 		case 99007:
@@ -1282,6 +1301,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 8;
+			c.getPA().sendConfig(261, 18);
 			c.sendMessage("You select Woodcutting");
 			break;
 		case 99008:
@@ -1293,6 +1313,7 @@ public class ClickingButtons implements PacketType {
 				return;
 			}
 			c.antiqueItemResetSkillId = 9;
+			c.getPA().sendConfig(261, 19);
 			c.sendMessage("You select Fletching");
 			break;
 			case 99012:
@@ -1304,6 +1325,7 @@ public class ClickingButtons implements PacketType {
 					return;
 				}
 				c.antiqueItemResetSkillId = 21;
+				c.getPA().sendConfig(261, 23);
 				c.sendMessage("You select Hunter.");
 				break;
 			case 99011:
@@ -1335,6 +1357,7 @@ public class ClickingButtons implements PacketType {
 				c.getPA().refreshSkill(c.antiqueItemResetSkillId);
 				c.getPA().setSkillLevel(c.antiqueItemResetSkillId, c.playerLevel[c.antiqueItemResetSkillId], c.playerXP[c.antiqueItemResetSkillId]);
 				c.getItems().deleteItem(13148, 1);
+				c.getPA().sendConfig(261, 0);
 				c.sendMessage("@red@You have reset your skill of choice.");
 				c.getPA().closeAllWindows();
 				return;
@@ -1518,7 +1541,7 @@ public class ClickingButtons implements PacketType {
 		case 53149:
 			Cooking.cookItem(c, c.cookingItem, 28, c.cookingObject);
 			break;
-			case 33206:
+			case 99182:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.attackSkill = true;
@@ -1527,7 +1550,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 0;
 				}
 				break;
-			case 33209:
+			case 99185:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.strengthSkill = true;
@@ -1536,7 +1559,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 1;
 				}
 				break;
-			case 33212:
+			case 99188:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.defenceSkill = true;
@@ -1545,7 +1568,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 2;
 				}
 				break;
-			case 33215:
+			case 99191:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.rangeSkill = true;
@@ -1554,7 +1577,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 3;
 				}
 				break;
-			case 33218:
+			case 99194:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.prayerSkill = true;
@@ -1563,7 +1586,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 4;
 				}
 				break;
-			case 33221:
+			case 99201:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.mageSkill = true;
@@ -1572,7 +1595,7 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 5;
 				}
 				break;
-			case 33207:
+			case 99183:
 				if (c.getPosition().inClanWarsSafe()) {
 					c.getPA().sendEnterAmount(0);
 					c.healthSkill = true;
@@ -1581,63 +1604,63 @@ public class ClickingButtons implements PacketType {
 					c.getSI().selected = 7;
 				}
 				break;
-			case 33224: // runecrafting
+			case 99204: // runecrafting
 				c.getSI().runecraftingComplex(1);
 				c.getSI().selected = 6;
 				break;
-			case 33210: // agility
+			case 99186: // agility
 				c.getSI().agilityComplex(1);
 				c.getSI().selected = 8;
 				break;
-			case 33213: // herblore
+			case 99189: // herblore
 				c.getSI().herbloreComplex(1);
 				c.getSI().selected = 9;
 				break;
-			case 33216: // theiving
+			case 99192: // theiving
 				c.getSI().thievingComplex(1);
 				c.getSI().selected = 10;
 				break;
-			case 33219: // crafting
+			case 99195: // crafting
 				c.getSI().craftingComplex(1);
 				c.getSI().selected = 11;
 				break;
-			case 33222: // fletching
+			case 99202: // fletching
 				c.getSI().fletchingComplex(1);
 				c.getSI().selected = 12;
 				break;
-			case 47130:// slayer
+			case 99205:// slayer
 				c.getSI().slayerComplex(1);
 				c.getSI().selected = 13;
 				break;
-			case 33208:// mining
+			case 99184:// mining
 				c.getSI().miningComplex(1);
 				c.getSI().selected = 14;
 				break;
-			case 33211: // smithing
+			case 99187: // smithing
 				c.getSI().smithingComplex(1);
 				c.getSI().selected = 15;
 				break;
-			case 33214: // fishing
+			case 99190: // fishing
 				c.getSI().fishingComplex(1);
 				c.getSI().selected = 16;
 				break;
-			case 33217: // cooking
+			case 99193: // cooking
 				c.getSI().cookingComplex(1);
 				c.getSI().selected = 17;
 				break;
-			case 33220: // firemaking
+			case 99196: // firemaking
 				c.getSI().firemakingComplex(1);
 				c.getSI().selected = 18;
 				break;
-			case 33223: // woodcut
+			case 99203: // woodcut
 				c.getSI().woodcuttingComplex(1);
 				c.getSI().selected = 19;
 				break;
-			case 54104: // farming
+			case 99206: // farming
 				c.getSI().farmingComplex(1);
 				c.getSI().selected = 20;
 				break;
-			case 73141: // farming
+			case 99207: // farming
 				c.getSI().hunterComplex(1);
 				c.getSI().selected = 21;
 				break;
