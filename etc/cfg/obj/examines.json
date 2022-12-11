@@ -4320,6 +4320,10 @@
     "examine": "A large double door."
   },
   {
+    "id": 1747,
+    "examine": "A climbing wall made from skulls."
+  },
+  {
     "id": 1749,
     "examine": "Looks a bit tatty..."
   },
@@ -6669,11 +6673,11 @@
   },
   {
     "id": 2614,
-    "examine": "Spooky!"
+    "examine": " with a lit fuse."
   },
   {
     "id": 2615,
-    "examine": "Looks comfortable..."
+    "examine": "Spooky!"
   },
   {
     "id": 2616,
@@ -7533,7 +7537,7 @@
   },
   {
     "id": 2902,
-    "examine": "Stoney!"
+    "examine": "Something's off about these rocks..."
   },
   {
     "id": 2903,
@@ -7545,15 +7549,15 @@
   },
   {
     "id": 2905,
-    "examine": "An old crate for storage."
+    "examine": " perhaps placed in this recess to hide it from prying eyes."
   },
   {
     "id": 2906,
-    "examine": "Useful for putting things on."
+    "examine": "A makeshift table made from various bits of wood."
   },
   {
     "id": 2907,
-    "examine": "I guess I could sleep in it if I was really tired."
+    "examine": "You could sleep here... if you really had to."
   },
   {
     "id": 2908,
@@ -7565,11 +7569,11 @@
   },
   {
     "id": 2910,
-    "examine": "Rickety bamboo tables that are lashed together to make a desk."
+    "examine": "A rickety old desk made of bamboo."
   },
   {
     "id": 2911,
-    "examine": "Bamboo storage!"
+    "examine": "A bamboo bookcase. It doesn't house many books..."
   },
   {
     "id": 2912,
@@ -7625,7 +7629,7 @@
   },
   {
     "id": 2926,
-    "examine": "A high wall made up of rocks with sharp edges."
+    "examine": "A high wall made up of rocks with sharp edges. It looks like it may have been placed here deliberately."
   },
   {
     "id": 2927,
@@ -7641,7 +7645,7 @@
   },
   {
     "id": 2930,
-    "examine": " not sure how this opens."
+    "examine": " strangely-constructed doorway. The doorknob is a glass orb."
   },
   {
     "id": 2931,
@@ -7649,11 +7653,11 @@
   },
   {
     "id": 2932,
-    "examine": " I wonder what's inside."
+    "examine": "A locked barrel. What might be inside?"
   },
   {
     "id": 2934,
-    "examine": "A large scaffold platform most likely used for lifting and lowering heavy items."
+    "examine": "A large scaffold platform most likely used for lifting and lowering heavy items. It's useless without a rope."
   },
   {
     "id": 2935,
@@ -7685,27 +7689,27 @@
   },
   {
     "id": 2943,
-    "examine": "Disgusting filthy quagmire that oozes from the ground."
+    "examine": "A disgusting filthy quagmire oozing up from the ground. Yuck!"
   },
   {
     "id": 2944,
-    "examine": "Found near the water's edge."
+    "examine": "These tall reeds have a long tube for a stem. Interesting..."
   },
   {
     "id": 2945,
-    "examine": " it has a mystical aura."
+    "examine": "A baby Yommi tree. It already has a mystical aura about it."
   },
   {
     "id": 2946,
-    "examine": " it has a mystical aura."
+    "examine": "An adolescent Yommi tree with a mystical aura."
   },
   {
     "id": 2947,
-    "examine": " you'll need a tough axe to remove this."
+    "examine": "A dead Yommi tree sapling. You'll need a tough axe to remove this."
   },
   {
     "id": 2948,
-    "examine": " it won't get much taller than this."
+    "examine": "A fully grown Yommi tree. It won't get much taller than this."
   },
   {
     "id": 2949,
@@ -7713,11 +7717,11 @@
   },
   {
     "id": 2950,
-    "examine": " perhaps you should trim those branches?"
+    "examine": "A felled adult Yommi tree. Perhaps you should trim those branches?"
   },
   {
     "id": 2951,
-    "examine": " it was left too long in the damp jungle."
+    "examine": "The damp jungle air has rotted this poor Yommi tree."
   },
   {
     "id": 2952,
@@ -7725,11 +7729,11 @@
   },
   {
     "id": 2953,
-    "examine": " it was left too long in the damp jungle air."
+    "examine": "A rotten Yommi tree log. It was left too long in the damp jungle air."
   },
   {
     "id": 2954,
-    "examine": "A beautifully crafted totem pole carved from the trunk of the sacred Yommi tree."
+    "examine": "A beautifully-crafted totem pole carved from the trunk of the sacred Yommi tree."
   },
   {
     "id": 2955,
@@ -7777,19 +7781,19 @@
   },
   {
     "id": 2966,
-    "examine": "A hot place for forging things in."
+    "examine": "This ancient furnace is partially molten and buried by piles of debris. There's a small compartment inside with oddly-shaped sections..."
   },
   {
     "id": 2969,
-    "examine": "It looks like a strangely shaped depression in the rock."
+    "examine": "A strange depression in the rock."
   },
   {
     "id": 2970,
-    "examine": "This recess has a glowing heart shaped crystal in it."
+    "examine": " heart-shaped crystal in it."
   },
   {
     "id": 2971,
-    "examine": "This looks like some sort of shimmering surface."
+    "examine": "A shimmering force field. You'll need to find a way to pass through it into the next cave."
   },
   {
     "id": 2972,
@@ -7996,54 +8000,6 @@
     "examine": "These obviously mean keep out!"
   },
   {
-    "id": 3077,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3078,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3079,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3080,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3081,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3082,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3083,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3084,
-    "examine": "ancient architecture"
-  },
-  {
-    "id": 3085,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3086,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3087,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
-    "id": 3088,
-    "examine": "Lean against the wall to get a better view!"
-  },
-  {
     "id": 3108,
     "examine": "Flags marking the entrance to the arena."
   },
@@ -8104,10 +8060,6 @@
     "examine": "This may be worth searching."
   },
   {
-    "id": 3192,
-    "examine": "You can see the last 50 fights on here."
-  },
-  {
     "id": 3194,
     "examine": "Use for quick access to your bank."
   },
@@ -8133,7 +8085,7 @@
   },
   {
     "id": 3203,
-    "examine": "Access to the duel arena."
+    "examine": "Exit from the arena."
   },
   {
     "id": 3205,
@@ -25460,10 +25412,6 @@
     "examine": "The clerks and tellers will serve you here."
   },
   {
-    "id": 10068,
-    "examine": "The priests use this to transport victims to the place of sacrifice."
-  },
-  {
     "id": 10074,
     "examine": "A picture of it raining - 'Left at my feet rests the soul of my brother. Vengeance will fall for the deeds of another'."
   },
@@ -39089,11 +39037,7 @@
   },
   {
     "id": 15483,
-    "examine": "A climbing wall made from skulls."
-  },
-  {
-    "id": 15486,
-    "examine": "A climbing wall made from skulls."
+    "examine": "The way in."
   },
   {
     "id": 15487,
@@ -62609,7 +62553,7 @@
   },
   {
     "id": 26572,
-    "examine": "It almost looks like some supernatural force has blighted this plant."
+    "examine": "It looks like some supernatural force has blighted this plant."
   },
   {
     "id": 26575,
@@ -62793,7 +62737,7 @@
   },
   {
     "id": 26705,
-    "examine": "It almost looks like some supernatural force has blighted this plant."
+    "examine": "It looks like some supernatural force has blighted this plant."
   },
   {
     "id": 26707,
@@ -71756,6 +71700,38 @@
     "examine": "There's a tuft of fur next to the driftwood. I wonder where that came from..."
   },
   {
+    "id": 30524,
+    "examine": "Tracks of an unknown creature."
+  },
+  {
+    "id": 30525,
+    "examine": "Tracks of an unknown creature."
+  },
+  {
+    "id": 30526,
+    "examine": "Faded tracks of an unknown creature."
+  },
+  {
+    "id": 30527,
+    "examine": "Faded tracks of an unknown creature."
+  },
+  {
+    "id": 30528,
+    "examine": "Tracks of an unknown creature."
+  },
+  {
+    "id": 30529,
+    "examine": "Tracks of an unknown creature."
+  },
+  {
+    "id": 30530,
+    "examine": "Faded tracks of an unknown creature."
+  },
+  {
+    "id": 30531,
+    "examine": "Faded tracks of an unknown creature."
+  },
+  {
     "id": 30532,
     "examine": "Something has dug a tunnel here. I wonder if they're home?"
   },
@@ -74453,7 +74429,7 @@
   },
   {
     "id": 31817,
-    "examine": "Shiny armour! Shame he's dead."
+    "examine": "Shiny armour! Shame she's dead."
   },
   {
     "id": 31818,
@@ -74461,7 +74437,7 @@
   },
   {
     "id": 31819,
-    "examine": "I don't think he'll be getting back up."
+    "examine": "I don't think she'll be getting back up."
   },
   {
     "id": 31822,
@@ -81905,7 +81881,7 @@
   },
   {
     "id": 34962,
-    "examine": "Found near the water's edge."
+    "examine": "These tall reeds look so pretty by the water."
   },
   {
     "id": 34963,
@@ -92809,7 +92785,7 @@
   },
   {
     "id": 41696,
-    "examine": "A wooden stool with a cat sleeping peacefully. You don't want to disturb him sleeping."
+    "examine": "What could be inside?"
   },
   {
     "id": 41697,
@@ -97129,7 +97105,7 @@
   },
   {
     "id": 44010,
-    "examine": "Leads inside."
+    "examine": "Enter if you dare..."
   },
   {
     "id": 44013,
@@ -97600,10 +97576,6 @@
     "examine": "An ancient obelisk."
   },
   {
-    "id": 44547,
-    "examine": "test"
-  },
-  {
     "id": 44548,
     "examine": "44548"
   },
@@ -97833,86 +97805,2182 @@
   },
   {
     "id": 44786,
-    "examine": "These flowers project an aura of life."
+    "examine": "What could be inside?"
   },
   {
     "id": 44787,
-    "examine": "These flowers project an aura of life."
+    "examine": "It's been opened."
   },
   {
     "id": 44788,
-    "examine": "These flowers project an aura of healing."
+    "examine": "It's been opened."
   },
   {
     "id": 44789,
-    "examine": "These flowers project an aura of healing."
+    "examine": "It's been opened."
   },
   {
     "id": 44790,
-    "examine": "These flowers project an aura of healing."
+    "examine": "It's empty."
   },
   {
     "id": 44791,
-    "examine": "These flowers project an aura of sunlight."
+    "examine": "It's empty."
   },
   {
     "id": 44792,
-    "examine": "These flowers project an aura of sunlight."
+    "examine": "It's empty."
   },
   {
     "id": 44793,
-    "examine": "These flowers project an aura of nature."
+    "examine": "I wonder what's inside?"
   },
   {
     "id": 44794,
-    "examine": "These flowers project an aura of nature."
+    "examine": "I like that pillar. That is a nice pillar."
   },
   {
     "id": 44795,
-    "examine": "These flowers project an aura of nature."
+    "examine": "I like that pillar. That is a nice pillar."
   },
   {
     "id": 44796,
-    "examine": "These flowers project an aura of serenity."
+    "examine": "I like that pillar. That is a nice pillar."
   },
   {
     "id": 44797,
-    "examine": "These flowers project an aura of serenity."
+    "examine": "I like that pillar. That is a nice pillar."
   },
   {
     "id": 44798,
-    "examine": "These flowers project an aura of spirit."
+    "examine": "I like that pillar. That is a nice pillar."
   },
   {
     "id": 44799,
-    "examine": "These flowers project an aura of spirit."
+    "examine": "It looks slightly damaged."
   },
   {
     "id": 44800,
-    "examine": "They don't have any colour."
+    "examine": "It looks slightly damaged."
   },
   {
     "id": 44801,
-    "examine": "They don't have any colour."
+    "examine": "It looks very damaged."
   },
   {
     "id": 44802,
-    "examine": "They don't have any colour."
+    "examine": "It looks very damaged."
   },
   {
-    "id": 44823,
+    "id": 44804,
+    "examine": "A flag displaying the colours of the arena."
+  },
+  {
+    "id": 44805,
     "examine": "These flowers project an aura of life."
   },
   {
-    "id": 44824,
+    "id": 44806,
+    "examine": "These flowers project an aura of life."
+  },
+  {
+    "id": 44807,
+    "examine": "These flowers project an aura of life."
+  },
+  {
+    "id": 44808,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44809,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44810,
+    "examine": "These flowers project an aura of healing."
+  },
+  {
+    "id": 44811,
     "examine": "These flowers project an aura of sunlight."
   },
   {
-    "id": 44825,
+    "id": 44812,
+    "examine": "These flowers project an aura of sunlight."
+  },
+  {
+    "id": 44813,
+    "examine": "These flowers project an aura of sunlight."
+  },
+  {
+    "id": 44814,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44815,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44816,
+    "examine": "These flowers project an aura of nature."
+  },
+  {
+    "id": 44817,
     "examine": "These flowers project an aura of serenity."
   },
   {
-    "id": 44826,
+    "id": 44818,
+    "examine": "These flowers project an aura of serenity."
+  },
+  {
+    "id": 44819,
+    "examine": "These flowers project an aura of serenity."
+  },
+  {
+    "id": 44820,
     "examine": "These flowers project an aura of spirit."
+  },
+  {
+    "id": 44821,
+    "examine": "These flowers project an aura of spirit."
+  },
+  {
+    "id": 44822,
+    "examine": "These flowers project an aura of spirit."
+  },
+  {
+    "id": 44823,
+    "examine": "It looks very damaged."
+  },
+  {
+    "id": 44824,
+    "examine": "A tall obelisk."
+  },
+  {
+    "id": 44825,
+    "examine": "A place for the dead."
+  },
+  {
+    "id": 44826,
+    "examine": "A place for the dead."
+  },
+  {
+    "id": 44827,
+    "examine": "A standard displaying the colours of the arena."
+  },
+  {
+    "id": 44828,
+    "examine": "A standard displaying the colours of the arena."
+  },
+  {
+    "id": 44829,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44830,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44831,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44832,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44833,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44834,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44835,
+    "examine": "A statue of an arena champion."
+  },
+  {
+    "id": 44836,
+    "examine": "A gold-plated battle axe."
+  },
+  {
+    "id": 44854,
+    "examine": "A wooden crate."
+  },
+  {
+    "id": 44855,
+    "examine": "Some wooden crates."
+  },
+  {
+    "id": 44856,
+    "examine": "It goes nowhere."
+  },
+  {
+    "id": 44911,
+    "examine": "Used for fashioning metal items."
+  },
+  {
+    "id": 44912,
+    "examine": "Used for sharpening blades."
+  },
+  {
+    "id": 44913,
+    "examine": "Is that a rat?"
+  },
+  {
+    "id": 44914,
+    "examine": "The curtain is closed."
+  },
+  {
+    "id": 44915,
+    "examine": "The curtain is open."
+  },
+  {
+    "id": 44916,
+    "examine": "This gate is closed."
+  },
+  {
+    "id": 44917,
+    "examine": "This gate is open."
+  },
+  {
+    "id": 44918,
+    "examine": " find a fight!"
+  },
+  {
+    "id": 44919,
+    "examine": " find a 1v1 fight!"
+  },
+  {
+    "id": 44920,
+    "examine": "The way is shut."
+  },
+  {
+    "id": 44921,
+    "examine": "The way is shut."
+  },
+  {
+    "id": 44922,
+    "examine": " it's open. Better leave it that way."
+  },
+  {
+    "id": 44923,
+    "examine": " it's open. Better leave it that way."
+  },
+  {
+    "id": 44924,
+    "examine": " where fighters wait after a fight has been arranged."
+  },
+  {
+    "id": 44925,
+    "examine": " where fighters wait after a fight has been arranged."
+  },
+  {
+    "id": 44926,
+    "examine": "For abandoning an arranged fight."
+  },
+  {
+    "id": 44927,
+    "examine": "For abandoning an arranged fight."
+  },
+  {
+    "id": 44928,
+    "examine": "Get yourself ready for your fight!"
+  },
+  {
+    "id": 44929,
+    "examine": "Customise your load-out in advance."
+  },
+  {
+    "id": 44930,
+    "examine": "Records how many fights you've been in."
+  },
+  {
+    "id": 44931,
+    "examine": "The exit from the arena."
+  },
+  {
+    "id": 44932,
+    "examine": "Pass through here when you're ready."
+  },
+  {
+    "id": 44933,
+    "examine": "Used for observing battles up close."
+  },
+  {
+    "id": 44934,
+    "examine": "It's been opened."
+  },
+  {
+    "id": 44935,
+    "examine": "Loot!"
+  },
+  {
+    "id": 44936,
+    "examine": "Loot!"
+  },
+  {
+    "id": 44937,
+    "examine": "Loot!"
+  },
+  {
+    "id": 44938,
+    "examine": "A magical barrier."
+  },
+  {
+    "id": 44939,
+    "examine": "A magical barrier."
+  },
+  {
+    "id": 44940,
+    "examine": "I wonder what they say?"
+  },
+  {
+    "id": 44941,
+    "examine": "I wonder what they say?"
+  },
+  {
+    "id": 44942,
+    "examine": "Details how you did."
+  },
+  {
+    "id": 44953,
+    "examine": "Some rubble."
+  },
+  {
+    "id": 44954,
+    "examine": "Some rubble."
+  },
+  {
+    "id": 44984,
+    "examine": "Would be rude not to search them."
+  },
+  {
+    "id": 44985,
+    "examine": "Full of money!"
+  },
+  {
+    "id": 44986,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44987,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44988,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44989,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44990,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44991,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44992,
+    "examine": "Ooh shiny!"
+  },
+  {
+    "id": 44993,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 44994,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 44995,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45024,
+    "examine": "What's hiding through here?"
+  },
+  {
+    "id": 45107,
+    "examine": "toa_wall_support03"
+  },
+  {
+    "id": 45108,
+    "examine": "toa_wall_support04"
+  },
+  {
+    "id": 45109,
+    "examine": "toa_wall_support05"
+  },
+  {
+    "id": 45110,
+    "examine": "toa_wall_support06"
+  },
+  {
+    "id": 45111,
+    "examine": "toa_wall_support07"
+  },
+  {
+    "id": 45119,
+    "examine": "What's hiding through here?"
+  },
+  {
+    "id": 45128,
+    "examine": "The way out."
+  },
+  {
+    "id": 45129,
+    "examine": "The way out."
+  },
+  {
+    "id": 45130,
+    "examine": "The way out."
+  },
+  {
+    "id": 45131,
+    "examine": "The way forward."
+  },
+  {
+    "id": 45135,
+    "examine": "Dare you pass through?"
+  },
+  {
+    "id": 45136,
+    "examine": "For passing through."
+  },
+  {
+    "id": 45137,
+    "examine": "Should be safe to use."
+  },
+  {
+    "id": 45138,
+    "examine": "Should be safe to use."
+  },
+  {
+    "id": 45139,
+    "examine": "Somebody has left behind some notes..."
+  },
+  {
+    "id": 45140,
+    "examine": "Somebody has left behind some notes..."
+  },
+  {
+    "id": 45144,
+    "examine": "The way out."
+  },
+  {
+    "id": 45183,
+    "examine": "A mural of Scabaras and Kephri."
+  },
+  {
+    "id": 45203,
+    "examine": "An ancient pillar."
+  },
+  {
+    "id": 45204,
+    "examine": "Somebody stole the vase?"
+  },
+  {
+    "id": 45205,
+    "examine": "A statue of Scabaras."
+  },
+  {
+    "id": 45206,
+    "examine": "A statue of Scabaras."
+  },
+  {
+    "id": 45210,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45211,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45212,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45213,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45214,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45215,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45216,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45217,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45218,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45219,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45220,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45221,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 45244,
+    "examine": "Fire goes here."
+  },
+  {
+    "id": 45245,
+    "examine": "Fire goes here."
+  },
+  {
+    "id": 45246,
+    "examine": "Fire goes here."
+  },
+  {
+    "id": 45247,
+    "examine": "Fire goes here."
+  },
+  {
+    "id": 45248,
+    "examine": "Fire goes here."
+  },
+  {
+    "id": 45249,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45250,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45251,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45252,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45253,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45254,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45255,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45256,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45257,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45258,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45259,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45260,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45261,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 45262,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45263,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45264,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45265,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45266,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45267,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45268,
+    "examine": "For putting things in?"
+  },
+  {
+    "id": 45269,
+    "examine": "Great storage!"
+  },
+  {
+    "id": 45270,
+    "examine": "For putting things in!"
+  },
+  {
+    "id": 45271,
+    "examine": "Pots - the new crates!"
+  },
+  {
+    "id": 45272,
+    "examine": "They sure do like their pots!"
+  },
+  {
+    "id": 45273,
+    "examine": "WOW! Get your pots from Peter Potter! Sale now on!"
+  },
+  {
+    "id": 45274,
+    "examine": " they are pots."
+  },
+  {
+    "id": 45275,
+    "examine": " being pots."
+  },
+  {
+    "id": 45276,
+    "examine": "That's a nice pot. I like that pot. The one next to it? Not so much."
+  },
+  {
+    "id": 45277,
+    "examine": "Who'd have thought to find pots in a place like this?"
+  },
+  {
+    "id": 45278,
+    "examine": "Would you look at that... Pots!"
+  },
+  {
+    "id": 45279,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45280,
+    "examine": "Would you look at that..."
+  },
+  {
+    "id": 45281,
+    "examine": "Would you look at that..."
+  },
+  {
+    "id": 45282,
+    "examine": "Would you look at that..."
+  },
+  {
+    "id": 45283,
+    "examine": "Would you look at that..."
+  },
+  {
+    "id": 45284,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45285,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45286,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45287,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45288,
+    "examine": "Just the one pot."
+  },
+  {
+    "id": 45289,
+    "examine": "Poor pot."
+  },
+  {
+    "id": 45290,
+    "examine": "Poor pot."
+  },
+  {
+    "id": 45291,
+    "examine": "Poor pot."
+  },
+  {
+    "id": 45292,
+    "examine": "Oh no."
+  },
+  {
+    "id": 45293,
+    "examine": "Poor pot."
+  },
+  {
+    "id": 45294,
+    "examine": "Oh no."
+  },
+  {
+    "id": 45295,
+    "examine": "Oh dear."
+  },
+  {
+    "id": 45296,
+    "examine": "This place needs a clean."
+  },
+  {
+    "id": 45297,
+    "examine": "Poor pot."
+  },
+  {
+    "id": 45320,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45321,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45322,
+    "examine": "RIP."
+  },
+  {
+    "id": 45323,
+    "examine": "F."
+  },
+  {
+    "id": 45324,
+    "examine": "Poor guy."
+  },
+  {
+    "id": 45328,
+    "examine": "RIP."
+  },
+  {
+    "id": 45329,
+    "examine": "F."
+  },
+  {
+    "id": 45330,
+    "examine": "Poor guy."
+  },
+  {
+    "id": 45334,
+    "examine": "The flames fill the room with a wicked odour."
+  },
+  {
+    "id": 45335,
+    "examine": "A magical barrier."
+  },
+  {
+    "id": 45336,
+    "examine": "A magical barrier."
+  },
+  {
+    "id": 45337,
+    "examine": "The way forward."
+  },
+  {
+    "id": 45338,
+    "examine": "Push me."
+  },
+  {
+    "id": 45339,
+    "examine": "It's covered in ancient symbols..."
+  },
+  {
+    "id": 45340,
+    "examine": "I can probably depress this by standing on it."
+  },
+  {
+    "id": 45341,
+    "examine": "I can probably depress this by standing on it."
+  },
+  {
+    "id": 45342,
+    "examine": "I can probably depress this by standing on it."
+  },
+  {
+    "id": 45343,
+    "examine": "Leads to the other lane."
+  },
+  {
+    "id": 45344,
+    "examine": "I can probably depress this by standing on it."
+  },
+  {
+    "id": 45345,
+    "examine": "A tile."
+  },
+  {
+    "id": 45346,
+    "examine": "A tile."
+  },
+  {
+    "id": 45347,
+    "examine": "A tile."
+  },
+  {
+    "id": 45348,
+    "examine": "A tile."
+  },
+  {
+    "id": 45349,
+    "examine": "A tile."
+  },
+  {
+    "id": 45350,
+    "examine": "A tile."
+  },
+  {
+    "id": 45351,
+    "examine": "A tile."
+  },
+  {
+    "id": 45352,
+    "examine": "A tile."
+  },
+  {
+    "id": 45353,
+    "examine": "A tile."
+  },
+  {
+    "id": 45355,
+    "examine": "Looks very pushable."
+  },
+  {
+    "id": 45356,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45357,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45358,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45359,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45360,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45361,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45362,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45363,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45364,
+    "examine": "It looks like it should light up..."
+  },
+  {
+    "id": 45365,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45366,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45367,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45368,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45369,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45370,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45371,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45372,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45373,
+    "examine": "Too hot to stand on."
+  },
+  {
+    "id": 45374,
+    "examine": "There's nothing there."
+  },
+  {
+    "id": 45396,
+    "examine": "Looks sturdy enough."
+  },
+  {
+    "id": 45397,
+    "examine": "The way forward."
+  },
+  {
+    "id": 45398,
+    "examine": "A surprising flow of clear water."
+  },
+  {
+    "id": 45399,
+    "examine": "No water is running."
+  },
+  {
+    "id": 45403,
+    "examine": "A magical acid-producing orb."
+  },
+  {
+    "id": 45404,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45405,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45406,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45407,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45408,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45409,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45414,
+    "examine": "A innocuous looking statue."
+  },
+  {
+    "id": 45415,
+    "examine": "A innocuous looking statue."
+  },
+  {
+    "id": 45416,
+    "examine": "Ouch!"
+  },
+  {
+    "id": 45421,
+    "examine": "A bit overgrown."
+  },
+  {
+    "id": 45453,
+    "examine": "The way out."
+  },
+  {
+    "id": 45455,
+    "examine": "I can see myself!"
+  },
+  {
+    "id": 45456,
+    "examine": "Seems to be fixed in place."
+  },
+  {
+    "id": 45457,
+    "examine": "Could certainly do with a bit of a clean."
+  },
+  {
+    "id": 45458,
+    "examine": "Likes getting in the way."
+  },
+  {
+    "id": 45459,
+    "examine": "Likes getting in the way."
+  },
+  {
+    "id": 45460,
+    "examine": "Likes getting in the way."
+  },
+  {
+    "id": 45461,
+    "examine": "Likes getting in the way."
+  },
+  {
+    "id": 45462,
+    "examine": "A good swing or two from a pickaxe would probably bring it down."
+  },
+  {
+    "id": 45464,
+    "examine": "A good swing or two from a pickaxe would probably bring it down."
+  },
+  {
+    "id": 45468,
+    "examine": "A statue of Het."
+  },
+  {
+    "id": 45469,
+    "examine": "The statue of Het is holding out a bronze pickaxe."
+  },
+  {
+    "id": 45470,
+    "examine": "The statue of Het is holding out a bronze pickaxe."
+  },
+  {
+    "id": 45471,
+    "examine": "The statue of Het is holding out an iron pickaxe."
+  },
+  {
+    "id": 45472,
+    "examine": "The statue of Het is holding out a steel pickaxe."
+  },
+  {
+    "id": 45473,
+    "examine": "The statue of Het is holding out a black pickaxe."
+  },
+  {
+    "id": 45474,
+    "examine": "The statue of Het is holding out a mithril pickaxe."
+  },
+  {
+    "id": 45475,
+    "examine": "The statue of Het is holding out an adamant pickaxe."
+  },
+  {
+    "id": 45476,
+    "examine": "The statue of Het is holding out a rune pickaxe."
+  },
+  {
+    "id": 45477,
+    "examine": "The statue of Het is holding out a gilded rune pickaxe."
+  },
+  {
+    "id": 45478,
+    "examine": "The statue of Het is holding out a dragon pickaxe."
+  },
+  {
+    "id": 45479,
+    "examine": "The statue of Het is holding out a dragon pickaxe."
+  },
+  {
+    "id": 45480,
+    "examine": "The statue of Het is holding out a dragon pickaxe."
+  },
+  {
+    "id": 45481,
+    "examine": "The statue of Het is holding out a 3rd age pickaxe."
+  },
+  {
+    "id": 45482,
+    "examine": "The statue of Het is holding out an infernal pickaxe."
+  },
+  {
+    "id": 45483,
+    "examine": "The statue of Het is holding out a crystal pickaxe."
+  },
+  {
+    "id": 45484,
+    "examine": "The statue of Het is holding out a trailblazer pickaxe."
+  },
+  {
+    "id": 45485,
+    "examine": "A statue holding a shield."
+  },
+  {
+    "id": 45486,
+    "examine": "It seems to be casting some sort of energy beam!"
+  },
+  {
+    "id": 45487,
+    "examine": "There's nothing there."
+  },
+  {
+    "id": 45489,
+    "examine": "The remains of a once powerful seal."
+  },
+  {
+    "id": 45491,
+    "examine": "The remains of a once powerful seal."
+  },
+  {
+    "id": 45492,
+    "examine": "Holds the roof up."
+  },
+  {
+    "id": 45493,
+    "examine": "A pool of venomous liquid."
+  },
+  {
+    "id": 45494,
+    "examine": "Holds the roof up... hopefully."
+  },
+  {
+    "id": 45495,
+    "examine": "Holds the roof up... hopefully."
+  },
+  {
+    "id": 45496,
+    "examine": "Looks fancy."
+  },
+  {
+    "id": 45497,
+    "examine": "Some hammers."
+  },
+  {
+    "id": 45498,
+    "examine": "Some potions."
+  },
+  {
+    "id": 45500,
+    "examine": "The way forward."
+  },
+  {
+    "id": 45503,
+    "examine": "Ooh. It glows."
+  },
+  {
+    "id": 45504,
+    "examine": "Hot? Warm."
+  },
+  {
+    "id": 45505,
+    "examine": "Use with caution..."
+  },
+  {
+    "id": 45506,
+    "examine": "Use with caution..."
+  },
+  {
+    "id": 45507,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45509,
+    "examine": "Looks like I can climb up these rocks."
+  },
+  {
+    "id": 45510,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45511,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45512,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45513,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45514,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45515,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45516,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45517,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45518,
+    "examine": "It wasn't bubbling a moment ago..."
+  },
+  {
+    "id": 45526,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45527,
+    "examine": "It's floatin'."
+  },
+  {
+    "id": 45528,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45529,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 45530,
+    "examine": "Stops the roof from falling on my head."
+  },
+  {
+    "id": 45531,
+    "examine": "Uh oh."
+  },
+  {
+    "id": 45532,
+    "examine": "Never smile at a..."
+  },
+  {
+    "id": 45533,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45534,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45535,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45537,
+    "examine": "I hear rustling from these bushes."
+  },
+  {
+    "id": 45540,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45541,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45542,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45543,
+    "examine": "The way out."
+  },
+  {
+    "id": 45578,
+    "examine": "Ooh. It glows."
+  },
+  {
+    "id": 45579,
+    "examine": "Use with caution..."
+  },
+  {
+    "id": 45628,
+    "examine": "Better not touch these."
+  },
+  {
+    "id": 45629,
+    "examine": "Better not touch these."
+  },
+  {
+    "id": 45630,
+    "examine": "Better not touch these."
+  },
+  {
+    "id": 45631,
+    "examine": "Someone had quite a journey."
+  },
+  {
+    "id": 45639,
+    "examine": "Floaty."
+  },
+  {
+    "id": 45640,
+    "examine": "Floaty."
+  },
+  {
+    "id": 45641,
+    "examine": "Floaty."
+  },
+  {
+    "id": 45642,
+    "examine": "Floaty."
+  },
+  {
+    "id": 45726,
+    "examine": "Doom."
+  },
+  {
+    "id": 45727,
+    "examine": "Doom."
+  },
+  {
+    "id": 45728,
+    "examine": "Doom."
+  },
+  {
+    "id": 45729,
+    "examine": "Doom."
+  },
+  {
+    "id": 45730,
+    "examine": "Doom."
+  },
+  {
+    "id": 45731,
+    "examine": "Doom."
+  },
+  {
+    "id": 45732,
+    "examine": "Doom."
+  },
+  {
+    "id": 45733,
+    "examine": "Doom."
+  },
+  {
+    "id": 45734,
+    "examine": "Doom."
+  },
+  {
+    "id": 45735,
+    "examine": "Doom."
+  },
+  {
+    "id": 45736,
+    "examine": "Doom."
+  },
+  {
+    "id": 45737,
+    "examine": "Doom."
+  },
+  {
+    "id": 45738,
+    "examine": "Doom."
+  },
+  {
+    "id": 45752,
+    "examine": "A fancy name for a coffin."
+  },
+  {
+    "id": 45753,
+    "examine": "Looks like energy is pouring out."
+  },
+  {
+    "id": 45754,
+    "examine": "Use with caution..."
+  },
+  {
+    "id": 45755,
+    "examine": "Looks slippery."
+  },
+  {
+    "id": 45756,
+    "examine": "Doubles as a toilet."
+  },
+  {
+    "id": 45762,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45763,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45764,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45765,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45766,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45767,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45768,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45769,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45770,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45771,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45772,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45773,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45774,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45775,
+    "examine": "Oh dear."
+  },
+  {
+    "id": 45776,
+    "examine": "Don't slip!"
+  },
+  {
+    "id": 45844,
+    "examine": "The way out."
+  },
+  {
+    "id": 45851,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45852,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45853,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45854,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45855,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45856,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 45866,
+    "examine": "Use with caution..."
+  },
+  {
+    "id": 45867,
+    "examine": "A mural of Het and Akkha."
+  },
+  {
+    "id": 46044,
+    "examine": "Looks to have been brought here fairly recently."
+  },
+  {
+    "id": 46045,
+    "examine": "A warrior's weapons."
+  },
+  {
+    "id": 46046,
+    "examine": "A big pile of sand."
+  },
+  {
+    "id": 46047,
+    "examine": "A big pile of sand."
+  },
+  {
+    "id": 46055,
+    "examine": "The way out."
+  },
+  {
+    "id": 46068,
+    "examine": "Maybe I can form a party here."
+  },
+  {
+    "id": 46069,
+    "examine": "Maybe I can form a party here."
+  },
+  {
+    "id": 46070,
+    "examine": "Maybe I can form a party here."
+  },
+  {
+    "id": 46071,
+    "examine": "Check your performance here."
+  },
+  {
+    "id": 46072,
+    "examine": "Check your performance here."
+  },
+  {
+    "id": 46073,
+    "examine": "Displays information on invocations."
+  },
+  {
+    "id": 46074,
+    "examine": "Displays information on invocations."
+  },
+  {
+    "id": 46075,
+    "examine": "A well equipped camel."
+  },
+  {
+    "id": 46076,
+    "examine": "A well equipped camel."
+  },
+  {
+    "id": 46077,
+    "examine": "Full of animal feed."
+  },
+  {
+    "id": 46078,
+    "examine": "For keeping your items safe."
+  },
+  {
+    "id": 46079,
+    "examine": "For keeping your items safe."
+  },
+  {
+    "id": 46080,
+    "examine": "A mysterious chest."
+  },
+  {
+    "id": 46081,
+    "examine": "A mysterious chest."
+  },
+  {
+    "id": 46082,
+    "examine": "Contains spoils from the tombs."
+  },
+  {
+    "id": 46083,
+    "examine": "A fake door... I wonder if it will open?"
+  },
+  {
+    "id": 46084,
+    "examine": "A fake door... I wonder if it will open?"
+  },
+  {
+    "id": 46085,
+    "examine": "A wooden crate."
+  },
+  {
+    "id": 46086,
+    "examine": "A wooden crate."
+  },
+  {
+    "id": 46087,
+    "examine": "The way out."
+  },
+  {
+    "id": 46088,
+    "examine": "The way out."
+  },
+  {
+    "id": 46089,
+    "examine": "Leads down below..."
+  },
+  {
+    "id": 46090,
+    "examine": "Leads down below..."
+  },
+  {
+    "id": 46104,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46105,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46106,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46107,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46108,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46109,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46110,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46111,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46112,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46113,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46114,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46115,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46116,
+    "examine": "A bit broken."
+  },
+  {
+    "id": 46117,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46118,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46119,
+    "examine": "For putting things in."
+  },
+  {
+    "id": 46120,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46121,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46122,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46123,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46124,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46125,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46126,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46127,
+    "examine": "Sand fills the gaps between the cracks in the stone."
+  },
+  {
+    "id": 46130,
+    "examine": "A wooden crate."
+  },
+  {
+    "id": 46131,
+    "examine": "Some wooden crates."
+  },
+  {
+    "id": 46132,
+    "examine": "Might be worth a pretty penny."
+  },
+  {
+    "id": 46133,
+    "examine": "Must resist the desire to steal it."
+  },
+  {
+    "id": 46134,
+    "examine": "Might be worth a pretty penny."
+  },
+  {
+    "id": 46135,
+    "examine": "Someone had a smashing time trying to move these."
+  },
+  {
+    "id": 46136,
+    "examine": "Would probably have a smashing time trying to move these."
+  },
+  {
+    "id": 46137,
+    "examine": "Must resist the desire to steal it."
+  },
+  {
+    "id": 46138,
+    "examine": "Some wooden crates."
+  },
+  {
+    "id": 46148,
+    "examine": "46148"
+  },
+  {
+    "id": 46150,
+    "examine": "A large piece of rubble."
+  },
+  {
+    "id": 46151,
+    "examine": "A large piece of rubble."
+  },
+  {
+    "id": 46152,
+    "examine": "A large piece of rubble."
+  },
+  {
+    "id": 46153,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 46154,
+    "examine": "A magical barrier."
+  },
+  {
+    "id": 46155,
+    "examine": "Walk the Path of Scabaras?"
+  },
+  {
+    "id": 46156,
+    "examine": "Another path has been started."
+  },
+  {
+    "id": 46157,
+    "examine": "The Path of Scabaras has been completed."
+  },
+  {
+    "id": 46158,
+    "examine": "Walk the Path of Apmeken?"
+  },
+  {
+    "id": 46159,
+    "examine": "Another path has been started."
+  },
+  {
+    "id": 46160,
+    "examine": "The Path of Apmeken has been completed."
+  },
+  {
+    "id": 46161,
+    "examine": "Walk the Path of Crondis?"
+  },
+  {
+    "id": 46162,
+    "examine": "Another path has been started."
+  },
+  {
+    "id": 46163,
+    "examine": "The Path of Crondis has been completed."
+  },
+  {
+    "id": 46164,
+    "examine": "Walk the Path of Het?"
+  },
+  {
+    "id": 46165,
+    "examine": "Another path has been started."
+  },
+  {
+    "id": 46166,
+    "examine": "The Path of Het has been completed."
+  },
+  {
+    "id": 46167,
+    "examine": "Leads down below..."
+  },
+  {
+    "id": 46168,
+    "examine": "Leads down below..."
+  },
+  {
+    "id": 46170,
+    "examine": "Looks old."
+  },
+  {
+    "id": 46171,
+    "examine": "Looks old."
+  },
+  {
+    "id": 46172,
+    "examine": "Looks old."
+  },
+  {
+    "id": 46180,
+    "examine": "So that's where the light is coming from!"
+  },
+  {
+    "id": 46181,
+    "examine": "What's inside?"
+  },
+  {
+    "id": 46182,
+    "examine": "What's inside?"
+  },
+  {
+    "id": 46183,
+    "examine": "What's inside?"
+  },
+  {
+    "id": 46184,
+    "examine": "What's inside?"
+  },
+  {
+    "id": 46198,
+    "examine": "Creepy."
+  },
+  {
+    "id": 46199,
+    "examine": "Creepy."
+  },
+  {
+    "id": 46226,
+    "examine": "A mounted cape worn by the most experienced players."
+  },
+  {
+    "id": 46227,
+    "examine": "A strange tablet with a hole in the middle."
+  },
+  {
+    "id": 46228,
+    "examine": "A strange tablet with a hole in the middle."
+  },
+  {
+    "id": 46229,
+    "examine": "I wonder what's inside?"
+  },
+  {
+    "id": 46230,
+    "examine": "I wonder what's inside?"
+  },
+  {
+    "id": 46231,
+    "examine": " the well equipped camel."
+  },
+  {
+    "id": 46233,
+    "examine": "What a mess!"
+  },
+  {
+    "id": 46237,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 46238,
+    "examine": "A strange tablet with a hole in the middle."
+  },
+  {
+    "id": 46239,
+    "examine": "A strange tablet with a hole in the middle."
+  },
+  {
+    "id": 46240,
+    "examine": "A nice board to take notice of."
+  },
+  {
+    "id": 46241,
+    "examine": "The priests use this to transport victims to the place of sacrifice."
+  },
+  {
+    "id": 46242,
+    "examine": "The priests use this to transport victims to the place of sacrifice."
+  },
+  {
+    "id": 46243,
+    "examine": "Anything-goes combat in here!"
+  },
+  {
+    "id": 46244,
+    "examine": "Anything-goes combat in here!"
+  },
+  {
+    "id": 46245,
+    "examine": "Anything-goes combat in here!"
+  },
+  {
+    "id": 46246,
+    "examine": "Anything-goes combat in here!"
+  },
+  {
+    "id": 46247,
+    "examine": "Lots of equipment for practicing combat."
+  },
+  {
+    "id": 46248,
+    "examine": "Place party drop items in here."
+  },
+  {
+    "id": 46249,
+    "examine": "Place party drop items in here."
+  },
+  {
+    "id": 46250,
+    "examine": "Pull me."
+  },
+  {
+    "id": 46253,
+    "examine": "The door is closed."
+  },
+  {
+    "id": 46254,
+    "examine": "The door is open."
+  },
+  {
+    "id": 46255,
+    "examine": "Needs filling with treats."
+  },
+  {
+    "id": 46256,
+    "examine": "Starting to be filled with treats."
+  },
+  {
+    "id": 46257,
+    "examine": "Quite full of treats."
+  },
+  {
+    "id": 46258,
+    "examine": "Almost full of treats."
+  },
+  {
+    "id": 46259,
+    "examine": "Overflowing with treats!"
+  },
+  {
+    "id": 46260,
+    "examine": "Ahhh!"
+  },
+  {
+    "id": 46261,
+    "examine": "A large pumpkin filled with treats!"
+  },
+  {
+    "id": 46262,
+    "examine": "Ouch!"
+  },
+  {
+    "id": 46263,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 46264,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 46265,
+    "examine": "Creepy!"
+  },
+  {
+    "id": 46266,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46267,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46268,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46269,
+    "examine": "Boo!"
+  },
+  {
+    "id": 46270,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46271,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46272,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46273,
+    "examine": "Ahhh!"
+  },
+  {
+    "id": 46274,
+    "examine": "Spine-chilling!"
+  },
+  {
+    "id": 46275,
+    "examine": "It growls!"
+  },
+  {
+    "id": 46276,
+    "examine": "Spooky!"
+  },
+  {
+    "id": 46277,
+    "examine": "Scary!"
+  },
+  {
+    "id": 46278,
+    "examine": "You can't look away from the eyes."
+  },
+  {
+    "id": 46279,
+    "examine": "The voices suddenly stop."
+  },
+  {
+    "id": 46280,
+    "examine": "Subtle grumbling..."
+  },
+  {
+    "id": 46281,
+    "examine": "Filled to the brim!"
+  },
+  {
+    "id": 46282,
+    "examine": "bat..."
+  },
+  {
+    "id": 46283,
+    "examine": "bat..."
+  },
+  {
+    "id": 46285,
+    "examine": "Sticky."
+  },
+  {
+    "id": 46286,
+    "examine": "Sticky."
+  },
+  {
+    "id": 46287,
+    "examine": "Sticky."
+  },
+  {
+    "id": 46288,
+    "examine": "Sticky."
+  },
+  {
+    "id": 46289,
+    "examine": "Are those real?"
+  },
+  {
+    "id": 46290,
+    "examine": "Are those real?"
+  },
+  {
+    "id": 46291,
+    "examine": "Webby."
+  },
+  {
+    "id": 46292,
+    "examine": "Webby."
+  },
+  {
+    "id": 46293,
+    "examine": "They seem hungry."
+  },
+  {
+    "id": 46294,
+    "examine": "They seem hungry."
+  },
+  {
+    "id": 46295,
+    "examine": "Webby."
+  },
+  {
+    "id": 46296,
+    "examine": "Webby."
+  },
+  {
+    "id": 46297,
+    "examine": "Those pumpkins look crunchy."
+  },
+  {
+    "id": 46298,
+    "examine": "A relatively spooky decoration."
+  },
+  {
+    "id": 46299,
+    "examine": "A creepy wall-beast guarding some candy!"
+  },
+  {
+    "id": 46300,
+    "examine": "A haunting scarecrow packed with rancid straw."
+  },
+  {
+    "id": 46301,
+    "examine": "A haunting scarecrow packed with rancid straw."
+  },
+  {
+    "id": 46307,
+    "examine": "An unfortunate outcome of a nasty trick."
+  },
+  {
+    "id": 46308,
+    "examine": "The undead have risen for snacks."
+  },
+  {
+    "id": 46309,
+    "examine": "Hay! Come take a seat..."
+  },
+  {
+    "id": 46310,
+    "examine": "A bundle of straw..."
+  },
+  {
+    "id": 46311,
+    "examine": " a stack of hay!"
+  },
+  {
+    "id": 46314,
+    "examine": "Nicely decorated."
+  },
+  {
+    "id": 46315,
+    "examine": "Nicely decorated."
+  },
+  {
+    "id": 46316,
+    "examine": "Nicely decorated."
+  },
+  {
+    "id": 46317,
+    "examine": "Nicely decorated."
+  },
+  {
+    "id": 46320,
+    "examine": "A holy warrior. A dead one."
+  },
+  {
+    "id": 46321,
+    "examine": "I don't think he'll be getting back up."
+  },
+  {
+    "id": 46322,
+    "examine": "I don't think she'll be getting back up."
   }
 ]
