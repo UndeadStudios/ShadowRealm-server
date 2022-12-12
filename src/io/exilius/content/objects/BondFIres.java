@@ -7,7 +7,9 @@ import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.definitions.AnimationLength;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.items.ItemCacheDefinition;
+import io.exilius.util.Misc;
 
 public class BondFIres {
     public enum logData {
@@ -75,6 +77,15 @@ public class BondFIres {
                                 c.startAnimation(733);
                                 c.getItems().deleteItem(g.getLogID(), 1);
                                 c.getPA().addSkillXPMultiplied(g.getXP(), Skill.FIREMAKING.getId(), true);
+                                if (Misc.random(2000) == 1) {
+                                    if (c.getItems().getItemCount(20693, false) > 0 || c.petSummonId == 20693) {
+                                        return;
+                                    }
+                                    int rights = c.getRights().getPrimary().getValue() - 1;
+                                    c.getItems().addItemUnderAnyCircumstance(20693, 1);
+                                    PlayerHandler.executeGlobalMessage("[@red@PET@bla@] @cr20@<col=255> " + c.getDisplayNameFormatted() + "</col> received a Phoenix pet.");
+                                    c.getCollectionLog().handleDrop(c, 5, 20693, 1);
+                                }
                                 //c.sendMessage("You fill "+c.getItems().getItemName(g.getLogID())+" from the "+ ObjectDef.getObjectDef(objectID).name+".");
                             }else {
                                 container.stop();
