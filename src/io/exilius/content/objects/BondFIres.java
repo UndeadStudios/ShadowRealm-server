@@ -52,8 +52,8 @@ public class BondFIres {
     public static void BurnLog(final Player c, int itemId, int objectID) {
         for(final logData g : logData.values()) {
             if(c.getItems().playerHasItem(g.getLogID(), 1)) {
-                if (player.playerLevel[11] < g.getLevel()) {
-                    player.sendMessage("You need a firemaking level of at least " + g.getLevel() + " to burn the " + ItemCacheDefinition.forID(itemId).getName().toLowerCase() + ".");
+                if (c.playerLevel[11] < g.getLevel()) {
+                    c.sendMessage("You need a firemaking level of at least " + g.getLevel() + " to burn the " + ItemCacheDefinition.forID(itemId).getName().toLowerCase() + ".");
                     return;
                 }
                 if(itemId == g.getLogID()) {
