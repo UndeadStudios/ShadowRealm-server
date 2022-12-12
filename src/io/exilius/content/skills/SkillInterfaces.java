@@ -1,6 +1,7 @@
 package io.exilius.content.skills;
 
 import io.exilius.content.skills.herblore.PotionData.FinishedPotions;
+import io.exilius.model.Items;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
 
@@ -71,6 +72,8 @@ public class SkillInterfaces {
 			farmingComplex(screen);
 		else if (selected == 21)
 			hunterComplex(screen);
+		else if(selected == 22)
+			ConstructionComplex(screen);
 	}
 
 	/**
@@ -84,6 +87,9 @@ public class SkillInterfaces {
 	 */
 	private void optionTab(String title, String currentTab, String op1, String op2, String op3, String op4, String op5, String op6, String op7, String op8, String op9, String op10,
 			String op11, String op12, String op13) {
+		int[] interfaceChilds = {8800, 8844, 8813, 8825, 8828, 8838, 8841, 8850, 8860, 8863, 15294, 15304, 15307};
+		for (int i : interfaceChilds)
+			c.getPA().sendInterfaceHidden(0, i);
 		c.getPA().sendFrame126(title, 8716);
 		c.getPA().sendFrame126(currentTab, 8849);
 		c.getPA().sendFrame126(op1, 8846);
@@ -100,6 +106,32 @@ public class SkillInterfaces {
 		c.getPA().sendFrame126(op12, 15306);
 		c.getPA().sendFrame126(op13, 15309);
 		c.getPA().showInterface(8714);
+		if (op2 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[1]);
+		if (op3 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[2]);
+		if (op4 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[3]);
+		if (op5 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[4]);
+		if (op6 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[5]);
+		if (op7 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[6]);
+		if (op8 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[7]);
+		if (op9 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[8]);
+		if (op10 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[9]);
+		if (op11 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[10]);
+		if (op12 == "")
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[11]);
+		if (op13 == ""){
+			c.getPA().sendInterfaceHidden(1, interfaceChilds[12]);
+
+		}
 	}
 
 	/**
@@ -2290,7 +2322,38 @@ public class SkillInterfaces {
 			optionTab("Woodcutting", "Milestones", "Trees", "Hatchets", "Canoes", "Milestones", "", "", "", "", "", "", "", "", "");
 		}
 	}
+	public void ConstructionComplex(int screen) {
+		if (screen == 1) {
+			clearMenu();
+			menuLine("1", "Garden", Items.GARDEN, 0);
+			menuLine("1", "Parlour", Items.PARLOUR, 1);
+			menuLine("5", "Kitchen", Items.KITCHEN, 2);
+			menuLine("10", "Dining room", Items.DINING_ROOM, 3);
+			menuLine("15", "Workshop", Items.WORKSHOP, 4);
+			menuLine("20", "Bedroom", Items.BEDROOM, 5);
+			menuLine("25", "Hall (skill trophies)", Items.HALL, 6);
+			menuLine("27", "League Hall", Items.LEAGUE_HALL, 7);
+			menuLine("30", "Games room", Items.GAMES_ROOM, 8);
+			menuLine("32", "Combat room", Items.COMBAT_ROOM, 9);
+			menuLine("35", "Hall (quest trophies)", Items.HALL_3, 10);
+			menuLine("37", "Menagenie", Items.MENAGERIE, 11);
+			menuLine("40", "Study", Items.STUDY, 12);
+			menuLine("42", "Costume Room", Items.COSTUME_ROOM, 13);
+			menuLine("45", "Chapel", Items.CHAPEL, 14);
+			menuLine("50", "Portal chamber", Items.PORTAL_CHAMBER, 15);
+			menuLine("55", "Formal Garden", Items.FORMAL_GARDEN, 16);
+			menuLine("60", "Throne room", Items.THRONE_ROOM, 17);
+			menuLine("65", "Oubliette", Items.OUBLIETTE, 18);
+			menuLine("65", "Superior garden", Items.SUPERIOR_GARDEN, 19);
+			menuLine("70", "Dungeon", Items.DUNGEON_CORRIDOR, 20);
+			menuLine("72", "Portal nexus", Items.PORTAL_NEXUS, 21);
+			menuLine("75", "Treasure room", Items.TREASURE_ROOM, 22);
+			optionTab("Construction", "Rooms", "Rooms", "Skills", "Surfaces",
+					"Decorative", "Trophies", "Games", "Garden", "Dungeon",
+					"Chapel", "Raids", "Other", "Servants", "House Size");
+		}
 
+	}
 	/*
 	 * Skill ID: 20
 	 * 

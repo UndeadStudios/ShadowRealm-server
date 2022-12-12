@@ -1664,7 +1664,10 @@ public class ClickingButtons implements PacketType {
 				c.getSI().hunterComplex(1);
 				c.getSI().selected = 21;
 				break;
-
+			case 99208: // farming
+				c.getSI().ConstructionComplex(1);
+				c.getSI().selected = 22;
+				break;
 		case 34142: // tab 1
 			c.getSI().menuCompilation(1);
 			break;
