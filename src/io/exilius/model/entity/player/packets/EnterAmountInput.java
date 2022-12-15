@@ -7,6 +7,7 @@ import io.exilius.content.LootValue;
 import io.exilius.content.combat.melee.CombatPrayer;
 import io.exilius.content.items.UseItem;
 import io.exilius.content.lootbag.LootingBag;
+import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.TabletCreation;
 import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.tradingpost.Listing;
@@ -139,6 +140,7 @@ public class EnterAmountInput implements PacketType {
 							c.getItems().deleteItem2(Items.LOGS, Xamount);
 							c.getItems().addItem(Items.PLANK, Xamount);
 							c.getPA().closeAllWindows();
+							c.getPA().addSkillXPMultiplied(25* Xamount, Skill.CONSTRUCTION.getId(), true);
 							c.sawmill = false;
 							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
 								Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
@@ -159,6 +161,7 @@ public class EnterAmountInput implements PacketType {
 							c.getItems().deleteItem2(995, Xamount*250);
 							c.getItems().deleteItem2(Items.OAK_LOGS, Xamount);
 							c.getItems().addItem(Items.OAK_PLANK, Xamount);
+							c.getPA().addSkillXPMultiplied(25* Xamount, Skill.CONSTRUCTION.getId(), true);
 							c.getPA().closeAllWindows();
 							c.sawmill = false;
 							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -180,6 +183,7 @@ public class EnterAmountInput implements PacketType {
 							c.getItems().deleteItem2(995, Xamount*500);
 							c.getItems().deleteItem2(Items.TEAK_LOGS, Xamount);
 							c.getItems().addItem(Items.TEAK_PLANK, Xamount);
+							c.getPA().addSkillXPMultiplied(25* Xamount, Skill.CONSTRUCTION.getId(), true);
 							c.getPA().closeAllWindows();
 							c.sawmill = false;
 							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -201,6 +205,7 @@ public class EnterAmountInput implements PacketType {
 							c.getItems().deleteItem2(995, Xamount*1500);
 							c.getItems().deleteItem2(Items.MAHOGANY_LOGS, Xamount);
 							c.getItems().addItem(Items.MAHOGANY_PLANK, Xamount);
+							c.getPA().addSkillXPMultiplied(25* Xamount, Skill.CONSTRUCTION.getId(), true);
 							c.getPA().closeAllWindows();
 							c.sawmill = false;
 							if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {

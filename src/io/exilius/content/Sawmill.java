@@ -1,6 +1,7 @@
 package io.exilius.content;
 
 import io.exilius.Server;
+import io.exilius.content.skills.Skill;
 import io.exilius.model.Items;
 import io.exilius.model.entity.player.Player;
 
@@ -30,6 +31,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(Items.LOGS, 1);
                             c.getItems().addItem(Items.PLANK, 1);
                             c.getPA().closeAllWindows();
+                            c.getPA().addSkillXPMultiplied(25, Skill.CONSTRUCTION.getId(), true);
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
                                 Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
@@ -51,6 +53,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(Items.LOGS, 5);
                             c.getItems().addItem(Items.PLANK, 5);
                             c.getPA().closeAllWindows();
+                            c.getPA().addSkillXPMultiplied(25* 5, Skill.CONSTRUCTION.getId(), true);
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
                                 Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
@@ -71,6 +74,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 1000);
                             c.getItems().deleteItem2(Items.LOGS, 10);
                             c.getItems().addItem(Items.PLANK, 10);
+                            c.getPA().addSkillXPMultiplied(25* 10, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -100,6 +104,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(Items.LOGS, ammount);
                             c.getItems().addItem(Items.PLANK, ammount);
                             c.getPA().closeAllWindows();
+                            c.getPA().addSkillXPMultiplied(25* ammount, Skill.CONSTRUCTION.getId(), true);
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
                                 Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
@@ -120,6 +125,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 250);
                             c.getItems().deleteItem2(Items.OAK_LOGS, 1);
                             c.getItems().addItem(Items.OAK_PLANK, 1);
+                            c.getPA().addSkillXPMultiplied(25, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -141,6 +147,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 1250);
                             c.getItems().deleteItem2(Items.OAK_LOGS, 5);
                             c.getItems().addItem(Items.OAK_PLANK, 5);
+                            c.getPA().addSkillXPMultiplied(25* 5, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -162,6 +169,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 2500);
                             c.getItems().deleteItem2(Items.OAK_LOGS, 10);
                             c.getItems().addItem(Items.OAK_PLANK, 10);
+                            c.getPA().addSkillXPMultiplied(25* 10, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -190,6 +198,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, ammount*250);
                             c.getItems().deleteItem2(Items.OAK_LOGS, ammount);
                             c.getItems().addItem(Items.OAK_PLANK, ammount);
+                            c.getPA().addSkillXPMultiplied(25* ammount, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -211,6 +220,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 500);
                             c.getItems().deleteItem2(Items.TEAK_LOGS, 1);
                             c.getItems().addItem(Items.TEAK_PLANK, 1);
+                            c.getPA().addSkillXPMultiplied(25, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -232,6 +242,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 2500);
                             c.getItems().deleteItem2(Items.TEAK_LOGS, 5);
                             c.getItems().addItem(Items.TEAK_PLANK, 5);
+                            c.getPA().addSkillXPMultiplied(25* 5, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -253,6 +264,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 5000);
                             c.getItems().deleteItem2(Items.TEAK_LOGS, 10);
                             c.getItems().addItem(Items.TEAK_PLANK, 10);
+                            c.getPA().addSkillXPMultiplied(25* 10, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -281,6 +293,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, ammount*500);
                             c.getItems().deleteItem2(Items.TEAK_LOGS, ammount);
                             c.getItems().addItem(Items.TEAK_PLANK, ammount);
+                            c.getPA().addSkillXPMultiplied(25* ammount, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -303,6 +316,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 1500);
                             c.getItems().deleteItem2(Items.MAHOGANY_LOGS, 1);
                             c.getItems().addItem(Items.MAHOGANY_PLANK, 1);
+                            c.getPA().addSkillXPMultiplied(25* 1, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -325,6 +339,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(Items.MAHOGANY_LOGS, 5);
                             c.getItems().addItem(Items.MAHOGANY_PLANK, 5);
                             c.getPA().closeAllWindows();
+                            c.getPA().addSkillXPMultiplied(25* 5, Skill.CONSTRUCTION.getId(), true);
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
                                 Server.itemHandler.createGroundItem(c, 9468, c.absX, c.absY, c.heightLevel, 1, c.getIndex());
@@ -345,6 +360,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, 15000);
                             c.getItems().deleteItem2(Items.MAHOGANY_LOGS, 10);
                             c.getItems().addItem(Items.MAHOGANY_PLANK, 10);
+                            c.getPA().addSkillXPMultiplied(25* 10, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
@@ -373,6 +389,7 @@ public class Sawmill {
                             c.getItems().deleteItem2(995, ammount*1500);
                             c.getItems().deleteItem2(Items.MAHOGANY_LOGS, ammount);
                             c.getItems().addItem(Items.MAHOGANY_PLANK, ammount);
+                            c.getPA().addSkillXPMultiplied(25* ammount, Skill.CONSTRUCTION.getId(), true);
                             c.getPA().closeAllWindows();
                             c.sawmill = false;
                             if(!Server.itemHandler.itemExists(c, 9468, c.absX, c.absY, c.heightLevel)) {
