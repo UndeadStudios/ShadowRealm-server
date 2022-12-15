@@ -108,8 +108,8 @@ public class PlayerEmotes {
 		AIR_GUITAR(101230, 4751, 1239),
 		URI_TRANSFORM(101231, -1, -1),
 		PREMIER_SHEILD(101234, 7751, -1),
-		EXPLORE(152028, -1, -1),
-		RELIC_UNLOCK(152030, -1, -1);
+		EXPLORE(101235, 8541, -1),
+		RELIC_UNLOCK(101237, -1, -1);
 		
 		private final int button;
 		private final int animation;

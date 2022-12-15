@@ -7,6 +7,8 @@ import io.exilius.Server;
 import io.exilius.content.skills.construction.rooms.Default;
 import io.exilius.content.skills.construction.rooms.Garden;
 import io.exilius.content.skills.construction.rooms.Parlour;
+import io.exilius.model.collisionmap.Region;
+import io.exilius.model.collisionmap.RegionProvider;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;

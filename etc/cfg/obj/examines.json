@@ -1385,15 +1385,15 @@
   },
   {
     "id": 574,
-    "examine": "A carving of a figure from the history of Exilius."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 575,
-    "examine": "A carving of a figure from the history of Exilius."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 576,
-    "examine": "A carving of a figure from the history of Exilius."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 577,
@@ -2645,7 +2645,7 @@
   },
   {
     "id": 1049,
-    "examine": "The Bank of Exilius."
+    "examine": "The Bank of Gielinor."
   },
   {
     "id": 1050,
@@ -2697,7 +2697,7 @@
   },
   {
     "id": 1062,
-    "examine": "Exilius Postal Delivery Team."
+    "examine": "Gielinor Postal Delivery Team."
   },
   {
     "id": 1063,
@@ -3357,7 +3357,7 @@
   },
   {
     "id": 1276,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 1277,
@@ -5645,7 +5645,7 @@
   },
   {
     "id": 2297,
-    "examine": "Bank of Exilius."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 2298,
@@ -11161,11 +11161,11 @@
   },
   {
     "id": 4531,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 4532,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 4533,
@@ -13757,7 +13757,7 @@
   },
   {
     "id": 5791,
-    "examine": "A carving of a figure from the history of Exilius."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 5792,
@@ -24769,19 +24769,19 @@
   },
   {
     "id": 9730,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9731,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9732,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9733,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 9734,
@@ -28345,7 +28345,7 @@
   },
   {
     "id": 11356,
-    "examine": "A gateway back to Exilius."
+    "examine": "A gateway back to Gielinor."
   },
   {
     "id": 11357,
@@ -33433,11 +33433,11 @@
   },
   {
     "id": 13526,
-    "examine": "A map of Exilius."
+    "examine": "A map of Gielinor."
   },
   {
     "id": 13527,
-    "examine": "A map of Exilius including major cave systems."
+    "examine": "A map of Gielinor including major cave systems."
   },
   {
     "id": 13528,
@@ -35637,7 +35637,7 @@
   },
   {
     "id": 14308,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 14309,
@@ -37425,7 +37425,7 @@
   },
   {
     "id": 14926,
-    "examine": "The Bank of Exilius."
+    "examine": "The Bank of Gielinor."
   },
   {
     "id": 14927,
@@ -48053,7 +48053,7 @@
   },
   {
     "id": 19165,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 19166,
@@ -51185,7 +51185,7 @@
   },
   {
     "id": 20803,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 20804,
@@ -51313,7 +51313,7 @@
   },
   {
     "id": 20844,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 20845,
@@ -51689,7 +51689,7 @@
   },
   {
     "id": 21000,
-    "examine": " they try to take over Exilius!"
+    "examine": " they try to take over Gielinor!"
   },
   {
     "id": 21001,
@@ -53405,7 +53405,7 @@
   },
   {
     "id": 21901,
-    "examine": "What on Exilius is that?"
+    "examine": "What on Gielinor is that?"
   },
   {
     "id": 21902,
@@ -57545,7 +57545,7 @@
   },
   {
     "id": 24104,
-    "examine": "A carving of a figure from the history of Exilius."
+    "examine": "A carving of a figure from the history of Gielinor."
   },
   {
     "id": 24105,
@@ -58677,7 +58677,7 @@
   },
   {
     "id": 24622,
-    "examine": "An early map of Exilius."
+    "examine": "An early map of Gielinor."
   },
   {
     "id": 24624,
@@ -61069,7 +61069,7 @@
   },
   {
     "id": 25762,
-    "examine": "Bank of Exilius."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 25763,
@@ -74009,7 +74009,7 @@
   },
   {
     "id": 31619,
-    "examine": " who died saving Exilius."
+    "examine": " who died saving Gielinor."
   },
   {
     "id": 31620,
@@ -74281,7 +74281,7 @@
   },
   {
     "id": 31749,
-    "examine": "Bank of Exilius."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 31754,
@@ -83001,51 +83001,51 @@
   },
   {
     "id": 35818,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35819,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35820,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35821,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35822,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35823,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35824,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35825,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35826,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35827,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35828,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35829,
-    "examine": "One of Exilius's many citizens."
+    "examine": "One of Gielinor's many citizens."
   },
   {
     "id": 35830,
@@ -85689,19 +85689,19 @@
   },
   {
     "id": 37965,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37966,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37967,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37968,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37969,
@@ -85713,19 +85713,19 @@
   },
   {
     "id": 37971,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37972,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37973,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37974,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 37975,
@@ -90041,7 +90041,7 @@
   },
   {
     "id": 40433,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40434,
@@ -90293,11 +90293,11 @@
   },
   {
     "id": 40715,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40716,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40723,
@@ -90397,7 +90397,7 @@
   },
   {
     "id": 40750,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40751,
@@ -90405,7 +90405,7 @@
   },
   {
     "id": 40752,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 40753,
@@ -91633,99 +91633,99 @@
   },
   {
     "id": 41131,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41132,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41133,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41134,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41135,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41136,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41137,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41138,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41139,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41140,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41141,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41142,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41143,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41144,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41145,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41146,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41147,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41148,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41149,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41150,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41151,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41152,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41153,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41154,
-    "examine": "A fancy rug displaying a map of Exilius."
+    "examine": "A fancy rug displaying a map of Gielinor."
   },
   {
     "id": 41155,
@@ -92869,7 +92869,7 @@
   },
   {
     "id": 41721,
-    "examine": "Bank of Exilius."
+    "examine": "Bank of Gielinor."
   },
   {
     "id": 41723,
@@ -94913,7 +94913,7 @@
   },
   {
     "id": 42829,
-    "examine": "A map of Exilius."
+    "examine": "A map of Gielinor."
   },
   {
     "id": 42831,
@@ -94921,7 +94921,7 @@
   },
   {
     "id": 42832,
-    "examine": "One of the most common trees in Exilius."
+    "examine": "One of the most common trees in Gielinor."
   },
   {
     "id": 42833,

@@ -27,8 +27,8 @@ public enum Skill {
 	SLAYER(18, 70),
 	FARMING(19, 35),
 	RUNECRAFTING(20, 75),
-	HUNTER(21, 60);//,
-	//CONSTRUCTION(22, 50);
+	HUNTER(21, 60),
+	CONSTRUCTION(22, 50);
 
 
 	public static final int MAX_EXP = 200_000_000;
@@ -79,8 +79,8 @@ public enum Skill {
 				return 20;
 			case HUNTER:
 				return 22;
-//			case CONSTRUCTION:
-//				return 23;
+			case CONSTRUCTION:
+				return 23;
 			default:
 				return 0;
 		}
@@ -136,8 +136,8 @@ public enum Skill {
 				return 154;
 			case HUNTER:
 				return 155;
-//			case CONSTRUCTION:
-//				return 156;
+			case CONSTRUCTION:
+				return 156;
 			default:
 				return -1;
 		}

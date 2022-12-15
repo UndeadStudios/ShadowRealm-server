@@ -2851,7 +2851,7 @@ public class PlayerAssistant {
 				+ getLevelForXP(c.playerXP[12]) + getLevelForXP(c.playerXP[13]) + getLevelForXP(c.playerXP[14])
 				+ getLevelForXP(c.playerXP[15]) + getLevelForXP(c.playerXP[16]) + getLevelForXP(c.playerXP[17])
 				+ getLevelForXP(c.playerXP[18]) + getLevelForXP(c.playerXP[19]) + getLevelForXP(c.playerXP[20])
-				+ getLevelForXP(c.playerXP[21]));
+				+ getLevelForXP(c.playerXP[21]) + getLevelForXP(c.playerXP[22]));
 		sendFrame126("" + totalLevel, 3984);
 		switch (skill) {
 		case 0:
@@ -2954,6 +2954,7 @@ public class PlayerAssistant {
 			sendFrame126("Congratulations, you just advanced a fire making level!", 4283);
 			sendFrame126("Your firemaking level is now " + getLevelForXP(c.playerXP[skill]) + ".", 4284);
 			c.sendMessage("Congratulations, you just advanced a fire making level.");
+			sendInterfaceAnimation(4286, 475);
 			sendChatboxInterface(4282);
 			break;
 
