@@ -11,9 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Configuration {
 
-	public static final int CLIENT_VERSION = 232;
+	public static final int CLIENT_VERSION = 233;
 	public static final int MAX_NPCS = 11957;
 	public static final boolean DOUBLE_EXP = false;
+	public static final String UPDATE_MESSAGE = "Edgeville has been readded for clues, check teleports";
 	public static String LOGOUT_MESSAGE = "Click here to logout!";
 	public static String DEATH_MESSAGE = "Oh dear you are dead!";
 

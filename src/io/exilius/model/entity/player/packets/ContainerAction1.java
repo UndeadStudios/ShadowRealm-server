@@ -1,11 +1,9 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Objects;
-
 import com.google.common.collect.Lists;
 import io.exilius.Server;
-import io.exilius.content.fireofexchange.FireOfExchange;
 import io.exilius.content.ItemSpawner;
+import io.exilius.content.fireofexchange.FireOfExchange;
 import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.itemskeptondeath.perdu.PerduLostPropertyShop;
 import io.exilius.content.preset.PresetManager;
@@ -25,6 +23,8 @@ import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.multiplayersession.flowerpoker.FlowerPokerSession;
 import io.exilius.model.multiplayersession.trade.TradeSession;
+
+import java.util.Objects;
 
 /**
  * Remove Item
@@ -146,6 +146,9 @@ public class ContainerAction1 implements PacketType {
 						break;
 					case 6199:
 						c.getNormalMysteryBox().roll(c);
+						break;
+					case 6542:
+						c.getPresent().roll(c);
 						break;
 					case 6828:
 						c.getSuperMysteryBox().roll(c);

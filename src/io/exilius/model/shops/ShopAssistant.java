@@ -862,6 +862,8 @@ public class ShopAssistant {
 				switch (id) {
 					case Items.ENCHANTED_GEM:
 						return 0;
+					case Items.BOOTS_OF_STONE:
+						return 2500;
 					case Items.FIGHTER_TORSO:
 						return 400;
 					case Items.PENANCE_SKIRT:
@@ -892,7 +894,7 @@ public class ShopAssistant {
 					case 23824:
 						return 4;
 					case 13438:
-						return 1000;
+						return 250;
 					case 11887:
 						return 10;
 				}

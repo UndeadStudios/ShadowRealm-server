@@ -851,7 +851,7 @@ public abstract class HitDispatcher {
                             600 * freezeDelay);
                 }
             }
-//            if (attacker.playerEquipment[Player.playerWeapon] == 26399) {
+//            if (attacker.playerEquipment[Player.playerWeapon] == 29499) {
 //                int heal = damage / 2;
 //                attacker.getHealth().increase(heal);
 //            }

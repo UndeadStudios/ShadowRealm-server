@@ -1,8 +1,7 @@
 package io.exilius.content.trails;
 
+import io.exilius.Server;
 import io.exilius.model.Items;
-import io.exilius.model.collisionmap.ObjectDef;
-import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
 import io.exilius.model.world.objects.GlobalObject;
@@ -219,7 +218,7 @@ public class SearchScrolls {
 
     /* handles the object clicking */
     public static boolean handleObject(final Player player, GlobalObject p) {
-        SearchData searchData = SearchData.forIdObject(new Position(p.getPosition().getX(), p.getPosition().getY(), player.getPosition().getHeight()));
+        SearchData searchData = SearchData.forIdObject(new Position(p.getX(), p.getY(), player.getHeight()));
         if (searchData == null) {
             return false;
         }
@@ -230,7 +229,7 @@ public class SearchScrolls {
             return true;
         }
         if (searchData.getNewObject() > 0) {
-            new GlobalObject(searchData.getNewObject(), p.getPosition().getX(), p.getPosition().getY(), player.getPosition().getHeight(), p.getFace(), p.getType(), p.getObjectId(), 30);
+            Server.getGlobalObjects().add(new GlobalObject(searchData.getNewObject(), p.getPosition().getX(), p.getPosition().getY(), player.getPosition().getHeight(), p.getFace(), p.getType(), 30, p.getObjectId()));
         }
         player.getItems().deleteItem2(searchData.getClueId(), 1);
         player.startAnimation(searchData.getEmote());

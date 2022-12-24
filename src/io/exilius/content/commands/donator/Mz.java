@@ -18,7 +18,7 @@ public class Mz extends Command {
 			c.sendMessage("@red@You need to be a mystic donator to do this command");
 			return;
 		}
-		c.getPA().startTeleport(2457, 2841, 2, "modern", false);
+		c.getPA().startTeleport(2141, 9372, 0, "modern", false);
 	}
 
 	@Override

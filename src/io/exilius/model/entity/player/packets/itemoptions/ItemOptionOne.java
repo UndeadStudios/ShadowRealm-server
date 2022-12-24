@@ -19,6 +19,7 @@ import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.miniquests.magearenaii.MageArenaII;
 import io.exilius.content.skills.DoubleExpScroll;
+import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.SkillHandler;
 import io.exilius.content.skills.SkillPetRateIncreaseScroll;
 import io.exilius.content.skills.hunter.Hunter;
@@ -172,6 +173,32 @@ public class ItemOptionOne implements PacketType {
      //   }
 
         switch (itemId) {
+            case 25778:
+                c.sendMessage("You scattered the ashes.");
+                c.getItems().deleteItem2(25778, 1);
+                c.getPA().addSkillXPMultiplied(110, Skill.PRAYER.getId(), true);
+                break;
+            case 25766:
+                c.sendMessage("You scattered the ashes.");
+                c.getItems().deleteItem2(25766, 1);
+                c.getPA().addSkillXPMultiplied(10, Skill.PRAYER.getId(), true);
+                break;
+
+            case 25769:
+                c.sendMessage("You scattered the ashes.");
+                c.getItems().deleteItem2(25769, 1);
+                c.getPA().addSkillXPMultiplied(25, Skill.PRAYER.getId(), true);
+                break;
+            case 25772:
+                c.sendMessage("You scattered the ashes.");
+                c.getItems().deleteItem2(25772, 1);
+                c.getPA().addSkillXPMultiplied(65, Skill.PRAYER.getId(), true);
+                break;
+            case 25775:
+                c.sendMessage("You scattered the ashes.");
+                c.getItems().deleteItem2(25775, 1);
+                c.getPA().addSkillXPMultiplied(85, Skill.PRAYER.getId(), true);
+                break;
             case MageArenaII.SYMBOL_ID:
                 MageArenaII.handleEnchantedSymbol(c);
                 return;
@@ -434,6 +461,11 @@ public class ItemOptionOne implements PacketType {
                     new DrCapeMysteryBox(c).openInterface();
                 }
                 break;
+            case 6542:
+                if(c.getItems().playerHasItem(6542)){
+                    new Present(c).quickOpen();
+                }
+                break;
             case 21027: //dark relic
             	  c.inLamp = true;
             	  c.usingLamp = true;
@@ -454,7 +486,7 @@ public class ItemOptionOne implements PacketType {
                 }));
           	break;
             case 12789:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox)|| !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
@@ -466,7 +498,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 13346:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -478,7 +510,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 6199:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -491,7 +523,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 6828:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -504,7 +536,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 8167:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;

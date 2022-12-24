@@ -397,7 +397,7 @@ public class ClickingButtons implements PacketType {
 				CheatEngineBlock.DonatorBoxAlert(c);
 				return;
 			}
-			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) ||
+			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) ||
 					!(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) ||
 					!(c.getYoutubeMysteryBox().canMysteryBox)
 			) {
@@ -503,7 +503,7 @@ public class ClickingButtons implements PacketType {
 			break;
 
 		case 183155:
-			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox)
+			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox)   || !(c.getPresent().canMysteryBox)|| !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox)
 			|| !(c.getYoutubeMysteryBox().canMysteryBox)) {
 				c.getPA().showInterface(47000);
 				c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");

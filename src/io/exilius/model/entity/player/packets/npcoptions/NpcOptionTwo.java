@@ -66,6 +66,9 @@ public class NpcOptionTwo {
 					player.sendMessage("This is being worked on. u can note items tho.");
 				}
 				break;
+			case 3098:
+				player.getShops().openShop(46);
+				break;
 			case 3101:
 				player.sawmill = true;
 				Sawmill.OpemSawMill(player);

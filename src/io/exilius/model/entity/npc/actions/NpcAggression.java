@@ -173,6 +173,16 @@ public class NpcAggression {
                     return 100;
                 case 5935:
                 case 135:
+                case 104:
+                    return 8;
+                case 5823:
+                case 5824:
+                case 5825:
+                case 5826:
+                case 5828:
+                case 5829:
+                case 5830:
+                case 5831:
                     return 8;
             }
         return baseDistance;
@@ -217,6 +227,14 @@ public class NpcAggression {
 
 
         switch (npc.getNpcId()) {
+            case 5823:
+            case 5824:
+            case 5825:
+            case 5826:
+            case 5828:
+            case 5829:
+            case 5830:
+            case 5831:
             case 6409:
             case 6411:
             case 6413:
@@ -307,6 +325,7 @@ public class NpcAggression {
             case 291:
             case 435:
             case 135:
+            case 104:
             case 484:
             case 7276:
             case 5944: // Rock lobster

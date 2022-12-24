@@ -4,6 +4,12 @@ npc_id:
   - 11913
   - 11914
   - 11917
+  - 3269
+  - 3270
+  - 3271
+  - 3272
+  - 3273
+  - 3274
 constant:
   accessibility: 0
   items:
@@ -59,7 +65,7 @@ uncommon:
     minimum: 1
     maximum: 1
 rare:
-  accessibility: 12
+  accessibility: 40
   items:
   - name: "blood rune"
     minimum: 1

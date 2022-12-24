@@ -31698,8 +31698,9 @@
   shopValue: 1
 - id: 6542
   name: "Present"
-  description: "Thanks for all your help!  Love, Bob & Neite."
+  description: "Merry Christmas from Exilius."
   shopValue: 1
+  stackable: true
 - id: 6543
   name: "Antique lamp"
   description: "I wonder what happens if I rub it..."
@@ -70442,7 +70443,7 @@
   requirements:
     - skill: "ATTACK"
       level: 75
-- id: 26399
+- id: 29499
   name: "Lava Scythe"
   description: "Scythe of Lava."
   shopValue: 12800000
@@ -74649,3 +74650,157 @@
   name: "Flared trousers"
   description: "These'll help me stay alive."
   shopValue: 2000
+- id: 27588
+  name: "Festive games crown"
+  description: "It's a Festive games crown."
+  shopValue: 1140000
+- id: 27570
+  name: "Sack of coal"
+  description: "It's a Sack of coal."
+  shopValue: 1140000
+- id: 27568
+  name: "Snow goggles & hat"
+  description: "It's a Snow goggles & hat."
+  shopValue: 1140000
+- id: 27566
+  name: "Christmas jumper"
+  description: "It's a Christmas jumper."
+  shopValue: 1140000
+  equipmentModelType: "FULL_BODY"
+- id: 27572
+  name: "Festive nutcracker top"
+  description: "It's a Festive nutcracker top."
+  shopValue: 1140000
+  equipmentModelType: "FULL_BODY"
+- id: 21859
+  name: "Wise old man's santa hat"
+  description: "It's a Santa hat++."
+  shopValue: 1140000
+- id: 26310
+  name: "Festive elf slippers"
+  description: "A pair of festive slippers."
+  shopValue: 1140000
+- id: 26312
+  name: "Festive elf hat"
+  description: "A woolly festive hat."
+  shopValue: 1140000
+- id: 26314
+  name: "Snowman ring"
+  description: "A magical snowy ring."
+  shopValue: 1140000
+- id: 27574
+  name: "Festive nutcracker trousers"
+  description: "It's a Festive nutcracker trousers"
+  shopValue: 1140000
+- id: 27576
+  name: "Festive nutcracker hat"
+  description: "It's a Festive nutcracker hat"
+  shopValue: 1140000
+- id: 27578
+  name: "Festive nutcracker boots"
+  description: "It's a Festive nutcracker boots"
+  shopValue: 1140000
+- id: 27582
+  name: "Sweet nutcracker top"
+  description: "It's a Sweet nutcracker top."
+  shopValue: 1140000
+  equipmentModelType: "FULL_BODY"
+- id: 27583
+  name: "Sweet nutcracker trousers"
+  description: "It's a Sweet nutcracker trousers"
+  shopValue: 1140000
+- id: 27584
+  name: "Sweet nutcracker hat"
+  description: "It's a Sweet nutcracker hat"
+  shopValue: 1140000
+- id: 27585
+  name: "Sweet nutcracker boots"
+  description: "It's a Sweet nutcracker boots"
+  shopValue: 1140000
+- id: 22713
+  name: "Star-face"
+  description: "Say hello to my little star."
+  shopValue: 1140000
+  equipmentModelType: "FULL_MASK"
+- id: 22715
+  name: "Tree Top"
+  description: "Part of a tree costume."
+  shopValue: 1140000
+  equipmentModelType: "FULL_BODY"
+- id: 22717
+  name: "Tree skirt"
+  description: "The bottom of a tree costume."
+  shopValue: 1140000
+- id: 25314
+  name: "Giant boulder"
+  description: "That's one ginormous boulder."
+  shopValue: 1140000
+- id: 26266
+  name: "Condensed gold"
+  description: "The gold standard of gold."
+  shopValue: 8000000
+  noteId: 26267
+- id: 26267
+  name: "Condensed gold"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 26266
+  noted: true
+  stackable: true
+- id: 25772
+  name: "Malicious ashes"
+  description: "A heap of ashes."
+  shopValue: 1
+  noteId: 25773
+- id: 25773
+  name: "Malicious ashes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25772
+  noted: true
+  stackable: true
+- id: 25766
+  name: "Fiendish ashes"
+  description: "A heap of ashes."
+  shopValue: 1
+  noteId: 25767
+- id: 25767
+  name: "Fiendish ashes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25766
+  noted: true
+  stackable: true
+- id: 25769
+  name: "Vile ashes"
+  description: "A heap of ashes."
+  shopValue: 1
+  noteId: 25770
+- id: 25770
+  name: "Vile ashes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25769
+  noted: true
+  stackable: true
+- id: 25775
+  name: "Abyssal ashes"
+  description: "A heap of ashes."
+  shopValue: 1
+  noteId: 25776
+- id: 25776
+  name: "Abyssal ashes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25775
+  noted: true
+  stackable: true
+- id: 25778
+  name: "Infernal ashes"
+  description: "A heap of ashes."
+  shopValue: 1
+  noteId: 25779
+- id: 25779
+  name: "Infernal ashes"
+  description: "Swap this note at any bank for the equivalent item."
+  noteId: 25778
+  noted: true
+  stackable: true
+
+
+

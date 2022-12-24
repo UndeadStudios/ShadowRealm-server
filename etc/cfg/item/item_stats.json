@@ -2498,7 +2498,15 @@
     "equipable": true,
     "weight": 0.01,
     "equipment": {
-      "slot": 2
+      "slot": 2,
+      "astab": -500000,
+      "aslash": -500000,
+      "acrush": -500000,
+      "arange": -500000,
+      "amagic": -500000,
+      "str": -500000,
+      "rstr": -500000,
+      "mdmg": -500000
     }
   },
   "775": {
@@ -60320,7 +60328,7 @@
       "aspeed": 5
     }
   },
-  "26399": {
+  "29499": {
     "name": "Lava Scythe",
     "equipable": true,
     "weight": 3.175,
@@ -69039,8 +69047,21 @@
     "name": "Justin's cape",
     "equipable": true,
     "weight": 0.453,
+    "weight": 1.814,
     "equipment": {
-      "slot": 1
+      "slot": 1,
+      "astab": 1,
+      "aslash": 1,
+      "acrush": 1,
+      "amagic": 1,
+      "arange": 1,
+      "dstab": 11,
+      "dslash": 11,
+      "dcrush": 11,
+      "dmagic": 11,
+      "drange": 11,
+      "str": 4,
+      "prayer": 2
     }
   },
   "29570": {
@@ -71231,6 +71252,136 @@
     "weight": 2.267,
     "equipment": {
       "slot": 5
+    }
+  },
+  "27588": {
+    "name": "Festive games crown",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "27570": {
+    "name": "Sack of coal",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "27568": {
+    "name": "Snow goggles & hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "27566": {
+    "name": "Christmas jumper",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 4
+    }
+  },
+  "27572": {
+    "name": "Festive nutcracker top",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 4
+    }
+  },
+  "26310": {
+    "name": "Festive elf slippers",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 10
+    }
+  },
+  "26312": {
+    "name": "Festive elf hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "26314": {
+    "name": "Snowman ring",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 12
+    }
+  },
+  "27574": {
+    "name": "Festive nutcracker trousers",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "27576": {
+    "name": "Festive nutcracker hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+
+  "27578": {
+    "name": "Festive nutcracker boots",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 10
+    }
+  },
+  "27582": {
+    "name": "Sweet nutcracker top",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 4
+    }
+  },
+  "27583": {
+    "name": "Sweet nutcracker trousers",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 7
+    }
+  },
+  "27584": {
+    "name": "Sweet nutcracker hat",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 0
+    }
+  },
+
+  "27585": {
+    "name": "Sweet nutcracker boots",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 10
+    }
+  },
+  "25314": {
+    "name": "Giant boulder",
+    "equipable": true,
+    "weight": 0.113,
+    "equipment": {
+      "slot": 3
     }
   }
 }

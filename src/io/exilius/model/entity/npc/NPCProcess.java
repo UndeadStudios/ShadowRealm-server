@@ -2,7 +2,10 @@ package io.exilius.model.entity.npc;
 
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.bosses.*;
+import io.exilius.content.bosses.CorporealBeast;
+import io.exilius.content.bosses.Scorpia;
+import io.exilius.content.bosses.Skotizo;
+import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hydra.AlchemicalHydra;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
@@ -14,7 +17,6 @@ import io.exilius.content.minigames.rfd.DisposeTypes;
 import io.exilius.model.Animation;
 import io.exilius.model.Direction;
 import io.exilius.model.Npcs;
-import io.exilius.model.StillGraphic;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -111,7 +113,17 @@ public class NPCProcess {
                 npc.forceChat("Sell your PvM items here for a limited time!"); //npc forced text example
             }
         }
-
+        if (npc.getNpcId() == Npcs.TOWN_CRIER 
+                || npc.getNpcId() == Npcs.TOWN_CRIER_2  
+                || npc.getNpcId() == Npcs.TOWN_CRIER_3 
+                || npc.getNpcId() == Npcs.TOWN_CRIER_4 
+                || npc.getNpcId() == Npcs.TOWN_CRIER_5 
+                || npc.getNpcId() == Npcs.TOWN_CRIER_6) {
+            if (Misc.random(50) == 2) {
+                npc.forceChat(Configuration.UPDATE_MESSAGE);
+                npc.startAnimation(6865);
+            }
+        }
         if (npc.getNpcId() == 8583) {
             npc.getBehaviour().isAggressive();
             npc.getBehaviour().setRespawn(false);
@@ -227,7 +239,7 @@ public class NPCProcess {
                 npc.getHealth().reset();
             }
         }
-        ///if (npcs[i].killerId <= 0) {
+        ///if (npc.killerId <= 0) {
             if (System.currentTimeMillis() - npc.lastDamageTaken > 5000 && !npc.underAttack) {
                 npc.underAttackBy = 0;
                 npc.underAttack = false;

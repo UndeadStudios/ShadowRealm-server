@@ -3,6 +3,9 @@ npc_id: 7286
 constant:
   accessibility: 0
   items:
+  - name: "infernal ashes"
+    minimum: 1
+    maximum: 1
   - name: "clue scroll hard"
     minimum: 1
     maximum: 1

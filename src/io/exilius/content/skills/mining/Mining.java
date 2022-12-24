@@ -4,6 +4,7 @@ import io.exilius.Server;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Location3D;
 
 /**
@@ -43,7 +44,7 @@ public class Mining {
 			return;
 		}
 		if (player.playerLevel[Skill.MINING.getId()] < mineral.getLevel()) {
-			player.sendMessage("You need a mining level of at least " + mineral.getLevel() + " to mine this.");
+			player.getDH().sendStatement("You need a Mining level of " + mineral.getLevel() + " to mine this rock.");//player.sendMessage("You need a mining level of at least " + mineral.getLevel() + " to mine this.");
 			return;
 		}
 		if (Server.getGlobalObjects().exists(mineral.getDepleteObject(), location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
@@ -52,11 +53,11 @@ public class Mining {
 		}
 		Pickaxe pickaxe = Pickaxe.getBestPickaxe(player);
 		if (pickaxe == null) {
-			player.sendMessage("You must use a pickaxe that is suitable for your mining level");
+			player.getDH().sendStatement("You need a pickaxe to mine this rock. You do not have a pickaxe which", " you have the Mining level to use.");//sendMessage("You must use a pickaxe that is suitable for your mining level");
 			return;
 		}
 		if (player.getItems().freeSlots() == 0) {
-			player.getDH().sendStatement("You have no more free slots.");
+			player.getDH().sendStatement("Your inventory is too full to hold any more "+ ItemCacheDefinition.forID(mineral.getDepletionProbability()).getName().toLowerCase()+".");
 			player.nextChat = -1;
 			return;
 		}

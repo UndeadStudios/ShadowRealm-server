@@ -20,6 +20,17 @@ public class DeathAnimation extends NPCHandler {
         switch (npcId) {
             case 9118:
                 return 6092;
+            case 5823:
+            case 5824:
+            case 5825:
+            case 5826:
+            case 5828:
+            case 5829:
+            case 5830:
+            case 5831:
+                return 287;
+            case 1047:
+                return 4233;
             case 2098:
             case 2099:
             case 2100:
@@ -526,8 +537,6 @@ public class DeathAnimation extends NPCHandler {
                 return 4233;
             case 411: // Kurask
                 return 1513;
-            case 1047:
-                return 4233;
             case 7405:
                 return 4233;
             case Npcs.SKELETON_HELLHOUND:
@@ -624,6 +633,7 @@ public class DeathAnimation extends NPCHandler {
             case 5779: // giant mole
                 return 3313;
             case 135:
+            case 104:
             case 7935:
                 return 6567;
             case 2205:
@@ -956,10 +966,12 @@ public class DeathAnimation extends NPCHandler {
             case 1156:
             case 1157:
                 return 1190;
-            case 104:
-                return 5534;
             case 118:
             case 291:
+                return 102;
+            case 3019://spider
+                return 6251;
+            case 290:
                 return 102;
             case 239:// drags
             case 7940:

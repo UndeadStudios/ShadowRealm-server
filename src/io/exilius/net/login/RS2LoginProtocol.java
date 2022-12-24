@@ -1,19 +1,6 @@
 package io.exilius.net.login;
 
-import java.math.BigInteger;
-import java.net.InetSocketAddress;
-import java.security.SecureRandom;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.regex.Pattern;
-
 import com.google.common.hash.Hashing;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.ByteToMessageDecoder;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.Censor;
@@ -39,8 +26,21 @@ import io.exilius.util.logging.global.InvalidLoginIpLog;
 import io.exilius.util.logging.global.LoginLog;
 import io.exilius.util.logging.global.LoginRequestLog;
 import io.exilius.util.logging.global.SuccessfulLoginIpLog;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ByteToMessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.math.BigInteger;
+import java.net.InetSocketAddress;
+import java.security.SecureRandom;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.regex.Pattern;
 
 public class RS2LoginProtocol extends ByteToMessageDecoder {
 
@@ -49,8 +49,9 @@ public class RS2LoginProtocol extends ByteToMessageDecoder {
 	private static final Logger logger = LoggerFactory.getLogger(RS2LoginProtocol.class);
 	private static final AtomicLong HANDSHAKE_REQUESTS = new AtomicLong();
 
-	private static final BigInteger RSA_MODULUS = new BigInteger("91520827044808581871318118254770120611343888611033050838722939781067880678552781697572245594439341402118233490664238364235358342012694177068230893936750633213888618825951425602731544513980715835301977356001573144440585484179765317637775760229380331179714685593753856711452802805126498363795384945303137663457");
-	private static final BigInteger RSA_EXPONENT = new BigInteger("57766613234288292074537212257607470729646631617010134443056794283895417125425551485447510738355094014679079704210093293482457744109390227331193664015558018855984670635316544204147703177358156614235718608836349724714295434200079732563994422062926282344625359040224314349662029531040894284495752158812148861473");
+	private static final BigInteger RSA_MODULUS = new BigInteger("111190484006948381980877963315402859763345385881851795782232808994231499435860681107577476552427076970358535917853622968545223202014718891393025968301324763596178574638350394382231750461881062238212451766331283111370190644369938808481859679333544090675285366014034376101614949515181773439966524653031555871363");
+
+	private static final BigInteger RSA_EXPONENT = new BigInteger("3237124730842997281223051924955195636487220902125108356386471757343084073479441835196268142606937498808979454831083397530925826166044885252268085928848247671599134194944689323283351403224698959440566016584081594508572280217035930293268995607368987245822710456242066554244962672867446579588496019556881336513");
 
 	private static final Pattern[] INVALID_USERNAMES_PATTERNS = {
 			Pattern.compile("(?:[Ii][lL]){2}|(?:[lL][Ii]){2}|(?:[lL]){4}|(?:[iI]){4}|(?:[Ii][lL][lL]){2}|(?:[Ii][lL][Ii]){2}"), // ...

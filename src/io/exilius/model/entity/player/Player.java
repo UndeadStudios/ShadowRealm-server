@@ -55,9 +55,6 @@ import io.exilius.content.items.pouch.HerbSack;
 import io.exilius.content.items.pouch.RunePouch;
 import io.exilius.content.itemskeptondeath.perdu.PerduLostPropertyShop;
 import io.exilius.content.lootbag.LootingBag;
-//import io.exilius.content.minigames.TBD.TBDConstants;
-//import io.exilius.content.minigames.TBD.TBDContainer;
-//import io.exilius.content.minigames.TBD.instance.TBDInstance;
 import io.exilius.content.minigames.bounty_hunter.BountyHunter;
 import io.exilius.content.minigames.fight_cave.FightCave;
 import io.exilius.content.minigames.inferno.Inferno;
@@ -166,10 +163,7 @@ import io.exilius.net.PacketBuilder;
 import io.exilius.net.login.LoginReturnCode;
 import io.exilius.net.login.RS2LoginProtocol;
 import io.exilius.net.outgoing.UnnecessaryPacketDropper;
-import io.exilius.util.ISAACCipher;
-import io.exilius.util.Misc;
-import io.exilius.util.Stopwatch;
-import io.exilius.util.Stream;
+import io.exilius.util.*;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.player.ChangeAddressLog;
 import io.exilius.util.logging.player.ConnectionLog;
@@ -180,6 +174,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
@@ -273,6 +268,7 @@ public class Player extends Entity {
     public boolean doinguri = false;
     public boolean sawmill = false;
     private int bofacharges;
+    private SecondsTimer logoutTimer = new SecondsTimer();
 
     public void saveItemsForMinigame() {
         /**
@@ -529,6 +525,8 @@ public class Player extends Entity {
     private final YoutubeMysteryBox youtubeMysteryBox = new YoutubeMysteryBox(this);
     private final UltraMysteryBox ultraMysteryBox = new UltraMysteryBox(this);
     private final NormalMysteryBox normalMysteryBox = new NormalMysteryBox(this);
+
+    private final Present present  = new Present(this);
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
     private final SlayerMysteryBox slayerMysteryBox = new SlayerMysteryBox(this);
@@ -1901,7 +1899,7 @@ public class Player extends Entity {
             Right.IRONMAN_SET.forEach(it -> getRights().remove(it));
             getRights().updatePrimary();
         }
-
+            logoutTimer.start(21600);
         // Normalise death tracker to fix previous mapping errors
         getNpcDeathTracker().normalise();
         // Old equipment correction?
@@ -1987,14 +1985,14 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@yel@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("epic")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equals("exilius")) {
-            PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        //} else if (getLoginName().equals("exilius")) {
+          //  PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@Security manager@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
-            PlayerHandler.executeGlobalMessage("[@red@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@blu@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("sgsrocks")) {
-            PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@blu@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
             PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }
@@ -2117,6 +2115,7 @@ public class Player extends Entity {
         getPA().resetFollow();
         getPA().setClanData();
         updateRank();
+        getPA().sendConfig(2951, 127293816);
         getPA().sendConfig(491, 0);
         getFarming().doConfig();
         getBank().onLogin();
@@ -2516,6 +2515,12 @@ public class Player extends Entity {
         if (getCannon() != null) {
             getCannon().tick(this);
         }
+        if(logoutTimer.finished()){
+            properLogout = true;
+            setDisconnected(true);
+            ConnectedFrom.addConnectedFrom(this, connectedFrom);
+            logoutTimer.stop();
+        }
         // If player hasn't completed tutorial, no dialogues are open and mode selection interface isn't open, then we open it.
         if (!isCompletedTutorial()
                 && (getDialogueBuilder() == null || getDialogueBuilder().getCurrent() == null)
@@ -2531,6 +2536,12 @@ public class Player extends Entity {
             if (Boundary.isIn(this, Boundary.DUEL_ARENA) || Boundary.isIn(this, Boundary.WILDERNESS)) {
                 getPotions().resetOverload();
                 getPA().sendGameTimer(ClientGameTimer.OVERLOAD, TimeUnit.MINUTES, 0);
+            }
+        }
+        if(Boundary.isIn(this, Boundary.KARUULM_SLAYER_DUNGEON)) {
+            if(playerEquipment[playerFeet] == 23037 || playerEquipment[playerFeet] == 22951 || playerEquipment[playerFeet] == 21643/*getItems().playerHasEquipped(23037)*/) {
+            } else {
+                appendDamage(4, Hitmark.HIT);
             }
         }
         if ((underAttackByPlayer > 0 || underAttackByNpc > 0)) {
@@ -3043,6 +3054,14 @@ public class Player extends Entity {
     public FightCave getFightCave() {
         if (fightcave == null) fightcave = new FightCave(this);
         return fightcave;
+    }
+    public boolean hasClueScroll() {
+        for (GameItem item : getItems().getHeldAndBankedItems()) {
+            if (item != null && item.getDef().getName().toLowerCase().contains("clue scroll")) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Skotizo getSkotizo() {
@@ -5080,6 +5099,9 @@ public class Player extends Entity {
 
     public NormalMysteryBox getNormalBoxInterface() {
         return normalMysteryBox;
+    }
+    public Present getPresent() {
+        return present;
     }
 
     public SuperMysteryBox getSuperBoxInterface() {

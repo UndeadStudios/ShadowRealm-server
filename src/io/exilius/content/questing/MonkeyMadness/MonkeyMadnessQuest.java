@@ -175,7 +175,7 @@ public class MonkeyMadnessQuest extends Quest {
 
         }
 
-        if (npc.getNpcId() == Npcs.KING_NARNODE_SHAREEN) {
+        if (npc.getNpcId() == 1423) {
             if (option == 1) {
                 if (getStage() == 0) {
                     player.start(getKingNarnodeDialogue()

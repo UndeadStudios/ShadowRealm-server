@@ -45,7 +45,7 @@ public class TeleportInterfaceConstants {
             new TeleportButton("Catacombs", plr -> {
                 if (plr.getPA().canTeleport()) {
                     plr.getPA().movePlayer(1664, 10050);
-                    plr.getPA().showInterface(41000);
+                    plr.getPA().showInterface(33900);
                     plr.sendMessage("@cr10@ Use @pur@::level2@bla@ to be sent to @pur@next catacombs level.");
                 }
             }),
@@ -80,7 +80,8 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Crystal Cavern", new Position(3272, 6052, 0)),
             new TeleportButtonStandard("Death Plateau", new Position(2867, 3594, 0)),
             new TeleportButtonStandard("Brine Rat Cavern", new Position(2722, 10133, 0)),
-            new TeleportButtonStandard("Desert Bandits", new Position(3176, 2987, 0))
+            new TeleportButtonStandard("Desert Bandits", new Position(3176, 2987, 0)),
+            new TeleportButtonStandard("Cave Horrors", new Position(3759, 9441, 0))
             ));
 
     private static final TeleportContainer SKILLING = new TeleportContainer(Lists.newArrayList(
@@ -113,7 +114,7 @@ public class TeleportInterfaceConstants {
             }),
             new TeleportButtonStandard("Darkmeyer", new Position(3592, 3337, 0)),
             new TeleportButtonStandard("Draynor", new Position(3105, 3249, 0)),
-            new TeleportButtonStandard("Edgeville", new Position(3093, 3493, 0)),
+            new TeleportButtonStandard("Edgeville", new Position(1999, 9313, 0)),
             new TeleportButton("Falador", plr -> {
                 plr.getPA().startTeleport(2964, 3378, 0, "modern", false);
                 plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_TO_FALADOR);
@@ -121,6 +122,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Hosidius", new Position(1758,3604,0)),
             new TeleportButtonStandard("Karamja", new Position(2948, 3147, 0)),
             new TeleportButtonStandard("Kebos Lowlands", new Position(1310, 3618, 0)),
+            new TeleportButtonStandard("Keldagrim", new Position(2889, 10224, 0)),
             new TeleportButtonStandard("Lovakengj", new Position(1508,3783,0)),
             new TeleportButton("Lumbridge", plr -> {
                 plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
@@ -204,7 +206,7 @@ public class TeleportInterfaceConstants {
             new TeleportButtonStandard("Mage Arena", new Position(2541, 4716, 0)),
             new TeleportButtonStandard("Wintertodt", new Position(1631,3947,0)),
             new TeleportButtonStandard("Horror From The Deep [Quest]", new Position(2508, 3641, 0)),
-            new TeleportButtonStandard("Monkey Madness [Quest]", new Position(3097, 3473, 0))
+            new TeleportButtonStandard("Monkey Madness [Quest]", new Position(2467, 3494, 0))
     ));
     private static final TeleportContainer DONATOR = new TeleportContainer(Lists.newArrayList(
 
@@ -227,6 +229,13 @@ public class TeleportInterfaceConstants {
                         plr.getPA().startTeleport(Configuration.ONYX_ZONE_TELEPORT, "modern", false);
                 } else {
                     plr.sendMessage("You need a donator status of Onyx to tele here.");
+                }
+            }),
+            new TeleportButton("@cr16@Mythic Zone(::mz)", plr -> {
+                if (plr.amDonated >= 2500  || plr.getRights().hasStaffPosition()) {
+                    plr.getPA().startTeleport(2141, 9372, 0, "modern", false);
+                } else {
+                    plr.sendMessage("You need a donator status of Mythic to tele here.");
                 }
             })
     ));

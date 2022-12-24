@@ -18,6 +18,15 @@
     "walkingType": "FACE_SOUTH"
   },
   {
+    "id":277,
+    "position": {
+      "x":3093,
+      "y":3487,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
     "id":7413,
     "position": {
       "x":3094,
@@ -321,7 +330,7 @@
       "y": 3478,
       "height": 0
     },
-    "walkingType": "FACE_EASY"
+    "walkingType": "FACE_EAST"
   },
   {
     "id": 3291,

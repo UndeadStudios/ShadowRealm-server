@@ -14,7 +14,7 @@ enum class UpgradeData(
     val successRate: Double
 ) {
 
-    SCYTHE_OF_VITUR(Categories.WEAPON, 22325, GameItem(26399, 1), 250_000_000, 5.0),
+    SCYTHE_OF_VITUR(Categories.WEAPON, 22325, GameItem(29499, 1), 250_000_000, 5.0),
     GHRAZI_RAPIER(Categories.WEAPON, 22324, GameItem(26219, 1), 250_000_000, 5.0),
     DRAGON_WARRHAMER(Categories.WEAPON, 13576, GameItem(22622, 1), 100_000_000, 15.0),
 

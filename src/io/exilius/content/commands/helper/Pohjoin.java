@@ -1,4 +1,4 @@
-package io.exilius.content.commands.owner;
+package io.exilius.content.commands.helper;
 
 import io.exilius.content.commands.Command;
 import io.exilius.content.skills.construction.House;
@@ -33,7 +33,7 @@ public class Pohjoin extends Command {
                 return;
 
             if (toJoin.getHouse() == null) {
-                c.sendMessage(Misc.formatPlayerName(toJoin.getLoginName()) + " does not appear to be home.");
+                c.sendMessage(Misc.formatPlayerName(toJoin.getDisplayName()) + " does not appear to be home.");
                 return;
             }
 

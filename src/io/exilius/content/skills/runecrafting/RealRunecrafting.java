@@ -83,7 +83,7 @@ public class RealRunecrafting {
         if (a != null) {
             if ((a.getKeys()[1] == c.playerEquipment[c.playerHat]) || (a.getKeys()[0] == itemUse)) {
                 c.getPlayerAssistant().movePlayer(a.getNewLoc()[0], a.getNewLoc()[1], 0);
-                c.sendMessage("You enter the mysterious ruins.");
+                c.sendMessage("You feel a powerful force take hold of you...");
             } else {
                 c.sendMessage("Nothing interesting happens.");
             }
@@ -148,10 +148,10 @@ public class RealRunecrafting {
                     c.startAnimation(791);
                     c.gfx100(186);
                 } else {
-                    c.sendMessage("You don't have any essence.");
+                    c.sendMessage("You do not have any essence to craft this rune.");
                 }
             } else {
-                c.sendMessage("You need a runecrafting level of at least " + ad.levelReq + " to make runes here.");
+                c.sendMessage("You need a Runecrafting level of " + ad.levelReq + " to craft this rune.");
             }
         }
         return false;

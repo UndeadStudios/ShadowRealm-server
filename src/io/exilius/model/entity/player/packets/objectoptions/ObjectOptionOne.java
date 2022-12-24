@@ -194,6 +194,34 @@ static int fourthFloorsos[][] = {
 			return;
 		}
 		ObjectDef def = ObjectDef.getObjectDef(objectType);
+		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("trapdoor")) {
+			if(def.actions[0].toLowerCase().equals("climb-down")) {
+				if(obX == 3209 && obY == 3216) { // custom locations
+					c.getPA().movePlayer(3209, 9617, 0);
+					return;
+				}
+				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+					return;
+				}
+			} else if (def.actions[0].toLowerCase().equals("open")) {
+				if(objectType == 6434) {
+					Server.getGlobalObjects().add(new GlobalObject(6435, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 6434));
+					return;
+				}
+				if(objectType == 1579) {
+					Server.getGlobalObjects().add(new GlobalObject(1581, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 1579));
+					return;
+				}
+				if(objectType == 1580) {
+					Server.getGlobalObjects().add(new GlobalObject(1582, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 1580));
+					return;
+				}
+			}
+		}
 		if ((def!=null ? def.name : null) != null && def.name.toLowerCase().equals("anvil")) {
 			if (c.getItems().playerHasItem(barType[0])) {
 				c.getSmithingInt().showSmithInterface(barType[0]);
@@ -231,6 +259,20 @@ static int fourthFloorsos[][] = {
 					AgilityHandler.delayEmote(c, "CLIMB_UP", 3086, 3496, 0, 2);
 					return;
 				}
+				if(obX == 1995 && obY == 9337){
+					if(c.getX() == 1995 && c.getY() == 9336) {
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel + 1);
+					return;
+					}
+					return;
+				}
+				if(obX == 2008 && obY == 9335){
+					if(c.getX() == 2009 && c.getY() == 9335 || c.getX() == 2007 && c.getY() == 9335 || c.getX() == 2008 && c.getY() == 9336 || c.getX() == 2008 && c.getY() == 9334) {
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel + 1);
+						return;
+					}
+					return;
+				}
 				if(obX == 2899 && obY == 4449) {
 					return;
 				}
@@ -241,6 +283,74 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 				if(obX == 1859 && obY == 5244) { //sos
+					return;
+				}
+				if(obX == 3082 && obY == 3489){
+					if(c.getX() == 3082 && c.getY() == 3488){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+						return;
+					}
+					return;
+				}
+				if(obX == 3108 && obY == 3490){
+					if(c.getX() == 3109 && c.getY() == 3490){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+						return;
+					}
+					return;
+				}
+				if(obX == 2388 && obY == 3793){
+					if(c.getX() == 2389 && c.getY() == 3794 || c.getX() == 2388 && c.getY() == 3792 || c.getX() == 2387 && c.getY() == 3793 || c.getX() == 2388 && c.getY() == 3794){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2421 && obY == 3823){
+					if(c.getX() == 2421 && c.getY() == 3822 || c.getX() == 2421 && c.getY() == 3824 || c.getX() == 2422 && c.getY() == 3823 || c.getX() == 2420 && c.getY() == 3823){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2410 && obY == 3823){
+					if(c.getX() == 2410 && c.getY() == 3822 || c.getX() == 2410 && c.getY() == 3824 || c.getX() == 2411 && c.getY() == 3823 || c.getX() == 2409 && c.getY() == 3823){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2373 && obY == 3800){
+					if(c.getX() == 2374 && c.getY() == 3800){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2388 && obY == 3804){
+					if(c.getX() == 2389 && c.getY() == 3804 || c.getX() == 2388 && c.getY() == 3803 || c.getX() == 2387 && c.getY() == 3804 || c.getX() == 2388 && c.getY() == 3805){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 3092 && obY == 3507){
+					if(c.getX() == 3093 && c.getY() == 3507){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+						return;
+					}
+					return;
+				}
+
+				if(obX == 2363 && obY == 3799){
+					if(c.getX() == 2362 && c.getY() == 3799){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+2);
+						return;
+					}
+					return;
+				}
+				if(obX == 3097 && obY == 9867) { // custom locations
+					Ladders.climbLadder(c, 3106, 3486, 0);
 					return;
 				}
 				if(obX == 3020 && obY == 9739) { // Mining guild
@@ -273,6 +383,10 @@ static int fourthFloorsos[][] = {
 				}
 				if(obX == 3084 && obY == 9672) { // custom locations
 					Ladders.climbLadder(c, 3083, 3272, 0);
+					return;
+				}
+				if(obX == 1830 && obY == 9974){
+					Ladders.climbLadder(c, 1702, 3575, 0);
 					return;
 				}
 				if(obX == 3118 && obY == 9643) { // custom locations
@@ -308,12 +422,95 @@ static int fourthFloorsos[][] = {
 					Ladders.climbLadder(c, 3104, 9576, 0);
 					return;
 				}
+				if(obX == 2388 && obY == 3793){
+					if(c.getX() == 2389 && c.getY() == 3794 || c.getX() == 2388 && c.getY() == 3792 || c.getX() == 2387 && c.getY() == 3793 || c.getX() == 2388 && c.getY() == 3794){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2388 && obY == 3804){
+					if(c.getX() == 2389 && c.getY() == 3804 || c.getX() == 2388 && c.getY() == 3803 || c.getX() == 2387 && c.getY() == 3804 || c.getX() == 2388 && c.getY() == 3805){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2373 && obY == 3800){
+					if(c.getX() == 2374 && c.getY() == 3800){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
+				if(obX == 2421 && obY == 3823){
+					if(c.getX() == 2421 && c.getY() == 3822 || c.getX() == 2421 && c.getY() == 3824 || c.getX() == 2422 && c.getY() == 3823 || c.getX() == 2420 && c.getY() == 3823){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
+
+				if(obX == 2363 && obY == 3799){
+					if(c.getX() == 2362 && c.getY() == 3799){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
 				if(obX == 3087 && obY == 3496) { // foe ladder
 					AgilityHandler.delayEmote(c, "CLIMB_DOWN", 2548, 9951, 0, 2);
 					return;
 				}
+				if(obX == 2410 && obY == 3823){
+					if(c.getX() == 2410 && c.getY() == 3822 || c.getX() == 2410 && c.getY() == 3824 || c.getX() == 2411 && c.getY() == 3823 || c.getX() == 2409 && c.getY() == 3823){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-2);
+						return;
+					}
+					return;
+				}
 				if(obX == 1902 && obY == 5222) { //KBD LAIR
 					Ladders.climbLadder(c, 2042, 5245, 0);
+					return;
+				}
+				if(obX == 1995 && obY == 9337){
+					if(c.getX() == 1995 && c.getY() == 9336) {
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel - 1);
+						return;
+					}
+					return;
+				}
+				if(obX == 2008 && obY == 9335){
+					if(c.getX() == 2009 && c.getY() == 9335 || c.getX() == 2007 && c.getY() == 9335 || c.getX() == 2008 && c.getY() == 9336 || c.getX() == 2008 && c.getY() == 9334) {
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel - 1);
+						return;
+					}
+					return;
+				}
+				if(obX == 3082 && obY == 3289){
+					if(c.getX() == 3082 && c.getY() == 3488 && c.getHeight() == 1){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+						return;
+					}
+					return;
+				}
+				if(obX == 3108 && obY == 3490){
+					if(c.getX() == 3109 && c.getY() == 3490 && c.getHeight() == 1){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+						return;
+					}
+					return;
+				}
+				if(obX == 1702 && obY == 3574){
+					Ladders.climbLadder(c, 1830, 9973, 0);
+					return;
+				}
+
+				if(obX == 3092 && obY == 3507){
+					if(c.getX() == 3093 && c.getY() == 3507 && c.getHeight() == 1){
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+						return;
+					}
 					return;
 				}
 				if(obX == 3020 && obY == 3339 || obX == 3018 && obY == 3339 || obX == 3019 && obY == 3340 || obX == 3019 && obY == 3338) { // Mining guild
@@ -374,6 +571,11 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(3104, 3161, 1);
 					return;
 				}
+
+				if(obX == 2406 && obY == 10188) {
+					c.getPA().movePlayer(2396, 3812, 0);
+					return;
+				}
 				if(obX == 2971 && obY == 3370) {
 					c.getPA().movePlayer(c.getX(), c.getY()+4, 1);
 					return;
@@ -420,6 +622,10 @@ static int fourthFloorsos[][] = {
 				}
 				if(obX == 3018 && obY == 3343) {
 					c.getPA().movePlayer(c.getX()+4, c.getY(), 1);
+					return;
+				}
+				if(obX == 1798 && obY == 9967) {
+					c.getPA().movePlayer(1671, 3568, 0);
 					return;
 				}
 				if(obX == 3044 && obY == 10324){
@@ -480,6 +686,15 @@ static int fourthFloorsos[][] = {
 				}
 				if(obX == 2959 && obY == 3370) {
 					c.getPA().movePlayer(c.getX(), c.getY()-4, 0);
+					return;
+				}
+
+				if(obX == 1669 && obY == 3567) {
+					c.getPA().movePlayer(1800, 9967, 0);
+					return;
+				}
+				if(obX == 2397 && obY == 3812) {
+					c.getPA().movePlayer(2406, 10187, 0);
 					return;
 				}
 				if(obX == 3044 && obY == 3924){
@@ -602,6 +817,86 @@ static int fourthFloorsos[][] = {
 		}
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
+			case 21311:
+				if(c.getX() == 2314 && c.getY() == 3848){
+					c.getPA().walkTo(0, -9);
+				}
+				break;
+			case 41357:
+				c.getPA().movePlayer(2952, 5762, 0);
+				break;
+			case 41446:
+				c.getPA().movePlayer(2998, 3494, 0);
+				break;
+			case 21310:
+				if(c.getX() == 2314 && c.getY() == 3839){
+					c.getPA().walkTo(0, 9);
+				}
+				break;
+			case 21307:
+				if(c.getX() == 2317 && c.getY() == 3832){
+					c.getPA().walkTo(0, -9);
+				}
+				break;
+			case 21306:
+				if(c.getX() == 2317 && c.getY() == 3823){
+					c.getPA().walkTo(0, 9);
+				}
+				break;
+			case 34531:
+				if(c.getX() == 1334 && c.getY() == 10206 && c.getHeight() == 1){
+					c.getPA().movePlayer(1329, 10206, 0);
+				} else if(c.getX() == 1334 && c.getY() == 10205 && c.getHeight() == 1){
+					c.getPA().movePlayer(1329, 10205, 0);
+				} else if(c.getX() == 1318 && c.getY() == 10189 && c.getHeight() == 2){
+					c.getPA().movePlayer(1313, 10189, 1);
+				} else if(c.getX() == 1318 && c.getY() == 10188 && c.getHeight() == 2){
+					c.getPA().movePlayer(1313, 10188, 1);
+				}
+				break;
+			case 34530:
+				if(c.getX() == 1329 && c.getY() == 10206 && c.getHeight() == 0){
+					c.getPA().movePlayer(1334, 10206, 1);
+				} else if(c.getX() == 1329 && c.getY() == 10205 && c.getHeight() == 0){
+					c.getPA().movePlayer(1334, 10205, 1);
+				} else if(c.getX() == 1313 && c.getY() == 10189 && c.getHeight() == 1){
+					c.getPA().movePlayer(1318, 10189, 2);
+				} else if(c.getX() == 1313 && c.getY() == 10188 && c.getHeight() == 1){
+					c.getPA().movePlayer(1318, 10188, 2);
+				}
+				break;
+			case 34544:
+				if(c.getX() == 1301 && c.getY() == 10206 && c.getHeight() == 0){
+					c.getPA().movePlayer(1303, 10206, 0);
+				} else if(c.getX() == 1301 && c.getY() == 10205 && c.getHeight() == 0) {
+					c.getPA().movePlayer(1303, 10205, 0);
+				} else if(c.getX() == 1311 && c.getY() == 10216 && c.getHeight() == 0){
+					c.getPA().movePlayer(1311, 10214, 0);
+				} else if(c.getX() == 1312 && c.getY() == 10216 && c.getHeight() == 0){
+					c.getPA().movePlayer(1312, 10214, 0);
+				} else if(c.getX() == 1322 && c.getY() == 10205 && c.getHeight() == 0){
+					c.getPA().movePlayer(1320, 10205, 0);
+				} else if(c.getX() == 1322 && c.getY() == 10206 && c.getHeight() == 0){
+					c.getPA().movePlayer(1320, 10206, 0);
+				} else if(c.getX() == 1303 && c.getY() == 10205 && c.getHeight() == 0){
+						c.getPA().movePlayer(1301, 10205, 0);
+					} else if(c.getX() == 1303 && c.getY() == 10206 && c.getHeight() == 0){
+						c.getPA().movePlayer(1301, 10206, 0);
+					} else if(c.getX() == 1311 && c.getY() == 10214 && c.getHeight() == 0){
+						c.getPA().movePlayer(1311, 10216, 0);
+					} else if(c.getX() == 1312 && c.getY() == 10214 && c.getHeight() == 0){
+						c.getPA().movePlayer(1312, 10216, 0);
+					} else if(c.getX() == 1320 && c.getY() == 10206 && c.getHeight() == 0){
+						c.getPA().movePlayer(1322, 10206, 0);
+					} else if(c.getX() == 1320 && c.getY() == 10205 && c.getHeight() == 0){
+						c.getPA().movePlayer(1322, 10205, 0);
+					}
+				break;
+			case 4525: // leave house
+				if (c.getHouse() != null)
+					c.getHouse().leave(c);
+				c.getPA().movePlayer(3080, 3492, 0);
+				break;
 			case 6910://part of xmas event will be adding the others around the world
 					if (c.getItems().playerHasItem(995, 10_000_000)) {
 						if (!c.hasclaimedsanta) {
@@ -1254,12 +1549,6 @@ static int fourthFloorsos[][] = {
 				AgilityHandler.delayEmote(c, "CRAWL", 2394, 10300, 1,  2);
 				//c.getDH().sendDialogues(792, 1158);
 				break;
-			case 21306:
-				c.getPA().movePlayer(2317, 3824, 0);
-				break;
-			case 21307:
-				c.getPA().movePlayer(2317, 3831, 0);
-				break;
 			case 21308:
 				c.getPA().movePlayer(2343, 3828, 0);
 				break;
@@ -1688,29 +1977,6 @@ static int fourthFloorsos[][] = {
 					return;
 				} else {
 					c.getDH().sendStatement("@red@You need a Konar slayer key to open this.");				}
-				break;
-			case 34544: //Karuulm Rocks/Stone Bars (Intro)
-				if (c.absX == 1320 && c.absY == 10205 || c.absX == 1320 && c.absY == 10206) {
-					AgilityHandler.delayEmote(c, "JUMP", 1322, c.absY, 0, 2);
-				} else if (c.absX == 1322 && c.absY == 10205 || c.absX == 1322 && c.absY == 10206) {
-					AgilityHandler.delayEmote(c, "JUMP", 1320, c.absY, 0, 2);
-
-				} if (c.absX == 1311 && c.absY == 10214 || c.absX == 1312 && c.absY == 10214) {
-				AgilityHandler.delayEmote(c, "JUMP", 1311, 10216, 0, 2);
-			} else if (c.absX == 1311 && c.absY == 10216 || c.absX == 1312 && c.absY == 10216) {
-				AgilityHandler.delayEmote(c, "JUMP", 1312, 10214, 0, 2);
-
-			} if (c.absX == 1303 && c.absY == 10206 || c.absX == 1303 && c.absY == 10205) {
-				AgilityHandler.delayEmote(c, "JUMP", 1301, 10205, 0, 2);
-			} else if (c.absX == 1301 && c.absY == 10206 || c.absX == 1301 && c.absY == 10205) {
-				AgilityHandler.delayEmote(c, "JUMP", 1303, 10206, 0, 2);
-			}
-				break;
-			case 34530:
-				c.getPA().movePlayer(1334, 10205, 1);
-				break;
-			case 34531:
-				c.getPA().movePlayer(1329, 10206, 0);
 				break;
 			case 12768:
 				c.objectDistance = 3;

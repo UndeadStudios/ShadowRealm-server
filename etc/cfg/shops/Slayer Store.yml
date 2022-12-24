@@ -3,6 +3,7 @@ id: 10
 name: "Slayer Store"
 items:
 - name: "enchanted gem"
+- name: "boots of stone"
 - name: "infinity hat"
 - name: "infinity top"
 - name: "infinity bottoms"
@@ -31,7 +32,6 @@ items:
 - name: "corrupted shards"
 - id: 13438
 - name: "unfinished broad bolt pack"
-
 - name: "fremennik kilt"
 - name: "fighter torso"
 - name: "fighter hat"

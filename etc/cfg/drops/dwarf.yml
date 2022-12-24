@@ -1,5 +1,6 @@
 ---
 npc_id:
+  - 290
   - 1401
   - 1402
   - 1403
@@ -12,7 +13,6 @@ npc_id:
   - 1410
   - 1411
   - 1412
-  - 1413
 constant:
   accessibility: 0
   items:
@@ -20,17 +20,17 @@ constant:
     minimum: 1
     maximum: 1
 common:
-  accessibility: 1
+  accessibility: 2
   items:
-  - name: "bronze pickaxe"
+  - name: "Bronze pickaxe"
     minimum: 1
     maximum: 1
-  - name: "bronze bolts"
+  - name: "Bronze bolts"
     minimum: 2
     maximum: 12
   - name: "coins"
-    minimum: 400
-    maximum: 30000
+    minimum: 40
+    maximum: 40000
   - name: "hammer"
     minimum: 1
     maximum: 1
@@ -38,24 +38,27 @@ common:
     minimum: 1
     maximum: 1
 uncommon:
-  accessibility: 2
+  accessibility: 7
   items:
-  - name: "bronze med helm"
+  - name: "Bronze med helm"
     minimum: 1
     maximum: 1
-  - name: "bronze battleaxe"
+  - name: "Bronze battleaxe"
     minimum: 1
     maximum: 1
-  - name: "chaos rune"
+  - name: "Chaos rune"
     minimum: 2
     maximum: 2
-  - name: "nature rune"
+  - name: "Nature rune"
     minimum: 2
     maximum: 2
-  - name: "tin ore"
-    minimum: 1
-    maximum: 1
+  - name: "coins"
+    minimum: 2000
+    maximum: 60000
   - name: "iron ore"
+    minimum: 1
+    maximum: 1
+  - name: "tin ore"
     minimum: 1
     maximum: 1
   - name: "copper ore"

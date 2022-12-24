@@ -12,6 +12,17 @@ public class BlockAnimation {
         switch (npcId) {
             case 9118:
                 return 6091;
+            case 5823:
+            case 5824:
+            case 5825:
+            case 5826:
+            case 5828:
+            case 5829:
+            case 5830:
+            case 5831:
+                return 1158;
+            case 1047:
+                return 4232;
             case 2098:
             case 2099:
             case 2100:
@@ -771,9 +782,13 @@ public class BlockAnimation {
                 return 165;
 
             case 135:// hellhound
+            case 104:
             case 142:
                 return 6578;
-
+            case 3019:
+                return 6250;
+            case 290:
+                return 928;
             case 1593:
             case 152:
             case 45:

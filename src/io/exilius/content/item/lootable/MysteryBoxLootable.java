@@ -164,7 +164,7 @@ public abstract class MysteryBoxLootable implements Lootable {
 
             return;
         }
-        if (!(player.getSuperMysteryBox().canMysteryBox) || !(player.getNormalMysteryBox().canMysteryBox) ||
+        if (!(player.getSuperMysteryBox().canMysteryBox) || !(player.getNormalMysteryBox().canMysteryBox)  || !(player.getPresent().canMysteryBox)||
                 !(player.getUltraMysteryBox().canMysteryBox) || !(player.getFoeMysteryBox().canMysteryBox) ||
                 !(player.getYoutubeMysteryBox().canMysteryBox)
         ) {
@@ -189,6 +189,7 @@ public abstract class MysteryBoxLootable implements Lootable {
             player.getUltraMysteryBox().canMysteryBox();
             player.getSuperMysteryBox().canMysteryBox();
             player.getFoeMysteryBox().canMysteryBox();
+            player.getPresent().canMysteryBox();
             player.getYoutubeMysteryBox().canMysteryBox();
             return;
         }

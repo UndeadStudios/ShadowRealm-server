@@ -1,0 +1,181 @@
+---
+npc_id:
+  - 5828
+  - 5829
+  - 5830
+  - 5831
+  - 5823
+  - 5824
+  - 5825
+  - 5826
+constant:
+  accessibility: 0
+  items:
+  - name: "big bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 3
+  items:
+  - name: "Adamant full helm"
+    minimum: 1
+    maximum: 1
+  - name: "Steel platebody"
+    minimum: 1
+    maximum: 1
+  - name: "Earth rune"
+    minimum: 8
+    maximum: 14
+  - name: "Earth rune"
+    minimum: 12
+    maximum: 36
+  - name: "coins"
+    minimum: 200
+    maximum: 200
+  - name: "raw shark noted"
+    minimum: 2
+    maximum: 8
+  - name: "seaweed noted"
+    minimum: 3
+    maximum: 9
+  - name: "ball of wool noted"
+    minimum: 18
+    maximum: 42
+uncommon:
+  accessibility: 20
+  items:
+  - name: "Mithril warhammer"
+    minimum: 1
+    maximum: 1
+  - name: "Adamant axe"
+    minimum: 1
+    maximum: 1
+  - name: "Rune kiteshield"
+    minimum: 1
+    maximum: 1
+  - name: "Nature rune"
+    minimum: 4
+    maximum: 12
+  - name: "law rune"
+    minimum: 4
+    maximum: 8
+  - name: "Limpwurt seed"
+    minimum: 1
+    maximum: 1
+  - name: "Strawberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "Marrentill seed"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 80
+  items:
+  - name: "Granite shield"
+    minimum: 1
+    maximum: 1
+  - name: "Rune warhammer"
+    minimum: 1
+    maximum: 1
+  - name: "Grimy guam leaf"
+    minimum: 1
+    maximum: 1
+  - name: "Grimy marrentill"
+    minimum: 1
+    maximum: 1
+  - name: "Grimy tarromin"
+    minimum: 1
+    maximum: 1
+  - name: "Grimy harralander"
+    minimum: 1
+    maximum: 1
+  - name: "Grimy ranarr weed"
+    minimum: 1
+    maximum: 1
+  - name: "Jangerberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "Tarromin seed"
+    minimum: 1
+    maximum: 1
+  - name: "Wildblood seed"
+    minimum: 1
+    maximum: 1
+  - name: "Watermelon seed"
+    minimum: 1
+    maximum: 1
+  - name: "Harralander seed"
+    minimum: 1
+    maximum: 1
+  - name: "Snape grass seed"
+    minimum: 1
+    maximum: 1
+  - name: "Ranarr seed"
+    minimum: 1
+    maximum: 1
+  - name: "Whiteberry seed"
+    minimum: 1
+    maximum: 1
+  - name: "Mushroom spore"
+    minimum: 1
+    maximum: 1
+  - name: "Toadflax seed"
+    minimum: 1
+    maximum: 1
+  - name: "Belladonna seed"
+    minimum: 1
+    maximum: 1
+  - name: "Irit seed"
+    minimum: 1
+    maximum: 1
+  - name: "Poison ivy seed"
+    minimum: 1
+    maximum: 1
+very_rare:
+  accessibility: 175
+  items:
+    - name: "Grimy irit leaf"
+      minimum: 1
+      maximum: 1
+    - name: "Grimy avantoe"
+      minimum: 1
+      maximum: 1
+    - name: "Grimy kwuarm"
+      minimum: 1
+      maximum: 1
+    - name: "Grimy cadantine"
+      minimum: 1
+      maximum: 1
+    - name: "Grimy lantadyme"
+      minimum: 1
+      maximum: 1
+    - name: "Grimy dwarf weed"
+      minimum: 1
+      maximum: 1
+    - name: "Avantoe seed"
+      minimum: 1
+      maximum: 1
+    - name: "Cactus seed"
+      minimum: 1
+      maximum: 1
+    - name: "Kwuarm seed"
+      minimum: 1
+      maximum: 1
+    - name: "Potato cactus seed"
+      minimum: 1
+      maximum: 1
+    - name: "Snapdragon seed"
+      minimum: 1
+      maximum: 1
+    - name: "Cadantine seed"
+      minimum: 1
+      maximum: 1
+    - name: "Lantadyme seed"
+      minimum: 1
+      maximum: 1
+    - name: "Dwarf weed seed"
+      minimum: 1
+      maximum: 1
+    - name: "Torstol seed"
+      minimum: 1
+      maximum: 1

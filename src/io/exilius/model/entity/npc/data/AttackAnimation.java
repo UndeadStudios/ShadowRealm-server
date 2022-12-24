@@ -25,12 +25,32 @@ public class AttackAnimation extends NPCHandler {
 		}
 		
 		switch (npc.getNpcId()) {
+			case 3019:
+				return 6249;
+			case 290:
+				return 99;
 			case 9118:
 				return 6090;
+			case 5823:
+			case 5824:
+			case 5825:
+			case 5826:
+			case 5828:
+			case 5829:
+			case 5830:
+			case 5831:
+				return 284;
+			case 1047:
+				return 4234;
 			case 3254: // Guard
 			case Npcs.ZAMORAK_WARRIOR:
 			case Npcs.ZAMORAK_WARRIOR_2:
 				return 451;
+			case Npcs.AIR_WIZARD:
+			case Npcs.FIRE_WIZARD:
+			case Npcs.WATER_WIZARD:
+			case Npcs.EARTH_WIZARD:
+				return 711;
 			case 2837: // unicorn
 			case 2849:
 				return 6376;
@@ -759,6 +779,7 @@ public class AttackAnimation extends NPCHandler {
 			case 7938:
 			return 2731;
 		case 135:
+			case 104:
 			case 7935:
 			return 6562;
 		case 6267:

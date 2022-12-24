@@ -8,6 +8,7 @@ import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
 import io.exilius.content.minigames.inferno.InfernoWaveData;
 import io.exilius.model.CombatType;
+import io.exilius.model.Npcs;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -109,6 +110,7 @@ public class LoadSpell {
                             npc.endGfx = -1;
                             npc.projectileId = -1;
                             break;
+                            
                     }
                 }
                 break;
@@ -148,6 +150,34 @@ public class LoadSpell {
                 npc.hitDelayTimer = 5;
                 npc.projectileId = 1375;
                 npc.endGfx = -1;
+                break;
+            case Npcs.AIR_WIZARD:
+                npc.setAttackType(CombatType.MAGE);
+                npc.hitDelayTimer = 5;
+                npc.gfx100(90);
+                npc.projectileId = 91;
+                npc.endGfx = 92;
+                break;
+            case Npcs.WATER_WIZARD:
+                npc.setAttackType(CombatType.MAGE);
+                npc.hitDelayTimer = 5;
+                npc.gfx100(93);
+                npc.projectileId = 94;
+                npc.endGfx = 95;
+                break;
+            case Npcs.EARTH_WIZARD:
+                npc.setAttackType(CombatType.MAGE);
+                npc.hitDelayTimer = 5;
+                npc.gfx100(96);
+                npc.projectileId = 97;
+                npc.endGfx = 98;
+                break;
+            case Npcs.FIRE_WIZARD:
+                npc.setAttackType(CombatType.MAGE);
+                npc.hitDelayTimer = 5;
+                npc.gfx100(99);
+                npc.projectileId = 100;
+                npc.endGfx = 101;
                 break;
             case 9021:
             case 9022:

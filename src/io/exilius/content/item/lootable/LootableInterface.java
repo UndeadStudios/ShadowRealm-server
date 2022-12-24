@@ -32,7 +32,7 @@ public class LootableInterface {
     private static final int CURRENT_VIEW_CONFIG_ID = 1354;
 
     private static final int[] BUTTONS = {175211, 175214, 175217, 175220, 175223, 175226, 175229,
-            175232, 175235, 175238, 175241, 175244, 175247, 175250, 175253, 176_000, 176_003};
+            175232, 175235, 175238, 175241, 175244, 175247, 175250, 175253, 176_000, 176_003, 176_006, 176_009, 176_012};
 
     private enum LootableView {
 
@@ -55,6 +55,7 @@ public class LootableInterface {
         CRYSTAL_CHEST(new CrystalChest()),
         PVM_CASKET(new PvmCasket()),
         LARRANS_CHEST(new LarransChest()),
+        PRESENT(new Present(null))
         ;
 
         private List<GameItem> common;

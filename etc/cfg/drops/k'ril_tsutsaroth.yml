@@ -3,7 +3,7 @@ npc_id: 3129
 constant:
   accessibility: 0
   items:
-  - name: "ashes"
+  - name: "infernal ashes"
     minimum: 1
     maximum: 1
 common:

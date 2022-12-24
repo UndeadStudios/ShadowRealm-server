@@ -219,6 +219,15 @@ public class Boundary {
 	/**
 	 * Diary locations
 	 */
+	public static final Boundary[] KARUULM_SLAYER_DUNGEON = {
+			new Boundary(1239, 10132, 1301, 10212, 0),
+			new Boundary(1283, 10215, 1360, 10252, 0),
+			new Boundary(1298, 10253, 1381, 10282, 0),
+			new Boundary(1321, 10202, 1332, 10208, 0),
+			new Boundary(1258, 10162, 1378, 10263, 1),
+			new Boundary(1259, 10177, 1362, 10231, 2)
+	};
+	public static final Boundary ICE_TROOL_AREA = new Boundary(2306, 3843, 2429, 3902);
 	public static final Boundary VARROCK_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
 	//public static final Boundary VARROCK_COOKING_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
 	public static final Boundary ARDOUGNE_BOUNDARY = new Boundary(2432, 3259, 2690, 3380);
@@ -291,7 +300,7 @@ public class Boundary {
 	public static final Boundary CRYSTAL_CAVE_STAIRS = new Boundary(3222, 12441, 3229, 12448);
 	public static final Boundary CRYSTAL_CAVE_ENTRANCE = new Boundary(3268, 6050, 3278, 6056);
 	public static final Boundary CRYSTAL_CAVE_AREA = new Boundary(3131, 12346, 3265, 12482);
-
+	public static final Boundary spider = new Boundary(3292, 3717, 3349, 3775);
 	public static final Boundary FLOWER_POKER_AREA = new Boundary(2112, 9482, 2175, 9535);
 	public static final Boundary FP_LANE_1 = new Boundary(2115, 9476, 2121, 9479);
 	public static final Boundary FP_LANE_2 = new Boundary(2115, 9481, 2121, 9484);
@@ -349,7 +358,7 @@ public class Boundary {
 	public static final Boundary SLAYER_REV_CAVE_1 = new Boundary(3224, 10192, 3251, 10218);
 	public static final Boundary SLAYER_REV_CAVE_2 = new Boundary(3146, 10128, 3227, 10232);
 	public static final Boundary SLAYER_REV_CAVE_3 = new Boundary(3126, 10041, 3240, 10150);
-	public static final Boundary REV_CAVE = new Boundary(3121, 10038, 3276, 10245);
+	public static final Boundary REV_CAVE = new Boundary(3125, 10049, 3464, 10238);
 	/**
 	 * Hunter
 	 */

@@ -318,7 +318,8 @@ public class NpcOptionOne {
 					player.getQuestTab().updateInformationTab();
 					player.getDH().sendItemStatement("Oziach successfully bound your dragonfire shield.", 11283);
 				} else {
-					player.getDH().sendNpcChat("Come back with a shield, visage and 5M Gold!");
+					//player.getDH().sendNpcChat("Come back with a shield, visage and 5M Gold!");
+					player.sendMessage("Come back with a shield, visage and 5M Gold!");
 				}
 			}
 			break;

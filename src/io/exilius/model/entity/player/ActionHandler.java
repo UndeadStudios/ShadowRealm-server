@@ -2,10 +2,7 @@ package io.exilius.model.entity.player;
 
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.packets.npcoptions.*;
-import io.exilius.model.entity.player.packets.objectoptions.ObjectOptionFour;
-import io.exilius.model.entity.player.packets.objectoptions.ObjectOptionOne;
-import io.exilius.model.entity.player.packets.objectoptions.ObjectOptionThree;
-import io.exilius.model.entity.player.packets.objectoptions.ObjectOptionTwo;
+import io.exilius.model.entity.player.packets.objectoptions.*;
 
 public class ActionHandler {
 
@@ -30,7 +27,9 @@ public class ActionHandler {
 	public void fourthClickObject(int objectType, int obX, int obY) {
 		ObjectOptionFour.handleOption(c, objectType, obX, obY);
 	}
-
+	public void fifthClickObject(int objectType, int obX, int obY) {
+		ObjectOptionFive.handleOption(c, objectType, obX, obY);
+	}
 	public void firstClickNpc(NPC npc) {
 		NpcOptionOne.handleOption(c, npc.getNpcId());
 		NpcOptions.handle(c, npc, 1);

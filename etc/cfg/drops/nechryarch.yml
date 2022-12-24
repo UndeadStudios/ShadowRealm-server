@@ -1,5 +1,11 @@
 ---
 npc_id: 7411
+constant:
+  accessibility: 0
+  items:
+    - name: "Malicious ashes"
+      minimum: 1
+      maximum: 1
 rare:
   accessibility: 16
   items:

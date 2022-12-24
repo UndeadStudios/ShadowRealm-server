@@ -20,7 +20,7 @@ public class DiggingScrolls {
         DIG2(new String[]{"46 is my number, and fire is my ", "blood. I have created over a ", "thousand blades. Unknown to life, ", "nor known to death."}, Items.CLUE_SCROLL_HARD_25, new Position(3170, 3885), 3),
         DIG3(new String[]{"As you desert this town, keep ", "that could ruin nearby rugs: ", "dig carefully around the ", "greenery"}, Items.CLUE_SCROLL_HARD_26, new Position(3397, 2915), 3),
         DIG4(new String[]{"By the town of the dead, ", "walk south down a rickety ", "bridge, then dig near the ", "slime-covered tree."}, Items.CLUE_SCROLL_HARD_27, new Position(3647, 3496), 3),
-        DIG5(new String[]{"Come to the evil ", "ledge, Yew know yew ", "want to, And try not to ", "get stung."}, Items.CLUE_SCROLL_HARD_28, new Position(3088, 3469), 3),
+        DIG5(new String[]{"Come to the evil ", "ledge, Yew know yew ", "want to, And try not to ", "get stung."}, Items.CLUE_SCROLL_HARD_28, new Position(2000, 9293), 3),
         DIG6(new String[]{"Covered in shadows, ", "the centre of the ", "circle is where you will ", "find the answer."}, Items.CLUE_SCROLL_HARD_29, new Position(3489, 3289), 3),
         DIG7(new String[]{"I lie lonely and forgotten ", "in mid wilderness, ", "Where the dead rise ", "from their beds. Feel ", "free to quarrel and wind ", "me up, and dig while ", "you shoot their heads."}, Items.CLUE_SCROLL_HARD_30, new Position(3174, 3663), 3),
         DIG8(new String[]{"The beasts to my east ", "snap claws and tails. ", "The rest to my west can ", "slide and eat fish. The ", "northern are silly and ", "jump and wail. Dig by ", "my fire and make a ", "wish."}, Items.CLUE_SCROLL_HARD_31, new Position(2599, 3266), 3),

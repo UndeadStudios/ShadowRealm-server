@@ -1,6 +1,5 @@
 package io.exilius.content.trails;
 
-import com.everythingrs.marketplace.Item;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -68,12 +67,13 @@ public class ClueScroll {
     public static final int[] sixthPuzzle = {20331, 20332, 20333, 20334, 20335, 20336, 20337, 20338, 20339, 20340, 20341, 20342, 20343, 20344, 20345, 20346, 20347, 20348, 20349, 20350, 20351, 20352, 20353, 20354, -1};
     public static final int[] seventhPuzzle = {23418, 23419, 23420, 23421, 23422, 23423, 23424, 23425, 23426, 23427, 23428, 23429, 23430, 23431, 23432, 23433, 23434, 23435, 23436, 23437, 23438, 23439, 23440, 23441, -1};
 
-    public static String[] levelOneClueNpc = {"Man", "Woman", "Goblin", "Mugger", "Barbarian", "Farmer", "Al-Kharid", "Thug", "Rock Crabs", "Rogue", "Thief", "H.A.M", "Banshees", "Cave Slime", "Afflicted", "Borrakar", "Freidar", "Freygerd", "Inga", "Jennella", "Lensa", "Lanzig"};
+    public static String[] levelOneClueNpc = {"Man", "Woman", "Goblin", "Mugger", "Barbarian", "Farmer", "Al-Kharid", "Thug", "Rock Crabs", "Rogue", "Thief", "H.A.M", "Banshees", "Cave Slime", "Afflicted", "Borrakar", "Freidar", "Freygerd", "Inga", "Jennella", "Lensa", "Lanzig", "sand crab"};
 
     public static String[] levelTwoClueNpc = {"Guard", "Tribesman", "Bandit Camp Humans", "Cockatrice", "Abyssal Leech", "Pyrefiend", "Harpie Bug Swarm", "Black Guard", "Rellekka Warriors", "Market Guard", "Jogre", "Ice Warrior", "Abyssal Guardian", "Paladin", "Vampire", "Dagannoth", "Giant Skeleton", "Abyssal Walker", "Dagannoth", "Wallasalki", "Mummy", "Giant Rock Crab"};
 
     public static String[] levelThreeClueNpc = {"Greater Demon", "Elf Warrior", "Tyras Guard", "Hellhound", "Dragon", "Dagannoth", "Turoth", "Jellie", "Aberrant Specter", "Gargoyle", "Nechryael", "Abyssal Demon"};
 
+    public static String[] levelFourClueNpc = {"skotizo", "nex", "vorkath", "callisto", "Kalphite Queen", "Venenatis", "Vet'ion", "Sarachnis", "Commander Zilyana", "General Graardor", "K'ril Tsutsaroth", "Kree'arra", "Lava dragon", "Alchemical Hydra", "rune dragon", "Adamant dragon", "Ancient Wyvern", "Mithril dragon", "Skeletal Wyvern", "King Black Dragon", "Demonic gorilla", "Kraken", "Steel dragon", "Thermonuclear smoke devil", "Dagannoth Prime", "Dagannoth Rex", "Dagannoth Supreme", "Smoke devil", "Abyssal demon", "Lizardman shaman", "Dark beast"};
     // todo torn page make into mage books + firelighters + junk items to reward
 
     public static int[] mainJunk = {554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 374, 380, 362, 1379, 1381, 1383, 1385, 1387, 1065, 1099, 1135, 1097, 1169, 841, 843, 845, 847, 849};
@@ -302,9 +302,9 @@ public class ClueScroll {
         if (Misc.random(25) != 0) { //1% chance
             return;
         }
-        //if (player.hasClueScroll()) {
-            //return;
-     //   }
+        if (player.hasClueScroll()) {
+            return;
+        }
         for (String element : levelOneClueNpc) {
             if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
                 //GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(1)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
@@ -326,6 +326,14 @@ public class ClueScroll {
                 Server.itemHandler.createGroundItem(player, getRandomClue(3), location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
                 player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
                // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(3)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
+                return;
+            }
+        }
+        for (String element : levelFourClueNpc) {
+            if (npc.getDefinition().getName().toLowerCase().contains(element.toLowerCase())) {
+                Server.itemHandler.createGroundItem(player, getRandomClue(4), location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
+                player.sendMessage("@bla@You notice a @blu@clue scroll@bla@ on the floor.");
+                // GroundItemManager.getManager().dropItem(new GroundItem(new Item(getRandomClue(3)), player,  new Position(npc.getPosition().getX(), npc.getPosition().getY(), npc.getPosition().getZ())));
                 return;
             }
         }

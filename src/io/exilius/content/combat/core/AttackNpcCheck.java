@@ -308,7 +308,7 @@ public class AttackNpcCheck {
         }
         if (npc.getNpcId() == 8609) {
             if(c.playerLevel[18] < 95) {
-                sendCheckMessage(c, sendMessages, "You must have a slayer level of at least 95 to wear these boots");
+                sendCheckMessage(c, sendMessages, "You must have a slayer level of  95 to attack this monster.");
                 return false;
             }
         }

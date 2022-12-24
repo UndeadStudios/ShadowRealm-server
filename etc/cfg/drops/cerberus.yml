@@ -3,7 +3,7 @@ npc_id: 5862
 constant:
   accessibility: 0
   items:
-  - name: "bones"
+  - name: "infernal ashes"
     minimum: 1
     maximum: 1
   - name: "key master teleport"

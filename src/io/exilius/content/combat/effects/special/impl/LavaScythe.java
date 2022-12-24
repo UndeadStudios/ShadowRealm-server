@@ -17,12 +17,12 @@ public class LavaScythe implements SpecialEffect {
     public static LavaScythe SCYTHE_EFFECT = new LavaScythe();
 
     public static boolean usingScythe(Player player) {
-        return player.getItems().isWearingItem(26399, Player.playerWeapon);
+        return player.getItems().isWearingItem(29499, Player.playerWeapon);
     }
 
     @Override
     public boolean activateSpecialEffect(Player player, Object... args) {
-        boolean usingScythe = player.getItems().isWearingItem(26399, Player.playerWeapon);
+        boolean usingScythe = player.getItems().isWearingItem(29499, Player.playerWeapon);
 
         Entity defender = (Entity) args[0];
 

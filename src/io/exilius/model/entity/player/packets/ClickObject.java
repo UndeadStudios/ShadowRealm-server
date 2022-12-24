@@ -18,7 +18,6 @@ import io.exilius.content.item.lootable.impl.NexChest;
 import io.exilius.content.item.lootable.impl.SerenChest;
 import io.exilius.content.item.lootable.impl.UnbearableChest;
 import io.exilius.content.minigames.tob.TobConstants;
-import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.hunter.impling.PuroPuro;
 import io.exilius.content.skills.runecrafting.ouriana.OurianaAltar;
@@ -42,8 +41,8 @@ import java.util.Optional;
  */
 public class ClickObject implements PacketType {
 
-    public static final int FIRST_CLICK = 132, SECOND_CLICK = 252, THIRD_CLICK = 70, FOURTH_CLICK = 228,
-            FOURTH_CLICK_2 = 234; // Already option 4 but not sure if it's used so just adding another one
+    public static final int FIRST_CLICK = 132, SECOND_CLICK = 252, THIRD_CLICK = 70, FIFTH_CLICK = 228,
+            FOURTH_CLICK = 234; // Already option 4 but not sure if it's used so just adding another one
 
     public static WorldObject getObject(Player player, int objectId, int objectX, int objectY) {
         Optional<WorldObject> worldObject = player.getRegionProvider().get(objectX, objectY)
@@ -147,16 +146,16 @@ public class ClickObject implements PacketType {
                 walkTo(c, 3);
                 break;
             case FOURTH_CLICK:
-                c.objectX = c.getInStream().readSignedWordBigEndian();
-                c.objectY = c.getInStream().readUnsignedWord();
-                c.objectId = c.getInStream().readInteger();
-                walkTo(c, 4);
-                break;
-            case FOURTH_CLICK_2:
                 c.objectX = c.getInStream().readSignedWordBigEndianA();
                 c.objectId = c.getInStream().readInteger();
                 c.objectY = c.getInStream().readSignedWordBigEndianA();
                 walkTo(c, 4);
+                break;
+            case FIFTH_CLICK:
+                c.objectId = c.getInStream().readInteger();
+                c.objectY = c.getInStream().readUnsignedWordA();
+                c.objectX = c.getInStream().readUnsignedWord();
+                walkTo(c, 5);
                 break;
         }
     }
@@ -1257,6 +1256,21 @@ public class ClickObject implements PacketType {
                         break;
                 }
                 c.getActions().fourthClickObject(c.objectId, c.objectX, c.objectY);
+                break;
+            case 5:
+                if (c.debugMessage) {
+                    c.sendMessage("Object Option Four: " + c.objectId + "  ObjectX: " + c.objectX + "  objectY: "
+                            + c.objectY + " Xoff: " + (c.getX() - c.objectX) + " Yoff: " + (c.getY() - c.objectY));
+                }
+                switch (c.objectId) {
+
+                    default:
+                        c.objectDistance = 1;
+                        c.objectXOffset = 0;
+                        c.objectYOffset = 0;
+                        break;
+                }
+                c.getActions().fifthClickObject(c.objectId, c.objectX, c.objectY);
                 break;
         }
     }

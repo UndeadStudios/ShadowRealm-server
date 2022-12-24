@@ -1,7 +1,5 @@
 package io.exilius.model.entity.player.packets;
 
-import java.util.Optional;
-
 import io.exilius.Server;
 import io.exilius.content.skills.SkillHandler;
 import io.exilius.content.skills.cooking.Cooking;
@@ -16,6 +14,8 @@ import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.multiplayersession.duel.DuelSessionRules;
 import io.exilius.util.Misc;
+
+import java.util.Optional;
 
 /**
  * Walking packet
@@ -202,7 +202,7 @@ public class Walking implements PacketType {
 			return;
 		}
 
-		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
+		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox)) {
 			c.getPA().showInterface(47000);
 			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
 			return;

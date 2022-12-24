@@ -200,6 +200,12 @@ public class Region {
         if (clips[height] == null) {
             return 0;
         }
+        if(regionAbsX == -1) {
+            return 0;
+        }
+        if(regionAbsY == -1) {
+            return 0;
+        }
         return clips[height][x - regionAbsX][y - regionAbsY];
     }
 

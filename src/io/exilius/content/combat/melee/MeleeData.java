@@ -18,7 +18,7 @@ public class MeleeData {
 		return player.attacking.getCombatType() == CombatType.MELEE && player.getItems().isWearingItem(8817);
 	}
 	public static boolean usingLavaScythe(Player player) {
-		return player.attacking.getCombatType() == CombatType.MELEE && player.getItems().isWearingItem(26399);
+		return player.attacking.getCombatType() == CombatType.MELEE && player.getItems().isWearingItem(29499);
 	}
 
 	public static boolean usingHally(Player c) {
@@ -196,7 +196,7 @@ public class MeleeData {
 			break;
 			case 10735:
 			case 1419:
-			case 26399:
+			case 29499:
 			case Items.SCYTHE_OF_OSIRIS:
 			case Items.SCYTHE_OF_VITUR:
 				c.playerStandIndex = 8057;
@@ -424,7 +424,7 @@ public class MeleeData {
 				return 245;
 		case 13263:
 			return 3298;
-			case 26399:
+			case 29499:
 			case Items.SCYTHE_OF_OSIRIS:
 				switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 					case ACCURATE:
@@ -510,7 +510,7 @@ public class MeleeData {
 				return 435;
 			case Items.SCYTHE_OF_OSIRIS:
 				return 435;
-			case 26399:
+			case 29499:
 				return 435;
 		case Items.DRAGON_HUNTER_LANCE:
 			return 420;

@@ -3,7 +3,7 @@ npc_id: 2006
 constant:
   accessibility: 0
   items:
-  - name: "ashes"
+  - name: "Vile ashes"
     minimum: 1
     maximum: 1
 common:

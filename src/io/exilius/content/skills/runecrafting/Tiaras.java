@@ -1,6 +1,7 @@
 package io.exilius.content.skills.runecrafting;
 
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.items.ItemCacheDefinition;
 
 public class Tiaras {
 
@@ -11,7 +12,7 @@ public class Tiaras {
                     player.getItems().deleteItem(ruin[0], 1);
                     player.getItems().deleteItem(5525, 1);
                     player.getItems().addItem(ruin[1], 1);
-                    player.sendMessage("You bind the power of the talisman into the tiara.");
+                    player.sendMessage("You bind the Temple's power into "+ ItemCacheDefinition.forID(ruin[1]).getName().toLowerCase()+".");
                 }
                 return true;
             }
