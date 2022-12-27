@@ -1,10 +1,5 @@
 package io.exilius.content.skills.hunter;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-
 import io.exilius.Server;
 import io.exilius.content.skills.hunter.trap.Trap;
 import io.exilius.content.skills.hunter.trap.TrapProcessor;
@@ -15,6 +10,11 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * The class which holds static functionality for the hunter skill.
@@ -111,6 +111,7 @@ public final class Hunter {
 		trap.submit();
 		player.startAnimation(827);
 		player.getItems().deleteItem(trap.getType().getItemId(), 1);
+		player.getItems().deleteItem(trap.getType().getItemId2(), 1);
 		Server.getGlobalObjects().add(trap.getObject());
 		//Server.getGlobalObjects().add(trap.getObject());
 		if (player.getRegionProvider().getClipping(player.getX() - 1, player.getY(), player.heightLevel, -1, 0)) {

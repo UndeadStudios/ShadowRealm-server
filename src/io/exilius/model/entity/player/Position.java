@@ -329,6 +329,8 @@ public final class Position {
 				|| Boundary.isIn(this, Boundary.SKELETAL_MYSTICS)
 				|| Boundary.isIn(this, Boundary.RAIDS)
 				|| Boundary.isIn(this, Boundary.spider)
+				|| Boundary.isIn(this, Boundary.OZ)
+				|| Boundary.isIn(this, Boundary.MZ)
 				|| Boundary.isIn(this, Boundary.OLM)
 				|| Boundary.isIn(this, Boundary.ICE_DEMON)
 				|| Boundary.isIn(this, Boundary.CATACOMBS)
@@ -401,7 +403,7 @@ public final class Position {
 	/**
 	 * Sets the X coordinate.
 	 *
-	 * @param x
+	 * @param x2
 	 *            the X coordinate
 	 */
 	public void setX(int x2) {

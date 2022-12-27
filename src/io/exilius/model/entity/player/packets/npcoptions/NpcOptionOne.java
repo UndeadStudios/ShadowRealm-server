@@ -90,9 +90,6 @@ public class NpcOptionOne {
 			}
 			break;
 
-		case 3400:
-			player.getEventCalendar().openCalendar();
-			break;
 
 		case 2111:
 			player.getShops().openShop(176);
@@ -202,10 +199,10 @@ public class NpcOptionOne {
 			break;
 
 		case 5314:
-			player.getTeleportInterface().openInterface();
+			player.getPA().showInterface(26263);
 			break;
 		case 3248:
-			player.getTeleportInterface().openInterface();
+			player.getPA().showInterface(26263);
 			break;
 		case 1143:
 			player.getShops().openShop(83);

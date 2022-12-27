@@ -224,9 +224,11 @@ public class AttackNpcCheck {
                 return false;
             }
         }
-        if (c.playerEquipment[Player.playerWeapon] == 25865|| c.playerEquipment[Player.playerWeapon] == 25862 || c.playerEquipment[Player.playerWeapon] == 22547 || c.playerEquipment[Player.playerWeapon] == 22542 || c.playerEquipment[Player.playerWeapon] == 22552 ) {
-            sendCheckMessage(c, sendMessages, "Your weapon needs more then 1000 charges to function properly.");
-            return false;
+        if (c.playerEquipment[Player.playerWeapon] == 25865 || c.playerEquipment[Player.playerWeapon] == 25862 || c.playerEquipment[Player.playerWeapon] == 22547 || c.playerEquipment[Player.playerWeapon] == 22542 || c.playerEquipment[Player.playerWeapon] == 22552 ) {
+            if(c.getPvpWeapons().getCharges(c.playerEquipment[Player.playerWeapon]) <= 1000) {
+                sendCheckMessage(c, sendMessages, "Your weapon needs more then 1000 charges to function properly.");
+                return false;
+            }
         }
 
         if (c.playerEquipment[Player.playerWeapon] == 12904 && c.usingSpecial) {
@@ -235,7 +237,7 @@ public class AttackNpcCheck {
             c.attacking.reset();
             return false;
         }
-        if (npc.getNpcId() == FragmentOfSeren.NPC_ID && !FragmentOfSeren.isAttackable) {
+        if (!Boundary.isIn(c, Boundary.MZ) && npc.getNpcId() == FragmentOfSeren.NPC_ID && !FragmentOfSeren.isAttackable) {
             sendCheckMessage(c, sendMessages, "You can't attack her right now.");
             return false;
         }
@@ -272,7 +274,7 @@ public class AttackNpcCheck {
         }
 
         if (npc.getNpcId() == 4922 || npc.getNpcId() == 5129 || npc.getNpcId() == 8918 || npc.getNpcId() == 7860) {
-            if (!Boundary.isIn(c, Boundary.WILDERNESS)) {
+            if (!Boundary.isIn(c, Boundary.MZ) && !Boundary.isIn(c, Boundary.WILDERNESS)) {
                 sendCheckMessage(c, sendMessages, "You must be within this npc's original spawn location!");
                 return false;
             }
@@ -285,7 +287,7 @@ public class AttackNpcCheck {
         }
 
         if (npc.getNpcId() == Npcs.CERBERUS) {
-            if (!c.getSlayer().onTask("cerberus") && !c.getSlayer().onTask("hellhound")) {
+            if (!Boundary.isIn(c, Boundary.MZ) &&!c.getSlayer().onTask("cerberus") && !c.getSlayer().onTask("hellhound")) {
                 sendCheckMessage(c, sendMessages, "You need a Cerberus or Hellhound task to fight Cerberus.");
                 return false;
             }

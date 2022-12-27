@@ -111,7 +111,12 @@ public enum StallData {
         {
             put(Rarity.ALWAYS, Arrays.asList(new GameItem(331, 1)));
         }
-    }, 42, 42, 30, 40000, 634);
+    }, 42, 42, 30, 40000, 634),
+    Gold(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 20000+ Misc.random(1000, 200000))));
+        }
+    }, 90, 50, 1, 40000, 29165);
     /**
      * The item received from the stall
      */

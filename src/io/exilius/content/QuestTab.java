@@ -169,7 +169,6 @@ public class QuestTab {
         points(player.getSlayer().getPoints(), "Slayer Points", lines.get(index++));
         points(player.pcPoints, "Pest Control Points", lines.get(index++));
         points(player.exchangePoints, "Exchange Points", lines.get(index++));
-
         while (index < lines.size()) {
             player.getPA().sendString("", lines.get(index++));
         }

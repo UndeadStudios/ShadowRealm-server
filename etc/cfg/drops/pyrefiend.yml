@@ -5,11 +5,11 @@ npc_id:
 constant:
   accessibility: 0
   items:
-  - name: "ashes"
+  - name: "Fiendish ashes"
     minimum: 1
     maximum: 1
 common:
-  accessibility: 1
+  accessibility: 3
   items:
   - name: "fire rune"
     minimum: 25
@@ -21,7 +21,7 @@ common:
     minimum: 10
     maximum: 30
 uncommon:
-  accessibility: 20
+  accessibility: 10
   items:
   - name: "staff of fire"
     minimum: 1
@@ -29,3 +29,22 @@ uncommon:
   - name: "death rune"
     minimum: 25
     maximum: 40
+  - name: "Steel axe"
+    minimum: 1
+    maximum: 1
+  - name: "Steel full helm"
+    minimum: 1
+    maximum: 1
+  - name: "Mithril chainbody"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 64
+  items:
+    - name: "Steel boots"
+      minimum: 1
+      maximum: 1
+    - name: "Adamant med helm"
+      minimum: 1
+      maximum: 1
+

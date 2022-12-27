@@ -19,7 +19,7 @@ items:
 - id: 13148
 - name: "bonus xp scroll"
 - id: 22093
-  price: 55
+  price: 25
 - id: 13116
   price: 320
 - id: 13233
@@ -33,8 +33,8 @@ items:
 - id: 6199
   price: 250
 - id: 6828
-  price: 850
+  price: 500
 - id: 13346
-  price: 1000
+  price: 750
 - name: "goldsmith gauntlets"
 - id: 30023

@@ -227,6 +227,9 @@ public class Boundary {
 			new Boundary(1258, 10162, 1378, 10263, 1),
 			new Boundary(1259, 10177, 1362, 10231, 2)
 	};
+	public static final Boundary LZ_MIMICS = new Boundary(2858, 5085, 2867, 5108);
+	public static final Boundary MZ = new Boundary(2112, 9344, 2175, 9407);
+	public static final Boundary OZ = new Boundary(2784, 4887, 2796, 4895);
 	public static final Boundary ICE_TROOL_AREA = new Boundary(2306, 3843, 2429, 3902);
 	public static final Boundary VARROCK_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
 	//public static final Boundary VARROCK_COOKING_BOUNDARY = new Boundary(3136, 3349, 3326, 3519);
@@ -301,7 +304,8 @@ public class Boundary {
 	public static final Boundary CRYSTAL_CAVE_ENTRANCE = new Boundary(3268, 6050, 3278, 6056);
 	public static final Boundary CRYSTAL_CAVE_AREA = new Boundary(3131, 12346, 3265, 12482);
 	public static final Boundary spider = new Boundary(3292, 3717, 3349, 3775);
-	public static final Boundary FLOWER_POKER_AREA = new Boundary(2112, 9482, 2175, 9535);
+	public static final Boundary FLOWER_POKER_AREA = new Boundary(2112, 9473, 2128, 9504);
+	public static final Boundary BOXING_RING_GZ = new Boundary(2138, 9313, 2146, 9525);
 	public static final Boundary FP_LANE_1 = new Boundary(2115, 9476, 2121, 9479);
 	public static final Boundary FP_LANE_2 = new Boundary(2115, 9481, 2121, 9484);
 	public static final Boundary FP_LANE_3 = new Boundary(2115, 9486, 2121, 9489);
@@ -386,8 +390,8 @@ public class Boundary {
 	public static final Boundary HUNTER_LZ_DONATOR = new Boundary(2856, 5069, 2868, 5081);
 	public static final Boundary HUNTER_WILDERNESS = new Boundary(3128, 3755, 3172, 3796);
 	public static final Boundary PURO_PURO = new Boundary(2561, 4289, 2623, 4351);
-	public static final Boundary[] HUNTER_BOUNDARIES = {HUNTER_JUNGLE, HUNTER_WILDERNESS, HUNTER_LOVAK, HUNTER_DONATOR, HUNTER_LZ_DONATOR, HUNTER_ICE, Feldip_hills};
-
+	public static final Boundary SWAMP_LIZARDS = new Boundary(3510, 3413, 3586, 3465);
+	public static final Boundary[] HUNTER_BOUNDARIES = {HUNTER_JUNGLE, HUNTER_WILDERNESS, HUNTER_LOVAK, HUNTER_DONATOR, HUNTER_LZ_DONATOR, HUNTER_ICE, Feldip_hills, SWAMP_LIZARDS};
 	public static final Boundary LAVA_DRAGON_ISLE = new Boundary(3174, 3801, 3233, 3855);
 
 	public static final Boundary ABYSSAL_SIRE = new Boundary(2942, 4735, 3136, 4863);

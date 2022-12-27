@@ -104,8 +104,12 @@ public class ReceiveString implements PacketType {
 
 			Listing.loadPlayerName(player, string.replace(" ", "_"));
 			break;
-		case 7:
-			break;
+			case 7://search wiki
+				if(string.length() == 0)
+					return;
+				player.sendMessage("@red@Opening wiki ");
+				player.getPA().sendFrame126("https://oldschool.runescape.wiki/w/"+ string.replace(" ", "_"), 12000);
+				break;
 		default:
 			System.out.println("Received string: identifier=" + id + ", string=" + string);
 			break;

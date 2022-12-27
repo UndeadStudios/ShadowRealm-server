@@ -318,8 +318,8 @@ public class ObjectOptionTwo {
 			c.getThieving().steal(StallData.Spice, objectType, location);
 			break;
 		case 29165:
-			//c.getThieving().steal(StallData.Gold, objectType, location);
-			c.sendMessage("This needs to be fixed.");
+			c.getThieving().steal(StallData.Gold, objectType, location);
+			//c.sendMessage("This needs to be fixed.");
 			break;
 		case 6162:
 			c.getThieving().steal(StallData.Gem3, objectType, location);

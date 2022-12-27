@@ -100,6 +100,7 @@ import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.content.skills.smithing.Smithing;
 import io.exilius.content.skills.smithing.SmithingInterface;
 import io.exilius.content.skills.thieving.Thieving;
+import io.exilius.content.teleportation.TeleportInterface2;
 import io.exilius.content.teleportation.inter.TeleportInterface;
 import io.exilius.content.titles.Titles;
 import io.exilius.content.tournaments.TourneyManager;
@@ -267,7 +268,9 @@ public class Player extends Entity {
     public boolean hasclaimedwhiphat;
     public boolean doinguri = false;
     public boolean sawmill = false;
+    public boolean isMorphed = false;
     private int bofacharges;
+    public int lastMenuChosen = 0;
     private SecondsTimer logoutTimer = new SecondsTimer();
 
     public void saveItemsForMinigame() {
@@ -310,7 +313,11 @@ public class Player extends Entity {
         getItems().addContainerUpdate(ContainerUpdate.INVENTORY);
         getItems().addContainerUpdate(ContainerUpdate.EQUIPMENT);
     }
+    private final TeleportInterface2 teleportInter = new TeleportInterface2(this);
 
+    public TeleportInterface2 getTeleportInter() {
+        return teleportInter;
+    }
     private Channel session;
     public Stream inStream;
     public Stream outStream;
@@ -2511,6 +2518,7 @@ public class Player extends Entity {
         processQueuedActions();
         processTickables();
         lowerEnergy();
+        ShootingStar.spawnStar();
         getDailyRewards().notifyWhenReady(false);
         if (getCannon() != null) {
             getCannon().tick(this);

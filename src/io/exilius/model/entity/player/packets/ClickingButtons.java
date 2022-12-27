@@ -121,6 +121,9 @@ public class ClickingButtons implements PacketType {
 		if (PollTab.handleActionButton(c, actionButtonId)) {
 			return;
 		}
+		if (c.getTeleportInter().handleInterfaceButtons(actionButtonId)) {
+			return;
+		}
 		if (c.getRunePouch().handleButton(actionButtonId)) {
 			return;
 		}
@@ -260,6 +263,55 @@ public class ClickingButtons implements PacketType {
 				c.sendMessage("You don't have a pet.");
 			}
 			break;
+			case 23132: //unmorph
+				c.isMorphed = false;
+				c.setSidebarInterface(0, 2423);
+				c.setSidebarInterface(1, 25402); // Skilltab > 3917
+				c.setSidebarInterface(2, QuestTab.INTERFACE_ID);
+				c.setSidebarInterface(3, 3213);
+				c.setSidebarInterface(4, 1644);
+				c.setSidebarInterface(5, 15608);
+				switch (c.playerMagicBook) {
+					case 0:
+						c.setSidebarInterface(6, 938); // modern
+						break;
+					case 1:
+						c.setSidebarInterface(6, 838); // ancient
+						break;
+					case 2:
+						c.setSidebarInterface(6, 29999); // ancient
+						break;
+				}
+				c.setSidebarInterface(7, 18128);
+				c.setSidebarInterface(8, 5065);
+				c.setSidebarInterface(9, 5715);
+				c.setSidebarInterface(10, 2449);
+				c.setSidebarInterface(11, 42500); // wrench tab
+				c.setSidebarInterface(12, 26041); // run tab
+				if (c.playerEquipment[c.playerRing] == 7927) {
+					c.getItems().deleteEquipment(c.playerEquipment[c.playerRing]);
+					c.getItems().addItem(7927,1);
+
+				}
+				if (c.playerEquipment[c.playerRing] == 20017) {
+					c.getItems().deleteEquipment(c.playerEquipment[c.playerRing]);
+					c.getItems().addItem(20017,1);
+				}
+				if (c.playerEquipment[c.playerRing] == 23185) {
+					c.getItems().deleteEquipment(c.playerEquipment[c.playerRing]);
+					c.getItems().addItem(23185,1);
+				}
+				c.isNpc = false;
+				c.playerStandIndex = 0x328;
+				c.playerTurnIndex = 0x337;
+				c.playerWalkIndex = 0x333;
+				c.playerTurn180Index = 0x334;
+				c.playerTurn90CWIndex = 0x335;
+				c.playerTurn90CCWIndex = 0x336;
+				c.playerRunIndex = 0x338;
+				c.setUpdateRequired(true);
+				c.appearanceUpdateRequired = true;
+				break;
 		case 132111: //abyssal demon
 			c.getPA().startTeleport(1671, 10087, 0, "MODERN", false);//done
 			c.getPA().closeAllWindows();
@@ -447,7 +499,7 @@ public class ClickingButtons implements PacketType {
 		case 51023:
 		case 51031:
 		case 51039:
-			c.getTeleportInterface().openInterface();
+			c.getPA().showInterface(26263);
 			break;
 
 			case 130131:
@@ -527,43 +579,6 @@ public class ClickingButtons implements PacketType {
 			c.sendMessage("You decided to end your donation to the well of goodwill.");
 			break;
 
-		case 23132:
-			c.setSidebarInterface(1, 25402); // Skilltab > 3917
-			//c.setSidebarInterface(2, 638); // 638
-			c.setSidebarInterface(2, QuestTab.INTERFACE_ID);
-			c.setSidebarInterface(3, 3213);
-			c.setSidebarInterface(4, 1644);
-			c.setSidebarInterface(5, 5608);
-			switch (c.playerMagicBook) {
-			case 0:
-				c.setSidebarInterface(6, 938); // modern
-				break;
-
-			case 1:
-				c.setSidebarInterface(6, 838); // ancient
-				break;
-
-			case 2:
-				c.setSidebarInterface(6, 29999); // ancient
-				break;
-			}
-			c.setSidebarInterface(7, 18128);
-			c.setSidebarInterface(8, 5065);
-			c.setSidebarInterface(9, 5715);
-			c.setSidebarInterface(10, 2449);
-			c.setSidebarInterface(11, 23000); // wrench tab
-			c.setSidebarInterface(12, 26041); // run tab
-			c.setSidebarInterface(0, 2423);
-			// if (c.playerEquipment[c.playerRing] == 7927) {
-			// c.getItems().deleteEquipment(c.playerEquipment[c.playerRing], c.playerRing);
-			// c.getItems().addItem(7927,1);
-			// }
-			c.playerStandIndex = 808;
-			c.morphed = false;
-			c.isNpc = false;
-			c.setUpdateRequired(true);
-			c.appearanceUpdateRequired = true;
-			break;
 
 		case 19136:
 			QuickPrayers.toggle(c);

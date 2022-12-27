@@ -1,9 +1,5 @@
 package io.exilius.content.skills.hunter.trap;
 
-import java.util.EnumSet;
-import java.util.Optional;
-import java.util.stream.IntStream;
-
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import io.exilius.Server;
@@ -13,6 +9,10 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.RandomGen;
+
+import java.util.EnumSet;
+import java.util.Optional;
+import java.util.stream.IntStream;
 
 /**
  * Represents a single trap on the world.
@@ -240,10 +240,11 @@ public abstract class Trap {
 	 * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
 	 */
 	public enum TrapType {
-		BOX_TRAP(9380, 10008),
-		DISMANTLED_BOX_TRAP(9385, 10008),
-		DISMANTLED_BIRD_SNARE(9344, 10006),
-		BIRD_SNARE(9345, 10006);
+		BOX_TRAP(9380, 10008, -1),
+		NET_TRAP(9343, 303, 954),
+		DISMANTLED_BOX_TRAP(9385, 10008, -1),
+		DISMANTLED_BIRD_SNARE(9344, 10006, -1),
+		BIRD_SNARE(9345, 10006, -1);
 		
 		/**
 		 * Caches our enum values.
@@ -259,15 +260,17 @@ public abstract class Trap {
 		 * The item id for this trap.
 		 */
 		private final int itemId;
+		private final int itemId2;
 		
 		/**
 		 * Constructs a new {@link TrapType}.
 		 * @param objectId	{@link #objectId}.
 		 * @param itemId	{@link #itemId}.
 		 */
-		TrapType(int objectId, int itemId) {
+		TrapType(int objectId, int itemId, int itemId2) {
 			this.objectId = objectId;
 			this.itemId = itemId;
+			this.itemId2 = itemId2;
 		}
 		
 		/**
@@ -283,7 +286,13 @@ public abstract class Trap {
 		public int getItemId() {
 			return itemId;
 		}
-		
+		/**
+		 * @return the item id
+		 */
+		public int getItemId2() {
+			return itemId2;
+		}
+
 		/**
 		 * Gets a trap dependent of the specified {@code objectId}.
 		 * @param objectId	the id to get the trap type enumerator from.

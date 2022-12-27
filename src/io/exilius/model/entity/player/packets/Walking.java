@@ -51,6 +51,9 @@ public class Walking implements PacketType {
 				c.sendMessage("You are no longer in idle mode.");
 			c.isIdle = false;
 		}
+		if (c.isMorphed) {
+			return;
+		}
 		if (!c.getMovementState().isAllowClickToMove()) {
 			return;
 		}

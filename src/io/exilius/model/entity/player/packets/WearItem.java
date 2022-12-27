@@ -7,12 +7,14 @@ import io.exilius.content.DiceHandler;
 import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.runecrafting.Pouches;
 import io.exilius.model.Items;
+import io.exilius.model.entity.npc.NPCCacheDefinition;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.multiplayersession.MultiplayerSessionFinalizeType;
 import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
+import io.exilius.util.Misc;
 
 import java.util.Objects;
 
@@ -121,6 +123,54 @@ public class WearItem implements PacketType {
 			c.skullTimer = Configuration.SKULL_TIMER;
 			c.headIconPk = 0;
 			c.sendMessage("@blu@The @red@Cape of skulls@blu@ has automatically made you skull for @yel@20 minutes.");
+		}
+		if(wearId == 7927) {
+			c.resetWalkingQueue();
+			for (int i = 0; i < 14; i++) {
+				c.setSidebarInterface(i, 6014);
+				c.getPA().sendFrame126("Unmorph", 6020);
+			}
+			c.isMorphed = true;
+			c.sendMessage("As you put on the ring you turn into an egg!");
+			int npcid3 = 5538 + Misc.random(5);
+			c.npcId2 = npcid3;
+			c.playerStandIndex = NPCCacheDefinition.forID(npcid3).getStandAnim();
+			c.playerWalkIndex = NPCCacheDefinition.forID(npcid3).getWalkAnim();
+			c.isNpc = true;
+			c.setUpdateRequired(true);
+			c.appearanceUpdateRequired = true;
+		}
+		if(wearId == 23185) {
+			c.resetWalkingQueue();
+			for (int i = 0; i < 14; i++) {
+				c.setSidebarInterface(i, 6014);
+				c.getPA().sendFrame126("Unmorph", 6020);
+			}
+			c.isMorphed = true;
+			c.sendMessage("As you put on the ring you turn into an 3rd age equipment!");
+			int npcid3 = 8645 + Misc.random(19);
+			c.npcId2 = npcid3;
+			c.playerStandIndex = -1;
+			c.playerWalkIndex = -1;
+			c.isNpc = true;
+			c.setUpdateRequired(true);
+			c.appearanceUpdateRequired = true;
+		}
+		if(wearId == 20017) {
+			c.resetWalkingQueue();
+			for (int i = 0; i < 14; i++) {
+				c.setSidebarInterface(i, 6014);
+				c.getPA().sendFrame126("Unmorph", 6020);
+			}
+			c.isMorphed = true;
+			c.sendMessage("As you put on the ring you turn into a pile of coins!");
+			int npcid3 = 7315;
+			c.npcId2 = npcid3;
+			c.playerStandIndex = NPCCacheDefinition.forID(npcid3).getStandAnim();
+			c.playerWalkIndex = NPCCacheDefinition.forID(npcid3).getWalkAnim();
+			c.isNpc = true;
+			c.setUpdateRequired(true);
+			c.appearanceUpdateRequired = true;
 		}
 		switch (wearId) {
 		case 21347:

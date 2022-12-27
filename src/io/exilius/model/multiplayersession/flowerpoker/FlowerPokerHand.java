@@ -56,10 +56,11 @@ public class FlowerPokerHand {
     private static Set<Integer> lanes = new HashSet<>();
 
     public static List<Position> positions = Arrays.asList(
-            new Position(3110, 3510, 0),
-            new Position(3113, 3510, 0),
-            new Position(3116, 3510, 0),
-            new Position(3119, 3510, 0));
+            new Position(2120, 9477, 0),
+            new Position(2120, 9482, 0),
+            new Position(2120, 9487, 0),
+            new Position(2120, 9492, 0),
+            new Position(2120, 9497, 0));
 
     public static boolean canGamble() {
         return lanes.size() <= 3;
@@ -122,7 +123,7 @@ public class FlowerPokerHand {
 
     public boolean isAtDestination() {
         Position dest = assignedStart;
-        return player.getPosition().equals(new Position(dest.getX(), dest.getY())) && other.getPosition().equals(new Position(dest.getX() + 1, dest.getY()));
+        return player.getPosition().equals(new Position(dest.getX(), dest.getY())) && other.getPosition().equals(new Position(dest.getX(), dest.getY() + 1));
     }
 
     public void pathToLane(boolean tieReplant) {
@@ -136,7 +137,7 @@ public class FlowerPokerHand {
             @Override
             public void execute(CycleEventContainer exe) {
                 PathFinder.getPathFinder().findRoute(player, dest.getX(), dest.getY(), true, 1, 1, true);
-                PathFinder.getPathFinder().findRoute(other, dest.getX() + 1, dest.getY(), true, 1, 1, true);
+                PathFinder.getPathFinder().findRoute(other, dest.getX(), dest.getY() +1, true, 1, 1, true);
 
                 if (isAtDestination()) {
                     currentForceText = "";
@@ -225,8 +226,8 @@ public class FlowerPokerHand {
     private void updateFaceDirection() {
         player.getPA().resetFollow();
         other.getPA().resetFollow();
-        player.facePosition(new Position(player.getX(), player.getY() - 1));
-        other.facePosition(new Position(other.getX(), other.getY() - 1));
+        player.facePosition(new Position(player.getX() - 1, player.getY()));
+        other.facePosition(new Position(other.getX() -1, other.getY()));
     }
 
     public void removeLaneFlowers(boolean removeLane) {

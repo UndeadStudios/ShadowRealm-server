@@ -740,6 +740,11 @@ public class Misc {
 		int number = (int) (Math.random() * range);
 		return number < 0 ? 0 : number;
 	}
+
+	public static String formatEnum(final String string) {
+		return capitalize(string.toLowerCase().replace("_", " "));
+	}
+
     public long randomLong() {
 		seed ^= (seed << 21);
 		seed ^= (seed >>> 35);

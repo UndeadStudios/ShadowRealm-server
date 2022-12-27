@@ -20,7 +20,7 @@ public class TheUnbearable {
 	public static void rewardPlayers() {
 		MonsterHunt.monsterKilled = System.currentTimeMillis();
 		MonsterHunt.spawned = false;
-		PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.WILDERNESS))
+		PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.WILDERNESS) || Boundary.isIn(p, Boundary.OZ))
 		.forEach(p -> {
 				if (p.getGlodDamageCounter() >= 80) {
 					p.sendMessage("@blu@The wildy boss has been killed!");

@@ -7,11 +7,9 @@ import io.exilius.content.dailyrewards.DailyRewardContainer;
 import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.referral.ReferralCode;
 import io.exilius.model.collisionmap.doors.DoorDefinition;
-import io.exilius.model.definitions.ItemDef;
-import io.exilius.model.definitions.ItemStats;
-import io.exilius.model.definitions.NpcStats;
-import io.exilius.model.definitions.ShopDef;
+import io.exilius.model.definitions.*;
 import io.exilius.model.entity.npc.NPCHandler;
+import io.exilius.model.entity.npc.stats.NpcCombatDefinition;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.world.ShopHandler;
 
@@ -110,6 +108,16 @@ public class Reload extends Command {
 		case "npcs":
 			Server.npcHandler = null;
 			Server.npcHandler = new NPCHandler();
+			try {
+				NpcDef.load();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+			try {
+				NpcCombatDefinition.load();
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 			NpcStats.load();
 			player.sendMessage("@blu@Reloaded NPCs");
 			break;

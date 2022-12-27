@@ -1,0 +1,75 @@
+---
+npc_id:
+  - 522
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 10
+  items:
+  - name: "Iron dagger"
+    minimum: 1
+    maximum: 1
+  - name: "Iron bolts"
+    minimum: 2
+    maximum: 12
+  - name: "Chaos rune"
+    minimum: 2
+    maximum: 2
+  - name: "coins"
+    minimum: 4
+    maximum: 55
+  - name: "right eye patch"
+    minimum: 1
+    maximum: 1
+uncommon:
+  accessibility: 20
+  items:
+  - name: "bronze scimitar"
+    minimum: 1
+    maximum: 1
+  - name: "Nature rune"
+    minimum: 2
+    maximum: 2
+  - name: "bronze arrow"
+    minimum: 9
+    maximum: 9
+  - name: "bronze arrow"
+    minimum: 12
+    maximum: 12
+  - name: "air rune"
+    minimum: 10
+    maximum: 10
+  - name: "earth rune"
+    minimum: 9
+    maximum: 9
+  - name: "fire rune"
+    minimum: 5
+    maximum: 5
+  - name: "coins"
+    minimum: 5
+    maximum: 1000
+rare:
+  accessibility: 65
+  items:
+  - name: "Iron platebody"
+    minimum: 1
+    maximum: 1
+  - name: "law rune"
+    minimum: 2
+    maximum: 2
+  - name: "coins"
+    minimum: 122
+    maximum: 1222
+  - name: "chefs hat"
+    minimum: 1
+    maximum: 1
+  - name: "pirates hat"
+    minimum: 1
+    maximum: 1
+  - name: "iron bar"
+    minimum: 1
+    maximum: 1

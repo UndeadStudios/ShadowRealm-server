@@ -635,9 +635,6 @@ public class ClickObject implements PacketType {
                      * case 17385://taveryly exit AgilityHandler.delayEmote(c, "CLIMB_UP", 1662,
                      * 3529, 0, 2); break;
                      */
-                    case 1738:// tav entrance
-                        AgilityHandler.delayEmote(c, "CLIMB_DOWN", 2884, 9798, 0, 2);
-                        break;
                     case 2123:// relleka entrance
                         AgilityHandler.delayFade(c, "CRAWL", 2808, 10002, 0, "You crawl into the entrance.",
                                 "and you end up in a dungeon.", 3);

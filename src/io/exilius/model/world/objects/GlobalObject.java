@@ -32,7 +32,7 @@ public class GlobalObject {
 	private int restoreId;
 
 	private int type;
-	
+	private int picked;
 	private InstancedArea instance;
 
 	public GlobalObject(int id, Position position, int face, int type) {
@@ -69,7 +69,9 @@ public class GlobalObject {
 		this(id, x, y, height, face, type);
 		this.ticksRemaining = ticksRemaining;
 	}
-
+	public GlobalObject(int id, Position p) {
+		this(id, p.getX(), p.getY(), p.getHeight(), 0, 10, -1, 0);
+	}
 	public GlobalObject(int id, int x, int y, int height, int face, int type, int ticksRemaining, int restoreId) {
 		this(id, x, y, height, face, type, ticksRemaining);
 		this.restoreId = restoreId;
@@ -82,7 +84,16 @@ public class GlobalObject {
 	public GlobalObject withId(int objectId) {
 		return new GlobalObject(objectId, x, y, height, face, type, ticksRemaining, restoreId);
 	}
+	public int getPickAmount() {
+		return this.picked;
+	}
+	public void setPickAmount(int amount) {
+		this.picked = amount;
+	}
 
+	public void incrementPickAmount() {
+		this.picked++;
+	}
 	public boolean samePositionAndType(WorldObject object) {
 		return object.x == x && object.y == y && object.height == height && object.type == type;
 	}

@@ -1646,7 +1646,7 @@
   description: "Magical seeds in a mithril case."
   shopValue: 100
   stackable: true
-  untradeable: true
+  untradeable: false
 - id: 300
   name: "Rat's tail"
   description: "A bit of rat."

@@ -1,15 +1,10 @@
 package io.exilius.content.bosses.wildypursuit;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
 import io.exilius.Configuration;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.events.monsterhunt.MonsterHunt;
-//import io.exilius.content.leaderboards.LeaderboardType;
-//import io.exilius.content.leaderboards.LeaderboardUtils;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -21,6 +16,9 @@ import io.exilius.model.entity.player.PathFinder;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 
@@ -123,7 +121,7 @@ public class FragmentOfSeren {
 	public static void rewardPlayers() {
 		MonsterHunt.monsterKilled = System.currentTimeMillis();
 		MonsterHunt.spawned = false;
-		PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.WILDERNESS))
+		PlayerHandler.nonNullStream().filter(p -> Boundary.isIn(p, Boundary.WILDERNESS) || Boundary.isIn(p, Boundary.MZ))
 		.forEach(p -> {
 				if (p.getIceQueenDamageCounter() >= 80) {
 					p.sendMessage("@blu@The Wildy Boss has been killed!");

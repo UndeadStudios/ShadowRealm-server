@@ -1,12 +1,12 @@
 package io.exilius.model.entity.npc.data;
 
-import io.exilius.Server;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
 import io.exilius.content.skills.hunter.trap.impl.BirdSnare;
 import io.exilius.content.skills.hunter.trap.impl.BoxTrap;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.npc.NPC;
+import io.exilius.model.entity.player.Boundary;
 
 public class RespawnTime {
 
@@ -29,6 +29,15 @@ public class RespawnTime {
         }
 
         switch (id) {
+
+            case FragmentOfSeren.NPC_ID:
+            case TheUnbearable.NPC_ID:
+                if(Boundary.isIn(npc, Boundary.MZ) || Boundary.isIn(npc, Boundary.OZ)){
+                    return 60;
+                } else {
+                    return -1;
+                }
+
             case Npcs.SARACHNIS:
                     return 20;
 
@@ -53,9 +62,7 @@ public class RespawnTime {
             case 7585:
             case 5129:
             case FragmentOfSeren.FRAGMENT_ID:
-            case FragmentOfSeren.NPC_ID:
             case FragmentOfSeren.CRYSTAL_WHIRLWIND:
-            case TheUnbearable.NPC_ID:
             case 7563:
             case 7573:
             case 7544:

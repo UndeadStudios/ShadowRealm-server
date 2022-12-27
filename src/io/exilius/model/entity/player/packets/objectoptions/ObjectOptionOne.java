@@ -40,6 +40,7 @@ import io.exilius.content.skills.agility.impl.rooftop.RooftopVarrock;
 import io.exilius.content.skills.crafting.BraceletMaking;
 import io.exilius.content.skills.crafting.JewelryMaking;
 import io.exilius.content.skills.hunter.Hunter;
+import io.exilius.content.skills.hunter.trap.impl.NetTrap;
 import io.exilius.content.skills.runecrafting.RuneCraftingActions;
 import io.exilius.content.skills.runecrafting.Runecrafting;
 import io.exilius.content.skills.smithing.CannonballSmelting;
@@ -198,6 +199,13 @@ static int fourthFloorsos[][] = {
 			if(def.actions[0].toLowerCase().equals("climb-down")) {
 				if(obX == 3209 && obY == 3216) { // custom locations
 					c.getPA().movePlayer(3209, 9617, 0);
+					return;
+				}
+				if(obX == 3107 && obY == 3486){
+					if(c.getX() == 3106 && c.getY() == 3486){
+						c.getPA().movePlayer(3097, 9868, 0);
+						return;
+					}
 					return;
 				}
 				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
@@ -2163,6 +2171,11 @@ static int fourthFloorsos[][] = {
 					c.nextChat = -1;
 				}
 				break;
+			case 9341:
+				if(c.getItems().playerHasItem(303) && c.getItems().playerHasItem(945))
+				Server.getGlobalObjects().add(new GlobalObject(9342,object.getX(), object.getY(), object.getHeight(), object.getFace(), object.getType(), -1));
+				Hunter.lay(c, new NetTrap(c));
+				break;
 			case 26646:
 				if(obX == 3326 && obY == 4749) {
 					c.healEverything();
@@ -2335,7 +2348,48 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(3019, 9733, 0);
 				}
 				break;
-
+			case 30234:
+				if(c.getHeight() == 3){
+					c.getPA().movePlayer(1435, 3671, 0);
+				}
+				break;
+			case 30236:
+				if(obX == 1436 && obY == 3671){
+					c.getPA().movePlayer(1435, 10079, 3);
+				}
+				break;
+			case 30258:
+				if(c.getHeight() == 3){
+					c.getPA().movePlayer(c.getX(), c.getY(), 2);
+				} else 	if(c.getHeight() == 2){
+					c.getPA().movePlayer(c.getX(), c.getY(), 1);
+				}
+				break;
+			case 34834:
+				if(c.getX() == 1820 && c.getY() == 9947){
+					c.getPA().walkTo(0 ,-2);
+				} else 	if(c.getX() == 1820 && c.getY() == 9945){
+					c.getPA().walkTo(0 ,2);
+				}
+				break;
+			case 34843:
+				if(c.getX() == 1824 && c.getY() == 9973){
+					c.getPA().walkTo(1, 0);
+				} else if(c.getX() == 1845 && c.getY() == 9973){
+					c.getPA().walkTo(-1, 0);
+				} else if(c.getX() == 1802 && c.getY() == 9958) {
+					c.getPA().walkTo(0 ,-1);
+				} else if(c.getX() == 1802 && c.getY() == 9957) {
+					c.getPA().walkTo(0 ,1);
+				}
+				break;
+			case 30259:
+				if(c.getHeight() == 2){
+					c.getPA().movePlayer(c.getX(), c.getY(), 3);
+				} else 	if(c.getHeight() == 1) {
+					c.getPA().movePlayer(c.getX(), c.getY(), 2);
+				}
+				break;
 			case 8356:
 				c.getDH().sendDialogues(55874, 2200);
 				break;
@@ -3831,7 +3885,7 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(2649, 9562, 0);
 				break;
 			case 36062:
-				c.getTeleportInterface().openInterface();
+				c.getPA().showInterface(26263);
 				break;
 			case 27362:// lizardmen
 				if (c.absY > 3688) {

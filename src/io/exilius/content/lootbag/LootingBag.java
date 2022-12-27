@@ -1,8 +1,5 @@
 package io.exilius.content.lootbag;
 
-import java.util.Iterator;
-import java.util.Objects;
-
 import io.exilius.Server;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Boundary;
@@ -12,6 +9,9 @@ import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.util.Misc;
+
+import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * Looting bag functionality.
@@ -30,8 +30,8 @@ public class LootingBag {
      */
     public static final int LOOTING_BAG = 11941;
     public static final int LOOTING_BAG_OPEN = 22586;
-    public static final int DEPOSIT_INTERFACE_ID = 39448;
-    public static final int WITHDRAW_INTERFACE_ID = 39349;
+    public static final int DEPOSIT_INTERFACE_ID = 34448;
+    public static final int WITHDRAW_INTERFACE_ID = 34349;
     public static final int ITEM_ON_ITEM_DIALOGUE_ID = 1234;
     public static final int OPTIONS_DIALOGUE_ID = 1235;
 
@@ -136,7 +136,7 @@ public class LootingBag {
 
         reset();
         updateItemContainers();
-        player.getPA().sendTabAreaOverlayInterface(39342);
+        player.getPA().sendTabAreaOverlayInterface(34342);
         setWithdrawInterfaceOpen(true);
     }
 
@@ -164,7 +164,7 @@ public class LootingBag {
         }
         reset();
         updateItemContainers();
-        player.getPA().sendTabAreaOverlayInterface(39443);
+        player.getPA().sendTabAreaOverlayInterface(34443);
         setDepositInterfaceOpen(true);
     }
 
@@ -219,10 +219,10 @@ public class LootingBag {
     }
 
     public boolean handleButton(int buttonId) {
-        if (buttonId == 153177 || buttonId == 154022) {
+        if (buttonId == 134031 || buttonId == 134142) {
             closeLootbag();
             return true;
-        } else if (buttonId == 153179) {
+        } else if (buttonId == 134043) {
             depositAllLootBag();
             return true;
         }
@@ -284,7 +284,7 @@ public class LootingBag {
                 total += ((ItemDef.forId(item.getId()).getShopValue() * item.getAmount()));
             }
         }
-        player.getPA().sendFrame126("Value: " + Misc.insertCommas(total), 39348);
+        player.getPA().sendFrame126("Value: " + Misc.insertCommas(total), 34348);
     }
 
     public LootingBagContainer getLootingBagContainer() {

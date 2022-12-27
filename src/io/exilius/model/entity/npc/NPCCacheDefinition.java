@@ -131,12 +131,6 @@ public class NPCCacheDefinition {
             npcDef.actions = new String[] { "Talk-to", null, "Assignment", "Trade", "Rewards" };
 
         }
-        if (i == 3400) {
-            npcDef.combatLevel = 0;
-            npcDef.name = "Giveaway Manager";
-            npcDef.actions = new String[] { "Open-manager", null, null, null, null };
-
-        }
         if (i == 1013) {
             npcDef.combatLevel = 0;
             npcDef.name = "Gambler Shop";

@@ -239,7 +239,7 @@ public class Configuration {
 			"Magic", "Cooking", "Woodcutting", "Fletching", "Fishing", "Firemaking", "Crafting", "Smithing", "Mining",
 			"Herblore", "Agility", "Thieving", "Slayer", "Farming", "Runecrafting", "Hunter" };
 
-	public static final int DEFAULT_COMBAT_EXPERIENCE_RATE = 250;
+	public static final int DEFAULT_COMBAT_EXPERIENCE_RATE = 50;
 
 	public static String QUESTION = "";
 	public static String ANSWER = "";

@@ -71,7 +71,11 @@ public class MeleeData {
 			c.playerRunIndex = 7327;
 			return;
 		}
-
+		if(weaponName.contains("boxing")){
+			c.playerStandIndex = 3677;
+			c.playerWalkIndex = 3680;
+			return;
+		}
 		if (weaponName.contains("bulwark")) {
 			c.playerStandIndex = 7508;
 			c.playerWalkIndex = 7510;
@@ -293,6 +297,10 @@ public class MeleeData {
 		if (weaponName.contains("elder maul")) {
 			return 7516;
 		}
+		if (weaponName.startsWith("boxing")) {
+			return 3678;
+		}
+
 		if (weaponName.contains("scythe of vitur")) {
 			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 				case ACCURATE:
@@ -505,6 +513,8 @@ public class MeleeData {
 			return 7512;
 		if (shield.contains("elder maul"))
 			return 7517;
+		if (weapon.startsWith("boxing"))
+			return 3679;
 		switch (c.playerEquipment[Player.playerWeapon]) {
 			case Items.SCYTHE_OF_VITUR:
 				return 435;

@@ -1,7 +1,5 @@
 package io.exilius.model.entity.player.packets.itemoptions;
 
-import java.util.Objects;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.bosspoints.JarsToPoints;
@@ -27,6 +25,8 @@ import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.util.Misc;
+
+import java.util.Objects;
 
 /**
  * Item Click 2 Or Alternative Item Option 1
@@ -239,7 +239,7 @@ public class ItemOptionTwo implements PacketType {
 					player.sendMessage("You can't teleport above " + Configuration.NO_TELEPORT_WILD_LEVEL + " in the wilderness.");
 					return;
 				}
-				player.getTeleportInterface().openInterface();
+				player.getPA().showInterface(26263);
 				return;
 		case 11238:
 		case 11240:
