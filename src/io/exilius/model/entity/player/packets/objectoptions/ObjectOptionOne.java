@@ -51,6 +51,7 @@ import io.exilius.content.tournaments.ViewingOrb;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.content.trails.MapScrolls;
 import io.exilius.content.trails.SearchScrolls;
+import io.exilius.content.traveling.Sailing;
 import io.exilius.content.wilderness.SpiderWeb;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
@@ -2169,6 +2170,56 @@ static int fourthFloorsos[][] = {
 					c.healEverything();
 					c.getDH().sendItemStatement("Restored your HP, Prayer, Run Energy, and Spec", 4049);
 					c.nextChat = -1;
+				}
+				break;
+			case 2407:
+				if(obX == 2874 && obY == 9750){
+					c.getPA().movePlayer(3250, 3772, 0);
+				}
+				break;
+			case 2414:
+				if(obX == 2834 && obY == 3334){
+					Sailing.startTravel(c, 2);
+				}
+				break;
+			case 2412:
+				if(obX == 3048 && obY == 3233){
+					Sailing.startTravel(c, 1);
+				}
+				break;
+			case 2083:
+				if(obX == 3030 && obY == 3217){
+					Sailing.startTravel(c, 5);
+				}
+				break;
+			case 2081:
+				if(obX == 2956 && obY == 3145){
+					Sailing.startTravel(c, 6);
+				}
+				break;
+			case 14304:
+				if(obX == 3041 && obY == 3201){
+					Sailing.startTravel(c, 12);
+				}
+				break;
+			case 14306:
+				if(obX == 2660 && obY == 2676){
+					Sailing.startTravel(c, 13);
+				}
+				break;
+			case 2087:
+				if(obX == 2773 && obY == 3234){
+					Sailing.startTravel(c, 8);
+				}
+				break;
+			case 2593:
+				if(obX == 3047 && obY == 3205){
+					Sailing.startTravel(c, 3);
+				}
+				break;
+			case 2085:
+				if(obX == 2683 && obY == 3270){
+					Sailing.startTravel(c, 7);
 				}
 				break;
 			case 9341:

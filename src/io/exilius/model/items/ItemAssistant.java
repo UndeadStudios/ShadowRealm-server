@@ -2675,4 +2675,13 @@ public class ItemAssistant {
 		return -1;
 	}
 
+	public boolean playerHasEquipped(int itemID) {
+		itemID++;
+		for (int i = 0; i < player.playerEquipment.length; i++) {
+			if (player.playerEquipment[i] == itemID) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
