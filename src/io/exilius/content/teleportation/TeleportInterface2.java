@@ -421,6 +421,18 @@ public class TeleportInterface2 {
         Horror_From_The_Deep(6, 103018, true, "Horror From The Deep [Quest]", new Position(2508, 3641, 0)),
         Monkey_Madness(6, 103023, true, "Monkey Madness [Quest]", new Position(2467, 3494, 0)),
 
+        Mage_Bank(7, 102209, true, "Mage Bank @yel@(Safe)", new Position(2539, 4716, 0)),
+        Ferox_Enclave(7, 102214, true, "Ferox Enclave @yel@(Safe)", new Position(3135, 3629, 0)),
+        West_Dragons(7, 102219, false, "West Dragons @red@(10)", new Position(2976, 3591, 0)),
+        Dark_Castle(7, 102224, false, "Dark Castle @red@(15)", new Position(3020, 3632, 0)),
+        Elder_Chaos_Druids(7, 102229, false, "Elder Chaos Druids @red@(16)", new Position(3232, 3642, 0)),
+        Hill_Giants(7,102234, false,"Hill Giants (Multi) @red@(18)", new Position(3304, 3657, 0)),
+        Black_Chinchompa(7, 102239, false, "Black Chinchompa @red@(32)", new Position(3137, 3767, 0)),
+        Revenant_Cave(7, 102244, false, "Revenant Cave @red@(40)", new Position(3127, 3835, 0)),
+        Lava_Maze(7, 102249, false, "Lava Maze @red@(43)", new Position(3025, 3836, 00)),
+        Wildy_God_Wars_Dungeon(7, 102254, false, "Wildy God Wars Dungeon @red@(28)", new Position(3021, 3738, 0)),
+        Wilderness_Agility_Course(7, 103003, false, "Wilderness Agility Course @red@(52)", new Position(3003, 3934, 0)),
+
         WOODCUTTING_GUILD(8, 102209, true, "Woodcutting guild", new Position(1658, 3505,0)),
         GNOME_AGILITY_COURSE(8, 102214, true, "Gnome agility course", new Position(2477, 3438, 0)),
         BARBARIAN_AGILITY_COURSE(8, 102219, true, "barbarian agility course", new Position(2552, 3562, 0)),
