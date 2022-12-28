@@ -271,6 +271,8 @@ public class Player extends Entity {
     public boolean isMorphed = false;
     private int bofacharges;
     public int lastMenuChosen = 0;
+    public int trapX;
+    public int trapY;
     private SecondsTimer logoutTimer = new SecondsTimer();
 
     public void saveItemsForMinigame() {
@@ -2184,7 +2186,7 @@ public class Player extends Entity {
         if (Configuration.BOUNTY_HUNTER_ACTIVE) {
             bountyHunter.updateTargetUI();
         }
-        for (int i = 0; i < 22; i++) {
+        for (int i = 0; i < 23; i++) {
             getPA().setSkillLevel(i, playerLevel[i], playerXP[i]);
             getPA().refreshSkill(i);
         }

@@ -1,11 +1,14 @@
 package io.exilius.model.collisionmap;
 
+import io.exilius.content.skills.construction.Room;
 import io.exilius.content.skills.hunter.impling.Impling;
 import io.exilius.content.skills.hunter.trap.impl.BirdSnare;
 import io.exilius.content.skills.hunter.trap.impl.BoxTrap;
+import io.exilius.content.skills.hunter.trap.impl.NetTrap;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Boundary;
+import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Position;
 
 import java.util.Arrays;
@@ -139,6 +142,8 @@ public class RegionProvider {
 			return true;
 		else if(BirdSnare.NPC_IDS.contains(npc.getNpcId()))
 			return true;
+		else if(NetTrap.NPC_IDS.contains(npc.getNpcId()))
+			return true;
 		else if(Impling.isImp(npcId))
 			return true;
 
@@ -163,7 +168,40 @@ public class RegionProvider {
 	private final Map<Integer, Region> regions = new HashMap<>();
 	
 	public RegionProvider() { }
-	
+
+	public static void LoadRegion(Player client) {
+		client.outStream.createFrameVarSizeWord(241);
+		client.outStream.writeWordA(client.mapRegionY + 6);
+		client.outStream.initBitAccess();
+		for (int z = 0; z < 4; z++) {
+			for (int x = 0; x < 13; x++) {
+				for (int y = 0; y < 13; y++) {
+					Room room = client.getHouse().rooms[x][y][z];
+					client.getOutStream().writeBits(1, room != null ? 1 : 0);
+					if (room != null) {
+						client.getOutStream().writeBits(26, room.getX() / 8 << 14 | room.getY() / 8 << 3 | 0 % 4 << 24 | room.getRotation() % 4 << 1);
+					}
+				}
+			}
+		}
+		client.getOutStream().finishBitAccess();
+		client.getOutStream().writeUnsignedWord(client.mapRegionX + 6);
+		client.getOutStream().endFrameVarSizeWord();
+		client.flushOutStream();
+
+		for (int z = 0; z < 4; z++) {
+			for (int x = 0; x < 13; x++) {
+				for (int y = 0; y < 13; y++) {
+					Room room = client.getHouse().rooms[x][y][z];
+					if (room == null)
+						continue;
+
+					room.onLoad(client);
+					//client.getPA().showInterface(34639);
+				}
+			}
+		}
+	}
 	public Region get(int x, int y) {
 		if (regions.get(getHash(x, y)) == null) {
 			Region region = new Region(this, getHash(x, y), false);

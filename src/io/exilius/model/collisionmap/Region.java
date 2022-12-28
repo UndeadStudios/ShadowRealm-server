@@ -3,8 +3,10 @@ package io.exilius.model.collisionmap;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Server;
+import io.exilius.content.skills.construction.Room;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.player.Boundary;
+import io.exilius.model.entity.player.Player;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.discord.Discord;
 
@@ -33,7 +35,6 @@ public class Region {
         this.members = members;
         this.provider = provider;
     }
-
 
     @Override
     public int hashCode() {
@@ -80,6 +81,7 @@ public class Region {
         }
         return clone;
     }
+
 
     public int[][][] getClips() {
         return clips;
@@ -311,9 +313,9 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             xLength = def.yLength();
             yLength = def.xLength();
         }
-      //  if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Gate")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
-    //        dumpDoorobject(objectId, x, y, height,type, direction);
-     //   }
+        if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
+            dumpDoorobject(objectId, x, y, height,type, direction);
+        }
         if (objectId == 29165) {
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }

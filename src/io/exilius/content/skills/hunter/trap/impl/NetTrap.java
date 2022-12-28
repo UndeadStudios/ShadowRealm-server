@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import io.exilius.Server;
 import io.exilius.content.skills.hunter.trap.Trap;
+import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -13,6 +14,7 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.world.objects.GlobalObject;
+import io.exilius.util.Location3D;
 
 import java.util.EnumSet;
 import java.util.Optional;
@@ -23,14 +25,15 @@ public class NetTrap extends Trap {
      *
      * @param player {@link #player}.
      * */
-    public NetTrap(Player player) {
-        super(player, TrapType.NET_TRAP);
+    public NetTrap(Player player, GlobalObject object, Location3D location) {
+        super(player, TrapType.NET_TRAP, object, location);
     }
     /**
      * The npc trapped inside this box.
      */
     private Optional<NPC> trapped = Optional.empty();
 
+    Location3D location2 = new Location3D(player.objectX, player.objectY, player.heightLevel);
     /**
      * Determines if an animal is going to the trap.
      */
@@ -39,7 +42,7 @@ public class NetTrap extends Trap {
     /**
      * The object identification for a dismantled failed box trap.
      */
-    private static final int FAILED_ID = 9342;
+    private static final int FAILED_ID = 9158;
 
     /**
      * The object identification for a caught box trap.
@@ -99,6 +102,7 @@ player.sendMessage("You set-up your net trap.");
 
     @Override
     public void onCatch(NPC npc) {
+        Location3D location = new Location3D(object.getX(), getObject().getY(), player.heightLevel);
         if(event.isPresent()) {
             return;
         }
@@ -139,7 +143,7 @@ player.sendMessage("You set-up your net trap.");
                     kill(npc);
                     Server.getGlobalObjects().remove(getObject());
                     Server.getGlobalObjects().remove(getObject().getObjectId(), getObject().getX(), getObject().getY(), getObject().getHeight());
-                    setObject(CAUGHT_ID);
+                    setObject(CAUGHT_ID, location2);
                     Server.getGlobalObjects().add(getObject());
                     setState(TrapState.CAUGHT);
                     container.stop();
@@ -219,7 +223,7 @@ player.sendMessage("You set-up your net trap.");
         if(state.equals(TrapState.FALLEN)) {
             Server.getGlobalObjects().remove(getObject());
             Server.getGlobalObjects().remove(getObject().getObjectId(), getObject().getX(), getObject().getY(), getObject().getHeight());
-            this.setObject(FAILED_ID);
+            this.setObject(FAILED_ID, location2);
             Server.getGlobalObjects().add(this.getObject());
         }
         if (!state.equals(TrapState.TRIGGERED)) {

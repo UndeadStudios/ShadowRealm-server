@@ -23,13 +23,13 @@ import java.util.List;
 
 public class House {
 
-	@Expose private Room[][][] rooms = new Room[13][13][4];
+	@Expose public Room[][][] rooms = new Room[13][13][4];
 	
 	private int height;
 
 	private boolean buildMode = false, open = false;
 	
-	private Player owner;
+	public Player owner;
 	
 	private List<Player> guests = new ArrayList<Player>();
 
@@ -108,37 +108,7 @@ public class House {
 			@Override
 			public void execute(CycleEventContainer container) {
 				client.getPA().movePlayer(32, 32, height);
-				client.outStream.createFrameVarSizeWord(241);
-				client.outStream.writeWordA(client.mapRegionY + 6);
-				client.outStream.initBitAccess();
-				for (int z = 0; z < 4; z++) {
-					for (int x = 0; x < 13; x++) {
-						for (int y = 0; y < 13; y++) {
-							Room room = owner.getHouse().rooms[x][y][z];
-							client.getOutStream().writeBits(1, room != null ? 1 : 0);
-							if (room != null) {
-								client.getOutStream().writeBits(26, room.getX() / 8 << 14 | room.getY() / 8 << 3 | 0 % 4 << 24 | room.getRotation() % 4 << 1);
-							}
-						}
-					}
-				}
-				client.getOutStream().finishBitAccess();
-				client.getOutStream().writeUnsignedWord(client.mapRegionX + 6);
-				client.getOutStream().endFrameVarSizeWord();
-				client.flushOutStream();
-				
-				for (int z = 0; z < 4; z++) {
-					for (int x = 0; x < 13; x++) {
-						for (int y = 0; y < 13; y++) {
-							Room room = owner.getHouse().rooms[x][y][z];
-							if (room == null)
-								continue;
-							
-							room.onLoad(client);
-							//client.getPA().showInterface(34639);
-						}
-					}
-				}
+				RegionProvider.LoadRegion(owner);
 				container.stop();
 			}
 

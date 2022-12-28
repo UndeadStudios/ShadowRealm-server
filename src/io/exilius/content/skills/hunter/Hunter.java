@@ -152,11 +152,11 @@ public final class Hunter {
 	 */
 	public static boolean pickup(Player player, GlobalObject object) {
 		Optional<Trap.TrapType> type = Trap.TrapType.getTrapByObjectId(object.getObjectId());
-		
+		Optional<Trap.TrapType> type2 = Trap.TrapType.getTrapByObjectId2(object.getObjectId());
 		if (System.currentTimeMillis() - player.lastPickup < 2500)
 			return false;		
 
-		if(!type.isPresent()) {
+		if(!type.isPresent() || !type2.isPresent()) {
 			return false;
 		}
 
@@ -190,6 +190,7 @@ public final class Hunter {
 		trap.onPickUp();
 		Server.getGlobalObjects().remove(trap.getObject());
 		Server.getGlobalObjects().remove(trap.getObject().getObjectId(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight());
+		Server.getGlobalObjects().replace(new GlobalObject(9158, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()), new GlobalObject(9341, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()));
 		player.getItems().addItem(trap.getType().getItemId(), 1);
 		player.startAnimation(827);
 		player.lastPickup = System.currentTimeMillis();
@@ -239,6 +240,7 @@ public final class Hunter {
 		
 		Server.getGlobalObjects().remove(trap.getObject());
 		Server.getGlobalObjects().remove(trap.getObject().getObjectId(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight());
+		Server.getGlobalObjects().replace(new GlobalObject(9004, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()), new GlobalObject(9341, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()));
 		player.getItems().addItem(trap.getType().getItemId(), 1);
 		player.startAnimation(827);
 		player.lastPickup = System.currentTimeMillis();

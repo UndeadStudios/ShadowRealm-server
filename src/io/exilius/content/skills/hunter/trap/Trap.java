@@ -3,11 +3,13 @@ package io.exilius.content.skills.hunter.trap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import io.exilius.Server;
+import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.world.objects.GlobalObject;
+import io.exilius.util.Location3D;
 import io.exilius.util.RandomGen;
 
 import java.util.EnumSet;
@@ -40,7 +42,7 @@ public abstract class Trap {
 	/**
 	 * The global object spawned on the world.
 	 */
-	private GlobalObject object;
+	public GlobalObject object;
 	
 	/**
 	 * Determines if this trap is abandoned.
@@ -52,13 +54,24 @@ public abstract class Trap {
 	 * @param player	{@link #player}.
 	 * @param type		{@link #type}.
 	 */
+	public Trap(Player player, TrapType type, GlobalObject obj, Location3D location) {//idk if this i right lol
+		this.player = player;
+		this.type = type;
+		this.state = TrapState.PENDING;
+		Optional<WorldObject> worldObject = player.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(obj.getObjectId(), location.getX(), location.getY(), 0);
+			this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel, worldObject.get().getFace(), worldObject.get().getType());
+	}
+	/**
+	 * Constructs a new {@link Trap}.
+	 * @param player	{@link #player}.
+	 * @param type		{@link #type}.
+	 */
 	public Trap(Player player, TrapType type) {
 		this.player = player;
 		this.type = type;
 		this.state = TrapState.PENDING;
-		this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel);
+			this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel);
 	}
-	
 	/**
 	 * Submits the trap task for this trap.
 	 */
@@ -212,12 +225,24 @@ public abstract class Trap {
 	 * Sets the object id.
 	 * @param id	the id to set.
 	 */
+	public void setObject(int id, Location3D location) {
+		if(!Server.getGlobalObjects().anyExists(getObject().getX(), getObject().getY(), getObject().getHeight())) {
+			//System.out.println("Hunter; No trap existed while attempting to catch");
+			return;
+		}
+		Optional<WorldObject> worldObject = player.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(id, location.getX(), location.getY(), 0);
+		this.object = new GlobalObject(id, location.getX(), location.getY(), location.getZ(), worldObject.get().getFace(), worldObject.get().getType());
+	}
+	/**
+	 * Sets the object id.
+	 * @param id	the id to set.
+	 */
 	public void setObject(int id) {
 		if(!Server.getGlobalObjects().anyExists(getObject().getX(), getObject().getY(), getObject().getHeight())) {
 			//System.out.println("Hunter; No trap existed while attempting to catch");
 			return;
 		}
-		this.object = new GlobalObject(id, this.getObject().getX(), this.getObject().getY(), this.getObject().getHeight());
+		this.object = new GlobalObject(id, getObject().getX(), getObject().getY(), getObject().getHeight(), getObject().getFace(), getObject().getType());
 	}
 
 	/**
@@ -240,11 +265,11 @@ public abstract class Trap {
 	 * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
 	 */
 	public enum TrapType {
-		BOX_TRAP(9380, 10008, -1),
-		NET_TRAP(9343, 303, 954),
-		DISMANTLED_BOX_TRAP(9385, 10008, -1),
-		DISMANTLED_BIRD_SNARE(9344, 10006, -1),
-		BIRD_SNARE(9345, 10006, -1);
+		BOX_TRAP(9380, -1, 10008, -1),
+		NET_TRAP(9343,9004, 303, 954),
+		DISMANTLED_BOX_TRAP(9385, -1,10008, -1),
+		DISMANTLED_BIRD_SNARE(9344, -1,10006, -1),
+		BIRD_SNARE(9345, -1, 10006, -1);
 		
 		/**
 		 * Caches our enum values.
@@ -255,6 +280,7 @@ public abstract class Trap {
 		 * The object id for this trap.
 		 */
 		private final int objectId;
+		private final int objectId2;
 		
 		/**
 		 * The item id for this trap.
@@ -267,8 +293,9 @@ public abstract class Trap {
 		 * @param objectId	{@link #objectId}.
 		 * @param itemId	{@link #itemId}.
 		 */
-		TrapType(int objectId, int itemId, int itemId2) {
+		TrapType(int objectId, int objectId2, int itemId, int itemId2) {
 			this.objectId = objectId;
+			this.objectId2 = objectId2;
 			this.itemId = itemId;
 			this.itemId2 = itemId2;
 		}
@@ -279,7 +306,13 @@ public abstract class Trap {
 		public int getObjectId() {
 			return objectId;
 		}
-		
+		/**
+		 * @return the object id
+		 */
+		public int getObjectId2() {
+			return objectId2;
+		}
+
 		/**
 		 * @return the item id
 		 */
@@ -301,7 +334,9 @@ public abstract class Trap {
 		public static Optional<TrapType> getTrapByObjectId(int objectId) {
 			return VALUES.stream().filter(trap -> trap.objectId == objectId).findAny();
 		}
-		
+		public static Optional<TrapType> getTrapByObjectId2(int objectId) {
+			return VALUES.stream().filter(trap -> trap.objectId2 == objectId).findAny();
+		}
 		/**
 		 * Gets a trap dependent of the specified {@code itemId}.
 		 * @param itemId	the id to get the trap type enumerator from.

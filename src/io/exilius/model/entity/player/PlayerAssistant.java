@@ -2852,7 +2852,7 @@ public class PlayerAssistant {
 				+ getLevelForXP(c.playerXP[15]) + getLevelForXP(c.playerXP[16]) + getLevelForXP(c.playerXP[17])
 				+ getLevelForXP(c.playerXP[18]) + getLevelForXP(c.playerXP[19]) + getLevelForXP(c.playerXP[20])
 				+ getLevelForXP(c.playerXP[21]) + getLevelForXP(c.playerXP[22]));
-		sendFrame126("" + totalLevel, 3984);
+		sendFrame126("Total level: \n"+totalLevel, 25544);
 		switch (skill) {
 		case 0:
 			sendFrame126("Congratulations, you just advanced an attack level!", 6248);
@@ -3218,7 +3218,7 @@ public class PlayerAssistant {
 						"<icon=" + iconId + "> " + s.toString() + " on " + c.getMode().getType().getFormattedName() + " mode!");
 				c.sendMessage("@blu@You have now maxed 200m experience in @red@" + c.xpMaxSkills + " skills!");
 
-				if (c.xpMaxSkills > 21) {
+				if (c.xpMaxSkills > 22) {
 					PlayerHandler.executeGlobalMessage(
 							"<col=6432a8>" + c.getDisplayNameFormatted() + " has reached 200M XP in all skills on " + c.getMode().getType().getFormattedName() + " mode!");
 				}

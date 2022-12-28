@@ -798,7 +798,7 @@ static int fourthFloorsos[][] = {
 		if (SearchScrolls.handleObject(c, object)) {
 			return;
 		}
-		final int[] HUNTER_OBJECTS = { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721 };
+		final int[] HUNTER_OBJECTS = { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721, 9158, 9004 };
 		if (IntStream.of(HUNTER_OBJECTS).anyMatch(id -> objectType == id)) {
 			if (Hunter.pickup(c, object)) {
 				return;
@@ -2172,9 +2172,9 @@ static int fourthFloorsos[][] = {
 				}
 				break;
 			case 9341:
-				if(c.getItems().playerHasItem(303) && c.getItems().playerHasItem(945))
-				Server.getGlobalObjects().add(new GlobalObject(9342,object.getX(), object.getY(), object.getHeight(), object.getFace(), object.getType(), -1));
-				Hunter.lay(c, new NetTrap(c));
+				c.trapX = obX;
+				c.trapY =  obY;
+					Hunter.lay(c, new NetTrap(c, object, location));
 				break;
 			case 26646:
 				if(obX == 3326 && obY == 4749) {
