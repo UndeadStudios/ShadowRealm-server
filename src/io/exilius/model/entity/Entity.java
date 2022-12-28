@@ -1,12 +1,5 @@
 package io.exilius.model.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
 import io.exilius.content.combat.Damage;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.instances.InstancedArea;
@@ -24,6 +17,11 @@ import io.exilius.model.entity.player.Position;
 import io.exilius.model.timers.TickTimer;
 import io.exilius.util.Misc;
 import io.exilius.util.Stream;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
+
 import static io.exilius.model.entity.npc.NPCClipping.DIR;
 
 /**
@@ -60,6 +58,7 @@ public abstract class Entity {
     public int freezeTimer;
     public boolean isDead;
     public int attackTimer;
+    public int votecount;
     public int hitDiff2;
     public int hitDiff;
     public boolean hitUpdateRequired2;

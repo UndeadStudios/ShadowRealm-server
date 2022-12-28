@@ -267,6 +267,7 @@ public class LoadSpell {
                 break;
             // Zilyana
             case 2205:
+            case 11958:
                 if (Misc.random(4) == 0) {
                     npc.setAttackType(CombatType.MAGE);
                     npc.endGfx = -1;

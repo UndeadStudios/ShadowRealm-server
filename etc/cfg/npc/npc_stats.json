@@ -38891,5 +38891,26 @@
     "crushDef": 19,
     "rangeDef": 16,
     "magicDef": 4
+  },
+  "11958": {
+    "name": "Vote Boss",
+    "hitpoints": 2055,
+    "combatLevel": 1000,
+    "attackSpeed": 2,
+    "attackLevel": 480,
+    "strengthLevel": 296,
+    "defenceLevel": 600,
+    "rangeLevel": 450,
+    "magicLevel": 600,
+    "magic": 400,
+    "stabDef": 200,
+    "slashDef": 200,
+    "crushDef": 200,
+    "rangeDef": 200,
+    "magicDef": 200,
+    "bonusAttack": 295,
+    "bonusStrength": 40,
+    "poisonImmune": true,
+    "venomImmune": true
   }
 }

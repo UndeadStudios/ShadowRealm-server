@@ -548,6 +548,7 @@ public class NPCHitPlayer {
                                     break;
 
                                 case 2205:
+                                case 11958:
                                     secondDamage = Misc.random(27);
                                     break;
 

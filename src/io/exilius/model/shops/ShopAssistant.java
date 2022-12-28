@@ -647,6 +647,12 @@ public class ShopAssistant {
 						return 10;
 					case 23101:
 						return 5;
+					case 26230:
+					case 26231:
+					case 26232:
+					case 26233:
+					case 26234:
+						return 150;
 					case 23099:
 						return 3;
 					case 23097:

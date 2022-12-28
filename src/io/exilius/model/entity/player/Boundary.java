@@ -383,6 +383,9 @@ public class Boundary {
 			new Boundary(2141, 2880, 2148, 2887),
 			new Boundary(2149, 2886, 2152, 2887)
 	};
+	public static final Boundary Spiders_den = new Boundary(1828, 9944, 1851, 9972);
+	public static final Boundary FORTHOS_DUNGEON = new Boundary(1774, 9884, 1869, 9995);
+	public static final Boundary VOTE_BOSS = new Boundary(1871, 9286, 1903, 9339);
 	public static final Boundary HUNTER_ICE = new Boundary(2679, 3748, 2748, 3844);
 	public static final Boundary HUNTER_JUNGLE = new Boundary(1486, 3392, 1685, 3520);
 	public static final Boundary HUNTER_LOVAK = new Boundary(1468, 3840, 1511, 3890);
@@ -645,8 +648,6 @@ public class Boundary {
 	public static final Boundary CANNON_FREMNIK_DUNGEON = new Boundary(2685, 9945, 2815, 10048);
 	public static final Boundary LIZARDMAN_CANYON = new Boundary(1468, 3674, 1567, 3709);
 	public static final Boundary VORKATH = new Boundary(2257, 4052, 2288, 4079);
-	public static final Boundary FORTHOS_DUNGEON = new Boundary(1781, 9875, 1866, 9994);
-
 	public static final Boundary OURIANA_ALTAR = new Boundary(2995, 5559, 3092, 5645);
 	public static final Boundary OURIANA_ALTAR_BANK = new Boundary(3010, 5618, 3026, 5630);
 

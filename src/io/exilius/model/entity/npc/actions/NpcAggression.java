@@ -162,6 +162,9 @@ public class NpcAggression {
 
         if (npc.getNpcId() > 0)
             switch (npc.getNpcId()) {
+                case 8703:
+                case 2145:
+                    return 8;
                 case 11278:
                 case 11299:
                 case 11294:
@@ -227,6 +230,9 @@ public class NpcAggression {
 
 
         switch (npc.getNpcId()) {
+            case 8703:
+            case 2145:
+                return true;
             case 5823:
             case 5824:
             case 5825:
@@ -333,6 +339,7 @@ public class NpcAggression {
                 // Godwars
             case 3138:
             case 2205:
+            case 11958:
             case 2206:
             case 2207:
             case 2208:

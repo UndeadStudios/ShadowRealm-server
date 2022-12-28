@@ -115,7 +115,7 @@ public class OperateItem implements PacketType {
 						c.sendMessage("You can't teleport above " + Configuration.NO_TELEPORT_WILD_LEVEL + " in the wilderness.");
 						return;
 					}
-					c.getPA().showInterface(26263);
+					c.getTeleportInter().openInterface(c);
 					return;
 				case Items.TOME_OF_FIRE_EMPTY:
 				case Items.TOME_OF_FIRE:

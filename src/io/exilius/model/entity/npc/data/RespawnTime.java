@@ -40,7 +40,8 @@ public class RespawnTime {
 
             case Npcs.SARACHNIS:
                     return 20;
-
+            case 8703:
+                return 50;
             case 6600:
             case 6601:
             case 6602:
@@ -193,7 +194,8 @@ public class RespawnTime {
             case 1641:
             case 1642:
                 return 100;
-
+            case 11958:
+                return 30;
 
             case 11283:
                 return -1;

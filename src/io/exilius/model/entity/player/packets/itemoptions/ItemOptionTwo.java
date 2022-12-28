@@ -239,7 +239,7 @@ public class ItemOptionTwo implements PacketType {
 					player.sendMessage("You can't teleport above " + Configuration.NO_TELEPORT_WILD_LEVEL + " in the wilderness.");
 					return;
 				}
-				player.getPA().showInterface(26263);
+				player.getTeleportInter().openInterface(player);
 				return;
 		case 11238:
 		case 11240:

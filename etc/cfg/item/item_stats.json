@@ -71383,5 +71383,13 @@
     "equipment": {
       "slot": 3
     }
+  },
+  "29046": {
+    "name": "Lava partyhat",
+    "equipable": true,
+    "weight": 0.056,
+    "equipment": {
+      "slot": 0
+    }
   }
 }

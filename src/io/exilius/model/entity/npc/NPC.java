@@ -1,11 +1,5 @@
 package io.exilius.model.entity.npc;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Configuration;
@@ -17,7 +11,6 @@ import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.npc.NPCAutoAttack;
 import io.exilius.content.combat.npc.NPCCombatAttack;
 import io.exilius.content.combat.npc.NPCCombatAttackHit;
-import io.exilius.content.commands.owner.Getnpcid;
 import io.exilius.content.minigames.pest_control.PestControl;
 import io.exilius.content.minigames.raids.Raids;
 import io.exilius.model.*;
@@ -44,6 +37,12 @@ import io.exilius.util.Misc;
 import io.exilius.util.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class NPC extends Entity {
 
@@ -736,6 +735,7 @@ public class NPC extends Entity {
 			case 5129:
 			case FragmentOfSeren.NPC_ID:
 			case 2205:
+			case 11958:
 			case 3129:
 			case 2215:
 			case 11278:

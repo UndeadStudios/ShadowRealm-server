@@ -411,7 +411,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 8030: 
         case 8031: 
             return 5;
-        case 2205: 
+        case 2205:
+            case 11958:
             return 4;
         case Brother.AHRIM: 
             return 6;
@@ -1400,7 +1401,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 1611: 
         case 1612: 
             return 4;
-        case 2205: 
+        case 2205:
+            case 11958:
             return npc.getAttackType() == CombatType.MAGE ? 4 : 1;
         case Zulrah.SNAKELING: 
             return 2;

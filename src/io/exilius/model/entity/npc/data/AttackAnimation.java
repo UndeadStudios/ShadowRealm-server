@@ -27,6 +27,8 @@ public class AttackAnimation extends NPCHandler {
 		switch (npc.getNpcId()) {
 			case 3019:
 				return 6249;
+			case 8703:
+				return 5319;
 			case 290:
 				return 99;
 			case 8633:
@@ -435,7 +437,6 @@ public class AttackAnimation extends NPCHandler {
 			case 98:
 			case 99:
 			return 5532;
-		case 2145:
 		case 6462: // Zombies
 		case 6465:
 			case 23: // Monkey
@@ -601,6 +602,7 @@ public class AttackAnimation extends NPCHandler {
 
 		// God wars
 		case 2205:
+			case 11958:
 			return npc.getAttackType() == CombatType.MAGE ? 6970 : 6967;
 		case 2206:
 			return 6376;
@@ -1246,7 +1248,13 @@ public class AttackAnimation extends NPCHandler {
 
 		case 2054:
 			return 3146;
-
+			case 2145:
+				if (npc.getAttackType() == CombatType.MAGE) {
+					return 5571;
+				} else if (npc.getAttackType() == CombatType.MELEE) {
+					return 5568;
+				}
+				return 5568;
 		default:
 			return 0x326;
 		}

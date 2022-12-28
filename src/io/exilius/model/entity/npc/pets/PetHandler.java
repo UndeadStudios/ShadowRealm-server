@@ -1,11 +1,8 @@
 package io.exilius.model.entity.npc.pets;
 
-import java.util.*;
-
 import com.google.common.collect.ImmutableSet;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
-import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.definitions.NpcDef;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCHandler;
@@ -18,6 +15,8 @@ import io.exilius.model.items.GameItem;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 
+import java.util.*;
+
 public class PetHandler {
 
     /**
@@ -27,7 +26,7 @@ public class PetHandler {
     private static final Set<Pets> PETS = Collections.unmodifiableSet(EnumSet.allOf(Pets.class));
 
     private static final ImmutableSet<Integer> PET_IDS = ImmutableSet.of(12650, 12649, 12651, 12652, 12644, 12645,
-            12643, 11995, 15568, 12653, 12655, 13178, 12646, 13179, 13177, 12921, 13181, 12816, 12647, 24491,23495,21748);
+            12643, 11995, 15568, 12653, 12655, 13178, 12646, 13179, 13177, 12921, 13181, 12816, 12647, 24491,23495,21748, 27651);
 
     private static final ImmutableSet<Integer> MELEE_PETS = ImmutableSet.of(
             Pets.SHADOW_WARRIOR.itemId, Pets.CORRUPT_BEAST.itemId, Pets.KRATOS.itemId
@@ -227,7 +226,8 @@ public class PetHandler {
         DARK_ROC(30121, 2312, "Dark Roc", -1, "second"),
         DARK_KRATOS(30122, 2313, "Dark Kratos", -1, "second"),
         DARK_RED_SEREN(30123, 2310, "Dark Seren", -1, "second"),
-        ABYSSAL_PROTECTOR(26901, 11402, "Guardians of the Rift", -1, "second");
+        ABYSSAL_PROTECTOR(26901, 11402, "Guardians of the Rift", -1, "second"),
+        VOTE_PET(27651, 11855, "Vote Boss", 5000,"second");
 
         private final boolean rollOnNpcDeath;
         private final int itemId;
@@ -298,6 +298,8 @@ public class PetHandler {
                 return Pets.KALPHITE_PRINCESS;
             case "Nex":
                 return Pets.NEXLING;
+            case "Vote Boss":
+                    return Pets.VOTE_PET;
             default:
                 return pet;
         }

@@ -74801,6 +74801,12 @@
   noteId: 25778
   noted: true
   stackable: true
-
-
+- id: 29046
+  name: "Lava partyhat"
+  description: "A nice hat from a cracker."
+  shopValue: 12200000
+- id: 27651
+  name: "Vote Boss jr"
+  description: "Its an Vote Boss jr."
+  shopValue: 1
 

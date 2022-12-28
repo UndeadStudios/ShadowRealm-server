@@ -1,0 +1,84 @@
+---
+npc_id:
+- 8703
+common:
+  accessibility: 3
+  items:
+  - name: "Adamant longsword"
+    minimum: 1
+    maximum: 1
+  - name: "Adamant med helm"
+    minimum: 1
+    maximum: 1
+  - name: "air rune"
+    minimum: 30
+    maximum: 50
+  - name: "earth rune"
+    minimum: 30
+    maximum: 50
+  - name: "fire rune"
+    minimum: 30
+    maximum: 50
+  - name: "water rune"
+    minimum: 30
+    maximum: 50
+uncommon:
+  accessibility: 10
+  items:
+    - name: "chaos rune"
+      minimum: 10
+      maximum: 15
+    - name: "cosmic rune"
+      minimum: 10
+      maximum: 15
+    - name: "death rune"
+      minimum: 10
+      maximum: 15
+    - name: "nature rune"
+      minimum: 10
+      maximum: 15
+    - name: "grimy guam leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy marrentill"
+      minimum: 1
+      maximum: 1
+    - name: "grimy tarromin"
+      minimum: 1
+      maximum: 1
+    - name: "grimy harralander"
+      minimum: 1
+      maximum: 3
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+rare:
+  accessibility: 20
+  items:
+  - name: "rune dagger"
+    minimum: 1
+    maximum: 1
+  - name: "rune med helm"
+    minimum: 1
+    maximum: 1
+  - name: "law rune"
+    minimum: 4
+    maximum: 5
+  - name: "soul rune"
+    minimum: 5
+    maximum: 5
+  - name: "grimy irit leaf"
+    minimum: 1
+    maximum: 1
+  - name: "grimy avantoe"
+    minimum: 1
+    maximum: 1
+  - name: "grimy kwuarm"
+    minimum: 1
+    maximum: 1
+  - name: "grimy cadantine"
+    minimum: 1
+    maximum: 1
+  - name: "grimy dwarf weed"
+    minimum: 1
+    maximum: 1

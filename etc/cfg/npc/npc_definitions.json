@@ -57487,7 +57487,7 @@
     "size": 1
   },
   "11855": {
-    "name": "Snow Imp",
+    "name": "Vote Boss Jr",
     "combatLevel": 0,
     "size": 1
   },
@@ -57977,12 +57977,12 @@
     "size": 1
   },
   "11958": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
+    "name": "Vote Boss",
+    "combatLevel": 1000,
+    "size": 2
   },
   "11959": {
-    "name": "Tool Leprechaun",
+    "name": "Vote Boss jr",
     "combatLevel": 0,
     "size": 1
   },

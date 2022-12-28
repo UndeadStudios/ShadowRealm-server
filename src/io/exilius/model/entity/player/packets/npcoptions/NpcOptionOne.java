@@ -199,10 +199,10 @@ public class NpcOptionOne {
 			break;
 
 		case 5314:
-			player.getPA().showInterface(26263);
+			player.getTeleportInter().openInterface(player);
 			break;
 		case 3248:
-			player.getPA().showInterface(26263);
+			player.getTeleportInter().openInterface(player);
 			break;
 		case 1143:
 			player.getShops().openShop(83);

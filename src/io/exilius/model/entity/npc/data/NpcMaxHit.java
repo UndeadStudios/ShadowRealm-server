@@ -4,6 +4,8 @@ public class NpcMaxHit {
 
     public static int getMaxHit(int npcId) {
         switch (npcId) {
+            case 2145:
+                return 11;
             case 9756:
             case 9757:
             case 9758:
@@ -13,6 +15,8 @@ public class NpcMaxHit {
             case 9762:
             case 9763:
                 return 17;
+            case 8703:
+                return 6;
             case 8611:
                 return 13;
             case 8031:
@@ -294,6 +298,7 @@ public class NpcMaxHit {
             case 3132:
                 return 16;
             case 2205:
+            case 11958:
                 return 41;
             case 2206:
                 return 15;

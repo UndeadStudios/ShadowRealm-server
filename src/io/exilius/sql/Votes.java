@@ -141,7 +141,6 @@ public class Votes implements Runnable  {
 
                 // -- ADD CODE HERE TO GIVE TOKENS OR WHATEVER
 
-
                 System.out.println("[Vote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
 
                 rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!

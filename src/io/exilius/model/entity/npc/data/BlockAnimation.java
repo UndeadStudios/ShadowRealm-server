@@ -12,6 +12,8 @@ public class BlockAnimation {
         switch (npcId) {
             case 9118:
                 return 6091;
+            case 8703:
+                return 5327;
             case 5823:
             case 5824:
             case 5825:

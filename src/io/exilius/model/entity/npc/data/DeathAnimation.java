@@ -20,6 +20,8 @@ public class DeathAnimation extends NPCHandler {
         switch (npcId) {
             case 9118:
                 return 6092;
+            case 8703:
+                return 5321;
             case 5823:
             case 5824:
             case 5825:
@@ -637,6 +639,7 @@ public class DeathAnimation extends NPCHandler {
             case 7935:
                 return 6567;
             case 2205:
+            case 11958:
                 return 6968;
             case 2215:
                 return 7020;

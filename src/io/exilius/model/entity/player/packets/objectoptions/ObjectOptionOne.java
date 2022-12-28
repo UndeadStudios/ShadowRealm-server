@@ -3885,7 +3885,7 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(2649, 9562, 0);
 				break;
 			case 36062:
-				c.getPA().showInterface(26263);
+				c.getTeleportInter().openInterface(c);
 				break;
 			case 27362:// lizardmen
 				if (c.absY > 3688) {

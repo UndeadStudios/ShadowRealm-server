@@ -1,6 +1,4 @@
-package io.exilius.content.commands.test;
-
-import java.util.Optional;
+package io.exilius.content.commands.owner;
 
 import io.exilius.Server;
 import io.exilius.content.commands.Command;
@@ -8,13 +6,15 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.bank.BankItem;
 import io.exilius.util.Misc;
 
+import java.util.Optional;
+
 public class DropTest extends Command {
 
     @Override
     public void execute(Player player, String commandName, String input) {
-        String[] args = input.split(" ");
+        String[] args = input.split("-");
         if (args.length < 1) {
-            player.sendMessage("::droptest npc_id amount (default amount is 10k)");
+            player.sendMessage("::droptest-npc_id-amount (default amount is 10k)");
         } else {
             int npcId = Integer.parseInt(args[0]);
             int count = 10_000;

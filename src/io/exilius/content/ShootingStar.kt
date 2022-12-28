@@ -74,7 +74,6 @@ object ShootingStar {
     class CrashedStar(val starObject: GlobalObject?, val starLocation: LocationData)
     enum class LocationData(val spawnPos: Position, val clue: String, var playerPanelFrame: String) {
         LOCATION_1(Position(3050, 3319), "north of the Falador Farming patches", "Falador Farming"),
-        LOCATION_2(Position(3094, 3484), "south of the Edgeville bank", "Edgeville"),
         LOCATION_3(Position(2480, 3433), "at the Gnome Agility Course", "Gnome Course"),
         LOCATION_4(Position(2745, 3445), "in the middle of the Flax field", "Flax Field"),
         LOCATION_5(Position(2322, 3796), "in the yak field", "Yak Field"),
@@ -87,7 +86,7 @@ object ShootingStar {
         LOCATION_12(Position(2986, 3599), "in the Wilderness (western dragons)", "West Dragons"),
         LOCATION_13(Position(3091, 3528), "in the Wilderness (Edgeville)", "Edgeville Wild"),
         LOCATION_14(Position(2995, 3911), "outside the Wilderness Agility Course", "Wild. Course"),
-        LOCATION_15(Position(2450, 3167), "south of home", "Home"),
+        LOCATION_15(Position(3097, 3459), "south of the bank at home", "Home"),
         LOCATION_16(Position(2600, 3386), "outside of the fishing guild.", "Fishing Guild");
     }
 }

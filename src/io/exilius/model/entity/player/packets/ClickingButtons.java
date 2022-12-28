@@ -499,7 +499,7 @@ public class ClickingButtons implements PacketType {
 		case 51023:
 		case 51031:
 		case 51039:
-			c.getPA().showInterface(26263);
+			c.getTeleportInter().openInterface(c);
 			break;
 
 			case 130131:
