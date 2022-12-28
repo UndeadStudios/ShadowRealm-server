@@ -225,9 +225,9 @@ static int fourthFloorsos[][] = {
 					Server.getGlobalObjects().add(new GlobalObject(1581, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 1579));
 					return;
 				}
-				if(objectType == 1580) {
-					Server.getGlobalObjects().add(new GlobalObject(1582, obX, obY, c.getHeight(), object.getFace(), object.getType(), 100, 1580));
-					return;
+				if(objectType == 21944) {
+						c.getPA().sendConfig(978, 130023424);
+						return;
 				}
 			}
 		}

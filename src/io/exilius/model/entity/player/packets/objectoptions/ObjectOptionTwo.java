@@ -148,6 +148,9 @@ public class ObjectOptionTwo {
 			case 15506:
 				Pickable.pickObject(c, objectType, obX, obY);
 				break;
+			case 21944:
+					c.getPA().sendConfig(978, 125728129);
+				break;
 //			case 16682:
 //				c.getPA().movePlayer(2532, 3546, 0);
 //				break;
