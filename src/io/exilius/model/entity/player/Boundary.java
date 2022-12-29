@@ -227,6 +227,55 @@ public class Boundary {
 			new Boundary(1258, 10162, 1378, 10263, 1),
 			new Boundary(1259, 10177, 1362, 10231, 2)
 	};
+
+	public static final Boundary[] Hosidiuscowpen = {
+            new Boundary(1746, 3635, 1757, 3639),
+            new Boundary(1758, 3636, 1765, 3639),
+            new Boundary(1744, 3640, 1749, 3645),
+            new Boundary(1755, 3640, 1765, 3646),
+            new Boundary(1766, 3637, 1767, 3644),
+            new Boundary(1751, 3633, 1755, 3634),
+            new Boundary(1750, 3640, 1754, 3646)
+    };
+	public static final Boundary[] white_wolf = {
+			new Boundary(2797, 3493, 2811, 3530),
+			new Boundary(2790, 3494, 2796, 3522),
+			new Boundary(2812, 3494, 2825, 3530),
+			new Boundary(2826, 3492, 2835, 3538),
+			new Boundary(2820, 3531, 2825, 3536),
+			new Boundary(2832, 3473, 2870, 3491),
+			new Boundary(2836, 3492, 2871, 3530),
+			new Boundary(2836, 3531, 2838, 3534),
+			new Boundary(2871, 3488, 2874, 3491),
+			new Boundary(2872, 3492, 2874, 3527),
+			new Boundary(2875, 3496, 2879, 3522),
+			new Boundary(2875, 3523, 2877, 3525),
+			new Boundary(2834, 3464, 2874, 3472),
+			new Boundary(2842, 3458, 2878, 3463),
+			new Boundary(2843, 3451, 2878, 3457),
+			new Boundary(2840, 3447, 2878, 3450),
+			new Boundary(2840, 3451, 2842, 3453),
+			new Boundary(2850, 3444, 2877, 3446),
+			new Boundary(2853, 3441, 2877, 3443),
+			new Boundary(2857, 3438, 2877, 3440),
+			new Boundary(2864, 3433, 2877, 3437),
+			new Boundary(2867, 3428, 2877, 3432)
+	};
+	public static final Boundary[] woodcutting_guild = {
+			new Boundary(1561, 3472, 1600, 3503),
+			new Boundary(1601, 3497, 1606, 3500),
+			new Boundary(1607, 3485, 1620, 3515),
+			new Boundary(1621, 3491, 1632, 3518),
+			new Boundary(1633, 3489, 1646, 3516),
+			new Boundary(1647, 3489, 1649, 3516),
+			new Boundary(1650, 3492, 1654, 3516),
+			new Boundary(1655, 3502, 1657, 3509)
+	};
+	public static final Boundary wizard_tower = new Boundary(3091, 3145, 3126, 3176);
+	public static final Boundary Al_Kharid_Palace = new Boundary(3281, 3158, 3304, 3178);
+	public static final Boundary battlefield = new Boundary(2486, 3197, 2559, 3259);
+	public static final Boundary bandit_camp = new Boundary(3148, 2956, 3191, 3002);
+	public static final Boundary Varrock_Sewers = new Boundary(3151, 9856, 3293, 9919);
 	public static final Boundary LZ_MIMICS = new Boundary(2858, 5085, 2867, 5108);
 	public static final Boundary MZ = new Boundary(2112, 9344, 2175, 9407);
 	public static final Boundary OZ = new Boundary(2784, 4887, 2796, 4895);

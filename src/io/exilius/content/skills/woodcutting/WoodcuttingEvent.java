@@ -88,7 +88,7 @@ public class WoodcuttingEvent extends Event<Player> {
 			super.stop();
 			return;
 		}
-		if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Tree.NORMAL) && Misc.random(chopChance) == 0) {
+		if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Tree.NORMAL) || tree.equals(Tree.NORMAL2) || tree.equals(Tree.NORMAL3) || tree.equals(Tree.DEAD) || tree.equals(Tree.DEAD2) || tree.equals(Tree.DEAD3) || tree.equals(Tree.DEAD4) && Misc.random(chopChance) == 0) {
 			int face = 0;
 			Optional<WorldObject> worldObject = attachment.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
 			if (worldObject.isPresent()) {
@@ -106,7 +106,9 @@ public class WoodcuttingEvent extends Event<Player> {
 			Server.getGlobalObjects().add(new GlobalObject(tree.equals(Tree.REDWOOD) ? stumpId : tree.getStumpId(), x, y, attachment.heightLevel, face, 10, tree.getRespawnTime(), objectId));
 			attachment.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
 			attachment.getItems().addItem(tree.getWood(), 1);
-			attachment.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
+			if(tree.equals(Tree.MAGIC)) {
+				attachment.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
+			}
 			attachment.getPA().addSkillXPMultiplied((int)osrsExperience, Skill.WOODCUTTING.getId(), true);
 			Achievements.increase(attachment, AchievementType.WOODCUT, 1);
 			attachment.getPA().sendSound(2734);

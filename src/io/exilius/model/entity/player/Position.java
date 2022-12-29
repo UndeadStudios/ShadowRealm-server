@@ -323,7 +323,6 @@ public final class Position {
 				|| Boundary.isIn(this, Boundary.INFERNO)
 				|| Boundary.isIn(this, Boundary.SKOTIZO_BOSSROOM)
 				|| Boundary.isIn(this, Boundary.LIZARDMAN_CANYON)
-				|| Boundary.isIn(this, Boundary.BANDIT_CAMP_BOUNDARY)
 				|| Boundary.isIn(this, Boundary.COMBAT_DUMMY)
 				|| Boundary.isIn(this, Boundary.Spiders_den)
 				|| Boundary.isIn(this, Boundary.TEKTON)
@@ -344,6 +343,15 @@ public final class Position {
 				|| Boundary.isIn(this, Boundary.SandCrab)
 				|| Boundary.isIn(this, Boundary.wild_slayer_save)
 				|| Boundary.isIn(this, Boundary.ROCK_CRABS)
+				|| Boundary.isIn(this, Boundary.Hosidiuscowpen)
+				|| Boundary.isIn(this, Boundary.battlefield)
+				|| Boundary.isIn(this, Boundary.Al_Kharid_Palace)
+				|| Boundary.isIn(this, Boundary.bandit_camp)
+				|| Boundary.isIn(this, Boundary.Varrock_Sewers)
+				|| Boundary.isIn(this, Boundary.white_wolf)
+				|| Boundary.isIn(this, Boundary.wizard_tower)
+				|| Boundary.isIn(this, Boundary.woodcutting_guild)
+
 		) {
 			return true;
 		}
