@@ -2,6 +2,7 @@ package io.exilius.model.entity.player.packets.objectoptions;
 
 import io.exilius.Server;
 import io.exilius.content.skills.construction.Construction;
+import io.exilius.content.skills.construction.Objects;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
@@ -14,6 +15,7 @@ public class ObjectOptionFive {
             return;
         }
         Construction.handleConstructionClick(c, objectType, obX, obY);
+        Objects.handleObjectClick(c, objectType, obX, obY);
         c.getPA().resetVariables();
         c.clickObjectType = 0;
         //c.getPA.(obX, obY);

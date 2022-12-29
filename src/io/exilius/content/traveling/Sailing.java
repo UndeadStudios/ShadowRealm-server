@@ -1,7 +1,6 @@
 package io.exilius.content.traveling;
 
 import io.exilius.Configuration;
-import io.exilius.Server;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -101,7 +100,7 @@ public class Sailing {
             }
         }
         player.stopPlayerPacket = true;
-        player.getPA().movePlayer(0, 0, 0);
+        player.getPA().movePlayer(9152, 4684, 0);
         player.getPlayerAssistant().showInterface(3281);
         player.getPlayerAssistant().sendConfig(75, getconfig(i));
 

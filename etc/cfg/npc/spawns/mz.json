@@ -44,25 +44,6 @@
     },
     "walkingType": "FACE_SOUTH"
   },
-
-  {
-    "id":8918,
-    "position": {
-      "x":2122,
-      "y":9353,
-      "height":0
-    },
-    "walkingType": "WALK"
-  },
-  {
-    "id":8918,
-    "position": {
-      "x":2122,
-      "y":9360,
-      "height":0
-    },
-    "walkingType": "WALK"
-  },
   {
     "id":5862,
     "position": {

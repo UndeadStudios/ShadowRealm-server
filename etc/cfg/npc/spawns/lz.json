@@ -9,15 +9,6 @@
     "walkingType": "FACE_NORTH"
   },
   {
-    "id":8633,
-    "position": {
-      "x":2860,
-      "y":5102,
-      "height":0
-    },
-    "walkingType": "WALK"
-  },
-  {
     "id":484,
     "position": {
       "x":2820,
@@ -160,15 +151,6 @@
       "height":0
     },
     "walkingType": "FACE_NORTH"
-  },
-  {
-    "id":8633,
-    "position": {
-      "x":2861,
-      "y":5090,
-      "height":0
-    },
-    "walkingType": "WALK"
   },
   {
     "id":1047,
