@@ -1723,6 +1723,8 @@ public class Player extends Entity {
             return;
         }
         if (getHouse() != null) {
+            getPA().movePlayer(3080, 3492, 0);
+                getHouse().leave(this);
             getHouse().save();
         }
         if (!isDisconnected() && System.currentTimeMillis() - logoutDelay > 1000) {
@@ -1777,6 +1779,8 @@ public class Player extends Entity {
             this.clan.removeMember(this);
         }
         if (getHouse() != null) {
+            getPA().movePlayer(3080, 3492, 0);
+            getHouse().leave(this);
             getHouse().save();
         }
         getFriendsList().onLogout();
@@ -3854,8 +3858,7 @@ public class Player extends Entity {
             }
             currentX = getTeleportToX() - 8 * mapRegionX;
             currentY = getTeleportToY() - 8 * mapRegionY;
-
-            this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);
+             //   this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);
             absX = getTeleportToX();
             absY = getTeleportToY();
             this.getRegionProvider().addNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);

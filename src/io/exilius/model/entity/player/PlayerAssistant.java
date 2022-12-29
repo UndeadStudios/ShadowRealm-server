@@ -688,6 +688,9 @@ public class PlayerAssistant {
 		if (c.getSlayer().superiorSpawned) {
 			c.getSlayer().superiorSpawned = false;
 		}
+		if (c.getHouse() != null && c.inConstruction() && !(x >= 16 && x <= 55 && y >= 16 && y <= 55)) {
+			c.getHouse().leave(c);
+		}
 		c.resetWalkingQueue();
 		c.attacking.reset();
 		c.setTeleportToX(x);
@@ -2233,7 +2236,9 @@ public class PlayerAssistant {
 		if (c.getSlayer().superiorSpawned) {
 			c.getSlayer().superiorSpawned = false;
 		}
-
+		if (c.getHouse() != null && c.inConstruction() && !(x >= 16 && x <= 55 && y >= 16 && y <= 55)) {
+			c.getHouse().leave(c);
+		}
 		if (c.playerAttackingIndex > 0 || c.npcAttackingIndex > 0) {
 			c.attacking.reset();
 		}
@@ -2364,6 +2369,9 @@ public class PlayerAssistant {
 		if (Lowpkarena.getState(c) != null || Highpkarena.getState(c) != null) {
 			c.sendMessage("You can't teleport from a Pk event!");
 			return;
+		}
+		if (c.getHouse() != null && c.inConstruction() && !(x >= 16 && x <= 55 && y >= 16 && y <= 55)) {
+			c.getHouse().leave(c);
 		}
 		if (c.isDead) {
 			return;

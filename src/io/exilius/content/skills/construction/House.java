@@ -108,12 +108,12 @@ public class House {
 			@Override
 			public void execute(CycleEventContainer container) {
 				client.getPA().movePlayer(32, 32, height);
-				RegionProvider.LoadRegion(owner);
+				client.getRegionProvider().LoadRegion(owner);
 				container.stop();
 			}
 
 			public void stop() {
-				client.getPA().movePlayer(34, 34, height);
+				client.getPA().movePlayer(32, 32, height);
 				//client.getPA().removeAllWindows();
 			}
 			

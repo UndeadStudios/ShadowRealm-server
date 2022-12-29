@@ -169,7 +169,7 @@ public class RegionProvider {
 	
 	public RegionProvider() { }
 
-	public static void LoadRegion(Player client) {
+	public void LoadRegion(Player client) {
 		client.outStream.createFrameVarSizeWord(241);
 		client.outStream.writeWordA(client.mapRegionY + 6);
 		client.outStream.initBitAccess();
@@ -179,6 +179,7 @@ public class RegionProvider {
 					Room room = client.getHouse().rooms[x][y][z];
 					client.getOutStream().writeBits(1, room != null ? 1 : 0);
 					if (room != null) {
+						client.getRegionProvider().get(room.getX() / 8 << 14, room.getY() / 8 << 3).getClip(x, y, z);
 						client.getOutStream().writeBits(26, room.getX() / 8 << 14 | room.getY() / 8 << 3 | 0 % 4 << 24 | room.getRotation() % 4 << 1);
 					}
 				}

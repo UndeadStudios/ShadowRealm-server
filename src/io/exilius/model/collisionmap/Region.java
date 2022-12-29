@@ -62,7 +62,7 @@ public class Region {
         return region;
     }
 
-    private int[][][] clone(int[][][] array) {
+    public int[][][] clone(int[][][] array) {
         int[][][] clone = new int[array.length][][];
         for (int z = 0; z < array.length; z++) {
             if (array[z] != null) {
@@ -196,16 +196,12 @@ public class Region {
     }
 
     public int getClip(int x, int y, int height) {
-        height = height % 4;
+        if (height > 3 || height < 0) {
+            height = Math.abs(height) % 4;
+        }
         int regionAbsX = (id >> 8) * 64;
-        int regionAbsY = (id & 255) * 64;
+        int regionAbsY = (id & 0xff) * 64;
         if (clips[height] == null) {
-            return 0;
-        }
-        if(regionAbsX == -1) {
-            return 0;
-        }
-        if(regionAbsY == -1) {
             return 0;
         }
         return clips[height][x - regionAbsX][y - regionAbsY];
