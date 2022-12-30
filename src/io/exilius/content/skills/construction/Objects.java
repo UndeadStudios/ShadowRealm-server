@@ -9,13 +9,36 @@ import io.exilius.model.entity.player.Player;
 public class Objects {
 
 	enum CON_DATA {
+		Crude_wooden_chair(4515, 6752, 1, 58, 1539, 2, 960, 2, -1, -1, "Crude wooden chair", 898),
+		wooden_chair(4515, 6753, 8, 87, 1539, 3, 960, 3, -1, -1, "Wooden chair", 898),
+		rocking_chair(4515, 6754, 14, 87, 1539, 3, 960, 3, -1, -1, "Rocking chair", 898),
+		oak_chair(4515, 6755, 19, 120, 8778, 2, -1, -1, -1, -1, "Oak chair", 898),
+		oak_armchair(4515, 6756, 26, 180, 8778, 3, -1, -1, -1, -1, "Oak armchair", 898),
+		teak_armchair(4515, 6757, 35, 180, 8780, 2, -1, -1, -1, -1, "Teak armchair", 898),
+		mahogany_armchair(4515, 6758, 50, 280, 8782, 2, -1, -1, -1, -1, "Mahogany armchair", 898),
 
-		WOODEN_BOOKCASE(4521, 6768, 4, 3, 1539, 4, 960, 4, -1, -1, "Wooden bookcase", 898),
-		OAK_BOOKCASE(4521, 6769, 29, 7, 7121, 3, -1, -1, -1, -1, "Oak bookcase", 898),
-		MAHOGANY_BOOKCASE(4521, 6770, 40, 9, 8782, 3, -1, -1, -1, -1, "Mahogany bookcase", 898),
-		CLAY_FIREPLACE(4523, 6780, 10, 3, 1761, 3, -1, -1, -1, -1, "Clay fireplace", 898),
-		LIMESTONE_FIREPLACE(4523, 6782, 31, 7, 3420, 2, -1, -1, -1, -1, "Limestone fireplace", 898),
-		MARBLE_FIREPLACE(4523, 6784, 52, 9, 8786, 1, -1, -1, -1, -1, "Marble fireplace", 898);
+		Crude_wooden_chair2(4516, 6752, 1, 58, 1539, 2, 960, 2, -1, -1, "Crude wooden chair", 898),
+		wooden_chair2(4516, 6753, 8, 87, 1539, 3, 960, 3, -1, -1, "Wooden chair", 898),
+		rocking_chair2(4516, 6754, 14, 87, 1539, 3, 960, 3, -1, -1, "Rocking chair", 898),
+		oak_chair2(4516, 6755, 19, 120, 8778, 2, -1, -1, -1, -1, "Oak chair", 898),
+		oak_armchair2(4516, 6756, 26, 180, 8778, 3, -1, -1, -1, -1, "Oak armchair", 898),
+		teak_armchair2(4516, 6757, 35, 180, 8780, 2, -1, -1, -1, -1, "Teak armchair", 898),
+		mahogany_armchair2(4516, 6758, 50, 280, 8782, 2, -1, -1, -1, -1, "Mahogany armchair", 898),
+
+		Crude_wooden_chair3(4517, 6752, 1, 58, 1539, 2, 960, 2, -1, -1, "Crude wooden chair", 898),
+		wooden_chair3(4517, 6753, 8, 87, 1539, 3, 960, 3, -1, -1, "Wooden chair", 898),
+		rocking_chair3(4517, 6754, 14, 87, 1539, 3, 960, 3, -1, -1, "Rocking chair", 898),
+		oak_chair3(4517, 6755, 19, 120, 8778, 2, -1, -1, -1, -1, "Oak chair", 898),
+		oak_armchair3(4517, 6756, 26, 180, 8778, 3, -1, -1, -1, -1, "Oak armchair", 898),
+		teak_armchair3(4517, 6757, 35, 180, 8780, 2, -1, -1, -1, -1, "Teak armchair", 898),
+		mahogany_armchair3(4517, 6758, 50, 280, 8782, 2, -1, -1, -1, -1, "Mahogany armchair", 898),
+
+		WOODEN_BOOKCASE(4521, 6768, 4, 115, 1539, 4, 960, 4, -1, -1, "Wooden bookcase", 898),
+		OAK_BOOKCASE(4521, 6769, 29, 180, 8778, 3, -1, -1, -1, -1, "Oak bookcase", 898),
+		MAHOGANY_BOOKCASE(4521, 6770, 40, 420, 8782, 3, -1, -1, -1, -1, "Mahogany bookcase", 898),
+		CLAY_FIREPLACE(4523, 6780, 10, 30, 1761, 3, -1, -1, -1, -1, "Clay fireplace", 898),
+		LIMESTONE_FIREPLACE(4523, 6782, 31, 40, 3420, 2, -1, -1, -1, -1, "Limestone fireplace", 898),
+		MARBLE_FIREPLACE(4523, 6784, 52, 500, 8786, 1, -1, -1, -1, -1, "Marble fireplace", 898);
 
 		int fake_object;
 		int real_object;
@@ -93,10 +116,6 @@ public class Objects {
 			return animation;
 		}
 	}
-	// fake object, real object, level requirement, xp given, item1 required,
-	// item1 amount required, item2 required, item2 amount required,  item3 required, item3 amount required, object
-	// name, animation
-
 
 	public static void handleObjectClick(Player c, int objectType, int obX, int obY) {
 		House house = c.getHouse();
@@ -110,22 +129,28 @@ public class Objects {
 			return;
 		}
 		for (CON_DATA con : CON_DATA.values()) {
-			if (objectType == (int) con.getFake_object()) {
+			if (objectType ==  con.getFake_object()) {
 				if (c.playerLevel[22] >= con.getLevel()) {
 					if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem(con.getItem2(), con.getAmount2()) && c.getItems().playerHasItem(con.getItem3(), con.getAmount3())) {
 						if (con.getItem1() != -1 ||  con.getItem2() != -1 ||  con.getItem3() != -1) {
-							if (c.getItems().playerHasItem( con.getItem1(),  con.getAmount1())) {
-								if (c.getItems().isStackable((int)  con.getItem1()) || c.getItems().isStackable((int)  con.getItem2()) || c.getItems().isStackable((int)  con.getItem3())) {
-									c.getItems().deleteItem2((int)  con.getItem1(), con.getAmount1());
-									c.getItems().deleteItem2((int)  con.getItem2(), con.getAmount2());
-									c.getItems().deleteItem2((int)  con.getItem3(), con.getAmount3());
+							if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem( con.getItem2(),  con.getAmount2()) && c.getItems().playerHasItem( con.getItem3(),  con.getAmount3())) {
+								if (c.getItems().isStackable(con.getItem1()) && c.getItems().isStackable(  con.getItem2()) && c.getItems().isStackable(  con.getItem3())) {
+									c.getItems().deleteItem2(con.getItem1(), con.getAmount1());
+									c.getItems().deleteItem2(con.getItem2(), con.getAmount2());
+									c.getItems().deleteItem2(con.getItem3(), con.getAmount3());
 								} else {
-									c.getItems().deleteItem2((int) con.getItem1(), con.getAmount1());
-									c.getItems().deleteItem2((int)  con.getItem2(), con.getAmount2());
-									c.getItems().deleteItem2((int)  con.getItem3(), con.getAmount3());
+									c.getItems().deleteItem2( con.getItem1(), con.getAmount1());
+									c.getItems().deleteItem2(  con.getItem2(), con.getAmount2());
+									c.getItems().deleteItem2(  con.getItem3(), con.getAmount3());
 								}
 							} else {
-								c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " +con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+								if(con.getItem1() != -1 && con.getItem2() != -1) {
+									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+								} else 	if(con.getItem1() != -1 &&  con.getItem2() != -1 &&  con.getItem3() != -1) {
+									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "and " + con.getAmount3() + " " + c.getItems().getItemName(con.getItem3()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+								} else {
+									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+								}
 								return;
 							}
 						}
@@ -140,17 +165,16 @@ public class Objects {
 							return;
 						}
 						
-						RoomObject replacementObject = new RoomObject((int) con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(), objectName);
+						RoomObject replacementObject = new RoomObject( con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(), objectName);
 
 						/*if (room.getCustomObjectByPosition(newCoords[0], newCoords[1]) != null) {
 							c.sendMessage("You remove the <col=0000FF>" + CON_DATA[i][8] + ".");
-							replacementObject.setId((int) CON_DATA[i][0]);
+							replacementObject.setId( CON_DATA[i][0]);
 							room.removeCustomObject(c, replacementObject);
 							return;
 						}*/
-						
-						c.getItems().deleteItem2((int) con.getItem1(), (int) con.getAmount1());
-						c.getPA().addSkillXPMultiplied( con.getXp() * 2, 22, true);
+
+						c.getPA().addSkillXPMultiplied( con.getXp(), 22, true);
 						if (con.getAnimation() != 0) {
 							c.startAnimation(con.getAnimation());
 						}
@@ -158,7 +182,13 @@ public class Objects {
 						room.newObject(c, replacementObject);
 						return;
 					} else {
-						c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " +con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+						if(con.getItem1() != -1 && con.getItem2() != -1) {
+							c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+						} else 	if(con.getItem1() != -1 &&  con.getItem2() != -1 &&  con.getItem3() != -1) {
+							c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "and " + con.getAmount3() + " " + c.getItems().getItemName(con.getItem3()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+						} else {
+							c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
+						}
 					}
 				} else {
 					c.sendMessage("You need a construction level of <col=DD5C3E>" + con.getLevel() + " <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
@@ -167,7 +197,7 @@ public class Objects {
 		}
 
 		for (CON_DATA con : CON_DATA.values()) {
-			if (objectType == (int) con.getReal_object()) {
+			if (objectType ==  con.getReal_object()) {
 				Room room = Construction.getCurrentRoom(c);
 
 				int[] newCoords = Test1.getOriginalObjectCoords(room.getRotation(), new int[] { obX % 8, obY % 8 });
@@ -180,18 +210,9 @@ public class Objects {
 					return;
 				}
 
-				room.removeCustomObject(c, new RoomObject((int) con.getFake_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation()));
+				room.removeCustomObject(c, new RoomObject( con.getFake_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation()));
 				c.sendMessage("You remove the <col=0000FF>" + con.getObjectname() + ".");
 			}
 		}
 	}
-
-//	public static boolean isObject(int objectType) {
-//		for (int i = 0; i < CON_DATA.length; i++) {
-	//		if (objectType == (int) CON_DATA[i][0] || objectType == (int) CON_DATA[i][1])
-	//			return true;
-//		}
-	//	return false;
-//	}
-
 }

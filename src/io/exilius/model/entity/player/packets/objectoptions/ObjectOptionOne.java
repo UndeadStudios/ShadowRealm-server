@@ -37,6 +37,7 @@ import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.agility.impl.rooftop.RooftopArdougne;
 import io.exilius.content.skills.agility.impl.rooftop.RooftopSeers;
 import io.exilius.content.skills.agility.impl.rooftop.RooftopVarrock;
+import io.exilius.content.skills.construction.House;
 import io.exilius.content.skills.crafting.BraceletMaking;
 import io.exilius.content.skills.crafting.JewelryMaking;
 import io.exilius.content.skills.hunter.Hunter;
@@ -1615,7 +1616,17 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(3284, 2808, 0);
 				break;
 			case 15477:
-				c.sendMessage("The Construction skill is coming Soon.");
+                    House house;
+
+                    if (c.getHouse() == null) {
+                        house = House.load(c);
+                    } else {
+                        house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c) ;
+                    }
+                    house.setBuildMode(true);
+                    c.setHouse(house);
+                    house.enter(c);
+                    c.getPA().closeAllWindows();
 				break;
 			case 33320:
 				if (Boundary.isIn(c, Boundary.EDGEVILLE_PERIMETER)) {

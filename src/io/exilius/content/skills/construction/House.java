@@ -104,16 +104,31 @@ public class House {
 		
 		//client.getPA().sendFrame126("Entering house...", 12285);
 		CycleEventHandler.getSingleton().addEvent(client, new CycleEvent() {
-
+			int time = 0;
 			@Override
 			public void execute(CycleEventContainer container) {
-				client.getPA().movePlayer(32, 32, height);
-				client.getRegionProvider().LoadRegion(owner);
-				container.stop();
+				if(time == 1) {
+					client.getPA().showInterface(24568);
+					client.getRegionProvider().LoadRegion(client);
+					client.getPA().movePlayer(32, 32, height);
+				}
+				if(time == 3) {
+					client.getRegionProvider().LoadRegion(client);
+					client.getPA().movePlayer(32, 32, height);
+				}
+				if (client == null || time >= 5) {
+					client.getPA().closeAllWindows();
+						container.stop();
+						return;
+				}
+				if (time >= 0) {
+					time++;
+				}
 			}
-
 			public void stop() {
+				client.getRegionProvider().LoadRegion(client);
 				client.getPA().movePlayer(32, 32, height);
+
 				//client.getPA().removeAllWindows();
 			}
 			
@@ -134,40 +149,12 @@ public class House {
 
 			@Override
 			public void execute(CycleEventContainer container) {
-				client.outStream.createFrameVarSizeWord(241);
-				client.outStream.writeWordA(client.mapRegionY + 6);
-				client.outStream.initBitAccess();
-				for (int z = 0; z < 4; z++) {
-					for (int x = 0; x < 13; x++) {
-						for (int y = 0; y < 13; y++) {
-							Room room = rooms[x][y][z];
-							client.getOutStream().writeBits(1, room != null ? 1 : 0);
-							if (room != null) {
-								client.getOutStream().writeBits(26, room.getX() / 8 << 14 | room.getY() / 8 << 3 | 0 % 4 << 24 | room.getRotation() % 4 << 1);
-							}
-						}
-					}
-				}
-				client.getOutStream().finishBitAccess();
-				client.getOutStream().writeUnsignedWord(client.mapRegionX + 6);
-				client.getOutStream().endFrameVarSizeWord();
-				client.flushOutStream();
-				
-				for (int z = 0; z < 4; z++) {
-					for (int x = 0; x < 13; x++) {
-						for (int y = 0; y < 13; y++) {
-							Room room = rooms[x][y][z];
-							if (room == null)
-								continue;
-							
-							room.onLoad(client);
-						}
-					}
-				}
+				client.getRegionProvider().LoadRegion(client);
 				container.stop();
 			}
 
 			public void stop() {
+				client.getRegionProvider().LoadRegion(client);
 				client.getPA().movePlayer(x, y, height);
 	
 				//client.getPA().removeAllWindows();
