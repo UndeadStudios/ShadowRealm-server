@@ -2,6 +2,7 @@ package io.exilius.model.entity.player.packets.dialogueoptions;
 
 import io.exilius.Configuration;
 import io.exilius.content.skills.Skill;
+import io.exilius.content.skills.construction.Room;
 import io.exilius.content.skills.construction.rooms.*;
 import io.exilius.model.entity.player.Player;
 import org.apache.commons.lang3.RandomUtils;
@@ -17,16 +18,17 @@ public class FourOptions {
 	 * Handles all the first options on 'Four option' dialogues.
 	 */
 	public static void handleOption1(Player c) {
-		if (c.dialogueAction == 904) {
-			c.replaceWith = new Default();
-		} else if (c.dialogueAction == 905) {
-			c.replaceWith = new Workshop();
-		} else if (c.dialogueAction == 906) {
-			c.replaceWith = new CostumeRoom();
-		}
-
-		if (c.dialogueAction >= 904 && c.dialogueAction <= 906) {
-			c.getDH().sendDialogues(907, 0);
+		if (c.dialogueAction == 907) {
+			if (c.replaceWith == null) {
+				try {
+					c.replaceWith = (Room) Class.forName(c.toReplace.getClassName()).newInstance();
+				} catch (Exception e) {
+					e.printStackTrace();
+					return;
+				}
+			}
+			c.replaceWith.setRotation(0);
+			c.getHouse().buildRoom(c);
 		}
 		switch (c.dialogueAction) {
 		
@@ -166,18 +168,18 @@ public class FourOptions {
 	 * Handles all the 2nd options on 'Four option' dialogues.
 	 */
 	public static void handleOption2(Player c) {
-		if (c.dialogueAction == 904) {
-			c.replaceWith = new Garden();
-		} else if (c.dialogueAction == 905) {
-			c.replaceWith = new Kitchen();
-		} else if (c.dialogueAction == 906) {
-			c.replaceWith = new PortalChamber();
+		if (c.dialogueAction == 907) {
+			if (c.replaceWith == null) {
+				try {
+					c.replaceWith = (Room) Class.forName(c.toReplace.getClassName()).newInstance();
+				} catch (Exception e) {
+					e.printStackTrace();
+					return;
+				}
+			}
+			c.replaceWith.setRotation(1);
+			c.getHouse().buildRoom(c);
 		}
-
-		if (c.dialogueAction >= 904 && c.dialogueAction <= 906) {
-			c.getDH().sendDialogues(907, 0);
-		}
-
 		switch (c.dialogueAction) {
 		
 		case 181://medium
@@ -360,16 +362,17 @@ public class FourOptions {
 	 * Handles all the 3rd options on 'Four option' dialogues.
 	 */
 	public static void handleOption3(Player c) {
-		if (c.dialogueAction == 904) {
-			c.replaceWith = new Parlour();
-		} else if (c.dialogueAction == 905) {
-			c.replaceWith = new Dining();
-		} else if (c.dialogueAction == 906) {
-			c.replaceWith = new Study();
-		}
-
-		if (c.dialogueAction >= 904 && c.dialogueAction <= 906) {
-			c.getDH().sendDialogues(907, 0);
+		if (c.dialogueAction == 907) {
+			if (c.replaceWith == null) {
+				try {
+					c.replaceWith = (Room) Class.forName(c.toReplace.getClassName()).newInstance();
+				} catch (Exception e) {
+					e.printStackTrace();
+					return;
+				}
+			}
+			c.replaceWith.setRotation(2);
+			c.getHouse().buildRoom(c);
 		}
 
 		switch (c.dialogueAction) {
@@ -558,16 +561,17 @@ public class FourOptions {
 	 * Handles all the 4th options on 'Four option' dialogues.
 	 */
 	public static void handleOption4(Player c) {
-		if (c.dialogueAction == 904) {
-			c.replaceWith = new Bedroom();
-		} else if (c.dialogueAction == 905) {
-			c.replaceWith = new Chapel();
-		} else if (c.dialogueAction == 906) {
-			c.replaceWith = new Throne();
-		}
-
-		if (c.dialogueAction >= 904 && c.dialogueAction <= 906) {
-			c.getDH().sendDialogues(907, 0);
+		if (c.dialogueAction == 907) {
+			if (c.replaceWith == null) {
+				try {
+					c.replaceWith = (Room) Class.forName(c.toReplace.getClassName()).newInstance();
+				} catch (Exception e) {
+					e.printStackTrace();
+					return;
+				}
+			}
+			c.replaceWith.setRotation(1);
+			c.getHouse().buildRoom(c);
 		}
 
 		switch (c.dialogueAction) {

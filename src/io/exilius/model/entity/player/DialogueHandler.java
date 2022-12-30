@@ -2885,18 +2885,6 @@ public class DialogueHandler {
 				sendOption3("Replace it", "Rotate it", "Keep it as it is");
 				c.dialogueAction = 903;
 				break;
-			case 904:
-				sendOption5("Default(Grass)", "Garden", "Parlour", "Bedroom", "Next Page >");
-				c.dialogueAction = 904;
-				break;
-			case 905:
-				sendOption5("Workshop", "Kitchen", "Dining Room", "Chapel", "Next Page >");
-				c.dialogueAction = 905;
-				break;
-			case 906:
-				sendOption5("Costume Room", "Portal Chamber", "Study", "Throne", "First Page");
-				c.dialogueAction = 906;
-				break;
 			case 907:
 				sendOption4("North", "East", "South", "West");
 				c.dialogueAction = 907;
@@ -2906,6 +2894,7 @@ public class DialogueHandler {
 				sendOptions("Fancy boots", "Fighting boots");
 				c.dialogueAction = 10040;
 				break;
+
 
 		}
 	}

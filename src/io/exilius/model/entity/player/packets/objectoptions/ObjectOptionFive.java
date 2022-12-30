@@ -6,6 +6,7 @@ import io.exilius.content.skills.construction.Objects;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
+import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 
 public class ObjectOptionFive {
@@ -14,6 +15,7 @@ public class ObjectOptionFive {
         if (Server.getMultiplayerSessionListener().inAnySession(c)) {
             return;
         }
+        GlobalObject object = new GlobalObject(objectType, obX, obY, c.heightLevel);
         Construction.handleConstructionClick(c, objectType, obX, obY);
         Objects.handleObjectClick(c, objectType, obX, obY);
         c.getPA().resetVariables();
@@ -21,7 +23,7 @@ public class ObjectOptionFive {
         //c.getPA.(obX, obY);
         ObjectDef def = ObjectDef.getObjectDef(objectType);
         if (c.getRights().isOrInherits(Right.OWNER))
-            c.sendMessage("Clicked Object Option 5:  "+objectType+", Object name: "+def.getName());
+            c.sendMessage("Clicked Object Option 5:  "+objectType+", name: "+def.getName()+", face: "+object.getFace()+", type: "+object.getType());
         switch (objectType) {
             case 5492:
                 if (c.getItems().playerHasItem(1523, 1)

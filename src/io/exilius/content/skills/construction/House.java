@@ -146,11 +146,26 @@ public class House {
 		//client.getPA().showInterface(31992);
 		client.getPA().movePlayer(32, 32, height);
 		CycleEventHandler.getSingleton().addEvent(client, new CycleEvent() {
-
+			int time = 0;
 			@Override
 			public void execute(CycleEventContainer container) {
-				client.getRegionProvider().LoadRegion(client);
-				container.stop();
+				if(time == 1) {
+					client.getPA().showInterface(24568);
+					client.getRegionProvider().LoadRegion(client);
+					client.getPA().movePlayer(32, 32, height);
+				}
+				if(time == 3) {
+					client.getRegionProvider().LoadRegion(client);
+					client.getPA().movePlayer(32, 32, height);
+				}
+				if (client == null || time >= 5) {
+					client.getPA().closeAllWindows();
+					container.stop();
+					return;
+				}
+				if (time >= 0) {
+					time++;
+				}
 			}
 
 			public void stop() {

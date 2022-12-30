@@ -21,6 +21,7 @@ import io.exilius.content.item.lootable.LootableInterface;
 import io.exilius.content.itemskeptondeath.ItemsKeptOnDeathInterface;
 import io.exilius.content.polls.PollTab;
 import io.exilius.content.preset.PresetManager;
+import io.exilius.content.skills.construction.RoomInterface;
 import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.crafting.CraftingData.tanningData;
@@ -240,6 +241,7 @@ public class ClickingButtons implements PacketType {
 		c.getFletching().select(actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
 		Sawmill.HandleBottons(c, actionButtonId);
+		RoomInterface.clickButton(c, actionButtonId);
 		//SplitbarkCrafting.craft(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
 		// int[] teleportButtons = { 4140, 4143, 4146, 4150, 6004, 6005, 29031,
