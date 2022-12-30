@@ -21,6 +21,7 @@ import io.exilius.content.item.lootable.LootableInterface;
 import io.exilius.content.itemskeptondeath.ItemsKeptOnDeathInterface;
 import io.exilius.content.polls.PollTab;
 import io.exilius.content.preset.PresetManager;
+import io.exilius.content.skills.construction.House;
 import io.exilius.content.skills.construction.RoomInterface;
 import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.crafting.*;
@@ -1771,8 +1772,61 @@ public class ClickingButtons implements PacketType {
 			c.getPA().resetAutocast();
 			break;
 		case 166012:
-			c.getPA().startTeleport(Configuration.RESPAWN_X, Configuration.RESPAWN_Y, Configuration.RESPAWN_Z, "modern", false);
+			c.setSidebarInterface(11, 24543);
 			break;
+			case 95245:
+				c.setSidebarInterface(11, 42500); 
+				break;
+			case 95238:
+				House house;
+				if(c.inConstruction()) {
+					if (c.getHouse() == null) {
+						house = House.load(c);
+					} else {
+						house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c);
+					}
+					house.setBuildMode(true);
+					c.setHouse(house);
+					house.enter(c);
+				}
+				c.getPA().sendConfig(261, 1);
+				break;
+			case 95225:
+				if(c.inConstruction()) {
+					if (c.getHouse() == null) {
+						house = House.load(c);
+					} else {
+						house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c);
+					}
+					house.setBuildMode(false);
+					c.setHouse(house);
+					house.enter(c);
+				}
+				c.getPA().sendConfig(261, 0);
+				break;
+			case 95239:
+				if(c.inConstruction()) {
+					if (c.getHouse() == null) {
+						house = House.load(c);
+					} else {
+						house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c);
+					}
+					c.setHouse(house);
+					house.kickAllGuests();
+				}
+				break;
+			case 95237:
+				if(c.inConstruction()) {
+					if (c.getHouse() == null) {
+						house = House.load(c);
+					} else {
+						house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c);
+					}
+					c.setHouse(house);
+					c.getPA().movePlayer(3080, 3492);
+					house.leave(c);
+				}
+				break;
 		case 166013:
 			c.getPA().sendFrame126(Configuration.STORE_LINK, 12000);
 			break;

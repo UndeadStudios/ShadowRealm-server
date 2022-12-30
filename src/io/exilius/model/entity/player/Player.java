@@ -1723,7 +1723,7 @@ public class Player extends Entity {
             return;
         }
         if (getHouse() != null) {
-            if(inHouse) {
+            if(inConstruction()) {
                 getPA().movePlayer(3080, 3492, 0);
                 getHouse().leave(this);
             }
@@ -1781,7 +1781,7 @@ public class Player extends Entity {
             this.clan.removeMember(this);
         }
         if (getHouse() != null) {
-            if(inHouse) {
+            if(inConstruction()) {
                 getPA().movePlayer(3080, 3492, 0);
                 getHouse().leave(this);
             }

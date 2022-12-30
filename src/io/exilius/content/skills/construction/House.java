@@ -201,7 +201,7 @@ public class House {
 			if (client.isDisconnected() || client.getHouse() == null || !client.getHouse().equals(this) || client.equals(getOwner()))
 				continue;
 			
-			client.getPA().movePlayer(2953, 3224, 0);
+			client.getPA().movePlayer(3080, 3492, 0);
 			leave(client);
 		}
 	}
