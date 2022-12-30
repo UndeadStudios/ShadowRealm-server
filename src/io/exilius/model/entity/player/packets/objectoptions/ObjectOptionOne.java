@@ -1616,17 +1616,7 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(3284, 2808, 0);
 				break;
 			case 15477:
-                    House house;
-
-                    if (c.getHouse() == null) {
-                        house = House.load(c);
-                    } else {
-                        house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c) ;
-                    }
-                    house.setBuildMode(true);
-                    c.setHouse(house);
-                    house.enter(c);
-                    c.getPA().closeAllWindows();
+c.getDH().sendDialogues(745, 0);
 				break;
 			case 33320:
 				if (Boundary.isIn(c, Boundary.EDGEVILLE_PERIMETER)) {

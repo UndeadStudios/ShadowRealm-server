@@ -6,6 +6,7 @@ import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
 import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.items.TomeOfFire;
+import io.exilius.content.skills.construction.House;
 import io.exilius.content.skills.construction.Room;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
@@ -27,6 +28,19 @@ public class ThreeOptions {
 		case 265:
 			TomeOfFire.store(c);
             break;
+			case 745:
+				House house;
+
+				if (c.getHouse() == null) {
+					house = House.load(c);
+				} else {
+					house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c) ;
+				}
+				house.setBuildMode(false);
+				c.setHouse(house);
+				house.enter(c);
+				c.getPA().closeAllWindows();
+				break;
 		case 152:
 			c.getDH().sendDialogues(153, 1603);
 			break;
@@ -143,6 +157,19 @@ public class ThreeOptions {
 				}
 				c.getDH().sendDialogues(907, 0);
 				break;
+			case 745:
+				House house;
+
+				if (c.getHouse() == null) {
+					house = House.load(c);
+				} else {
+					house = c.getHouse().getOwner().equals(c) ? c.getHouse() : House.load(c) ;
+				}
+				house.setBuildMode(true);
+				c.setHouse(house);
+				house.enter(c);
+				c.getPA().closeAllWindows();
+				break;
 		case 265:
 			TomeOfFire.remove(c);
 		    break;
@@ -255,6 +282,9 @@ public class ThreeOptions {
 			case 903:
 				c.getPA().closeAllWindows();
 				c.toReplace = c.replaceWith = null;
+				break;
+			case 745:
+
 				break;
 		case 265:
 			c.getPA().removeAllWindows();

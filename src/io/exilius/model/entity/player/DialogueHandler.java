@@ -2889,7 +2889,10 @@ public class DialogueHandler {
 				sendOption4("North", "East", "South", "West");
 				c.dialogueAction = 907;
 				break;
-
+			case 745:
+				sendOption3("Enter your house", "Enter your house (building mode)", "Enter a friend's house");
+				c.dialogueAction = 745;
+				break;
 			case 10040:
 				sendOptions("Fancy boots", "Fighting boots");
 				c.dialogueAction = 10040;
