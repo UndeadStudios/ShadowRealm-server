@@ -3862,9 +3862,7 @@ public class Player extends Entity {
             }
             currentX = getTeleportToX() - 8 * mapRegionX;
             currentY = getTeleportToY() - 8 * mapRegionY;
-            if(!this.inConstruction()) {
-                this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);//this makes the sever crash for con
-            }
+                //this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);//this makes the sever crash for con
             absX = getTeleportToX();
             absY = getTeleportToY();
             this.getRegionProvider().addNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);
