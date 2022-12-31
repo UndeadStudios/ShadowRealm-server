@@ -195,7 +195,7 @@ public class RespawnTime {
             case 1642:
                 return 100;
             case 11958:
-                return 30;
+                return -1;
 
             case 11283:
                 return -1;

@@ -10940,24 +10940,6 @@
     "walkingType": "WALK"
   },
   {
-    "id": 8781,
-    "position": {
-      "x": 3789,
-      "y": 2824,
-      "height": 0
-    },
-    "walkingType": "FACE_NORTH"
-  },
-  {
-    "id": 8781,
-    "position": {
-      "x": 3783,
-      "y": 2827,
-      "height": 0
-    },
-    "walkingType": "FACE_NORTH"
-  },
-  {
     "id": 9168,
     "position": {
       "x": 3830,
