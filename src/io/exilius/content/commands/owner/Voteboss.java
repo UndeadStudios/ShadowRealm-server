@@ -9,6 +9,6 @@ public class Voteboss extends Command
 {
     @Override
     public void execute(Player player, String commandName, String input) {
-        NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 30, true);
+        NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
     }
 }

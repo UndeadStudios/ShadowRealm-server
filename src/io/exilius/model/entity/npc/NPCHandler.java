@@ -792,6 +792,11 @@ public static void addNPC(int npcType, int x, int y, int h) {
                                 return;
                             }
                         }
+                        if(Boundary.isIn(npc, Boundary.VOTE_BOSS)){
+                            if(!Boundary.isIn(c, Boundary.VOTE_BOSS)){
+                                return;
+                            }
+                        }
                         if (npc.getNpcId() == 6619) {
                             if (fanaticSpellCoordinates.stream().noneMatch(p -> p[0] == c.absX && p[1] == c.absY)) {
                                 continue;
