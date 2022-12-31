@@ -14,9 +14,9 @@ common:
       maximum: 5000000
     - name: "vote ticket"
       minimum: 1
-      maximum: 1
+      maximum: 3
     - name: "vote crystal"
-      minimum: 3
+      minimum: 1
       maximum: 6
     - name: "vote mystery box"
       minimum: 1
@@ -28,8 +28,8 @@ uncommon:
   accessibility: 50
   items:
     - name: "vote ticket"
-      minimum: 1
-      maximum: 2
+      minimum: 2
+      maximum: 10
     - name: "vote crystal"
       minimum: 4
       maximum: 8
@@ -49,23 +49,29 @@ rare:
       minimum: 1
       maximum: 1
     - name: "vote crystal"
-      minimum: 1
-      maximum: 2
+      minimum: 3
+      maximum: 10
     - name: "youtube mystery box"
       minimum: 1
-      maximum: 1
+      maximum: 2
     - name: "vote ticket"
-      minimum: 1
-      maximum: 3
+      minimum: 3
+      maximum: 10
 very_rare:
-  accessibility: 500
+  accessibility: 5000
   items:
     - item: 6769
       minimum: 1
       maximum: 1
-    - name: "youtube mystery box"
+    - id: 28020
       minimum: 1
-      maximum: 2
+      maximum: 1
+    - id: 28021
+      minimum: 1
+      maximum: 1
+    - id: 28022
+      minimum: 1
+      maximum: 1
     - name: "coins"
       minimum: 15000000
       maximum: 15000000
