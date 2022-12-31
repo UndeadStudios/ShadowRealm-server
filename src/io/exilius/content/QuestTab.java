@@ -129,7 +129,7 @@ public class QuestTab {
             player.getPA().sendFrame126("@or1@- Players online: @gre@" + PlayerHandler.getPlayerCount(), lines.get(index++));
         }
         player.getPA().sendFrame126("@or1@- Wilderness count: @gre@"+(Boundary.getPlayersInBoundary(Boundary.WILDERNESS) + Boundary.getPlayersInBoundary(Boundary.WILDERNESS_UNDERGROUND)), lines.get(index++));
-
+        player.getPA().sendFrame126("@or1@Vote count: @gre@"+Server.getGlobalVoteCounter(), lines.get(index++));
 
         List<String> events = WorldEventContainer.getInstance().getWorldEventStatuses();
         for (String event : events) {
@@ -164,7 +164,6 @@ public class QuestTab {
 
         points(player.donatorPoints, "Donator Points", lines.get(index++));
         points(player.votePoints, "Vote Points", lines.get(index++));
-        points(Server.getGlobalVoteCounter(), "Vote Count", lines.get(index++));
         points(player.pkp, "PK Points", lines.get(index++));
         points(player.bossPoints, "Boss Points", lines.get(index++));
         points(player.getSlayer().getPoints(), "Slayer Points", lines.get(index++));
