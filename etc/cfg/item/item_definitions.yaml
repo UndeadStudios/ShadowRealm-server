@@ -73848,7 +73848,7 @@
   name: "Owners platebody"
   description: "its a Owners platebody."
   shopValue: 5000
-  equipmentOwnerselType: "FULL_BODY"
+  equipmentModelType: "FULL_BODY"
   requirements:
     - skill: "DEFENCE"
       level: 10
