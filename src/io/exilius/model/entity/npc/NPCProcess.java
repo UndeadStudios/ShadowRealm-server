@@ -27,6 +27,7 @@ import io.exilius.model.entity.npc.actions.NpcAggression;
 import io.exilius.model.entity.npc.data.RespawnTime;
 import io.exilius.model.entity.player.*;
 import io.exilius.model.world.objects.GlobalObject;
+import io.exilius.sql.Votes;
 import io.exilius.util.Misc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,6 +84,11 @@ public class NPCProcess {
             npc.absY = slaveOwner.absY;
             npc.heightLevel = slaveOwner.heightLevel;
 
+        }
+        if(Votes.voteCount >= 100){
+            NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 30, true);
+            PlayerHandler.executeGlobalMessage("Vote Boss Has spawned");
+            Votes.voteCount = 0;
         }
         if (npc.actionTimer > 0) {
             npc.actionTimer--;

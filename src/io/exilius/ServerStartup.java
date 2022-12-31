@@ -89,6 +89,7 @@ public class ServerStartup {
         Server.npcHandler.init();
         NPCRelationship.setup();
         EventCalendar.verifyCalendar();
+        Server.startvoteCountCounter();
         Server.getPunishments().initialize();
         Server.getEventHandler().submit(new DidYouKnowEvent());
         Server.getEventHandler().submit(new BonusApplianceEvent());

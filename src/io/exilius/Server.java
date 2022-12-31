@@ -19,6 +19,7 @@ import io.exilius.punishments.Punishments;
 import io.exilius.sql.DatabaseCredentials;
 import io.exilius.sql.DatabaseManager;
 import io.exilius.sql.EmbeddedDatabase;
+import io.exilius.sql.Votes;
 import io.exilius.util.*;
 import io.exilius.util.dateandtime.GameCalendar;
 import io.exilius.util.discord.Discord;
@@ -32,9 +33,7 @@ import org.flywaydb.core.Flyway;
 import org.slf4j.LoggerFactory;
 import sun.misc.Unsafe;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.net.InetSocketAddress;
 import java.text.SimpleDateFormat;
@@ -169,7 +168,6 @@ public class Server {
                 // Set log level for debug mode
                 ch.qos.logback.classic.Logger root = (ch.qos.logback.classic.Logger)LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
                 root.setLevel(isDebug() || isTest() ? ch.qos.logback.classic.Level.ALL : ch.qos.logback.classic.Level.INFO);
-
                 loadData();
                 Discord.writeServerStatus("Server is now online!");
 
@@ -272,6 +270,34 @@ public class Server {
                 .childHandler(new PipelineFactory());
         bootstrap.childOption(ChannelOption.TCP_NODELAY, true).childOption(ChannelOption.SO_KEEPALIVE, true);
         bootstrap.bind(new InetSocketAddress(configuration.getServerState().getPort()));
+    }
+    public static void startvoteCountCounter() {
+        try {
+            File file = new File("./Data/votes.log");
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            BufferedReader minuteFile = new BufferedReader(new FileReader(file));
+            Votes.voteCount = Integer.parseInt(minuteFile.readLine());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void setvoteCountCounter(int minutesCounter) {
+        Votes.voteCount = minutesCounter;
+        try {
+            BufferedWriter minuteCounter = new BufferedWriter(new FileWriter("./Data/votes.log"));
+            minuteCounter.write(Integer.toString(getMinutesCounter()));
+            minuteCounter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static int getMinutesCounter() {
+        return Votes.voteCount;
     }
 
     public static GameCalendar getCalendar() {
