@@ -548,7 +548,6 @@ KeyToClue.dropKey(player, npc, location);
 
     public void create(Player player, NPC npc, Location3D location, int repeats, int npcId) {
         if (npcId == Npcs.THE_MIMIC_2) {
-            if(!Boundary.isIn(player, Boundary.LZ_MIMICS)) {
                 if (player.getItems().playerHasItem(Items.MIMIC)) {
                     Achievements.increase(player, AchievementType.MIMIC, 1);
                     player.getItems().deleteItem(Items.MIMIC, 1);
@@ -565,20 +564,6 @@ KeyToClue.dropKey(player, npc, location);
                 } else {
                     player.sendMessage("You were missing the mimic casket and did not get a drop.");
                 }
-            } else {
-                Achievements.increase(player, AchievementType.MIMIC, 1);
-                player.getItems().deleteItem(Items.MIMIC, 1);
-                PetHandler.roll(player, PetHandler.Pets.MIMIC);
-
-                List<GameItem> drops = player.getTrails().generateRewardList(RewardLevel.MASTER, 6);
-                for (GameItem item : drops) {
-                    onDrop(player, item, npcId);
-                    Server.itemHandler.createGroundItem(player, item.getId(), location.getX(), location.getY(),
-                            location.getZ(), item.getAmount(), player.getIndex());
-                }
-
-                handle(player, npc, location, repeats, npcId);
-            }
         }
 
         Optional<TableGroup> group = groups.values().stream().filter(g -> g.getNpcIds().contains(npcId)).findFirst();
