@@ -123,6 +123,12 @@ public class NpcAggression {
                         continue;
                     }
                 }
+                if (Boundary.isIn(npc, Boundary.VOTE_BOSS)) {
+                    if (!Boundary.isIn(PlayerHandler.players[j], Boundary.VOTE_BOSS)) {
+                        npc.setPlayerAttackingIndex(0);
+                        continue;
+                    }
+                }
                 /**
                  * Skips attacking a player if mode set to invisible
                  */

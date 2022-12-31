@@ -1163,8 +1163,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
                 return;
             }
         }
-        if (Boundary.isIn(npc, Boundary.CORPOREAL_BEAST_LAIR)) {
-            if (!Boundary.isIn(player, Boundary.CORPOREAL_BEAST_LAIR)) {
+        if (Boundary.isIn(npc, Boundary.VOTE_BOSS)) {
+            if (!Boundary.isIn(player, Boundary.VOTE_BOSS)) {
                 npc.setPlayerAttackingIndex(0);
                 return;
             }
@@ -1855,6 +1855,13 @@ public static void addNPC(int npcType, int x, int y, int h) {
                 return;
             }
             if (Boundary.isIn(npc, Boundary.CORPOREAL_BEAST_LAIR) ^ Boundary.isIn(c, Boundary.CORPOREAL_BEAST_LAIR)) {
+                npc.setPlayerAttackingIndex(0);
+                npc.facePlayer(0);
+                npc.underAttack = false;
+                npc.randomWalk = true;
+                return;
+            }
+            if (Boundary.isIn(npc, Boundary.VOTE_BOSS) ^ Boundary.isIn(c, Boundary.VOTE_BOSS)) {
                 npc.setPlayerAttackingIndex(0);
                 npc.facePlayer(0);
                 npc.underAttack = false;
