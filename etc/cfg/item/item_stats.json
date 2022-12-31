@@ -70128,6 +70128,73 @@
       "drange": 28
     }
   },
+  "29137": {
+    "name": "Mod Sgs platebody V.3",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "29138": {
+    "name": "Mod Sgs platelegs V.3",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29139": {
+    "name": "Mod Sgs boots V.3",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "29140": {
+    "name": "Mod Sgs kiteshield V.3",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "29141": {
+    "name": "Mod Sgs crown V.3",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "24780": {
     "name": "Amulet of blood fury",
     "equipable": true,
