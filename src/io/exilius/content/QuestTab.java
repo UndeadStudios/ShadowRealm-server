@@ -129,7 +129,7 @@ public class QuestTab {
             player.getPA().sendFrame126("@or1@- Players online: @gre@" + PlayerHandler.getPlayerCount(), lines.get(index++));
         }
         player.getPA().sendFrame126("@or1@- Wilderness count: @gre@"+(Boundary.getPlayersInBoundary(Boundary.WILDERNESS) + Boundary.getPlayersInBoundary(Boundary.WILDERNESS_UNDERGROUND)), lines.get(index++));
-        player.getPA().sendFrame126("@or1@Vote count: @gre@"+Server.getGlobalVoteCounter(), lines.get(index++));
+        player.getPA().sendFrame126("@or1@- Vote count: @gre@"+Server.getGlobalVoteCounter(), lines.get(index++));
 
         List<String> events = WorldEventContainer.getInstance().getWorldEventStatuses();
         for (String event : events) {
