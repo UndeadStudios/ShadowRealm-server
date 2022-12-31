@@ -164,6 +164,7 @@ public class QuestTab {
 
         points(player.donatorPoints, "Donator Points", lines.get(index++));
         points(player.votePoints, "Vote Points", lines.get(index++));
+        points(Server.getGlobalVoteCounter(), "Vote Count", lines.get(index++));
         points(player.pkp, "PK Points", lines.get(index++));
         points(player.bossPoints, "Boss Points", lines.get(index++));
         points(player.getSlayer().getPoints(), "Slayer Points", lines.get(index++));
