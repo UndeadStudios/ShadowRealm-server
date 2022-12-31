@@ -63,13 +63,13 @@ very_rare:
     - item: 6769
       minimum: 1
       maximum: 1
-    - id: 28020
+    - item: 28020
       minimum: 1
       maximum: 1
-    - id: 28021
+    - item: 28021
       minimum: 1
       maximum: 1
-    - id: 28022
+    - item: 28022
       minimum: 1
       maximum: 1
     - name: "coins"
