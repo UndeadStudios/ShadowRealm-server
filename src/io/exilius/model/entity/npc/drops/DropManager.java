@@ -586,9 +586,18 @@ KeyToClue.dropKey(player, npc, location);
             double modifier = getModifier(player);
             List<GameItem> drops = g.access(player, npc, modifier, repeats, npcId);
             for (GameItem item : drops) {
-                onDrop(player, item, npcId);
-                Server.itemHandler.createGroundItem(player, item.getId(), location.getX(), location.getY(),
-                        location.getZ(), item.getAmount(), player.getIndex());
+                if(npc.getNpcId() == 11958) {
+                        PlayerHandler.getPlayers().stream().filter(Objects::nonNull).forEach(p -> {
+                            if(Boundary.isIn(p, Boundary.VOTE_BOSS)){
+                            onDrop(p, item, npcId);
+                            Server.itemHandler.createGroundItem(p, item.getId(), p.getX(), p.getY(),
+                                    p.getHeight(), item.getAmount(), p.getIndex());
+                        }});
+                } else {
+                    onDrop(player, item, npcId);
+                    Server.itemHandler.createGroundItem(player, item.getId(), location.getX(), location.getY(),
+                            location.getZ(), item.getAmount(), player.getIndex());
+                }
                 ItemDef itemDef = ItemDef.forId(item.getId());
                 ItemDef Def = itemDef;
                 if (Def.getShopValue() > 25_000_000) {
