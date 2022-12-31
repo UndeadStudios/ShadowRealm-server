@@ -293,7 +293,7 @@ public class Server {
                 file.createNewFile();
             }
             BufferedReader minuteFile = new BufferedReader(new FileReader(file));
-            Votes.voteCount = Integer.parseInt(minuteFile.readLine());
+            Votes.globalvoteCount = Integer.parseInt(minuteFile.readLine());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -310,7 +310,7 @@ public class Server {
         }
     }
     public static void setGlobalvoteCountCounter(int minutesCounter) {
-        Votes.voteCount = minutesCounter;
+        Votes.globalvoteCount = minutesCounter;
         try {
             BufferedWriter minuteCounter = new BufferedWriter(new FileWriter("./Data/Globalvotes.log"));
             minuteCounter.write(Integer.toString(getGlobalVoteCounter()));
