@@ -285,21 +285,46 @@ public class Server {
         }
 
     }
+    public static void startGlobalvoteCountCounter() {
+        try {
+            File file = new File("./Data/Globalvotes.log");
 
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            BufferedReader minuteFile = new BufferedReader(new FileReader(file));
+            Votes.voteCount = Integer.parseInt(minuteFile.readLine());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
     public static void setvoteCountCounter(int minutesCounter) {
         Votes.voteCount = minutesCounter;
         try {
             BufferedWriter minuteCounter = new BufferedWriter(new FileWriter("./Data/votes.log"));
-            minuteCounter.write(Integer.toString(getMinutesCounter()));
+            minuteCounter.write(Integer.toString(getVoteCounter()));
             minuteCounter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static int getMinutesCounter() {
+    public static void setGlobalvoteCountCounter(int minutesCounter) {
+        Votes.voteCount = minutesCounter;
+        try {
+            BufferedWriter minuteCounter = new BufferedWriter(new FileWriter("./Data/Globalvotes.log"));
+            minuteCounter.write(Integer.toString(getGlobalVoteCounter()));
+            minuteCounter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static int getVoteCounter() {
         return Votes.voteCount;
     }
-
+    public static int getGlobalVoteCounter() {
+        return Votes.globalvoteCount;
+    }
     public static GameCalendar getCalendar() {
         return calendar;
     }

@@ -21,8 +21,8 @@ public class Votes implements Runnable  {
     private Player player;
     private Connection conn;
     private Statement stmt;
-    public static int voteCount = 0;
-
+    public static int voteCount;
+    public static int globalvoteCount;
     private boolean doStop = false;
 
     public synchronized void doStop() {
@@ -76,7 +76,9 @@ public class Votes implements Runnable  {
                         player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                     }
                         this.voteCount += 1;
+                        globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
+                        Server.setGlobalvoteCountCounter(globalvoteCount);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         Discord.writeannounceMessage(message);
                         break;
@@ -93,7 +95,9 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         voteCount += 1;
+                        globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
+                        Server.setGlobalvoteCountCounter(globalvoteCount);
                         Discord.writeannounceMessage(message3);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -110,7 +114,9 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         voteCount += 1;
+                        globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
+                        Server.setGlobalvoteCountCounter(globalvoteCount);
                         Discord.writeannounceMessage(message4);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -127,7 +133,9 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         voteCount += 1;
+                        globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
+                        Server.setGlobalvoteCountCounter(globalvoteCount);
                         Discord.writeannounceMessage(message5);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -145,7 +153,9 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         voteCount += 1;
+                        globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
+                        Server.setGlobalvoteCountCounter(globalvoteCount);
                         Discord.writeannounceMessage(message6);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;

@@ -89,6 +89,7 @@ public class NPCProcess {
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 30, true);
             PlayerHandler.executeGlobalMessage("Vote Boss Has spawned");
             Votes.voteCount = 0;
+            Server.setvoteCountCounter(0);
         }
         if (npc.actionTimer > 0) {
             npc.actionTimer--;
