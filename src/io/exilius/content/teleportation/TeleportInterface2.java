@@ -326,6 +326,7 @@ public class TeleportInterface2 {
         Hispori(1, 102219, true, "Teleports you to Hispori", new Position(3075, 3499, 0)),
         Ganbling_Zone(1, 102224, true, "Teleports you to  the Ganbling Zone", new Position(2129, 9489, 0)),
         Skilling_Island(1, 102229, true, "Teleports you to the Skilling Island", new Position(3803, 3538, 0)),
+        Vote_boss(1, 102234, true, "The Boss only spawns every 100 votes.", new Position(1886, 9320, 0)),
 
         AL_KHARID(2, 102209, true, "Teleports you to Al Kharid", new Position(3293, 3179, 0)),
         Arceuus(2, 102214, true, "Teleports you to Arceuus", new Position(1686,3746,0)),
