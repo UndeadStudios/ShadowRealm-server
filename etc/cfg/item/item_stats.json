@@ -70098,6 +70098,36 @@
       "slot": 0
     }
   },
+  "28272": {
+    "name": "Gilded d'hide body",
+    "equipable": true,
+    "weight": 6.803,
+    "equipment": {
+      "slot": 4,
+      "amagic": -15,
+      "arange": 25,
+      "dstab": 50,
+      "dslash": 42,
+      "dcrush": 55,
+      "dmagic": 40,
+      "drange": 50
+    }
+  },
+  "28273": {
+    "name": "Gilded d'hide chaps",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 7,
+      "amagic": -10,
+      "arange": 14,
+      "dstab": 28,
+      "dslash": 22,
+      "dcrush": 30,
+      "dmagic": 20,
+      "drange": 28
+    }
+  },
   "24780": {
     "name": "Amulet of blood fury",
     "equipable": true,

@@ -73880,6 +73880,23 @@
   requirements:
     - skill: "DEFENCE"
       level: 10
+- id: 28272
+  name: "Gilded d'hide body"
+  description: "Made from 100% real golden dragonhide."
+  shopValue: 200000
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
+    - skill: "RANGED"
+      level: 60
+- id: 28273
+  name: "Gilded d'hide chaps"
+  description: "Made from 100% real golden dragonhide."
+  shopValue: 200000
+  requirements:
+    - skill: "RANGED"
+      level: 60
+
 - id: 29280
   name: "Halloween-token"
   description: "A token for halloween."
