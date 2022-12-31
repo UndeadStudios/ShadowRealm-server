@@ -76,9 +76,9 @@ public class Votes implements Runnable  {
                         player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                     }
                         this.voteCount += 1;
-                        globalvoteCount =+ 1;
+                        this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
-                        Server.setGlobalvoteCountCounter(globalvoteCount);
+                        Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         Discord.writeannounceMessage(message);
                         break;
@@ -94,10 +94,10 @@ public class Votes implements Runnable  {
                         if (petroll2 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        voteCount += 1;
-                        globalvoteCount =+ 1;
+                        this.voteCount += 1;
+                        this.globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
-                        Server.setGlobalvoteCountCounter(globalvoteCount);
+                        Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message3);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -113,10 +113,10 @@ public class Votes implements Runnable  {
                         if (petroll3 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        voteCount += 1;
-                        globalvoteCount =+ 1;
+                        this.voteCount += 1;
+                        this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
-                        Server.setGlobalvoteCountCounter(globalvoteCount);
+                        Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message4);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -132,10 +132,10 @@ public class Votes implements Runnable  {
                         if (petroll4 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        voteCount += 1;
-                        globalvoteCount =+ 1;
+                        this.voteCount += 1;
+                        this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
-                        Server.setGlobalvoteCountCounter(globalvoteCount);
+                        Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message5);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
@@ -152,10 +152,10 @@ public class Votes implements Runnable  {
                         if (petroll5 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        voteCount += 1;
-                        globalvoteCount =+ 1;
+                        this.voteCount += 1;
+                        this.globalvoteCount =+ 1;
                         Server.setvoteCountCounter(this.voteCount);
-                        Server.setGlobalvoteCountCounter(globalvoteCount);
+                        Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message6);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;

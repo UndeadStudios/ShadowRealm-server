@@ -28,6 +28,9 @@ public class ThreeOptions {
 		case 265:
 			TomeOfFire.store(c);
             break;
+			case 903:
+				c.getPA().showInterface(24595);
+				break;
 			case 745:
 				House house;
 
@@ -44,9 +47,6 @@ public class ThreeOptions {
 		case 152:
 			c.getDH().sendDialogues(153, 1603);
 			break;
-			case 903:
-				c.getDH().sendDialogues(904, 0);
-				break;
 		case 1428:
 			c.getPrestige().openPrestige();
 			break;

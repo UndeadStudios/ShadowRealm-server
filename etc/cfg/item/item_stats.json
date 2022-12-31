@@ -69960,6 +69960,144 @@
       "aspeed": 4
     }
   },
+  "28259": {
+    "name": "Mod platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "28260": {
+    "name": "Mod platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28261": {
+    "name": "Mod boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28262": {
+    "name": "Mod kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28263": {
+    "name": "Mod Abyssal whip",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "28266": {
+    "name": "Owners platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "28267": {
+    "name": "Owners platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28268": {
+    "name": "Owners boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28269": {
+    "name": "Owners kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28270": {
+    "name": "Owners crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "24780": {
     "name": "Amulet of blood fury",
     "equipable": true,

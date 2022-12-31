@@ -65,7 +65,7 @@ public class Construction {
 
 				if (!(buildRoom instanceof Default)) {
 					client.getDH().sendStatement("You already have a " + buildRoom.getName() + " in that spot.");
-					//client.start(new RoomDialogue2());
+					client.nextChat = 903;
 					return;
 				}
 

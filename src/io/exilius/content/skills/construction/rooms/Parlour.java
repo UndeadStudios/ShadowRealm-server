@@ -37,11 +37,11 @@ public class Parlour extends Room {
 		objects.add(new RoomObject(15263, 0, 2, 0, 5, "Curtain"));
 		objects.add(new RoomObject(15263, 0, 5, 0, 5, "Curtain"));
 		
-		/*for (int x = 0; x < 6; x++) {
+		for (int x = 0; x < 6; x++) {
 			for (int y = 0; y < 4; y++) {
-				objects.add(new RoomObject(15264, 1 + x, 1 + y, 0, 22, "Rug space"));
+				objects.add(new RoomObject(4519, 1 + x, 1 + y, 0, 22, "Rug space"));
 			}
-		}*/
+		}
 		setObjects(objects);
 		
 		List<RoomObject> globalReplace = new ArrayList<RoomObject>();
