@@ -95,7 +95,7 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         this.voteCount += 1;
-                        this.globalvoteCount =+ 1;
+                        this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
                         Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message3);
@@ -153,7 +153,7 @@ public class Votes implements Runnable  {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
                         this.voteCount += 1;
-                        this.globalvoteCount =+ 1;
+                        this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
                         Server.setGlobalvoteCountCounter(this.globalvoteCount);
                         Discord.writeannounceMessage(message6);
