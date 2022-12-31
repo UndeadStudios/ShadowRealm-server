@@ -85,7 +85,7 @@ public class NPCProcess {
             npc.heightLevel = slaveOwner.heightLevel;
 
         }
-        if(Votes.voteCount >= 100){
+        if(Server.getVoteCounter() >= 100){
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 30, true);
             PlayerHandler.executeGlobalMessage("Vote Boss Has spawned");
             Votes.voteCount = 0;
