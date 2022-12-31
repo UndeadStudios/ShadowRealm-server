@@ -168,9 +168,9 @@ public class ItemOptionOne implements PacketType {
         if (SanguinestiStaff.clickItem(c, itemId, 1)) {
             return;
         }
-       // if (TreasureTrails.firstClickItem(c, itemId)) {
-         //   return;
-     //   }
+        if (TreasureTrails.firstClickItem(c, itemId)) {
+            return;
+       }
 
         switch (itemId) {
             case 25778:
