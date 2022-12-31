@@ -44,10 +44,9 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
     private static final Location CENTER = new Location(1364, 10265);
 
     //Where firewalk ball goes
-    private static final Boundary NORTH_WEST = new Boundary(1364, 10270, 1364, 10270);
-    private static final Boundary NORTH_EAST = new Boundary(1369, 10270, 1369, 10270);
-    private static final Boundary SOUTH_WEST = new Boundary(1364, 10265, 1364, 10265);
-    private static final Boundary SOUTH_EAST = new Boundary(1369, 10265, 1369, 10265);
+    private static final Boundary NORTH_WEST = new Boundary(1361, 10271, 1363, 10273);
+    private static final Boundary NORTH_EAST = new Boundary(1370, 10271, 1372, 10273);
+    private static final Boundary SOUTH_EAST = new Boundary(1370, 10262, 1372, 10264);
 
     //Lightning npc spawn locs
     private static final Location[] LIGHTNING_SPAWNS = {
@@ -459,8 +458,6 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
             zones = new Boundary[]{SOUTH, EAST, SOUTH_EAST};
         } else if (player.getX() <= center.getX() && player.getY() >= center.getY()) { //NORTH_WEST
             zones = new Boundary[]{NORTH, WEST, NORTH_WEST};
-        } else if (player.getX() <= center.getX() && player.getY() <= center.getY()) { //SOUTH_WEST
-            zones = new Boundary[]{SOUTH, WEST, SOUTH_WEST};
         }
         return zones;
     }
