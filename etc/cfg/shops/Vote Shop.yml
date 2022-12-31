@@ -10,31 +10,31 @@ items:
 - name: "vote mystery box"
 - name: "fire cape"
 - name: "dragon defender ornament kit"
-  price: 25
+  price: 50
 - name: "occult ornament kit"
-  price: 25
+  price: 50
 - name: "Dragon Defender"
 - name: "Dragon Harpoon"
 - name: "Dragon Pickaxe"
 - id: 13148
 - name: "bonus xp scroll"
 - id: 22093
-  price: 25
+  price: 50
 - id: 13116
-  price: 320
+  price: 640
 - id: 13233
-  price: 250
-- id: 12791
-  price: 60
-- id: 23804
-  price: 200
-- id: 2403
-  price: 600
-- id: 6199
-  price: 250
-- id: 6828
   price: 500
+- id: 12791
+  price: 120
+- id: 23804
+  price: 400
+- id: 2403
+  price: 1200
+- id: 6199
+  price: 500
+- id: 6828
+  price: 1000
 - id: 13346
-  price: 750
+  price: 1500
 - name: "goldsmith gauntlets"
 - id: 30023

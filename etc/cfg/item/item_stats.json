@@ -71694,13 +71694,13 @@
     "weight": 0.453,
     "equipment": {
       "slot": 0,
-      "amagic": 8,
-      "arange": -2,
-      "dstab": 12,
-      "dslash": 11,
-      "dcrush": 13,
-      "dmagic": 5,
-      "mdmg": 2
+      "amagic": 18,
+      "arange": 0,
+      "dstab": 22,
+      "dslash": 21,
+      "dcrush": 23,
+      "dmagic":10,
+      "mdmg": 6
     }
   },
   "28021": {
@@ -71709,13 +71709,13 @@
     "weight": 2.721,
     "equipment": {
       "slot": 4,
-      "amagic": 35,
-      "arange": -8,
-      "dstab": 42,
-      "dslash": 31,
-      "dcrush": 51,
-      "dmagic": 28,
-      "mdmg": 2
+      "amagic": 45,
+      "arange": -4,
+      "dstab": 52,
+      "dslash": 41,
+      "dcrush": 61,
+      "dmagic": 38,
+      "mdmg": 6
     }
   },
   "28022": {
@@ -71724,13 +71724,13 @@
     "weight": 1.814,
     "equipment": {
       "slot": 7,
-      "amagic": 26,
+      "amagic": 32,
       "arange": -7,
-      "dstab": 27,
-      "dslash": 24,
-      "dcrush": 30,
-      "dmagic": 20,
-      "mdmg": 2
+      "dstab": 36,
+      "dslash": 34,
+      "dcrush": 40,
+      "dmagic": 40,
+      "mdmg": 6
     }
   }
 }
