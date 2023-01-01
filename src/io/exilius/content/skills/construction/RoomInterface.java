@@ -8,6 +8,9 @@ public class RoomInterface {
 
 	public static boolean clickButton(Player c, int actionButtonId) {
 		switch (actionButtonId) {
+			case 96207:
+				c.getPA().closeAllWindows();
+				break;
 		case 96180:
 			if(c.playerLevel[22] >= 1) {
 			if(c.getItems().playerHasItem(995, 1000)) {
@@ -118,6 +121,32 @@ public class RoomInterface {
 					}
 				} else {
 					c.sendMessage("You need a construction level of 30 to make this.");
+				}
+				break;
+			case 96188:
+				if(c.playerLevel[22] >= 32) {
+					if(c.getItems().playerHasItem(995, 25000)) {
+						c.getItems().deleteItem(995, 25000);
+						c.replaceWith = new Combat();
+						c.getDH().sendDialogues(907, 0);
+					} else {
+						c.sendMessage("You need 25000 coins to do this.");
+					}
+				} else {
+					c.sendMessage("You need a construction level of 32 to make this.");
+				}
+				break;
+			case 96189:
+				if(c.playerLevel[22] >= 35) {
+					if(c.getItems().playerHasItem(995, 25000)) {
+						c.getItems().deleteItem(995, 25000);
+						c.replaceWith = new QuestHall();
+						c.getDH().sendDialogues(907, 0);
+					} else {
+						c.sendMessage("You need 25000 coins to do this.");
+					}
+				} else {
+					c.sendMessage("You need a construction level of 35 to make this.");
 				}
 				break;
 		}

@@ -466,7 +466,7 @@ public class NpcAggression {
             case 6919:
             case 6766:
             case 7573:
-            case 7617: // Tekton magers
+            //case 7617: // Tekton magers idk the new id
             case 7544: // Tekton
             case 7604: // Skeletal mystic
             case 7605: // Skeletal mystic

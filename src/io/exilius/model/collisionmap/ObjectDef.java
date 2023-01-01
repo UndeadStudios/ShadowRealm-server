@@ -424,7 +424,7 @@ public final class ObjectDef {
 				objectDef.xLength = 3;
 				objectDef.yLength = 3;
 				objectDef.aBoolean767 = false;
-				objectDef.aBoolean762 = true;
+				objectDef.clipType = -1;
 				objectDef.animation = 1261;
 				objectDef.modifiedModelColors = new int[] { 31636 };
 				objectDef.originalModelColors = new int[] { 10543 };
@@ -468,7 +468,7 @@ public final class ObjectDef {
 		aBoolean767 = true;
 		aBoolean757 = true;
 		hasActions = false;
-		aBoolean762 = false;
+		clipType = -1;
 		aBoolean769 = false;
 		aBoolean764 = false;
 		animation = -1;
@@ -479,7 +479,7 @@ public final class ObjectDef {
 		mapFunctionId = -1;
 		mapSceneId = -1;
 		aBoolean751 = false;
-		aBoolean779 = true;
+		clipped = true;
 		thickness = 128;
 		height = 128;
 		width = 128;
@@ -634,14 +634,14 @@ public final class ObjectDef {
 				else if (opcode == 15)
 					yLength = buffer.readUnsignedByte();
 				else if (opcode == 17) {
+					interactType = 0;
 					aBoolean767 = false;
-					walkType = 0;
 				}else if (opcode == 18)
 					aBoolean757 = false;
 				else if (opcode == 19) {
 					hasActions = (stream.readUnsignedByte() == 1);
 				} else if (opcode == 21)
-					aBoolean762 = true;
+					clipType = 0;
 				else if (opcode == 22)
 					aBoolean769 = true;
 				else if (opcode == 23)
@@ -651,7 +651,7 @@ public final class ObjectDef {
 					if (animation == 65535)
 						animation = -1;
 				} else if (opcode == 27)
-					walkType = 1;
+					interactType = 1;
 				 else if (opcode == 28)
 					anInt775 = buffer.readUnsignedByte();
 				else if (opcode == 29)
@@ -685,7 +685,7 @@ public final class ObjectDef {
 				else if (opcode == 62)
 					aBoolean751 = true;
 				else if (opcode == 64)
-					aBoolean779 = false;
+					clipped = false;
 				else if (opcode == 65)
 					thickness = stream.readUnsignedWord();
 				else if (opcode == 66)
@@ -733,7 +733,7 @@ public final class ObjectDef {
 					int len = stream.readUnsignedByte();
 					buffer.currentOffset += len * 2;
 				} else if(opcode == 81) {
-					buffer.readUnsignedByte();
+					clipType = (buffer.readUnsignedByte() * 256);
 				} else if(opcode == 82) {
 				mapFunctionId = buffer.readUnsignedWord();
 			} else if (opcode == 89){
@@ -766,7 +766,7 @@ public final class ObjectDef {
 	}
 
 	public boolean solid() {
-		return aBoolean779;
+		return clipped;
 	}
 
 	public int xLength() {
@@ -794,10 +794,10 @@ public final class ObjectDef {
 	public int mapSceneId;
 	public int[] childrenIDs;
 	public int yLength;
-	public boolean aBoolean762;
+	public int clipType;
 	public boolean aBoolean764;
 	public boolean aBoolean767;
-	public int walkType = 2;
+	public int interactType = 2;
 	public int anInt768;
 	private static int cacheIndex;
 	private int[] models;
@@ -814,7 +814,7 @@ public final class ObjectDef {
 	public int anInt760;
 	public String description;
 	public boolean hasActions;
-	public boolean aBoolean779;
+	public boolean clipped;
 	public byte aByte737;
 	public byte aByte742;
 	public boolean aBoolean769;

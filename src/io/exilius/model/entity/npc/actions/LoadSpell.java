@@ -267,6 +267,16 @@ public class LoadSpell {
                 break;
             // Zilyana
             case 2205:
+                if (Misc.random(4) == 0) {
+                    npc.setAttackType(CombatType.MAGE);
+                    npc.endGfx = -1;
+                    npc.projectileId = -1;
+                } else {
+                    npc.setAttackType(CombatType.MELEE);
+                    npc.endGfx = -1;
+                    npc.projectileId = -1;
+                }
+                break;
             case 11958:
                 if (Misc.random(4) == 0) {
                     npc.setAttackType(CombatType.MAGE);
@@ -1667,13 +1677,13 @@ public class LoadSpell {
                     npc.attackTimer = 8;
                 }
                 break;
-            case 7617:
+            /*case 7617: //idk the new id
                 npc.setAttackType(CombatType.MAGE);
                 npc.projectileId = 1348;
                 npc.endGfx = 1345;
                 npc.hitDelayTimer = 5;
                 npc.attackTimer = 15;
-                break;
+                break;*/
             case 7529:
                 if (Misc.random(10) == 5) {
                     npc.setAttackType(CombatType.SPECIAL);

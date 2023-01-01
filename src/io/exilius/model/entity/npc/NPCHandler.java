@@ -926,6 +926,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 6768: 
         case 7617: 
             return npc.getAttackType() == CombatType.SPECIAL || npc.getAttackType() == CombatType.MAGE;
+            case 11958:
+                return npc.getAttackType() == CombatType.MELEE || npc.getAttackType() == CombatType.MAGE;
         case 8609: 
             return npc.getAttackType() == CombatType.SPECIAL;
         case TheUnbearable.NPC_ID:

@@ -9,7 +9,7 @@ import java.util.List;
 public class PortalChamber extends Room {
 
 	public PortalChamber() {
-		super(1864, 5088);
+		super(1864, 5728);
 		setName("Portal Chamber");
 		
 		List<RoomObject> objects = new ArrayList<RoomObject>();

@@ -109,11 +109,11 @@ public class House {
 			public void execute(CycleEventContainer container) {
 				if(time == 1) {
 					client.getPA().showInterface(24568);
-					client.getRegionProvider().LoadRegion(client);
+					client.getRegionProvider().LoadRegion(owner);
 					client.getPA().movePlayer(32, 32, height);
 				}
 				if(time == 3) {
-					client.getRegionProvider().LoadRegion(client);
+					client.getRegionProvider().LoadRegion(owner);
 					client.getPA().movePlayer(32, 32, height);
 				}
 				if (client == null || time >= 5) {
@@ -126,7 +126,7 @@ public class House {
 				}
 			}
 			public void stop() {
-				client.getRegionProvider().LoadRegion(client);
+				client.getRegionProvider().LoadRegion(owner);
 				client.getPA().movePlayer(32, 32, height);
 
 				//client.getPA().removeAllWindows();
@@ -151,11 +151,11 @@ public class House {
 			public void execute(CycleEventContainer container) {
 				if(time == 1) {
 					client.getPA().showInterface(24568);
-					client.getRegionProvider().LoadRegion(client);
+					client.getRegionProvider().LoadRegion(owner);
 					client.getPA().movePlayer(32, 32, height);
 				}
 				if(time == 3) {
-					client.getRegionProvider().LoadRegion(client);
+					client.getRegionProvider().LoadRegion(owner);
 					client.getPA().movePlayer(32, 32, height);
 				}
 				if (client == null || time >= 5) {
