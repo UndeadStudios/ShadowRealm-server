@@ -35,7 +35,7 @@ object ShootingStar {
                     }
                 }
                 location = locationData
-                CRASHED_STAR = CrashedStar(GlobalObject(STAR_IDS, locationData.spawnPos), locationData)
+                CRASHED_STAR = CrashedStar(GlobalObject(STAR_IDS+Misc.random(6), locationData.spawnPos), locationData)
                 Server.getGlobalObjects().add(CRASHED_STAR!!.starObject)
                 PlayerHandler.executeGlobalMessage("@pur@A star has just crashed " + locationData.clue + "!")
                 PlayerHandler.getPlayers().forEach(Consumer { p: Player ->})
