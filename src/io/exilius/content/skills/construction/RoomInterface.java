@@ -49,7 +49,7 @@ public class RoomInterface {
 			if(c.playerLevel[22] >= 1) {
 				if(c.getItems().playerHasItem(995, 1000)) {
 					c.getItems().deleteItem(995, 1000);
-			c.replaceWith = new Garden();
+			c.replaceWith = new Garden2();
 					c.getDH().sendDialogues(907, 0);
 		 //c.start(new RoomDialogue());
 				} else {

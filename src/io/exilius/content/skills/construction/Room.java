@@ -40,10 +40,15 @@ public class Room {
 		this.x = x;
 		this.y = y;
 		this.clazz = this.getClass().getName();
-		
+
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 3, 0, 0, "Wall"));
+		ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 1, 0, 0, "Wall"));
+		ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 7, 0, 0, "Wall"));
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 4, 0, 0, "Wall"));
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 3, 7, 1, 0, "Wall"));
+		ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 8, 2, 0, "Wall"));
+        ONCHANGE_OBJECTS.add(new RoomObject(13098, 0, 2, 2, 0, "Wall"));
+		ONCHANGE_OBJECTS.add(new RoomObject(13098, 1, 7, 1, 0, "Wall"));
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 4, 7, 1, 0, "Wall"));
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 7, 4, 2, 0, "Wall"));
 		ONCHANGE_OBJECTS.add(new RoomObject(13098, 7, 3, 2, 0, "Wall"));

@@ -1,6 +1,7 @@
 package io.exilius.content.skills.mining;
 
 import io.exilius.Server;
+import io.exilius.content.ShootingStar;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -204,6 +205,13 @@ public class MiningEvent extends Event<Player> {
 				}
 			}
 		}
+		if (objectId == 41223) {
+			if(ShootingStar.CRASHED_STAR == null || ShootingStar.CRASHED_STAR.getStarObject().getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {
+				return;
+			} else {
+				ShootingStar.CRASHED_STAR.getStarObject().incrementPickAmount();
+			}
+		}
 		attachment.facePosition(location.getX(), location.getY());
 		Achievements.increase(attachment, AchievementType.MINE, 1);
 		foeArtefact(attachment);
@@ -277,7 +285,25 @@ public class MiningEvent extends Event<Player> {
 					attachment.getRechargeItems().hasItem(13105) && Misc.random(8) == 2 ? 2 :
 					attachment.getRechargeItems().hasItem(13106) && Misc.random(6) == 2 ? 2 :
 					attachment.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
-
+		if (!(mineral.getBarName().contains("star"))) {
+			attachment.getItems().addItem(mineral.getMineralReturn().generate(), amount);
+			attachment.sendMessage("You manage to mine some "+mineral.name().toLowerCase()+" ore.");
+		} else {
+			if(ShootingStar.MAXIMUM_MINING_AMOUNT == 0){
+				attachment.sendMessage("The Star run out of star dust.");
+				ShootingStar.despawn(false);
+				ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
+				stop();
+				return;
+			}
+			attachment.getItems().addItem(25527, 1);
+			ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
+			//attachment.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
+			if (Misc.random(200) == 5) {
+				attachment.sendMessage("You received Star fragment while mining the star!");
+				attachment.getItems().addItem(25547, 1);
+			}
+		}
 		int itemId = mineral.getMineralReturn().generate();
 		if ((SkillcapePerks.MINING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment)) && attachment.getItems().freeSlots() < 2) {
 			attachment.sendMessage("You have run out of inventory space.");

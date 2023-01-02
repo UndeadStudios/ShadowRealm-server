@@ -332,11 +332,6 @@ KeyToClue.dropKey(player, npc, location);
         Server.itemHandler.createGroundItem(player, 405, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
     }
-        if(Misc.random(650) == 1){
-            player.sendMessage("@bla@You notice a @blu@Present@bla@ on the floor.");
-            Server.itemHandler.createGroundItem(player, 6542, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
-
-        }
         if(Boundary.isIn(npc, Boundary.FORTHOS_DUNGEON)){
             if(Misc.random(100) == 1){
                 player.sendMessage("@bla@You notice a @blu@Grubby key@bla@ on the floor.");

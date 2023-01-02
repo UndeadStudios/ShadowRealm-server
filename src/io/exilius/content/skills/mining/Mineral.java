@@ -39,7 +39,14 @@ public enum Mineral {
 			RUNE2(new int[] { 11377 }, "rune", 85, 125, 0, 100, 39, 3600, true, generateExclusive(451), 11391),
 			ESSENCE(new int[] { 7471, 14912, 34773 }, "none", 30, 5, -1, -1, 5, 50000, false, generateExclusive(7936), 11390),
 			AMETHYST(new int[] { 11389, 11388 }, "none", 92, 140, 0, 100, 40, 11500, false, generateExclusive(21347), 11393),
-			GEM(new int[] { 9030 }, "none", 40, 5, 20, 25, 20, 15000, true, new MineralReturn() {
+	Crashed_Star1(new int[] { 41229 }, "star", 10, 11, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star2(new int[] { 41228 }, "star1", 20, 20, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star3(new int[] { 41227 }, "star2", 30, 23, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star4(new int[] { 41226 }, "star3", 40, 26, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star5(new int[] { 41225 }, "star4", 50, 38, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star6(new int[] { 41224 }, "star5", 60, 57, 0, 100, 15, 10000, false, generateExclusive(-1), -1),
+	Crashed_Star7(new int[] { 41223 }, "star5", 60, 57, 0, 100, 15, 10000, false, generateExclusive(-1),-1),
+	GEM(new int[] { 9030 }, "none", 40, 5, 20, 25, 20, 15000, true, new MineralReturn() {
 
 				@Override
 				public int generate() {

@@ -116,6 +116,7 @@ public class House {
 					client.getPA().movePlayer(32, 32, height);
 				}
 				if (client == null || time >= 5) {
+					client.getPA().movePlayer(34, 35, height);
 					client.getPA().closeAllWindows();
 						container.stop();
 						return;
@@ -135,46 +136,49 @@ public class House {
 		// loadObjects(host, visiter);
 	}
 	
-	public void buildRoom(final Player client) {		
-		replaceRoom(client.toReplace, client.replaceWith);
-		
-		final int x = client.absX, y = client.absY;
-		
-		client.toReplace = client.replaceWith = null;
-		//client.getPA().sendFrame126("Building room...", 12285);
-		//client.getPA().showInterface(31992);
-		client.getPA().movePlayer(32, 32, height);
-		CycleEventHandler.getSingleton().addEvent(client, new CycleEvent() {
-			int time = 0;
-			@Override
-			public void execute(CycleEventContainer container) {
-				if(time == 1) {
-					client.getPA().showInterface(24568);
-					client.getRegionProvider().LoadRegion(owner);
-					client.getPA().movePlayer(32, 32, height);
-				}
-				if(time == 3) {
-					client.getRegionProvider().LoadRegion(owner);
-					client.getPA().movePlayer(32, 32, height);
-				}
-				if (client == null || time >= 5) {
-					client.getPA().closeAllWindows();
-					container.stop();
-					return;
-				}
-				if (time >= 0) {
-					time++;
-				}
-			}
+	public void buildRoom(final Player client) {
+		if(client.inConstruction()) {
+			replaceRoom(client.toReplace, client.replaceWith);
 
-			public void stop() {
-				client.getRegionProvider().LoadRegion(client);
-				client.getPA().movePlayer(x, y, height);
-	
-				//client.getPA().removeAllWindows();
-			}
-			
-		}, 2);
+			final int x = client.absX, y = client.absY;
+
+			client.toReplace = client.replaceWith = null;
+			//client.getPA().sendFrame126("Building room...", 12285);
+			//client.getPA().showInterface(31992);
+			client.getPA().movePlayer(x, y, height);
+			CycleEventHandler.getSingleton().addEvent(client, new CycleEvent() {
+				int time = 0;
+
+				@Override
+				public void execute(CycleEventContainer container) {
+					if (time == 1) {
+						client.getPA().showInterface(24568);
+						client.getRegionProvider().LoadRegion(owner);
+						client.getPA().movePlayer(x, y, height);
+					}
+					if (time == 3) {
+						client.getRegionProvider().LoadRegion(owner);
+						client.getPA().movePlayer(x, y, height);
+					}
+					if (client == null || time >= 5) {
+						client.getPA().closeAllWindows();
+						container.stop();
+						return;
+					}
+					if (time >= 0) {
+						time++;
+					}
+				}
+
+				public void stop() {
+					client.getRegionProvider().LoadRegion(client);
+					client.getPA().movePlayer(x, y, height);
+
+					//client.getPA().removeAllWindows();
+				}
+
+			}, 2);
+		}
 	}
 	
 	private void replaceRoom(Room oldRoom, Room newRoom) {

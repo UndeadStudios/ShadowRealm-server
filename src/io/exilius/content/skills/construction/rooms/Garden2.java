@@ -6,9 +6,9 @@ import io.exilius.content.skills.construction.RoomObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Garden extends Room {
+public class Garden2 extends Room {
 
-	public Garden() {
+	public Garden2() {
 		super(1859, 5706);
 		setName("Garden");
 
@@ -39,11 +39,7 @@ public class Garden extends Room {
 		objects.add(new RoomObject(-1, 0, 2, 0, 0, "Window"));
 		objects.add(new RoomObject(-1, 0, 5, 0, 0, "Window"));
 		setObjects(objects);
-		
-		List<RoomObject> globalReplace = new ArrayList<RoomObject>();
 
-		globalReplace.add(new RoomObject(4525, 3, 3, 1, "Portal"));
-		setGlobalReplacementObjects(globalReplace);
 	}
 
 }

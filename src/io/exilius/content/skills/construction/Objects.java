@@ -39,13 +39,30 @@ public class Objects {
 		CLAY_FIREPLACE(4523, 6780, 10, 30, 1761, 3, "Clay fireplace", 898),
 		LIMESTONE_FIREPLACE(4523, 6782, 31, 40, 3420, 2, "Limestone fireplace", 898),
 		MARBLE_FIREPLACE(4523, 6784, 52, 500, 8786, 1, "Marble fireplace", 898),
+
 		Wooden_table(15405, 13577, 12, 87, 960, 3, 1539, 3, "Wooden table", 898),
 		oak_table(15405, 13578, 32, 180, 8778, 3, "Oak table", 898),
 		teak_table(15405, 13579, 42, 270, 8780, 3, "Teak table", 898),
+
 		Pump_and_drain(15404, 13559, 7, 100, 2353, 5, "Pump and drain", 898),
 		Pump_and_tub(15404, 13561, 27, 200, 2353, 10, "Pump and tub", 898),
 		silk(15404, 13564, 47, 300, 2353, 15, "Sink", 898),
-		gold_silk(15404, 26458, 47, 11144, 26266, 10, 8782, 5, 8784, 5, "Gold Sink", 898);
+		gold_silk(15404, 26458, 47, 11144, 26266, 10, 8782, 5, 8784, 5, "Gold Sink", 898),
+
+		wooden_larder(15403, 13565, 9, 228, 1539, 8, 960, 8, "Wooden larder", 898),
+		oak_larder(15403, 13566, 33, 480, 8778, 8, "Oak larder", 898),
+		teak_larder(15403, 13567, 43, 750, 8780, 8, 8790, 2, "Teak larder", 898),
+
+		Beer_barrel(15401, 13568, 7, 87, 1539, 3, 960, 3, "Beer barrel", 898),
+		Cider_barrel(15401, 13569, 12, 91, 1539, 3, 960, 3, 5763, 8, "Cider barrel", 898),
+		asgarnian_ale_barrel(15401, 13570, 18, 184, 8778, 3, 1905, 8, "Asgarnian ale", 898),
+		greenmans_ale_barrel(15401, 13571, 26, 184, 8778, 3, 1909, 8, "Greenman's ale", 898),
+		Dragon_bitter_barrel(15401, 13572, 36, 224, 8778, 3, 2353, 2, 1911, 8, "Dragon bitter", 898),
+		Chefs_delight_barrel(15401, 13573, 48, 224, 8778, 3, 2353, 2, 5755, 8, "Chef's delight", 898),
+
+		cat_blanket(15402, 13574, 5, 15, 8790, 1, "Cat blanket", 898),
+		cat_basket(15402, 13575, 19, 58, 1539, 2, 960, 2, "Cat basket", 898),
+		Cushioned_basket(15402, 13576, 19, 58, 1539, 2, 960, 2, 1737, 2, "Cushioned basket", 898);
 
 		int fake_object;
 		int real_object;
@@ -258,7 +275,7 @@ public class Objects {
 							return;
 						}
 						
-						RoomObject replacementObject = new RoomObject( con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(), objectName);
+						RoomObject replacementObject = new RoomObject( con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(),roomObject.getType(), objectName);
 
 						/*if (room.getCustomObjectByPosition(newCoords[0], newCoords[1]) != null) {
 							c.sendMessage("You remove the <col=0000FF>" + CON_DATA[i][8] + ".");
@@ -310,7 +327,7 @@ public class Objects {
 					return;
 				}
 
-				room.removeCustomObject(c, new RoomObject( con.getFake_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation()));
+				room.removeCustomObject(c, new RoomObject( con.getFake_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(), roomObject.getType()));
 				c.sendMessage("You remove the <col=0000FF>" + con.getObjectname() + ".");
 			}
 		}
