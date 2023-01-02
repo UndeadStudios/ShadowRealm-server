@@ -78,6 +78,7 @@ public class NpcOptionTwo {
 				break;
 			case 1334:
 			case 1331:
+			case 1329:
 			case 1333:
 			case 1328:
 				player.getShops().openShop(66);
@@ -521,6 +522,8 @@ public class NpcOptionTwo {
 			case 1519:
 		case 321:
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON
+			case 1510:
+			case 1511:
 			Fishing.attemptdata(player, 7);
 			break;
 		case 1520:

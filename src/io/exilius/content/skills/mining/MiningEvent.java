@@ -292,7 +292,9 @@ public class MiningEvent extends Event<Player> {
 			if(ShootingStar.MAXIMUM_MINING_AMOUNT == 0){
 				attachment.sendMessage("The Star run out of star dust.");
 				ShootingStar.despawn(false);
+				attachment.getPA().stopSkilling();
 				ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
+				attachment.stopAnimation();
 				stop();
 				return;
 			}

@@ -62,6 +62,7 @@ object ShootingStar {
                     continue
                 }
                 if (CRASHED_STAR!!.starObject != null) {
+                    p.stopAnimation()
                     p.sendMessage("The star has been fully mined.")
                 }
             }
@@ -78,7 +79,7 @@ object ShootingStar {
         LOCATION_4(Position(2745, 3445), "in the middle of the Flax field", "Flax Field"),
         LOCATION_5(Position(2322, 3796), "in the yak field", "Yak Field"),
         LOCATION_6(Position(2481, 2867), "outside the Myths Guild", "Myths Guild"),
-        LOCATION_7(Position(3368, 3269), "in the Duel Arena", "Duel Arena"),
+        LOCATION_7(Position(3368, 3269), "in the Pvp Arena", "Duel Arena"),
         LOCATION_8(Position(1746, 5327), "in the Ancient cavern", "Ancient Cavern"),
         LOCATION_9(Position(2882, 9800), "in the Taverly dungeon", "Taverly Dung."),
         LOCATION_10(Position(2666, 2648), "at the Void knight island", "Pest Control"),
