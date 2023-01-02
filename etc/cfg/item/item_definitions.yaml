@@ -75003,5 +75003,9 @@
   name: "Superior boots"
   description: "A pair of upgraded Pegasian boots."
   shopValue: 10484000
-
+- id: 25527
+  name: "Stardust"
+  description: "Small, shiny bits of rock. Someone at the Mining Guild might find them interesting."
+  shopValue: 50
+  stackable: true
 

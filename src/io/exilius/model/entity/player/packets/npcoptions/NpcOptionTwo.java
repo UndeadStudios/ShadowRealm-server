@@ -73,6 +73,15 @@ public class NpcOptionTwo {
 				player.sawmill = true;
 				Sawmill.OpemSawMill(player);
 				break;
+			case 10633:
+				player.getShops().openShop(65);
+				break;
+			case 1334:
+			case 1331:
+			case 1333:
+			case 1328:
+				player.getShops().openShop(66);
+				break;
 		case Npcs.DONATOR_SHOP:
 			//player.getDonationRewards().openInterface();
 			player.sendMessage("coming soon");

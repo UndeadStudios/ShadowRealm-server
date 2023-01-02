@@ -186,6 +186,10 @@ public class ShopAssistant {
 			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " mage arena points.");
 			return;
 		}
+		if (c.myShopId == 65) {
+			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " Star dust.");
+			return;
+		}
 		if (c.myShopId == 83) {
 			c.sendMessage("You cannot buy items from this shop.");
 			return;
@@ -315,6 +319,17 @@ public class ShopAssistant {
 	public int getSpecialItemValue(int id) {
 		ShopDef shopDef = ShopDef.getDefinitions().get(c.myShopId);
 		switch (c.myShopId) {
+			case 65:
+				switch(id) {
+					case 25539:
+						return 2000;
+					case 25547:
+						return 3000;
+					case 19473:
+						return 300;
+					case 24851:
+						return 150;
+				}
 		case 13: // Jossik quest shop
 			return 1;
 		case 15:
@@ -1753,6 +1768,7 @@ public class ShopAssistant {
 			case 77:
 			case 121:
 			case 15:
+			case 65:
 			case 80:
 			case 171:
 			case 172:
@@ -2242,6 +2258,7 @@ public class ShopAssistant {
 				case 75:
 				case 77:
 				case 121:
+				case 65:
 				case 15:
 				case 172:
 				case 173:
@@ -2586,6 +2603,18 @@ public class ShopAssistant {
 				return;
 			}
 			c.getItems().deleteItem(13307, itemValue);
+			c.getItems().addItem(itemID + 1, amount * 2);
+			c.getItems().sendInventoryInterface(3823);
+			logShop("bought", itemID, amount);
+			return;
+		}
+		if (c.myShopId == 65) {
+			int itemValue = getSpecialItemValue(itemID) * amount;
+			if (!c.getItems().playerHasItem(25527, itemValue)) {
+				c.sendMessage("You do not have enough Star dust to purchase this.");
+				return;
+			}
+			c.getItems().deleteItem(25527, itemValue);
 			c.getItems().addItem(itemID + 1, amount * 2);
 			c.getItems().sendInventoryInterface(3823);
 			logShop("bought", itemID, amount);

@@ -1851,21 +1851,23 @@ public class Player extends Entity {
         if (!getRights().contains(Right.ADMINISTRATOR) && !getRights().contains(Right.GAME_DEVELOPER) && !getRights().contains(Right.OWNER)) {
             boolean debugMessage = true;
             //Right right = rank.rights;
-            if (getMode().isRegular())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Normal Mode", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-            if (getMode().isIronman())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-            if (getMode().isHardcoreIronman())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-            if (getMode().isGroupIronman())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Group Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-           if (getMode().isrogue())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-           if (getMode().isrogueiron())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-            if (getMode().isroguehc())
-                com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+            if (!Server.isDebug()) {
+                if (getMode().isRegular())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Normal Mode", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isIronman())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isHardcoreIronman())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isGroupIronman())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Group Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isrogue())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isrogueiron())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
+                if (getMode().isroguehc())
+                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
             }
+        }
 
 
         removeFromInstance();
@@ -1964,6 +1966,9 @@ public class Player extends Entity {
         isFullBody = ItemDef.forId(playerEquipment[playerChest]).getEquipmentModelType() == EquipmentModelType.FULL_BODY;
         getPA().updateRunningToggle();
         getPA().setConfig(427, acceptAid ? 1 : 0);
+        getPA().sendConfig(2951, 127293816);
+        getPA().sendConfig(491, 0);
+        getPA().sendConfig(2924, 2);
         potions.resetOverload();
 
         if (completedTutorial) {
@@ -2132,8 +2137,6 @@ public class Player extends Entity {
         getPA().resetFollow();
         getPA().setClanData();
         updateRank();
-        getPA().sendConfig(2951, 127293816);
-        getPA().sendConfig(491, 0);
         getFarming().doConfig();
         getBank().onLogin();
         getRunePouch().sendPouchRuneInventory();
