@@ -74993,15 +74993,15 @@
       level: 75
 - id: 28026
   name: "Berserker boots"
-  description: "A pair of upgraded Eternal boots."
+  description: "A pair of upgraded Pegasian boots."
   shopValue: 10480000
 - id: 28027
   name: "Galaxy boots"
-  description: "A pair of upgraded Pegasian boots."
+  description: "A pair of upgraded Eternal boots."
   shopValue: 10480000
 - id: 28028
   name: "Superior boots"
-  description: "A pair of upgraded Primordial boots."
+  description: "A pair of upgraded Pegasian boots."
   shopValue: 10484000
 
 
