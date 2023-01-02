@@ -1,6 +1,7 @@
 package io.exilius.content.skills.construction;
 
 import io.exilius.content.skills.construction.rooms.Default;
+import io.exilius.content.skills.construction.rooms.Roof;
 import io.exilius.model.entity.player.Player;
 
 public class Construction {
@@ -63,13 +64,13 @@ public class Construction {
 
 				client.toReplace = buildRoom;
 
-				if (!(buildRoom instanceof Default)) {
+				if (!(buildRoom instanceof Default) && !(buildRoom instanceof Roof)) {
 					client.getDH().sendStatement("You already have a " + buildRoom.getName() + " in that spot.");
 					client.nextChat = 903;
 					return;
 				}
 
-				client.getPA().showInterface(24595);
+				RoomInterface.openInterface(client);
 				break;
 		}
 	}

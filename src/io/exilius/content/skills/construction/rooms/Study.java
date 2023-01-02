@@ -9,7 +9,7 @@ import java.util.List;
 public class Study extends Room {
 
 	public Study() {
-		super(1888, 5096);
+		super(1888, 5736);
 		setName("Study");
 		
 		List<RoomObject> objects = new ArrayList<RoomObject>();

@@ -38,12 +38,6 @@ public class Chapel extends Room {
 		globalReplace.add(new RoomObject(13099, 7, 5, 2, 0, "Window"));
 		globalReplace.add(new RoomObject(13099, 0, 2, 0, 0, "Window"));
 		globalReplace.add(new RoomObject(13099, 0, 5, 0, 0, "Window"));
-		globalReplace.add(new RoomObject(-1, 0, 0, 2, 11, "Statue space"));
-		globalReplace.add(new RoomObject(-1, 7, 0, 1, 11, "Statue space"));
-		globalReplace.add(new RoomObject(-1, 1, 5, 0, "Lamp space"));
-		globalReplace.add(new RoomObject(-1, 6, 5, 0, "Lamp space"));
-		globalReplace.add(new RoomObject(-1, 7, 3, 1, "Musical space"));
-		globalReplace.add(new RoomObject(-1, 3, 7, 0, "Icon space"));
 		for (int x = 3; x < 5; x++) {
 			for (int y = 0; y < 5; y++) {
 				globalReplace.add(new RoomObject(-1, x, y, 0, 22, "Rug space"));

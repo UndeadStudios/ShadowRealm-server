@@ -7,6 +7,7 @@ import io.exilius.Server;
 import io.exilius.content.skills.construction.rooms.Default;
 import io.exilius.content.skills.construction.rooms.Garden;
 import io.exilius.content.skills.construction.rooms.Parlour;
+import io.exilius.content.skills.construction.rooms.Roof;
 import io.exilius.model.collisionmap.Region;
 import io.exilius.model.collisionmap.RegionProvider;
 import io.exilius.model.cycleevent.CycleEvent;
@@ -46,12 +47,14 @@ public class House {
 		room.setRotation(0);
 		room.setPosition(new int[] {6, 6});
 		rooms[6][6][0] = room;
-		Room room1;
-		room1 = new Parlour();
-		room1.setRotation(3);
-		room1.setPosition(new int[] {5, 6});
-		rooms[5][6][0] = room1;
-
+		room = new Parlour();
+		room.setRotation(3);
+		room.setPosition(new int[] {5, 6});
+		rooms[5][6][0] = room;
+		room = new Roof();
+		room.setRotation(3);
+		room.setPosition(new int[] {5, 6});
+		rooms[5][6][1] = room;
 		this.owner = player;
 		this.height = owner.getIndex() * 4;
 		owner.setHouse(this);
@@ -245,6 +248,10 @@ public class House {
 						newRoom.setRotation(room.getRotation());
 						newRoom.setPosition(room.getPosition());
 						house.guests = new ArrayList<Player>();
+						if(!room.getName().equalsIgnoreCase("garden") && !room.getName().equalsIgnoreCase("default")) {
+							house.rooms[x][y][z+1] = new Roof();
+							RegionProvider.getGlobal().get(x, y).setClipToZero(z, y, z+1);
+						}
 						house.rooms[x][y][z] = newRoom;
 					}
 				}

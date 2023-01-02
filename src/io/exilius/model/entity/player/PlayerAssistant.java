@@ -88,7 +88,15 @@ public class PlayerAssistant {
             c.getOutStream().writeWordBigEndian((int) seconds * 50 / 30);
         }
     }
-
+	public void sendInterfaceTextColor(int color, int frame) // colour changing on interface :O!
+	{
+		if(c.getOutStream() != null) {
+			c.getOutStream().createFrame(122);
+			c.getOutStream().writeWordBigEndianA(frame); // interface
+			c.getOutStream().writeWordBigEndianA(color); // colour stuff
+			c.flushOutStream();
+		}
+	}
 	public void sendDropTableData(String message, int npcIndex) {
 		c.getOutStream().createFrameVarSize(197);
 		c.getOutStream().writeString(message);
