@@ -71732,5 +71732,51 @@
       "dmagic": 40,
       "mdmg": 6
     }
+  },
+  "28026": {
+    "name": "Berserker boots",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 10,
+      "amagic": 18,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 18,
+      "drange": 15
+    }
+  },
+  "28027": {
+    "name": "Galaxy boots",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 10,
+      "amagic": -22,
+      "arange": 22,
+      "dstab": 15,
+      "dslash": 15,
+      "dcrush": 15,
+      "dmagic": 15,
+      "drange": 15
+    }
+  },
+  "28028": {
+    "name": "Superior boots",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 10,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": -14,
+      "arange": -11,
+      "dstab": 32,
+      "dslash": 32,
+      "dcrush": 32,
+      "str": 15
+    }
   }
 }

@@ -2,6 +2,11 @@ package io.exilius.content.skills.construction;
 
 
 import com.google.gson.annotations.Expose;
+import io.exilius.Server;
+import io.exilius.model.collisionmap.Region;
+import io.exilius.model.collisionmap.RegionData;
+import io.exilius.model.collisionmap.RegionProvider;
+import io.exilius.model.world.objects.GlobalObject;
 
 public class RoomObject {
 
@@ -16,6 +21,7 @@ public class RoomObject {
 	public RoomObject(int id, int x, int y, int rotation, int type) {
 		this(id, x, y, rotation, type, "");
 	}
+
 
 	public RoomObject(int id, int x, int y, int rotation, String name) {
 		this.id = id;

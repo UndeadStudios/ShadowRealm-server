@@ -59,7 +59,13 @@ public class GlobalObject {
 		this.height = height;
 		this.face = face;
 	}
-
+	public GlobalObject(int id, int x, int y, int face, int lol, int lol2, int lol3, int lol4, int lol5, int height) {
+		this.id = id;
+		this.x = x;
+		this.y = y;
+		this.face = face;
+		this.height = height;
+	}
 	public GlobalObject(int id, int x, int y, int height, int face, int type) {
 		this(id, x, y, height, face);
 		this.type = type;

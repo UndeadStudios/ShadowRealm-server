@@ -51,10 +51,6 @@ public class House {
 		room.setRotation(3);
 		room.setPosition(new int[] {5, 6});
 		rooms[5][6][0] = room;
-		room = new Roof();
-		room.setRotation(3);
-		room.setPosition(new int[] {5, 6});
-		rooms[5][6][1] = room;
 		this.owner = player;
 		this.height = owner.getIndex() * 4;
 		owner.setHouse(this);
@@ -248,10 +244,6 @@ public class House {
 						newRoom.setRotation(room.getRotation());
 						newRoom.setPosition(room.getPosition());
 						house.guests = new ArrayList<Player>();
-						if(!room.getName().equalsIgnoreCase("garden") && !room.getName().equalsIgnoreCase("default")) {
-							house.rooms[x][y][z+1] = new Roof();
-							RegionProvider.getGlobal().get(x, y).setClipToZero(z, y, z+1);
-						}
 						house.rooms[x][y][z] = newRoom;
 					}
 				}
