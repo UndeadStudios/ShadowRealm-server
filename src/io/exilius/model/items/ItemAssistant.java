@@ -828,7 +828,7 @@ public class ItemAssistant {
 				|| itemName.contains("karil") || itemName.contains("verac")
 				|| itemName.contains("guthan") || itemName.contains("dharok") || itemName.contains("torag") || 
 				itemName.contains("abyssal bludgeon") || itemName.contains("spade") || itemName.contains("casket") || 
-				itemName.contains("clueless") || itemName.contains("scythe") || itemName.contains("ballista") || itemName.contains("hunting knife") || itemName.contains("elder maul") || itemName.contains("bulwark") || itemName.contains("claws")) {
+				itemName.contains("clueless") || itemName.contains("scythe") || itemName.contains("ballista") || itemName.contains("hunting knife") || itemName.contains("elder maul") || itemName.contains("bulwark") || itemName.contains("claws") || itemName.contains("tumeken")) {
 			return true;
 		}
 		switch (itemId) {

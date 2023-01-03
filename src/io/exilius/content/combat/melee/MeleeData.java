@@ -150,7 +150,7 @@ public class MeleeData {
 			c.playerRunIndex = 1831;
 			return;
 		}
-		if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("trident") || weaponName.contains("Tumeken's shadow")) {
+		if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("trident")) {
 			c.playerStandIndex = 809;
 			c.playerRunIndex = 1210;
 			c.playerWalkIndex = 1146;
@@ -160,6 +160,12 @@ public class MeleeData {
 			c.playerStandIndex = 2074;
 			c.playerWalkIndex = 2076;
 			c.playerRunIndex = 2077;
+			return;
+		}
+		if(weaponName.contains("tumeken")) {
+			c.playerStandIndex = 1662;
+			c.playerWalkIndex = 1663;
+			c.playerRunIndex = 1664;
 			return;
 		}
 		if (weaponName.contains("2h sword") || weaponName.contains("godsword") || weaponName.contains("saradomin sw") || weaponName.contains("saradomin's bless") || weaponName.contains("large spade")) {
