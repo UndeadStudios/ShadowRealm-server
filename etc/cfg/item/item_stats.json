@@ -71756,7 +71756,6 @@
     "weight": 1.0,
     "equipment": {
       "slot": 10,
-      "slot": 10,
       "amagic": 18,
       "dstab": 15,
       "dslash": 15,
@@ -71766,7 +71765,7 @@
     }
   },
   "28028": {
-    "name": "Superior boots",
+    "name": "Superior ranger boots",
     "equipable": true,
     "weight": 1.0,
     "equipment": {
