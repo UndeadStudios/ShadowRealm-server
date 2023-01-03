@@ -44,7 +44,7 @@ public class EventHandler {
 	 * @param attachment
 	 */
 	public <T> void stop(T attachment) {
-		Predicate<Event<?>> equalTo = event -> event.getAttachment().equals(attachment);
+		Predicate<Event<?>> equalTo = event -> event.getPlr().equals(attachment);
 		active.stream().filter(equalTo).forEach(pendingRemoval::add);
 		pendingAddition.stream().filter(equalTo).forEach(pendingRemoval::add);
 	}
@@ -56,7 +56,7 @@ public class EventHandler {
 	 * @param signature the signature the event must have
 	 */
 	public <T> void stop(T attachment, String signature) {
-		Predicate<Event<?>> equalTo = event -> event.getAttachment().equals(attachment) && event.getSignature() != null && event.getSignature().equals(signature);
+		Predicate<Event<?>> equalTo = event -> event.getPlr().equals(attachment) && event.getSignature() != null && event.getSignature().equals(signature);
 		active.stream().filter(equalTo).forEach(pendingRemoval::add);
 		pendingAddition.stream().filter(equalTo).forEach(pendingRemoval::add);
 	}
@@ -80,7 +80,7 @@ public class EventHandler {
 	 * @return {@code true} if the event is found and meets the predicate terms, otherwise {@code false}.
 	 */
 	public <T> boolean isRunning(T attachment, String signature) {
-		Predicate<Event<?>> running = event -> event.isAlive() && event.getAttachment().equals(attachment) && event.getSignature() != null
+		Predicate<Event<?>> running = event -> event.isAlive() && event.getPlr().equals(attachment) && event.getSignature() != null
 				&& event.getSignature().equals(signature);
 		return active.stream().anyMatch(running) || pendingAddition.stream().anyMatch(running);
 	}
@@ -100,7 +100,7 @@ public class EventHandler {
 			}
 		}
 		while ((event = active.poll()) != null) {
-			if (event.getAttachment() == null || event.requiresTermination()) {
+			if (event.getPlr() == null || event.requiresTermination()) {
 				event.stop();
 				continue;
 			}
@@ -125,7 +125,7 @@ public class EventHandler {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Events Active");
-		pendingAddition.forEach(e -> sb.append("--> " + e.getAttachment().toString() + " : " + e.getSignature() + "\n"));
+		pendingAddition.forEach(e -> sb.append("--> " + e.getPlr().toString() + " : " + e.getSignature() + "\n"));
 		sb.append("[adding = " + pendingAddition.size() + ", active = " + active.size() + ", removing = " + pendingRemoval.size() + "]");
 		return sb.toString();
 	}

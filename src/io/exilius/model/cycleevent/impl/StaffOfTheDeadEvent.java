@@ -11,11 +11,11 @@ public class StaffOfTheDeadEvent extends Event<Player> {
 
 	@Override
 	public void execute() {
-		if (attachment == null || attachment.isDisconnected()) {
+		if (plr == null || plr.isDisconnected()) {
 			super.stop();
 			return;
 		}
-		if (attachment.playerEquipment[Player.playerWeapon] != 11791 && attachment.playerEquipment[Player.playerWeapon] != 12904 && attachment.playerEquipment[Player.playerWeapon] != 22296) {
+		if (plr.playerEquipment[Player.playerWeapon] != 11791 && plr.playerEquipment[Player.playerWeapon] != 12904 && plr.playerEquipment[Player.playerWeapon] != 22296) {
 			super.stop();
 			return;
 		}

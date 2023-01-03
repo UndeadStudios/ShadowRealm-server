@@ -12,35 +12,35 @@ public class SkillRestorationEvent extends Event<Player> {
 
 	@Override
 	public void execute() {
-		if (attachment.isDead || attachment.getHealth().getCurrentHealth() <= 0) {
+		if (plr.isDead || plr.getHealth().getCurrentHealth() <= 0) {
 			return;
 		}
-		attachment.getHealth().tick(SkillcapePerks.HITPOINTS.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment) ? 2 : 1);
+		plr.getHealth().tick(SkillcapePerks.HITPOINTS.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1);
 
-		for (int index = 0; index < attachment.playerLevel.length; index++) {
+		for (int index = 0; index < plr.playerLevel.length; index++) {
 			if (index == 3 || index == 5) {
 				continue;
 			}
-			if ((index == 0 || index == 1 || index == 2) && attachment.hasDivineCombatBoost) {
+			if ((index == 0 || index == 1 || index == 2) && plr.hasDivineCombatBoost) {
 				continue;
 			}
-			if ((index == 4) && attachment.hasDivineRangeBoost) {
+			if ((index == 4) && plr.hasDivineRangeBoost) {
 				continue;
 			}
-			if ((index == 6) && attachment.hasDivineMagicBoost) {
+			if ((index == 6) && plr.hasDivineMagicBoost) {
 				continue;
 			}
 			if ((index == 0 || index == 1 || index == 2
-					|| index == 4 || index == 6) && attachment.hasOverloadBoost) {
+					|| index == 4 || index == 6) && plr.hasOverloadBoost) {
 				continue;
 			}
-			final int maximum = attachment.getLevelForXP(attachment.playerXP[index]);
-			if (attachment.playerLevel[index] < maximum) {
-				attachment.playerLevel[index]++;
-			} else if (attachment.playerLevel[index] > maximum) {
-				attachment.playerLevel[index]--;
+			final int maximum = plr.getLevelForXP(plr.playerXP[index]);
+			if (plr.playerLevel[index] < maximum) {
+				plr.playerLevel[index]++;
+			} else if (plr.playerLevel[index] > maximum) {
+				plr.playerLevel[index]--;
 			}
-			attachment.getPA().refreshSkill(index);
+			plr.getPA().refreshSkill(index);
 		}
 	}
 

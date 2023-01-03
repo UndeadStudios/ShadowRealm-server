@@ -110,7 +110,7 @@ public class Smelting {
 		Server.getEventHandler().submit(new Event<Player>("skilling", c, 1) {
 
 			public void execute() {
-				if (attachment == null || attachment.isDisconnected()) {
+				if (plr == null || plr.isDisconnected()) {
 					this.stop();
 					return;
 				}
@@ -126,7 +126,7 @@ public class Smelting {
 			@Override
 			public void stop() {
 				super.stop();
-				if (attachment == null || attachment.isDisconnected()) {
+				if (plr == null || plr.isDisconnected()) {
 					return;
 				}
 				resetSmelting(c);

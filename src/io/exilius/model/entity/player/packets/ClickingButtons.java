@@ -241,7 +241,7 @@ public class ClickingButtons implements PacketType {
 		DuelSession duelSession = null;
 		c.getFletching().select(actionButtonId);
 		GlassBlowing.glassBlowing(c, actionButtonId);
-		Sawmill.HandleBottons(c, actionButtonId);
+		Sawmill.handleButtons(c, actionButtonId);
 		RoomInterface.clickButton(c, actionButtonId);
 		//SplitbarkCrafting.craft(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
@@ -255,6 +255,9 @@ public class ClickingButtons implements PacketType {
 		dialogueOption(c, actionButtonId);
 		makeOptions(c, actionButtonId);
 		switch (actionButtonId) {
+			case 106136:
+				c.getPA().removeAllWindows();
+				break;
 		case 108012: // call follower
 			if (c.petSummonId > 0) {
 				Arrays.stream(NPCHandler.npcs).filter(npc -> npc != null && npc.spawnedBy == c.getIndex()).forEach(npc -> {

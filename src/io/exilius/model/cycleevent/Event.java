@@ -18,7 +18,7 @@ public abstract class Event<T> {
 	 * The attachment serves as a lock to the event. If the object reference to the attachment is ever null, the lock is 'broken'. When broken, the event stops any and all further
 	 * execution of the event and is disposed of.
 	 */
-	protected T attachment;
+	protected T plr;
 
 	/**
 	 * Represents whether or not the event is still running
@@ -43,12 +43,12 @@ public abstract class Event<T> {
 	/**
 	 * Creates a new event with a specific context.
 	 * 
-	 * @param attachment the attachment to this event
+	 * @param plr the attachment to this event
 	 * @param ticks the number of ticks until execution
 	 */
-	public Event(T attachment, int ticks) {
+	public Event(T plr, int ticks) {
 		Preconditions.checkArgument(ticks > 0, "Negative or zero ticks were passed as a parameter.");
-		this.attachment = attachment;
+		this.plr = plr;
 		this.ticks = ticks;
 		this.maximumTicks = ticks;
 	}
@@ -57,11 +57,11 @@ public abstract class Event<T> {
 	 * Creates a new event with a specific context.
 	 * 
 	 * @param signature the unique signature of the event
-	 * @param attachment the attachment to this event
+	 * @param plr the attachment to this event
 	 * @param ticks the number of ticks until execution
 	 */
-	public Event(String signature, T attachment, int ticks) {
-		this(attachment, ticks);
+	public Event(String signature, T plr, int ticks) {
+		this(plr, ticks);
 		this.signature = signature;
 	}
 
@@ -120,8 +120,8 @@ public abstract class Event<T> {
 	 * 
 	 * @return the attachment
 	 */
-	public T getAttachment() {
-		return attachment;
+	public T getPlr() {
+		return plr;
 	}
 
 	/**

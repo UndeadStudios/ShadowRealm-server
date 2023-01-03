@@ -187,7 +187,7 @@ public class Fishing extends SkillHandler {
 								player.getItems().addItemUnderAnyCircumstance(anglerOuftit[Misc.random(anglerOuftit.length - 1)], 1);
 								player.sendMessage("You notice a angler piece floating in the water and pick it up.");
 							}
-							int petRate = attachment.skillingPetRateScroll ? (int) (player.playerSkillProp[10][10] * .75) : player.playerSkillProp[10][10];
+							int petRate = plr.skillingPetRateScroll ? (int) (player.playerSkillProp[10][10] * .75) : player.playerSkillProp[10][10];
 							if (Misc.random(petRate) == 2 && player.getItems().getItemCount(13320, true) == 0 && player.petSummonId != 13320) {
 								 PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] <col=255>" + player.getDisplayName() + "</col> caught a fish and a <col=CC0000>Heron</col> pet!");
 								 player.getItems().addItemUnderAnyCircumstance(13320, 1);

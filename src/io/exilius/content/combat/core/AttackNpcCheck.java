@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.hydra.HydraStage;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.minigames.raids.Raids;
 import io.exilius.content.minigames.warriors_guild.WarriorsGuild;
 import io.exilius.content.skills.Skill;
@@ -40,6 +41,7 @@ public class AttackNpcCheck {
         if (!npc.canBeAttacked(c)) {
             return false;
         }
+
 
 //        if (!PathFinder.getPathFinder().accessable(c, npc.getX(), npc.getY())) {
 //            c.sendMessage("You cannot reach that!");

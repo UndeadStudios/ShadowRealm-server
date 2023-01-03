@@ -286,7 +286,7 @@ public class TeleportInterface2 {
     }
 
     public void handlePreviousTeleport(int buttonId) {
-        int index = buttonId - 69_936 - 24218;
+        int index = buttonId - 102201;
 
         if (!previousTeleports.isEmpty()) {
             TeleportationData tele = TeleportationData.getDataForPos(previousTeleports.get(index));

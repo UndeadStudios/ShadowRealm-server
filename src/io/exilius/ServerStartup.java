@@ -9,10 +9,12 @@ import io.exilius.content.bosses.godwars.GodwarsNPCs;
 import io.exilius.content.bosses.nightmare.NightmareStatusNPC;
 import io.exilius.content.bosses.sarachnis.SarachnisNpc;
 import io.exilius.content.collection_log.CollectionLog;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.combat.stats.TrackedMonster;
 import io.exilius.content.commands.CommandManager;
 import io.exilius.content.dailyrewards.DailyRewardContainer;
 import io.exilius.content.dailyrewards.DailyRewardsRecords;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.event.eventcalendar.EventCalendar;
 import io.exilius.content.event.eventcalendar.EventCalendarWinnerSelect;
 import io.exilius.content.events.monsterhunt.MonsterHunt;
@@ -136,8 +138,10 @@ public class ServerStartup {
         WorldEventContainer.getInstance().initialise();
         FireOfExchangeBurnPrice.init();
         Server.getLogging().schedule();
+        if (KillLimitHandler.killHandlerEnabled) KillLimitHandler.Companion.loadKillLimits();
 
         ZamorakGuardian.spawn();
+
         new SarachnisNpc(Npcs.SARACHNIS, SarachnisNpc.SPAWN_POSITION);
 
         if (Server.isPublic()) {

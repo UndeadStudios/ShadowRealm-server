@@ -11,6 +11,7 @@ import io.exilius.content.bosses.hydra.AlchemicalHydra;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
 import io.exilius.content.combat.death.NPCDeath;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.minigames.inferno.AncestralGlyph;
 import io.exilius.content.minigames.inferno.InfernoWaveData;
 import io.exilius.content.minigames.rfd.DisposeTypes;
@@ -535,6 +536,7 @@ public class NPCProcess {
                 NPCDeath.dropItems(npc);
 
                 npc.onDeath();
+
                 if (killerIndex <= PlayerHandler.players.length - 1) {
                     Player target = PlayerHandler.players[npc.killedBy];
 

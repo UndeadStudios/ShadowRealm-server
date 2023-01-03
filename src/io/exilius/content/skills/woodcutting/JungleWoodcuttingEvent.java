@@ -1,16 +1,13 @@
 package io.exilius.content.skills.woodcutting;
 
-import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
-import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.firemake.Firemaking;
-import io.exilius.model.Items;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.npc.NPCCacheDefinition;
@@ -18,7 +15,6 @@ import io.exilius.model.entity.npc.NPCSpawning;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
-import io.exilius.model.entity.player.Position;
 import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
@@ -60,31 +56,31 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 //		}
 		chops++;
 		int chopChance = 1 + (int) (tree.getChopsRequired() * hatchet.getChopSpeed());
-		if (Boundary.isIn(attachment, Boundary.WOODCUTTING_GUILD_BOUNDARY)){
+		if (Boundary.isIn(plr, Boundary.WOODCUTTING_GUILD_BOUNDARY)){
 			chopChance *= 1.5;
 		}
 		if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Jungle.LIGHT_JUNGLE) && Misc.random(chopChance) == 0) {
 			int face = 0;
-			Optional<WorldObject> worldObject = attachment.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
+			Optional<WorldObject> worldObject = plr.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
 			if (worldObject.isPresent()) {
 				face = worldObject.get().getFace();
 			}
 			int stumpId = 0;
 			if (tree.equals(Tree.REDWOOD)) {
-				face = (attachment.absX < 1568) ? 1 : (attachment.absX > 1573) ? 3 : (attachment.absY < 3480) ? 0 : 2;
+				face = (plr.absX < 1568) ? 1 : (plr.absX > 1573) ? 3 : (plr.absY < 3480) ? 0 : 2;
 				if (objectId == 29668)
 					stumpId = 29669;
 				else if (objectId == 29670)
 					stumpId = 29671;
 			}
 
-			Server.getGlobalObjects().add(new GlobalObject(tree.getStumpId(), x, y, attachment.heightLevel, face, 10, tree.getRespawnTime(), objectId));
-			attachment.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
-			attachment.getItems().addItem(tree.getWood(), 1);
-			attachment.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
-			attachment.getPA().addSkillXPMultiplied((int)osrsExperience, Skill.WOODCUTTING.getId(), true);
-			Achievements.increase(attachment, AchievementType.WOODCUT, 1);
-			attachment.getPA().sendSound(2734);
+			Server.getGlobalObjects().add(new GlobalObject(tree.getStumpId(), x, y, plr.heightLevel, face, 10, tree.getRespawnTime(), objectId));
+			plr.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
+			plr.getItems().addItem(tree.getWood(), 1);
+			plr.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
+			plr.getPA().addSkillXPMultiplied((int)osrsExperience, Skill.WOODCUTTING.getId(), true);
+			Achievements.increase(plr, AchievementType.WOODCUT, 1);
+			plr.getPA().sendSound(2734);
 			handleRewards();
 
 			super.stop();
@@ -94,34 +90,34 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 			if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
 				chops = 0;
 				int random = Misc.random(4);
-				attachment.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
-				Achievements.increase(attachment, AchievementType.WOODCUT, 1);
-				if ((attachment.getItems().isWearingItem(13241) || attachment.getItems().playerHasItem(13241)) && random == 2) {
-					Firemaking.lightFire(attachment, tree.getWood(), "infernal_axe");
+				plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
+				Achievements.increase(plr, AchievementType.WOODCUT, 1);
+				if ((plr.getItems().isWearingItem(13241) || plr.getItems().playerHasItem(13241)) && random == 2) {
+					Firemaking.lightFire(plr, tree.getWood(), "infernal_axe");
 					return;
 				}
 				handleDiary(tree);
 				//foeArtefact(attachment);
 				//handleWildernessRewards();
 				handleRewards();
-				if ((SkillcapePerks.WOODCUTTING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment)) && attachment.getItems().freeSlots() < 2) {
-					attachment.sendMessage("You have run out of free inventory space.");
+				if ((SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2) {
+					plr.sendMessage("You have run out of free inventory space.");
 					super.stop();
 					return;
 				}
-				attachment.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
-				attachment.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment) ? 2 : 1);
+				plr.sendMessage("You get some "+ ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase()+".");
+				plr.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1);
 			}
 		}
 		if (super.getElapsedTicks() % 4 == 0) {
-			attachment.startAnimation(hatchet.getAnimation());
+			plr.startAnimation(hatchet.getAnimation());
 		}
 	}
 
 	private int handleOutfit(int pieces) {
 
 		for (int aLumberjackOutfit : lumberjackOutfit) {
-			if (attachment.getItems().isWearingItem(aLumberjackOutfit)) {
+			if (plr.getItems().isWearingItem(aLumberjackOutfit)) {
 				pieces+=2;
 			}
 		}
@@ -130,22 +126,22 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 
 	private boolean canChop() {
 
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			super.stop();
 			return true;
 		}
-		if (!attachment.getItems().playerHasItem(hatchet.getItemId()) && !attachment.getItems().isWearingItem(hatchet.getItemId())) {
-			attachment.sendMessage("Your axe has disappeared.");
+		if (!plr.getItems().playerHasItem(hatchet.getItemId()) && !plr.getItems().isWearingItem(hatchet.getItemId())) {
+			plr.sendMessage("Your axe has disappeared.");
 			super.stop();
 			return true;
 		}
-		if (attachment.playerLevel[Player.playerWoodcutting] < hatchet.getLevelRequired()) {
-			attachment.sendMessage("You no longer have the level required to operate this hatchet.");
+		if (plr.playerLevel[Player.playerWoodcutting] < hatchet.getLevelRequired()) {
+			plr.sendMessage("You no longer have the level required to operate this hatchet.");
 			super.stop();
 			return true;
 		}
-		if (attachment.getItems().freeSlots() == 0) {
-			attachment.sendMessage("You have run out of free inventory space.");
+		if (plr.getItems().freeSlots() == 0) {
+			plr.sendMessage("You have run out of free inventory space.");
 			super.stop();
 			return true;
 		}
@@ -154,11 +150,11 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 
 	private void handleWildernessRewards() {
 
-		if (Boundary.isIn(attachment, Boundary.RESOURCE_AREA)) {
+		if (Boundary.isIn(plr, Boundary.RESOURCE_AREA)) {
 			if (Misc.random(20) == 5) {
 				int randomAmount = 1;
-				attachment.sendMessage("You received " + randomAmount + " pkp while woodcutting!");
-				attachment.getItems().addItem(2996, randomAmount);
+				plr.sendMessage("You received " + randomAmount + " pkp while woodcutting!");
+				plr.getItems().addItem(2996, randomAmount);
 			}
 		}
 	}
@@ -190,7 +186,7 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 	private void handleRewards() {
 		int dropRate = 10;
 		int clueAmount = 1;
-		if (attachment.fasterCluesScroll) {
+		if (plr.fasterCluesScroll) {
 			dropRate = dropRate*2;
 		}
 		if (Hespori.activeGolparSeed) {
@@ -198,37 +194,37 @@ public class JungleWoodcuttingEvent extends Event<Player> {
 		}
 			if(Misc.random(tree.getPetChance() / dropRate) == 10){
 				int npcid = 6409;
-				NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
-				attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
+				NPCSpawning.spawn(npcid, plr.getX(), plr.getY(), plr.getHeight(), 4, 7, true);
+				plr.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
 		}
 		if(Misc.random(tree.getPetChance() / dropRate) == 10){
 			int npcid = 6411;
-			NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
-			attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
+			NPCSpawning.spawn(npcid, plr.getX(), plr.getY(), plr.getHeight(), 4, 7, true);
+			plr.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
 		}
 		if(Misc.random(tree.getPetChance() / dropRate) == 10){
 			int npcid = 6413;
-			NPCSpawning.spawn(npcid, attachment.getX(), attachment.getY(), attachment.getHeight(), 4, 7, true);
-			attachment.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
+			NPCSpawning.spawn(npcid, plr.getX(), plr.getY(), plr.getHeight(), 4, 7, true);
+			plr.sendMessage("@red@A "+ NPCCacheDefinition.forID(npcid).getName().toLowerCase()+" Has spawned. ");
 		}
 		if (Misc.random(500) == 1) {
-			attachment.getItems().addItemUnderAnyCircumstance(lumberjackOutfit[Misc.random(lumberjackOutfit.length - 1)], 1);
-			attachment.sendMessage("You notice a lumberjack piece falling from the tree and pick it up.");
+			plr.getItems().addItemUnderAnyCircumstance(lumberjackOutfit[Misc.random(lumberjackOutfit.length - 1)], 1);
+			plr.sendMessage("You notice a lumberjack piece falling from the tree and pick it up.");
 		}
 
-		int petRate = attachment.skillingPetRateScroll ? (int) (tree.getPetChance() * .75) : tree.getPetChance();
-		if (Misc.random(petRate) == 2 && attachment.getItems().getItemCount(13322, false) == 0 && attachment.petSummonId != 13322) {
-			PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + attachment.getDisplayName() + "</col> chopped down a tree for the <col=CC0000>Beaver</col> pet!");
-			attachment.getItems().addItemUnderAnyCircumstance(13322, 1);
-			attachment.getCollectionLog().handleDrop(attachment, 5, 13322, 1);
+		int petRate = plr.skillingPetRateScroll ? (int) (tree.getPetChance() * .75) : tree.getPetChance();
+		if (Misc.random(petRate) == 2 && plr.getItems().getItemCount(13322, false) == 0 && plr.petSummonId != 13322) {
+			PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + plr.getDisplayName() + "</col> chopped down a tree for the <col=CC0000>Beaver</col> pet!");
+			plr.getItems().addItemUnderAnyCircumstance(13322, 1);
+			plr.getCollectionLog().handleDrop(plr, 5, 13322, 1);
 		}
 	}
 
 	@Override
 	public void stop() {
 		super.stop();
-		if (attachment != null) {
-			attachment.startAnimation(65535);
+		if (plr != null) {
+			plr.startAnimation(65535);
 		}
 	}
 

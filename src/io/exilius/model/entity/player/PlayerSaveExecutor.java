@@ -6,6 +6,8 @@ import java.util.concurrent.Future;
 
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.entity.player.save.PlayerSave;
 
 public class PlayerSaveExecutor {
@@ -22,7 +24,9 @@ public class PlayerSaveExecutor {
         Preconditions.checkState(saveFuture == null, "Already requested.");
         saveFuture = executor.submit(() -> {
             if (player.isOnline()) {
+                DailyTaskHandler.Companion.savePlayerTaskData(player);
                 PlayerSave.saveGameInstant(player);
+                KillLimitHandler.Companion.savePlayerKillData(player);
             }
         });
     }

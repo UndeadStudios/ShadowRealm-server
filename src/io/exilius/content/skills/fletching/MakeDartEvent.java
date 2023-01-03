@@ -14,7 +14,7 @@ public class MakeDartEvent extends Event<Player> {
     }
     @Override
     public void execute() {
-        if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+        if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
             stop();
             return;
         }
@@ -22,27 +22,27 @@ public class MakeDartEvent extends Event<Player> {
             stop();
             return;
         }
-        if (!attachment.getItems().playerHasItem(314, 10)) {
-            attachment.sendMessage("You need at least 10 feathers to do this.");
-            attachment.getPA().removeAllWindows();
+        if (!plr.getItems().playerHasItem(314, 10)) {
+            plr.sendMessage("You need at least 10 feathers to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        if (!attachment.getItems().playerHasItem(d.getId(), 10)) {
-            attachment.sendMessage("You need at least 10 dart tips to do this.");
-            attachment.getPA().removeAllWindows();
+        if (!plr.getItems().playerHasItem(d.getId(), 10)) {
+            plr.sendMessage("You need at least 10 dart tips to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        if (attachment.getItems().freeSlots() < 1) {
-            attachment.sendMessage("You need at least 1 free slot to do this.");
-            attachment.getPA().removeAllWindows();
+        if (plr.getItems().freeSlots() < 1) {
+            plr.sendMessage("You need at least 1 free slot to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        attachment.getItems().deleteItem2(314, 10);
-        attachment.getItems().deleteItem2(d.getId(), 10);
-        attachment.getItems().addItem(d.getReward(), 10);
-        attachment.getPA().addSkillXPMultiplied((int) (10 * d.getExperience()), Skill.FLETCHING.getId(), true);
+        plr.getItems().deleteItem2(314, 10);
+        plr.getItems().deleteItem2(d.getId(), 10);
+        plr.getItems().addItem(d.getReward(), 10);
+        plr.getPA().addSkillXPMultiplied((int) (10 * d.getExperience()), Skill.FLETCHING.getId(), true);
     }
 }

@@ -1,5 +1,7 @@
 package io.exilius;
 
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.wogw.Wogw;
 
 /**

@@ -32,21 +32,21 @@ public class RunEnergyEvent extends Event<Player> {
 
 	@Override
 	public void execute() {
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			super.stop();
 			return;
 		}
-		if (attachment.getRunEnergy() == 100 || attachment.getRunningDistanceTravelled() > 0) {
+		if (plr.getRunEnergy() == 100 || plr.getRunningDistanceTravelled() > 0) {
 			return;
 		}
 		if (super.getElapsedTicks() >= ticksRequired) {
-			attachment.setRunEnergy(attachment.getRunEnergy() + 1, true);
+			plr.setRunEnergy(plr.getRunEnergy() + 1, true);
 			ticksRequired = super.getElapsedTicks() + updateTicksRequired();
 		}
 	}
 
 	private final int updateTicksRequired() {
-		int level = Integer.min(99, attachment.playerLevel[Skill.AGILITY.getId()]);
+		int level = Integer.min(99, plr.playerLevel[Skill.AGILITY.getId()]);
 		int reduction = level < INTERVAL ? 0 : level / INTERVAL;
 		return Integer.max(MINIMUM_TICKS, MAXIMUM_TICKS - reduction);
 	}

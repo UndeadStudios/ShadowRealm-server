@@ -25,6 +25,7 @@ import io.exilius.content.combat.EntityDamageQueue;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.core.AttackEntity;
 import io.exilius.content.combat.death.PlayerDeath;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.combat.effects.damageeffect.impl.amuletofthedamned.impl.ToragsEffect;
 import io.exilius.content.combat.formula.MeleeMaxHit;
 import io.exilius.content.combat.magic.CombatSpellData;
@@ -40,6 +41,8 @@ import io.exilius.content.combat.weapon.WeaponMode;
 import io.exilius.content.commands.all.Reclaim;
 import io.exilius.content.compromised.CompromisedAccounts;
 import io.exilius.content.dailyrewards.DailyRewards;
+import io.exilius.content.dailytasks.DailyTask;
+import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -171,6 +174,8 @@ import io.exilius.util.logging.player.ConnectionLog;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFutureListener;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -185,6 +190,25 @@ import java.util.function.Consumer;
 public class Player extends Entity {
 
     private static Logger logger = LoggerFactory.getLogger(Player.class);
+
+    @Getter
+    @Setter
+    public DailyTask currentDailyTask = DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.getDailyTask();
+    @Getter
+    @Setter
+    public String dailyTaskName = ""; // Had to use this since the source saves in strings
+    @Getter
+    @Setter
+    public int dailyTaskPoints = 0;
+
+    @Getter
+    @Setter
+    public int dailyTaskModifiedQuantity = 0;
+
+    @Getter
+    @Setter
+    public long dailyTaskStartTime = 0L;
+
 
     public static final int playerHat = 0;
     public static final int playerCape = 1;
@@ -1970,7 +1994,6 @@ public class Player extends Entity {
         getPA().sendConfig(491, 0);
         getPA().sendConfig(2924, 2);
         potions.resetOverload();
-
         if (completedTutorial) {
             sendMessage("@bla@Welcome back to " + Configuration.SERVER_NAME + ", " + getDisplayNameFormatted() + ".");
         } else {
@@ -2243,6 +2266,11 @@ public class Player extends Entity {
 
         CompromisedAccounts.onLogin(this);
         PlayerMigrationRepository.migrate(this);
+        if (KillLimitHandler.killHandlerEnabled) {
+            KillLimitHandler.Companion.loadKilLData(this);
+            KillLimitHandler.Companion.checkResetTimer(this);
+        }
+
     }
 
     public void sendMessage(String s, long delay) {
@@ -2293,6 +2321,10 @@ public class Player extends Entity {
      * A cache of the side bar interfaces currently set for the player
      */
     private Map<Integer, Integer> sideBarInterfaces = new HashMap<>();
+
+    @Getter
+    @Setter
+    public Map<Integer, Integer> killTracker = new HashMap<>();
 
     public void setSidebarInterface(int menuId, int form) {
         if (getOutStream() != null) {
@@ -3476,6 +3508,10 @@ public class Player extends Entity {
         return killstreaks;
     }
 
+    @Getter
+    @Setter
+    public long lastKillReset = 0L;
+
     /**
      * Returns the single instance of the {@link NPCDeathTracker} class for this
      * player.
@@ -4557,19 +4593,19 @@ public class Player extends Entity {
         Server.getEventHandler().submit(new Event<Player>("force_movement", this, 2) {
             @Override
             public void execute() {
-                if (attachment == null || attachment.isDisconnected()) {
+                if (plr == null || plr.isDisconnected()) {
                     super.stop();
                     return;
                 }
-                attachment.setUpdateRequired(true);
-                attachment.forceMovement = true;
-                attachment.x1 = currentX;
-                attachment.y1 = currentY;
-                attachment.x2 = currentX + xOffsetWalk;
-                attachment.y2 = currentY + yOffsetWalk;
-                attachment.mask400Var1 = speedOne;
-                attachment.mask400Var2 = speedTwo;
-                attachment.forceMovementDirection = directionSet == null ? -1 : directionSet == "NORTH" ? 0 : directionSet == "EAST" ? 1 : directionSet == "SOUTH" ? 2 : directionSet == "WEST" ? 3 : 0;
+                plr.setUpdateRequired(true);
+                plr.forceMovement = true;
+                plr.x1 = currentX;
+                plr.y1 = currentY;
+                plr.x2 = currentX + xOffsetWalk;
+                plr.y2 = currentY + yOffsetWalk;
+                plr.mask400Var1 = speedOne;
+                plr.mask400Var2 = speedTwo;
+                plr.forceMovementDirection = directionSet == null ? -1 : directionSet == "NORTH" ? 0 : directionSet == "EAST" ? 1 : directionSet == "SOUTH" ? 2 : directionSet == "WEST" ? 3 : 0;
                 super.stop();
             }
         });
@@ -4578,22 +4614,22 @@ public class Player extends Entity {
         Server.getEventHandler().submit(new Event<Player>("force_movement", this, ticks) {
             @Override
             public void execute() {
-                if (attachment == null || attachment.isDisconnected()) {
+                if (plr == null || plr.isDisconnected()) {
                     super.stop();
                     return;
                 }
                 forceMovementActive = false;
-                attachment.getPA().movePlayer(xOffset, yOffset, attachment.heightLevel);
-                if (attachment.playerEquipment[playerWeapon] == -1) {
-                    attachment.playerStandIndex = 808;
-                    attachment.playerTurnIndex = 823;
-                    attachment.playerWalkIndex = 819;
-                    attachment.playerTurn180Index = 820;
-                    attachment.playerTurn90CWIndex = 821;
-                    attachment.playerTurn90CCWIndex = 822;
-                    attachment.playerRunIndex = 824;
+                plr.getPA().movePlayer(xOffset, yOffset, plr.heightLevel);
+                if (plr.playerEquipment[playerWeapon] == -1) {
+                    plr.playerStandIndex = 808;
+                    plr.playerTurnIndex = 823;
+                    plr.playerWalkIndex = 819;
+                    plr.playerTurn180Index = 820;
+                    plr.playerTurn90CWIndex = 821;
+                    plr.playerTurn90CCWIndex = 822;
+                    plr.playerRunIndex = 824;
                 } else {
-                    MeleeData.setWeaponAnimations(attachment);
+                    MeleeData.setWeaponAnimations(plr);
                 }
                 forceMovement = false;
                 super.stop();

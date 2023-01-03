@@ -17,7 +17,7 @@ public class MakeBoltEvent extends Event<Player> {
     }
     @Override
     public void execute() {
-        if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+        if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
             stop();
             return;
         }
@@ -25,27 +25,27 @@ public class MakeBoltEvent extends Event<Player> {
             stop();
             return;
         }
-        if (!attachment.getItems().playerHasItem(tipId, 15)) {
-            attachment.sendMessage("You need at least 15 tips to do this.");
-            attachment.getPA().removeAllWindows();
+        if (!plr.getItems().playerHasItem(tipId, 15)) {
+            plr.sendMessage("You need at least 15 tips to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        if (!attachment.getItems().playerHasItem(boltId, 15)) {
-            attachment.sendMessage("You need at least 15 bolts to do this.");
-            attachment.getPA().removeAllWindows();
+        if (!plr.getItems().playerHasItem(boltId, 15)) {
+            plr.sendMessage("You need at least 15 bolts to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        if (attachment.getItems().freeSlots() < 1) {
-            attachment.sendMessage("You need at least 1 free slot to do this.");
-            attachment.getPA().removeAllWindows();
+        if (plr.getItems().freeSlots() < 1) {
+            plr.sendMessage("You need at least 1 free slot to do this.");
+            plr.getPA().removeAllWindows();
             stop();
             return;
         }
-        attachment.getItems().deleteItem2(boltId, 15);
-        attachment.getItems().deleteItem2(tipId, 15);
-        attachment.getItems().addItem(b.getBolt(), 15);
-        attachment.getPA().addSkillXPMultiplied(b.getExperience(), Skill.FLETCHING.getId(), true);
+        plr.getItems().deleteItem2(boltId, 15);
+        plr.getItems().deleteItem2(tipId, 15);
+        plr.getItems().addItem(b.getBolt(), 15);
+        plr.getPA().addSkillXPMultiplied(b.getExperience(), Skill.FLETCHING.getId(), true);
     }
 }

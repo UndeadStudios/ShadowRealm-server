@@ -17,40 +17,40 @@ public class StringBowEvent extends Event<Player> {
 
 	@Override
 	public void execute() {
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			stop();
 			return;
 		}
-		if (!attachment.getItems().playerHasItem(bow.getItem()) || !attachment.getItems().playerHasItem(1777)) {
+		if (!plr.getItems().playerHasItem(bow.getItem()) || !plr.getItems().playerHasItem(1777)) {
 			stop();
 			return;
 		}
 		switch (bow.getProduct()) {
 		case 853:
-			if (Boundary.isIn(attachment, Boundary.SEERS_BOUNDARY)) {
-				attachment.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.STRING_MAPLE_SHORT);
+			if (Boundary.isIn(plr, Boundary.SEERS_BOUNDARY)) {
+				plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.STRING_MAPLE_SHORT);
 			}
 			break;
 			
 		case 859:
-			if (Boundary.isIn(attachment, Boundary.LLETYA_BOUNDARY)) {
+			if (Boundary.isIn(plr, Boundary.LLETYA_BOUNDARY)) {
 			}
 			break;
 		}
-		attachment.startAnimation(bow.getAnimation());
-		attachment.getItems().deleteItem2(bow.getItem(), 1);
-		attachment.getItems().deleteItem2(1777, 1);
-		attachment.getItems().addItem(bow.getProduct(), 1);
-		attachment.getPA().addSkillXPMultiplied((int) bow.getExperience(), Skill.FLETCHING.getId(), true);
+		plr.startAnimation(bow.getAnimation());
+		plr.getItems().deleteItem2(bow.getItem(), 1);
+		plr.getItems().deleteItem2(1777, 1);
+		plr.getItems().addItem(bow.getProduct(), 1);
+		plr.getPA().addSkillXPMultiplied((int) bow.getExperience(), Skill.FLETCHING.getId(), true);
 	}
 
 	@Override
 	public void stop() {
 		super.stop();
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			return;
 		}
-		attachment.stopAnimation();
+		plr.stopAnimation();
 	}
 
 }

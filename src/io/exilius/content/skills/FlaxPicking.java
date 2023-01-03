@@ -68,18 +68,18 @@ public final class FlaxPicking {
 
 		@Override
 		public void execute() {
-			if (attachment == null || attachment.isDisconnected()) {
+			if (plr == null || plr.isDisconnected()) {
 				stop();
 				return;
 			}
 
-			if (attachment.getItems().freeSlots() == 0) {
-				attachment.sendMessage("You have run out of free slots.");
+			if (plr.getItems().freeSlots() == 0) {
+				plr.sendMessage("You have run out of free slots.");
 				stop();
 				return;
 			}
 
-			boolean originalObject = attachment.getRegionProvider().get(location.getX(), location.getY()).isWorldObject(14896, location.getX(), location.getY(), location.getZ());
+			boolean originalObject = plr.getRegionProvider().get(location.getX(), location.getY()).isWorldObject(14896, location.getX(), location.getY(), location.getZ());
 			boolean spawnedObject = Server.getGlobalObjects().exists(14896, location.getX(), location.getY());
 
 			if (!originalObject && !spawnedObject || Server.getGlobalObjects().exists(-1, location.getX(), location.getY())) {
@@ -88,14 +88,14 @@ public final class FlaxPicking {
 			}
 			
 
-			if (Boundary.isIn(attachment, Boundary.FALADOR_BOUNDARY)) {
-				attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.PICK_FLAX);
+			if (Boundary.isIn(plr, Boundary.FALADOR_BOUNDARY)) {
+				plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.PICK_FLAX);
 			}
-			if (Boundary.isIn(attachment, Boundary.SEERS_BOUNDARY)) {
-				attachment.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.PICK_FLAX_SEERS);
+			if (Boundary.isIn(plr, Boundary.SEERS_BOUNDARY)) {
+				plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.PICK_FLAX_SEERS);
 			}
-			attachment.startAnimation(827);
-			attachment.getItems().addItem(1779, 1);
+			plr.startAnimation(827);
+			plr.getItems().addItem(1779, 1);
 
 			if (RandomUtils.nextInt(0, 3) == 1) {
 				Server.getGlobalObjects().add(new GlobalObject(-1, location.getX(), location.getY(), location.getZ(), 0, 10, 50, 14896));
@@ -106,8 +106,8 @@ public final class FlaxPicking {
 		@Override
 		public void stop() {
 			super.stop();
-			if (attachment != null && !attachment.isDisconnected()) {
-				attachment.stopAnimation();
+			if (plr != null && !plr.isDisconnected()) {
+				plr.stopAnimation();
 			}
 		}
 

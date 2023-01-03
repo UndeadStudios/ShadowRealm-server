@@ -22,25 +22,25 @@ public class VenomEvent extends Event<Entity> {
 
 	@Override
 	public void execute() {
-		if (attachment == null) {
+		if (plr == null) {
 			super.stop();
 			return;
 		}
 
-		Health health = attachment.getHealth();
+		Health health = plr.getHealth();
 
 		if (health.isNotSusceptibleTo(HealthStatus.VENOM)) {
 			super.stop();
 			return;
 		}
 
-		if (attachment.getHealth().getCurrentHealth() <= 0) {
+		if (plr.getHealth().getCurrentHealth() <= 0) {
 			super.stop();
 			return;
 		}
 
-		attachment.appendDamage(null, damage, Hitmark.VENOM);
-		inflictor.ifPresent(inf -> attachment.addDamageTaken(inf, damage));
+		plr.appendDamage(null, damage, Hitmark.VENOM);
+		inflictor.ifPresent(inf -> plr.addDamageTaken(inf, damage));
 
 		damage += 2;
 

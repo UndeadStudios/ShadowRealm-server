@@ -9,13 +9,13 @@ public class Sawmill {
 
     public static int INTERFACE = 24786;
 
-    public static void OpemSawMill(Player player) {
+    public static void openSawMill(Player player) {
         if(player.sawmill) {
             player.getPA().showInterface(INTERFACE);
         }
     }
 
-    public static void HandleBottons(Player c, int button) {
+    public static void handleButtons(Player c, int button) {
         switch (button){
             case 97060:
                 if(c.sawmill){

@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.Server;
+import io.exilius.content.dailytasks.DailyTaskHandler;
+import io.exilius.content.dailytasks.DailyTaskInterface;
 import io.exilius.content.instances.InstancedArea;
 import io.exilius.model.Projectile;
 import io.exilius.model.SoundType;
@@ -239,6 +241,7 @@ public class PlayerHandler {
 				playerLoggingIn.initialized = true;
 				playerLoggingIn.finishLogin();
 				players[slot].isActive = true;
+				DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(playerLoggingIn);
 				if (!playerLoggingIn.isBot()) {
 					Server.getLogging().batchWrite(new LoginLog("Logged in", playerLoggingIn));
 				}
@@ -283,6 +286,7 @@ public class PlayerHandler {
 		processLogoutQueue();
 		processQueuedActions();
 
+
 		nonNullStream().forEach(player -> {
 			if (player.isReadyToLogout() || kickAllPlayers) {
 				player.destruct();
@@ -307,9 +311,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				if (player.playerFollowingIndex > 0) {
 					player.getPA().followPlayer();
@@ -321,9 +322,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.process();
 			} catch (Exception e) {
@@ -331,9 +329,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.attacking.stopCombatMovement();
 				player.postProcessing();
@@ -344,9 +339,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.processCombat();
 				player.getPA().sendXpDrops();
@@ -357,9 +349,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.getDamageQueue().execute();
 			} catch (Exception e) {
@@ -367,9 +356,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.update();
 			} catch (Exception e) {
@@ -377,9 +363,6 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
-		});
-
-		onlinePlayers.forEach(player -> {
 			try {
 				player.clearUpdateFlags();
 			} catch (Exception e) {
@@ -387,7 +370,11 @@ public class PlayerHandler {
 				e.printStackTrace();
 				player.forceLogout();
 			}
+			if (player.getOpenInterface() == DailyTaskInterface.interfaceId) {
+				DailyTaskInterface.Companion.open(player);
+			}
 		});
+
 
 		// Reset npcs after update packet
 		Server.npcHandler.resetUpdateFlags();

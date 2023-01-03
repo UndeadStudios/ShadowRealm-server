@@ -51,8 +51,8 @@ public class SpinMaterial {
 
 		@Override
 		public void update() {
-			if (!attachment.getItems().playerHasItem(material.required)) {
-				attachment.sendMessage("You have run out of material to spin.");
+			if (!plr.getItems().playerHasItem(material.required)) {
+				plr.sendMessage("You have run out of material to spin.");
 				this.stop();
 				return;
 			}
@@ -60,10 +60,10 @@ public class SpinMaterial {
 
 		@Override
 		public void execute() {
-			attachment.getItems().deleteItem2(material.required, 1);
-			attachment.getItems().addItem(material.result, 1);
-			attachment.getPA().addSkillXPMultiplied(material.experience, Player.playerCrafting, true);
-			attachment.startAnimation(894);
+			plr.getItems().deleteItem2(material.required, 1);
+			plr.getItems().addItem(material.result, 1);
+			plr.getPA().addSkillXPMultiplied(material.experience, Player.playerCrafting, true);
+			plr.startAnimation(894);
 		}
 
 	}

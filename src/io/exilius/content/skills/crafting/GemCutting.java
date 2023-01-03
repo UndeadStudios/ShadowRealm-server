@@ -7,7 +7,6 @@ import io.exilius.Server;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Player;
-import io.exilius.util.Misc;
 
 public class GemCutting {
 
@@ -24,7 +23,7 @@ public class GemCutting {
 
 				@Override
 				public void execute() {
-					if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+					if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 						stop();
 						return;
 					}
@@ -33,13 +32,13 @@ public class GemCutting {
 //						super.stop();
 //						return;
 //					}
-					if (attachment.getItems().playerHasItem(g.getUncut())) {
-						attachment.getItems().deleteItem2(g.getUncut(), 1);
-						attachment.getItems().addItem(g.getCut(), 1);
-						attachment.getPA().addSkillXPMultiplied(g.getExperience(), Skill.CRAFTING.getId(), true);
-						attachment.startAnimation(886);
+					if (plr.getItems().playerHasItem(g.getUncut())) {
+						plr.getItems().deleteItem2(g.getUncut(), 1);
+						plr.getItems().addItem(g.getCut(), 1);
+						plr.getPA().addSkillXPMultiplied(g.getExperience(), Skill.CRAFTING.getId(), true);
+						plr.startAnimation(886);
 					}
-					if (!attachment.getItems().playerHasItem(g.getUncut())) {
+					if (!plr.getItems().playerHasItem(g.getUncut())) {
 						stop();
 						return;
 					}
@@ -48,10 +47,10 @@ public class GemCutting {
 				@Override
 				public void stop() {
 					super.stop();
-					if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+					if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 						return;
 					}
-					attachment.stopAnimation();
+					plr.stopAnimation();
 				}
 
 			});

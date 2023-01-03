@@ -15,6 +15,7 @@ import io.exilius.content.bosses.nightmare.NightmareConstants;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
 import io.exilius.content.bosspoints.BossPoints;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.events.monsterhunt.MonsterHunt;
 import io.exilius.content.minigames.warriors_guild.AnimatedArmour;
@@ -40,6 +41,7 @@ public class NPCDeath {
     public static void dropItems(NPC npc) {
         Player c = PlayerHandler.players[npc.killedBy];
         if (c != null) {
+            if (KillLimitHandler.killHandlerEnabled) KillLimitHandler.Companion.handleNpcDeath(c, npc.getNpcId());
             dropItemsFor(npc, c, npc.getNpcId());
         }
     }

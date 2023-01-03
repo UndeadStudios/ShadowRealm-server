@@ -15,28 +15,28 @@ public class StringCrossbowEvent extends Event<Player> {
 
 	@Override
 	public void execute() {
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			stop();
 			return;
 		}
-		if (!attachment.getItems().playerHasItem(crossbow.getItem()) || !attachment.getItems().playerHasItem(9438)) {
+		if (!plr.getItems().playerHasItem(crossbow.getItem()) || !plr.getItems().playerHasItem(9438)) {
 			stop();
 			return;
 		}
-		attachment.startAnimation(crossbow.getAnimation());
-		attachment.getItems().deleteItem2(crossbow.getItem(), 1);
-		attachment.getItems().deleteItem2(9438, 1);
-		attachment.getItems().addItem(crossbow.getProduct(), 1);
-		attachment.getPA().addSkillXPMultiplied((int) crossbow.getExperience(), Skill.FLETCHING.getId(), true);
+		plr.startAnimation(crossbow.getAnimation());
+		plr.getItems().deleteItem2(crossbow.getItem(), 1);
+		plr.getItems().deleteItem2(9438, 1);
+		plr.getItems().addItem(crossbow.getProduct(), 1);
+		plr.getPA().addSkillXPMultiplied((int) crossbow.getExperience(), Skill.FLETCHING.getId(), true);
 	}
 
 	@Override
 	public void stop() {
 		super.stop();
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			return;
 		}
-		attachment.stopAnimation();
+		plr.stopAnimation();
 	}
 
 }

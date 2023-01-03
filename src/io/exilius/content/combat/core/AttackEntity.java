@@ -5,6 +5,7 @@ import io.exilius.Server;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hydra.HydraStage;
 import io.exilius.content.bosses.nightmare.attack.Spores;
+import io.exilius.content.combat.death.kill_limiter.KillLimitHandler;
 import io.exilius.content.combat.magic.CombatSpellData;
 import io.exilius.content.combat.magic.MagicRequirements;
 import io.exilius.content.combat.magic.SanguinestiStaff;
@@ -168,15 +169,17 @@ public class AttackEntity {
 
     public boolean attackEntityCheck(Entity targetEntity, boolean sendMessages) {
         determineCombatStyle();
-        if (targetEntity.isNPC()) {
-            return AttackNpcCheck.check(attacker, targetEntity, sendMessages);
-        } else {
-            return AttackPlayerCheck.check(attacker, targetEntity, sendMessages);
+            if (targetEntity.isNPC()) {
+                return AttackNpcCheck.check(attacker, targetEntity, sendMessages);
+            } else {
+                return AttackPlayerCheck.check(attacker, targetEntity, sendMessages);
+            }
         }
-    }
+
 
     public void attackEntity(Entity targetEntity) {
-        if (targetEntity == null || !attackEntityCheck(targetEntity, true) || attacker.teleTimer > 0 || attacker.respawnTimer > 0
+
+        if (targetEntity == null || !attackEntityCheck(targetEntity, true) || !KillLimitHandler.Companion.allowAttackRequest(attacker, targetEntity) || attacker.teleTimer > 0 || attacker.respawnTimer > 0
                 || targetEntity.getHealth().getMaximumHealth() <= 0 || targetEntity.isDead) {
             //attacker.stopMovement();
             reset();

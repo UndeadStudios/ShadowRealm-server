@@ -11,11 +11,11 @@ public class NightmareStaffEvent extends Event<Player> {
 
     @Override
     public void execute() {
-        if (attachment == null || attachment.isDisconnected()) {
+        if (plr == null || plr.isDisconnected()) {
             super.stop();
             return;
         }
-        if (attachment.playerEquipment[Player.playerWeapon] != 24424) {
+        if (plr.playerEquipment[Player.playerWeapon] != 24424) {
             super.stop();
             return;
         }

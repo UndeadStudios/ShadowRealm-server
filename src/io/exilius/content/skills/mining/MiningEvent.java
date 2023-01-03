@@ -110,28 +110,28 @@ public class MiningEvent extends Event<Player> {
 
 	@Override
 	public void update() {
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			stop();
 			return;
 		}
-		if (!attachment.getItems().playerHasItem(pickaxe.getItemId()) && !attachment.getItems().isWearingItem(pickaxe.getItemId())) {
-			attachment.sendMessage("That is strange! The pickaxe could not be found.");
+		if (!plr.getItems().playerHasItem(pickaxe.getItemId()) && !plr.getItems().isWearingItem(pickaxe.getItemId())) {
+			plr.sendMessage("That is strange! The pickaxe could not be found.");
 			stop();
 			return;
 		}
 
-		if (attachment.getItems().playerHasItem(9699, 250)) {
-			attachment.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
-			attachment.nextChat = -1;
+		if (plr.getItems().playerHasItem(9699, 250)) {
+			plr.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			plr.nextChat = -1;
 			return;
 		}
-		if (attachment.getItems().playerHasItem(9698, 250)) {
-			attachment.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
-			attachment.nextChat = -1;
+		if (plr.getItems().playerHasItem(9698, 250)) {
+			plr.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
+			plr.nextChat = -1;
 			return;
 		}
-		if (attachment.getItems().freeSlots() == 0) {
-			attachment.getDH().sendStatement("You have no more free slots.");
+		if (plr.getItems().freeSlots() == 0) {
+			plr.getDH().sendStatement("You have no more free slots.");
 			stop();
 			return;
 		}
@@ -142,19 +142,19 @@ public class MiningEvent extends Event<Player> {
 //		}
 		if (objectId > 0) {
 			if (Server.getGlobalObjects().exists(mineral.getDepleteObject(), location.getX(), location.getY(), location.getZ()) && mineral.isDepletable()) {
-				attachment.sendMessage("This vein contains no more minerals.");
+				plr.sendMessage("This vein contains no more minerals.");
 				stop();
 				return;
 			}
 		} else {
 			if (npc == null || npc.isDead()) {
-				attachment.sendMessage("This vein contains no more minerals.");
+				plr.sendMessage("This vein contains no more minerals.");
 				stop();
 				return;
 			}
 		}
 		if (super.getElapsedTicks() - lastAnimation > ANIMATION_CYCLE_DELAY) {
-			attachment.startAnimation(pickaxe.getAnimation());
+			plr.startAnimation(pickaxe.getAnimation());
 			lastAnimation = super.getElapsedTicks();
 		}
 	}
@@ -180,16 +180,16 @@ public class MiningEvent extends Event<Player> {
 		int pieces = 0;
 		int face = 0;
 		for (int i = 0; i < prospectorOutfit.length; i++) {
-			if (attachment.getItems().isWearingItem(prospectorOutfit[i])) {
+			if (plr.getItems().isWearingItem(prospectorOutfit[i])) {
 				pieces += 6;
 			}
 		}
-		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
+		if (plr == null || plr.isDisconnected() || plr.getSession() == null) {
 			stop();
 			return;
 		}
 		if (mineral.isDepletable()) {
-			Optional<WorldObject> worldObject = attachment.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(objectId, location.getX(), location.getY(), 0);
+			Optional<WorldObject> worldObject = plr.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(objectId, location.getX(), location.getY(), 0);
 			if (worldObject.isPresent()) {
 				face = worldObject.get().getFace();
 			}
@@ -212,14 +212,14 @@ public class MiningEvent extends Event<Player> {
 				ShootingStar.CRASHED_STAR.getStarObject().incrementPickAmount();
 			}
 		}
-		attachment.facePosition(location.getX(), location.getY());
-		Achievements.increase(attachment, AchievementType.MINE, 1);
-		foeArtefact(attachment);
-		if (Boundary.isIn(attachment, Boundary.RESOURCE_AREA)) {
+		plr.facePosition(location.getX(), location.getY());
+		Achievements.increase(plr, AchievementType.MINE, 1);
+		foeArtefact(plr);
+		if (Boundary.isIn(plr, Boundary.RESOURCE_AREA)) {
 			if (Misc.random(20) == 5) {
 				int randomAmount = 1;
-				attachment.sendMessage("You received " + randomAmount + " pkp while mining!");
-				attachment.getItems().addItem(2996, randomAmount);
+				plr.sendMessage("You received " + randomAmount + " pkp while mining!");
+				plr.getItems().addItem(2996, randomAmount);
 			}
 		}
 		
@@ -227,115 +227,115 @@ public class MiningEvent extends Event<Player> {
 		 * Experience calculation
 		 */
 		osrsExperience = mineral.getExperience() + mineral.getExperience() / 10 * pieces;
-		attachment.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.MINING.getId(), true);
+		plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.MINING.getId(), true);
 		switch (mineral) {
 		case ADAMANT:
 			break;
 		case COAL:
 			case COAL2:
-			if (Boundary.isIn(attachment, Boundary.RELLEKKA_BOUNDARY)) {
-				attachment.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
+			if (Boundary.isIn(plr, Boundary.RELLEKKA_BOUNDARY)) {
+				plr.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
 			}
 			break;
 		case COPPER:
 			break;
 		case ESSENCE:
-			attachment.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MINE_ESSENCE);
+			plr.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MINE_ESSENCE);
 			break;
 		case GEM:
-			attachment.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.MINE_GEM_FAL);
+			plr.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.MINE_GEM_FAL);
 			break;
 		case GOLD:
 			case GOLD2:
-			if (Boundary.isIn(attachment, Boundary.TZHAAR_CITY_BOUNDARY)) {
-				attachment.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.MINE_GOLD_KAR);
+			if (Boundary.isIn(plr, Boundary.TZHAAR_CITY_BOUNDARY)) {
+				plr.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.MINE_GOLD_KAR);
 			}
-			if (Boundary.isIn(attachment, Boundary.RELLEKKA_BOUNDARY)) {
+			if (Boundary.isIn(plr, Boundary.RELLEKKA_BOUNDARY)) {
 			}
 			break;
 		case IRON:
 			case IRON2:
-			if (attachment.getPosition().inWild()) {
-				attachment.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_IRON_WILD);
+			if (plr.getPosition().inWild()) {
+				plr.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_IRON_WILD);
 			}
-			if (Boundary.isIn(attachment, Boundary.VARROCK_BOUNDARY)) {
-				attachment.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MINE_IRON);
+			if (Boundary.isIn(plr, Boundary.VARROCK_BOUNDARY)) {
+				plr.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MINE_IRON);
 			}
-			if (Boundary.isIn(attachment, Boundary.AL_KHARID_BOUNDARY)) {
-				attachment.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
+			if (Boundary.isIn(plr, Boundary.AL_KHARID_BOUNDARY)) {
+				plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
 			}
 			break;
 			case MITHRIL2:
-			if (attachment.getPosition().inWild()) {
-				attachment.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_MITHRIL_WILD);
+			if (plr.getPosition().inWild()) {
+				plr.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_MITHRIL_WILD);
 			}
 			break;
 		case TIN:
 			break;
 		case CLAY:
 			case CLAY2:
-			attachment.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.MINE_CLAY);
+			plr.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.MINE_CLAY);
 			break;
 		default:
 			break;
 		
 		}
-		int amount = SkillcapePerks.MINING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment) ? 2 :
-					attachment.getRechargeItems().hasItem(13104) && Misc.random(9) == 2 ? 2 :
-					attachment.getRechargeItems().hasItem(13105) && Misc.random(8) == 2 ? 2 :
-					attachment.getRechargeItems().hasItem(13106) && Misc.random(6) == 2 ? 2 :
-					attachment.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
+		int amount = SkillcapePerks.MINING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 :
+					plr.getRechargeItems().hasItem(13104) && Misc.random(9) == 2 ? 2 :
+					plr.getRechargeItems().hasItem(13105) && Misc.random(8) == 2 ? 2 :
+					plr.getRechargeItems().hasItem(13106) && Misc.random(6) == 2 ? 2 :
+					plr.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
 		if (!(mineral.getBarName().contains("star"))) {
-			attachment.getItems().addItem(mineral.getMineralReturn().generate(), amount);
-			attachment.sendMessage("You manage to mine some "+mineral.name().toLowerCase()+" ore.");
+			plr.getItems().addItem(mineral.getMineralReturn().generate(), amount);
+			plr.sendMessage("You manage to mine some "+mineral.name().toLowerCase()+" ore.");
 		} else {
 			if(ShootingStar.MAXIMUM_MINING_AMOUNT == 0){
-				attachment.sendMessage("The Star run out of star dust.");
+				plr.sendMessage("The Star run out of star dust.");
 				ShootingStar.despawn(false);
-				attachment.getPA().stopSkilling();
+				plr.getPA().stopSkilling();
 				ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
-				attachment.stopAnimation();
+				plr.stopAnimation();
 				stop();
 				return;
 			}
-			attachment.getItems().addItem(25527, 1);
+			plr.getItems().addItem(25527, 1);
 			ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
 			//attachment.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
 			if (Misc.random(200) == 5) {
-				attachment.sendMessage("You received Star fragment while mining the star!");
-				attachment.getItems().addItem(25547, 1);
+				plr.sendMessage("You received Star fragment while mining the star!");
+				plr.getItems().addItem(25547, 1);
 			}
 		}
 		int itemId = mineral.getMineralReturn().generate();
-		if ((SkillcapePerks.MINING.isWearing(attachment) || SkillcapePerks.isWearingMaxCape(attachment)) && attachment.getItems().freeSlots() < 2) {
-			attachment.sendMessage("You have run out of inventory space.");
+		if ((SkillcapePerks.MINING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2) {
+			plr.sendMessage("You have run out of inventory space.");
 			stop();
 			return;
 		}
-		if (attachment.getItems().playerHasItem(9699, 250)) {
-			attachment.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
-			attachment.nextChat = -1;
+		if (plr.getItems().playerHasItem(9699, 250)) {
+			plr.getDH().sendStatement("You have 250 burned essence please use them before continuing.");
+			plr.nextChat = -1;
 			return;
 		}
-		if (attachment.getItems().playerHasItem(9698, 250)) {
-			attachment.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
-			attachment.nextChat = -1;
+		if (plr.getItems().playerHasItem(9698, 250)) {
+			plr.getDH().sendStatement("You have 250 burning ore please burn them before continuing.");
+			plr.nextChat = -1;
 			return;
 		}
 
-		attachment.getItems().addItem(itemId, amount);
+		plr.getItems().addItem(itemId, amount);
 
 		if (mineral == Mineral.GEM) {
 			if (itemId == 6571) {
-				PlayerHandler.executeGlobalMessage("@pur@" + attachment.getDisplayNameFormatted() + " received a drop: " +
+				PlayerHandler.executeGlobalMessage("@pur@" + plr.getDisplayNameFormatted() + " received a drop: " +
 						"" + ItemDef.forId(itemId).getName() + " x " + amount + " from a <col=E9362B>Gem Rock</col>@pur@.");
 			}
 		}
 
 		if (!mineral.getBarName().equalsIgnoreCase("none")) {
 			if (Misc.random(2) == 0) {
-				if (attachment.getItems().isWearingItem(13243) || attachment.getItems().playerHasItem(13243)) {
-					Smelting.startSmelting(attachment, mineral.getBarName(), "ONE", "INFERNAL");
+				if (plr.getItems().isWearingItem(13243) || plr.getItems().playerHasItem(13243)) {
+					Smelting.startSmelting(plr, mineral.getBarName(), "ONE", "INFERNAL");
 					return;
 				}
 			}
@@ -361,7 +361,7 @@ public class MiningEvent extends Event<Player> {
 			default:
 				break;
 		}
-		if (attachment.fasterCluesScroll) {
+		if (plr.fasterCluesScroll) {
 			dropRate = dropRate*2;
 		}
 		int clueAmount = 1;
@@ -371,41 +371,41 @@ public class MiningEvent extends Event<Player> {
 		if (Misc.random(mineral.getPetChance() / dropRate) == 10 ) {
 			switch (Misc.random(2)) {
 			case 0:
-				attachment.getItems().addItemUnderAnyCircumstance(20358, clueAmount);
+				plr.getItems().addItemUnderAnyCircumstance(20358, clueAmount);
 				break;
 				
 			case 1:
-				attachment.getItems().addItemUnderAnyCircumstance(20360, clueAmount);
+				plr.getItems().addItemUnderAnyCircumstance(20360, clueAmount);
 				break;
 			case 2:
-				attachment.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
+				plr.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
 				break;
 
 			}
-			attachment.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
+			plr.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
 		}
 
 			if (Misc.random(mineral.getPetChance()) / dropRate == 10) {
-				attachment.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
-				attachment.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
+				plr.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
+				plr.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
 			}
 
-		int petRate = attachment.skillingPetRateScroll ? (int) (mineral.getPetChance() * .75) : mineral.getPetChance();
-		if (Misc.random(petRate) == 2 && attachment.getItems().getItemCount(13321, false) == 0
-				&& attachment.petSummonId != 7439) {
-			PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + attachment.getDisplayName()
+		int petRate = plr.skillingPetRateScroll ? (int) (mineral.getPetChance() * .75) : mineral.getPetChance();
+		if (Misc.random(petRate) == 2 && plr.getItems().getItemCount(13321, false) == 0
+				&& plr.petSummonId != 7439) {
+			PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + plr.getDisplayName()
 					+ "</col> mined a rock and formed the <col=CC0000>Rock golem</col> pet!");
-			attachment.getCollectionLog().handleDrop(attachment, 5, 13321, 1);
-			attachment.getItems().addItemUnderAnyCircumstance(13321, 1);
+			plr.getCollectionLog().handleDrop(plr, 5, 13321, 1);
+			plr.getItems().addItemUnderAnyCircumstance(13321, 1);
 		}
 	}
 
 	@Override
 	public void stop() {
 		super.stop();
-		if (attachment == null) {
+		if (plr == null) {
 			return;
 		}
-		attachment.stopAnimation();
+		plr.stopAnimation();
 	}
 }

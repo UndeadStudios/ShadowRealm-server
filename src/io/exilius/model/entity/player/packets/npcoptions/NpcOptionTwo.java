@@ -71,7 +71,7 @@ public class NpcOptionTwo {
 				break;
 			case 3101:
 				player.sawmill = true;
-				Sawmill.OpemSawMill(player);
+				Sawmill.openSawMill(player);
 				break;
 			case 10633:
 				player.getShops().openShop(65);

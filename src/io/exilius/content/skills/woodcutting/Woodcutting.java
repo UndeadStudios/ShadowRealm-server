@@ -1,6 +1,8 @@
 package io.exilius.content.skills.woodcutting;
 
 import io.exilius.Server;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 

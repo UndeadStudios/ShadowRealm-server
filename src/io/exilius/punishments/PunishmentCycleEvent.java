@@ -17,9 +17,9 @@ public class PunishmentCycleEvent extends Event<Punishments> {
 
 	@Override
 	public void update() {
-		Map<PunishmentType, List<Punishment>> punishments = attachment.getPunishments();
-		Queue<Punishment> add = attachment.getAddQueue();
-		Queue<Punishment> remove = attachment.getRemoveQueue();
+		Map<PunishmentType, List<Punishment>> punishments = plr.getPunishments();
+		Queue<Punishment> add = plr.getAddQueue();
+		Queue<Punishment> remove = plr.getRemoveQueue();
 		List<PunishmentType> typesUpdated = new ArrayList<>();
 
 		if (!add.isEmpty()) {
@@ -51,7 +51,7 @@ public class PunishmentCycleEvent extends Event<Punishments> {
 
 	@Override
 	public void execute() {
-		for (Entry<PunishmentType, List<Punishment>> entry : attachment.getPunishments().entrySet()) {
+		for (Entry<PunishmentType, List<Punishment>> entry : plr.getPunishments().entrySet()) {
 			List<Punishment> punishments = entry.getValue();
 
 			for (Punishment punishment : punishments) {

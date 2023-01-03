@@ -13,13 +13,13 @@ public class PoisonResistanceEvent extends Event<Entity> {
 
 	@Override
 	public void execute() {
-		if (attachment == null) {
+		if (plr == null) {
 			super.stop();
 			return;
 		}
 		super.stop();
 
-		Health health = attachment.getHealth();
+		Health health = plr.getHealth();
 		health.removeNonsusceptible(HealthStatus.POISON);
 	}
 

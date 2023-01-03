@@ -72,7 +72,7 @@ public class PlayerSave {
 
     /**
      * Tells us whether or not the player exists for the specified name.
-     * 
+     *
      * @param name
      * @return
      */
@@ -121,7 +121,8 @@ public class PlayerSave {
         try {
             characterfile = new BufferedReader(new FileReader(getSaveDirectory() + playerName.toLowerCase() + ".txt"));
             characterFileExists = true;
-        } catch (FileNotFoundException ignored) { }
+        } catch (FileNotFoundException ignored) {
+        }
 
         if (!characterFileExists) {
             return LoadGameResult.NEW_PLAYER;
@@ -165,161 +166,163 @@ public class PlayerSave {
                         }
                     }
                     switch (ReadMode) {
-                    case 1: 
-                        if (token.equals("character-password")) {
-                            try {
-                                if (PasswordHashing.check(p.playerPass, token2)) {
-                                    playerPass = token2;
-                                } else {
-                                    if (Server.isDebug()) {
-                                        System.out.println("Invalid password but server is in debug mode so it\'s ignored.");
-                                    } else return LoadGameResult.INVALID_CREDENTIALS;
-                                }
-                            } catch (IllegalArgumentException e) {
-                                logger.error("Error while loading {}", playerName, e);
-                                e.printStackTrace();
-                                return LoadGameResult.ERROR_OCCURRED;
-                            }
-                        }
-                        break;
-                    case 2: 
-                        if (token.equals("character-height")) {
-                            p.heightLevel = Integer.parseInt(token2);
-                        } else if (token.equals("character-hp")) {
-                            p.getHealth().setCurrentHealth(Integer.parseInt(token2));
-                            if (p.getHealth().getCurrentHealth() <= 0) {
-                                p.getHealth().setCurrentHealth(10);
-                            }
-                        } else if (token.equals("character-mac-address")) {
-                            if (!p.getMacAddress().equalsIgnoreCase(token2)) {
-                                if (!Configuration.DISABLE_CHANGE_ADDRESS_CAPTCHA && !passedCaptcha)
-                                    return LoadGameResult.REQUIRE_CAPTCHA;
-                                p.setAddressChanged("mac", token2, p.getMacAddress(), true);
-                            }
-                        } else if (token.equals("character-ip-address")) {
-                            if (!p.getIpAddress().equalsIgnoreCase(token2)) {
-                                p.setAddressChanged("ip", token2, p.getIpAddress(), false);
-                            }
-                        } else if (token.equals("character-uuid")) {
-                            if (!p.getUUID().equalsIgnoreCase(token2)) {
-                                if (!Configuration.DISABLE_CHANGE_ADDRESS_CAPTCHA && !passedCaptcha)
-                                    return LoadGameResult.REQUIRE_CAPTCHA;
-                                p.setAddressChanged("uuid", token2, p.getUUID(), true);
-                            }
-                        } else if (token.equals("play-time")) {
-                            p.playTime = Integer.parseInt(token2);
-                        } else if (token.equals("last-clan")) {
-                            p.setLastClanChat(token2);
-                        } else if (token.equals("require-pin-unlock")) {
-                            boolean requiresPinUnlock = Boolean.parseBoolean(token2);
-                            if (requiresPinUnlock) {
-                                p.setRequiresPinUnlock(requiresPinUnlock);
-                                p.addQueuedLoginAction(plr -> {
-                                    if (!plr.getBankPin().hasBankPin()) {
-                                        plr.setRequiresPinUnlock(false);
-                                        return;
+                        case 1:
+                            if (token.equals("character-password")) {
+                                try {
+                                    if (PasswordHashing.check(p.playerPass, token2)) {
+                                        playerPass = token2;
+                                    } else {
+                                        if (Server.isDebug()) {
+                                            System.out.println("Invalid password but server is in debug mode so it\'s ignored.");
+                                        } else return LoadGameResult.INVALID_CREDENTIALS;
                                     }
-                                    plr.sendMessage("<img=2>@dre@Your pin is required because you logged in from a different computer");
-                                    plr.sendMessage("<img=2>@dre@and logged off without entering your account pin.");
-                                    plr.sendMessage("<img=2>@red@If this wasn't you then you should secure your account!");
-                                });
-                            }
-                        } else if (token.equals("character-specRestore")) {
-                            p.specRestore = Integer.parseInt(token2);
-                        } else if (token.equals("character-posx")) {
-                            p.setTeleportToX(p.tourneyX = (Integer.parseInt(token2) <= 0 ? 3210 : Integer.parseInt(token2)));
-                        } else if (token.equals("character-posy")) {
-                            p.setTeleportToY(p.tourneyY = (Integer.parseInt(token2) <= 0 ? 3424 : Integer.parseInt(token2)));
-                        } else if (token.equals("character-rights")) {
-                            p.getRights().setPrimary(Right.get(Integer.parseInt(token2)));
-                        } else if (token.equals("character-rights-secondary")) {
-                            // sound like an activist group
-                            Arrays.stream(token3).forEach(right -> p.getRights().add(Right.get(Integer.parseInt(right))));
-                        } else if (token.equals("migration-version")) {
-                            p.setMigrationVersion(Integer.parseInt(token2));
-                        } else if (token.equals("revert-option")) {
-                            p.setRevertOption(token2);
-                        } else if (token.equals("revert-delay")) {
-                            p.setRevertModeDelay(Long.parseLong(token2));
-                        } else if (token.equals("dropBoostStart")) {
-                            p.dropBoostStart = Long.parseLong(token2);
-                        } else if (token.equals("mode")) {
-                            ModeType type = null;
-                            try {
-                                if (token2.equals("NONE")) {
-                                    token2 = "REGULAR";
+                                } catch (IllegalArgumentException e) {
+                                    logger.error("Error while loading {}", playerName, e);
+                                    e.printStackTrace();
+                                    return LoadGameResult.ERROR_OCCURRED;
                                 }
-                                type = Enum.valueOf(ModeType.class, token2);
-                            } catch (NullPointerException | IllegalArgumentException e) {
-                                e.printStackTrace();
-                                logger.error("Error while loading mode {}, type={}", playerName, token2, e);
-                                break;
                             }
-                            Mode mode = Mode.forType(type);
-                            p.setMode(mode);
-                        } else if (token.equals("character-title-updated")) {
-                            p.getTitles().setCurrentTitle(token2);
-                        } else if (token.equals("receivedVoteStreakRefund")) {
-                            p.setReceivedVoteStreakRefund(Boolean.parseBoolean(token2));
-                        } else if (token.equals("experience-counter")) {
-                            p.setExperienceCounter(Long.parseLong(token2));
-                        } else if (token.equals("connected-from")) {
-                            p.lastConnectedFrom.add(token2);
-                        } else if (token.equals("printAttackStats")) {
-                            p.setPrintAttackStats(Boolean.parseBoolean(token2));
-                        } else if (token.equals("printDefenceStats")) {
-                            p.setPrintDefenceStats(Boolean.parseBoolean(token2));
-                        } else if (token.equals("collectCoins")) {
-                            p.collectCoins = Boolean.parseBoolean(token2);
-                        } else if (token.equals("horror-from-deep")) {
-                            p.horrorFromDeep = Integer.parseInt(token2);
-                        } else if (token.equals("breakVials")) {
-                            p.breakVials = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasclaimedsanta")) {
-                            p.hasclaimedsanta = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasclaimedredphat")) {
-                            p.hasclaimedredphat = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasclaimedYelphat")) {
-                            p.hasclaimedYelphat = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasclaimedbluphat")) {
-                            p.hasclaimedbluphat = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasclaimedgrephat")) {
-                            p.hasclaimedgrephat = Boolean.parseBoolean(token2);
-                        } else if(token.equals("hasclaimedpurphat")) {
-                            p.hasclaimedpurphat = Boolean.parseBoolean(token2);
-                        } else if(token.equals("hasclaimedwhiphat")) {
-                            p.hasclaimedwhiphat = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasfirstfloorDone")) {
-                            p.hasfirstfloorDone = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hassecoundfloorDone")) {
-                            p.hassecoundfloorDone = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasthirdfloorDone")) {
-                            p.hasthirdfloorDone = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasfourthfloorDone")) {
-                            p.hasfourthfloorDone = Boolean.parseBoolean(token2);
-                        } else if (token.equals("absorption")) {
-                            p.absorption = Boolean.parseBoolean(token2);
-                        } else if (token.equals("announce")) {
-                            p.announce = Boolean.parseBoolean(token2);
-                        } else if (token.equals("lootPickUp")) {
-                            p.lootPickUp = Boolean.parseBoolean(token2);
-                        } else if (token.equals("barbarian")) {
-                            p.barbarian = Boolean.parseBoolean(token2);
-                        } else if (token.equals("run-energy")) {
-                            p.setRunEnergy(Integer.parseInt(token2), false);
-                        } else if (token.equals("bank-pin")) {
-                            p.getBankPin().setPin(token2);
-                        } else if (token.equals("bank-pin-cancellation")) {
-                            p.getBankPin().setAppendingCancellation(Boolean.parseBoolean(token2));
-                        } else if (token.equals("bank-pin-cancellation-delay")) {
-                            p.getBankPin().setCancellationDelay(Long.parseLong(token2));
-                        } else if (token.equals("bank-pin-unlock-delay")) {
-                            p.getBankPin().setUnlockDelay(Long.parseLong(token2));
-                        } else if (token.equals("placeholders")) {
-                            p.placeHolders = Boolean.parseBoolean(token2);
-                        }
+                            break;
+                        case 2:
+                            if (token.equals("character-height")) {
+                                p.heightLevel = Integer.parseInt(token2);
+                            } else if (token.equals("character-hp")) {
+                                p.getHealth().setCurrentHealth(Integer.parseInt(token2));
+                                if (p.getHealth().getCurrentHealth() <= 0) {
+                                    p.getHealth().setCurrentHealth(10);
+                                }
+                            } else if (token.equals("character-mac-address")) {
+                                if (!p.getMacAddress().equalsIgnoreCase(token2)) {
+                                    if (!Configuration.DISABLE_CHANGE_ADDRESS_CAPTCHA && !passedCaptcha)
+                                        return LoadGameResult.REQUIRE_CAPTCHA;
+                                    p.setAddressChanged("mac", token2, p.getMacAddress(), true);
+                                }
+                            } else if (token.equals("character-ip-address")) {
+                                if (!p.getIpAddress().equalsIgnoreCase(token2)) {
+                                    p.setAddressChanged("ip", token2, p.getIpAddress(), false);
+                                }
+                            } else if (token.equals("character-uuid")) {
+                                if (!p.getUUID().equalsIgnoreCase(token2)) {
+                                    if (!Configuration.DISABLE_CHANGE_ADDRESS_CAPTCHA && !passedCaptcha)
+                                        return LoadGameResult.REQUIRE_CAPTCHA;
+                                    p.setAddressChanged("uuid", token2, p.getUUID(), true);
+                                }
+                            } else if (token.equals("play-time")) {
+                                p.playTime = Integer.parseInt(token2);
+                            } else if (token.equals("last-clan")) {
+                                p.setLastClanChat(token2);
+                            } else if (token.equals("require-pin-unlock")) {
+                                boolean requiresPinUnlock = Boolean.parseBoolean(token2);
+                                if (requiresPinUnlock) {
+                                    p.setRequiresPinUnlock(requiresPinUnlock);
+                                    p.addQueuedLoginAction(plr -> {
+                                        if (!plr.getBankPin().hasBankPin()) {
+                                            plr.setRequiresPinUnlock(false);
+                                            return;
+                                        }
+                                        plr.sendMessage("<img=2>@dre@Your pin is required because you logged in from a different computer");
+                                        plr.sendMessage("<img=2>@dre@and logged off without entering your account pin.");
+                                        plr.sendMessage("<img=2>@red@If this wasn't you then you should secure your account!");
+                                    });
+                                }
+                            } else if (token.equals("character-specRestore")) {
+                                p.specRestore = Integer.parseInt(token2);
+                            } else if (token.equals("character-posx")) {
+                                p.setTeleportToX(p.tourneyX = (Integer.parseInt(token2) <= 0 ? 3210 : Integer.parseInt(token2)));
+                            } else if (token.equals("character-posy")) {
+                                p.setTeleportToY(p.tourneyY = (Integer.parseInt(token2) <= 0 ? 3424 : Integer.parseInt(token2)));
+                            } else if (token.equals("character-rights")) {
+                                p.getRights().setPrimary(Right.get(Integer.parseInt(token2)));
+                            } else if (token.equals("character-rights-secondary")) {
+                                // sound like an activist group
+                                Arrays.stream(token3).forEach(right -> p.getRights().add(Right.get(Integer.parseInt(right))));
+                            } else if (token.equals("migration-version")) {
+                                p.setMigrationVersion(Integer.parseInt(token2));
+                            } else if (token.equals("revert-option")) {
+                                p.setRevertOption(token2);
+                            } else if (token.equals("revert-delay")) {
+                                p.setRevertModeDelay(Long.parseLong(token2));
+                            } else if (token.equals("dropBoostStart")) {
+                                p.dropBoostStart = Long.parseLong(token2);
+                            } else if (token.equals("mode")) {
+                                ModeType type = null;
+                                try {
+                                    if (token2.equals("NONE")) {
+                                        token2 = "REGULAR";
+                                    }
+                                    type = Enum.valueOf(ModeType.class, token2);
+                                } catch (NullPointerException | IllegalArgumentException e) {
+                                    e.printStackTrace();
+                                    logger.error("Error while loading mode {}, type={}", playerName, token2, e);
+                                    break;
+                                }
+                                Mode mode = Mode.forType(type);
+                                p.setMode(mode);
+                            } else if (token.equals("character-title-updated")) {
+                                p.getTitles().setCurrentTitle(token2);
+                            } else if (token.equals("receivedVoteStreakRefund")) {
+                                p.setReceivedVoteStreakRefund(Boolean.parseBoolean(token2));
+                            } else if (token.equals("experience-counter")) {
+                                p.setExperienceCounter(Long.parseLong(token2));
+                            } else if (token.equals("connected-from")) {
+                                p.lastConnectedFrom.add(token2);
+                            } else if (token.equals("printAttackStats")) {
+                                p.setPrintAttackStats(Boolean.parseBoolean(token2));
+                            } else if (token.equals("printDefenceStats")) {
+                                p.setPrintDefenceStats(Boolean.parseBoolean(token2));
+                            } else if (token.equals("collectCoins")) {
+                                p.collectCoins = Boolean.parseBoolean(token2);
+                            } else if (token.equals("horror-from-deep")) {
+                                p.horrorFromDeep = Integer.parseInt(token2);
+                            } else if (token.equals("breakVials")) {
+                                p.breakVials = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedsanta")) {
+                                p.hasclaimedsanta = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedredphat")) {
+                                p.hasclaimedredphat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedYelphat")) {
+                                p.hasclaimedYelphat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedbluphat")) {
+                                p.hasclaimedbluphat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedgrephat")) {
+                                p.hasclaimedgrephat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedpurphat")) {
+                                p.hasclaimedpurphat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasclaimedwhiphat")) {
+                                p.hasclaimedwhiphat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasfirstfloorDone")) {
+                                p.hasfirstfloorDone = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hassecoundfloorDone")) {
+                                p.hassecoundfloorDone = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasthirdfloorDone")) {
+                                p.hasthirdfloorDone = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasfourthfloorDone")) {
+                                p.hasfourthfloorDone = Boolean.parseBoolean(token2);
+                            } else if (token.equals("absorption")) {
+                                p.absorption = Boolean.parseBoolean(token2);
+                            } else if (token.equals("announce")) {
+                                p.announce = Boolean.parseBoolean(token2);
+                            } else if (token.equals("lootPickUp")) {
+                                p.lootPickUp = Boolean.parseBoolean(token2);
+                            } else if (token.equals("barbarian")) {
+                                p.barbarian = Boolean.parseBoolean(token2);
+                            } else if (token.equals("run-energy")) {
+                                p.setRunEnergy(Integer.parseInt(token2), false);
+                            } else if (token.equals("bank-pin")) {
+                                p.getBankPin().setPin(token2);
+                            } else if (token.equals("bank-pin-cancellation")) {
+                                p.getBankPin().setAppendingCancellation(Boolean.parseBoolean(token2));
+                            } else if (token.equals("bank-pin-cancellation-delay")) {
+                                p.getBankPin().setCancellationDelay(Long.parseLong(token2));
+                            } else if (token.equals("bank-pin-unlock-delay")) {
+                                p.getBankPin().setUnlockDelay(Long.parseLong(token2));
+                            } else if (token.equals("placeholders")) {
+                                p.placeHolders = Boolean.parseBoolean(token2);
+                            } else if (token.equals("daily-task-start-time")) {
+                                p.setDailyTaskStartTime(Long.parseLong(token2));
+                            }
 
-                        /** Mage Only Raid Perks Start **/
+                            /** Mage Only Raid Perks Start **/
                         /*else if (token.equals("airPerkLvl")) {
                             p.airPerkLvl = (Integer.parseInt(token2));
                         }else if (token.equals("firePerkLvl")) {
@@ -331,784 +334,797 @@ public class PlayerSave {
                         }/*
                         /** Mage Only Raid Perks End **/
 
-                        else if (token.equals("show-drop-warning")) {
-                            p.setDropWarning(Boolean.parseBoolean(token2));
-                        } else if (token.equals("show-alch-warning")) {
-                            p.setAlchWarning(Boolean.parseBoolean(token2));
-                        } else if (token.equals("hourly-box-toggle")) {
-                            p.setHourlyBoxToggle(Boolean.parseBoolean(token2));
-                        } else if (token.equals("fractured-crystal-toggle")) {
-                            p.setFracturedCrystalToggle(Boolean.parseBoolean(token2));
-                        } else if (token.equals("accept-aid")) {
-                            p.acceptAid = Boolean.parseBoolean(token2);
-                        } else if (token.equals("did-you-know")) {
-                            p.didYouKnow = Boolean.parseBoolean(token2);
-                        } else if (token.equals("spectating-tournament")) {
-                            p.spectatingTournament = Boolean.parseBoolean(token2);
-                        } else if (token.equals("raidPoints")) {
-                            p.setRaidPoints(Integer.parseInt(token2));
-                        } else if (token.equals("raidCount")) {
-                            p.raidCount = (Integer.parseInt(token2));
-                        } else if (token.equals("tobCompletions")) {
-                            p.tobCompletions = (Integer.parseInt(token2));
-                        } else if (token.equals("lootvalue")) {
-                            p.lootValue = Integer.parseInt(token2);
-                        } else if (token.equals("startPack")) {
-                            p.setCompletedTutorial(Boolean.parseBoolean(token2));
-                        } else if (token.equals("unlockedUltimateChest")) {
-                            p.unlockedUltimateChest = Boolean.parseBoolean(token2);
-                        } else if (token.equals("rigour")) {
-                            p.rigour = Boolean.parseBoolean(token2);
-                        } else if (token.equals("augury")) {
-                            p.augury = Boolean.parseBoolean(token2);
-                        } else if (token.equals("crystalDrop")) {
-                            p.crystalDrop = Boolean.parseBoolean(token2);
-                        } else if (token.equals("spawnedbarrows")) {
-                            p.spawnedbarrows = Boolean.parseBoolean(token2);
-                        } else if (token.equals("membershipStartDate")) {
-                            p.startDate = Integer.parseInt(token2);
-                        } else if (token.equals("XpScrollTime")) {
-                            p.xpScrollTicks = Long.parseLong(token2);
-                        } else if (token.equals("fasterClueScrollTime")) {
-                            p.fasterCluesTicks = Long.parseLong(token2);
-                        } else if (token.equals("skillingPetRateTime")) {
-                            p.skillingPetRateTicks = Long.parseLong(token2);
-                        } else if (token.equals("serpHelmCombatTicks")) {
-                            p.serpHelmCombatTicks = Long.parseLong(token2);
-                        } else if (token.equals("gargoyleStairsUnlocked")) {
-                            p.gargoyleStairsUnlocked = Boolean.parseBoolean(token2);
-                        } else if (token.equals("controller")) {
-                            p.setLoadedController(ControllerRepository.get(token2));
-                        } else if (token.equals("joinedIronmanGroup")) {
-                            p.setJoinedIronmanGroup(Boolean.parseBoolean(token2));
-                        } else if (token.equals("receivedCalendarCosmeticJune2021")) {
-                            p.setReceivedCalendarCosmeticJune2021(Boolean.parseBoolean(token2));
-                        } else if (token.equals("firstAchievementLoginJune2021")) {
-                            p.getAchievements().setFirstAchievementLoginJune2021(Boolean.parseBoolean(token2));
-                        } else if (token.equals("XpScroll")) {
-                            p.xpScroll = Boolean.parseBoolean(token2);
-                        } else if (token.equals("skillingPetRateScroll")) {
-                            p.skillingPetRateScroll = Boolean.parseBoolean(token2);
-                        } else if (token.equals("fasterClueScroll")) {
-                            p.fasterCluesScroll = Boolean.parseBoolean(token2);
-                        }else if (token.equals("activeMageArena2BossId")) {
-                            for (int i = 0; i < p.activeMageArena2BossId.length; i++) p.activeMageArena2BossId[i] = Integer.parseInt(token3[i]);
-                        }else if (token.equals("mageArena2SpawnsX")) {
-                            for (int i = 0; i < p.mageArena2SpawnsX.length; i++) p.mageArena2SpawnsX[i] = Integer.parseInt(token3[i]);
-                        }else if (token.equals("mageArena2SpawnsY")) {
-                            for (int i = 0; i < p.mageArena2SpawnsY.length; i++) p.mageArena2SpawnsY[i] = Integer.parseInt(token3[i]);
-                        }else if (token.equals("mageArenaBossKills")) {
-                            for (int i = 0; i < p.mageArenaBossKills.length; i++) p.mageArenaBossKills[i] = Boolean.parseBoolean(token3[i]);
-                        }else if (token.equals("mageArena2Stages")) {
-                            for (int i = 0; i < p.mageArena2Stages.length; i++) p.mageArena2Stages[i] = Boolean.parseBoolean(token3[i]);
-                        }else if (token.equals("flamesOfZamorakCasts")) {
-                            p.flamesOfZamorakCasts = (Integer.parseInt(token2));
-                        }else if (token.equals("flamesOfZamorakCasts")) {
-                            p.flamesOfZamorakCasts = (Integer.parseInt(token2));
-                        }else if (token.equals("clawsOfGuthixCasts")) {
-                            p.clawsOfGuthixCasts = (Integer.parseInt(token2));
-                        }else if (token.equals("saradominStrikeCasts")) {
-                            p.saradominStrikeCasts = (Integer.parseInt(token2));
-                        }else if (token.equals("exchangeP")) {
-                            p.exchangePoints = (Integer.parseInt(token2));
-                        }else if (token.equals("totalEarnedExchangeP")) {
-                            p.totalEarnedExchangePoints = (Integer.parseInt(token2));
-                        } else if (token.equals("usedFc")) {
-                            p.usedFc = Boolean.parseBoolean(token2);
-                        } else if (token.equals("lastLoginDate")) {
-                            p.lastLoginDate = Integer.parseInt(token2);
-                        } else if (token.equals("summonId")) {
-                            p.petSummonId = Integer.parseInt(token2);
-                        } else if (token.equals("has-npc")) {
-                            p.hasFollower = Boolean.parseBoolean(token2);
-                        } else if (token.equals("setPin")) {
-                            p.setPin = Boolean.parseBoolean(token2);
-                        } else if (token.equals("hasBankpin")) {
-                            p.hasBankpin = Boolean.parseBoolean(token2);
-                        } else if (token.equals("rfd-gloves")) {
-                            p.rfdGloves = Integer.parseInt(token2);
-                        } else if (token.equals("wave-id")) {
-                            p.waveId = Integer.parseInt(token2);
-                        } else if (token.equals("wave-type")) {
-                            p.fightCavesWaveType = Integer.parseInt(token2);
-                        } else if (token.equals("wave-info")) {
-                            for (int i = 0; i < p.waveInfo.length; i++) p.waveInfo[i] = Integer.parseInt(token3[i]);
-                        } else if (token.equals("help-cc-muted")) {
-                            p.setHelpCcMuted(Boolean.parseBoolean(token2));
-                        } else if (token.equals("gamble-banned")) {
-                            p.setGambleBanned(Boolean.parseBoolean(token2));
-                        } else if (token.equals("usedReferral")) {
-                            p.usedReferral = Boolean.parseBoolean(token2);
-                        } else if (token.equals("counters")) {
-                            for (int i = 0; i < p.counters.length; i++) p.counters[i] = Integer.parseInt(token3[i]);
-                        } else if (token.equals("max-cape")) {
-                            for (int i = 0; i < p.maxCape.length; i++) p.maxCape[i] = Boolean.parseBoolean(token3[i]);
-                        } else if (token.equals("master-clue-reqs")) {
-                            for (int i = 0; i < p.masterClueRequirement.length; i++) p.masterClueRequirement[i] = Integer.parseInt(token3[i]);
-                        } else if (token.equals("quickprayer")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.getQuick().getNormal()[j] = Boolean.parseBoolean(token3[j]);
+                            else if (token.equals("show-drop-warning")) {
+                                p.setDropWarning(Boolean.parseBoolean(token2));
+                            } else if (token.equals("show-alch-warning")) {
+                                p.setAlchWarning(Boolean.parseBoolean(token2));
+                            } else if (token.equals("hourly-box-toggle")) {
+                                p.setHourlyBoxToggle(Boolean.parseBoolean(token2));
+                            } else if (token.equals("fractured-crystal-toggle")) {
+                                p.setFracturedCrystalToggle(Boolean.parseBoolean(token2));
+                            } else if (token.equals("accept-aid")) {
+                                p.acceptAid = Boolean.parseBoolean(token2);
+                            } else if (token.equals("did-you-know")) {
+                                p.didYouKnow = Boolean.parseBoolean(token2);
+                            } else if (token.equals("spectating-tournament")) {
+                                p.spectatingTournament = Boolean.parseBoolean(token2);
+                            } else if (token.equals("raidPoints")) {
+                                p.setRaidPoints(Integer.parseInt(token2));
+                            } else if (token.equals("raidCount")) {
+                                p.raidCount = (Integer.parseInt(token2));
+                            } else if (token.equals("tobCompletions")) {
+                                p.tobCompletions = (Integer.parseInt(token2));
+                            } else if (token.equals("lootvalue")) {
+                                p.lootValue = Integer.parseInt(token2);
+                            } else if (token.equals("startPack")) {
+                                p.setCompletedTutorial(Boolean.parseBoolean(token2));
+                            } else if (token.equals("unlockedUltimateChest")) {
+                                p.unlockedUltimateChest = Boolean.parseBoolean(token2);
+                            } else if (token.equals("rigour")) {
+                                p.rigour = Boolean.parseBoolean(token2);
+                            } else if (token.equals("augury")) {
+                                p.augury = Boolean.parseBoolean(token2);
+                            } else if (token.equals("crystalDrop")) {
+                                p.crystalDrop = Boolean.parseBoolean(token2);
+                            } else if (token.equals("spawnedbarrows")) {
+                                p.spawnedbarrows = Boolean.parseBoolean(token2);
+                            } else if (token.equals("membershipStartDate")) {
+                                p.startDate = Integer.parseInt(token2);
+                            } else if (token.equals("XpScrollTime")) {
+                                p.xpScrollTicks = Long.parseLong(token2);
+                            } else if (token.equals("fasterClueScrollTime")) {
+                                p.fasterCluesTicks = Long.parseLong(token2);
+                            } else if (token.equals("skillingPetRateTime")) {
+                                p.skillingPetRateTicks = Long.parseLong(token2);
+                            } else if (token.equals("serpHelmCombatTicks")) {
+                                p.serpHelmCombatTicks = Long.parseLong(token2);
+                            } else if (token.equals("gargoyleStairsUnlocked")) {
+                                p.gargoyleStairsUnlocked = Boolean.parseBoolean(token2);
+                            } else if (token.equals("controller")) {
+                                p.setLoadedController(ControllerRepository.get(token2));
+                            } else if (token.equals("joinedIronmanGroup")) {
+                                p.setJoinedIronmanGroup(Boolean.parseBoolean(token2));
+                            } else if (token.equals("receivedCalendarCosmeticJune2021")) {
+                                p.setReceivedCalendarCosmeticJune2021(Boolean.parseBoolean(token2));
+                            } else if (token.equals("firstAchievementLoginJune2021")) {
+                                p.getAchievements().setFirstAchievementLoginJune2021(Boolean.parseBoolean(token2));
+                            } else if (token.equals("XpScroll")) {
+                                p.xpScroll = Boolean.parseBoolean(token2);
+                            } else if (token.equals("skillingPetRateScroll")) {
+                                p.skillingPetRateScroll = Boolean.parseBoolean(token2);
+                            } else if (token.equals("fasterClueScroll")) {
+                                p.fasterCluesScroll = Boolean.parseBoolean(token2);
+                            } else if (token.equals("activeMageArena2BossId")) {
+                                for (int i = 0; i < p.activeMageArena2BossId.length; i++)
+                                    p.activeMageArena2BossId[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("mageArena2SpawnsX")) {
+                                for (int i = 0; i < p.mageArena2SpawnsX.length; i++)
+                                    p.mageArena2SpawnsX[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("mageArena2SpawnsY")) {
+                                for (int i = 0; i < p.mageArena2SpawnsY.length; i++)
+                                    p.mageArena2SpawnsY[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("mageArenaBossKills")) {
+                                for (int i = 0; i < p.mageArenaBossKills.length; i++)
+                                    p.mageArenaBossKills[i] = Boolean.parseBoolean(token3[i]);
+                            } else if (token.equals("mageArena2Stages")) {
+                                for (int i = 0; i < p.mageArena2Stages.length; i++)
+                                    p.mageArena2Stages[i] = Boolean.parseBoolean(token3[i]);
+                            } else if (token.equals("flamesOfZamorakCasts")) {
+                                p.flamesOfZamorakCasts = (Integer.parseInt(token2));
+                            } else if (token.equals("flamesOfZamorakCasts")) {
+                                p.flamesOfZamorakCasts = (Integer.parseInt(token2));
+                            } else if (token.equals("clawsOfGuthixCasts")) {
+                                p.clawsOfGuthixCasts = (Integer.parseInt(token2));
+                            } else if (token.equals("saradominStrikeCasts")) {
+                                p.saradominStrikeCasts = (Integer.parseInt(token2));
+                            } else if (token.equals("exchangeP")) {
+                                p.exchangePoints = (Integer.parseInt(token2));
+                            } else if (token.equals("totalEarnedExchangeP")) {
+                                p.totalEarnedExchangePoints = (Integer.parseInt(token2));
+                            } else if (token.equals("usedFc")) {
+                                p.usedFc = Boolean.parseBoolean(token2);
+                            } else if (token.equals("lastLoginDate")) {
+                                p.lastLoginDate = Integer.parseInt(token2);
+                            } else if (token.equals("summonId")) {
+                                p.petSummonId = Integer.parseInt(token2);
+                            } else if (token.equals("has-npc")) {
+                                p.hasFollower = Boolean.parseBoolean(token2);
+                            } else if (token.equals("setPin")) {
+                                p.setPin = Boolean.parseBoolean(token2);
+                            } else if (token.equals("hasBankpin")) {
+                                p.hasBankpin = Boolean.parseBoolean(token2);
+                            } else if (token.equals("rfd-gloves")) {
+                                p.rfdGloves = Integer.parseInt(token2);
+                            } else if (token.equals("wave-id")) {
+                                p.waveId = Integer.parseInt(token2);
+                            } else if (token.equals("wave-type")) {
+                                p.fightCavesWaveType = Integer.parseInt(token2);
+                            } else if (token.equals("wave-info")) {
+                                for (int i = 0; i < p.waveInfo.length; i++) p.waveInfo[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("help-cc-muted")) {
+                                p.setHelpCcMuted(Boolean.parseBoolean(token2));
+                            } else if (token.equals("gamble-banned")) {
+                                p.setGambleBanned(Boolean.parseBoolean(token2));
+                            } else if (token.equals("usedReferral")) {
+                                p.usedReferral = Boolean.parseBoolean(token2);
+                            } else if (token.equals("counters")) {
+                                for (int i = 0; i < p.counters.length; i++) p.counters[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("max-cape")) {
+                                for (int i = 0; i < p.maxCape.length; i++)
+                                    p.maxCape[i] = Boolean.parseBoolean(token3[i]);
+                            } else if (token.equals("master-clue-reqs")) {
+                                for (int i = 0; i < p.masterClueRequirement.length; i++)
+                                    p.masterClueRequirement[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("quickprayer")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.getQuick().getNormal()[j] = Boolean.parseBoolean(token3[j]);
+                                }
+                            } else if (token.equals("zulrah-best-time")) {
+                                p.setBestZulrahTime(Long.parseLong(token2));
+                            } else if (token.equals("last-kill-cap-reset")) {
+                                p.setLastKillReset(Long.parseLong(token2));
                             }
-                        } else if (token.equals("zulrah-best-time")) {
-                            p.setBestZulrahTime(Long.parseLong(token2));
-                        } else if (token.equals("inferno-best-time")) {
-                            p.setInfernoBestTime(Long.parseLong(token2));
-                        } else if (token.equals("toxic-staff")) {
-                            p.setToxicStaffOfTheDeadCharge(Integer.parseInt(token2));
-                        } else if (token.equals("toxic-pipe-ammo")) {
-                            p.setToxicBlowpipeAmmo(Integer.parseInt(token2));
-                        } else if (token.equals("toxic-pipe-amount")) {
-                            p.setToxicBlowpipeAmmoAmount(Integer.parseInt(token2));
-                        } else if (token.equals("toxic-pipe-charge")) {
-                            p.setToxicBlowpipeCharge(Integer.parseInt(token2));
-                        } else if (token.equals("serpentine-helm")) {
-                            p.setSerpentineHelmCharge(Integer.parseInt(token2));
-                        } else if (token.equals("trident-of-the-seas")) {
-                            p.setTridentCharge(Integer.parseInt(token2));
-                        } else if (token.equals("trident-of-the-swamp")) {
-                            p.setToxicTridentCharge(Integer.parseInt(token2));
-                        } else if (token.equals("arclight-charge")) {
-                            p.setArcLightCharge(Integer.parseInt(token2));
-                        } else if (token.equals("sang-staff-charge")) {
-                            p.setSangStaffCharge(Integer.parseInt(token2));
-                        } else if (token.equals("bryophyta-charge")) {
-                            p.bryophytaStaffCharges = Integer.parseInt(token2);
-                        } else if (token.equals("crystal-bow-shots")) {
-                            p.crystalBowArrowCount = Integer.parseInt(token2);
-                        } else if (token.equals("skull-timer")) {
-                            p.skullTimer = Integer.parseInt(token2);
-                        } else if (token.equals("magic-book")) {
-                            p.playerMagicBook = Integer.parseInt(token2);
-                        } else if (token.equals("slayer-recipe") || token.equals("slayer-helmet")) {
-                            // Backwards compat
-                            if (Boolean.parseBoolean(token2)) {
-                                p.getSlayer().getUnlocks().add(SlayerUnlock.MALEVOLENT_MASQUERADE);
-                            }
-                        } else if (token.equals("bigger-boss-tasks")) {
-                            p.getSlayer().setBiggerBossTasks(Boolean.parseBoolean(token2));
-                        } else if (token.equals("cerberus-route")) {
-                            p.getSlayer().setCerberusRoute(Boolean.parseBoolean(token2));
-                        } else if (token.equals("superior-slayer")) {
-                            // Backwards compat
-                            if (Boolean.parseBoolean(token2)) {
-                                p.getSlayer().getUnlocks().add(SlayerUnlock.BIGGER_AND_BADDER);
-                            }
-                        } else if (token.equals("slayer-tasks-completed")) {
-                            p.slayerTasksCompleted = Integer.parseInt(token2);
-                        } else if (token.equals("claimedReward")) {
-                            p.claimedReward = Boolean.parseBoolean(token2);
-                        } else if (token.equals("special-amount")) {
-                            p.specAmount = Double.parseDouble(token2);
-                        } else if (token.equals("prayer-amount")) {
-                            p.prayerPoint = Double.parseDouble(token2);
-                        } else if (token.equals("dragonfire-shield-charge")) {
-                            p.setDragonfireShieldCharge(Integer.parseInt(token2));
-                        } else if (token.equals("autoRet")) {
-                            p.autoRet = Integer.parseInt(token2);
-                        } else if (token.equals("pkp")) {
-                            p.pkp = Integer.parseInt(token2);
-                        } else if (token.equals("elvenCharge")) {
-                            p.elvenCharge = Integer.parseInt(token2);
-                        } else if (token.equals("slaughterCharge")) {
-                            p.slaughterCharge = Integer.parseInt(token2);
-                        } else if (token.equals("pages")) {
-                            int oldTomeOfFirePages = Integer.parseInt(token2) / 20;
-                            p.getTomeOfFire().addPages(oldTomeOfFirePages);
-                        } else if (token.equals("tomeOfFirePages")) {
-                            int pages = Integer.parseInt(token2);
-                            p.getTomeOfFire().setPages(pages);
-                        } else if (token.equals("tomeOfFireCharges")) {
-                            int charges = Integer.parseInt(token2);
-                            p.getTomeOfFire().setCharges(charges);
-                        } else if (token.equals("ether")) {
-                            p.braceletEtherCount = Integer.parseInt(token2);
-                        } else if (token.equals("bossPoints")) {
-                            p.bossPoints = Integer.parseInt(token2);
-                        } else if (token.equals("bossPointsRefund")) {
-                            p.bossPointsRefund = Boolean.parseBoolean(token2);
-                        } else if (token.equals("tWin")) {
-                            p.tournamentWins = Integer.parseInt(token2);
-                        } else if (token.equals("tPoint")) {
-                            p.tournamentPoints = Integer.parseInt(token2);
-                        } else if (token.equals("streak")) {
-                            p.streak = Integer.parseInt(token2);
-                        } else if (token.equals("outlastKills")) {
-                            p.outlastKills = Integer.parseInt(token2);
-                        } else if (token.equals("outlastDeaths")) {
-                            p.outlastDeaths = Integer.parseInt(token2);
-                        } else if (token.equals("tournamentTotalGames")) {
-                            p.tournamentTotalGames = Integer.parseInt(token2);
-                        } else if (token.equals("xpMaxSkills")) {
-                            p.xpMaxSkills = Integer.parseInt(token2);
-                        } else if (token.equals("LastLoginYear")) {
-                            p.LastLoginYear = Integer.parseInt(token2);
-                        } else if (token.equals("LastLoginMonth")) {
-                            p.LastLoginMonth = Integer.parseInt(token2);
-                        } else if (token.equals("LastLoginDate")) {
-                            p.LastLoginDate = Integer.parseInt(token2);
-                        } else if (token.equals("LoginStreak")) {
-                            p.LoginStreak = Integer.parseInt(token2);
-                        } else if (token.equals("RefU")) {
-                            p.referallFlag = Integer.parseInt(token2);
-                        } else if (token.equals("LoyP")) {
-                            p.loyaltyPoints = Integer.parseInt(token2);
-                        } else if (token.equals("votePoints")) {
-                            p.votePoints = Integer.parseInt(token2);
-                        } else if (token.equals("dayv")) {
-                            p.voteKeyPoints = Integer.parseInt(token2);
-                        } else if (token.equals("bloodPoints")) {
-                            p.bloodPoints = Integer.parseInt(token2);
-                        } else if (token.equals("donP")) {
-                            p.donatorPoints = Integer.parseInt(token2);
-                        } else if (token.equals("donA")) {
-                            p.amDonated = Integer.parseInt(token2);
-                        } else if (token.equals("prestige-points")) {
-                            p.prestigePoints = Integer.parseInt(token2);
-                        } else if (token.equals("xpLock")) {
-                            p.expLock = Boolean.parseBoolean(token2);
-                        } else if (line.startsWith("KC")) {
-                            p.killcount = Integer.parseInt(token2);
-                        } else if (line.startsWith("DC")) {
-                            p.deathcount = Integer.parseInt(token2);
-                        } else if (token.equals("pc-points")) {
-                            p.pcPoints = Integer.parseInt(token2);
-                        } else if (token.equals("total-raids")) {
-                            p.totalRaidsFinished = Integer.parseInt(token2);
-                        } else if (token.equals("total-rogue-kills")) {
-                            p.getBH().setTotalRogueKills(Integer.parseInt(token2));
-                        } else if (token.equals("total-hunter-kills")) {
-                            p.getBH().setTotalHunterKills(Integer.parseInt(token2));
-                        } else if (token.equals("target-time-delay")) {
-                            p.getBH().setDelayedTargetTicks(Integer.parseInt(token2));
-                        } else if (token.equals("bh-penalties")) {
-                            p.getBH().setWarnings(Integer.parseInt(token2));
-                        } else if (token.equals("bh-bounties")) {
-                            p.getBH().setBounties(Integer.parseInt(token2));
-                        } else if (token.equals("statistics-visible")) {
-                            p.getBH().setStatisticsVisible(Boolean.parseBoolean(token2));
-                        } else if (token.equals("spell-accessible")) {
-                            p.getBH().setSpellAccessible(Boolean.parseBoolean(token2));
-                        } else if (token.equals("killStreak")) {
-                            p.killStreak = Integer.parseInt(token2);
-                        } else if (token.equals("achievement-points")) {
-                            p.getAchievements().setPoints(Integer.parseInt(token2));
-                        } else if (token.equals("d1Complete")) { //Varrock claimed
-                            p.d1Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d2Complete")) {
-                            p.d2Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d3Complete")) {
-                            p.d3Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d4Complete")) {
-                            p.d4Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d5Complete")) {
-                            p.d5Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d6Complete")) {
-                            p.d6Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d7Complete")) {
-                            p.d7Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d8Complete")) {
-                            p.d8Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d9Complete")) {
-                            p.d9Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d10Complete")) {
-                            p.d10Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("d11Complete")) {
-                            p.d11Complete = Boolean.parseBoolean(token2);
-                        } else if (token.equals("VarrockClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getVarrockDiary().claim(diff));
-                            }
-                        } else if (token.equals("ArdougneClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getArdougneDiary().claim(diff));
-                            }
-                        } else if (token.equals("DesertClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getDesertDiary().claim(diff));
-                            }
-                        } else if (token.equals("FaladorClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getFaladorDiary().claim(diff));
-                            }
-                        } else if (token.equals("FremennikClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getFremennikDiary().claim(diff));
-                            }
-                        } else if (token.equals("KandarinClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getKandarinDiary().claim(diff));
-                            }
-                        } else if (token.equals("KaramjaClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getKaramjaDiary().claim(diff));
-                            }
-                        } else if (token.equals("LumbridgeClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getLumbridgeDraynorDiary().claim(diff));
-                            }
-                        } else if (token.equals("MorytaniaClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getMorytaniaDiary().claim(diff));
-                            }
-                        } else if (token.equals("WesternClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getWesternDiary().claim(diff));
-                            }
-                        } else if (token.equals("WildernessClaimedDiaries")) {
-                            String[] claimedRaw = token2.split(",");
-                            for (String claim : claimedRaw) {
-                                DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getWildernessDiary().claim(diff));
-                            }
-                        } else if (token.equals("diaries")) {
-                            try {
+                            else if (token.equals("inferno-best-time")) {
+                                p.setInfernoBestTime(Long.parseLong(token2));
+                            } else if (token.equals("toxic-staff")) {
+                                p.setToxicStaffOfTheDeadCharge(Integer.parseInt(token2));
+                            } else if (token.equals("toxic-pipe-ammo")) {
+                                p.setToxicBlowpipeAmmo(Integer.parseInt(token2));
+                            } else if (token.equals("toxic-pipe-amount")) {
+                                p.setToxicBlowpipeAmmoAmount(Integer.parseInt(token2));
+                            } else if (token.equals("toxic-pipe-charge")) {
+                                p.setToxicBlowpipeCharge(Integer.parseInt(token2));
+                            } else if (token.equals("serpentine-helm")) {
+                                p.setSerpentineHelmCharge(Integer.parseInt(token2));
+                            } else if (token.equals("trident-of-the-seas")) {
+                                p.setTridentCharge(Integer.parseInt(token2));
+                            } else if (token.equals("trident-of-the-swamp")) {
+                                p.setToxicTridentCharge(Integer.parseInt(token2));
+                            } else if (token.equals("arclight-charge")) {
+                                p.setArcLightCharge(Integer.parseInt(token2));
+                            } else if (token.equals("sang-staff-charge")) {
+                                p.setSangStaffCharge(Integer.parseInt(token2));
+                            } else if (token.equals("bryophyta-charge")) {
+                                p.bryophytaStaffCharges = Integer.parseInt(token2);
+                            } else if (token.equals("crystal-bow-shots")) {
+                                p.crystalBowArrowCount = Integer.parseInt(token2);
+                            } else if (token.equals("skull-timer")) {
+                                p.skullTimer = Integer.parseInt(token2);
+                            } else if (token.equals("magic-book")) {
+                                p.playerMagicBook = Integer.parseInt(token2);
+                            } else if (token.equals("slayer-recipe") || token.equals("slayer-helmet")) {
+                                // Backwards compat
+                                if (Boolean.parseBoolean(token2)) {
+                                    p.getSlayer().getUnlocks().add(SlayerUnlock.MALEVOLENT_MASQUERADE);
+                                }
+                            } else if (token.equals("bigger-boss-tasks")) {
+                                p.getSlayer().setBiggerBossTasks(Boolean.parseBoolean(token2));
+                            } else if (token.equals("cerberus-route")) {
+                                p.getSlayer().setCerberusRoute(Boolean.parseBoolean(token2));
+                            } else if (token.equals("superior-slayer")) {
+                                // Backwards compat
+                                if (Boolean.parseBoolean(token2)) {
+                                    p.getSlayer().getUnlocks().add(SlayerUnlock.BIGGER_AND_BADDER);
+                                }
+                            } else if (token.equals("slayer-tasks-completed")) {
+                                p.slayerTasksCompleted = Integer.parseInt(token2);
+                            } else if (token.equals("claimedReward")) {
+                                p.claimedReward = Boolean.parseBoolean(token2);
+                            } else if (token.equals("special-amount")) {
+                                p.specAmount = Double.parseDouble(token2);
+                            } else if (token.equals("prayer-amount")) {
+                                p.prayerPoint = Double.parseDouble(token2);
+                            } else if (token.equals("dragonfire-shield-charge")) {
+                                p.setDragonfireShieldCharge(Integer.parseInt(token2));
+                            } else if (token.equals("autoRet")) {
+                                p.autoRet = Integer.parseInt(token2);
+                            } else if (token.equals("pkp")) {
+                                p.pkp = Integer.parseInt(token2);
+                            } else if (token.equals("elvenCharge")) {
+                                p.elvenCharge = Integer.parseInt(token2);
+                            } else if (token.equals("slaughterCharge")) {
+                                p.slaughterCharge = Integer.parseInt(token2);
+                            } else if (token.equals("pages")) {
+                                int oldTomeOfFirePages = Integer.parseInt(token2) / 20;
+                                p.getTomeOfFire().addPages(oldTomeOfFirePages);
+                            } else if (token.equals("tomeOfFirePages")) {
+                                int pages = Integer.parseInt(token2);
+                                p.getTomeOfFire().setPages(pages);
+                            } else if (token.equals("tomeOfFireCharges")) {
+                                int charges = Integer.parseInt(token2);
+                                p.getTomeOfFire().setCharges(charges);
+                            } else if (token.equals("ether")) {
+                                p.braceletEtherCount = Integer.parseInt(token2);
+                            } else if (token.equals("bossPoints")) {
+                                p.bossPoints = Integer.parseInt(token2);
+                            } else if (token.equals("bossPointsRefund")) {
+                                p.bossPointsRefund = Boolean.parseBoolean(token2);
+                            } else if (token.equals("tWin")) {
+                                p.tournamentWins = Integer.parseInt(token2);
+                            } else if (token.equals("tPoint")) {
+                                p.tournamentPoints = Integer.parseInt(token2);
+                            } else if (token.equals("streak")) {
+                                p.streak = Integer.parseInt(token2);
+                            } else if (token.equals("outlastKills")) {
+                                p.outlastKills = Integer.parseInt(token2);
+                            } else if (token.equals("outlastDeaths")) {
+                                p.outlastDeaths = Integer.parseInt(token2);
+                            } else if (token.equals("tournamentTotalGames")) {
+                                p.tournamentTotalGames = Integer.parseInt(token2);
+                            } else if (token.equals("xpMaxSkills")) {
+                                p.xpMaxSkills = Integer.parseInt(token2);
+                            } else if (token.equals("LastLoginYear")) {
+                                p.LastLoginYear = Integer.parseInt(token2);
+                            } else if (token.equals("LastLoginMonth")) {
+                                p.LastLoginMonth = Integer.parseInt(token2);
+                            } else if (token.equals("LastLoginDate")) {
+                                p.LastLoginDate = Integer.parseInt(token2);
+                            } else if (token.equals("LoginStreak")) {
+                                p.LoginStreak = Integer.parseInt(token2);
+                            } else if (token.equals("RefU")) {
+                                p.referallFlag = Integer.parseInt(token2);
+                            } else if (token.equals("LoyP")) {
+                                p.loyaltyPoints = Integer.parseInt(token2);
+                            } else if (token.equals("votePoints")) {
+                                p.votePoints = Integer.parseInt(token2);
+                            } else if (token.equals("dayv")) {
+                                p.voteKeyPoints = Integer.parseInt(token2);
+                            } else if (token.equals("bloodPoints")) {
+                                p.bloodPoints = Integer.parseInt(token2);
+                            } else if (token.equals("daily-task-points")) {
+                                p.dailyTaskPoints = Integer.parseInt(token2);
+                            } else if (token.equals("donP")) {
+                                p.donatorPoints = Integer.parseInt(token2);
+                            } else if (token.equals("donA")) {
+                                p.amDonated = Integer.parseInt(token2);
+                            } else if (token.equals("prestige-points")) {
+                                p.prestigePoints = Integer.parseInt(token2);
+                            } else if (token.equals("xpLock")) {
+                                p.expLock = Boolean.parseBoolean(token2);
+                            } else if (line.startsWith("KC")) {
+                                p.killcount = Integer.parseInt(token2);
+                            } else if (line.startsWith("DC")) {
+                                p.deathcount = Integer.parseInt(token2);
+                            } else if (token.equals("pc-points")) {
+                                p.pcPoints = Integer.parseInt(token2);
+                            } else if (token.equals("total-raids")) {
+                                p.totalRaidsFinished = Integer.parseInt(token2);
+                            } else if (token.equals("total-rogue-kills")) {
+                                p.getBH().setTotalRogueKills(Integer.parseInt(token2));
+                            } else if (token.equals("total-hunter-kills")) {
+                                p.getBH().setTotalHunterKills(Integer.parseInt(token2));
+                            } else if (token.equals("target-time-delay")) {
+                                p.getBH().setDelayedTargetTicks(Integer.parseInt(token2));
+                            } else if (token.equals("bh-penalties")) {
+                                p.getBH().setWarnings(Integer.parseInt(token2));
+                            } else if (token.equals("bh-bounties")) {
+                                p.getBH().setBounties(Integer.parseInt(token2));
+                            } else if (token.equals("statistics-visible")) {
+                                p.getBH().setStatisticsVisible(Boolean.parseBoolean(token2));
+                            } else if (token.equals("spell-accessible")) {
+                                p.getBH().setSpellAccessible(Boolean.parseBoolean(token2));
+                            } else if (token.equals("killStreak")) {
+                                p.killStreak = Integer.parseInt(token2);
+                            } else if (token.equals("achievement-points")) {
+                                p.getAchievements().setPoints(Integer.parseInt(token2));
+                            } else if (token.equals("d1Complete")) { //Varrock claimed
+                                p.d1Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d2Complete")) {
+                                p.d2Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d3Complete")) {
+                                p.d3Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d4Complete")) {
+                                p.d4Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d5Complete")) {
+                                p.d5Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d6Complete")) {
+                                p.d6Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d7Complete")) {
+                                p.d7Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d8Complete")) {
+                                p.d8Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d9Complete")) {
+                                p.d9Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d10Complete")) {
+                                p.d10Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("d11Complete")) {
+                                p.d11Complete = Boolean.parseBoolean(token2);
+                            } else if (token.equals("VarrockClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getVarrockDiary().claim(diff));
+                                }
+                            } else if (token.equals("ArdougneClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getArdougneDiary().claim(diff));
+                                }
+                            } else if (token.equals("DesertClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getDesertDiary().claim(diff));
+                                }
+                            } else if (token.equals("FaladorClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getFaladorDiary().claim(diff));
+                                }
+                            } else if (token.equals("FremennikClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getFremennikDiary().claim(diff));
+                                }
+                            } else if (token.equals("KandarinClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getKandarinDiary().claim(diff));
+                                }
+                            } else if (token.equals("KaramjaClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getKaramjaDiary().claim(diff));
+                                }
+                            } else if (token.equals("LumbridgeClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getLumbridgeDraynorDiary().claim(diff));
+                                }
+                            } else if (token.equals("MorytaniaClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getMorytaniaDiary().claim(diff));
+                                }
+                            } else if (token.equals("WesternClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getWesternDiary().claim(diff));
+                                }
+                            } else if (token.equals("WildernessClaimedDiaries")) {
+                                String[] claimedRaw = token2.split(",");
+                                for (String claim : claimedRaw) {
+                                    DifficultyAchievementDiary.EntryDifficulty.forString(claim).ifPresent(diff -> p.getDiaryManager().getWildernessDiary().claim(diff));
+                                }
+                            } else if (token.equals("diaries")) {
+                                try {
+                                    String raw = token2;
+                                    String[] components = raw.split(",");
+                                    for (String comp : components) {
+                                        if (comp.isEmpty()) {
+                                            continue;
+                                        }
+                                        // Varrock
+                                        Optional<VarrockDiaryEntry> varrock = VarrockDiaryEntry.fromName(comp);
+                                        if (varrock.isPresent()) {
+                                            p.getDiaryManager().getVarrockDiary().nonNotifyComplete(varrock.get());
+                                        }
+                                        // Ardougne
+                                        Optional<ArdougneDiaryEntry> ardougne = ArdougneDiaryEntry.fromName(comp);
+                                        if (ardougne.isPresent()) {
+                                            p.getDiaryManager().getArdougneDiary().nonNotifyComplete(ardougne.get());
+                                        }
+                                        // Desert
+                                        Optional<DesertDiaryEntry> desert = DesertDiaryEntry.fromName(comp);
+                                        if (desert.isPresent()) {
+                                            p.getDiaryManager().getDesertDiary().nonNotifyComplete(desert.get());
+                                        }
+                                        // Falador
+                                        Optional<FaladorDiaryEntry> falador = FaladorDiaryEntry.fromName(comp);
+                                        if (falador.isPresent()) {
+                                            p.getDiaryManager().getFaladorDiary().nonNotifyComplete(falador.get());
+                                        }
+                                        // Fremennik
+                                        Optional<FremennikDiaryEntry> fremennik = FremennikDiaryEntry.fromName(comp);
+                                        if (fremennik.isPresent()) {
+                                            p.getDiaryManager().getFremennikDiary().nonNotifyComplete(fremennik.get());
+                                        }
+                                        // Kandarin
+                                        Optional<KandarinDiaryEntry> kandarin = KandarinDiaryEntry.fromName(comp);
+                                        if (kandarin.isPresent()) {
+                                            p.getDiaryManager().getKandarinDiary().nonNotifyComplete(kandarin.get());
+                                        }
+                                        // Karamja
+                                        Optional<KaramjaDiaryEntry> karamja = KaramjaDiaryEntry.fromName(comp);
+                                        if (karamja.isPresent()) {
+                                            p.getDiaryManager().getKaramjaDiary().nonNotifyComplete(karamja.get());
+                                        }
+                                        // Lumbridge
+                                        Optional<LumbridgeDraynorDiaryEntry> lumbridge = LumbridgeDraynorDiaryEntry.fromName(comp);
+                                        if (lumbridge.isPresent()) {
+                                            p.getDiaryManager().getLumbridgeDraynorDiary().nonNotifyComplete(lumbridge.get());
+                                        }
+                                        // Morytania
+                                        Optional<MorytaniaDiaryEntry> morytania = MorytaniaDiaryEntry.fromName(comp);
+                                        if (morytania.isPresent()) {
+                                            p.getDiaryManager().getMorytaniaDiary().nonNotifyComplete(morytania.get());
+                                        }
+                                        // Western
+                                        Optional<WesternDiaryEntry> western = WesternDiaryEntry.fromName(comp);
+                                        if (western.isPresent()) {
+                                            p.getDiaryManager().getWesternDiary().nonNotifyComplete(western.get());
+                                        }
+                                        // Wilderness
+                                        Optional<WildernessDiaryEntry> wilderness = WildernessDiaryEntry.fromName(comp);
+                                        if (wilderness.isPresent()) {
+                                            p.getDiaryManager().getWildernessDiary().nonNotifyComplete(wilderness.get());
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    logger.error("Error while loading {}", playerName, e);
+                                    e.printStackTrace();
+                                }
+                            } else if (token.equals("partialDiaries")) {
                                 String raw = token2;
                                 String[] components = raw.split(",");
-                                for (String comp : components) {
-                                    if (comp.isEmpty()) {
-                                        continue;
-                                    }
-                                    // Varrock
-                                    Optional<VarrockDiaryEntry> varrock = VarrockDiaryEntry.fromName(comp);
-                                    if (varrock.isPresent()) {
-                                        p.getDiaryManager().getVarrockDiary().nonNotifyComplete(varrock.get());
-                                    }
-                                    // Ardougne
-                                    Optional<ArdougneDiaryEntry> ardougne = ArdougneDiaryEntry.fromName(comp);
-                                    if (ardougne.isPresent()) {
-                                        p.getDiaryManager().getArdougneDiary().nonNotifyComplete(ardougne.get());
-                                    }
-                                    // Desert
-                                    Optional<DesertDiaryEntry> desert = DesertDiaryEntry.fromName(comp);
-                                    if (desert.isPresent()) {
-                                        p.getDiaryManager().getDesertDiary().nonNotifyComplete(desert.get());
-                                    }
-                                    // Falador
-                                    Optional<FaladorDiaryEntry> falador = FaladorDiaryEntry.fromName(comp);
-                                    if (falador.isPresent()) {
-                                        p.getDiaryManager().getFaladorDiary().nonNotifyComplete(falador.get());
-                                    }
-                                    // Fremennik
-                                    Optional<FremennikDiaryEntry> fremennik = FremennikDiaryEntry.fromName(comp);
-                                    if (fremennik.isPresent()) {
-                                        p.getDiaryManager().getFremennikDiary().nonNotifyComplete(fremennik.get());
-                                    }
-                                    // Kandarin
-                                    Optional<KandarinDiaryEntry> kandarin = KandarinDiaryEntry.fromName(comp);
-                                    if (kandarin.isPresent()) {
-                                        p.getDiaryManager().getKandarinDiary().nonNotifyComplete(kandarin.get());
-                                    }
-                                    // Karamja
-                                    Optional<KaramjaDiaryEntry> karamja = KaramjaDiaryEntry.fromName(comp);
-                                    if (karamja.isPresent()) {
-                                        p.getDiaryManager().getKaramjaDiary().nonNotifyComplete(karamja.get());
-                                    }
-                                    // Lumbridge
-                                    Optional<LumbridgeDraynorDiaryEntry> lumbridge = LumbridgeDraynorDiaryEntry.fromName(comp);
-                                    if (lumbridge.isPresent()) {
-                                        p.getDiaryManager().getLumbridgeDraynorDiary().nonNotifyComplete(lumbridge.get());
-                                    }
-                                    // Morytania
-                                    Optional<MorytaniaDiaryEntry> morytania = MorytaniaDiaryEntry.fromName(comp);
-                                    if (morytania.isPresent()) {
-                                        p.getDiaryManager().getMorytaniaDiary().nonNotifyComplete(morytania.get());
-                                    }
-                                    // Western
-                                    Optional<WesternDiaryEntry> western = WesternDiaryEntry.fromName(comp);
-                                    if (western.isPresent()) {
-                                        p.getDiaryManager().getWesternDiary().nonNotifyComplete(western.get());
-                                    }
-                                    // Wilderness
-                                    Optional<WildernessDiaryEntry> wilderness = WildernessDiaryEntry.fromName(comp);
-                                    if (wilderness.isPresent()) {
-                                        p.getDiaryManager().getWildernessDiary().nonNotifyComplete(wilderness.get());
-                                    }
-                                }
-                            } catch (Exception e) {
-                                logger.error("Error while loading {}", playerName, e);
-                                e.printStackTrace();
-                            }
-                        } else if (token.equals("partialDiaries")) {
-                            String raw = token2;
-                            String[] components = raw.split(",");
-                            try {
-                                for (String comp : components) {
-                                    if (comp.isEmpty()) {
-                                        continue;
-                                    }
-                                    String[] part = comp.split(":");
-                                    int stage = Integer.parseInt(part[1]);
-                                    //Varrock
-                                    Optional<VarrockDiaryEntry> varrock = VarrockDiaryEntry.fromName(part[0]);
-                                    if (varrock.isPresent()) {
-                                        p.getDiaryManager().getVarrockDiary().setAchievementStage(varrock.get(), stage, false);
-                                    }
-                                    //Ardougne
-                                    Optional<ArdougneDiaryEntry> ardougne = ArdougneDiaryEntry.fromName(part[0]);
-                                    if (ardougne.isPresent()) {
-                                        p.getDiaryManager().getArdougneDiary().setAchievementStage(ardougne.get(), stage, false);
-                                    }
-                                    //Desert
-                                    Optional<DesertDiaryEntry> desert = DesertDiaryEntry.fromName(part[0]);
-                                    if (desert.isPresent()) {
-                                        p.getDiaryManager().getDesertDiary().setAchievementStage(desert.get(), stage, false);
-                                    }
-                                    //Falador
-                                    Optional<FaladorDiaryEntry> falador = FaladorDiaryEntry.fromName(part[0]);
-                                    if (falador.isPresent()) {
-                                        p.getDiaryManager().getFaladorDiary().setAchievementStage(falador.get(), stage, false);
-                                    }
-                                    //Fremennik
-                                    Optional<FremennikDiaryEntry> fremennik = FremennikDiaryEntry.fromName(part[0]);
-                                    if (fremennik.isPresent()) {
-                                        p.getDiaryManager().getFremennikDiary().setAchievementStage(fremennik.get(), stage, false);
-                                    }
-                                    //Kandarin
-                                    Optional<KandarinDiaryEntry> kandarin = KandarinDiaryEntry.fromName(part[0]);
-                                    if (kandarin.isPresent()) {
-                                        p.getDiaryManager().getKandarinDiary().setAchievementStage(kandarin.get(), stage, false);
-                                    }
-                                    //Karamja
-                                    Optional<KaramjaDiaryEntry> karamja = KaramjaDiaryEntry.fromName(part[0]);
-                                    if (karamja.isPresent()) {
-                                        p.getDiaryManager().getKaramjaDiary().setAchievementStage(karamja.get(), stage, false);
-                                    }
-                                    //Lumbridge
-                                    Optional<LumbridgeDraynorDiaryEntry> lumbridge = LumbridgeDraynorDiaryEntry.fromName(part[0]);
-                                    if (lumbridge.isPresent()) {
-                                        p.getDiaryManager().getLumbridgeDraynorDiary().setAchievementStage(lumbridge.get(), stage, false);
-                                    }
-                                    //Morytania
-                                    Optional<MorytaniaDiaryEntry> morytania = MorytaniaDiaryEntry.fromName(part[0]);
-                                    if (morytania.isPresent()) {
-                                        p.getDiaryManager().getMorytaniaDiary().setAchievementStage(morytania.get(), stage, false);
-                                    }
-                                    //Western
-                                    Optional<WesternDiaryEntry> western = WesternDiaryEntry.fromName(part[0]);
-                                    if (western.isPresent()) {
-                                        p.getDiaryManager().getWesternDiary().setAchievementStage(western.get(), stage, false);
-                                    }
-                                    //Wilderness
-                                    Optional<WildernessDiaryEntry> wilderness = WildernessDiaryEntry.fromName(part[0]);
-                                    if (wilderness.isPresent()) {
-                                        p.getDiaryManager().getWildernessDiary().setAchievementStage(wilderness.get(), stage, false);
-                                    }
-                                }
-                            } catch (Exception e) {
-                                logger.error("Error while loading {}", playerName, e);
-                                e.printStackTrace();
-                            }
-                        } else if (token.equals("bonus-end")) {
-                            p.bonusXpTime = Long.parseLong(token2);
-                        } else if (token.equals("jail-end")) {
-                            p.jailEnd = Long.parseLong(token2);
-                        } else if (token.equals("mute-end")) {
-                            p.muteEnd = Long.parseLong(token2);
-                        } else if (token.equals("last-yell")) {
-                            p.lastYell = Long.parseLong(token2);
-                        } else if (token.equals("splitChat")) {
-                            p.splitChat = Boolean.parseBoolean(token2);
-                        } else if (token.equals("lastVote")) {
-                            p.setLastVote(LocalDate.ofEpochDay(Long.parseLong(token2)));
-                        } else if (token.equals("lastVotePanelPoint")) {
-                            p.setLastVotePanelPoint(LocalDate.ofEpochDay(Long.parseLong(token2)));
-                        } else if (token.equals("slayer-task")) {
-                            Optional<Task> task = SlayerMaster.get(token2);
-                            p.getSlayer().setTask(task);
-                        } else if (token.equals("konar-slayer-location")) {
-                            p.setKonarSlayerLocation(token2);
-                        } else if (token.equals("last-task")) {
-                            p.setLastTask(token2);
-                        }else if (token.equals("run-toggled")) {
-                            p.setRunningToggled(Boolean.parseBoolean(token2));
-                        } else if (token.equals("slayer-master")) {
-                            p.getSlayer().setMaster(Integer.parseInt(token2));
-                        } else if (token.equals("konar-slayer-location")) {
-                            p.setKonarSlayerLocation(token2);
-                        } else if (token.equals("slayerPoints")) {
-                            p.getSlayer().setPoints(Integer.parseInt(token2));
-                        } else if (token.equals("slayer-task-amount")) {
-                            p.getSlayer().setTaskAmount(Integer.parseInt(token2));
-                        } else if (token.equals("consecutive-tasks")) {
-                            p.getSlayer().setConsecutiveTasks(Integer.parseInt(token2));
-                        } else if (token.equals("mage-arena-points")) {
-                            p.setArenaPoints(Integer.parseInt(token2));
-                        } else if (token.equals("shayzien-assault-points")) {
-                            p.setShayPoints(Integer.parseInt(token2));
-                        } else if (token.equals("flagged")) {
-                            p.accountFlagged = Boolean.parseBoolean(token2);
-                        } else if (token.equals("keepTitle")) {
-                            p.keepTitle = Boolean.parseBoolean(token2);
-                        } else if (token.equals("killTitle")) {
-                            p.killTitle = Boolean.parseBoolean(token2);
-                        } else if (token.equals("character-historyItems")) {
-                            //System.err.println("Loading - Length of list="+token3.length+" saleSize="+p.historyItems.length);
-                            for (int j = 0; j < token3.length; j++) {
-                                p.historyItems[j] = Integer.parseInt(token3[j]);
-                                p.saleItems.add(Integer.parseInt(token3[j]));
-                            }
-                        } else if (token.equals("character-historyItemsN")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.historyItemsN[j] = Integer.parseInt(token3[j]);
-                                p.saleAmount.add(Integer.parseInt(token3[j]));
-                            }
-                        } else if (token.equals("character-historyPrice")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.historyPrice[j] = Integer.parseInt(token3[j]);
-                                p.salePrice.add(Integer.parseInt(token3[j]));
-                            }
-                        } else if (token.equals(EventCalendar.SAVE_KEY)) {
-                            if (token3.length >= 2) {
-                                for (int index = 0; index < token3.length; index += 2) {
-                                    EventChallengeKey key = EventChallengeKey.fromString(token3[index]);
-                                    if (key != null) {
-                                        int value = Integer.parseInt(token3[index + 1]);
-                                        p.getEventCalendar().set(key, value);
-                                    }
-                                }
-                            }
-                        } else if (token.equals("removed-slayer-tasks")) {
-                            String[] backing = Misc.nullToEmpty(p.getSlayer().getRemoved().length);
-                            int index = 0;
-                            for (; index < token3.length; index++) {
-                                backing[index] = token3[index];
-                            }
-                            p.getSlayer().setRemoved(backing);
-                        } else if (token.equals("slayer-unlocks")) {
-                            for (int index = 0; index < token3.length; index++) {
                                 try {
-                                    SlayerUnlock unlock = SlayerUnlock.valueOf(token3[index]);
-                                    if (unlock != null && !p.getSlayer().getUnlocks().contains(unlock)) {
-                                        p.getSlayer().getUnlocks().add(unlock);
+                                    for (String comp : components) {
+                                        if (comp.isEmpty()) {
+                                            continue;
+                                        }
+                                        String[] part = comp.split(":");
+                                        int stage = Integer.parseInt(part[1]);
+                                        //Varrock
+                                        Optional<VarrockDiaryEntry> varrock = VarrockDiaryEntry.fromName(part[0]);
+                                        if (varrock.isPresent()) {
+                                            p.getDiaryManager().getVarrockDiary().setAchievementStage(varrock.get(), stage, false);
+                                        }
+                                        //Ardougne
+                                        Optional<ArdougneDiaryEntry> ardougne = ArdougneDiaryEntry.fromName(part[0]);
+                                        if (ardougne.isPresent()) {
+                                            p.getDiaryManager().getArdougneDiary().setAchievementStage(ardougne.get(), stage, false);
+                                        }
+                                        //Desert
+                                        Optional<DesertDiaryEntry> desert = DesertDiaryEntry.fromName(part[0]);
+                                        if (desert.isPresent()) {
+                                            p.getDiaryManager().getDesertDiary().setAchievementStage(desert.get(), stage, false);
+                                        }
+                                        //Falador
+                                        Optional<FaladorDiaryEntry> falador = FaladorDiaryEntry.fromName(part[0]);
+                                        if (falador.isPresent()) {
+                                            p.getDiaryManager().getFaladorDiary().setAchievementStage(falador.get(), stage, false);
+                                        }
+                                        //Fremennik
+                                        Optional<FremennikDiaryEntry> fremennik = FremennikDiaryEntry.fromName(part[0]);
+                                        if (fremennik.isPresent()) {
+                                            p.getDiaryManager().getFremennikDiary().setAchievementStage(fremennik.get(), stage, false);
+                                        }
+                                        //Kandarin
+                                        Optional<KandarinDiaryEntry> kandarin = KandarinDiaryEntry.fromName(part[0]);
+                                        if (kandarin.isPresent()) {
+                                            p.getDiaryManager().getKandarinDiary().setAchievementStage(kandarin.get(), stage, false);
+                                        }
+                                        //Karamja
+                                        Optional<KaramjaDiaryEntry> karamja = KaramjaDiaryEntry.fromName(part[0]);
+                                        if (karamja.isPresent()) {
+                                            p.getDiaryManager().getKaramjaDiary().setAchievementStage(karamja.get(), stage, false);
+                                        }
+                                        //Lumbridge
+                                        Optional<LumbridgeDraynorDiaryEntry> lumbridge = LumbridgeDraynorDiaryEntry.fromName(part[0]);
+                                        if (lumbridge.isPresent()) {
+                                            p.getDiaryManager().getLumbridgeDraynorDiary().setAchievementStage(lumbridge.get(), stage, false);
+                                        }
+                                        //Morytania
+                                        Optional<MorytaniaDiaryEntry> morytania = MorytaniaDiaryEntry.fromName(part[0]);
+                                        if (morytania.isPresent()) {
+                                            p.getDiaryManager().getMorytaniaDiary().setAchievementStage(morytania.get(), stage, false);
+                                        }
+                                        //Western
+                                        Optional<WesternDiaryEntry> western = WesternDiaryEntry.fromName(part[0]);
+                                        if (western.isPresent()) {
+                                            p.getDiaryManager().getWesternDiary().setAchievementStage(western.get(), stage, false);
+                                        }
+                                        //Wilderness
+                                        Optional<WildernessDiaryEntry> wilderness = WildernessDiaryEntry.fromName(part[0]);
+                                        if (wilderness.isPresent()) {
+                                            p.getDiaryManager().getWildernessDiary().setAchievementStage(wilderness.get(), stage, false);
+                                        }
                                     }
                                 } catch (Exception e) {
                                     logger.error("Error while loading {}", playerName, e);
                                     e.printStackTrace();
                                 }
-                            }
-                        } else if (token.equals("extended-slayer-tasks")) {
-                            for (int index = 0; index < token3.length; index++) {
+                            } else if (token.equals("bonus-end")) {
+                                p.bonusXpTime = Long.parseLong(token2);
+                            } else if (token.equals("jail-end")) {
+                                p.jailEnd = Long.parseLong(token2);
+                            } else if (token.equals("mute-end")) {
+                                p.muteEnd = Long.parseLong(token2);
+                            } else if (token.equals("last-yell")) {
+                                p.lastYell = Long.parseLong(token2);
+                            } else if (token.equals("splitChat")) {
+                                p.splitChat = Boolean.parseBoolean(token2);
+                            } else if (token.equals("lastVote")) {
+                                p.setLastVote(LocalDate.ofEpochDay(Long.parseLong(token2)));
+                            } else if (token.equals("lastVotePanelPoint")) {
+                                p.setLastVotePanelPoint(LocalDate.ofEpochDay(Long.parseLong(token2)));
+                            } else if (token.equals("slayer-task")) {
+                                Optional<Task> task = SlayerMaster.get(token2);
+                                p.getSlayer().setTask(task);
+                            } else if (token.equals("konar-slayer-location")) {
+                                p.setKonarSlayerLocation(token2);
+                            } else if (token.equals("last-task")) {
+                                p.setLastTask(token2);
+                            } else if (token.equals("run-toggled")) {
+                                p.setRunningToggled(Boolean.parseBoolean(token2));
+                            } else if (token.equals("slayer-master")) {
+                                p.getSlayer().setMaster(Integer.parseInt(token2));
+                            } else if (token.equals("konar-slayer-location")) {
+                                p.setKonarSlayerLocation(token2);
+                            } else if (token.equals("slayerPoints")) {
+                                p.getSlayer().setPoints(Integer.parseInt(token2));
+                            } else if (token.equals("slayer-task-amount")) {
+                                p.getSlayer().setTaskAmount(Integer.parseInt(token2));
+                            } else if (token.equals("consecutive-tasks")) {
+                                p.getSlayer().setConsecutiveTasks(Integer.parseInt(token2));
+                            } else if (token.equals("mage-arena-points")) {
+                                p.setArenaPoints(Integer.parseInt(token2));
+                            } else if (token.equals("shayzien-assault-points")) {
+                                p.setShayPoints(Integer.parseInt(token2));
+                            } else if (token.equals("flagged")) {
+                                p.accountFlagged = Boolean.parseBoolean(token2);
+                            } else if (token.equals("keepTitle")) {
+                                p.keepTitle = Boolean.parseBoolean(token2);
+                            } else if (token.equals("killTitle")) {
+                                p.killTitle = Boolean.parseBoolean(token2);
+                            } else if (token.equals("character-historyItems")) {
+                                //System.err.println("Loading - Length of list="+token3.length+" saleSize="+p.historyItems.length);
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.historyItems[j] = Integer.parseInt(token3[j]);
+                                    p.saleItems.add(Integer.parseInt(token3[j]));
+                                }
+                            } else if (token.equals("character-historyItemsN")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.historyItemsN[j] = Integer.parseInt(token3[j]);
+                                    p.saleAmount.add(Integer.parseInt(token3[j]));
+                                }
+                            } else if (token.equals("character-historyPrice")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.historyPrice[j] = Integer.parseInt(token3[j]);
+                                    p.salePrice.add(Integer.parseInt(token3[j]));
+                                }
+                            } else if (token.equals(EventCalendar.SAVE_KEY)) {
+                                if (token3.length >= 2) {
+                                    for (int index = 0; index < token3.length; index += 2) {
+                                        EventChallengeKey key = EventChallengeKey.fromString(token3[index]);
+                                        if (key != null) {
+                                            int value = Integer.parseInt(token3[index + 1]);
+                                            p.getEventCalendar().set(key, value);
+                                        }
+                                    }
+                                }
+                            } else if (token.equals("removed-slayer-tasks")) {
+                                String[] backing = Misc.nullToEmpty(p.getSlayer().getRemoved().length);
+                                int index = 0;
+                                for (; index < token3.length; index++) {
+                                    backing[index] = token3[index];
+                                }
+                                p.getSlayer().setRemoved(backing);
+                            } else if (token.equals("slayer-unlocks")) {
+                                for (int index = 0; index < token3.length; index++) {
+                                    try {
+                                        SlayerUnlock unlock = SlayerUnlock.valueOf(token3[index]);
+                                        if (unlock != null && !p.getSlayer().getUnlocks().contains(unlock)) {
+                                            p.getSlayer().getUnlocks().add(unlock);
+                                        }
+                                    } catch (Exception e) {
+                                        logger.error("Error while loading {}", playerName, e);
+                                        e.printStackTrace();
+                                    }
+                                }
+                            } else if (token.equals("extended-slayer-tasks")) {
+                                for (int index = 0; index < token3.length; index++) {
+                                    try {
+                                        TaskExtension extension = TaskExtension.valueOf(token3[index]);
+                                        if (extension != null && !p.getSlayer().getExtensions().contains(extension)) {
+                                            p.getSlayer().getExtensions().add(extension);
+                                        }
+                                    } catch (Exception e) {
+                                        logger.error("Error while loading {}", playerName, e);
+                                        e.printStackTrace();
+                                    }
+                                }
+                            } else if (token.startsWith("removedTask")) {
+                                int value = Integer.parseInt(token2);
+                                if (value > -1) {
+                                    p.getSlayer().setPoints(p.getSlayer().getPoints() + 100);
+                                }
+                            } else if (token.equals("wave")) {
+                                p.waveId = Integer.parseInt(token2);
+                            } else if (token.equals("void")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.voidStatus[j] = Integer.parseInt(token3[j]);
+                                }
+                            } else if (token.equals("pouch-rune")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.setRuneEssencePouch(j, Integer.parseInt(token3[j]));
+                                }
+                            } else if (token.equals("pouch-pure")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.setPureEssencePouch(j, Integer.parseInt(token3[j]));
+                                }
+                            } else if (token.equals("looting_bag_deposit_mode")) {
                                 try {
-                                    TaskExtension extension = TaskExtension.valueOf(token3[index]);
-                                    if (extension != null && !p.getSlayer().getExtensions().contains(extension)) {
-                                        p.getSlayer().getExtensions().add(extension);
+                                    LootingBag.LootingBagUseAction useAction = LootingBag.LootingBagUseAction.valueOf(token3[0]);
+                                    if (useAction != null) {
+                                        p.getLootingBag().setUseAction(useAction);
                                     }
                                 } catch (Exception e) {
                                     logger.error("Error while loading {}", playerName, e);
                                     e.printStackTrace();
                                 }
+                            } else if (token.equals("privatechat")) {
+                                p.setPrivateChat(Integer.parseInt(token2));
+                            } else if (token.equals("inDistrict")) {
+                                p.pkDistrict = Boolean.parseBoolean(token2);
+                            } else if (token.equals("safeBoxSlots")) {
+                                p.safeBoxSlots = Integer.parseInt(token2);
+                            } else if (token.equals("district-levels")) {
+                                for (int i = 0; i < p.playerStats.length; i++)
+                                    p.playerStats[i] = Integer.parseInt(token3[i]);
+                            } else if (token.equals("crawsbowCharge")) {
+                                p.getPvpWeapons().setCrawsBowCharges(Integer.parseInt(token2));
+                            } else if (token.equals("bofaCharge")) {
+                                p.getPvpWeapons().setbofaCharges(Integer.parseInt(token2));
+                            } else if (token.equals("thammaronCharge")) {
+                                p.getPvpWeapons().setThammaronSceptreCharges(Integer.parseInt(token2));
+                            } else if (token.equals("viggoraCharge")) {
+                                p.getPvpWeapons().setViggoraChainmaceCharges(Integer.parseInt(token2));
                             }
-                        } else if (token.startsWith("removedTask")) {
-                            int value = Integer.parseInt(token2);
-                            if (value > -1) {
-                                p.getSlayer().setPoints(p.getSlayer().getPoints() + 100);
-                            }
-                        } else if (token.equals("wave")) {
-                            p.waveId = Integer.parseInt(token2);
-                        } else if (token.equals("void")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.voidStatus[j] = Integer.parseInt(token3[j]);
-                            }
-                        } else if (token.equals("pouch-rune")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.setRuneEssencePouch(j, Integer.parseInt(token3[j]));
-                            }
-                        } else if (token.equals("pouch-pure")) {
-                            for (int j = 0; j < token3.length; j++) {
-                                p.setPureEssencePouch(j, Integer.parseInt(token3[j]));
-                            }
-                        } else if (token.equals("looting_bag_deposit_mode")) {
-                            try {
-                                LootingBag.LootingBagUseAction useAction = LootingBag.LootingBagUseAction.valueOf(token3[0]);
-                                if (useAction != null) {
-                                    p.getLootingBag().setUseAction(useAction);
-                                }
-                            } catch (Exception e) {
-                                logger.error("Error while loading {}", playerName, e);
-                                e.printStackTrace();
-                            }
-                        } else if (token.equals("privatechat")) {
-                            p.setPrivateChat(Integer.parseInt(token2));
-                        } else if (token.equals("inDistrict")) {
-                            p.pkDistrict = Boolean.parseBoolean(token2);
-                        } else if (token.equals("safeBoxSlots")) {
-                            p.safeBoxSlots = Integer.parseInt(token2);
-                        } else if (token.equals("district-levels")) {
-                            for (int i = 0; i < p.playerStats.length; i++) p.playerStats[i] = Integer.parseInt(token3[i]);
-                        } else if (token.equals("crawsbowCharge")) {
-                            p.getPvpWeapons().setCrawsBowCharges(Integer.parseInt(token2));
-                        } else if (token.equals("bofaCharge")) {
-                            p.getPvpWeapons().setbofaCharges(Integer.parseInt(token2));
-                        } else if (token.equals("thammaronCharge")) {
-                            p.getPvpWeapons().setThammaronSceptreCharges(Integer.parseInt(token2));
-                        } else if (token.equals("viggoraCharge")) {
-                            p.getPvpWeapons().setViggoraChainmaceCharges(Integer.parseInt(token2));
-                        }
 
                         case 3:
-                        if (token.equals("character-equip")) {
-                            p.playerEquipment[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
-                            p.playerEquipmentN[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
-                        }
-                        break;
-                    case 4: 
-                        if (token.equals("character-look")) {
-                            p.playerAppearance[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
-                        }
-                        break;
-                    case 5: 
-                        if (token.equals("character-skill")) {
-                            p.playerLevel[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
-                            p.playerXP[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
-                            if (token3.length > 3) {
-                                p.skillLock[Integer.parseInt(token3[0])] = Boolean.parseBoolean(token3[3]);
-                                p.prestigeLevel[Integer.parseInt(token3[0])] = Integer.parseInt(token3[4]);
+                            if (token.equals("character-equip")) {
+                                p.playerEquipment[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
+                                p.playerEquipmentN[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
                             }
-                        }
-                        break;
-                    case 6: 
-                        if (token.equals("character-item")) {
-                            p.playerItems[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
-                            p.playerItemsN[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
-                        }
-                        break;
-                    case 46: 
-                        if (token.equals("bag-item")) {
-                            int id = Integer.parseInt(token3[1]);
-                            int amt = Integer.parseInt(token3[2]);
-                            p.getLootingBag().getLootingBagContainer().items.add(new LootingBagItem(id, amt));
-                        }
-                        break;
-                    case 52: 
-                        if (token.equals("item")) {
-                            int itemId = Integer.parseInt(token3[0]);
-                            int value = Integer.parseInt(token3[1]);
-                            String date = token3[2];
-                            p.getRechargeItems().loadItem(itemId, value, date);
-                        }
-                        break;
-                    case 55: 
-                        if (token.equals("pouch-item")) {
-                            int id = Integer.parseInt(token3[1]);
-                            int amt = Integer.parseInt(token3[2]);
-                            p.getRunePouch().getItems().add(new GameItem(id, amt));
-                        }
-                        break;
-                    case 56: 
-                        if (token.equals("sack-item")) {
-                            int id = Integer.parseInt(token3[1]);
-                            int amt = Integer.parseInt(token3[2]);
-                            p.getHerbSack().getItems().add(new GameItem(id, amt));
-                        }
-                        break;
-                    case 57: 
-                        if (token.equals("bag-item")) {
-                            int id = Integer.parseInt(token3[1]);
-                            int amt = Integer.parseInt(token3[2]);
-                            p.getGemBag().getItems().add(new GameItem(id, amt));
-                        }
-                        break;
-                    case 58: 
-                        // Deprecated SafeBox items
-                        break;
-                    case 7: 
-                        if (token.equals("bank-tab")) {
-                            int tabId = Integer.parseInt(token3[0]);
-                            int itemId = Integer.parseInt(token3[1]);
-                            int itemAmount = Integer.parseInt(token3[2]);
-                            p.getBank().getBankTab()[tabId].add(new BankItem(itemId, itemAmount));
-                        }
-                        break;
-                    case 8: // Legacy
-                        if (token.equals("character-friend")) {
-                            try {
-                                String name = Misc.convertLongToFixedName(Long.parseLong(token3[0]));
-                                friends.add(new FriendsListEntry(FriendType.FRIEND, name, ""));
-                            } catch (NumberFormatException e) {
-                                logger.error("Error adding friend {} on {} friends list.", token3[0], p.getLoginName());
+                            break;
+                        case 4:
+                            if (token.equals("character-look")) {
+                                p.playerAppearance[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
                             }
-                        }
-                        break;
-                    case 12: // Legacy
-                        if (token.equals("character-ignore")) {
-                            try {
-                                String name = Misc.convertLongToFixedName(Long.parseLong(token3[0]));
-                                friends.add(new FriendsListEntry(FriendType.IGNORE, name, ""));
-                            } catch (NumberFormatException e) {
-                                logger.error("Error adding ignore {} on {} ignore list.", token3[0], p.getLoginName());
-                            }
-                        }
-                        break;
-
-                    // Achievements
-                    case 9:
-                    case 10:
-                    case 11:
-                    case 19:
-                    case 20:
-                        if (token3.length < 2) continue; // Legacy condition
-                        AchievementTier tier = ReadMode == 9 ? AchievementTier.TIER_1
-                                : ReadMode == 10 ? AchievementTier.TIER_2
-                                : ReadMode == 11 ? AchievementTier.TIER_3
-                                : ReadMode == 19 ? AchievementTier.TIER_4
-                                : ReadMode == 20 ? AchievementTier.STARTER
-                                : null;
-                        if (tier == null)
-                            throw new IllegalStateException("Unsupported achievement read mode: " + ReadMode);
-                        p.getAchievements().readFromSave(token, token3, tier);
-                        break;
-                    case 14: 
-                        if (token.equals("item")) {
-                            p.degradableItem[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
-                        } else if (token.equals("claim-state")) {
-                            for (int i = 0; i < token3.length; i++) {
-                                p.claimDegradableItem[i] = Boolean.parseBoolean(token3[i]);
-                            }
-                        }
-                        break;
-                    case 16: 
-                        try {
-                            Killstreak.Type type = Killstreak.Type.get(token);
-                            int value = Integer.parseInt(token2);
-                            p.getKillstreak().getKillstreaks().put(type, value);
-                        } catch (NullPointerException | NumberFormatException e) {
-                            logger.error("Error while loading {}", playerName, e);
-                            e.printStackTrace();
-                        }
-                        break;
-                    case 17: 
-                        try {
-                            if (token2 != null && token2.length() > 0) {
-                                Title title = Title.valueOf(token2);
-                                if (title != null) {
-                                    p.getTitles().getPurchasedList().add(title);
+                            break;
+                        case 5:
+                            if (token.equals("character-skill")) {
+                                p.playerLevel[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
+                                p.playerXP[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
+                                if (token3.length > 3) {
+                                    p.skillLock[Integer.parseInt(token3[0])] = Boolean.parseBoolean(token3[3]);
+                                    p.prestigeLevel[Integer.parseInt(token3[0])] = Integer.parseInt(token3[4]);
                                 }
                             }
-                        } catch (Exception e) {
-                            logger.error("Error while loading {}", playerName, e);
-                            e.printStackTrace();
-                        }
-                        break;
-                    case 18: 
-                        if (token != null && token.length() > 0) {
-                            p.getNpcDeathTracker().getTracker().put(token, Integer.parseInt(token2));
-                        }
-                        break;
+                            break;
+                        case 6:
+                            if (token.equals("character-item")) {
+                                p.playerItems[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
+                                p.playerItemsN[Integer.parseInt(token3[0])] = Integer.parseInt(token3[2]);
+                            }
+                            break;
+                        case 46:
+                            if (token.equals("bag-item")) {
+                                int id = Integer.parseInt(token3[1]);
+                                int amt = Integer.parseInt(token3[2]);
+                                p.getLootingBag().getLootingBagContainer().items.add(new LootingBagItem(id, amt));
+                            }
+                            break;
+                        case 52:
+                            if (token.equals("item")) {
+                                int itemId = Integer.parseInt(token3[0]);
+                                int value = Integer.parseInt(token3[1]);
+                                String date = token3[2];
+                                p.getRechargeItems().loadItem(itemId, value, date);
+                            }
+                            break;
+                        case 55:
+                            if (token.equals("pouch-item")) {
+                                int id = Integer.parseInt(token3[1]);
+                                int amt = Integer.parseInt(token3[2]);
+                                p.getRunePouch().getItems().add(new GameItem(id, amt));
+                            }
+                            break;
+                        case 56:
+                            if (token.equals("sack-item")) {
+                                int id = Integer.parseInt(token3[1]);
+                                int amt = Integer.parseInt(token3[2]);
+                                p.getHerbSack().getItems().add(new GameItem(id, amt));
+                            }
+                            break;
+                        case 57:
+                            if (token.equals("bag-item")) {
+                                int id = Integer.parseInt(token3[1]);
+                                int amt = Integer.parseInt(token3[2]);
+                                p.getGemBag().getItems().add(new GameItem(id, amt));
+                            }
+                            break;
+                        case 58:
+                            // Deprecated SafeBox items
+                            break;
+                        case 7:
+                            if (token.equals("bank-tab")) {
+                                int tabId = Integer.parseInt(token3[0]);
+                                int itemId = Integer.parseInt(token3[1]);
+                                int itemAmount = Integer.parseInt(token3[2]);
+                                p.getBank().getBankTab()[tabId].add(new BankItem(itemId, itemAmount));
+                            }
+                            break;
+                        case 8: // Legacy
+                            if (token.equals("character-friend")) {
+                                try {
+                                    String name = Misc.convertLongToFixedName(Long.parseLong(token3[0]));
+                                    friends.add(new FriendsListEntry(FriendType.FRIEND, name, ""));
+                                } catch (NumberFormatException e) {
+                                    logger.error("Error adding friend {} on {} friends list.", token3[0], p.getLoginName());
+                                }
+                            }
+                            break;
+                        case 12: // Legacy
+                            if (token.equals("character-ignore")) {
+                                try {
+                                    String name = Misc.convertLongToFixedName(Long.parseLong(token3[0]));
+                                    friends.add(new FriendsListEntry(FriendType.IGNORE, name, ""));
+                                } catch (NumberFormatException e) {
+                                    logger.error("Error adding ignore {} on {} ignore list.", token3[0], p.getLoginName());
+                                }
+                            }
+                            break;
+
+                        // Achievements
+                        case 9:
+                        case 10:
+                        case 11:
+                        case 19:
+                        case 20:
+                            if (token3.length < 2) continue; // Legacy condition
+                            AchievementTier tier = ReadMode == 9 ? AchievementTier.TIER_1
+                                    : ReadMode == 10 ? AchievementTier.TIER_2
+                                    : ReadMode == 11 ? AchievementTier.TIER_3
+                                    : ReadMode == 19 ? AchievementTier.TIER_4
+                                    : ReadMode == 20 ? AchievementTier.STARTER
+                                    : null;
+                            if (tier == null)
+                                throw new IllegalStateException("Unsupported achievement read mode: " + ReadMode);
+                            p.getAchievements().readFromSave(token, token3, tier);
+                            break;
+                        case 14:
+                            if (token.equals("item")) {
+                                p.degradableItem[Integer.parseInt(token3[0])] = Integer.parseInt(token3[1]);
+                            } else if (token.equals("claim-state")) {
+                                for (int i = 0; i < token3.length; i++) {
+                                    p.claimDegradableItem[i] = Boolean.parseBoolean(token3[i]);
+                                }
+                            }
+                            break;
+                        case 16:
+                            try {
+                                Killstreak.Type type = Killstreak.Type.get(token);
+                                int value = Integer.parseInt(token2);
+                                p.getKillstreak().getKillstreaks().put(type, value);
+                            } catch (NullPointerException | NumberFormatException e) {
+                                logger.error("Error while loading {}", playerName, e);
+                                e.printStackTrace();
+                            }
+                            break;
+                        case 17:
+                            try {
+                                if (token2 != null && token2.length() > 0) {
+                                    Title title = Title.valueOf(token2);
+                                    if (title != null) {
+                                        p.getTitles().getPurchasedList().add(title);
+                                    }
+                                }
+                            } catch (Exception e) {
+                                logger.error("Error while loading {}", playerName, e);
+                                e.printStackTrace();
+                            }
+                            break;
+                        case 18:
+                            if (token != null && token.length() > 0) {
+                                p.getNpcDeathTracker().getTracker().put(token, Integer.parseInt(token2));
+                            }
+                            break;
                     }
                 } else {
                     if (line.equals("[ACCOUNT]")) {
                         ReadMode = 1;
                     } else if (line.equals("[CHARACTER]")) {
-                         ReadMode = 2;
+                        ReadMode = 2;
                     } else if (line.equals("[EQUIPMENT]")) {
                         ReadMode = 3;
                     } else if (line.equals("[LOOK]")) {
@@ -1296,6 +1312,10 @@ public class PlayerSave {
             characterfile.write("placeholders = " + p.placeHolders);
             characterfile.newLine();
             characterfile.write("bank-pin-cancellation-delay = " + p.getBankPin().getCancellationDelay());
+            characterfile.newLine();
+            characterfile.write("current-daily-task-name = " + p.getCurrentDailyTask().getTaskName());
+            characterfile.newLine();
+            characterfile.write("daily-task-start-time = " + p.getDailyTaskStartTime());
             characterfile.newLine();
             /*characterfile.write("airPerkLvl = ", 0, 17);
             characterfile.write(Integer.toString(p.airPerkLvl), 0, Integer.toString(p.airPerkLvl).length());
@@ -1521,28 +1541,33 @@ public class PlayerSave {
             characterfile.write(Long.toString(p.skillingPetRateTicks));
             characterfile.newLine();
             characterfile.write("activeMageArena2BossId  = ");
-            for (int i = 0; i < p.activeMageArena2BossId.length; i++) characterfile.write("" + p.activeMageArena2BossId[i] + ((i == p.activeMageArena2BossId.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.activeMageArena2BossId.length; i++)
+                characterfile.write("" + p.activeMageArena2BossId[i] + ((i == p.activeMageArena2BossId.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("mageArena2SpawnsX  = ");
-            for (int i = 0; i < p.mageArena2SpawnsX.length; i++) characterfile.write("" + p.mageArena2SpawnsX[i] + ((i == p.mageArena2SpawnsX.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.mageArena2SpawnsX.length; i++)
+                characterfile.write("" + p.mageArena2SpawnsX[i] + ((i == p.mageArena2SpawnsX.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("mageArena2SpawnsY  = ");
-            for (int i = 0; i < p.mageArena2SpawnsY.length; i++) characterfile.write("" + p.mageArena2SpawnsY[i] + ((i == p.mageArena2SpawnsY.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.mageArena2SpawnsY.length; i++)
+                characterfile.write("" + p.mageArena2SpawnsY[i] + ((i == p.mageArena2SpawnsY.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("mageArenaBossKills  = ");
-            for (int i = 0; i < p.mageArenaBossKills.length; i++) characterfile.write("" + p.mageArenaBossKills[i] + ((i == p.mageArenaBossKills.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.mageArenaBossKills.length; i++)
+                characterfile.write("" + p.mageArenaBossKills[i] + ((i == p.mageArenaBossKills.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("mageArena2Stages  = ");
-            for (int i = 0; i < p.mageArena2Stages.length; i++) characterfile.write("" + p.mageArena2Stages[i] + ((i == p.mageArena2Stages.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.mageArena2Stages.length; i++)
+                characterfile.write("" + p.mageArena2Stages[i] + ((i == p.mageArena2Stages.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("flamesOfZamorakCasts  = ");
-            characterfile.write(Integer.toString(p.flamesOfZamorakCasts ));
+            characterfile.write(Integer.toString(p.flamesOfZamorakCasts));
             characterfile.newLine();
             characterfile.write("clawsOfGuthixCasts  = ");
-            characterfile.write(Integer.toString(p.clawsOfGuthixCasts ));
+            characterfile.write(Integer.toString(p.clawsOfGuthixCasts));
             characterfile.newLine();
             characterfile.write("saradominStrikeCasts  = ");
-            characterfile.write(Integer.toString(p.saradominStrikeCasts ));
+            characterfile.write(Integer.toString(p.saradominStrikeCasts));
             characterfile.newLine();
             characterfile.write("exchangeP = ", 0, 12);
             characterfile.write(Integer.toString(p.exchangePoints), 0, Integer.toString(p.exchangePoints).length());
@@ -1587,12 +1612,16 @@ public class PlayerSave {
             characterfile.write("master-clue-reqs = " + p.masterClueRequirement[0] + "\t" + p.masterClueRequirement[1] + "\t" + p.masterClueRequirement[2] + "\t" + p.masterClueRequirement[3]);
             characterfile.newLine();
             characterfile.write("counters = ");
-            for (int i = 0; i < p.counters.length; i++) characterfile.write("" + p.counters[i] + ((i == p.counters.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.counters.length; i++)
+                characterfile.write("" + p.counters[i] + ((i == p.counters.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("max-cape = ");
-            for (int i = 0; i < p.maxCape.length; i++) characterfile.write("" + p.maxCape[i] + ((i == p.maxCape.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.maxCape.length; i++)
+                characterfile.write("" + p.maxCape[i] + ((i == p.maxCape.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("zulrah-best-time = " + p.getBestZulrahTime());
+            characterfile.newLine();
+            characterfile.write("last-kill-cap-reset = " + p.getLastKillReset());
             characterfile.newLine();
             characterfile.write("toxic-staff = " + p.getToxicStaffOfTheDeadCharge());
             characterfile.newLine();
@@ -1739,6 +1768,9 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("dayv = ", 0, 6);
             characterfile.write(Integer.toString(p.voteKeyPoints), 0, Integer.toString(p.voteKeyPoints).length());
+            characterfile.newLine();
+            characterfile.write("daily-task-points = ", 0, 20);
+            characterfile.write(Integer.toString(p.dailyTaskPoints), 0, Integer.toString(p.dailyTaskPoints).length());
             characterfile.newLine();
             characterfile.write("donP = ", 0, 6);
             characterfile.write(Integer.toString(p.donatorPoints), 0, Integer.toString(p.donatorPoints).length());
@@ -2204,7 +2236,8 @@ public class PlayerSave {
             characterfile.write("looting_bag_deposit_mode = " + p.getLootingBag().getUseAction());
             characterfile.newLine();
             characterfile.write("district-levels = ");
-            for (int i = 0; i < p.playerStats.length; i++) characterfile.write("" + p.playerStats[i] + ((i == p.playerStats.length - 1) ? "" : "\t"));
+            for (int i = 0; i < p.playerStats.length; i++)
+                characterfile.write("" + p.playerStats[i] + ((i == p.playerStats.length - 1) ? "" : "\t"));
             characterfile.newLine();
             characterfile.write("inDistrict = ", 0, 13);
             characterfile.write(Boolean.toString(p.pkDistrict), 0, Boolean.toString(p.pkDistrict).length());

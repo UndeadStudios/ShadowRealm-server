@@ -14,10 +14,10 @@ public class VenomResistanceEvent extends Event<Entity> {
 	@Override
 	public void execute() {
 		super.stop();
-		if (attachment == null) {
+		if (plr == null) {
 			return;
 		}
-		Health health = attachment.getHealth();
+		Health health = plr.getHealth();
 		health.removeNonsusceptible(HealthStatus.VENOM);
 	}
 
