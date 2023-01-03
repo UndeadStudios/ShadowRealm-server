@@ -126,6 +126,7 @@ public class MeleeData {
 			c.playerRunIndex = 1836;
 			return;
 		}
+
 		if (weaponName.contains("sled")) {
 			c.playerStandIndex = 1461;
 			c.playerWalkIndex = 1468;
@@ -189,6 +190,25 @@ public class MeleeData {
 
 
 		switch (weaponId) {
+			case Items.NIGHTMARE_STAFF:
+				c.playerStandIndex = 4504;
+				c.playerWalkIndex = 1205;
+				c.playerRunIndex = 1210;
+				c.playerTurnIndex = 1209;
+				c.playerTurn180Index = 1206;
+				c.playerTurn90CWIndex = 1207;
+				c.playerTurn90CCWIndex = 1208;
+				break;
+			case Items.EVENT_RPG:
+			case Items.FIXED_DEVICE: //2324 attack anim ;) add this later.
+				c.playerStandIndex = 2316;
+				c.playerTurnIndex = 2317;
+				c.playerWalkIndex = 2317;
+				c.playerTurn180Index = 2317;
+				c.playerTurn90CWIndex = 2317;
+				c.playerTurn90CCWIndex = 2317;
+				c.playerRunIndex = 2322;
+				break;
 		case Items.DRAGON_HUNTER_LANCE:
 			c.playerStandIndex = 813;
 			c.playerWalkIndex = 1205;
@@ -293,11 +313,13 @@ public class MeleeData {
 	public static int getWepAnim(Player c) {
 		String weaponName = ItemAssistant.getItemName(c.playerEquipment[Player.playerWeapon]).toLowerCase();
 		if (c.playerEquipment[Player.playerWeapon] <= 0) {
-			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
-			case AGGRESSIVE:
-				return 423;
-			default:
-				return 422;
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:
+					return 422;
+				case 2:
+					return 423;
+				case 1:
+					return 422;
 			}
 		}
 		if (weaponName.contains("bulwark")) {
@@ -363,7 +385,16 @@ public class MeleeData {
 			return c.getCombatConfigs().getWeaponMode().getCombatStyle() == CombatStyle.SLASH ? 3297 : 3294;
 		}
 		if (weaponName.contains("dagger") || weaponName.contains("arclight")) {
-			return 412;
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:// attack
+					return 386;
+				case 2:// str
+					return 386;
+				case 1:// def
+					return 386;
+				case 3:// crush
+					return 390;
+			}
 		}
 		if (weaponName.contains("lance")) {
 			switch (c.getCombatConfigs().getWeaponMode().getCombatStyle()) {
@@ -374,15 +405,52 @@ public class MeleeData {
 					return 8290;
 			}
 		}
+		if (weaponName.contains("scimitar")) {
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:// attack
+					return 390;
+				case 2:// str
+					return 390;
+				case 1:// def
+					return 390;
+				case 3:// crush
+					return 386;
+			}
+		}
+		if (weaponName.contains("axe")) {
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:// attack
+					return 395;
+				case 2:// str
+					return 395;
+				case 1:// def
+					return 395;
+				case 3:// crush
+					return 401;
+			}
+		}
+		if (weaponName.contains("mace")) {
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:// attack
+					return 401;
+				case 2:// str
+					return 401;
+				case 1:// def
+					return 401;
+				case 3:// crush
+					return 400;
+			}
+		}
 		if (weaponName.contains("2h sword") || weaponName.contains("godsword") || weaponName.contains("aradomin sword") || weaponName.contains("blessed sword") || weaponName.contains("large spade")) {
 			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-			case 0:// stab
-			case 1:// str
-				return 7045;
-			case 2:// str
-					return 7054;
-			case 3:// def
-				return 7055;
+				case 0:// attack
+					return 7045;
+				case 2:// str
+					return 7045;
+				case 1:// def
+					return 7046;
+				case 3:// crush
+					return 7046;
 			}
 		}
 		if (weaponName.contains("dharok")) {
@@ -408,7 +476,16 @@ public class MeleeData {
 			}
 		}
 		if (weaponName.contains("sword") && !weaponName.contains("training")) {
-			return 451;
+			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+				case 0:// attack
+					return 386;
+				case 2:// str
+					return 386;
+				case 1:// def
+					return 386;
+				case 3:// crush
+					return 390;
+			}
 		}
 		if (weaponName.contains("karil")) {
 			return 2075;
@@ -420,6 +497,9 @@ public class MeleeData {
 			return 4230;
 		}
 		if (weaponName.contains("hasta") || weaponName.contains("spear")) {
+			if (weaponName.contains("zamorakian")) {
+				return 412;
+			}
 			return 400;
 		}
 		if (weaponName.contains("warspear")) {
@@ -500,8 +580,16 @@ public class MeleeData {
 			return 2661;
 		case 10887:
 			return 5865;
-		default:
-			return 451;
+			default:
+				switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
+					case 0:// attack
+						return 422;
+					case 2:// str
+						return 422;
+					case 3:// crush
+						return 423;
+				}
+				return 422;
 		}
 	}
 

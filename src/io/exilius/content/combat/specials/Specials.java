@@ -59,6 +59,7 @@ public enum Specials {
 	ELDRITCH_NIGHTMARE_STAFF(new EldritchNightmareStaff()),
 	VOLATILE_NIGHTMARE_STAFF(new VolatileNightmareStaff()),
 	DRAGON_KNIFE(new DragonKnife()),
+	Osmumtensfang(new Osmumtensfang()),
 
 	;
 
