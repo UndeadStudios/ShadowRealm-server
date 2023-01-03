@@ -149,7 +149,7 @@ public class MeleeData {
 			c.playerRunIndex = 1831;
 			return;
 		}
-		if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("trident")) {
+		if (weaponName.contains("wand") || weaponName.contains("staff") || weaponName.contains("trident") || weaponName.contains("Tumeken's shadow")) {
 			c.playerStandIndex = 809;
 			c.playerRunIndex = 1210;
 			c.playerWalkIndex = 1146;
@@ -247,6 +247,15 @@ public class MeleeData {
 			c.playerWalkIndex = 5867;
 			c.playerRunIndex = 5868;
 			break;
+			case Items.ALE_OF_THE_GODS: //3040, 3039, 3039
+				c.playerStandIndex = 3040;
+				c.playerTurnIndex = 3039;
+				c.playerWalkIndex = 3039;
+				c.playerTurn180Index = 3039;
+				c.playerTurn90CWIndex = 3039;
+				c.playerTurn90CCWIndex = 3039;
+				c.playerRunIndex = 3039;
+				break;
 		case 20368:
 		case 20370:
 		case 20374:
@@ -503,7 +512,7 @@ public class MeleeData {
 			return 4177;
 		if (shield.contains("2h") && c.playerEquipment[Player.playerWeapon] != 7158)
 			return 7050;
-		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff") || weapon.contains("trident"))))
+		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff") || weapon.contains("trident")|| weapon.contains("Tumeken's shadow"))))
 			return 420;
 		if (shield.contains("shield"))
 			return 1156;
@@ -590,6 +599,10 @@ public class MeleeData {
 	public static int getHitDelay(Player c) {
 		String weaponName = ItemAssistant.getItemName(c.playerEquipment[Player.playerWeapon]).toLowerCase();
 		if (c.usingMagic) {
+			switch (c.getSpellId()) {
+				case 100:
+					return 5;
+			}
 			switch (CombatSpellData.getSpellId(c.getSpellId())) {
 			case 12891:
 				return 4;

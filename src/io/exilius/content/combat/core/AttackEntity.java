@@ -61,6 +61,8 @@ public class AttackEntity {
                 case 52://Trident
                 case 53://Trident
                     return 4;
+                case 100:
+                    return 5;
             }
             switch(attacker.playerEquipment[Player.playerWeapon]) {
                 case 24423://Harmonized Staff
@@ -261,7 +263,11 @@ public class AttackEntity {
                 attacker.autocasting = true;
                 attacker.setSpellId(53);
             }
-
+            if (attacker.playerEquipment[Player.playerWeapon] ==  Items.TUMEKENS_SHADOW) {
+                attacker.usingMagic = true;
+                attacker.autocasting = true;
+                attacker.setSpellId(100);
+            }
             if (attacker.playerEquipment[Player.playerWeapon] == Items.SANGUINESTI_STAFF) {
                 attacker.usingMagic = true;
                 attacker.autocasting = true;
@@ -439,6 +445,7 @@ public class AttackEntity {
                     int animationDelay = AnimationLength.getFrameLength(animationId) + 1;
                     attacker.getAnimationTimer().setDuration(animationDelay);
                     attacker.startAnimation(new Animation(animationId, 0, AnimationPriority.HIGH));
+                    fireMageProjectile(targetEntity);
                 }
 
             } else {
@@ -685,8 +692,14 @@ public class AttackEntity {
                     attacker.autocastId = 53;
                 }
                 return true;
+            case Items.TUMEKENS_SHADOW:
+                if (!attacker.usingClickCast) {
+                    attacker.usingMagic = true;
+                    attacker.autocasting = true;
+                    attacker.autocastId = 100;
+                }
+                return true;
         }
-
         if (attacker.playerEquipment[Player.playerWeapon] == 4734 && attacker.playerEquipment[Player.playerArrows] != 4740) {
             attacker.sendMessage("You must use bolt racks with the karil's crossbow.");
             reset();
