@@ -37,7 +37,7 @@ import java.util.Optional;
  */
 public class MiningEvent extends Event<Player> {
 	
-	public static int[] prospectorOutfit = { 12013, 12014, 12015, 12016 };
+	public static int[] prospectorOutfit = { 12013, 12014, 12015, 12016, 25549, 25551, 25553, 25555 };
 
 	/**
 	 * The amount of cycles that must pass before the animation is updated
@@ -183,6 +183,9 @@ public class MiningEvent extends Event<Player> {
 			if (attachment.getItems().isWearingItem(prospectorOutfit[i])) {
 				pieces += 6;
 			}
+		}
+		if(attachment.getItems().isWearingItem(25541)){
+			pieces += 4;
 		}
 		if (attachment == null || attachment.isDisconnected() || attachment.getSession() == null) {
 			stop();

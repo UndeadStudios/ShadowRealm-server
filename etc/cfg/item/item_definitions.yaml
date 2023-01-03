@@ -75008,4 +75008,49 @@
   description: "Small, shiny bits of rock. Someone at the Mining Guild might find them interesting."
   shopValue: 50
   stackable: true
-
+- id: 25549
+  name: "Golden Prospector helmet"
+  description: "Helps you when you're mining. Looks good too."
+  shopValue: 100000
+  untradeable: false
+- id: 25551
+  name: "Golden Prospector jacket"
+  description: "Helps you when you're mining. Looks good too."
+  shopValue: 100000
+  untradeable: false
+  equipmentModelType: "FULL_BODY"
+- id: 25553
+  name: "Golden Prospector legs"
+  description: "Helps you when you're mining. Looks good too."
+  shopValue: 100000
+  untradeable: false
+- id: 25555
+  name: "Golden Prospector boots"
+  description: "Helps you when you're mining. Looks good too."
+  shopValue: 100000
+  untradeable: false
+- id: 25547
+  name: "Star fragment"
+  description: "A fragment of a long-dead star. You can use it to recolour Prospector equipment."
+  shopValue: 3000
+  untradeable: false
+- id: 25545
+  name: "Celestial signet"
+  description: "A ring forged in the heart of a shooting star. It provides some useful mining boosts."
+  shopValue: 2000
+  untradeable: false
+- id: 25543
+  name: "Celestial signet (uncharged)"
+  description: "A ring forged in the heart of a shooting star. It provides some useful mining boosts."
+  shopValue: 2000
+  untradeable: false
+- id: 25537
+  name: "Bag full of gems"
+  description: "Contains gems - but which ones?"
+  shopValue: 300
+  untradeable: false
+- id: 24851
+  name: "Soft clay pack"
+  description: "A pack containing 100 pieces of soft clay."
+  shopValue: 10
+  untradeable: false
