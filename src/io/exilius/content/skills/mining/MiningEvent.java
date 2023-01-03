@@ -205,7 +205,7 @@ public class MiningEvent extends Event<Player> {
 				}
 			}
 		}
-		if (objectId == 41223) {
+		if (objectId == 41223 || objectId == 41224 || objectId == 41225 || objectId == 41226 || objectId == 41227 || objectId == 41228 || objectId == 41229) {
 			if(ShootingStar.CRASHED_STAR == null || ShootingStar.CRASHED_STAR.getStarObject().getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {
 				return;
 			} else {
