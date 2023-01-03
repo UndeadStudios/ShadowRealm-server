@@ -64,7 +64,7 @@ common:
     minimum: 1
     maximum: 3
 uncommon:
-  accessibility: 2
+  accessibility: 20
   items:
   - name: "rune 2h sword"
     minimum: 1
@@ -105,27 +105,36 @@ uncommon:
   - name: "runite bolts unf"
     minimum: 40
     maximum: 40
-rare:
-  accessibility: 75
-  items:
   - name: "jar of souls"
     minimum: 1
     maximum: 1
   - name: "shield left half"
     minimum: 1
     maximum: 1
-very_rare:
-  accessibility: 80
+rare:
+  accessibility: 150
   items:
-  - name: "primordial crystal"
+    - name: "primordial crystal"
+      minimum: 1
+      maximum: 1
+    - name: "eternal crystal"
+      minimum: 1
+      maximum: 1
+    - name: "pegasian crystal"
+      minimum: 1
+      maximum: 1
+    - name: "smouldering stone"
+      minimum: 1
+      maximum: 1
+very_rare:
+  accessibility: 10000
+  items:
+  - item: 28025
     minimum: 1
     maximum: 1
-  - name: "eternal crystal"
+  - item: 28023
     minimum: 1
     maximum: 1
-  - name: "pegasian crystal"
-    minimum: 1
-    maximum: 1
-  - name: "smouldering stone"
+  - item: 28024
     minimum: 1
     maximum: 1

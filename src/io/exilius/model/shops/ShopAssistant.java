@@ -325,10 +325,15 @@ public class ShopAssistant {
 						return 2000;
 					case 25547:
 						return 3000;
-					case 19473:
+					case 25537:
 						return 300;
 					case 24851:
 						return 150;
+					case 12013:
+					case 12014:
+					case 12015:
+					case 12016:
+						return 450;
 				}
 		case 13: // Jossik quest shop
 			return 1;

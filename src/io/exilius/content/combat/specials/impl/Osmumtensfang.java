@@ -11,7 +11,7 @@ import io.exilius.model.entity.player.Player;
 public class Osmumtensfang extends Special {
 
 	public Osmumtensfang() {
-		super(5.0, 1.25, 0.85, new int[] { 26219 });
+		super(2.5, 1.25, 0.85, new int[] { 26219 });
 	}
 
 	@Override

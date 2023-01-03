@@ -42,6 +42,10 @@ public enum ItemCombinations {
 	Berserker_BOOTS(new BerserkerBoots(new GameItem(28026), Optional.empty(), new GameItem[] { new GameItem(13239), new GameItem(28023) })),
 	Galaxy_BOOTS(new GalaxyBoots(new GameItem(28027), Optional.empty(), new GameItem[] { new GameItem(13235), new GameItem(28024) })),
 	Superior_BOOTS(new SuperiorBoots(new GameItem(28028), Optional.empty(), new GameItem[] { new GameItem(13239), new GameItem(28025) })),
+	Goldenprospectorhelmet(new Goldenprospectorhelmet(new GameItem(25549), Optional.empty(), new GameItem[] { new GameItem(12013), new GameItem(25547) })),
+	Goldenprospectorjacket(new Goldenprospectorjacket(new GameItem(25551), Optional.empty(), new GameItem[] { new GameItem(12014), new GameItem(25547) })),
+	Goldenprospectorlegs(new Goldenprospectorlegs(new GameItem(25553), Optional.empty(), new GameItem[] { new GameItem(12015), new GameItem(25547) })),
+	Goldenprospectorboots(new Goldenprospectorboots(new GameItem(25555), Optional.empty(), new GameItem[] { new GameItem(12016), new GameItem(25547) })),
 
 	INFERNAL_AXE(new InfernalAxe(new GameItem(13241), Optional.empty(), new GameItem[] { new GameItem(13233), new GameItem(6739) })),
 	INFERNAL_PICKAXE(new InfernalPickaxe(new GameItem(13243), Optional.empty(), new GameItem[] { new GameItem(13233), new GameItem(11920) })),
