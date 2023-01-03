@@ -39,6 +39,10 @@ public enum ItemCombinations {
 	PEGASIAN_BOOTS(new PegasianBoots(new GameItem(13237), Optional.empty(), new GameItem[] { new GameItem(13229), new GameItem(2577) })),
 	PRIMORDIAL_BOOTS(new PrimordialBoots(new GameItem(13239), Optional.empty(), new GameItem[] { new GameItem(13231), new GameItem(11840) })),
 
+	Berserker_BOOTS(new BerserkerBoots(new GameItem(28026), Optional.empty(), new GameItem[] { new GameItem(13239), new GameItem(28023) })),
+	Galaxy_BOOTS(new GalaxyBoots(new GameItem(28027), Optional.empty(), new GameItem[] { new GameItem(13235), new GameItem(28024) })),
+	Superior_BOOTS(new SuperiorBoots(new GameItem(28028), Optional.empty(), new GameItem[] { new GameItem(13239), new GameItem(28025) })),
+
 	INFERNAL_AXE(new InfernalAxe(new GameItem(13241), Optional.empty(), new GameItem[] { new GameItem(13233), new GameItem(6739) })),
 	INFERNAL_PICKAXE(new InfernalPickaxe(new GameItem(13243), Optional.empty(), new GameItem[] { new GameItem(13233), new GameItem(11920) })),
 
