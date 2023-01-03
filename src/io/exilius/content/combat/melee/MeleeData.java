@@ -163,9 +163,13 @@ public class MeleeData {
 			return;
 		}
 		if(weaponName.contains("tumeken")) {
-			c.playerStandIndex = 1662;
+			c.playerStandIndex = 9494;
 			c.playerWalkIndex = 1663;
 			c.playerRunIndex = 1664;
+			c.playerTurnIndex = 1702;
+			c.playerTurn180Index = 1704;
+			c.playerTurn90CWIndex = 1706;
+			c.playerTurn90CCWIndex = 1705;
 			return;
 		}
 		if (weaponName.contains("2h sword") || weaponName.contains("godsword") || weaponName.contains("saradomin sw") || weaponName.contains("saradomin's bless") || weaponName.contains("large spade")) {
