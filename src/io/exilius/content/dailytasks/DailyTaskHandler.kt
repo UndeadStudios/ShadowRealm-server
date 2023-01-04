@@ -74,15 +74,22 @@ class DailyTaskHandler {
             }
         }
 
+        private fun findValidTasks(player: Player): List<DailyTaskData> {
+            return DailyTaskData.values().filter { player.playerLevel[it.dailyTask.skill.id] >= it.dailyTask.levelRequirement }
+        }
+
         /**
          * Assign a new task if the current one is null or expired
          */
-        private fun assignNewTask(player: Player) {
+        fun assignNewTask(player: Player) {
             if (!dailyTasksEnabled) return
+            val validTasks = findValidTasks(player).toSet()
+            println("Player ${player.loginName} is eligable for these tasks:")
+            validTasks.forEach{ println("Task: ${it.dailyTask.taskName}")}
             player.currentDailyTask = if (mustBeMaxedForHardTasks && player.maxRequirements(player)) {
-                DailyTaskData.values().random().dailyTask
+                validTasks.random().dailyTask
             } else {
-                DailyTaskData.values().filter { it.dailyTask.difficulty != TaskDifficulties.HARD }.random().dailyTask
+                validTasks.filter { it.dailyTask.difficulty != TaskDifficulties.HARD }.random().dailyTask
             }
             // If the player was randomly given the default task, we will re-roll
             if (player.currentDailyTask == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask) {
@@ -160,8 +167,14 @@ class DailyTaskHandler {
         }
 
         fun handleProgress(player: Player, progress: Int) {
-            val task = player.currentDailyTask ?: return
-            task.progress += progress
+            val task = player.currentDailyTask
+            if (task == null) {
+                println("Task was null ffs")
+                return
+            }
+            println("Current task progress is ${task.progress} and we are adding $progress to it.")
+            player.currentDailyTask.progress += progress
+            println("New task progress is ${player.currentDailyTask.progress}.")
             if (task.progress >= task.actionsRequired) {
                 completeTask(player)
                 return

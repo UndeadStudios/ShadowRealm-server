@@ -1,15 +1,17 @@
 package io.exilius.content.skills.smithing;
 
-import java.util.Objects;
-
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
+
+import java.util.Objects;
 
 public class Smelting {
 
@@ -149,6 +151,11 @@ public class Smelting {
 			if (hasItems) {
 				Achievements.increase(c, AchievementType.SMITH, 1);
 				c.getPA().sendSound(2725);
+				if (c.bar == Bars.IRON && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_IRON_BARS.getDailyTask().getTaskName())) {
+					DailyTaskHandler.Companion.handleProgress(c, 1);
+					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+
+				}
 				if (c.bar.twoOres()) {
 					if (!Objects.equals(usage, "INFERNAL")) {
 						c.startAnimation(899);

@@ -2,6 +2,7 @@ package io.exilius.content.dailytasks
 
 import io.exilius.model.entity.player.Player
 import java.time.Duration
+import java.util.*
 
 /**
  * @author Flub
@@ -18,7 +19,7 @@ class DailyTaskInterface {
 
         /** String IDs **/
         private const val taskName = 27299
-        private const val description = 27300
+        private const val skill = 27300
         private const val difficulty = 27301
         private const val pointsOnCompletion = 27302
         private const val currentProgress = 27303
@@ -44,10 +45,15 @@ class DailyTaskInterface {
             if (player.openInterface != interfaceId) return
             val task = player.currentDailyTask ?: return
             player.pa.sendString(taskName, task.taskName)
-            player.pa.sendString(description, task.description)
+            player.pa.sendString(skill, "${task.levelRequirement} ${task.skill.toString().lowercase().replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(
+                    Locale.getDefault()
+                ) else it.toString()
+            }
+            }")
             player.pa.sendString(difficulty, task.difficulty.toString())
             player.pa.sendString(pointsOnCompletion, task.minRewardPoints.toString())
-            player.pa.sendString(currentProgress, "${task.progress} / ${task.actionsRequired}")
+            player.pa.sendString(currentProgress, "${player.currentDailyTask.progress} / ${task.actionsRequired}")
             player.pa.sendString(nextTaskTime, timeUntilReset(player))
         }
 

@@ -1,5 +1,7 @@
 package io.exilius.content.dailytasks
 
+import io.exilius.content.skills.Skill
+
 /**
  * @author Flub
  * https://www.rune-server.ee/members/365422-flub/
@@ -13,18 +15,66 @@ package io.exilius.content.dailytasks
 enum class DailyTaskData(
     val dailyTask: DailyTask
 ) {
-    DEFAULT_TASK_DO_NOT_DELETE(DailyTask("Default Task", "Description", TaskDifficulties.EASY, 0, 3, 0, complete = false)),
-    CHOP_OAK_TREES(DailyTask("Chop Oak Trees", "Chop Oak Trees anywhere in Exilius!", TaskDifficulties.EASY, 3, 1, 0, complete = false)),
-    TEST_EASY_TASK1(DailyTask("An easy task1", "Description", TaskDifficulties.EASY, 3, 3, 0, complete = false)),
-    TEST_EASY_TASK2(DailyTask("An easy task2", "Description", TaskDifficulties.EASY, 3, 3, 0, complete = false)),
-    TEST_EASY_TASK3(DailyTask("An easy task3", "Description", TaskDifficulties.EASY, 500, 3, 0, complete = false)),
-    TEST_MEDIUM_TASK(DailyTask("A medium task", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
-    TEST_MEDIUM_TASK1(DailyTask("A medium task1", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
-    TEST_MEDIUM_TASK2(DailyTask("A medium task2", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
-    TEST_MEDIUM_TASK3(DailyTask("A medium task3", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
-    TEST_HARD_TASK(DailyTask("A hard task", "Description", TaskDifficulties.HARD, 3, 3, 0, complete = false)),
-    TEST_HARD_TASK1(DailyTask("A hard task1", "Description", TaskDifficulties.HARD, 3, 3, 0, complete = false)),
-    TEST_HARD_TASK2(DailyTask("A hard task2", "Description", TaskDifficulties.HARD, 3, 3, 0, complete = false)),
-    TEST_HARD_TASK3(DailyTask("A hard task3", "Description", TaskDifficulties.HARD, 3, 3, 0, complete = false)),
+    DEFAULT_TASK_DO_NOT_DELETE(
+        DailyTask(
+            "Default Task",
+            TaskDifficulties.EASY,
+            0,
+            3,
+            Skill.AGILITY,
+            1,
+            0,
+            complete = false
+        )
+    ),
+    SMITHING_IRON_BARS(
+        DailyTask(
+            "Smith 300 Iron Bars",
+            TaskDifficulties.EASY,
+            300,
+            1,
+            Skill.SMITHING,
+            15,
+            0,
+            complete = false
+        )
+    ),
+    CHOP_OAK_TREES(
+        DailyTask(
+            "Chop 300 Oak Trees",
+            TaskDifficulties.EASY,
+            300,
+            1,
+            Skill.WOODCUTTING,
+            15,
+            0,
+            complete = false
+        )
+    ),
+    TEST_MEDIUM_TASK(
+        DailyTask(
+            "A medium task",
+            TaskDifficulties.MEDIUM,
+            3,
+            3,
+            Skill.WOODCUTTING,
+            0,
+            0,
+            complete = false
+        )
+    ),
+    TEST_HARD_TASK(
+        DailyTask(
+            "A hard task",
+            TaskDifficulties.HARD,
+            3,
+            3,
+            Skill.WOODCUTTING,
+            0,
+            0,
+            complete = false
+        )
+    ),
+
 
 }

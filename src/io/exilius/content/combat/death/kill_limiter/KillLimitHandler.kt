@@ -31,34 +31,34 @@ class KillLimitHandler {
          * What multiplier should players receive to their daily kill caps
          * based on their player rights?
          */
-        private fun killCapMultiplier(player: Player): Int {
-            if (!playerCapModifierEnabled) return 1
+        private fun killCapMultiplier(player: Player): Double {
+            if (!playerCapModifierEnabled) return 1.0
             // Staff
-            if (player.rights.isOrInherits(Right.OWNER)) return 1000
-            if (player.rights.isOrInherits(Right.GAME_DEVELOPER)) return 1000
-            if (player.rights.isOrInherits(Right.ADMINISTRATOR)) return 100
-            if (player.rights.isOrInherits(Right.MODERATOR)) return 5
-            if (player.rights.isOrInherits(Right.HELPER)) return 2
+            if (player.rights.isOrInherits(Right.OWNER)) return 1000.0
+            if (player.rights.isOrInherits(Right.GAME_DEVELOPER)) return 1000.0
+            if (player.rights.isOrInherits(Right.ADMINISTRATOR)) return 100.0
+            if (player.rights.isOrInherits(Right.MODERATOR)) return 5.0
+            if (player.rights.isOrInherits(Right.HELPER)) return 2.0
             // Donators
-            if (player.rights.isOrInherits(Right.Divine_Club)) return 25
-            if (player.rights.isOrInherits(Right.Mythic_Club)) return 15
-            if (player.rights.isOrInherits(Right.ONYX_CLUB)) return 10
-            if (player.rights.isOrInherits(Right.DIAMOND_CLUB)) return 8
-            if (player.rights.isOrInherits(Right.LEGENDARY_DONATOR)) return 5
-            if (player.rights.isOrInherits(Right.EXTREME_DONOR)) return 4
-            if (player.rights.isOrInherits(Right.REGULAR_DONATOR)) return 2
+            if (player.rights.isOrInherits(Right.Divine_Club)) return 25.0
+            if (player.rights.isOrInherits(Right.Mythic_Club)) return 15.0
+            if (player.rights.isOrInherits(Right.ONYX_CLUB)) return 10.0
+            if (player.rights.isOrInherits(Right.DIAMOND_CLUB)) return 8.0
+            if (player.rights.isOrInherits(Right.LEGENDARY_DONATOR)) return 5.0
+            if (player.rights.isOrInherits(Right.EXTREME_DONOR)) return 4.0
+            if (player.rights.isOrInherits(Right.REGULAR_DONATOR)) return 2.0
             // Game Modes
-            if (player.rights.isOrInherits(Right.IRONMAN)) return 10 // No reason to limit irons too heavily
-            if (player.rights.isOrInherits(Right.ULTIMATE_IRONMAN)) return 10 // No reason to limit irons too heavily
-            if (player.rights.isOrInherits(Right.HC_IRONMAN)) return 10
-            if (player.rights.isOrInherits(Right.ROGUE_IRONMAN)) return 10
-            if (player.rights.isOrInherits(Right.ROGUE_HARDCORE_IRONMAN)) return 10
-            if (player.rights.isOrInherits(Right.GROUP_IRONMAN)) return 10
-            if (player.rights.isOrInherits(Right.HITBOX)) return 1 // I don't know what HITBOX is
-            if (player.rights.isOrInherits(Right.YOUTUBER)) return 3
-            if (player.rights.isOrInherits(Right.OSRS)) return 1
-            if (player.rights.isOrInherits(Right.ROGUE)) return 1
-            return 1
+            if (player.rights.isOrInherits(Right.IRONMAN)) return 10.0 // No reason to limit irons too heavily
+            if (player.rights.isOrInherits(Right.ULTIMATE_IRONMAN)) return 10.0 // No reason to limit irons too heavily
+            if (player.rights.isOrInherits(Right.HC_IRONMAN)) return 10.0
+            if (player.rights.isOrInherits(Right.ROGUE_IRONMAN)) return 10.0
+            if (player.rights.isOrInherits(Right.ROGUE_HARDCORE_IRONMAN)) return 10.0
+            if (player.rights.isOrInherits(Right.GROUP_IRONMAN)) return 10.0
+            if (player.rights.isOrInherits(Right.HITBOX)) return 1.0 // I don't know what HITBOX is
+            if (player.rights.isOrInherits(Right.YOUTUBER)) return 3.0
+            if (player.rights.isOrInherits(Right.OSRS)) return 1.0
+            if (player.rights.isOrInherits(Right.ROGUE)) return 1.0
+            return 1.0
         }
 
         fun loadKillLimits() {
@@ -80,7 +80,8 @@ class KillLimitHandler {
                 player.sendMessage("There was an issue the kill limit for this NPC. Alert staff. NPC ID: $npcUnderAttack")
                 return false
             }
-            killLimit *= killCapMultiplier(player)
+            killLimit = (killLimit * killCapMultiplier(player)).toInt()
+            50 * 1.0
             val currentKills = player.killTracker[npcUnderAttack] ?: 0
             if (currentKills >= killLimit) {
                 player.sendMessage("You have hit the kill limit for ${NpcDef.forId(npcUnderAttack).name}!")

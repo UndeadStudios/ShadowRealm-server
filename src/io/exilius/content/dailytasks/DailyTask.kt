@@ -1,5 +1,7 @@
 package io.exilius.content.dailytasks
 
+import io.exilius.content.skills.Skill
+
 /**
  * @author Flub
  * https://www.rune-server.ee/members/365422-flub/
@@ -8,10 +10,11 @@ package io.exilius.content.dailytasks
 
 class DailyTask(
     val taskName: String,
-    val description: String,
     val difficulty: TaskDifficulties,
     var actionsRequired: Int,
     var minRewardPoints: Int,
+    var skill: Skill,
+    var levelRequirement: Int,
     var progress: Int,
     var complete: Boolean
 )

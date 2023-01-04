@@ -1200,6 +1200,7 @@ public class Smithing {
 						c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SMITH_RUNE_KNIFES);
 					}
 				}
+
 				c.getPA().addSkillXPMultiplied((int) xp, 13, true);
 				c.getPA().refreshSkill(13);
 				Achievements.increase(c, AchievementType.SMITH, 1);

@@ -59,10 +59,12 @@ public class WoodcuttingEvent extends Event<Player> {
 //			return;
 //		}
         chops++;
+
         int chopChance = 1 + (int) (tree.getChopsRequired() * hatchet.getChopSpeed());
         if (Boundary.isIn(plr, Boundary.WOODCUTTING_GUILD_BOUNDARY)) {
             chopChance *= 1.5;
         }
+
         if (tree.equals(Tree.HESPORI)) {
             int randomTele = 1;
             if (plr.getItems().playerHasItem(Hespori.KEY)) {
@@ -78,6 +80,7 @@ public class WoodcuttingEvent extends Event<Player> {
             if ((Configuration.DOUBLE_DROPS_TIMER > 0 || Configuration.DOUBLE_DROPS) && Misc.random(2) == 1) {
                 plr.getItems().addItem(tree.getWood(), 1);
             }
+
             plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
             handleRewards();
             Hespori.deleteEventItems(plr);
@@ -141,9 +144,7 @@ public class WoodcuttingEvent extends Event<Player> {
 				int amtToGive = SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1;
                 plr.getItems().addItem(tree.getWood(), amtToGive);
 
-                if (tree == Tree.OAK && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
-					DailyTaskHandler.Companion.handleProgress(plr, amtToGive);
-				}
+
 
             }
         }
@@ -216,6 +217,10 @@ public class WoodcuttingEvent extends Event<Player> {
             case NORMAL:
                 break;
             case OAK:
+                if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
+                    System.out.println("Chopping a fucking oak tree you cunt");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
                 if (Boundary.isIn(plr, Boundary.LUMRIDGE_BOUNDARY) || Boundary.isIn(plr, Boundary.DRAYNOR_BOUNDARY)) {
                     plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_OAK);
                 }
