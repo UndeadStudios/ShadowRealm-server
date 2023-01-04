@@ -26,7 +26,7 @@ import io.exilius.util.Misc;
  */
 
 public class PlayerEmotes {
-	
+
 	/**
 	 * Checks wether or not a player is able to perform an animation
 	 * @param player
@@ -55,7 +55,7 @@ public class PlayerEmotes {
 			player.sendMessage("@red@You've disrupted stuck command, you will no longer be moved home.");
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -110,17 +110,17 @@ public class PlayerEmotes {
 		PREMIER_SHEILD(101234, 7751, -1),
 		EXPLORE(101235, 8541, -1),
 		RELIC_UNLOCK(101237, -1, -1);
-		
+
 		private final int button;
 		private final int animation;
 		private final int graphic;
-		
+
 		PLAYER_ANIMATION_DATA(int button, int animation, int graphic) {
 			this.button = button;
 			this.animation = animation;
 			this.graphic = graphic;
 		}
-		
+
 		public int getButton() {
 			return button;
 		}
@@ -249,7 +249,7 @@ public class PlayerEmotes {
 			}
 		}
 	}
-	
+
 	public enum SKILLCAPE_ANIMATION_DATA {
 		ATTACK_CAPE(new int[] { 9747, 9748, 33033 }, 4959, 823, 7),
 		DEFENCE_CAPE(new int[] { 9753, 9754, 33034 }, 4961, 824, 10),
@@ -277,13 +277,13 @@ public class PlayerEmotes {
 		QUEST_CAPE(new int[] { 9813 }, 4945, 816, 19),
 		MAX_CAPE(new int[] {13280, 13329, 13337, 13331, 13333, 13335, 20760, 21898, 21285, 21776, 21780, 21784 }, 7121, 1286, 35),
 		ACHIEVEMENT_CAPE(new int[] { 13069 }, 2709, 323, 35);
-	
-		
+
+
 		private final GameItem[] cape;
 		private final int animation;
 		private final int graphic;
 		private final int delay;
-		
+
 		SKILLCAPE_ANIMATION_DATA(int[] skillcape, int animation, int graphic, int delay) {
 			cape = new GameItem[skillcape.length];
 			for (int i = 0; i < skillcape.length; i++) {
@@ -293,7 +293,7 @@ public class PlayerEmotes {
 			this.graphic = graphic;
 			this.delay = delay;
 		}
-		
+
 		private static final Map<Integer, SKILLCAPE_ANIMATION_DATA> SKILLCAPE_DATA = new HashMap<Integer, SKILLCAPE_ANIMATION_DATA>();
 
 		static {

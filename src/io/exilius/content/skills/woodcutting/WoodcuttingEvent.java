@@ -113,6 +113,10 @@ public class WoodcuttingEvent extends Event<Player> {
             if (tree.equals(Tree.MAGIC)) {
                 plr.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
             }
+            if (tree.equals(Tree.OAK) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
+                System.out.println("Chopping a fucking oak tree you cunt");
+                DailyTaskHandler.Companion.handleProgress(plr, 1);
+            }
             plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
             Achievements.increase(plr, AchievementType.WOODCUT, 1);
             plr.getPA().sendSound(2734);
