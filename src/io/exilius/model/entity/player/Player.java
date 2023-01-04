@@ -43,6 +43,7 @@ import io.exilius.content.compromised.CompromisedAccounts;
 import io.exilius.content.dailyrewards.DailyRewards;
 import io.exilius.content.dailytasks.DailyTask;
 import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -1253,6 +1254,7 @@ public class Player extends Entity {
                     player.outStream.packetEncryption = new ISAACCipher(new int[]{0, 0, 0, 0});
                     player.inStream.packetEncryption = new ISAACCipher(new int[]{0, 0, 0, 0});
                 }
+                DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(player);
             } catch (Exception e) {
                 logger.error("Error loading bot {}", player, e);
             }

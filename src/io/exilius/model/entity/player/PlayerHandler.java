@@ -1,14 +1,8 @@
 package io.exilius.model.entity.player;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.dailytasks.DailyTaskInterface;
 import io.exilius.content.instances.InstancedArea;
 import io.exilius.model.Projectile;
@@ -28,6 +22,11 @@ import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.global.LoginLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class PlayerHandler {
 
@@ -241,7 +240,6 @@ public class PlayerHandler {
 				playerLoggingIn.initialized = true;
 				playerLoggingIn.finishLogin();
 				players[slot].isActive = true;
-				DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(playerLoggingIn);
 				if (!playerLoggingIn.isBot()) {
 					Server.getLogging().batchWrite(new LoginLog("Logged in", playerLoggingIn));
 				}

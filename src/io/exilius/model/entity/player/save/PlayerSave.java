@@ -8,6 +8,7 @@ import io.exilius.content.achievement.AchievementTier;
 import io.exilius.content.achievement_diary.DifficultyAchievementDiary;
 import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.combat.pvp.Killstreak;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.event.eventcalendar.EventCalendar;
 import io.exilius.content.event.eventcalendar.EventChallengeKey;
 import io.exilius.content.lootbag.LootingBag;

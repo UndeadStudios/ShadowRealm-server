@@ -62,11 +62,13 @@ class DailyTaskHandler {
             if (task == null
                 || task == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask
             ) {
+                println("Task was null or defult - setting a new one")
                 assignNewTask(player)
                 return
             }
             // If the task has expired, reset it
             if (player.dailyTaskStartTime + maxTaskDuration < System.currentTimeMillis()) {
+                println("player task has expired!")
                 player.sendMessage(taskExpiryMsg)
                 assignNewTask(player)
             } else if (!task.complete) {
@@ -138,30 +140,27 @@ class DailyTaskHandler {
         }
 
         fun loadPlayerTaskDataOnLogin(player: Player) {
-            val loadedTask: DailyTask?
+            val loadedTask: DailyTask
             try {
                 val fr = FileReader(saveDirectory + player.loginName + ".json")
                 val fileParser = JsonParser()
                 val builder = GsonBuilder().create()
                 val reader = fileParser.parse(fr) as JsonObject
-                if (reader.has("task-data")) {
-                    loadedTask = builder.fromJson(reader["task-data"], DailyTask::class.java)
-                } else {
-                    assignNewTask(player)
-                    return
-                }
+                loadedTask = builder.fromJson(reader["task-data"], DailyTask::class.java)
+                println("Loaded task stuff = $loadedTask")
+                println("File reader stuff = ${fr.readLines()}")
 
-                if (loadedTask == null) {
-                    assignNewTask(player)
-                } else if (loadedTask.taskName == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask.taskName) {
+                println("Loaded task for ${player.loginName}. Task name loaded was: ${loadedTask.taskName}")
+                if (loadedTask.taskName == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask.taskName) {
                     println("Task was default - choosing a new one")
                     assignNewTask(player)
                 } else {
                     player.currentDailyTask = loadedTask
+                    println("Players current task has been set from the loader. Now: ${player.currentDailyTask.taskName}")
                     checkTaskExpiry(player)
                 }
             } catch (exception: Exception) {
-                println(exception)
+                println("An error occurred when loading daily task file... Error: $exception")
             }
             println("successfully loaded task data for ${player.loginName}... Task: ${player.currentDailyTask.taskName}")
         }
