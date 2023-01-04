@@ -154,7 +154,10 @@ public class Smelting {
 				if (c.bar == Bars.IRON && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_IRON_BARS.getDailyTask().getTaskName())) {
 					DailyTaskHandler.Companion.handleProgress(c, 1);
 					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
-
+				}
+				if (c.bar == Bars.STEEL && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_IRON_BARS.getDailyTask().getTaskName())) {
+					DailyTaskHandler.Companion.handleProgress(c, 1);
+					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 				}
 				if (c.bar.twoOres()) {
 					if (!Objects.equals(usage, "INFERNAL")) {

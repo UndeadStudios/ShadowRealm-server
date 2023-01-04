@@ -8,7 +8,6 @@ import io.exilius.content.bosses.nightmare.NightmareActionHandler;
 import io.exilius.content.dailyrewards.DailyRewardsDialogue;
 import io.exilius.content.dialogue.impl.IronmanNpcDialogue;
 import io.exilius.content.minigames.inferno.Inferno;
-import io.exilius.content.skills.Fishing;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.thieving.Thieving;
@@ -304,6 +303,11 @@ public class NpcOptionTwo {
 		case 3936:
 			player.getDH().sendDialogues(459, -1);
 			break;
+			case 1756:
+			case 1757:
+            case 1758:
+				player.getPestControlRewards().showInterface();
+				break;
 		case 6970:
 			player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PICKPOCKET_GNOME);
 			player.getThieving().steal(Thieving.Pickpocket.MAN, npc);
@@ -504,7 +508,7 @@ public class NpcOptionTwo {
 		case 3913: // BAIT + NET
 			case 1518:
 			case 7947:
-			Fishing.attemptdata(player, 2);
+			//Fishing.attemptdata(player, 2);
 			break;
 		case 310:
 		case 314:
@@ -515,7 +519,7 @@ public class NpcOptionTwo {
 		case 331:
 		case 3417:
 		case 6825:// BAIT + LURE
-			Fishing.attemptdata(player, 6);
+			//Fishing.attemptdata(player, 6);
 			break;
 			case 7946:
 		case 3657:
@@ -524,12 +528,12 @@ public class NpcOptionTwo {
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON
 			case 1510:
 			case 1511:
-			Fishing.attemptdata(player, 7);
+			//Fishing.attemptdata(player, 7);
 			break;
 		case 1520:
 		case 322:
 		case 334: // NET+HARPOON
-			Fishing.attemptdata(player, 10);
+			//Fishing.attemptdata(player, 10);
 			break;
 		case 532:
 			player.getShops().openShop(47);

@@ -17,10 +17,10 @@ import io.exilius.content.minigames.inferno.Inferno;
 import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.miniquests.magearenaii.dialogue.KolodionDialogue;
 import io.exilius.content.referral.EnterReferralDialogue;
-import io.exilius.content.skills.Fishing;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.crafting.Tanning;
 import io.exilius.content.skills.farming.FarmingTeleport;
+import io.exilius.content.skills.fishing.Fishing;
 import io.exilius.content.skills.hunter.impling.Impling;
 import io.exilius.content.skills.mining.Mineral;
 import io.exilius.content.skills.thieving.Thieving;
@@ -560,9 +560,6 @@ public class NpcOptionOne {
 		case 8688:
 			player.getShops().openShop(113);
 			break;
-		case 2949:
-			player.getPestControlRewards().showInterface();
-			break;
 		case 2461:
 			player.getWarriorsGuild().handleDoor();
 			break;
@@ -647,53 +644,44 @@ public class NpcOptionOne {
 		case 3789:
 			player.getShops().openShop(75);
 			break;
-		// FISHING
-		case 3913: // NET + BAIT
-			case 1518:
-			case 7947:
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 1);
-			break;
-		case 3317:
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 14);
-			break;
-		case 4712:
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 15);
-			break;
-		case 1524:
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 11);
-			break;
-		case 3417: // TROUT
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 4);
-			break;
-		case 3657://lobsters CAGE+HARPOON
-			case 7946:
-			case 1510:
-			case 1511:
-			case 1519:
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 8);
-			break;
-		case 635:
-			Fishing.attemptdata(player, 13); // DARK CRAB FISHING
-			break;
-		case 6825: // Anglerfish
-			player.clickNpcType = 1;
-			Fishing.attemptdata(player, 16);
-			break;
-		case 1520: // LURE
-		case 310:
-		case 314:
-		case 317:
-		case 318:
-		case 328:
-		case 331:
-			Fishing.attemptdata(player, 9);
-			break;
+			// FISHING
+			case 3913: // NET + BAIT
+			case 1525:
+			case 1523:
+				//Fishing.attemptdata(player, 1);
+				Fishing.startFishing(player, 1, npcType);
+				break;
+			//case 3317:
+			//Fishing.attemptdata(player, 14);
+			//break;
+			case 4712:
+				Fishing.startFishing(player, 8, npcType);
+				break;
+			case 1524:
+				Fishing.startFishing(player, 10, npcType);
+				break;
+			case 3417: // TROUT
+				Fishing.startFishing(player, 3, npcType);
+				break;
+			case 3657:
+				Fishing.startFishing(player, 6, npcType);
+				break;
+			case 635:
+				//Fishing.attemptdata(player, 13); // DARK CRAB FISHING
+				Fishing.startFishing(player, 13, npcType);
+				break;
+			case 6825: // Anglerfish
+				//Fishing.attemptdata(player, 16);
+				break;
+			case 1520: // LURE
+			case 310:
+			case 314:
+			case 317:
+			case 318:
+			case 328:
+			case 331:
+				Fishing.startFishing(player, 7, npcType);
+				break;
 
 		case 944:
 			player.getDH().sendOption5("Hill Giants", "Hellhounds", "Lesser Demons", "Chaos Dwarf", "-- Next Page --");
