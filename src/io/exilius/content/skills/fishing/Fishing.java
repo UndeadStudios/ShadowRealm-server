@@ -79,6 +79,7 @@ public class Fishing {
                     return;
                 }
                 if (!player.alreadyFishing) {
+                    player.stopAnimation();
                     container.stop();
                     return;
                 }
@@ -134,11 +135,9 @@ public class Fishing {
                     }
                     if (!(fishing.getBait() == 314 && player.getItems().playerHasItem(2950)) || fishing.getBait() != 314)
                         player.getItems().deleteItem(fishing.getBait(), 1);
+                    player.startAnimation(fishing.getAnimation());
                     player.sendMessage("You catch a <col=0000FF>" + player.getItems().getItemName(fishing.getFish()[r]) + "<col=000000>.");
-                    player.stopAnimation();
-                    player.alreadyFishing = false;
                     int index = player.fishingNpc;
-                    container.stop();
                     if (cont != 0) {
                         startFishing(player, npcId, index, true);
                     }
