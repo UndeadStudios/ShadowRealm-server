@@ -38,7 +38,7 @@ class DailyTaskHandler {
         private const val maxAdditionalHardPoints = 30
 
         // Players can be given additional actions to complete?
-        private const val additionalActionsEnabled = true
+        private const val additionalActionsEnabled = false
 
         // What's the maximum additional actions a task can be given?
         private const val maxAdditionalEasyActions = 200
@@ -108,14 +108,14 @@ class DailyTaskHandler {
         }
 
         private fun addAdditionalActions(player: Player) {
-            var currentActions = player.currentDailyTask.minActionsRequired
+            var currentActions = player.currentDailyTask.actionsRequired
             val difficulty = player.currentDailyTask.difficulty
             currentActions += when (difficulty) {
                 TaskDifficulties.EASY -> Random.nextInt(maxAdditionalEasyActions)
                 TaskDifficulties.MEDIUM -> Random.nextInt(maxAdditionalMediumActions)
                 TaskDifficulties.HARD -> Random.nextInt(maxAdditionalHardActions)
             }
-            player.currentDailyTask.minActionsRequired = currentActions
+            player.currentDailyTask.actionsRequired = currentActions
         }
 
         fun savePlayerTaskData(player: Player) {
@@ -162,7 +162,7 @@ class DailyTaskHandler {
         fun handleProgress(player: Player, progress: Int) {
             val task = player.currentDailyTask ?: return
             task.progress += progress
-            if (task.progress >= task.minActionsRequired) {
+            if (task.progress >= task.actionsRequired) {
                 completeTask(player)
                 return
             }

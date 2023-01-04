@@ -17,7 +17,7 @@ enum class DailyTaskData(
     CHOP_OAK_TREES(DailyTask("Chop Oak Trees", "Chop Oak Trees anywhere in Exilius!", TaskDifficulties.EASY, 3, 1, 0, complete = false)),
     TEST_EASY_TASK1(DailyTask("An easy task1", "Description", TaskDifficulties.EASY, 3, 3, 0, complete = false)),
     TEST_EASY_TASK2(DailyTask("An easy task2", "Description", TaskDifficulties.EASY, 3, 3, 0, complete = false)),
-    TEST_EASY_TASK3(DailyTask("An easy task3", "Description", TaskDifficulties.EASY, 3, 3, 0, complete = false)),
+    TEST_EASY_TASK3(DailyTask("An easy task3", "Description", TaskDifficulties.EASY, 500, 3, 0, complete = false)),
     TEST_MEDIUM_TASK(DailyTask("A medium task", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
     TEST_MEDIUM_TASK1(DailyTask("A medium task1", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),
     TEST_MEDIUM_TASK2(DailyTask("A medium task2", "Description", TaskDifficulties.MEDIUM, 3, 3, 0, complete = false)),

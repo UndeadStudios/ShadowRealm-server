@@ -10,7 +10,7 @@ class DailyTask(
     val taskName: String,
     val description: String,
     val difficulty: TaskDifficulties,
-    var minActionsRequired: Int,
+    var actionsRequired: Int,
     var minRewardPoints: Int,
     var progress: Int,
     var complete: Boolean
