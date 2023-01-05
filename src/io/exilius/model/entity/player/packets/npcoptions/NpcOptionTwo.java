@@ -522,11 +522,12 @@ public class NpcOptionTwo {
 		case 328:
 		case 329:
 		case 331:
-		case 3417:
 		case 6825:// BAIT + LURE
 			Fishing.startFishing(player, 3, npcType);
 			break;
 			case 1527:
+			case 1526:
+			case 3417:
 				Fishing.startFishing(player, 4, npcType);
 				break;
 			case 7946:

@@ -10,20 +10,20 @@ import java.util.HashMap;
 public class FishingData {
 
     public enum data {
-        Shrimp(1, 1, new int[]{317, 321}, 303, -1, 621, 175),
-        Sardine(2, 5, new int[]{327, 345}, 307, 313, 622, 225),
-        Trout(3, 20, new int[]{335, 331}, 309, 314, 622, 300),
-        Pike(4, 25, new int[]{349}, 307, 313, 622, 325),
-        Tuna(5, 35, new int[]{359, 371}, 311, -1, 618, 350),
-        Lobster(6, 40, new int[]{377}, 301, -1, 619, 400),
-        Monkfish(7, 62, new int[]{7944}, 303, -1, 620, 480),
-        Karambwan(8, 65, new int[]{3142}, 3159, -1, 620, 510),
-        Shark(9, 76, new int[]{383}, 311, -1, 618, 550),
-        Turtle(10, 79, new int[]{395, 389}, 305, -1, 620, 600),
-        MANTA_RAY(11, 81, new int[]{389}, 305, -1, 620, 650),
-        Angler(12, 82, new int[]{13439}, 307, 13431, 622, 680),
-        DARK_CRAB(13, 85, new int[]{11934}, 301, 11940, 619, 810),
-        SACRED_EEL(13, 87, new int[]{11934}, 307, 313, 622, 1050);
+        Shrimp(1, 1, new int[]{317, 321}, 303, -1, 621, 10),
+        Sardine(2, 5, new int[]{327, 345}, 307, 313, 622, 20),
+        Trout(3, 20, new int[]{335, 331}, 309, 314, 622, 50),
+        Pike(4, 25, new int[]{349}, 307, 313, 622, 60),
+        Tuna(5, 35, new int[]{359, 371}, 311, -1, 618, 80),
+        Lobster(6, 40, new int[]{377}, 301, -1, 619, 90),
+        Monkfish(7, 62, new int[]{7944}, 303, -1, 620, 120),
+        Karambwan(8, 65, new int[]{3142}, 3159, -1, 620, 50),
+        Shark(9, 76, new int[]{383}, 311, -1, 618, 110),
+        Turtle(10, 79, new int[]{395, 389}, 305, -1, 620, 57),
+        MANTA_RAY(11, 81, new int[]{389}, 305, -1, 620, 69),
+        Angler(12, 82, new int[]{13439}, 307, 13431, 622, 120),
+        DARK_CRAB(13, 85, new int[]{11934}, 301, 11940, 619, 130),
+        SACRED_EEL(14, 87, new int[]{13339}, 307, 313, 622, 105);
 
         public int requirement, itemRequired, baitRequired, animation, experience, fishingIdentifier;
 
