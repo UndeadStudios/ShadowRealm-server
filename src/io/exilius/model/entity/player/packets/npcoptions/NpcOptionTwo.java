@@ -512,6 +512,7 @@ public class NpcOptionTwo {
 			case 1530:
 			case 1523:
 			case 1521:
+			case 1544:
 				//Fishing.attemptdata(player, 1);
 				Fishing.startFishing(player, 2, npcType);
 				break;
