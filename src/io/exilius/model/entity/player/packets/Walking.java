@@ -35,9 +35,6 @@ public class Walking implements PacketType {
 		if(c.doinguri){
 			return;
 		}
-		if (c.alreadyFishing) {
-			c.alreadyFishing = false;
-		}
 		c.nextChat = 0;
 		c.dialogueOptions = 0;
 		c.homeTeleport = 50;
@@ -164,6 +161,9 @@ public class Walking implements PacketType {
 		SkillHandler.isSkilling[12] = false;
 		if (c.playerIsCooking) {// cooking
 			Cooking.setCooking(c, false);
+		}
+		if (c.alreadyFishing) {
+			c.alreadyFishing = false;
 		}
 		if (c.teleporting) {
 			c.startAnimation(65535);

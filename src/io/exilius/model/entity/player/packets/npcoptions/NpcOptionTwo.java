@@ -511,6 +511,7 @@ public class NpcOptionTwo {
 			case 1525:
 			case 1530:
 			case 1523:
+			case 1521:
 				//Fishing.attemptdata(player, 1);
 				Fishing.startFishing(player, 2, npcType);
 				break;
@@ -525,6 +526,9 @@ public class NpcOptionTwo {
 		case 6825:// BAIT + LURE
 			Fishing.startFishing(player, 3, npcType);
 			break;
+			case 1527:
+				Fishing.startFishing(player, 4, npcType);
+				break;
 			case 7946:
 		case 3657:
 			case 1519:
@@ -532,12 +536,13 @@ public class NpcOptionTwo {
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON
 			case 1510:
 			case 1511:
-			//Fishing.attemptdata(player, 7);
+			case 1522:
+				Fishing.startFishing(player, 5, npcType);
 			break;
 		case 1520:
 		case 322:
 		case 334: // NET+HARPOON
-			//Fishing.attemptdata(player, 10);
+			Fishing.startFishing(player, 9, npcType);
 			break;
 		case 532:
 			player.getShops().openShop(47);

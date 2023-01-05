@@ -294,7 +294,7 @@ public class Player extends Entity {
     public boolean doinguri = false;
     public boolean sawmill = false;
     public boolean isMorphed = false;
-    public boolean alreadyFishing;
+    public boolean alreadyFishing = false;
     public int fishingNpc = -1;
     private int bofacharges;
     public int lastMenuChosen = 0;
