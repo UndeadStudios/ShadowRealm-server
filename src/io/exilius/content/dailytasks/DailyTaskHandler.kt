@@ -56,6 +56,7 @@ class DailyTaskHandler {
          * and resets it if needed. Runs on logon.
          */
         private fun checkTaskExpiry(player: Player) {
+            if (player.bot) return
             if (!dailyTasksEnabled) return
             // If the player has a null or default task, then reset the timer
             val task = player.currentDailyTask
@@ -84,10 +85,12 @@ class DailyTaskHandler {
          * Assign a new task if the current one is null or expired
          */
         fun assignNewTask(player: Player) {
+            if (player.bot) return
             if (!dailyTasksEnabled) return
+            println("We're trying to assign a new task to player: ${player.loginName}")
             val validTasks = findValidTasks(player).toSet()
-            println("Player ${player.loginName} is eligable for these tasks:")
-            validTasks.forEach{ println("Task: ${it.dailyTask.taskName}")}
+            //println("Player ${player.loginName} is eligable for these tasks:")
+            //validTasks.forEach{ println("Task: ${it.dailyTask.taskName}")}
             player.currentDailyTask = if (mustBeMaxedForHardTasks && player.maxRequirements(player)) {
                 validTasks.random().dailyTask
             } else {
@@ -106,6 +109,7 @@ class DailyTaskHandler {
         }
 
         private fun addAdditionalPoints(player: Player) {
+            if (player.bot) return
             var currentPts = player.currentDailyTask.minRewardPoints
             val difficulty = player.currentDailyTask.difficulty
             currentPts += when (difficulty) {
@@ -117,6 +121,7 @@ class DailyTaskHandler {
         }
 
         private fun addAdditionalActions(player: Player) {
+            if (player.bot) return
             var currentActions = player.currentDailyTask.actionsRequired
             val difficulty = player.currentDailyTask.difficulty
             currentActions += when (difficulty) {
@@ -128,6 +133,7 @@ class DailyTaskHandler {
         }
 
         fun savePlayerTaskData(player: Player) {
+            if (player.bot) return
             try {
                 val fw = FileWriter(saveDirectory + player.loginName + ".json")
                 val builder = GsonBuilder().setPrettyPrinting().create()
@@ -140,8 +146,11 @@ class DailyTaskHandler {
         }
 
         fun loadPlayerTaskDataOnLogin(player: Player) {
+            if (player.bot) return
             val loadedTask: DailyTask
+            println("LOADING THE PLAYER TASK DATA FOR ${player.loginName}")
             try {
+                println("REACHED THE TRY LOOP")
                 val fr = FileReader(saveDirectory + player.loginName + ".json")
                 val fileParser = JsonParser()
                 val builder = GsonBuilder().create()
@@ -149,23 +158,24 @@ class DailyTaskHandler {
                 loadedTask = builder.fromJson(reader["task-data"], DailyTask::class.java)
                 println("Loaded task stuff = $loadedTask")
                 println("File reader stuff = ${fr.readLines()}")
-
                 println("Loaded task for ${player.loginName}. Task name loaded was: ${loadedTask.taskName}")
                 if (loadedTask.taskName == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask.taskName) {
                     println("Task was default - choosing a new one")
                     assignNewTask(player)
                 } else {
                     player.currentDailyTask = loadedTask
-                    println("Players current task has been set from the loader. Now: ${player.currentDailyTask.taskName}")
+                    println("Players current task has been set from the loader. Now: ${player.currentDailyTask.taskName} progress: ${loadedTask.progress} / ${loadedTask.actionsRequired}")
                     checkTaskExpiry(player)
                 }
             } catch (exception: Exception) {
                 println("An error occurred when loading daily task file... Error: $exception")
+                assignNewTask(player)
             }
             println("successfully loaded task data for ${player.loginName}... Task: ${player.currentDailyTask.taskName}")
         }
 
         fun handleProgress(player: Player, progress: Int) {
+            if (player.bot) return
             val task = player.currentDailyTask
             if (task == null) {
                 println("Task was null ffs")
@@ -181,6 +191,7 @@ class DailyTaskHandler {
         }
 
         private fun completeTask(player: Player) {
+            if (player.bot) return
             val task = player.currentDailyTask ?: return
             player.dailyTaskPoints += task.minRewardPoints
             player.sendMessage("@red@[Daily Task]@blu@ You have completed your task and were awarded ${task.minRewardPoints} points!")

@@ -1213,7 +1213,7 @@ public class Player extends Entity {
         return getRights().isOrInherits(Right.ADMINISTRATOR, Right.OWNER);
     }
 
-    private boolean bot = false;
+    public boolean bot = false;
 
     public boolean isBot() {
         return bot;
@@ -1256,7 +1256,6 @@ public class Player extends Entity {
                     player.outStream.packetEncryption = new ISAACCipher(new int[]{0, 0, 0, 0});
                     player.inStream.packetEncryption = new ISAACCipher(new int[]{0, 0, 0, 0});
                 }
-                DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(player);
             } catch (Exception e) {
                 logger.error("Error loading bot {}", player, e);
             }
@@ -2258,6 +2257,7 @@ public class Player extends Entity {
             Arrays.stream(Server.getConfiguration().getServerState().getLoginMessages()).forEach(this::sendMessage);
         }
         getDailyRewards().onLogin();
+        DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(this);
         PlayerSave.login(this);
         correctCoordinates();
         BossPoints.doRefund(this);

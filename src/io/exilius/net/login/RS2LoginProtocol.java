@@ -5,6 +5,7 @@ import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.Censor;
 import io.exilius.content.collection_log.CollectionLog;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.entity.player.LoadGameResult;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
