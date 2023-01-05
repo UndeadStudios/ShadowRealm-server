@@ -155,7 +155,11 @@ public class Smelting {
 					DailyTaskHandler.Companion.handleProgress(c, 1);
 					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 				}
-				if (c.bar == Bars.STEEL && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_IRON_BARS.getDailyTask().getTaskName())) {
+				if (c.bar == Bars.STEEL && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_Steel_BARS.getDailyTask().getTaskName())) {
+					DailyTaskHandler.Companion.handleProgress(c, 1);
+					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+				}
+				if (c.bar == Bars.RUNE && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_RUNE_BARS.getDailyTask().getTaskName())) {
 					DailyTaskHandler.Companion.handleProgress(c, 1);
 					System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 				}
@@ -177,7 +181,9 @@ public class Smelting {
 					else {
 						c.getItems().addItem(c.bar.getBar(), 1);
 						c.getPA().addSkillXPMultiplied((int) (usage == "INFERNAL" ? c.bar.getExp() / 2 : c.bar.getExp() + (goldSmithGaunts ? percentOfXp : 0)), Player.playerSmithing, true);
+
 					}
+
 				}
 			}
 		} else {

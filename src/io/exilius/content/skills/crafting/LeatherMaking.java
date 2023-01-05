@@ -1,10 +1,14 @@
 package io.exilius.content.skills.crafting;
 
 import io.exilius.content.achievement_diary.impl.MorytaniaDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.entity.player.Boundary;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ItemAssistant;
 
@@ -136,9 +140,28 @@ public class LeatherMaking extends CraftingData {
 							} else {
 								container.stop();
 							}
+							if (l.getProduct() == 1135) {
+								c.currentDailyTask.getTaskName().equals(DailyTaskData.CRAFTING_GREENDHIDEBODY.getDailyTask().getTaskName());
+									DailyTaskHandler.Companion.handleProgress(c, 1);
+								}
+							if (l.getProduct() == 1061) {
+								c.currentDailyTask.getTaskName().equals(DailyTaskData.CRAFTING_BOOTS.getDailyTask().getTaskName());
+								DailyTaskHandler.Companion.handleProgress(c, 1);
+							}
+							if (l.getProduct() == 1059) {
+								c.currentDailyTask.getTaskName().equals(DailyTaskData.CRAFTING_LEATHER_GLOVES.getDailyTask().getTaskName());
+								DailyTaskHandler.Companion.handleProgress(c, 1);
+							}
+							if (l.getProduct() == 2503) {
+								c.currentDailyTask.getTaskName().equals(DailyTaskData.CRAFTING_BLACK_DHIDE_BODY.getDailyTask().getTaskName());
+								DailyTaskHandler.Companion.handleProgress(c, 1);
+							}
+							if (l.getProduct() == 2491) {
+								c.currentDailyTask.getTaskName().equals(DailyTaskData.CRAFTING_BLACK_DHIDE_GLOVES.getDailyTask().getTaskName());
+								DailyTaskHandler.Companion.handleProgress(c, 1);
+							}
 						}
-
-						@Override
+							@Override
 						public void onStopped() {
 							c.playerIsCrafting = false;
 							c.craftDialogue = false;

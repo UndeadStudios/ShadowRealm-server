@@ -9,7 +9,10 @@ import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.SkillHandler;
+import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
@@ -143,6 +146,26 @@ public class Runecrafting extends SkillHandler {
 				player.getPA().requestUpdates();
 				player.getPA().sendSound(2710);
 				petRoll(player, data);
+			}
+			if (name.equals(RunecraftingData.AIR)) {
+				player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_AIR_RUNE.name());
+				System.out.println("Burnign oak logs");
+			}
+			if (name.equals(RunecraftingData.MIND)) {
+				player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_MIND_RUNE.name());
+				System.out.println("Burnign oak logs");
+			}
+			if (name.equals(RunecraftingData.LAW)) {
+				player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_LAW_RUNE.name());
+				System.out.println("Burnign oak logs");
+			}
+			if (name.equals(RunecraftingData.DEATH)) {
+				player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_DEATH_RUNE.name());
+				System.out.println("Burnign oak logs");
+			}
+			if (name.equals(RunecraftingData.BLOOD)) {
+				player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_BLOOD_RUNE.name());
+				System.out.println("Burnign oak logs");
 			}
 		}
 	}

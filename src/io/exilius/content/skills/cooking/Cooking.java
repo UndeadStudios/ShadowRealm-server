@@ -7,6 +7,8 @@ import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.SkillHandler;
 import io.exilius.model.Items;
 import io.exilius.model.cycleevent.CycleEvent;
@@ -124,6 +126,7 @@ public class Cooking extends SkillHandler {
 			c.sendMessage("You mix the water and flour to make some " + ItemAssistant.getItemName(item) + ".");
 		}
 		c.getPA().closeAllWindows();
+
 	}
 
 	public static void pastryCreation(Player c, int itemID1, int itemID2, int giveItem, String message) {
@@ -252,10 +255,23 @@ public class Cooking extends SkillHandler {
 								if (Boundary.isIn(player, Boundary.VARROCK_BOUNDARY)) {
 									player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.COOK_LOBSTER);
 								}
+								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_LOBSTER.getDailyTask().getTaskName())) {
+									DailyTaskHandler.Companion.handleProgress(player, 1);
+									System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
+								}
 								break;
+							case 335:
+								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_TROUT.getDailyTask().getTaskName())) {
+									DailyTaskHandler.Companion.handleProgress(player, 1);
+									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
+								}
 							case 317:
 								if (Boundary.isIn(player, Boundary.LUMRIDGE_BOUNDARY)) {
 									player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.COOK_SHRIMP);
+								}
+								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_SHRIMP.getDailyTask().getTaskName())) {
+									DailyTaskHandler.Companion.handleProgress(player, 1);
+									System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
 								}
 								break;
 							case 11934:
@@ -263,6 +279,11 @@ public class Cooking extends SkillHandler {
 									player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DARK_CRAB);
 								}
 								break;
+							case 331:
+								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_SALMON.getDailyTask().getTaskName())) {
+									DailyTaskHandler.Companion.handleProgress(player, 1);
+									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
+								}
 						}
 						player.getPlayerAssistant().addSkillXPMultiplied(item.getXp(), player.playerCooking, true);
 						player.getItems().addItem(item.getCookedItem(), 1);

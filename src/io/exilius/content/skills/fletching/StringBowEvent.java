@@ -1,6 +1,8 @@
 package io.exilius.content.skills.fletching;
 
 import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Boundary;
@@ -31,9 +33,36 @@ public class StringBowEvent extends Event<Player> {
 				plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.STRING_MAPLE_SHORT);
 			}
 			break;
-			
+		case 839:
+			if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.FLETCH_LONGBOW.getDailyTask().getTaskName())) {
+			DailyTaskHandler.Companion.handleProgress(plr, 1);
+			System.out.println("Player " + plr.getLoginName() + " has just progressed on their cooking trout task");
+		}
+			break;
+		case 845:
+			if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.FLETCH_OAK_LONGBOW.getDailyTask().getTaskName())) {
+				DailyTaskHandler.Companion.handleProgress(plr, 1);
+				System.out.println("Player " + plr.getLoginName() + " has just progressed on their cooking trout task");
+		}
+			break;
+		case 851:
+			if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.FLETCH_MAPLE_LONGBOW.getDailyTask().getTaskName())) {
+				DailyTaskHandler.Companion.handleProgress(plr, 1);
+				System.out.println("Player " + plr.getLoginName() + " has just progressed on their cooking trout task");
+		}
+			break;
+		case 847:
+			if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.FLETCH_WILLOW_LONGBOW.getDailyTask().getTaskName())) {
+				DailyTaskHandler.Companion.handleProgress(plr, 1);
+				System.out.println("Player " + plr.getLoginName() + " has just progressed on their cooking trout task");
+			}
+			break;
 		case 859:
 			if (Boundary.isIn(plr, Boundary.LLETYA_BOUNDARY)) {
+			}
+			if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.FLETCH_MAGIC_LONGBOW.getDailyTask().getTaskName())) {
+				DailyTaskHandler.Companion.handleProgress(plr, 1);
+				System.out.println("Player " + plr.getLoginName() + " has just progressed on their cooking trout task");
 			}
 			break;
 		}

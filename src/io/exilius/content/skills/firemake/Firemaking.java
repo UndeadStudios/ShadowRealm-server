@@ -7,6 +7,7 @@ import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
+import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
@@ -85,8 +86,18 @@ public class Firemaking {
 				if (log.getlogId() == 1521) {
 					player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.BURN_OAK);
 				}
-				player.getItems().deleteItem(log.getlogId(), player.getItems().getInventoryItemSlot(log.getlogId()), 1);
-			
+				if (log.getlogId() == 1521) {
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_OAK_LOGS.name());
+					System.out.println("Burnign oak logs");
+				}
+				if (log.getlogId() == 1517) {
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAPLE_LOGS.name());
+					System.out.println("Burnign oak logs");
+				}
+				if (log.getlogId() == 1513) {
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAGIC_LOGS.name());
+					System.out.println("Burnign oak logs");
+				}
 				CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 					@Override
 					public void execute(CycleEventContainer container) {

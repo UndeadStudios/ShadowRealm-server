@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.Optional;
 
 import io.exilius.Server;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
+import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Player;
 
@@ -41,6 +44,10 @@ public class GemCutting {
 					if (!plr.getItems().playerHasItem(g.getUncut())) {
 						stop();
 						return;
+					}
+					if (c.equals(Gem.EMERALD) && c.currentDailyTask.getTaskName().equals(DailyTaskData.SMITHING_RUNE_BARS.getDailyTask().getTaskName())) {
+						DailyTaskHandler.Companion.handleProgress(c, 1);
+						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 				}
 

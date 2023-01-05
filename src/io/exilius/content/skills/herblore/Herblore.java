@@ -15,6 +15,8 @@ import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
@@ -122,7 +124,21 @@ public class Herblore {
 							player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MIX_SUPER_DEFENCE);
 						}
 						break;
+					case SUPER_STRENGTH:
+						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_STRENGTH.getDailyTask().getTaskName())) {
+							DailyTaskHandler.Companion.handleProgress(player, 1);
+							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
+					case SUPER_ANTIPOISON:
+						if	(player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_ANTIPOISON.getDailyTask().getTaskName())) {
+							DailyTaskHandler.Companion.handleProgress(player, 1);
+							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
 					case SUPER_COMBAT_3:
+						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_COMBAT.getDailyTask().getTaskName())) {
+							DailyTaskHandler.Companion.handleProgress(player, 1);
+							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
 					case SUPER_COMBAT_4:
 						if (Boundary.isIn(player, Boundary.ARDOUGNE_ZOO_BRIDGE_BOUNDARY)) {
 							player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.SUPER_COMBAT_ARD);
@@ -131,8 +147,22 @@ public class Herblore {
 							player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SUPER_COMBAT);
 						}
 						break;
+					case SUPER_RESTORE:
+						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_RESTORE.getDailyTask().getTaskName())) {
+							DailyTaskHandler.Companion.handleProgress(player, 1);
+							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
+						case STRENGTH:
+							if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_STRENGTH.getDailyTask().getTaskName())) {
+								DailyTaskHandler.Companion.handleProgress(player, 1);
+								System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
 					case ANTI_VENOM_4:
 					case ANTI_VENOM_3:
+						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_ANTIVENOM.getDailyTask().getTaskName())) {
+							DailyTaskHandler.Companion.handleProgress(player, 1);
+							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+						}
 					case ANTI_VENOM_2:
 					case ANTI_VENOM_1:
 						if (Boundary.isIn(player, Boundary.BRIMHAVEN_BOUNDARY)) {

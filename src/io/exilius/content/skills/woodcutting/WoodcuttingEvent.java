@@ -113,8 +113,25 @@ public class WoodcuttingEvent extends Event<Player> {
             if (tree.equals(Tree.MAGIC)) {
                 plr.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
             }
+
+            if (tree.equals(Tree.NORMAL) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_NORMAL_TREE.name())) {
+                System.out.println("Chopping a normal tree");
+                DailyTaskHandler.Companion.handleProgress(plr, 1);
+            }
             if (tree.equals(Tree.OAK) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
-                System.out.println("Chopping a fucking oak tree you cunt");
+                System.out.println("Chopping a oak tree");
+                DailyTaskHandler.Companion.handleProgress(plr, 1);
+            }
+            if (tree.equals(Tree.MAPLE) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAPLE_TREE.name())) {
+                System.out.println("Chopping a magic tree");
+                DailyTaskHandler.Companion.handleProgress(plr, 1);
+            }
+            if (tree.equals(Tree.MAGIC) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAGIC_TREE.name())) {
+                System.out.println("Chopping a magic tree");
+                DailyTaskHandler.Companion.handleProgress(plr, 1);
+            }
+            if (tree.equals(Tree.REDWOOD) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_REDWOOD_TREE.name())) {
+                System.out.println("Chopping a redwood tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
             plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);

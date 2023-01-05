@@ -33,5 +33,4 @@ public class CannonballSmelting {
                 .setExperiencedGained(new SkillLevel(Skill.SMITHING, 25))
                 .createItemProductionTask().begin();
     }
-
 }
