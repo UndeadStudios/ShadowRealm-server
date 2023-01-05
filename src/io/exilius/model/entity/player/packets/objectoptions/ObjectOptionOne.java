@@ -416,10 +416,11 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 				if(c.getY() > 6400) {
-					Ladders.climbLadder(c, c.getX(), c.getY()-6400, c.heightLevel);
+
+						Ladders.climbLadder(c, c.getX(), c.getY() - 6400, c.heightLevel);
 					return;
 				} else {
-					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel+1);
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel + 1);
 					return;
 				}
 			}
@@ -553,10 +554,10 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
-					Ladders.climbLadder(c, c.getX(), c.getY()+6400, c.heightLevel);
+						Ladders.climbLadder(c, c.getX(), c.getY() + 6400, c.heightLevel);
 					return;
 				} else {
-					Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel-1);
+						Ladders.climbLadder(c, c.absX, c.absY, c.heightLevel - 1);
 					return;
 				}
 			}

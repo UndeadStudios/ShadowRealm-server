@@ -506,6 +506,9 @@ public class NpcOptionTwo {
 		case 2578:
 			player.getDH().sendDialogues(2400, -1);
 			break;
+			case 6945:
+				player.getShops().openShop(67);
+				break;
 			// FISHING
 			case 3913: // NET + BAIT
 			case 1525:

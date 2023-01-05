@@ -186,6 +186,10 @@ public class ShopAssistant {
 			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " mage arena points.");
 			return;
 		}
+		if (c.myShopId == 67) {
+			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " daily points.");
+			return;
+		}
 		if (c.myShopId == 65) {
 			c.sendMessage(itemName + ": currently costs " + getSpecialItemValue(removeId) + " Star dust.");
 			return;
@@ -334,6 +338,11 @@ public class ShopAssistant {
 					case 12015:
 					case 12016:
 						return 450;
+				}
+			case 67: //daily shop
+				switch(id) {
+					case 995:// place holder
+						return 2000;
 				}
 		case 13: // Jossik quest shop
 			return 1;
@@ -1774,6 +1783,7 @@ public class ShopAssistant {
 			case 121:
 			case 15:
 			case 65:
+			case 67:
 			case 80:
 			case 171:
 			case 172:
@@ -2264,6 +2274,7 @@ public class ShopAssistant {
 				case 77:
 				case 121:
 				case 65:
+				case 67:
 				case 15:
 				case 172:
 				case 173:
@@ -2534,6 +2545,23 @@ public class ShopAssistant {
 				return;
 			}
 			c.setArenaPoints(c.getArenaPoints() - itemValue);
+			c.getQuestTab().updateInformationTab();
+			c.getItems().addItem(itemID, amount);
+			c.getItems().sendInventoryInterface(3823);
+			logShop("bought", itemID, amount);
+			return;
+		}
+		if (c.myShopId == 67) {
+			if (c.getItems().freeSlots() < 1) {
+				c.sendMessage("You need at least one free slot to buy this.");
+				return;
+			}
+			int itemValue = getSpecialItemValue(itemID) * amount;
+			if (c.getDailyTaskPoints() < itemValue) {
+				c.sendMessage("You do not have enough daily points to buy this from the shop.");
+				return;
+			}
+			c.setArenaPoints(c.getDailyTaskPoints() - itemValue);
 			c.getQuestTab().updateInformationTab();
 			c.getItems().addItem(itemID, amount);
 			c.getItems().sendInventoryInterface(3823);

@@ -13,6 +13,10 @@ public class Ladders {
         CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
             @Override
             public void execute(CycleEventContainer container) {
+                if(player.getRegionProvider().isBlocked(x, y, h)) {
+                    container.stop();
+                    return;
+                }
                 player.getPA().movePlayer(x, y, h);
                 player.startAnimation(65535);
                 container.stop();
