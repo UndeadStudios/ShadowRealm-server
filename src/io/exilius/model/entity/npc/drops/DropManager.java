@@ -604,6 +604,9 @@ KeyToClue.dropKey(player, npc, location);
                 || (player.hasFollower && (player.petSummonId == 30114 || player.petSummonId == 30120))
                 || (player.hasFollower && (player.petSummonId == 30021 || player.petSummonId == 30122))) {
             modifier -= .10;
+        } else if (player.getItems().playerHasItem(27651)
+                || (player.hasFollower && (player.petSummonId == 11855))) {
+            modifier -= .30;
         } else if (player.getItems().playerHasItem(30014) || (player.hasFollower && (player.petSummonId == 30014 || player.petSummonId == 30020 || player.petSummonId == 30022))) {
             modifier -= .05;
         }

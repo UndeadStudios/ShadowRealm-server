@@ -25,10 +25,11 @@ public enum Pickaxe {
 		DRAGON2(7, 12797, 61, 335, 13),
 		DRAGON_OR(8, 23677, 61, 335, 13), 
 		INFERNAL(9, 13243, 61, 4482, 13), 
-		THIRD_AGE(10, 20014, 61, 7283, 15);
+		THIRD_AGE(10, 20014, 61, 7283, 15),
+		Crystal_pickaxe(11, 23680, 71, 9486, 17);
 
 	/**
-	 * The priority of the pickaxe. The higher the value, the higher the priority. This serves as a replacement to the {@link Enum.ordinal()} function.
+	 * The priority of the pickaxe. The higher the value, the higher the priority. This serves as a replacement to the  function.
 	 */
 	private final int priority;
 
