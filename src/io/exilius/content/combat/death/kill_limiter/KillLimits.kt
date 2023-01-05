@@ -10,4 +10,6 @@ enum class KillLimits(
     val killLimit: Int
 ) {
     BARREL_CHEST(6342, 50),
+    QUEEN_LATSYRC(8781, 5),
+    
 }
