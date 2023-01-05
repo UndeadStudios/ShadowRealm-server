@@ -10,6 +10,7 @@ import io.exilius.content.dialogue.impl.IronmanNpcDialogue;
 import io.exilius.content.minigames.inferno.Inferno;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.agility.AgilityHandler;
+import io.exilius.content.skills.fishing.Fishing;
 import io.exilius.content.skills.thieving.Thieving;
 import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.Npcs;
@@ -505,11 +506,14 @@ public class NpcOptionTwo {
 		case 2578:
 			player.getDH().sendDialogues(2400, -1);
 			break;
-		case 3913: // BAIT + NET
-			case 1518:
-			case 7947:
-			//Fishing.attemptdata(player, 2);
-			break;
+			// FISHING
+			case 3913: // NET + BAIT
+			case 1525:
+			case 1530:
+			case 1523:
+				//Fishing.attemptdata(player, 1);
+				Fishing.startFishing(player, 2, npcType);
+				break;
 		case 310:
 		case 314:
 		case 317:
@@ -519,7 +523,7 @@ public class NpcOptionTwo {
 		case 331:
 		case 3417:
 		case 6825:// BAIT + LURE
-			//Fishing.attemptdata(player, 6);
+			Fishing.startFishing(player, 3, npcType);
 			break;
 			case 7946:
 		case 3657:

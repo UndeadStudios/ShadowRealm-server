@@ -45,11 +45,7 @@ public class Fishing {
             player.sendMessage("You need a " + player.getItems().getItemName(fishing.getBait()) + " to catch this fish!");
             return;
         }
-        if (player.stopPlayerPacket) {
-            return;
-        }
         player.alreadyFishing = true;
-        player.stopPlayerPacket = true;
         if (!cont)
             player.sendMessage("You start fishing.");
         player.fishingNpc = i;
@@ -79,7 +75,6 @@ public class Fishing {
                     return;
                 }
                 if (!player.alreadyFishing) {
-                    player.stopAnimation();
                     container.stop();
                     return;
                 }
@@ -88,42 +83,6 @@ public class Fishing {
                     return;
                 }
                 int cont = Misc.random(10);
-                int chance = Misc.random(50);
-                int petchance = Misc.random(4500);
-                int petchance1 = Misc.random(3000);
-                if (fishing.equals(FishingData.data.Shrimp) || fishing.equals(FishingData.data.Sardine)
-                        || fishing.equals(FishingData.data.Trout) || fishing.equals(FishingData.data.Pike)
-                        || fishing.equals(FishingData.data.Tuna) || fishing.equals(FishingData.data.Lobster)
-                        || fishing.equals(FishingData.data.Monkfish)) {
-                    if (petchance == 1) {
-                        player.sendMessage(
-                                "<col=DD5C3E>You receive a skilling pet. It has been added to your bank. Congratulations!");
-                        player.getItems().addItemToBankOrDrop(13320, 1);
-                        for (int j = 0; j < PlayerHandler.players.length; j++) {
-                            if (PlayerHandler.players[j] != null) {
-                                Player c2 = (Player) PlayerHandler.players[j];
-                                c2.sendMessage(
-                                        "<col=006600>" + player.getDisplayName() + " received a skilling pet: 1 x Heron.");
-                            }
-                        }
-                    }
-                }
-                if (fishing.equals(FishingData.data.Karambwan) || fishing.equals(FishingData.data.Shark)
-                        || fishing.equals(FishingData.data.Turtle) || fishing.equals(FishingData.data.MANTA_RAY)
-                        || fishing.equals(FishingData.data.Angler) || fishing.equals(FishingData.data.DARK_CRAB)) {
-                    if (petchance1 == 1) {
-                        player.sendMessage(
-                                "<col=DD5C3E>You receive a skilling pet. It has been added to your bank. Congratulations!");
-                        player.getItems().addItemToBankOrDrop(13320, 1);
-                        for (int j = 0; j < PlayerHandler.players.length; j++) {
-                            if (PlayerHandler.players[j] != null) {
-                                Player c2 = (Player) PlayerHandler.players[j];
-                                c2.sendMessage(
-                                        "<col=006600>" + player.getDisplayName() + " received a skilling pet: 1 x Heron.");
-                            }
-                        }
-                    }
-                }
                 if (npcId == fishing.getIdentifier()) {
                     int r = random.nextInt(fishing.getFish().length);
                     //Achievements.increase(player, AchievementType.FISHING, 1);
@@ -135,19 +94,22 @@ public class Fishing {
                     }
                     if (!(fishing.getBait() == 314 && player.getItems().playerHasItem(2950)) || fishing.getBait() != 314)
                         player.getItems().deleteItem(fishing.getBait(), 1);
-                    player.startAnimation(fishing.getAnimation());
                     player.sendMessage("You catch a <col=0000FF>" + player.getItems().getItemName(fishing.getFish()[r]) + "<col=000000>.");
+                    player.stopAnimation();
+                    player.alreadyFishing = false;
                     int index = player.fishingNpc;
+                    container.stop();
                     if (cont != 0) {
                         startFishing(player, npcId, index, true);
                     }
 
                 }
             }
-
-            public void stop() {
+            @Override
+            public void onStopped() {
                 player.stopPlayerPacket = false;
                 player.fishingNpc = -1;
+                super.onStopped();
             }
 
         }, fishing.getIdentifier() + 5 + playerFishingLevel(player));
