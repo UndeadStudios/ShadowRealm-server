@@ -36,26 +36,26 @@ class KillLimitHandler {
             // Staff
             if (player.rights.isOrInherits(Right.OWNER)) return 1000.0
             if (player.rights.isOrInherits(Right.GAME_DEVELOPER)) return 1000.0
-            if (player.rights.isOrInherits(Right.ADMINISTRATOR)) return 100.0
-            if (player.rights.isOrInherits(Right.MODERATOR)) return 5.0
-            if (player.rights.isOrInherits(Right.HELPER)) return 2.0
+            if (player.rights.isOrInherits(Right.ADMINISTRATOR)) return 1000.0
+            if (player.rights.isOrInherits(Right.MODERATOR)) return 1.0
+            if (player.rights.isOrInherits(Right.HELPER)) return 1.0
             // Donators
-            if (player.rights.isOrInherits(Right.Divine_Club)) return 25.0
-            if (player.rights.isOrInherits(Right.Mythic_Club)) return 15.0
-            if (player.rights.isOrInherits(Right.ONYX_CLUB)) return 10.0
-            if (player.rights.isOrInherits(Right.DIAMOND_CLUB)) return 8.0
-            if (player.rights.isOrInherits(Right.LEGENDARY_DONATOR)) return 5.0
-            if (player.rights.isOrInherits(Right.EXTREME_DONOR)) return 4.0
-            if (player.rights.isOrInherits(Right.REGULAR_DONATOR)) return 2.0
+            if (player.rights.isOrInherits(Right.Divine_Club)) return 3.5
+            if (player.rights.isOrInherits(Right.Mythic_Club)) return 3.0
+            if (player.rights.isOrInherits(Right.ONYX_CLUB)) return 2.7
+            if (player.rights.isOrInherits(Right.DIAMOND_CLUB)) return 2.3
+            if (player.rights.isOrInherits(Right.LEGENDARY_DONATOR)) return 2.0
+            if (player.rights.isOrInherits(Right.EXTREME_DONOR)) return 1.6
+            if (player.rights.isOrInherits(Right.REGULAR_DONATOR)) return 1.3
             // Game Modes
-            if (player.rights.isOrInherits(Right.IRONMAN)) return 10.0 // No reason to limit irons too heavily
-            if (player.rights.isOrInherits(Right.ULTIMATE_IRONMAN)) return 10.0 // No reason to limit irons too heavily
-            if (player.rights.isOrInherits(Right.HC_IRONMAN)) return 10.0
-            if (player.rights.isOrInherits(Right.ROGUE_IRONMAN)) return 10.0
-            if (player.rights.isOrInherits(Right.ROGUE_HARDCORE_IRONMAN)) return 10.0
-            if (player.rights.isOrInherits(Right.GROUP_IRONMAN)) return 10.0
+            if (player.rights.isOrInherits(Right.IRONMAN)) return 1.0 // No reason to limit irons too heavily
+            if (player.rights.isOrInherits(Right.ULTIMATE_IRONMAN)) return 1.0 // No reason to limit irons too heavily
+            if (player.rights.isOrInherits(Right.HC_IRONMAN)) return 1.0
+            if (player.rights.isOrInherits(Right.ROGUE_IRONMAN)) return 1.0
+            if (player.rights.isOrInherits(Right.ROGUE_HARDCORE_IRONMAN)) return 1.0
+            if (player.rights.isOrInherits(Right.GROUP_IRONMAN)) return 1.0
             if (player.rights.isOrInherits(Right.HITBOX)) return 1.0 // I don't know what HITBOX is
-            if (player.rights.isOrInherits(Right.YOUTUBER)) return 3.0
+            if (player.rights.isOrInherits(Right.YOUTUBER)) return 1.3
             if (player.rights.isOrInherits(Right.OSRS)) return 1.0
             if (player.rights.isOrInherits(Right.ROGUE)) return 1.0
             return 1.0

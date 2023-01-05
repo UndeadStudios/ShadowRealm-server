@@ -713,7 +713,7 @@ enum class DailyTaskData(
     ),
     CRAFTING_GREENDHIDEBODY(
         DailyTask(
-            "Fletch 100 Green D'hide Bodys",
+            "Craft 100 Green D'hide Bodys",
             TaskDifficulties.MEDIUM,
             100,
             14,
@@ -725,7 +725,7 @@ enum class DailyTaskData(
     ),
     CRAFTING_LEATHER_GLOVES(
         DailyTask(
-            "Fletch 100 Leather Gloves",
+            "Craft 100 Leather Gloves",
             TaskDifficulties.EASY,
             100,
             7,
@@ -737,7 +737,7 @@ enum class DailyTaskData(
     ),
     CRAFTING_BOOTS(
         DailyTask(
-            "Fletch 100 Leather Boots",
+            "Craft 100 Leather Boots",
             TaskDifficulties.EASY,
             100,
             7,
@@ -749,7 +749,7 @@ enum class DailyTaskData(
     ),
     CRAFTING_BLACK_DHIDE_BODY(
         DailyTask(
-            "Fletch 150 Black D'hide Bodys",
+            "Craft 150 Black D'hide Bodys",
             TaskDifficulties.HARD,
             150,
             28,
@@ -761,7 +761,7 @@ enum class DailyTaskData(
     ),
     CRAFTING_BLACK_DHIDE_GLOVES(
         DailyTask(
-            "Fletch 150 Black D'hide Gloves",
+            "Craft 150 Black D'hide Gloves",
             TaskDifficulties.HARD,
             150,
             28,

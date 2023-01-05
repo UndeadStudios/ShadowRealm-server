@@ -44,6 +44,7 @@ import io.exilius.content.dailyrewards.DailyRewards;
 import io.exilius.content.dailytasks.DailyTask;
 import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
+import io.exilius.content.dailytasks.DailyTaskInterface;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -2563,6 +2564,9 @@ public class Player extends Entity {
 
     public void process() {
         //getDonationRewards().tick();
+        if (getOpenInterface() == DailyTaskInterface.interfaceId) {
+        	DailyTaskInterface.Companion.open(this);
+        	}
         raidsClipFix();
         processQueuedActions();
         processTickables();
