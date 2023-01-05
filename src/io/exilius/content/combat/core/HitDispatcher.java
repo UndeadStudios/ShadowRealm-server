@@ -568,6 +568,7 @@ public abstract class HitDispatcher {
                 List<Entity> multiHitEntities = getMultiHitEntities(MeleeData.usingSytheOfVitur(attacker));
                 List<Entity> multiHitEntities2 = getMultiHitEntities(MeleeData.usingScytheOfOsiris(attacker));
                 List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingLavaScythe(attacker));
+                List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingIceScythe(attacker));
                 if (attacker.isPrintAttackStats()) {
                     attacker.sendMessage("Using multi-attack, " + multiHitEntities.size() + " possible targets.");
                 }
@@ -784,6 +785,8 @@ public abstract class HitDispatcher {
         }else if (MeleeData.usingScytheOfOsiris(attacker)) {
             return true;
         }else if (MeleeData.usingLavaScythe(attacker)) {
+            return true;
+        }else if (MeleeData.usingIceScythe(attacker)) {
             return true;
         }
 

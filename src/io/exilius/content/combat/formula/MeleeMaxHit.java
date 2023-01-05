@@ -189,6 +189,9 @@ public class MeleeMaxHit {
 		if (c.playerEquipment[Player.playerWeapon] == 29499) {
 			attackLevel += c.getLevelForXP(c.playerXP[Player.playerAttack]) * 1.6;
 		}
+		if (c.playerEquipment[Player.playerWeapon] == 29047) {
+			attackLevel += c.getLevelForXP(c.playerXP[Player.playerAttack]) * 1.6;
+		}
 		if (c.playerEquipment[Player.playerWeapon] == 8817) {
 			attackLevel += c.getLevelForXP(c.playerXP[Player.playerAttack]) * 1.4;
 		}
