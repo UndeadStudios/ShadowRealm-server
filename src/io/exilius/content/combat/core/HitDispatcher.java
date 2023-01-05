@@ -568,7 +568,7 @@ public abstract class HitDispatcher {
                 List<Entity> multiHitEntities = getMultiHitEntities(MeleeData.usingSytheOfVitur(attacker));
                 List<Entity> multiHitEntities2 = getMultiHitEntities(MeleeData.usingScytheOfOsiris(attacker));
                 List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingLavaScythe(attacker));
-                List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingIceScythe(attacker));
+                List<Entity> multiHitEntities4 = getMultiHitEntities(MeleeData.usingIceScythe(attacker));
                 if (attacker.isPrintAttackStats()) {
                     attacker.sendMessage("Using multi-attack, " + multiHitEntities.size() + " possible targets.");
                 }
@@ -608,6 +608,23 @@ public abstract class HitDispatcher {
                     }
                 });
                 multiHitEntities3.forEach(entity -> {
+                    if (defender.isNPC()) {
+                        if (entity.isPlayer()) {
+                            Player target = entity.asPlayer();
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                                if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
+                                    attacker.attackedPlayers.add(target.getIndex());
+                                    attacker.isSkulled = true;
+                                    attacker.skullTimer = Configuration.SKULL_TIMER;
+                                    attacker.headIconPk = 0;
+                                    attacker.getPA().requestUpdates();
+                                }
+                            }
+                        }
+                    }
+                    getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
+                });
+                multiHitEntities4.forEach(entity -> {
                     if (defender.isNPC()) {
                         if (entity.isPlayer()) {
                             Player target = entity.asPlayer();
