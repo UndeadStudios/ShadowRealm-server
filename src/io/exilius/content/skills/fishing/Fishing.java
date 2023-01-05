@@ -29,6 +29,8 @@ public class Fishing {
 
     public static final Random random = new Random();
 
+    public static int[] anglerOuftit = { 13258, 13259, 13260, 13261 };
+
     public static void startFishing(Player c, int npcId, int i) {
         startFishing(c, npcId, i, false);
     }
@@ -104,6 +106,16 @@ public class Fishing {
                 int petchance1 = Misc.random(3000);
                 clueBottles(player, chance);
                 foeArtefact(player, chance);
+
+                if (petchance1 == 1) {
+                    player.getItems().addItemUnderAnyCircumstance(anglerOuftit[Misc.random(anglerOuftit.length - 1)], 1);
+                    player.sendMessage("You notice a angler piece floating in the water and pick it up.");
+                }
+                if (petchance == 2 && player.getItems().getItemCount(13320, true) == 0 && player.petSummonId != 13320) {
+                    PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] <col=255>" + player.getDisplayName() + "</col> caught a fish and a <col=CC0000>Heron</col> pet!");
+                    player.getItems().addItemUnderAnyCircumstance(13320, 1);
+                    player.getCollectionLog().handleDrop(player, 5, 13320, 1);
+                }
                 if (npcId == fishing.getIdentifier()) {
                     int r = random.nextInt(fishing.getFish().length);
 
