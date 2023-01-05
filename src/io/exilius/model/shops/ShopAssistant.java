@@ -341,8 +341,46 @@ public class ShopAssistant {
 				}
 			case 67: //daily shop
 				switch(id) {
-					case 995:// place holder
-						return 2000;
+					case 23673: // Crystal axe
+					case 23680: // Crystal pickaxe
+					case 13241: // Infernal axe
+					case 13243: // Infernal pickaxe
+					case 12785:
+						return 250;
+					case 10835:
+					case 7629:
+						return 7;
+					case 2841:
+						return 10;
+					case 7409:
+						return 30;
+					case 4151:
+					case 4087:
+						return 50;
+					case 21902:
+						return 175;
+					case 2577:
+					case 11840:
+					case 11905:
+						return 150;
+					case 11730:
+						return 5;
+					case 12696:
+						return 3;
+					case 23951:
+						return 75;
+					case 4202:
+						return 500;
+					case 22125:
+						return 1;
+					case 6199:
+						return 300;
+					case 6828:
+						return 500;
+					case 13346:
+						return 750;
+					case 2403:
+						return 950;
 				}
 		case 13: // Jossik quest shop
 			return 1;
@@ -860,7 +898,7 @@ public class ShopAssistant {
 					case 13576:
 						return 65;
 					case 13263:
-						return 20;
+						return 40;
 					case 11802:
 					case 11804:
 						return 20;
@@ -881,10 +919,11 @@ public class ShopAssistant {
 						return 50;
 					case 13239:
 					case 13235:
-					case 26219:
+					case 22324:
+						return 85;
 					case 13237:
 					case 22323:
-						return 35;
+						return 175;
 					case 21079:
 					case 21034:
 						return 30;
