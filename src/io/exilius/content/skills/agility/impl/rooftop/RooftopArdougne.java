@@ -3,8 +3,11 @@ package io.exilius.content.skills.agility.impl.rooftop;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.agility.MarkOfGrace;
+import io.exilius.content.skills.fishing.FishingData;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -140,8 +143,11 @@ public class RooftopArdougne {
 						AgilityHandler.delayEmote(c, "JUMP_DOWN", 2668, 3297, 0, 1);
 						c.getAgilityHandler().roofTopFinished(c, 5, 793, 4000);
 						c.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.ARDOUGNE_ROOFTOP);
-						 Achievements.increase(c, AchievementType.AGIL, 1);
+						Achievements.increase(c, AchievementType.AGIL, 1);
 						container.stop();
+					}
+					if (c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_ADRY_COURSE.name())) {
+						DailyTaskHandler.Companion.handleProgress(c, 1);
 					}
 				}
 				@Override

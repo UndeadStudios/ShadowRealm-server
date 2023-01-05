@@ -4,8 +4,11 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.combat.Hitmark;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.agility.MarkOfGrace;
+import io.exilius.content.skills.fishing.FishingData;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -128,8 +131,13 @@ public class RooftopVarrock {
 			AgilityHandler.delayEmote(c, "JUMP", 3236, 3417, 0, 2);
 			c.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.VARROCK_ROOFTOP);
 			Achievements.increase(c, AchievementType.AGIL, 1);
+
+			if (c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_VARROCK_ROOFTOPS.name())){
+				DailyTaskHandler.Companion.handleProgress(c,1);
+			}
 			return true;
 		}
+
 		return false;
 	}
 

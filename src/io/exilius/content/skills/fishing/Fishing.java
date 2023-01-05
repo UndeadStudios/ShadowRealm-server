@@ -7,6 +7,8 @@ import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
 import io.exilius.content.bosses.hespori.Hespori;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
@@ -137,6 +139,7 @@ public class Fishing {
                         case 371:
                             if (Boundary.isIn(player, Boundary.CATHERBY_BOUNDARY)) {
                                 player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.FISH_SWORD);
+                                DailyTaskHandler.Companion.handleProgress(player,1);
                             }
                             break;
 
@@ -144,11 +147,38 @@ public class Fishing {
                             if (Boundary.isIn(player, Boundary.KARAMJA_BOUNDARY)) {
                                 player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.FISH_LOBSTER_KAR);
                             }
+                            if  (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_LOBSTER.name())) {
+                                DailyTaskHandler.Companion.handleProgress(player,1);
+                            }
                             break;
-
                         case 3142:
                             if (Boundary.isIn(player, Boundary.RESOURCE_AREA_BOUNDARY)) {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.KARAMBWAN);
+                            }
+                            break;
+                        case 317:
+                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_SHRIMP.name())) {
+                                DailyTaskHandler.Companion.handleProgress(player,1);
+                            }
+                            break;
+                        case 335:
+                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_TROUT.name())) {
+                                DailyTaskHandler.Companion.handleProgress(player, 1);
+                            }
+                            break;
+                        case 7944:
+                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_MONKFISH.name())) {
+                                    DailyTaskHandler.Companion.handleProgress(player, 1);
+                                }
+                            break;
+                        case 383:
+                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_SHARK.name())) {
+                                DailyTaskHandler.Companion.handleProgress(player,1);
+                            }
+                            break;
+                        case 11934:
+                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_DARKCRAB.name())) {
+                                DailyTaskHandler.Companion.handleProgress(player, 1);
                             }
                             break;
                     }

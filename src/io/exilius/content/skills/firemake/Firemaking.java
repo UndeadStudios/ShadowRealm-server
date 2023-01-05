@@ -4,6 +4,7 @@ import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -85,17 +86,21 @@ public class Firemaking {
 				player.playerIsFiremaking = true;
 				if (log.getlogId() == 1521) {
 					player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.BURN_OAK);
+					DailyTaskHandler.Companion.handleProgress(player,1);
 				}
 				if (log.getlogId() == 1521) {
 					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_OAK_LOGS.name());
+					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
 				if (log.getlogId() == 1517) {
 					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAPLE_LOGS.name());
+					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
 				if (log.getlogId() == 1513) {
 					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAGIC_LOGS.name());
+					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
 				CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {

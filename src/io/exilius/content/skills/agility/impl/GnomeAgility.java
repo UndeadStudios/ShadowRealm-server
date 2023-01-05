@@ -3,7 +3,10 @@ package io.exilius.content.skills.agility.impl;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.agility.AgilityHandler;
+import io.exilius.content.skills.fishing.FishingData;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -113,6 +116,10 @@ public class GnomeAgility {
 				c.getPlayerAssistant().movePlayer(2487, 3437, 0);
 				c.getAgilityHandler().stopEmote(c);
 			}
+			if (c.equals(PIPES2_OBJECT)){
+					c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name());
+				DailyTaskHandler.Companion.handleProgress(c,1);
+				}
 			return true;
 		}
 		return false;
