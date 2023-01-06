@@ -115,11 +115,9 @@ public class GnomeAgility {
 			} else if (c.absY > 3430 && c.absY < 3436) {
 				c.getPlayerAssistant().movePlayer(2487, 3437, 0);
 				c.getAgilityHandler().stopEmote(c);
-			}
-			if (c.equals(PIPES2_OBJECT)){
-					c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name());
+				c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name());
 				DailyTaskHandler.Companion.handleProgress(c,1);
-				}
+			}
 			return true;
 		}
 		return false;

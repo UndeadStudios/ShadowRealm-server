@@ -209,6 +209,9 @@ public class Fishing {
                             }
                             break;
                     }
+                    if(fishing.equals(FishingData.data.Lobster) && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_LOBSTER.name())) {
+                        DailyTaskHandler.Companion.handleProgress(player,1);
+                    }
                     player.sendMessage("You catch a <col=0000FF>" + player.getItems().getItemName(fishing.getFish()[r]) + "<col=000000>.");
                     player.alreadyFishing = false;
                     int index = player.fishingNpc;
