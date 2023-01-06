@@ -136,23 +136,23 @@ public class Runecrafting extends SkillHandler {
 						player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.CRAFT_NATURES);
 					}
 				}
-				if (name.equals("air") || player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_AIR_RUNE.name())) {
+				if (name.equals("air") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_AIR_RUNE.name())) {
 					System.out.println("Burnign oak logs");
 					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
-				if (name.equals("mind") || player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_MIND_RUNE.name())) {
+				if (name.equals("mind") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_MIND_RUNE.name())) {
 					System.out.println("Burnign oak logs");
 					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
-				if (name.equals("law") || player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_LAW_RUNE.name())) {
+				if (name.equals("law") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_LAW_RUNE.name())) {
 					System.out.println("Burnign oak logs");
 					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
-				if (name.equals("death") || player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_DEATH_RUNE.name())) {
+				if (name.equals("death") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_DEATH_RUNE.name())) {
 					System.out.println("Burnign oak logs");
 					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
-				if (name.equals("blood") || player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_BLOOD_RUNE.name())) {
+				if (name.equals("blood") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_BLOOD_RUNE.name())) {
 					System.out.println("Burnign oak logs");
 					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
