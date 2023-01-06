@@ -14,7 +14,6 @@ import io.exilius.content.combat.stats.TrackedMonster;
 import io.exilius.content.commands.CommandManager;
 import io.exilius.content.dailyrewards.DailyRewardContainer;
 import io.exilius.content.dailyrewards.DailyRewardsRecords;
-import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.event.eventcalendar.EventCalendar;
 import io.exilius.content.event.eventcalendar.EventCalendarWinnerSelect;
 import io.exilius.content.events.monsterhunt.MonsterHunt;

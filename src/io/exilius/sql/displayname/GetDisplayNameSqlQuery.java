@@ -13,6 +13,7 @@ public class GetDisplayNameSqlQuery implements SqlQuery<String> {
     private final String loginName;
 
     public GetDisplayNameSqlQuery(String loginName) {
+        System.out.println("SQL Was trying to get the display name for " + loginName);
         this.loginName = loginName;
     }
 
