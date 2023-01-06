@@ -320,7 +320,7 @@ public class MiningEvent extends Event<Player> {
                         plr.getRechargeItems().hasItem(13105) && Misc.random(8) == 2 ? 2 :
                                 plr.getRechargeItems().hasItem(13106) && Misc.random(6) == 2 ? 2 :
                                         plr.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
-        if (!(mineral.getBarName().contains("star")) || ShootingStar.MAXIMUM_MINING_AMOUNT >= 1) {
+        if (!(mineral.getBarName().contains("star"))) {
             plr.getItems().addItem(mineral.getMineralReturn().generate(), amount);
             plr.sendMessage("You manage to mine some " + mineral.name().toLowerCase() + " ore.");
         } else {

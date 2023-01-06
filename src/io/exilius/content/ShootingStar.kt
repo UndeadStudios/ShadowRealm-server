@@ -63,6 +63,7 @@ object ShootingStar {
                 }
                 if (CRASHED_STAR!!.starObject != null) {
                     p.stopAnimation()
+                    p.getPA().stopSkilling()
                     p.sendMessage("The star has been fully mined.")
                 }
             }
