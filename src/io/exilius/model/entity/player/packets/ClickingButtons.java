@@ -26,6 +26,7 @@ import io.exilius.content.skills.construction.RoomInterface;
 import io.exilius.content.skills.cooking.Cooking;
 import io.exilius.content.skills.crafting.*;
 import io.exilius.content.skills.crafting.CraftingData.tanningData;
+import io.exilius.content.skills.magic.EnchantBoits;
 import io.exilius.content.skills.slayer.SlayerRewardsInterface;
 import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.content.tournaments.TourneyManager;
@@ -116,7 +117,6 @@ public class ClickingButtons implements PacketType {
 		if (TourneyManager.getSingleton().handleActionButtons(c, actionButtonId)) {
 			return;
 		}
-
 		if (c.getExpLock().ExpLockClicking(actionButtonId)) {
 			return;
 		}
@@ -243,6 +243,7 @@ public class ClickingButtons implements PacketType {
 		GlassBlowing.glassBlowing(c, actionButtonId);
 		Sawmill.handleButtons(c, actionButtonId);
 		RoomInterface.clickButton(c, actionButtonId);
+		EnchantBoits.EnchantButton(c, actionButtonId);
 		//SplitbarkCrafting.craft(c, actionButtonId);
 		PlayerEmotes.performEmote(c, actionButtonId);
 		// int[] teleportButtons = { 4140, 4143, 4146, 4150, 6004, 6005, 29031,
@@ -524,9 +525,6 @@ public class ClickingButtons implements PacketType {
 			/*
 			 * case 166056: c.getPA().showInterface(53000); break;
 			 */
-		case 75007:
-			c.sendMessage("Please use the normal enchant spells to enchant bolts.");
-			break;
 		case 90077:
 			c.getPA().showInterface(37700);
 			break;

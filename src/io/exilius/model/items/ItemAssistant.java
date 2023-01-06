@@ -2684,4 +2684,8 @@ public class ItemAssistant {
 		}
 		return false;
 	}
+
+	public boolean hasFreeSlots(int slots) {
+		return freeSlots() >= slots;
+	}
 }
