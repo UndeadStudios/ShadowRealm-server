@@ -114,23 +114,23 @@ public class WoodcuttingEvent extends Event<Player> {
                 plr.getEventCalendar().progress(EventChallenge.CUT_DOWN_X_MAGIC_LOGS);
             }
 
-            if (tree.getWood() == 1511 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_NORMAL_TREE.name())) {
+            if (tree.getWood() == 1511 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_NORMAL_TREE.getDailyTask().getTaskName())) {
                 System.out.println("Chopping a normal tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
-            if (tree.getWood() == 1521 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
+            if (tree.getWood() == 1521 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.getDailyTask().getTaskName())) {
                 System.out.println("Chopping a oak tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
-            if (tree.getWood() == 1517 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAPLE_TREE.name())) {
+            if (tree.getWood() == 1517 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAPLE_TREE.getDailyTask().getTaskName())) {
                 System.out.println("Chopping a magic tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
-            if (tree.getWood() == 1513 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAGIC_TREE.name())) {
+            if (tree.getWood() == 1513 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAGIC_TREE.getDailyTask().getTaskName())) {
                 System.out.println("Chopping a magic tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
-            if (tree.getWood() == 19669 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_REDWOOD_TREE.name())) {
+            if (tree.getWood() == 19669 && plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_REDWOOD_TREE.getDailyTask().getTaskName())) {
                 System.out.println("Chopping a redwood tree");
                 DailyTaskHandler.Companion.handleProgress(plr, 1);
             }
@@ -162,9 +162,24 @@ public class WoodcuttingEvent extends Event<Player> {
                     return;
                 }
                 plr.sendMessage("You get some " + ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase() + ".");
-				int amtToGive = SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1;
+                int amtToGive = SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1;
                 plr.getItems().addItem(tree.getWood(), amtToGive);
-
+                if (tree.getWood() == 1521 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.getDailyTask().getTaskName())) {
+                    System.out.println("Chopping a oak tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 1517 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAPLE_TREE.getDailyTask().getTaskName())) {
+                    System.out.println("Chopping a magic tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 1513 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAGIC_TREE.getDailyTask().getTaskName())) {
+                    System.out.println("Chopping a magic tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 19669 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_REDWOOD_TREE.getDailyTask().getTaskName())) {
+                    System.out.println("Chopping a redwood tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
 
 
             }
@@ -238,7 +253,7 @@ public class WoodcuttingEvent extends Event<Player> {
             case NORMAL:
                 break;
             case OAK:
-                if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
+                if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.getDailyTask().getTaskName())) {
                     System.out.println("Chopping a fucking oak tree you cunt");
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }

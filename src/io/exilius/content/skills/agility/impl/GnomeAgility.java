@@ -6,7 +6,6 @@ import io.exilius.content.achievement_diary.impl.WesternDiaryEntry;
 import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.agility.AgilityHandler;
-import io.exilius.content.skills.fishing.FishingData;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -99,6 +98,9 @@ public class GnomeAgility {
 				c.setForceMovement(2484, 3437, 0, 200, "NORTH", 844);
 				c.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.GNOME_AGILITY);
 				c.getAgilityHandler().lapFinished(c, 5, 87, 10000);
+				if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.getDailyTask().getTaskName())) {
+					DailyTaskHandler.Companion.handleProgress(c, 1);
+				}
 			} else if (c.absY > 3430 && c.absY < 3436 && System.currentTimeMillis() - clickTimer > 1800) {
 				c.getPlayerAssistant().movePlayer(2484, 3437, 0);
 				c.getAgilityHandler().stopEmote(c);
@@ -111,7 +113,7 @@ public class GnomeAgility {
 				c.setForceMovement(2487, 3437, 0, 200, "NORTH", 844);
 				c.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.GNOME_AGILITY);
 				c.getAgilityHandler().lapFinished(c, 5, 87, 10000);
-				if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name())) {
+				if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.getDailyTask().getTaskName())) {
 					DailyTaskHandler.Companion.handleProgress(c, 1);
 				}
 				Achievements.increase(c, AchievementType.AGIL, 1);

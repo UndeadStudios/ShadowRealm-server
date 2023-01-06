@@ -89,17 +89,17 @@ public class Firemaking {
 					DailyTaskHandler.Companion.handleProgress(player,1);
 				}
 				if (log.getlogId() == 1521) {
-					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_OAK_LOGS.name());
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_OAK_LOGS.getDailyTask().getTaskName());
 					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
 				if (log.getlogId() == 1517) {
-					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAPLE_LOGS.name());
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAPLE_LOGS.getDailyTask().getTaskName());
 					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
 				if (log.getlogId() == 1513) {
-					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAGIC_LOGS.name());
+					player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.BURN_MAGIC_LOGS.getDailyTask().getTaskName());
 					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}

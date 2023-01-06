@@ -7,7 +7,6 @@ import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.agility.AgilityHandler;
 import io.exilius.content.skills.agility.MarkOfGrace;
-import io.exilius.content.skills.fishing.FishingData;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -146,7 +145,7 @@ public class RooftopArdougne {
 						Achievements.increase(c, AchievementType.AGIL, 1);
 						container.stop();
 					}
-					if (c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_ADRY_COURSE.name())) {
+					if (c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_ADRY_COURSE.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 					}
 				}

@@ -1,15 +1,12 @@
 package io.exilius.content.skills.fishing;
 
-import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
 import io.exilius.content.bosses.hespori.Hespori;
-import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
-import io.exilius.content.skills.Skill;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -147,9 +144,6 @@ public class Fishing {
                             if (Boundary.isIn(player, Boundary.KARAMJA_BOUNDARY)) {
                                 player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.FISH_LOBSTER_KAR);
                             }
-                            if  (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_LOBSTER.name())) {
-                                DailyTaskHandler.Companion.handleProgress(player,1);
-                            }
                             break;
                         case 3142:
                             if (Boundary.isIn(player, Boundary.RESOURCE_AREA_BOUNDARY)) {
@@ -157,29 +151,6 @@ public class Fishing {
                             }
                             break;
                         case 317:
-                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_SHRIMP.name())) {
-                                DailyTaskHandler.Companion.handleProgress(player,1);
-                            }
-                            break;
-                        case 335:
-                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_TROUT.name())) {
-                                DailyTaskHandler.Companion.handleProgress(player, 1);
-                            }
-                            break;
-                        case 7944:
-                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_MONKFISH.name())) {
-                                    DailyTaskHandler.Companion.handleProgress(player, 1);
-                                }
-                            break;
-                        case 383:
-                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_SHARK.name())) {
-                                DailyTaskHandler.Companion.handleProgress(player,1);
-                            }
-                            break;
-                        case 11934:
-                            if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_DARKCRAB.name())) {
-                                DailyTaskHandler.Companion.handleProgress(player, 1);
-                            }
                             break;
                     }
                     switch (fishing.getFish()[r]) {
@@ -208,9 +179,6 @@ public class Fishing {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.KARAMBWAN);
                             }
                             break;
-                    }
-                    if(fishing.equals(FishingData.data.Lobster) && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.FISH_RAW_LOBSTER.name())) {
-                        DailyTaskHandler.Companion.handleProgress(player,1);
                     }
                     player.sendMessage("You catch a <col=0000FF>" + player.getItems().getItemName(fishing.getFish()[r]) + "<col=000000>.");
                     player.alreadyFishing = false;

@@ -11,7 +11,6 @@ import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.event.eventcalendar.EventChallenge;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.Items;
-import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
@@ -98,7 +97,7 @@ public class Thieving {
                 if (Boundary.isIn(player, Boundary.ARDOUGNE_BOUNDARY)) {
                     player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.STEAL_CAKE);
                 }
-                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_BAKER_STALL.name())){
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_BAKER_STALL.getDailyTask().getTaskName())){
 					DailyTaskHandler.Companion.handleProgress(player, 1);
                     System.out.println("Theive from the baker stall");
                 }
@@ -111,18 +110,18 @@ public class Thieving {
                 if (Boundary.isIn(player, Boundary.FALADOR_BOUNDARY)) {
                     player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.STEAL_GEM_FAL);
                 }
-                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_GEM_STALL.name())) {
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_GEM_STALL.getDailyTask().getTaskName())) {
 					DailyTaskHandler.Companion.handleProgress(player, 1);
                     System.out.println("Theive from the baker stall");
                 }
-                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_GEM_STALL.name())) {
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_GEM_STALL.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
                 break;
             case Scimitar:
                 break;
             case Silver:
-                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_SILVER_STALL.name())) {
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.THEIVE_SILVER_STALL.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
                 break;
@@ -219,8 +218,8 @@ public class Thieving {
                 if (Boundary.isIn(player, Boundary.LUMRIDGE_BOUNDARY)) {
                     player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_MAN_LUM);
                 }
-                if (player.equals(Pickpocket.MAN)) {
-                    player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.PICKPOCKET_MAN.name());
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.PICKPOCKET_MAN.getDailyTask().getTaskName())) {
+                    DailyTaskHandler.Companion.handleProgress(player,1);
                     System.out.println("Theive from a Man ");
                 }
                 break;
@@ -230,8 +229,8 @@ public class Thieving {
             case HERO:
                 player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.PICKPOCKET_HERO);
 
-                if (player.equals(Pickpocket.HERO)) {
-                    player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.PICKPOCKET_HERO.name());
+                if (player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.PICKPOCKET_HERO.getDailyTask().getTaskName())) {
+                    DailyTaskHandler.Companion.handleProgress(player,1);
                     System.out.println("Theive from a Hero");
                 }
                 break;

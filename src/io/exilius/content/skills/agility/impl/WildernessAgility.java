@@ -94,7 +94,7 @@ public class WildernessAgility {
 			}
 			c.setForceMovement(c.absX, 3933, 0, 50, "SOUTH", c.getAgilityHandler().getAnimation(objectId));
 			c.getAgilityHandler().lapFinished(c, 5, 571, 6000);
-			if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_WILDY_COURSE.name())) {
+			if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_WILDY_COURSE.getDailyTask().getTaskName())) {
 				DailyTaskHandler.Companion.handleProgress(c, 1);
 			}
 			c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_AGILITY);
