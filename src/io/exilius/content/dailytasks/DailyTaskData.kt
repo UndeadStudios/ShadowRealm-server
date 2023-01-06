@@ -411,66 +411,6 @@ enum class DailyTaskData(
             complete = false
         )
     ),
-    CUTTING_EMERALD(
-        DailyTask(
-            "Cut 100 Emeralds",
-            TaskDifficulties.EASY,
-            100,
-            7,
-            Skill.CRAFTING,
-            27,
-            0,
-            complete = false
-        )
-    ),
-    CUTTING_SAPHIRE(
-        DailyTask(
-            "Cut 100 Uncut Saphires",
-            TaskDifficulties.EASY,
-            100,
-            7,
-            Skill.CRAFTING,
-            20,
-            0,
-            complete = false
-        )
-    ),
-    CUTTING_DIAMOND(
-        DailyTask(
-            "Cut 100 Uncut Diamonds",
-            TaskDifficulties.MEDIUM,
-            100,
-            14,
-            Skill.CRAFTING,
-            43,
-            0,
-            complete = false
-        )
-    ),
-    CUTTING_DRAGONSTONES(
-        DailyTask(
-            "Cut 100 Uncut Dragonstones",
-            TaskDifficulties.EASY,
-            100,
-            7,
-            Skill.CRAFTING,
-            55,
-            0,
-            complete = false
-        )
-    ),
-    CUTTING_ONYX(
-        DailyTask(
-            "Cut 1 Uncut Onyx",
-            TaskDifficulties.EASY,
-            100,
-            7,
-            Skill.CRAFTING,
-            55,
-            0,
-            complete = false
-        )
-    ),
     COOK_SHRIMP(
         DailyTask(
             "Cook 150 shrimp",
@@ -1325,7 +1265,7 @@ enum class DailyTaskData(
     ),
     KILL_HELL_HOUNDS(
         DailyTask(
-            "Kill 250 Hell Houndss ",
+            "Kill 250 Hell Hounds ",
             TaskDifficulties.MEDIUM,
             250,
             14,

@@ -1,7 +1,5 @@
 package io.exilius.content.combat.death;
 
-import java.util.stream.IntStream;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
@@ -37,6 +35,8 @@ import io.exilius.model.items.EquipmentSet;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
+
+import java.util.stream.IntStream;
 
 public class NPCDeath {
 
@@ -85,6 +85,9 @@ public class NPCDeath {
                 }
                 break;
             case 2090:
+            case 2091:
+            case 2092:
+            case 2093:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_MOSS_GIANTS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
@@ -95,6 +98,7 @@ public class NPCDeath {
                 }
                 break;
             case 5370:
+            case 85:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_GHOSTS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
@@ -120,11 +124,14 @@ public class NPCDeath {
                 }
                 break;
             case 448:
+            case 453:
+            case 454:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_CRAWLING_HANDINGS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
                 break;
             case 7768:
+            case 264:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_GREEN_DRAGONS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
@@ -215,6 +222,7 @@ public class NPCDeath {
                 }
                 break;
             case 104:
+            case 135:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_HELL_HOUNDS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
@@ -285,6 +293,7 @@ public class NPCDeath {
                 }
                 break;
             case 6495:
+            case 3129:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_Kril.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }

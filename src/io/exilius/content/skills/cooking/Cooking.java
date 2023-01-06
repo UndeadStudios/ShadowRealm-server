@@ -275,6 +275,7 @@ public class Cooking extends SkillHandler {
 								}
 								break;
 							case 11934:
+							case 11936:
 								if (Boundary.isIn(player, Boundary.RESOURCE_AREA_BOUNDARY)) {
 									player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DARK_CRAB);
 								}

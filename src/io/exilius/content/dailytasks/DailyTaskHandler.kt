@@ -156,7 +156,7 @@ class DailyTaskHandler {
                 val builder = GsonBuilder().create()
                 val reader = fileParser.parse(fr) as JsonObject
                 loadedTask = builder.fromJson(reader["task-data"], DailyTask::class.java)
-                println("Loaded task stuff = $loadedTask")
+                println("Loaded task stuff = ${loadedTask.taskName}, ${loadedTask.progress} / ${loadedTask.actionsRequired}")
                 println("File reader stuff = ${fr.readLines()}")
                 println("Loaded task for ${player.loginName}. Task name loaded was: ${loadedTask.taskName}")
                 if (loadedTask.taskName == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask.taskName) {
@@ -177,23 +177,25 @@ class DailyTaskHandler {
         fun handleProgress(player: Player, progress: Int) {
             if (player.bot) return
             val task = player.currentDailyTask
+            if (task.complete) return
             if (task == null) {
                 println("Task was null ffs")
                 return
             }
             println("Current task progress is ${task.progress} and we are adding $progress to it.")
-            player.currentDailyTask.progress += progress
-            println("New task progress is ${player.currentDailyTask.progress}.")
             if (task.progress >= task.actionsRequired) {
                 completeTask(player)
                 return
             }
+            player.currentDailyTask.progress += progress
+            println("New task progress is ${player.currentDailyTask.progress}.")
         }
 
         private fun completeTask(player: Player) {
             if (player.bot) return
             val task = player.currentDailyTask ?: return
             player.dailyTaskPoints += task.minRewardPoints
+            player.currentDailyTask.complete = true
             player.sendMessage("@red@[Daily Task]@blu@ You have completed your task and were awarded ${task.minRewardPoints} points!")
             PlayerHandler.executeGlobalMessage("@red@[Daily Task]@blu@ ${player.loginName} just completed a @red@${task.difficulty.toString().lowercase()}@blu@ daily task!")
         }

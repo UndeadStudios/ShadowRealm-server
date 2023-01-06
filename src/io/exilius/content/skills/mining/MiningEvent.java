@@ -5,19 +5,12 @@ import io.exilius.content.ShootingStar;
 import io.exilius.content.SkillcapePerks;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
-import io.exilius.content.achievement_diary.impl.DesertDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.FremennikDiaryEntry;
-import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
-import io.exilius.content.achievement_diary.impl.LumbridgeDraynorDiaryEntry;
-import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
-import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.smithing.Smelting;
-import io.exilius.content.skills.woodcutting.Tree;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.definitions.ItemDef;
@@ -242,7 +235,11 @@ public class MiningEvent extends Event<Player> {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(Mineral.GOLD) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
+        if (mineral.equals(mineral.GOLD) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
+            System.out.println("Mining iron ore");
+            DailyTaskHandler.Companion.handleProgress(plr, 1);
+        }
+        if (mineral.equals(mineral.GOLD2) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }

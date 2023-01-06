@@ -54,7 +54,9 @@ class DailyTaskInterface {
             }")
             player.pa.sendString(difficulty, task.difficulty.toString())
             player.pa.sendString(pointsOnCompletion, task.minRewardPoints.toString())
-            player.pa.sendString(currentProgress, "${player.currentDailyTask.progress} / ${task.actionsRequired}")
+            player.pa.sendString(currentProgress,
+                if (task.complete) "@gre@Complete!" else "${player.currentDailyTask.progress} / ${task.actionsRequired}"
+            )
             player.pa.sendString(nextTaskTime, timeUntilReset(player))
         }
 
