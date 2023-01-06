@@ -411,6 +411,66 @@ enum class DailyTaskData(
             complete = false
         )
     ),
+    CUTTING_EMERALD(
+        DailyTask(
+            "Cut 100 uncut Emeralds ",
+            TaskDifficulties.EASY,
+            100,
+            7,
+            Skill.CRAFTING,
+            27,
+            0,
+            complete = false
+        )
+    ),
+    CUTTING_DIAMOND(
+        DailyTask(
+            "Cut 100 uncut Diamonds ",
+            TaskDifficulties.MEDIUM,
+            100,
+            14,
+            Skill.CRAFTING,
+            43,
+            0,
+            complete = false
+        )
+    ),
+    CUTTING_SAPHIRE(
+        DailyTask(
+            "Cut 100 uncut Saphires ",
+            TaskDifficulties.EASY,
+            100,
+            7,
+            Skill.CRAFTING,
+            20,
+            0,
+            complete = false
+        )
+    ),
+    CUTTING_DRAGONSTONES(
+        DailyTask(
+            "Cut 100 uncut Dragonstones ",
+            TaskDifficulties.HARD,
+            100,
+            28,
+            Skill.CRAFTING,
+            55,
+            0,
+            complete = false
+        )
+    ),
+    CUTTING_ONYX(
+        DailyTask(
+            "Cut 1 uncut Onyx ",
+            TaskDifficulties.HARD,
+            100,
+            28,
+            Skill.CRAFTING,
+            67,
+            0,
+            complete = false
+        )
+    ),
     COOK_SHRIMP(
         DailyTask(
             "Cook 150 shrimp",

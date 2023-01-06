@@ -279,6 +279,11 @@ public class Cooking extends SkillHandler {
 								if (Boundary.isIn(player, Boundary.RESOURCE_AREA_BOUNDARY)) {
 									player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.DARK_CRAB);
 								}
+
+								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_DARKCRAB.getDailyTask().getTaskName())) {
+									DailyTaskHandler.Companion.handleProgress(player, 1);
+									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking Darkcrab task");
+							}
 								break;
 							case 331:
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_SALMON.getDailyTask().getTaskName())) {
