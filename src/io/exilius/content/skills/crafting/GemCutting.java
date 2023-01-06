@@ -45,23 +45,23 @@ public class GemCutting {
 						stop();
 						return;
 					}
-					if (c.equals(Gem.EMERALD) && c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_EMERALD.getDailyTask().getTaskName())) {
+					if (c.equals(Gem.EMERALD) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_EMERALD.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
-					if (c.equals(Gem.DIAMOND) && c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DIAMOND.getDailyTask().getTaskName())) {
+					if (c.equals(Gem.DIAMOND) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DIAMOND.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
-					if (c.equals(Gem.SAPPHIRE) && c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_SAPHIRE.getDailyTask().getTaskName())) {
+					if (c.equals(Gem.SAPPHIRE) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_SAPHIRE.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
-					if (c.equals(Gem.DRAGONSTONE) && c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DRAGONSTONES.getDailyTask().getTaskName())) {
+					if (c.equals(Gem.DRAGONSTONE) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DRAGONSTONES.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
-					if (c.equals(Gem.ONYX) && c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_ONYX.getDailyTask().getTaskName())) {
+					if (c.equals(Gem.ONYX) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_ONYX.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
 						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
