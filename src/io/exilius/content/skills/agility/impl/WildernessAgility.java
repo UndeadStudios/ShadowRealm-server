@@ -3,6 +3,8 @@ package io.exilius.content.skills.agility.impl;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.dailytasks.DailyTaskData;
+import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.entity.player.Player;
 
 /**
@@ -92,6 +94,9 @@ public class WildernessAgility {
 			}
 			c.setForceMovement(c.absX, 3933, 0, 50, "SOUTH", c.getAgilityHandler().getAnimation(objectId));
 			c.getAgilityHandler().lapFinished(c, 5, 571, 6000);
+			if(c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_WILDY_COURSE.name())) {
+				DailyTaskHandler.Companion.handleProgress(c, 1);
+			}
 			c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_AGILITY);
 			 Achievements.increase(c, AchievementType.AGIL, 1);
 			return true;
