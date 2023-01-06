@@ -46,7 +46,7 @@ public class EnterReferralDialogue extends DialogueBuilder {
     }
 
     private static void register(Player player, ReferralSource source, String qualifier, List<GameItem> rewards, String message) {
-        int totalReq = (player.getMode().is5x() ? 100 : 500);
+        int totalReq = (player.getMode().is5x() ? 100 : 1);
         logger.debug("Skipping already claimed on network check and Player#usedReferral.");
         if (!Server.isDebug() && (!ReferralRegister.canGetReward(player) || player.usedReferral)) {
             player.start(new DialogueBuilder(player).statement("You've already used your one referral!"));
