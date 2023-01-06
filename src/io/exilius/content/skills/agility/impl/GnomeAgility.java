@@ -111,12 +111,12 @@ public class GnomeAgility {
 				c.setForceMovement(2487, 3437, 0, 200, "NORTH", 844);
 				c.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.GNOME_AGILITY);
 				c.getAgilityHandler().lapFinished(c, 5, 87, 10000);
-				 Achievements.increase(c, AchievementType.AGIL, 1);
+				c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name());
+				DailyTaskHandler.Companion.handleProgress(c,1);
+				Achievements.increase(c, AchievementType.AGIL, 1);
 			} else if (c.absY > 3430 && c.absY < 3436) {
 				c.getPlayerAssistant().movePlayer(2487, 3437, 0);
 				c.getAgilityHandler().stopEmote(c);
-				c.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUN_GNOME1.name());
-				DailyTaskHandler.Companion.handleProgress(c,1);
 			}
 			return true;
 		}
