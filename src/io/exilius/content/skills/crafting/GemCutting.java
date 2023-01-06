@@ -21,7 +21,7 @@ public class GemCutting {
 				c.sendMessage("You need a crafting level of " + g.getLevel() + " to do this.");
 				return;
 			}
-			c.startAnimation(886);
+			c.startAnimation(g.getAnimation());
 			Server.getEventHandler().submit(new Event<Player>("skilling", c, 2) {
 
 				@Override
