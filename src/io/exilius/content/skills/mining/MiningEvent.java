@@ -223,35 +223,35 @@ public class MiningEvent extends Event<Player> {
                 plr.getItems().addItem(2996, randomAmount);
             }
         }
-        if (mineral.equals(Mineral.IRON) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_IRON_ORE.name())) {
+        if (mineral.equals(Mineral.IRON) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_IRON_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(Mineral.COPPER) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_COPPER_ORE.name())) {
+        if (mineral.equals(Mineral.COPPER) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_COPPER_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(Mineral.COAL) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_COAL_ORE.name())) {
+        if (mineral.equals(Mineral.COAL) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_COAL_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(mineral.GOLD) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
+        if (mineral.equals(mineral.GOLD) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(mineral.GOLD2) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
+        if (mineral.equals(mineral.GOLD2) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(Mineral.ADAMANT) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_ADAMANT_ORE.name())) {
+        if (mineral.equals(Mineral.ADAMANT) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_ADAMANT_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-        if (mineral.equals(Mineral.RUNE) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_RUNE_ORE.name())) {
+        if (mineral.equals(Mineral.RUNE) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_RUNE_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
-		if (mineral.equals(Mineral.AMETHYST) && plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_AMATHYST_ORE.name())) {
+		if (mineral.equals(Mineral.AMETHYST) || plr.currentDailyTask.getTaskName().equals(DailyTaskData.MINE_AMATHYST_ORE.name())) {
             System.out.println("Mining iron ore");
             DailyTaskHandler.Companion.handleProgress(plr, 1);
         }
