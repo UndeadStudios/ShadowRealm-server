@@ -30,7 +30,7 @@ class DailyTaskHandler {
         private const val mustBeMaxedForHardTasks = true
 
         // Players can be given additional reward points when completing daily tasks?
-        private const val additionalPointsEnabled = true
+        private const val additionalPointsEnabled = false
 
         // What's the maximum additional points a task can be given?
         private const val maxAdditionalEasyPoints = 10
