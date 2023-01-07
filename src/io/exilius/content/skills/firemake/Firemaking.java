@@ -103,6 +103,10 @@ public class Firemaking {
 					DailyTaskHandler.Companion.handleProgress(player,1);
 					System.out.println("Burnign oak logs");
 				}
+				player.getItems().deleteItem(log.getlogId(), player.getItems().getItemSlot(log.getlogId()), 1);
+				Server.itemHandler.createGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, 1,
+						player.getIndex());
+
 				CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 					@Override
 					public void execute(CycleEventContainer container) {
