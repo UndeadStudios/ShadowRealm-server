@@ -1,6 +1,8 @@
 package io.exilius.model.items;
 
 import io.exilius.Server;
+import io.exilius.model.items.customs.ItemDefinition_Sub1;
+import io.exilius.model.items.customs.ItemDefinition_Sub2;
 import io.exilius.util.Stream;
 import org.apache.commons.io.FileUtils;
 
@@ -115,10 +117,381 @@ public class ItemCacheDefinition {
 							    }
 	return ItemDef;
     }
+    public static ItemCacheDefinition copy(ItemCacheDefinition itemDef, int newId, int copyingItemId, String newName, String...actions) {
+        ItemCacheDefinition copyItemDef = forID(copyingItemId);
+        itemDef.id = newId;
+        itemDef.name = newName;
+        itemDef.description = copyItemDef.description;
+        itemDef.modifiedModelColors = copyItemDef.modifiedModelColors;
+        itemDef.originalModelColors = copyItemDef.originalModelColors;
+        itemDef.modelId = copyItemDef.modelId;
+        itemDef.primaryMaleModel = copyItemDef.primaryMaleModel;
+        itemDef.primaryFemaleModel = copyItemDef.primaryFemaleModel;
+        itemDef.spriteScale = copyItemDef.spriteScale;
+        itemDef.spritePitch = copyItemDef.spritePitch;
+        itemDef.spriteCameraRoll = copyItemDef.spriteCameraRoll;
+        itemDef.spriteTranslateX = copyItemDef.spriteTranslateX;
+        itemDef.spriteTranslateY = copyItemDef.spriteTranslateY;
+        itemDef.itemActions = copyItemDef.itemActions;
+        itemDef.itemActions = new String[5];
+        if (actions != null) {
+            for (int index = 0; index < actions.length; index++) {
+                itemDef.itemActions[index] = actions[index];
+            }
+        }
+        return itemDef;
+    }
     private static void customItems(int itemId) {
         ItemCacheDefinition itemDef = forID(itemId);
+        ItemDefinition_Sub1.itemDef(itemId, itemDef);
+        ItemDefinition_Sub2.itemDef(itemId, itemDef);
         switch (itemId) {
+            case 30000:
+                copy(itemDef, 30_000, 11738, "Resource box(small)", "Open");
+                break;
+            case 30001:
+                 copy(itemDef, 30_001, 11738, "Resource box(medium)", "Open");
+                 break;
+            case 30002:
+                 copy(itemDef, 30_002, 11738, "Resource box(large)", "Open");
+                 break;
+            case 22375:
+                 copy(itemDef, 22375, 22374, "Mossy key");
+                 break;
+
+            case 33056:
+
+                itemDef.id = 33056;
+                itemDef.modelId = 65270;
+                itemDef.name = "Completionist cape";
+                itemDef.description = "A cape worn by those who've overachieved.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 65297;
+                itemDef.primaryFemaleModel = 65316;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Teleports";
+                itemDef.itemActions[3] = "Features";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 33057:
+
+                itemDef.id = 33057;
+                itemDef.modelId = 65273;
+                itemDef.name = "Completionist hood";
+                itemDef.description = "A hood worn by those who've over achieved.";
+
+                itemDef.spriteScale = 760;
+                itemDef.spritePitch = 11;
+                itemDef.spriteCameraRoll = 0;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 0;
+
+                itemDef.primaryMaleModel = 65292;
+                itemDef.primaryFemaleModel = 65310;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+break;
+            case 8817:
+
+                itemDef.id = 8817;
+                itemDef.modelId = 52300;
+                itemDef.name = "scythe of Osiris";
+                itemDef.description = "A scythe for the finest.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 52300;
+                itemDef.primaryFemaleModel = 52300;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 29499:
+
+                itemDef.id = 29499;
+                itemDef.modelId = 52401;
+                itemDef.name = "Lava Scythe";
+                itemDef.description = "A scythe from lava.";
+                itemDef.spriteScale = 2105;
+                itemDef.spritePitch = 327;
+                itemDef.spriteCameraRoll = 23;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 1;
+                itemDef.spriteTranslateY = 17;
+
+                itemDef.primaryMaleModel = 52400;
+                itemDef.primaryFemaleModel = 52400;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 29047:
+
+                itemDef.id = 29047;
+                itemDef.modelId = 55742;
+                itemDef.name = "Ice Scythe";
+                itemDef.description = "A scythe from Ice.";
+                itemDef.spriteScale = 2105;
+                itemDef.spritePitch = 327;
+                itemDef.spriteCameraRoll = 23;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 1;
+                itemDef.spriteTranslateY = 17;
+
+                itemDef.primaryMaleModel = 52906;
+                itemDef.primaryFemaleModel = 52906;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 29180:
+
+                itemDef.id = 29180;
+                itemDef.modelId = 50000;
+                itemDef.name = "Osiris Chainmace";
+                itemDef.description = "A Mace From Hell.";
+                itemDef.spriteScale = 2105;
+                itemDef.spritePitch = 23;
+                itemDef.spriteCameraRoll = 327;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 1;
+                itemDef.spriteTranslateY = 17;
+
+                itemDef.primaryMaleModel = 50000;
+                itemDef.primaryFemaleModel = 50000;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 8813:
+
+                itemDef.id = 8813;
+                itemDef.modelId = 65132;
+                itemDef.name = "Lava Torva Platebody";
+                itemDef.description = "A body from lava.";
+                itemDef.spriteScale = 1780;
+                itemDef.spritePitch = 2042;
+                itemDef.spriteCameraRoll = 473;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = -1;
+                itemDef.spriteTranslateY = -1;
+
+                itemDef.primaryMaleModel = 65133;
+                itemDef.secondaryMaleModel = 65129;
+                itemDef.primaryFemaleModel = 65133;
+                itemDef.secondaryFemaleModel = 65129;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 8812:
+
+                itemDef.id = 8812;
+                itemDef.modelId = 65134;
+                itemDef.name = "Lava Torva Platelegs";
+                itemDef.description = "Platelegs made from lava.";
+                itemDef.spriteScale = 1780;
+                itemDef.spritePitch = 2045;
+                itemDef.spriteCameraRoll = 474;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = -1;
+                itemDef.spriteTranslateY = 8;
+
+                itemDef.primaryMaleModel = 65135;
+                itemDef.primaryFemaleModel = 65135;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 8814:
+
+                itemDef.id = 8814;
+                itemDef.modelId = 65130;
+                itemDef.name = "Lava Torva Full Helm";
+                itemDef.description = "A Helm from lava.";
+                itemDef.spriteScale = 1780;
+                itemDef.spritePitch = 1867;
+                itemDef.spriteCameraRoll = 85;
+                itemDef.spriteCameraYaw = 1;
+                //itemDef.spriteTranslateX = -1;
+                itemDef.spriteTranslateY = -2;
+                itemDef.itemActions = new String[5];
+                itemDef.primaryMaleModel = 65131;
+                itemDef.primaryFemaleModel = 65131;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wield";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 4371:
+
+                itemDef.id = 4371;
+                itemDef.modelId = 56670;
+                itemDef.name = "Admin Cape";
+                itemDef.description = "A Cape for the finest.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 56670;
+                itemDef.primaryFemaleModel = 56670;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Teleports";
+                itemDef.itemActions[3] = "Features";
+                itemDef.itemActions[4] = "Drop";
+break;
+            case 26230:
+
+                itemDef.id = 26230;
+                itemDef.modelId = 50500;
+                itemDef.name = "burning skeleteon boots";
+                itemDef.description = "spooky skeleton.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 50500;
+                itemDef.primaryFemaleModel = 50500;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Drop";
+break;
+            case 26231:
+
+                itemDef.id = 26231;
+                itemDef.modelId = 50501;
+                itemDef.name = "Burning skeleteon Gloves";
+                itemDef.description = "spooky skeleton.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 50501;
+                itemDef.primaryFemaleModel = 50501;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Drop";
+break;
+            case 26232:
+
+                itemDef.id = 26232;
+                itemDef.modelId = 50502;
+                itemDef.name = "Burning skeleteon mask";
+                itemDef.description = "spooky skeleton.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 50502;
+                itemDef.primaryFemaleModel = 50502;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Drop";
+break;
+            case 26233:
+
+                itemDef.id = 26233;
+                itemDef.modelId = 50503;
+                itemDef.name = "Burning skeleteon leggings";
+                itemDef.description = "spooky skeleton.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 50503;
+                itemDef.primaryFemaleModel = 50503;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Drop";
+break;
+            case 26234:
+
+                itemDef.id = 26234;
+                itemDef.modelId = 50505;
+                itemDef.name = "Burning skeleteon Skirt";
+                itemDef.description = "spooky skeleton.";
+
+                itemDef.spriteScale = 1385;
+                itemDef.spritePitch = 279;
+                itemDef.spriteCameraRoll = 948;
+                itemDef.spriteCameraYaw = 0;
+                itemDef.spriteTranslateX = 0;
+                itemDef.spriteTranslateY = 24;
+
+                itemDef.primaryMaleModel = 50505;
+                itemDef.secondaryMaleModel = 50504;
+                itemDef.primaryFemaleModel = 50505;
+                itemDef.secondaryFemaleModel = 50504;
+                //itemDef.groundActions = new String[5];
+                //itemDef.groundActions[2] = "Take";
+                itemDef.itemActions = new String[5];
+                itemDef.itemActions[1] = "Wear";
+                itemDef.itemActions[2] = "Drop";
+break;
         }
+
     }
 	public static void dumpItemDefs() {
 		final int[] wikiBonuses = new int[18];
