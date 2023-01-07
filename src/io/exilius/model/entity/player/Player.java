@@ -2258,7 +2258,6 @@ public class Player extends Entity {
             Arrays.stream(Server.getConfiguration().getServerState().getLoginMessages()).forEach(this::sendMessage);
         }
         getDailyRewards().onLogin();
-        DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(this);
         PlayerSave.login(this);
         correctCoordinates();
         BossPoints.doRefund(this);
@@ -2275,6 +2274,8 @@ public class Player extends Entity {
             KillLimitHandler.Companion.loadKilLData(this);
             KillLimitHandler.Companion.checkResetTimer(this);
         }
+        DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(this);
+
 
     }
 

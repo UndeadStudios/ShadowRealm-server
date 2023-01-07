@@ -6,10 +6,12 @@ import com.google.gson.JsonParser
 import io.exilius.Server
 import io.exilius.model.entity.player.Player
 import io.exilius.model.entity.player.PlayerHandler
+import io.exilius.sql.donation.reclaim.ReclaimQuery
+import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
-import kotlin.random.Random
 import java.util.concurrent.TimeUnit
+import kotlin.random.Random
 
 /**
  * @author Flub
@@ -47,7 +49,7 @@ class DailyTaskHandler {
 
         private val maxTaskDuration = TimeUnit.DAYS.toMillis(1)
         private const val taskExpiryMsg = "@red@[Daily Task]@blu@ Your daily task has expired and has been reset!"
-        private val saveDirectory = Server.getSaveDirectory() + "/daily_task_saves/"
+        val saveDirectory = Server.getSaveDirectory() + "/daily_task_saves/"
 
         /** End Configuration **/
 
@@ -132,9 +134,17 @@ class DailyTaskHandler {
             player.currentDailyTask.actionsRequired = currentActions
         }
 
+        fun checkSaveDir() {
+            val saveDirectory = File(saveDirectory)
+            if (!saveDirectory.exists()) {
+                println("Daily Task Saves directory didn't exist. Creating now.")
+                saveDirectory.mkdirs()
+            }
+        }
         fun savePlayerTaskData(player: Player) {
             if (player.bot) return
             try {
+                checkSaveDir()
                 val fw = FileWriter(saveDirectory + player.loginName + ".json")
                 val builder = GsonBuilder().setPrettyPrinting().create()
                 val obj = JsonObject()
@@ -150,6 +160,7 @@ class DailyTaskHandler {
             val loadedTask: DailyTask
             println("LOADING THE PLAYER TASK DATA FOR ${player.loginName}")
             try {
+                checkSaveDir()
                 println("REACHED THE TRY LOOP")
                 val fr = FileReader(saveDirectory + player.loginName + ".json")
                 val fileParser = JsonParser()
