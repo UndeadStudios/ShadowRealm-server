@@ -157,6 +157,15 @@ public class UseItem {
 	 * @param itemId
 	 */
 	public static void ItemonObject(Player c, int objectID, int objectX, int objectY, int itemId) {
+		final int goodPosXType1 = objectX - 5;
+		final int goodPosXType2 = objectX + 5;
+		final int goodPosYType1 = objectY - 5;
+		final int goodPosYType2 = objectY + 5;
+		if (c.absX >= goodPosXType1 && c.absX <= goodPosXType2 && c.absY >= goodPosYType1 && c.absY <= goodPosYType2) {
+			c.facePosition(objectX, objectY);
+		} else {
+			c.getPlayerAssistant().playerWalk(objectX, objectY);
+		}
 		if (!c.getItems().playerHasItem(itemId, 1))
 			return;
 		c.clickObjectType = 0;
@@ -234,23 +243,20 @@ public class UseItem {
 			return;
 		}
 		switch (objectID) {
-			case 2452:
-			case 2453:
-			case 2454:
-			case 2455:
-			case 2456:
-			case 2457:
-			case 2458:
-			case 2459:
-			case 2460:
-			case 2461:
-			case 2462:
-			case 1438:
-			case 1440:
-			case 1442:
-			case 1444:
-			case 1446:
-				c.getRC().enterAltar(objectID, itemId);
+			case 34813:// air altar entrance
+			case 34814:// mind altar entrance
+			case 34815:// water altar entrance
+			case 34816:// earth altar entrance
+			case 34817:// fire altar entrance
+			case 34818:// body altar entrance
+			case 34819:// cosmic altar entrance
+			case 34820:// law altar entrance
+			case 34821:// nature altar entrance
+			case 34822:// chaos altar entrance
+			case 34823:// death altar entrance
+				if(c.getItems().playerHasItem(itemId)) {
+					c.getRC().enterAltar(objectID, itemId);
+				}
 				break;
 			case 884:
 			case 3264:

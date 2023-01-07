@@ -673,9 +673,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
                         if (height >= 0 && height <= 3) {
                             int x = absX + i2;
                             int y = absY + i3;
-                            if (!Arrays.stream(fixClips).anyMatch(c -> c[0] == x && c[1] == y)) {
                                 RegionProvider.getGlobal().get(x, y).addClipping(x, y, height, 2097152);
-                            }
                         }
                     }
                 }

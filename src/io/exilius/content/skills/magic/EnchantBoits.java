@@ -174,7 +174,11 @@ public class EnchantBoits {
                 c.getPA().closeAllWindows();
                 break;
             case 75007:
-                OpenEnchantBoits(c);
+                if(c.playerLevel[c.playerMagic] >= 4) {
+                    OpenEnchantBoits(c);
+                } else {
+                    c.sendMessage("You need a Magic Level of 4 to Enchant bolts.");
+                }
                 break;
             case 100047://Opal bolts
                 if(c.playerLevel[c.playerMagic] >= 4) {

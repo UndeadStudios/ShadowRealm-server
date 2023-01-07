@@ -11,23 +11,19 @@ public final class ObjectDef {
 
 	public static ObjectDef getObjectDef(int id) {
 		if (id > streamIndices.length) {
-			//System.out.println("Object id out of range: " + id);
 			id = streamIndices.length - 1;
 		}
 		
-		for (int j = 0; j < 20; j++) {
-			if (cache[j].type == id) {
+		for (int j = 0; j < 20; j++)
+			if (cache[j].type == id)
 				return cache[j];
-			}
-		}
 
 		cacheIndex = (cacheIndex + 1) % 20;
 		ObjectDef objectDef = cache[cacheIndex];
-
 		if (id > streamIndices.length - 1 || id < 0) {
 			return null;
 		}
-		
+
 		stream.currentOffset = streamIndices[id];
 
 		objectDef.type = id;
@@ -502,20 +498,18 @@ public final class ObjectDef {
 	public static void loadConfig() throws IOException {
 		stream = new ByteStreamExt(getBuffer("loc.dat"));
 		ByteStreamExt stream = new ByteStreamExt(getBuffer("loc.idx"));
-		int objects = stream.readUnsignedWord();
-		System.out.println("Total objects: " + objects);
-		totalObjects = objects;
-		streamIndices = new int[objects];
+		totalObjects = stream.readUnsignedWord();
+		System.out.println("Total objects: " + totalObjects);
+		streamIndices = new int[totalObjects];
 		int i = 2;
-		for (int j = 0; j < objects; j++) {
+		for (int j = 0; j < totalObjects; j++) {
 			streamIndices[j] = i;
 			i += stream.readUnsignedWord();
 		}
 		cache = new ObjectDef[20];
-		for (int k = 0; k < 20; k++) {
+		for (int k = 0; k < 20; k++)
 			cache[k] = new ObjectDef();
-		}
-		System.out.println(objects + " Object definitions loaded.");
+		System.out.println(totalObjects + " Object definitions loaded.");
 	}
 
 	public static byte[] getBuffer(String s) {
@@ -535,62 +529,6 @@ public final class ObjectDef {
 		}
 		return null;
 	}
-
-	/*
-	 * private void readValues(ByteStreamExt buffer) { int i = -1; label0: do {
-	 * int opcode; do { opcode = buffer.readUnsignedByte(); if (opcode == 0)
-	 * break label0; if (opcode == 1) { int modelLength =
-	 * buffer.readUnsignedByte(); models = new int[modelLength];
-	 * modelIds = new int[modelLength]; for(int i2 = 0; i2 < modelLength;
-	 * i2++) { models[i2] = buffer.readUnsignedWord(); modelIds[i2]
-	 * = buffer.readUnsignedByte(); } } else if (opcode == 2) name =
-	 * buffer.readString(); else if (opcode == 3) description =
-	 * buffer.readBytes(); else if (opcode == 5) { int length =
-	 * buffer.readUnsignedByte(); modelIds = null; models = new
-	 * int[length]; for (int l1 = 0; l1 < length; l1++) models[l1] =
-	 * buffer.readUnsignedWord(); } else if (opcode == 14) anInt744 =
-	 * buffer.readUnsignedByte(); else if (opcode == 15) anInt761 =
-	 * buffer.readUnsignedByte(); else if (opcode == 17) aBoolean767 = false;
-	 * else if (opcode == 18) aBoolean757 = false; else if (opcode == 19) { i =
-	 * buffer.readUnsignedByte(); if (i == 1) hasActions = true; } else if
-	 * (opcode == 21) aBoolean762 = true; else if (opcode == 22) aBoolean769 =
-	 * true; else if (opcode == 23) aBoolean764 = true; else if (opcode == 24) {
-	 * animation = buffer.readUnsignedWord(); if (animation == 65535) animation =
-	 * -1; } else if (opcode == 28) anInt775 = buffer.readUnsignedByte(); else
-	 * if (opcode == 29) aByte737 = buffer.readSignedByte(); else if (opcode ==
-	 * 39) aByte742 = buffer.readSignedByte(); else if (opcode >= 30 && opcode <
-	 * 39) { if (actions == null) actions = new String[10]; actions[opcode - 30]
-	 * = buffer.readString(); if (actions[opcode -
-	 * 30].equalsIgnoreCase("hidden")) actions[opcode - 30] = null; } else if
-	 * (opcode == 40) { int i1 = buffer.readUnsignedByte(); originalModelColors
-	 * = new int[i1]; modifiedModelColors = new int[i1]; for (int i2 = 0; i2 <
-	 * i1; i2++) { modifiedModelColors[i2] = buffer.readUnsignedWord();
-	 * originalModelColors[i2] = buffer.readUnsignedWord(); } } else if (opcode
-	 * == 60) mapFunctionId = buffer.readUnsignedWord(); else if (opcode == 62)
-	 * aBoolean751 = true; else if (opcode == 64) aBoolean779 = false; else if
-	 * (opcode == 65) thickness = stream.readUnsignedWord(); else if (opcode ==
-	 * 66) height = stream.readUnsignedWord(); else if (opcode == 67) width
-	 * = stream.readUnsignedWord(); else if (opcode == 68) mapSceneId =
-	 * buffer.readUnsignedWord(); else if (opcode == 69) anInt768 =
-	 * buffer.readUnsignedByte(); else if (opcode == 70) anInt738 =
-	 * buffer.readSignedWord(); else if (opcode == 71) anInt745 =
-	 * buffer.readSignedWord(); else if (opcode == 72) anInt783 =
-	 * buffer.readSignedWord(); else if (opcode == 73) aBoolean736 = true; else
-	 * if (opcode == 74) { aBoolean766 = true; } else { if (opcode != 75)
-	 * continue; anInt760 = buffer.readUnsignedByte(); } continue label0; }
-	 * while (opcode != 77); varpId = buffer.readUnsignedWord(); if (varpId
-	 * == 65535) varpId = -1; configId = buffer.readUnsignedWord(); if
-	 * (configId == 65535) configId = -1; int j1 = buffer.readUnsignedByte();
-	 * childrenIDs = new int[j1 + 1]; for (int j2 = 0; j2 <= j1; j2++) {
-	 * childrenIDs[j2] = buffer.readUnsignedWord(); if (childrenIDs[j2] ==
-	 * 65535) childrenIDs[j2] = -1; }
-	 * 
-	 * } while (true); if (i == -1) { hasActions = models != null &&
-	 * (modelIds == null || modelIds[0] == 10); if (actions != null)
-	 * hasActions = true; } if (aBoolean766) { aBoolean767 = false; aBoolean757
-	 * = false; } if (anInt760 == -1) anInt760 = aBoolean767 ? 1 : 0; }
-	 */
-
 	private void readValues(ByteStreamExt buffer) {
 		int i = -1;
 		label0: do {
@@ -601,17 +539,11 @@ public final class ObjectDef {
 					break label0;
 				if (opcode == 1) {
 					int modelLength = buffer.readUnsignedByte();
-					if (modelLength > 0) {
-						if (modelIds == null) {
 							models = new int[modelLength];
 							modelIds = new int[modelLength];
 							for (int i2 = 0; i2 < modelLength; i2++) {
 								models[i2] = buffer.readUnsignedWord();
 								modelIds[i2] = buffer.readUnsignedByte();
-							}
-						} else {
-							stream.currentOffset += modelLength * 3;
-						}
 					}
 				} else if (opcode == 2)
 					name = buffer.readString();
@@ -619,16 +551,10 @@ public final class ObjectDef {
 					description = buffer.readString();
 				else if (opcode == 5) {
 					int length = buffer.readUnsignedByte();
-					if (length > 0) {
-						if (modelIds == null) {
 							modelIds = null;
 							models = new int[length];
 							for (int l1 = 0; l1 < length; l1++)
 								models[l1] = buffer.readUnsignedWord();
-						} else {
-							stream.currentOffset += length * 2;
-						}
-					}
 				} else if (opcode == 14)
 					xLength = buffer.readUnsignedByte();
 				else if (opcode == 15)
@@ -719,12 +645,13 @@ public final class ObjectDef {
 					if(opcode == 92)
 						var3 = buffer.readUnsignedWord();
 					int j1 = buffer.readUnsignedByte();
-					childrenIDs = new int[j1 + 1];
+					childrenIDs = new int[j1 + 2];
 					for (int j2 = 0; j2 <= j1; j2++) {
 						childrenIDs[j2] = buffer.readUnsignedWord();
 						if (childrenIDs[j2] == 65535)
 							childrenIDs[j2] = -1;
 					}
+					childrenIDs[j1 + 1] = var3;
 				} else if(opcode == 78) {//ambient sound
 					buffer.readUnsignedWord();
 					buffer.readUnsignedByte();
@@ -736,8 +663,6 @@ public final class ObjectDef {
 					clipType = (buffer.readUnsignedByte() * 256);
 				} else if(opcode == 82) {
 				mapFunctionId = buffer.readUnsignedWord();
-			} else if (opcode == 89){
-				field3621 = false;
 				}
 		} while (true);
 		if (i == -1) {

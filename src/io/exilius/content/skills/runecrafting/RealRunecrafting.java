@@ -81,7 +81,7 @@ public class RealRunecrafting {
     public void enterAltar(int objId, int itemUse) {
         Altars a = forAltar(objId);
         if (a != null) {
-            if ((a.getKeys()[1] == c.playerEquipment[c.playerHat]) || (a.getKeys()[0] == itemUse)) {
+            if ((a.getKeys()[1] == c.playerEquipment[c.playerHat]) || a.getKeys()[0] == itemUse) {
                 c.getPlayerAssistant().movePlayer(a.getNewLoc()[0], a.getNewLoc()[1], 0);
                 c.sendMessage("You feel a powerful force take hold of you...");
             } else {
