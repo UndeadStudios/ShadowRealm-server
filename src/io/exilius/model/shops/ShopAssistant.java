@@ -920,8 +920,8 @@ public class ShopAssistant {
 					case 13239:
 					case 13235:
 					case 22324:
-						return 85;
 					case 13237:
+						return 85;
 					case 22323:
 						return 175;
 					case 21079:

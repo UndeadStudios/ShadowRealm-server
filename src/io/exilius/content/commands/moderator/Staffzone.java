@@ -17,6 +17,6 @@ public class Staffzone extends Command {
 			c.sendMessage("@cr10@You can not teleport from here, speak to the doomsayer to leave.");
 			return;
 		}
-		c.getPA().startTeleport(1803, 4888, 3, "modern", false);
+		c.getPA().startTeleport(1819, 4888, 0, "modern", false);
 	}
 }
