@@ -326,12 +326,12 @@ public class MeleeData {
 	public static int getWepAnim(Player c) {
 		String weaponName = ItemAssistant.getItemName(c.playerEquipment[Player.playerWeapon]).toLowerCase();
 		if (c.playerEquipment[Player.playerWeapon] <= 0) {
-			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-				case 0:
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:
 					return 422;
-				case 2:
+				case AGGRESSIVE:
 					return 423;
-				case 1:
+				case DEFENSIVE:
 					return 422;
 			}
 		}
@@ -398,14 +398,14 @@ public class MeleeData {
 			return c.getCombatConfigs().getWeaponMode().getCombatStyle() == CombatStyle.SLASH ? 3297 : 3294;
 		}
 		if (weaponName.contains("dagger") || weaponName.contains("arclight")) {
-			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-				case 0:// attack
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
 					return 386;
-				case 2:// str
+				case AGGRESSIVE:// str
 					return 386;
-				case 1:// def
+				case DEFENSIVE:// def
 					return 386;
-				case 3:// crush
+				case CONTROLLED:// crush
 					return 390;
 			}
 		}
@@ -419,38 +419,38 @@ public class MeleeData {
 			}
 		}
 		if (weaponName.contains("scimitar")) {
-			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-				case 0:// attack
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
 					return 390;
-				case 2:// str
+				case AGGRESSIVE:// str
 					return 390;
-				case 1:// def
+				case DEFENSIVE:// def
 					return 390;
-				case 3:// crush
+				case CONTROLLED:// crush
 					return 386;
 			}
 		}
-		if (weaponName.contains("axe") || !weaponName.contains("dharok")) {
-			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-				case 0:// attack
+		if (weaponName.contains("axe") && !weaponName.contains("dharok")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
 					return 395;
-				case 2:// str
+				case AGGRESSIVE:// str
 					return 395;
-				case 1:// def
+				case DEFENSIVE:// def
 					return 395;
-				case 3:// crush
+				case CONTROLLED:// crush
 					return 401;
 			}
 		}
 		if (weaponName.contains("mace")) {
-			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
-				case 0:// attack
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
 					return 401;
-				case 2:// str
+				case AGGRESSIVE:// str
 					return 401;
-				case 1:// def
+				case DEFENSIVE:// def
 					return 401;
-				case 3:// crush
+				case CONTROLLED:// crush
 					return 400;
 			}
 		}
