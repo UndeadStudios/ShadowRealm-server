@@ -1,0 +1,89 @@
+---
+npc_id: 3292
+constant:
+  accessibility: 0
+  items:
+  - name: "bones"
+    minimum: 1
+    maximum: 1
+common:
+  accessibility: 8
+  items:
+  - name: "bronze bolts"
+    minimum: 2
+    maximum: 12
+  - name: "Grimy guam leaf"
+    minimum: 1
+    maximum: 1
+  - name: "coins"
+    minimum: 1000
+    maximum: 25000
+uncommon:
+  accessibility: 8
+  items:
+  - name: "Bronze med helm"
+    minimum: 1
+    maximum: 1
+  - name: "Bronze arrow"
+    minimum: 7
+    maximum: 14
+  - name: "earth rune"
+    minimum: 4
+    maximum: 8
+  - name: "fire rune"
+    minimum: 4
+    maximum: 6
+  - name: "mind rune"
+    minimum: 9
+    maximum: 15
+  - name: "Grimy marrentill"
+    minimum: 1
+    maximum: 1
+  - name: "grimy tarromin"
+    minimum: 1
+    maximum: 1
+  - name: "grimy harralander"
+    minimum: 1
+    maximum: 1
+  - name: "grimy ranarr weed"
+    minimum: 1
+    maximum: 1
+  - name: "grimy irit leaf"
+    minimum: 1
+    maximum: 1
+  - name: "fishing bait"
+    minimum: 1
+    maximum: 1
+  - name: "copper ore"
+    minimum: 1
+    maximum: 1
+  - name: "earth talisman"
+    minimum: 1
+    maximum: 1
+rare:
+  accessibility: 20
+  items:
+  - name: "iron dagger"
+    minimum: 1
+    maximum: 1
+  - name: "chaos rune"
+    minimum: 2
+    maximum: 2
+  - name: "grimy avantoe"
+    minimum: 1
+    maximum: 1
+  - name: "grimy kwuarm"
+    minimum: 1
+    maximum: 1
+  - name: "grimy cadantine"
+    minimum: 1
+    maximum: 1
+  - name: "grimy lantadyme"
+    minimum: 1
+    maximum: 1
+  - name: "grimy dwarf weed"
+    minimum: 1
+    maximum: 1
+  - name: "cabbage"
+    minimum: 1
+    maximum: 1

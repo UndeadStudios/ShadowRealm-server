@@ -430,7 +430,7 @@ public class MeleeData {
 					return 386;
 			}
 		}
-		if (weaponName.contains("axe")) {
+		if (weaponName.contains("axe") || !weaponName.contains("dharok")) {
 			switch (c.getCombatConfigs().getWeaponMode().getIndex()) {
 				case 0:// attack
 					return 395;
