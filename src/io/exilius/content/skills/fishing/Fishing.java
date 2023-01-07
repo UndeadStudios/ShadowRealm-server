@@ -58,7 +58,6 @@ public class Fishing {
         }
         player.alreadyFishing = true;
         player.stopPlayerPacket = true;
-        if(!cont)
             player.sendMessage("You start fishing.");
         player.fishingNpc = i;
         int x = Server.npcHandler.npcs[i].getX();
@@ -99,7 +98,6 @@ public class Fishing {
                     }
                     return;
                 }
-                int cont = Misc.random(10);
                 int chance = Misc.random(3000);
                 int petchance = Misc.random(4500);
                 int petchance1 = Misc.random(3000);
@@ -184,9 +182,6 @@ public class Fishing {
                     player.alreadyFishing = false;
                     int index = player.fishingNpc;
                     container.stop();
-                    if (cont != 0) {
-                        startFishing(player, npcId, index, true);
-                    }
 
                 }
             }
