@@ -98,6 +98,7 @@ public class Fishing {
                     }
                     return;
                 }
+                int cont = Misc.random(10);
                 int chance = Misc.random(3000);
                 int petchance = Misc.random(4500);
                 int petchance1 = Misc.random(3000);
@@ -182,6 +183,7 @@ public class Fishing {
                     player.alreadyFishing = false;
                     int index = player.fishingNpc;
                     container.stop();
+                        startFishing(player, npcId, index, true);
 
                 }
             }
