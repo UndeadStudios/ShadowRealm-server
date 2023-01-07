@@ -1165,6 +1165,13 @@ public class AttackAnimation extends NPCHandler {
 			case 7246: // Greater demon 113
 			case 7247: // Lesser demon 87
 			case 7248: // Lesser demon 94
+			case 3982: // Lesser demon 82
+			case 7656: // Lesser demon 82
+			case 7657: // Lesser demon 82
+			case 7664: // Lesser demon 82
+			case 7865: // Lesser demon 94
+			case 7866: // Lesser demon 94
+			case 7867: // Lesser demon 94
 			case 7936:
 		case 1432:// Black Demon
 			case 5874: // Black demon 172
