@@ -69045,35 +69045,6 @@
       "slot": 1
     }
   },
-  "28821": {
-    "name": "Justin's cape",
-    "equipable": true,
-    "weight": 0.453,
-    "weight": 1.814,
-    "equipment": {
-      "slot": 1,
-      "astab": 1,
-      "aslash": 1,
-      "acrush": 1,
-      "amagic": 1,
-      "arange": 1,
-      "dstab": 11,
-      "dslash": 11,
-      "dcrush": 11,
-      "dmagic": 11,
-      "drange": 11,
-      "str": 4,
-      "prayer": 2
-    }
-  },
-  "29570": {
-    "name": "Justin's Mythical cape",
-    "equipable": true,
-    "weight": 0.453,
-    "equipment": {
-      "slot": 1
-    }
-  },
   "28716": {
     "name": "Dr Cape (Blue)",
     "equipable": true,
