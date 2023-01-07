@@ -35,6 +35,7 @@ public class WoodcuttingEvent extends Event<Player> {
     private int chops;
 
     private final int[] lumberjackOutfit = {10933, 10939, 10940, 10941};
+    private final int[] birdnests = {5070, 5071, 5072, 5073, 5074, 7413, 13653, 22798, 22800, 19712, 19714, 19716, 19718};
 
     public WoodcuttingEvent(Player player, Tree tree, Hatchet hatchet, int objectId, int x, int y) {
         super("skilling", player, 1);
@@ -180,7 +181,22 @@ public class WoodcuttingEvent extends Event<Player> {
                     System.out.println("Chopping a redwood tree");
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
-
+                if (tree.getWood() == 1521 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.name())) {
+                    System.out.println("Chopping a oak tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 1517 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAPLE_TREE.name())) {
+                    System.out.println("Chopping a magic tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 1513 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_MAGIC_TREE.name())) {
+                    System.out.println("Chopping a magic tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                if (tree.getWood() == 19669 || plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_REDWOOD_TREE.name())) {
+                    System.out.println("Chopping a redwood tree");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
 
             }
         }
@@ -337,7 +353,7 @@ public class WoodcuttingEvent extends Event<Player> {
             plr.sendMessage("You notice a lumberjack piece falling from the tree and pick it up.");
         }
         if (Misc.random(175) == 1) {
-            plr.getItems().addItemUnderAnyCircumstance(Items.BIRD_NEST, 1);
+            plr.getItems().addItemUnderAnyCircumstance(birdnests[Misc.random(birdnests.length - 1)], 1);
             plr.sendMessage("You notice a Bird's nest falling from the tree and pick it up.");
         }
 

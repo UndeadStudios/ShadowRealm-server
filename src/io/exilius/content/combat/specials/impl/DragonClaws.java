@@ -19,8 +19,8 @@ public class DragonClaws extends Special {
 
 	@Override
 	public void activate(Player player, Entity target, Damage damage) {
-		player.startAnimation(7514);
-		player.gfx0(1282);
+		player.startAnimation(7527);
+		player.gfx0(1171);
 
 		int max = MeleeCombatFormula.get().getMaxHit(player, target, 1.0, 1.0);
 
