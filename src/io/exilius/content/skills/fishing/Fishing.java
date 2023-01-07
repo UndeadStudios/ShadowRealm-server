@@ -58,6 +58,7 @@ public class Fishing {
         }
         player.alreadyFishing = true;
         player.stopPlayerPacket = true;
+        if(!cont)
             player.sendMessage("You start fishing.");
         player.fishingNpc = i;
         int x = Server.npcHandler.npcs[i].getX();

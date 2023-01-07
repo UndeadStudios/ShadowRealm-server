@@ -62,7 +62,15 @@ public class Objects {
 
 		cat_blanket(15402, 13574, 5, 15, 8790, 1, "Cat blanket", 898),
 		cat_basket(15402, 13575, 19, 58, 1539, 2, 960, 2, "Cat basket", 898),
-		Cushioned_basket(15402, 13576, 19, 58, 1539, 2, 960, 2, 1737, 2, "Cushioned basket", 898);
+		Cushioned_basket(15402, 13576, 19, 58, 1539, 2, 960, 2, 1737, 2, "Cushioned basket", 898),
+
+		firepit(15398, 13528, 5, 40, 2353, 1, 1761, 2, "Firepit", 898),
+		firepit_with_hook(15398, 13529, 11, 60, 2353, 2, 1761, 2, "Firepit with hook", 898),
+		firepit_with_pot(15398, 13531, 17, 80, 2353, 3, 1761, 2, "Firepit with pot", 898),
+		small_oven(15398, 13533, 24, 80, 2353, 4, "Small oven", 898),
+		large_oven(15398, 13536, 29, 100, 2353, 5, "Large oven", 898),
+		steel_range(15398, 13539, 34, 120, 2353, 6, "Steel range", 898),
+		fancy_range(15398, 13542, 42, 160, 2353, 8, "Fancy range", 898);
 
 		int fake_object;
 		int real_object;
@@ -231,31 +239,31 @@ public class Objects {
 			if (objectType ==  con.getFake_object()) {
 				if (c.playerLevel[22] >= con.getLevel()) {
 					if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem(con.getItem2(), con.getAmount2()) && c.getItems().playerHasItem(con.getItem3(), con.getAmount3())&& c.getItems().playerHasItem(con.getItem4(), con.getAmount4()) && c.getItems().playerHasItem(con.getItem5(), con.getAmount5())) {
-						if (con.getItem1() != -1 ||  con.getItem2() != -1 ||  con.getItem3() != -1 ||  con.getItem4() != -1 ||  con.getItem5() != -1) {
-							if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem( con.getItem2(),  con.getAmount2()) && c.getItems().playerHasItem( con.getItem3(),  con.getAmount3()) && c.getItems().playerHasItem( con.getItem4(),  con.getAmount4()) && c.getItems().playerHasItem( con.getItem5(),  con.getAmount5())) {
-								if (c.getItems().isStackable(con.getItem1()) && c.getItems().isStackable(  con.getItem2()) && c.getItems().isStackable(  con.getItem3())) {
+						if (con.getItem1() != -1 || con.getItem2() != -1 || con.getItem3() != -1 || con.getItem4() != -1 || con.getItem5() != -1) {
+							if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem(con.getItem2(), con.getAmount2()) && c.getItems().playerHasItem(con.getItem3(), con.getAmount3()) && c.getItems().playerHasItem(con.getItem4(), con.getAmount4()) && c.getItems().playerHasItem(con.getItem5(), con.getAmount5())) {
+								if (c.getItems().isStackable(con.getItem1()) && c.getItems().isStackable(con.getItem2()) && c.getItems().isStackable(con.getItem3())) {
 									c.getItems().deleteItem2(con.getItem1(), con.getAmount1());
 									c.getItems().deleteItem2(con.getItem2(), con.getAmount2());
 									c.getItems().deleteItem2(con.getItem3(), con.getAmount3());
 									c.getItems().deleteItem2(con.getItem4(), con.getAmount4());
 									c.getItems().deleteItem2(con.getItem5(), con.getAmount5());
 								} else {
-									c.getItems().deleteItem2( con.getItem1(), con.getAmount1());
-									c.getItems().deleteItem2(  con.getItem2(), con.getAmount2());
-									c.getItems().deleteItem2(  con.getItem3(), con.getAmount3());
+									c.getItems().deleteItem2(con.getItem1(), con.getAmount1());
+									c.getItems().deleteItem2(con.getItem2(), con.getAmount2());
+									c.getItems().deleteItem2(con.getItem3(), con.getAmount3());
 									c.getItems().deleteItem2(con.getItem4(), con.getAmount4());
 									c.getItems().deleteItem2(con.getItem5(), con.getAmount5());
 								}
 							} else {
-								if(con.getItem1() != -1 && con.getItem2() != -1 &&  con.getItem3() == -1 &&  con.getItem4() == -1 &&  con.getItem5() == -1) {
+								if (con.getItem1() != -1 && con.getItem2() != -1 && con.getItem3() == -1 && con.getItem4() == -1 && con.getItem5() == -1) {
 									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
-								} else 	if(con.getItem1() != -1 &&  con.getItem2() != -1 &&  con.getItem3() != -1 &&  con.getItem4() == -1 &&  con.getItem5() == -1) {
+								} else if (con.getItem1() != -1 && con.getItem2() != -1 && con.getItem3() != -1 && con.getItem4() == -1 && con.getItem5() == -1) {
 									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "");
 									c.sendMessage("and " + con.getAmount3() + " " + c.getItems().getItemName(con.getItem3()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
-								} else 	if(con.getItem1() != -1 &&  con.getItem2() != -1 &&  con.getItem3() != -1 &&  con.getItem4() != -1 &&  con.getItem5() == -1) {
+								} else if (con.getItem1() != -1 && con.getItem2() != -1 && con.getItem3() != -1 && con.getItem4() != -1 && con.getItem5() == -1) {
 									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "");
 									c.sendMessage("and " + con.getAmount3() + " " + c.getItems().getItemName(con.getItem3()) + " and " + con.getAmount4() + " " + c.getItems().getItemName(con.getItem4()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
-								} else 	if(con.getItem1() != -1 &&  con.getItem2() != -1 &&  con.getItem3() != -1 &&  con.getItem4() != -1 &&  con.getItem5() != -1) {
+								} else if (con.getItem1() != -1 && con.getItem2() != -1 && con.getItem3() != -1 && con.getItem4() != -1 && con.getItem5() != -1) {
 									c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "");
 									c.sendMessage("and " + con.getAmount3() + " " + c.getItems().getItemName(con.getItem3()) + " and " + con.getAmount4() + " " + c.getItems().getItemName(con.getItem4()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");
 								} else {
@@ -264,18 +272,18 @@ public class Objects {
 								return;
 							}
 						}
-						
+						if(c.playerLevel[22] >= con.getLevel()){
 						Room room = Construction.getCurrentRoom(c);
-						ObjectDef def = ObjectDef.getObjectDef( con.getReal_object());
+						ObjectDef def = ObjectDef.getObjectDef(con.getReal_object());
 						String objectName = def.name;
-						int[] newCoords = Test1.getOriginalObjectCoords(room.getRotation(), new int[] { obX % 8, obY % 8 });
+						int[] newCoords = Test1.getOriginalObjectCoords(room.getRotation(), new int[]{obX % 8, obY % 8});
 						RoomObject roomObject = room.getObjectByPosition(newCoords[0], newCoords[1]);
 
 						if (roomObject == null) {
 							return;
 						}
-						
-						RoomObject replacementObject = new RoomObject( con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(),roomObject.getType(), objectName);
+
+						RoomObject replacementObject = new RoomObject(con.getReal_object(), roomObject.getX(), roomObject.getY(), roomObject.getRotation(), roomObject.getType(), objectName);
 
 						/*if (room.getCustomObjectByPosition(newCoords[0], newCoords[1]) != null) {
 							c.sendMessage("You remove the <col=0000FF>" + CON_DATA[i][8] + ".");
@@ -284,12 +292,14 @@ public class Objects {
 							return;
 						}*/
 
-						c.getPA().addSkillXPMultiplied( con.getXp(), 22, true);
+						c.getPA().addSkillXPMultiplied(con.getXp(), 22, true);
 						if (con.getAnimation() != 0) {
 							c.startAnimation(con.getAnimation());
 						}
+
 						c.sendMessage("You build a <col=0000FF>" + con.getObjectname() + ".");
 						room.newObject(c, replacementObject);
+					}
 						return;
 					} else {
 						if(con.getItem1() != -1 && con.getItem2() != -1 &&  con.getItem3() == -1 &&  con.getItem4() == -1 &&  con.getItem5() == -1) {
