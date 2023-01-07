@@ -175,7 +175,7 @@ public class TeleportInterface2 {
     public final List<Integer> descriptionStrings = List.of(
             26325, 26330, 26335, 26340, 26345, 26350, 26355, 26360, 26365, 26370,
             26375, 26380, 26385, 26390, 26395, 26400, 26405, 26410, 26415, 26420,
-            27192, 27196, 27200, 27204, 27208, 27212, 27215, 27220, 27224, 27228,
+            27192, 27196, 27200, 27204, 27208, 27212, 27216, 27220, 27224, 27228,
             27232, 27236, 27240, 27244, 27248, 27252, 27256, 27258, 27260, 27264, 27268
     );
 
@@ -329,7 +329,7 @@ public class TeleportInterface2 {
         Vote_boss(1, 102234, true, "The Boss only spawns every 100 votes.", new Position(1886, 9320, 0)),
 
         AL_KHARID(2, 102209, true, "Teleports you to Al Kharid", new Position(3293, 3179, 0)),
-        Arceuus(2, 102214, true, "Teleports you to Arceuus", new Position(1686,3746,0)),
+        Arceuus(2, 102214, true, "Teleports you to Arceuus", new Position(1679, 3745, 0)),
         Ardougne(2, 102219, true, "Teleports you to Ardougne", new Position(2662, 3305, 0)),
         Barbarian_Village(2, 102224, true, "Teleports you to Barbarian Village", new Position(3083, 3424, 0)),
         Brimhaven(2, 102229, true, "Teleports you to Brimhaven", new Position(2802, 3178, 0)),
@@ -348,12 +348,13 @@ public class TeleportInterface2 {
         Miscellania(2, 103038, true, "Teleports you to Miscellania", new Position(2531, 3856, 0)),
         Neitiznot(2, 103043, true, "Teleports you to Neitiznot", new Position(2321, 3804, 0)),
         Port_Piscarilius(2, 103048, true, "Teleports you to Port Piscarilius", new Position(1809,3776,0)),
-        Rimmington(2, 106053, true, "Teleports you to Rimmington", new Position(2958, 3215, 0)),
-        Shayzien(2, 106057, true, "Teleports you to Shayzien", new Position(1558,3561,0)),
-        Taverley(2, 106061, true, "Teleports you to Taverley", new Position(2928, 3451, 0)),
-        West_Ardougne(2, 106065, true, "Teleports you to West Ardougne", new Position(2553, 3300, 0)),
-        Yanille(2, 106069, true, "Teleports you to Yanille", new Position(2606, 3093, 0)),
-        Varrock(2, 106073, true, "Teleports you to Varrock", new Position(3210, 3424, 0)),
+        Port_Sarim(2, 106053, true, "Teleports you to Port Sarim", new Position(3014, 3215, 0)),
+        Rimmington(2, 106057, true, "Teleports you to Rimmington", new Position(2958, 3215, 0)),
+        Shayzien(2, 106061, true, "Teleports you to Shayzien", new Position(1558,3561,0)),
+        Taverley(2, 106065, true, "Teleports you to Taverley", new Position(2928, 3451, 0)),
+        West_Ardougne(2, 106069, true, "Teleports you to West Ardougne", new Position(2553, 3300, 0)),
+        Yanille(2, 106073, true, "Teleports you to Yanille", new Position(2606, 3093, 0)),
+        Varrock(2, 106077, true, "Teleports you to Varrock", new Position(3210, 3424, 0)),
 
         Sand_Crabs(3, 102209, true, "Teleports you to Sand Crabs", new Position(1691, 3475)),
         rock_crabs(3, 102214, true, "Teleports you to Rock Crabs", new Position(2673, 3710,0)),
