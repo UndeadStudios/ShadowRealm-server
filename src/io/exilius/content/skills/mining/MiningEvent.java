@@ -393,7 +393,6 @@ public class MiningEvent extends Event<Player> {
             return;
         }
 
-        plr.getItems().addItem(itemId, amount);
 
         if (mineral == Mineral.GEM) {
             if (itemId == 6571) {
