@@ -367,6 +367,7 @@ public class TeleportInterface2 {
         SLAYER_TOWER(3, 102254, true, "Teleports you to Slayer Tower", new Position(3428, 3538, 0)),
         Mount_Karuulm(3, 103003, true, "Teleports you to Mount Karuulm", new Position(1311, 3795, 0)),
         Smoke_Devils(3, 103008, true, "Teleports you to Smoke Devils", new Position(2404, 9415, 0)),
+        Crystal_cavern(3, 103013, true, "Teleports you to Crystal caverns", new Position(3272, 6052, 0)),
 
         Barrelchest(4, 102209, true, "Teleports you to the Barrelchest", new Position(2903, 3612, 0)),
         Bryophyta(4, 102214, true, "Teleports you to the Bryophyta", new Position(3174, 9898, 0)),
