@@ -32,11 +32,7 @@ public class RespawnTime {
 
             case FragmentOfSeren.NPC_ID:
             case TheUnbearable.NPC_ID:
-                if(Boundary.isIn(npc, Boundary.MZ) || Boundary.isIn(npc, Boundary.OZ)){
-                    return 60;
-                } else {
                     return -1;
-                }
 
             case Npcs.SARACHNIS:
                     return 20;
