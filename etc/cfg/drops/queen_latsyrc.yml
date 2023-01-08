@@ -60,46 +60,7 @@ rare:
   - item: 21028
     minimum: 1
     maximum: 1
-  - item: 10933
-    minimum: 1
-    maximum: 1
-  - item: 10939
-    minimum: 1
-    maximum: 1
-  - item: 10940
-    minimum: 1
-    maximum: 1
-  - item: 10941
-    minimum: 1
-    maximum: 1
   - item: 12922
-    minimum: 1
-    maximum: 1
-  - item: 11850
-    minimum: 1
-    maximum: 1
-  - item: 11852
-    minimum: 1
-    maximum: 1
-  - item: 11854
-    minimum: 1
-    maximum: 1
-  - item: 11856
-    minimum: 1
-    maximum: 1
-  - item: 11858
-    minimum: 1
-    maximum: 1
-  - item: 11860
-    minimum: 1
-    maximum: 1
-  - item: 11840
-    minimum: 1
-    maximum: 1
-  - item: 2577
-    minimum: 1
-    maximum: 1
-  - item: 6920
     minimum: 1
     maximum: 1
   - item: 11907
@@ -115,6 +76,15 @@ rare:
     minimum: 1
     maximum: 1
   - item: 13233
+    minimum: 1
+    maximum: 1
+  - item: 13231
+    minimum: 1
+    maximum: 1
+  - item: 13227
+    minimum: 1
+    maximum: 1
+  - item: 13229
     minimum: 1
     maximum: 1
 very_rare:
@@ -135,15 +105,15 @@ very_rare:
   - item: 26901
     minimum: 1
     maximum: 1
-  - item: 13231
-    minimum: 1
-    maximum: 1
-  - item: 13227
-    minimum: 1
-    maximum: 1
-  - item: 13229
-    minimum: 1
-    maximum: 1
   - item: 13346
+    minimum: 1
+    maximum: 1
+  - item: 28025
+    minimum: 1
+    maximum: 1
+  - item: 28024
+    minimum: 1
+    maximum: 1
+  - item: 28023
     minimum: 1
     maximum: 1
