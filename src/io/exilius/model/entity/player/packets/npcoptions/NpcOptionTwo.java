@@ -74,7 +74,11 @@ public class NpcOptionTwo {
 				Sawmill.openSawMill(player);
 				break;
 			case 10633:
-				player.getShops().openShop(65);
+				if (player.getMode().isIronmanType()) {
+					player.getShops().openShop(65);
+				} else {
+					player.getShops().openShop(65);
+				}
 				break;
 			case 1334:
 			case 1331:
@@ -507,7 +511,11 @@ public class NpcOptionTwo {
 			player.getDH().sendDialogues(2400, -1);
 			break;
 			case 6945:
-				player.getShops().openShop(67);
+				if (player.getMode().isIronmanType()) {
+					player.getShops().openShop(67);
+				} else {
+					player.getShops().openShop(67);
+				}
 				break;
 			// FISHING
 			case 3913: // NET + BAIT
