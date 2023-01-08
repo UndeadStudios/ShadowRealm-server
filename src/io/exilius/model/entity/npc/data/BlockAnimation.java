@@ -492,6 +492,8 @@ public class BlockAnimation {
             case 7875: // Black demon 188
             case 7876: // Black demon 188
                 return 65;
+            case 1153:
+                return 360;
             case 3347:
             case 3346:
                 return 3325;
@@ -585,13 +587,6 @@ public class BlockAnimation {
                 return 285;
             case 2827:
                 return 4916;
-            case 1153:
-            case 1154:
-            case 1155:
-            case 1156:
-            case 1157:
-            case 1158: // kalphite
-                return 1186;
             case 1160: // kalphite
                 return 1179;
             case 2734:

@@ -1142,7 +1142,8 @@ public class AttackAnimation extends NPCHandler {
 
 		case 2889:
 			return 2859;
-
+			case 1153:
+				return 359;
 		case 118:
 		case 291:
 			return 99;
@@ -1204,12 +1205,6 @@ public class AttackAnimation extends NPCHandler {
 		case 178:
 			return 451;
 
-		case 1153: // Kalphite Worker
-		case 1154: // Kalphite Soldier
-		case 1155: // Kalphite guardian
-		case 1156: // Kalphite worker
-		case 1157: // Kalphite guardian
-			return 1184;
 
 		case 123:
 		case 7933:
