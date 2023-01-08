@@ -323,8 +323,8 @@ public class TeleportInterface2 {
 
         Home(1, 102209, true, "Teleports you to Home", new Position(3091, 3490, 0)),
         Slayer_masters(1, 102214, true, "Teleports you to  the Slayer Masters", new Position(3083, 3510, 0)),
-        Hispori(1, 102219, true, "Teleports you to Hispori", new Position(3075, 3499, 0)),
-        Ganbling_Zone(1, 102224, true, "Teleports you to  the Ganbling Zone", new Position(2129, 9489, 0)),
+        Hespori(1, 102219, true, "Teleports you to Hispori", new Position(3075, 3499, 0)),
+        Gambling_Zone(1, 102224, true, "Teleports you to  the Ganbling Zone", new Position(2129, 9489, 0)),
         Skilling_Island(1, 102229, true, "Teleports you to the Skilling Island", new Position(3803, 3538, 0)),
         Vote_boss(1, 102234, true, "The Boss only spawns every 100 votes.", new Position(1886, 9320, 0)),
 
