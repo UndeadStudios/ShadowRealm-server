@@ -367,7 +367,7 @@ enum class DailyTaskData(
         DailyTask(
             "Pickpocket a man 100 times",
             TaskDifficulties.EASY,
-            10,
+            100,
             7,
             Skill.THIEVING,
             1,
