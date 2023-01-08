@@ -19,6 +19,7 @@ enum class UpgradeData(
     SAGUINESTI_STAFF(Categories.WEAPON, 22323, GameItem(27277, 1), 250_000_000, 25.0),
     DRAGON_WARRHAMER(Categories.WEAPON, 13576, GameItem(22622, 1), 150_000_000, 25.0),
     WHIP(Categories.WEAPON, 4151, GameItem(28220, 1), 25_000_000, 25.0),
+    DRAGON_CLAWS(Categories.WEAPON, 20784, GameItem(26708, 1), 25_000_000, 35.0),
 
     TORVA_PLATELEGS(Categories.ARMOUR, 26386, GameItem(8812, 1), 300_000_000, 30.0),
     TORVA_PLATEBODY(Categories.ARMOUR, 26384, GameItem(8813, 1), 300_000_000, 30.0),

@@ -1,19 +1,11 @@
 package io.exilius.content.bosses.hespori;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.event.eventcalendar.EventChallenge;
-//import io.exilius.content.leaderboards.LeaderboardType;
-//import io.exilius.content.leaderboards.LeaderboardUtils;
 import io.exilius.content.skills.Skill;
 import io.exilius.model.Items;
 import io.exilius.model.definitions.NpcStats;
@@ -24,6 +16,12 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import static io.exilius.content.combat.Hitmark.HIT;
 
@@ -97,7 +95,7 @@ public class Hespori {
 			if (!eventCompleted) {
 				p.sendMessage("@blu@Hespori event was ended before she was killed!");
 				p.canLeaveHespori = true;
-				p.getPA().startTeleport2(3072, 3499, 0);
+				p.getPA().startTeleport2(3074, 3500, 0);
 				p.setHesporiDamageCounter(0);
 				deleteEventItems(p);
 			} else {
@@ -114,7 +112,7 @@ public class Hespori {
 				} else {
 					p.sendMessage("@blu@You were not active enough to receive a reward.");
 					p.canLeaveHespori = true;
-					p.getPA().startTeleport2(3072, 3499, 0);
+					p.getPA().startTeleport2(3074, 3500, 0);
 					p.setHesporiDamageCounter(0);
 					deleteEventItems(p);
 				}
