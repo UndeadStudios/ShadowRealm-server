@@ -125,7 +125,7 @@ public class WeaponDataConstants {
     // [[accurate, slash], [aggressive, slash], [shared, stab], [defensive, slash]]
     public static final int[] CLAWS = {
             Items.BRONZE_CLAWS, Items.IRON_CLAWS, Items.STEEL_CLAWS, Items.WHITE_CLAWS, Items.MITHRIL_CLAWS, Items.ADAMANT_CLAWS, Items.RUNE_CLAWS,
-            Items.DRAGON_CLAWS, Items.BEACH_BOXING_GLOVES, Items.BOXING_GLOVES
+            Items.DRAGON_CLAWS, Items.BEACH_BOXING_GLOVES, Items.BOXING_GLOVES, Items.DRAGON_CLAWS_OR
     };
 
     // [[accurate, stab], [aggressive, slash], [defensive, stab]]
