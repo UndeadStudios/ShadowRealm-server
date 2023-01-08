@@ -71471,5 +71471,20 @@
     "equipment": {
       "slot": 12
     }
+  },
+  "26708": {
+    "name": "Dragon claws (or)",
+    "equipable": true,
+    "equipment": {
+      "slot": 3,
+      "astab": 51,
+      "aslash": 67,
+      "acrush": -4,
+      "dstab": 23,
+      "dslash": 36,
+      "dcrush": 17,
+      "str": 66,
+      "aspeed": 4
+    }
   }
 }

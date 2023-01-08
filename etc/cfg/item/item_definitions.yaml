@@ -74917,4 +74917,7 @@
   description: "A pack containing 100 pieces of soft clay."
   shopValue: 10
   untradeable: false
-- id: 28024
+- id: 26708
+  name: "Dragon claws (or)"
+  description: "A set of pretty fighting claws."
+  shopValue: 11600000

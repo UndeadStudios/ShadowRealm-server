@@ -409,6 +409,18 @@ public class MeleeData {
 					return 390;
 			}
 		}
+		if (weaponName.contains("claws")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
+					return 393;
+				case AGGRESSIVE:// str
+					return 393;
+				case DEFENSIVE:// def
+					return 393;
+				case CONTROLLED:// crush
+					return 1067;
+			}
+		}
 		if (weaponName.contains("lance")) {
 			switch (c.getCombatConfigs().getWeaponMode().getCombatStyle()) {
 				case STAB:
@@ -522,9 +534,16 @@ public class MeleeData {
 					return 2081;
 			}
 		}
-		if (weaponName.contains("scim")) {
-				return 451;
+		if (weaponName.contains("staff")) {
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:// attack
+					return 419;
+				case AGGRESSIVE:// str
+					return 419;
+				case DEFENSIVE:// def
+					return 419;
 			}
+		}
 		switch (c.playerEquipment[Player.playerWeapon]) { // if you don't want to use strings
 
 		case 9703:
@@ -614,7 +633,7 @@ public class MeleeData {
 			return 4177;
 		if (shield.contains("2h") && c.playerEquipment[Player.playerWeapon] != 7158)
 			return 7050;
-		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff") || weapon.contains("trident")|| weapon.contains("Tumeken's shadow"))))
+		if (shield.contains("book") || (weapon.contains("wand") || (weapon.contains("staff") || weapon.contains("trident") || weapon.contains("Tumeken's shadow"))))
 			return 420;
 		if (shield.contains("shield"))
 			return 1156;

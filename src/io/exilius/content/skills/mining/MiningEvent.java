@@ -18,6 +18,7 @@ import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
@@ -355,25 +356,27 @@ public class MiningEvent extends Event<Player> {
                         plr.getRechargeItems().hasItem(13105) && Misc.random(8) == 2 ? 2 :
                                 plr.getRechargeItems().hasItem(13106) && Misc.random(6) == 2 ? 2 :
                                         plr.getRechargeItems().hasItem(13107) && Misc.random(4) == 2 ? 2 : 1;
-        if (!(mineral.getBarName().contains("star"))) {
+        if (!(mineral.getBarName().contains("star")) || !(mineral.getBarName().contains("enchanted")) || !(mineral.getBarName().contains("burning"))) {
             plr.getItems().addItem(mineral.getMineralReturn().generate(), amount);
-            plr.sendMessage("You manage to mine some " + mineral.name().toLowerCase() + " ore.");
+            plr.sendMessage("You manage to mine some " + ItemCacheDefinition.forID(mineral.getMineralReturn().generate()).getName().toLowerCase() + ".");
         } else {
-            if (ShootingStar.MAXIMUM_MINING_AMOUNT == 0) {
-                plr.sendMessage("The Star run out of star dust.");
-                ShootingStar.despawn(false);
-                plr.getPA().stopSkilling();
-                ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
-                plr.stopAnimation();
-                stop();
-                return;
-            }
-            plr.getItems().addItem(25527, 1);
-            ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
-            //plr.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
-            if (Misc.random(200) == 5) {
-                plr.sendMessage("You received Star fragment while mining the star!");
-                plr.getItems().addItem(25547, 1);
+            if ((mineral.getBarName().contains("star"))) {
+                if (ShootingStar.MAXIMUM_MINING_AMOUNT == 0) {
+                    plr.sendMessage("The Star run out of star dust.");
+                    ShootingStar.despawn(false);
+                    plr.getPA().stopSkilling();
+                    ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
+                    plr.stopAnimation();
+                    stop();
+                    return;
+                }
+                plr.getItems().addItem(25527, 1);
+                ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
+                //plr.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
+                if (Misc.random(200) == 5) {
+                    plr.sendMessage("You received Star fragment while mining the star!");
+                    plr.getItems().addItem(25547, 1);
+                }
             }
         }
         int itemId = mineral.getMineralReturn().generate();

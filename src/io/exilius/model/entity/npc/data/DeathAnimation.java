@@ -894,6 +894,8 @@ public class DeathAnimation extends NPCHandler {
             case 7875: // Black demon 188
             case 7876: // Black demon 188
                 return 67;
+            case 1153:
+                return 361;
             case 6:// abby spec
             case 7279: // Deviant spectre
             case 7403:
@@ -978,12 +980,6 @@ public class DeathAnimation extends NPCHandler {
             case 64:
             case 3021:
                 return 5329;
-            case 1153:
-            case 1154:
-            case 1155:
-            case 1156:
-            case 1157:
-                return 1190;
             case 118:
             case 291:
                 return 102;

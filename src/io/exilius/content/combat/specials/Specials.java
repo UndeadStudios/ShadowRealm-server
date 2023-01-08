@@ -36,6 +36,7 @@ public enum Specials {
 	DARK_BOW(new DarkBow()),
 	DRAGON_BATTLEAXE(new DragonBattleaxe()),
 	DRAGON_CLAWS(new DragonClaws()),
+	DRAGON_CLAWS_OR(new DragonClawsOr()),
 	DRAGON_HALBERD(new DragonHalberd()),
 	DRAGON_MACE(new DragonMace()),
 	DRAGON_SCIMITAR(new DragonScimitar()),

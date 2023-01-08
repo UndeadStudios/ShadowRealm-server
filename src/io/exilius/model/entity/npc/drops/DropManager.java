@@ -560,24 +560,37 @@ KeyToClue.dropKey(player, npc, location);
                     player.sendMessage("You were missing the mimic casket and did not get a drop.");
                 }
         }
+        if(npcId == 11958) {
+            PlayerHandler.getPlayers().stream().filter(Objects::nonNull).forEach(p -> {
+                if (Boundary.isIn(p, Boundary.VOTE_BOSS)) {
 
+                    Optional<TableGroup> group = groups.values().stream().filter(g -> g.getNpcIds().contains(npcId)).findFirst();
+                    group.ifPresent(g -> {
+                        double modifier = getModifier(p);
+                        List<GameItem> drops = g.access(p, npc, modifier, repeats, npcId);
+                        for (GameItem item : drops) {
+                            onDrop(p, item, npcId);
+                            Server.itemHandler.createGroundItem(p, item.getId(), p.getX(), p.getY(),
+                                    p.getHeight(), item.getAmount(), p.getIndex());
+                            ItemDef itemDef = ItemDef.forId(item.getId());
+                            ItemDef Def = itemDef;
+                            if (Def.getShopValue() > 25_000_000) {
+                                Discord.raredropMessage(p.getDisplayName() + ": has received " + ItemDef.forId(item.getId()).getName());
+                            }
+                        }
+                    });
+                    handle(player, npc, location, repeats, npcId);
+                }
+            });
+        }
         Optional<TableGroup> group = groups.values().stream().filter(g -> g.getNpcIds().contains(npcId)).findFirst();
         group.ifPresent(g -> {
             double modifier = getModifier(player);
             List<GameItem> drops = g.access(player, npc, modifier, repeats, npcId);
             for (GameItem item : drops) {
-                if(npc.getNpcId() == 11958) {
-                        PlayerHandler.getPlayers().stream().filter(Objects::nonNull).forEach(p -> {
-                            if(Boundary.isIn(p, Boundary.VOTE_BOSS)){
-                            onDrop(p, item, npcId);
-                            Server.itemHandler.createGroundItem(p, item.getId(), p.getX(), p.getY(),
-                                    p.getHeight(), item.getAmount(), p.getIndex());
-                        }});
-                } else {
                     onDrop(player, item, npcId);
                     Server.itemHandler.createGroundItem(player, item.getId(), location.getX(), location.getY(),
                             location.getZ(), item.getAmount(), player.getIndex());
-                }
                 ItemDef itemDef = ItemDef.forId(item.getId());
                 ItemDef Def = itemDef;
                 if (Def.getShopValue() > 25_000_000) {
