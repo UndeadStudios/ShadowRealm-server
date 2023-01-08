@@ -570,8 +570,8 @@ KeyToClue.dropKey(player, npc, location);
                         List<GameItem> drops = g.access(p, npc, modifier, repeats, npcId);
                         for (GameItem item : drops) {
                             onDrop(p, item, npcId);
-                            Server.itemHandler.createGroundItem(p, item.getId(), location.getX(), location.getY(),
-                                    location.getZ(), item.getAmount(), p.getIndex());
+                            Server.itemHandler.createGroundItem(p, item.getId(), p.getX(), p.getY(),
+                                    p.getHeight(), item.getAmount(), p.getIndex());
                             ItemDef itemDef = ItemDef.forId(item.getId());
                             ItemDef Def = itemDef;
                             if (Def.getShopValue() > 25_000_000) {
