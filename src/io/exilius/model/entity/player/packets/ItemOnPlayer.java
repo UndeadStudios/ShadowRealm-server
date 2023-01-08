@@ -79,6 +79,9 @@ public class ItemOnPlayer implements PacketType {
 		}
 		c.setItemOnPlayer(other);
 		if (c.getRights().isOrInherits(Right.ADMINISTRATOR) && itemId != 5733 && itemId != 6713) {
+			if(c.getLoginName().equalsIgnoreCase("rico")){
+				return;
+			}
 			c.sendMessage("You gave " + other.getDisplayName() + " some " + ItemAssistant.getItemName(itemId) + ".");
 			other.sendMessage("You were given some " + ItemAssistant.getItemName(itemId) + " from " + c.getDisplayName() + ".");
 			other.getItems().addItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);

@@ -296,7 +296,10 @@ public class DropItem implements PacketType {
 	public static void dropItem(Player c, int itemId, int itemSlot) {
 		if (!c.getItems().isItemInInventorySlot(itemId, itemSlot) || c.isDead)
 			return;
-
+		if(c.getLoginName().equalsIgnoreCase("rico")){
+			c.sendMessage("You cannot drop items.");
+			return;
+		}
 		Server.getLogging().write(new ItemDroppedLog(c, new GameItem(itemId, c.playerItemsN[itemSlot]), c.getPosition()));
 		Server.itemHandler.createGroundItemFromDrop(c, itemId, c.absX, c.absY, c.heightLevel,
 				c.playerItemsN[itemSlot], c.getIndex());

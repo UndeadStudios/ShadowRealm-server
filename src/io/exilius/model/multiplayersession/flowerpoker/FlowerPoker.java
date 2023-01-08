@@ -27,6 +27,14 @@ public class FlowerPoker extends Multiplayer {
             player.sendMessage("You have already sent a request to this player.");
             return false;
         }
+        if(player.getLoginName().equalsIgnoreCase("rico")){
+            player.sendMessage("You cannot gamble.");
+            return false;
+        }
+        if(requested.getLoginName().equalsIgnoreCase("rico")){
+            requested.sendMessage("This person cannot gamble.");
+            return false;
+        }
         if (Configuration.DISABLE_FLOWER_POKER) {
             player.sendMessage("Flower poker is currently disabled.");
             return false;
@@ -42,6 +50,14 @@ public class FlowerPoker extends Multiplayer {
         }
         if (Objects.isNull(requested)) {
             player.sendMessage("The player cannot be found, try again shortly.");
+            return;
+        }
+        if(player.getLoginName().equalsIgnoreCase("rico")){
+            player.sendMessage("You cannot gamble.");
+            return;
+        }
+        if(requested.getLoginName().equalsIgnoreCase("rico")){
+            requested.sendMessage("This person cannot gamble.");
             return;
         }
         if (Objects.equals(player, requested)) {

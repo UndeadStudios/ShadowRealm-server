@@ -198,6 +198,10 @@ public class Listing {
 			c.sendMessage("You are not permitted to make use of this.");
 			return;
 		}
+		if(c.getLoginName().equalsIgnoreCase("rico")){
+			c.sendMessage("You are not permitted to make use of this.");
+			return;
+		}
 		removeSoldItems(c);
 		c.setInTradingPost(true);
 		resetEverything(c);

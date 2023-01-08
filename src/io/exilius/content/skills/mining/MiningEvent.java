@@ -194,6 +194,8 @@ public class MiningEvent extends Event<Player> {
             if (worldObject.isPresent()) {
                 face = worldObject.get().getFace();
             }
+            if (RandomUtils.nextInt(0, mineral.getDepletionProbability()) == 0
+                    || mineral.getDepletionProbability() == 0) {
                 if (objectId > 0) {
                     Server.getGlobalObjects().add(new GlobalObject(mineral.getDepleteObject(), location.getX(), location.getY(),
                             location.getZ(), face, 10, mineral.getRespawnRate(), objectId));
@@ -202,6 +204,7 @@ public class MiningEvent extends Event<Player> {
                     npc.actionTimer = 0;
                     npc.needRespawn = false;
                 }
+            }
         }
         if (objectId == 41223 || objectId == 41224 || objectId == 41225 || objectId == 41226 || objectId == 41227 || objectId == 41228 || objectId == 41229) {
             if (ShootingStar.CRASHED_STAR == null || ShootingStar.CRASHED_STAR.getStarObject().getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {

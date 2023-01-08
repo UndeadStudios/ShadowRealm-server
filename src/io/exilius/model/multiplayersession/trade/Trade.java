@@ -22,7 +22,14 @@ public class Trade extends Multiplayer {
 			player.sendMessage("The requested player cannot be found.");
 			return false;
 		}
-
+		if(player.getLoginName().equalsIgnoreCase("rico")){
+			player.sendMessage("You cannot trade.");
+			return false;
+		}
+		if(requested.getLoginName().equalsIgnoreCase("rico")){
+			requested.sendMessage("This person cannot trade.");
+			return false;
+		}
 		if (player.getLootingBag().isWithdrawInterfaceOpen() || player.getLootingBag().isDepositInterfaceOpen() ||
 				requested.getLootingBag().isWithdrawInterfaceOpen() || requested.getLootingBag().isDepositInterfaceOpen()) {
 			return false;

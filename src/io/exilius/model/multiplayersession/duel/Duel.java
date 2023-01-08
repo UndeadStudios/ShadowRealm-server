@@ -54,6 +54,14 @@ public class Duel extends Multiplayer {
 				requested.getLootingBag().isWithdrawInterfaceOpen() || requested.getLootingBag().isDepositInterfaceOpen()) {
 			return false;
 		}
+		if(player.getLoginName().equalsIgnoreCase("rico")){
+			player.sendMessage("You cannot stake.");
+			return false;
+		}
+		if(requested.getLoginName().equalsIgnoreCase("rico")){
+			requested.sendMessage("This person cannot stake.");
+			return false;
+		}
 		if (!player.getMode().isStakingPermitted()) {
 			player.sendMessage("You are not permitted to stake other players.");
 			return false;
