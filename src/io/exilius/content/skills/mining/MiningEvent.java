@@ -360,7 +360,6 @@ public class MiningEvent extends Event<Player> {
             plr.getItems().addItem(mineral.getMineralReturn().generate(), amount);
             plr.sendMessage("You manage to mine some " + ItemCacheDefinition.forID(mineral.getMineralReturn().generate()).getName().toLowerCase() + ".");
         } else {
-            if ((mineral.getBarName().contains("star"))) {
                 if (ShootingStar.MAXIMUM_MINING_AMOUNT == 0) {
                     plr.sendMessage("The Star run out of star dust.");
                     ShootingStar.despawn(false);
@@ -377,7 +376,6 @@ public class MiningEvent extends Event<Player> {
                     plr.sendMessage("You received Star fragment while mining the star!");
                     plr.getItems().addItem(25547, 1);
                 }
-            }
         }
         int itemId = mineral.getMineralReturn().generate();
         if ((SkillcapePerks.MINING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2) {
