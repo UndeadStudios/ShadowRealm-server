@@ -456,16 +456,6 @@ public class ItemOptionOne implements PacketType {
                     new SlayerMysteryBox(c).quickOpen();
                 }
                 break;
-            case 29326:
-                if(c.getItems().playerHasItem(29326)){
-                    new DrCapeMysteryBox(c).openInterface();
-                }
-                break;
-            case 6542:
-                if(c.getItems().playerHasItem(6542)){
-                    new Present(c).quickOpen();
-                }
-                break;
             case 21027: //dark relic
             	  c.inLamp = true;
             	  c.usingLamp = true;

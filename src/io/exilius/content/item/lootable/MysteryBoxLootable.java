@@ -5,6 +5,7 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.GameItem;
+import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 
 import java.util.List;
@@ -164,7 +165,7 @@ public abstract class MysteryBoxLootable implements Lootable {
 
             return;
         }
-        if (!(player.getSuperMysteryBox().canMysteryBox) || !(player.getNormalMysteryBox().canMysteryBox)  || !(player.getPresent().canMysteryBox)||
+        if (!(player.getSuperMysteryBox().canMysteryBox) || !(player.getNormalMysteryBox().canMysteryBox) ||
                 !(player.getUltraMysteryBox().canMysteryBox) || !(player.getFoeMysteryBox().canMysteryBox) ||
                 !(player.getYoutubeMysteryBox().canMysteryBox)
         ) {
@@ -189,7 +190,6 @@ public abstract class MysteryBoxLootable implements Lootable {
             player.getUltraMysteryBox().canMysteryBox();
             player.getSuperMysteryBox().canMysteryBox();
             player.getFoeMysteryBox().canMysteryBox();
-            player.getPresent().canMysteryBox();
             player.getYoutubeMysteryBox().canMysteryBox();
             return;
         }
@@ -198,11 +198,9 @@ public abstract class MysteryBoxLootable implements Lootable {
         if (random > 85) {
             String name = ItemDef.forId(mysteryPrize).getName();
             String itemName = ItemDef.forId(getItemId()).getName();
-            if (player.getRights().isNotAdmin() && !player.getRights().isOrInherits(Right.ADMINISTRATOR)) {
-                PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
-                        + player.getDisplayName()
-                        + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
-            }
+            PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
+                    + player.getDisplayName()
+                    + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
         }
         active = false;
         player.inDonatorBox = true;

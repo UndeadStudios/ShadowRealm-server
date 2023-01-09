@@ -236,6 +236,7 @@ public class RegionProvider {
 		return 0;
 	}
 
+
 	public void addClipping(int clipping, int x, int y, int height) {
 		Region r = get(x, y);
 		if (r != null) {

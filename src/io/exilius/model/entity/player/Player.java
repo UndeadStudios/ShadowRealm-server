@@ -567,7 +567,6 @@ public class Player extends Entity {
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
     private final SlayerMysteryBox slayerMysteryBox = new SlayerMysteryBox(this);
-    private final DrCapeMysteryBox drCapeMysteryBox = new DrCapeMysteryBox(this);
     private final CoinBagSmall coinBagSmall = new CoinBagSmall(this);
     private final CoinBagMedium coinBagMedium = new CoinBagMedium(this);
     private final CoinBagLarge coinBagLarge = new CoinBagLarge(this);
@@ -1987,7 +1986,6 @@ public class Player extends Entity {
         getYoutubeMysteryBox().canMysteryBox();
         getFoeMysteryBox().canMysteryBox();
         getSlayerMysteryBox().canMysteryBox();
-        getDrCapeMysteryBox().canMysteryBox();
         getPA().updateRunEnergy();
         isFullHelm = ItemDef.forId(playerEquipment[playerHat]).getEquipmentModelType() == EquipmentModelType.FULL_HELMET;
         isFullMask = ItemDef.forId(playerEquipment[playerHat]).getEquipmentModelType() == EquipmentModelType.FULL_MASK;
@@ -3420,9 +3418,6 @@ public class Player extends Entity {
 
     public SlayerMysteryBox getSlayerMysteryBox() {
         return slayerMysteryBox;
-    }
-    public DrCapeMysteryBox getDrCapeMysteryBox() {
-        return drCapeMysteryBox;
     }
 
     public VoteMysteryBox getVoteMysteryBox() {

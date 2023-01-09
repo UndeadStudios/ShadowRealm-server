@@ -196,16 +196,15 @@ public class Region {
     }
 
     public int getClip(int x, int y, int height) {
-        if (height > 3 || height < 0) {
-            height = Math.abs(height) % 4;
-        }
+        height = height % 4;
         int regionAbsX = (id >> 8) * 64;
-        int regionAbsY = (id & 0xff) * 64;
+        int regionAbsY = (id & 255) * 64;
         if (clips[height] == null) {
             return 0;
         }
         return clips[height][x - regionAbsX][y - regionAbsY];
     }
+
 
     int getProjectileClip(int x, int y, int height) {
         if (height > 3) height = height % 4;
@@ -232,23 +231,23 @@ public class Region {
             yLength = def.xLength();
         }
         if (type == 22) {
-            if (def.aBoolean767() && def.hasActions()) {
+            if (def.interactType == 1 && def.hasActions()) {
                 addClipping(x, y, height, -2097152);
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     addProjectileClipping(x, y, height, -2097152);
                 }
             }
         } else if (type >= 9) {
-            if (def.aBoolean767()) {
+            if (def.interactType == 1) {
                 removeClippingForSolidObject(x, y, height, xLength, yLength, false);
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     removeProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
                 }
             }
         } else if (type >= 0 && type <= 3) {
-            if (def.aBoolean767()) {
+            if (def.interactType == 1) {
                 setClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
                 }
             }
@@ -316,23 +315,23 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }
         if (type == 22) {
-            if (def.hasActions() && def.aBoolean767()) {
+            if (def.interactType == 1 && def.aBoolean767()) {
                 addClipping(x, y, height, 2097152);
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     addProjectileClipping(x, y, height, 2097152);
                 }
             }
         } else if (type >= 9) {
-            if (def.aBoolean767()) {
+            if (def.interactType == 1) {
                 addClippingForSolidObject(x, y, height, xLength, yLength, def.solid());
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     addProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
                 }
             }
         } else if (type >= 0 && type <= 3) {
-            if (def.aBoolean767()) {
+            if (def.interactType == 1) {
                 setClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
-                if (def.aBoolean757) {
+                if (def.interactType != 0) {
                     setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
                 }
             }

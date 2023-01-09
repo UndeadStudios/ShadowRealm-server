@@ -23,22 +23,7 @@ constant:
 common:
   accessibility: 3
   items:
-  - name: "steel axe"
-    minimum: 1
-    maximum: 1
-  - name: "steel scimitar"
-    minimum: 1
-    maximum: 1
-  - name: "steel full helm"
-    minimum: 1
-    maximum: 1
   - name: "black 2h sword"
-    minimum: 1
-    maximum: 1
-  - name: "mithril sq shield"
-    minimum: 1
-    maximum: 1
-  - name: "mithril chainbody"
     minimum: 1
     maximum: 1
   - name: "fire rune"
@@ -53,12 +38,66 @@ common:
   - name: "gold ore noted"
     minimum: 10
     maximum: 100
-  - name: "grimy tarromin noted"
-    minimum: 10
-    maximum: 20
 uncommon:
   accessibility: 15
   items:
-  - name: "rune med helm"
-    minimum: 1
-    maximum: 1
+    - name: "steel axe"
+      minimum: 1
+      maximum: 1
+    - name: "steel scimitar"
+      minimum: 1
+      maximum: 1
+    - name: "steel full helm"
+      minimum: 1
+      maximum: 1
+rare:
+  accessibility: 8
+  items:
+    - name: "grimy guam leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy marrentill"
+      minimum: 1
+      maximum: 1
+    - name: "grimy tarromin"
+      minimum: 1
+      maximum: 1
+    - name: "grimy harralander"
+      minimum: 1
+      maximum: 1
+    - name: "grimy ranarr weed"
+      minimum: 1
+      maximum: 1
+    - name: "grimy irit leaf"
+      minimum: 1
+      maximum: 1
+    - name: "grimy avantoe"
+      minimum: 1
+      maximum: 1
+    - name: "grimy kwuarm"
+      minimum: 1
+      maximum: 1
+    - name: "grimy cadantine"
+      minimum: 1
+      maximum: 1
+    - name: "grimy lantadyme"
+      minimum: 1
+      maximum: 1
+    - name: "grimy dwarf weed"
+      minimum: 1
+      maximum: 1
+    - name: "mithril sq shield"
+      minimum: 1
+      maximum: 1
+    - name: "mithril chainbody"
+      minimum: 1
+      maximum: 1
+    - name: "rune med helm"
+      minimum: 1
+      maximum: 1
+    - name: "chaos talisman"
+      minimum: 1
+      maximum: 1
+    - name: "nature talisman"
+      minimum: 1
+      maximum: 1

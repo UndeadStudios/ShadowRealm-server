@@ -45,7 +45,6 @@ public class LootableInterface {
         MYSTERY_BOX(new NormalMysteryBox(null)),
         SUPER_MYSTERY_BOX(new SuperMysteryBox(null)), // Item sprite won't draw small for some reason..
         ULTRA_MYSTERY_BOX(new UltraMysteryBox(null)),
-        DRCAPE_MYSTERY_BOX(new DrCapeMysteryBox(null)),// EPIC i FIXED  the interface fucking caps lock sticking
         FOE_MYSTERY_CHEST(new FoeMysteryBox(null)),
         SLAYER_MYSTERY_CHEST(new SlayerMysteryBox(null)),
         BRIMSTONE_KEY(new KonarChest()),
@@ -54,8 +53,7 @@ public class LootableInterface {
         VOTE_MYSTERY_BOX(new VoteMysteryBox()),
         CRYSTAL_CHEST(new CrystalChest()),
         PVM_CASKET(new PvmCasket()),
-        LARRANS_CHEST(new LarransChest()),
-        PRESENT(new Present(null))
+        LARRANS_CHEST(new LarransChest())
         ;
 
         private List<GameItem> common;

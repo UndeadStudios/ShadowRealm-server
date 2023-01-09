@@ -2596,11 +2596,11 @@ public class ShopAssistant {
 				return;
 			}
 			int itemValue = getSpecialItemValue(itemID) * amount;
-			if (c.getDailyTaskPoints() < itemValue) {
+			if (c.dailyTaskPoints < itemValue) {
 				c.sendMessage("You do not have enough daily points to buy this from the shop.");
 				return;
 			}
-			c.setArenaPoints(c.getDailyTaskPoints() - itemValue);
+			c.setDailyTaskPoints(c.dailyTaskPoints - itemValue);
 			c.getQuestTab().updateInformationTab();
 			c.getItems().addItem(itemID, amount);
 			c.getItems().sendInventoryInterface(3823);
