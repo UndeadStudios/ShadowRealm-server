@@ -315,23 +315,23 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }
         if (type == 22) {
-            if (def.interactType == 1 && def.aBoolean767()) {
+            if (def.interactType != 0 && def.aBoolean767()) {
                 addClipping(x, y, height, 2097152);
-                if (def.interactType != 0) {
+                if (def.interactType == 1) {
                     addProjectileClipping(x, y, height, 2097152);
                 }
             }
         } else if (type >= 9) {
-            if (def.interactType == 1) {
+            if (def.interactType != 0) {
                 addClippingForSolidObject(x, y, height, xLength, yLength, def.solid());
-                if (def.interactType != 0) {
+                if (def.interactType == 1) {
                     addProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
                 }
             }
         } else if (type >= 0 && type <= 3) {
-            if (def.interactType == 1) {
+            if (def.interactType != 0) {
                 setClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
-                if (def.interactType != 0) {
+                if (def.interactType == 1) {
                     setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
                 }
             }

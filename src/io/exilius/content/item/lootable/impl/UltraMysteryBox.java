@@ -138,7 +138,7 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(21006),//kodai wand
 						new GameItem(21015),//dihn bulwark
 						new GameItem(21006)//kodai wand
-		);
+				));
 
 		items.put(LootRarity.RARE,//8% chance
 				Arrays.asList(
