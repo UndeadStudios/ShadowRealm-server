@@ -231,23 +231,23 @@ public class Region {
             yLength = def.xLength();
         }
         if (type == 22) {
-            if (def.interactType == 1 && def.hasActions()) {
+            if (def.aBoolean767() && def.hasActions()) {
                 addClipping(x, y, height, -2097152);
-                if (def.interactType != 0) {
+                if (def.isWalkable()) {
                     addProjectileClipping(x, y, height, -2097152);
                 }
             }
         } else if (type >= 9) {
-            if (def.interactType == 1) {
+            if (def.aBoolean767()) {
                 removeClippingForSolidObject(x, y, height, xLength, yLength, false);
-                if (def.interactType != 0) {
+                if (def.isWalkable()) {
                     removeProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
                 }
             }
         } else if (type >= 0 && type <= 3) {
-            if (def.interactType == 1) {
+            if (def.aBoolean767()) {
                 setClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
-                if (def.interactType != 0) {
+                if (def.isWalkable()) {
                     setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), true);
                 }
             }
@@ -308,30 +308,30 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             xLength = def.yLength();
             yLength = def.xLength();
         }
-        if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
-            dumpDoorobject(objectId, x, y, height,type, direction);
-        }
+      //  if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
+      //      dumpDoorobject(objectId, x, y, height,type, direction);
+  //      }
         if (objectId == 29165) {
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }
         if (type == 22) {
-            if (def.interactType != 0 && def.aBoolean767()) {
+            if (def.hasActions() && def.aBoolean767()) {
                 addClipping(x, y, height, 2097152);
-                if (def.interactType == 1) {
+                if (def.isWalkable()) {
                     addProjectileClipping(x, y, height, 2097152);
                 }
             }
         } else if (type >= 9) {
-            if (def.interactType != 0) {
+            if (def.aBoolean767()) {
                 addClippingForSolidObject(x, y, height, xLength, yLength, def.solid());
-                if (def.interactType == 1) {
+                if (def.isWalkable()) {
                     addProjectileClippingForSolidObject(x, y, height, xLength, yLength, true);
                 }
             }
         } else if (type >= 0 && type <= 3) {
-            if (def.interactType != 0) {
+            if (def.aBoolean767()) {
                 setClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
-                if (def.interactType == 1) {
+                if (def.isWalkable()) {
                     setProjectileClippingForVariableObject(x, y, height, type, direction, def.solid(), false);
                 }
             }
@@ -506,7 +506,6 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
         try {
             System.out.println("Loading mapdata..");
             Discord.writeServerSyncMessage("Server is loading mapdata.");
-            verifyCustomMaps();
             File f = new File(Server.getDataDirectory() + "/mapdata/map_index");
             byte[] buffer = new byte[(int) f.length()];
             DataInputStream dis = new DataInputStream(new FileInputStream(f));
@@ -529,7 +528,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             }
             Arrays.stream(data).forEach(Region::loadMap);
             Arrays.asList(EXISTANT_OBJECTS).forEach(object -> RegionProvider.getGlobal().get(object.getX(), object.getY()).addWorldObject(object));
-            log.info("Loaded " + customMapFiles + " custom maps.");
+            log.info("Loaded " + size + " region maps.");
             Discord.writeServerSyncMessage("Server loaded mapdata.");
              } catch (Exception e) {
             e.printStackTrace();
@@ -577,53 +576,11 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
         RegionProvider.getGlobal().get(2671, 2592).setClipToZero(2671, 2592, 0);
     }
 
-    /**
-     * Check for duplicates in custom maps
-     */
-    private static void verifyCustomMaps() throws IOException {
-        List<File> files = Files.walk(Paths.get(CUSTOM_MAPS_DIR)).filter(Files::isRegularFile).map(it -> it.toFile()).collect(Collectors.toList());
-        List<String> fileNames = files.stream().map(it -> it.getName()).collect(Collectors.toList());
-        for (int i = 0; i < fileNames.size(); i++) {
-            for (int k = 0; k < fileNames.size(); k++) {
-                if (i == k) continue;
-                String file1 = fileNames.get(i);
-                String file2 = fileNames.get(k);
-                if (file1.equalsIgnoreCase(file2)) {
-                    throw new IllegalStateException("Two custom maps with the same id: " + file1);
-                }
-            }
-        }
-    }
-
-    private static byte[] getCustomFile(String directoryPath, int fileId) throws Exception {
-        File directory = new File(directoryPath);
-        for (File file : Objects.requireNonNull(directory.listFiles())) {
-            if (file.isDirectory()) {
-                byte[] fileData = getCustomFile(file.getPath(), fileId);
-                if (fileData != null) {
-                    return fileData;
-                }
-            } else if (file.getName().equals(fileId + ".Gz")) {
-                return getBuffer(file);
-            }
-        }
-        return null;
-    }
 
     private static void loadMap(RegionData regionData) {
         try {
-            byte[] file1 = getCustomFile(CUSTOM_MAPS_DIR, regionData.getObjects());
-            byte[] file2 = getCustomFile(CUSTOM_MAPS_DIR, regionData.getLandscape());
-            if (file1 == null) {
-                file1 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getObjects() + ".Gz"));
-            } else {
-                customMapFiles++;
-            }
-            if (file2 == null) {
-                file2 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getLandscape() + ".Gz"));
-            } else {
-                customMapFiles++;
-            }
+            byte[] file1 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getObjects() + ".Gz"));
+            byte[] file2 = getBuffer(new File(Server.getDataDirectory() + "/mapdata/index4/" + regionData.getLandscape() + ".Gz"));
             if (file1 == null || file2 == null) {
                 return;
             }
@@ -635,8 +592,6 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
         //System.out.println("Error loading map region: " + regionData.getRegionHash() + ", objectFile: " + regionData.getObjects() + ", floorFile: " + regionData.getLandscape());
         //e.printStackTrace();
     }
-
-    private static final int[][] fixClips = {{2207, 3057, 12854, 12856, 13368, 13367, 12855, 13111, 13112}};
 
     private static void loadMaps(int regionId, ByteStream str1, ByteStream str2) {
         int absX = (regionId >> 8) * 64;

@@ -677,7 +677,6 @@ public final class ObjectDef {
 		if (anInt760 == -1)
 			anInt760 = aBoolean767 ? 1 : 0;
 	}
-
 	private ObjectDef() {
 		type = -1;
 	}
@@ -692,6 +691,10 @@ public final class ObjectDef {
 
 	public boolean solid() {
 		return clipped;
+	}
+	public boolean isWalkable() {
+		// TODO Auto-generated method stub
+		return aBoolean757;
 	}
 
 	public int xLength() {
