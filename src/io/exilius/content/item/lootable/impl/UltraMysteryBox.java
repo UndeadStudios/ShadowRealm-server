@@ -137,17 +137,7 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(21015),//dihn bulwark
 						new GameItem(21006),//kodai wand
 						new GameItem(21015),//dihn bulwark
-						new GameItem(21006),//kodai wand
-						new GameItem(20095),//ankou mask
-						new GameItem(20104),//ankou leggings
-						new GameItem(20098),//ankou top
-						new GameItem(20107),//ankou socks
-						new GameItem(20101),//ankou gloves
-						new GameItem(20083),//mummy top
-						new GameItem(20089),//mummy legs
-						new GameItem(20080),//mummy mask
-						new GameItem(20086),//mummy hands
-						new GameItem(20092))//mummy feet
+						new GameItem(21006)//kodai wand
 		);
 
 		items.put(LootRarity.RARE,//8% chance
