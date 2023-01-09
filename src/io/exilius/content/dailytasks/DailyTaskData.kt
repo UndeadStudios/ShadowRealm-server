@@ -293,9 +293,9 @@ enum class DailyTaskData(
     ),
     RUNECRAFT_AIR_RUNE(
         DailyTask(
-            "Runecraft 250 Air runes",
+            "Do 15 Runecrafting runs of Air runes",
             TaskDifficulties.EASY,
-            250,
+            15,
             7,
             Skill.RUNECRAFTING,
             1,
@@ -305,7 +305,7 @@ enum class DailyTaskData(
     ),
     RUNECRAFT_MIND_RUNE(
         DailyTask(
-            "Runecraft 250 Mind runes",
+            "Do 15 Runecrafting runs of Mind runes",
             TaskDifficulties.EASY,
             250,
             7,
@@ -317,9 +317,9 @@ enum class DailyTaskData(
     ),
     RUNECRAFT_LAW_RUNE(
         DailyTask(
-            "Runecraft 750 Mind runes",
+            "Do 25 Runecrafting runs of Law runes",
             TaskDifficulties.MEDIUM,
-            750,
+            25,
             14,
             Skill.RUNECRAFTING,
             54,
@@ -329,7 +329,7 @@ enum class DailyTaskData(
     ),
     RUNECRAFT_DEATH_RUNE(
         DailyTask(
-            "Runecraft 750 Death runes",
+            "Do 25 Runecrafting runs of Death runes",
             TaskDifficulties.MEDIUM,
             750,
             14,
@@ -341,9 +341,9 @@ enum class DailyTaskData(
     ),
     RUNECRAFT_BLOOD_RUNE(
         DailyTask(
-            "Runecraft 750 Blood runes",
+            "Do 45 Runecrafting runs of Blood runes",
             TaskDifficulties.HARD,
-            1500,
+            45,
             28,
             Skill.RUNECRAFTING,
             77,
