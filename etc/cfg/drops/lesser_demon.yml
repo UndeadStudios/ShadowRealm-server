@@ -50,10 +50,10 @@ common:
   - name: "death rune"
     minimum: 20
     maximum: 40
-  - name: "gold ore"
+  - name: "gold ore noted"
     minimum: 10
     maximum: 100
-  - name: "grimy tarromin"
+  - name: "grimy tarromin noted"
     minimum: 10
     maximum: 20
 uncommon:

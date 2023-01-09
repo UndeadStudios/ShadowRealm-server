@@ -154,7 +154,6 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 				Arrays.asList(
 						new GameItem(22325),//scythe of vitur
 						new GameItem(21295),//infernal cape
-						new GameItem(20997),//twisted bow
 						new GameItem(1038),//red phat
 						new GameItem(1040),//yellow phat
 						new GameItem(1042),//blue phat
@@ -209,9 +208,6 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(21018),//ancestral hat
 						new GameItem(22324),//ghrazi rapier
 						new GameItem(20997),//twisted bow
-						new GameItem(22325),//scythe of vitur
-						new GameItem(20997),//twisted bow
-						new GameItem(22325),//scythe of vitur
 						new GameItem(12825),//arcane spirit shield
 						new GameItem(12821),//spectral spirit shield
 						new GameItem(22326),//justiciar helm
