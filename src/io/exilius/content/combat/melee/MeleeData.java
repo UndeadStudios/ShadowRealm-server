@@ -133,6 +133,10 @@ public class MeleeData {
 			c.playerStandIndex = 1461;
 			c.playerWalkIndex = 1468;
 			c.playerRunIndex = 1467;
+			c.playerTurnIndex = 1468;
+			c.playerTurn180Index = 1468;
+			c.playerTurn90CWIndex = 1468;
+			c.playerTurn90CCWIndex = 1468;
 			return;
 		}
 		if (weaponName.contains("dharok")) {
@@ -344,7 +348,9 @@ public class MeleeData {
 		if (weaponName.startsWith("boxing")) {
 			return 3678;
 		}
-
+		if(weaponName.startsWith("basket")){
+			return 422;
+		}
 		if (weaponName.contains("scythe of vitur")) {
 			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 				case ACCURATE:
@@ -645,6 +651,8 @@ public class MeleeData {
 			return 7517;
 		if (weapon.startsWith("boxing"))
 			return 3679;
+		if(weapon.startsWith("basket"))
+			return 424;
 		switch (c.playerEquipment[Player.playerWeapon]) {
 			case Items.SCYTHE_OF_VITUR:
 				return 435;
