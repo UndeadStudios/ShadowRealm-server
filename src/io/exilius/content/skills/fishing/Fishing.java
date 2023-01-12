@@ -1,6 +1,8 @@
 package io.exilius.content.skills.fishing;
 
 import io.exilius.Server;
+import io.exilius.content.achievement.AchievementType;
+import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KandarinDiaryEntry;
 import io.exilius.content.achievement_diary.impl.KaramjaDiaryEntry;
@@ -103,6 +105,7 @@ public class Fishing {
                 int chance = Misc.random(3000);
                 int petchance = Misc.random(4500);
                 int petchance1 = Misc.random(3000);
+                Achievements.increase(player, AchievementType.FISH, 1);
                 clueBottles(player, chance);
                 foeArtefact(player, chance);
 
