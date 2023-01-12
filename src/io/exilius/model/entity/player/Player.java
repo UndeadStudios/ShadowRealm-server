@@ -252,6 +252,7 @@ public class Player extends Entity {
     public int clue2Amount;
     public int clue3Amount;
     public int clue4Amount;
+    public int conobjectverison;
     public int[] tempInventory = new int[28], tempInventoryN = new int[28], tempEquipment = new int[28], tempEquipmentN = new int[28];
     public boolean rubyBoltSpecial;
     public boolean rubydragonBoltSpecial;

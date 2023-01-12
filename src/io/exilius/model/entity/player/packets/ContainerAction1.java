@@ -163,7 +163,7 @@ public class ContainerAction1 implements PacketType {
 			Listing.cancelListing(c, removeSlot, removeId);
 		break;
 		
-		case 48500: //Listing interface
+		case 44022: //Listing interface
 			if(c.isListing) {
 				Listing.openSelectedItem(c, removeId, 1, 0);
 			}

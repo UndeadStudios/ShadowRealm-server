@@ -17,7 +17,7 @@ public class ObjectOptionFive {
         }
         GlobalObject object = new GlobalObject(objectType, obX, obY, c.heightLevel);
         Construction.handleConstructionClick(c, objectType, obX, obY);
-        Objects.handleObjectClick(c, objectType, obX, obY);
+        Objects.openInterface(c, objectType);
         c.getPA().resetVariables();
         c.clickObjectType = 0;
         //c.getPA.(obX, obY);

@@ -78,7 +78,7 @@ public class ContainerAction2 implements PacketType {
 		case ItemSpawner.CONTAINER_ID:
 			ItemSpawner.spawn(c, removeId,5000);
 			break;
-		case 36022:
+		case 44022:
 			Listing.buyListing(c, removeSlot, 5);
 			break;
 	

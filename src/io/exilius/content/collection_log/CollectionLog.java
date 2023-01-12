@@ -13,6 +13,7 @@ import io.exilius.content.achievement.Achievements;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.item.lootable.impl.RaidsChestRare;
 import io.exilius.content.item.lootable.impl.TheatreOfBloodChest;
+import io.exilius.content.trails.ClueScroll;
 import io.exilius.content.trails.RewardLevel;
 import io.exilius.content.trails.TreasureTrailsRewardItem;
 import io.exilius.content.trails.TreasureTrailsRewards;
