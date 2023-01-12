@@ -12,7 +12,6 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.save.PlayerSave;
 import io.exilius.model.items.GameItem;
 import io.exilius.model.items.ImmutableItem;
-import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.player.TradingPostBuyLog;
@@ -281,18 +280,18 @@ public class Listing {
 			c.sendMessage("[@red@Trading Post@bla@] You don't have that many "+formatItemName(itemId) + (amount > 1 ? "s" : "")+".");
 			return;
 		}
-		if (ItemCacheDefinition.forID(itemId) != null) {
-			if (!ItemCacheDefinition.forID(itemId).searchable) {
+		if (ItemDef.forId(itemId) != null) {
+			if (!ItemDef.forId(itemId).isTradable()) {
 				c.sendMessage("[@red@Trading Post@bla@] You can't sell that item");
 				return;
 			}
 		}
-		if (!ItemCacheDefinition.forID(itemId).searchable) {
+		if (!ItemDef.forId(itemId).isTradable()) {
 			c.sendMessage("[@red@Trading Post@bla@] You can't sell that item");
 			return;
 		}
 
-		if (ItemCacheDefinition.forID(itemId) == null) {
+		if (ItemDef.forId(itemId) == null) {
 			c.sendMessage("Item definition is null for " + itemId + ", please report this error.");
 			return;
 		}

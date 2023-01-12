@@ -71368,6 +71368,10 @@
       "slot": 12
     }
   },
+  "26502": {
+    "name": "Battle pass",
+    "weight": 5.0
+  },
   "26708": {
     "name": "Dragon claws (or)",
     "equipable": true,

@@ -1367,6 +1367,9 @@ public class ShopAssistant {
 				return 5;
 			case 13116:
 				return 500;
+			case 2153:
+				if (c.myShopId == 41)
+					return 200;
 			case 536:
 			case 537:
 				return 1;

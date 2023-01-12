@@ -3,7 +3,6 @@ package io.exilius.content.skills.construction;
 import com.google.gson.Gson;
 import io.exilius.Test1;
 import io.exilius.model.collisionmap.ObjectDef;
-import io.exilius.model.entity.npc.pets.PetHandler;
 import io.exilius.model.entity.player.Player;
 
 public class Objects {
@@ -260,7 +259,6 @@ public class Objects {
 		for (CON_DATA con : CON_DATA.values()) {
 			if (objectType ==  con.getFake_object()) {
 				if (c.playerLevel[22] >= con.getLevel()) {
-					if(c.conobjectverison == con.getObjectverison()) {
 					if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem(con.getItem2(), con.getAmount2()) && c.getItems().playerHasItem(con.getItem3(), con.getAmount3())&& c.getItems().playerHasItem(con.getItem4(), con.getAmount4()) && c.getItems().playerHasItem(con.getItem5(), con.getAmount5())) {
 						if (con.getItem1() != -1 || con.getItem2() != -1 || con.getItem3() != -1 || con.getItem4() != -1 || con.getItem5() != -1) {
 							if (c.getItems().playerHasItem(con.getItem1(), con.getAmount1()) && c.getItems().playerHasItem(con.getItem2(), con.getAmount2()) && c.getItems().playerHasItem(con.getItem3(), con.getAmount3()) && c.getItems().playerHasItem(con.getItem4(), con.getAmount4()) && c.getItems().playerHasItem(con.getItem5(), con.getAmount5())) {
@@ -322,7 +320,6 @@ public class Objects {
 						c.sendMessage("You build a <col=0000FF>" + con.getObjectname() + ".");
 						room.newObject(c, replacementObject);
 						return;
-					}
 					} else {
 						if(con.getItem1() != -1 && con.getItem2() != -1 &&  con.getItem3() == -1 &&  con.getItem4() == -1 &&  con.getItem5() == -1) {
 							c.sendMessage("You need at least <col=DD5C3E>" + con.getAmount1() + " " + c.getItems().getItemName(con.getItem1()) + " and " + con.getAmount2() + " " + c.getItems().getItemName(con.getItem2()) + "s <col=000000>to build a <col=0000FF>" + con.getObjectname() + ".");

@@ -74796,6 +74796,11 @@
   description: "A pack containing 100 pieces of soft clay."
   shopValue: 10
   untradeable: false
+- id: 26502
+  name: "Battle Pass"
+  description: "A paid version of the battle pass."
+  shopValue: 100000000
+  untradeable: false  
 - id: 26708
   name: "Dragon claws (or)"
   description: "A set of pretty fighting claws."

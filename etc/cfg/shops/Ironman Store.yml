@@ -83,7 +83,7 @@ items:
 - name: "limpwurt root"
 - name: "red spiders eggs"
 - name: "chocolate dust"
-- name: "giant frog legs"
+- id: 2153
 - name: "bird nest"
 - name: "white berries"
 - name: "dragon scale dust"
