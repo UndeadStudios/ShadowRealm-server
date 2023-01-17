@@ -1,8 +1,6 @@
 package io.exilius.content.skills.runecrafting;
 
 import io.exilius.content.achievement_diary.impl.*;
-import io.exilius.content.dailytasks.DailyTaskData;
-import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.SkillHandler;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
@@ -130,26 +128,6 @@ public class Runecrafting extends SkillHandler {
 					if (multiply > 50) {
 						player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.CRAFT_NATURES);
 					}
-				}
-				if (name.equals("air") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_AIR_RUNE.getDailyTask().getTaskName())) {
-					System.out.println("Burnign oak logs");
-					DailyTaskHandler.Companion.handleProgress(player, 1);
-				}
-				if (name.equals("mind") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_MIND_RUNE.getDailyTask().getTaskName())) {
-					System.out.println("Burnign oak logs");
-					DailyTaskHandler.Companion.handleProgress(player, 1);
-				}
-				if (name.equals("law") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_LAW_RUNE.getDailyTask().getTaskName())) {
-					System.out.println("Burnign oak logs");
-					DailyTaskHandler.Companion.handleProgress(player, 1);
-				}
-				if (name.equals("death") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_DEATH_RUNE.getDailyTask().getTaskName())) {
-					System.out.println("Burnign oak logs");
-					DailyTaskHandler.Companion.handleProgress(player, 1);
-				}
-				if (name.equals("blood") && player.getCurrentDailyTask().getTaskName().equals(DailyTaskData.RUNECRAFT_BLOOD_RUNE.getDailyTask().getTaskName())) {
-					System.out.println("Burnign oak logs");
-					DailyTaskHandler.Companion.handleProgress(player, 1);
 				}
 				player.getItems().deleteItem2(7936, essence);
 				player.getItems().deleteItem2(1436, essence);

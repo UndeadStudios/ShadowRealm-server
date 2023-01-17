@@ -759,11 +759,14 @@ public class AttackAnimation extends NPCHandler {
 		case 395:// river troll
 		case 396:
 			return 284;
-		case 891: // moss
-			case 2090: // Moss giant
-			case 2091: // Moss giant
-			case 2092: // Moss giant
-			case 2093: // Moss giant
+			case Npcs.MOSS_GIANT:
+			case Npcs.MOSS_GIANT_2:
+			case Npcs.MOSS_GIANT_3:
+			case Npcs.MOSS_GIANT_4:
+			case Npcs.MOSS_GIANT_5:
+			case Npcs.MOSS_GIANT_6:
+			case Npcs.MOSS_GIANT_7:
+			case Npcs.MOSS_GIANT_8:
 			return 4658;
 		case 7258:
 			return 5540;

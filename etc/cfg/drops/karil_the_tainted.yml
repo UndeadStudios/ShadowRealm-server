@@ -10,7 +10,7 @@ common:
     minimum: 50
     maximum: 200
 rare:
-  accessibility: 30
+  accessibility: 20
   items:
   - name: "karils coif"
     minimum: 1

@@ -277,6 +277,8 @@ public class Boundary {
 	public static final Boundary bandit_camp = new Boundary(3148, 2956, 3191, 3002);
 	public static final Boundary Varrock_Sewers = new Boundary(3151, 9856, 3293, 9919);
 	public static final Boundary LZ_MIMICS = new Boundary(2858, 5085, 2867, 5108);
+
+	public static final Boundary OGRE_PEN = new Boundary(2544, 3388, 2497, 3355);
 	public static final Boundary MZ = new Boundary(2112, 9344, 2175, 9407);
 	public static final Boundary OZ = new Boundary(2784, 4887, 2796, 4895);
 	public static final Boundary ICE_TROOL_AREA = new Boundary(2306, 3843, 2429, 3902);

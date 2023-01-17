@@ -487,16 +487,16 @@ public class UseItem {
 			}
 			break;
 
-		case 9380:
-		case 9385:
-		case 9344:
-		case 9345:
-		case 9348:
-			if (itemId == 6713) {
-				Server.getGlobalObjects().remove(objectID, objectX, objectY, c.heightLevel);
-				c.sendMessage("@cr10@Attempting to remove object..");
-			}
-			break;
+            case 9380:
+            case 9385:
+            case 9344:
+            case 9345:
+            case 9348:
+                if (itemId == 6713) {
+                    Server.getGlobalObjects().remove(objectID, objectX, objectY, c.heightLevel);
+                    c.sendMessage("@cr10@Attempting to remove object..");
+                }
+                break;
 
 		case 27029:
 			if (itemId == 13273) {
@@ -690,6 +690,163 @@ public class UseItem {
 				SplitbarkCrafting.OpenInterface(c);
 			}
 		}*/
+
+        if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
+            if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
+                c.getItems().deleteItem(26713, 1);
+                c.getItems().deleteItem(11826, 1);
+                c.getItems().addItem(26714, 1);
+                c.sendMessage("You have ornamented you're Armadyl Helm");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 24777 && useWith == 6585 || itemUsed == 6585 && useWith == 24777) {
+            if (c.getItems().playerHasItem(24777) && c.getItems().playerHasItem(6585)) {
+                c.getItems().deleteItem(24777, 1);
+                c.getItems().deleteItem(6585, 1);
+                c.getItems().addItem(24780, 1);
+                c.sendMessage("You attached the blood shard to your amulet of fury.");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 25859 && useWith == 23877 || itemUsed == 23877 && useWith == 25859) {
+            if (c.playerLevel[c.playerCrafting] >= 75) {
+                if (!c.getItems().playerHasItem(25859) || !c.getItems().playerHasItem(23877, 100000) || !c.getItems().playerHasItem(2347)) {
+                    c.sendMessage("You must have 100,000 crystal shard, Enchanted crystal weapon seed in order to do this.");
+                    return;
+                }
+                c.getItems().deleteItem(25859, c.getItems().getInventoryItemSlot(25859), 1);
+                c.getItems().deleteItem(23877, 100000);
+                c.getItems().addItem(25865, 1);
+                c.getDH().sendItemStatement("You combine the two materials to create a Bow of Faerdhinen.", 25865);
+                c.getPA().addSkillXPMultiplied(10, c.playerCrafting, true);
+            } else {
+                c.sendMessage("You need a crafting level of 75 to create a Bow of Faerdhinen.");
+            }
+        }
+        if (itemUsed == 26713 && useWith == 11830 || itemUsed == 11830 && useWith == 26713) {
+            if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11830)) {
+                c.getItems().deleteItem(26713, 1);
+                c.getItems().deleteItem(11830, 1);
+                c.getItems().addItem(26716, 1);
+                c.sendMessage("You have ornamented you're Armadyl Chainskirt");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 26717 && useWith == 11832 || itemUsed == 11832 && useWith == 26717) {
+            if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11832)) {
+                c.getItems().deleteItem(26717, 1);
+                c.getItems().deleteItem(11832, 1);
+                c.getItems().addItem(26718, 1);
+                c.sendMessage("You have ornamented you're Bandos Chest Plate");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 26717 && useWith == 11834 || itemUsed == 11834 && useWith == 26717) {
+            if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11834)) {
+                c.getItems().deleteItem(26717, 1);
+                c.getItems().deleteItem(11834, 1);
+                c.getItems().addItem(26719, 1);
+                c.sendMessage("You have ornamented you're Bandos Tassets");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 26717 && useWith == 11836 || itemUsed == 11836 && useWith == 26717) {
+            if (c.getItems().playerHasItem(26717) && c.getItems().playerHasItem(11836)) {
+                c.getItems().deleteItem(26717, 1);
+                c.getItems().deleteItem(11836, 1);
+                c.getItems().addItem(26720, 1);
+                c.sendMessage("You have ornamented you're Bandos Boots");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        if (itemUsed == 27098 && useWith == 21003 || itemUsed == 21003 && useWith == 20798) {
+            if (c.getItems().playerHasItem(27098) && c.getItems().playerHasItem(21003)) {
+                c.getItems().deleteItem(27098, 1);
+                c.getItems().deleteItem(21003, 1);
+                c.getItems().addItem(27100, 1);
+                c.sendMessage("You have ornamented you're elder Maul");
+            } else {
+                c.sendMessage("You do not have the required items");
+            }
+        }
+        /**
+         * Pizza Creation
+         */
+        if (itemUsed == 1982 && useWith == 2283 || itemUsed == 2283
+                && useWith == 1982) {
+            Cooking.pastryCreation(c, 1982, 2283, 2285, "");
+        }
+        if (itemUsed == 2285 && useWith == 1985 || itemUsed == 1985
+                && useWith == 2285) {
+            Cooking.pastryCreation(c, 2285, 1985, 2287, "");
+        }
+        if (itemUsed == 2140 && useWith == 2289 || itemUsed == 2289
+                && useWith == 2140) {
+            Cooking.cookingAddon(c, 2140, 2289, 2293, 45, 26);
+        }
+        if (itemUsed == 319 && useWith == 2289 || itemUsed == 2289
+                && useWith == 319) {
+            Cooking.cookingAddon(c, 319, 2289, 2297, 55, 39);
+        }
+        if (itemUsed == 2116 && useWith == 2289 || itemUsed == 2289
+                && useWith == 2116) {
+            Cooking.cookingAddon(c, 2116, 2289, 2301, 65, 45);
+        }
+        /**
+         * Pie Making
+         */
+        if (itemUsed == 2313 && useWith == 1953 || itemUsed == 1953
+                && useWith == 2313) {
+            Cooking.pastryCreation(c, 2313, 1953, 2315,
+                    "You put the pastry dough into the pie dish to make a pie shell.");
+        }
+        if (itemUsed == 2315 && useWith == 1955 || itemUsed == 1955
+                && useWith == 2315) {
+            Cooking.pastryCreation(c, 2315, 1955, 2317,
+                    "You fill the pie with cooking apple.");
+        }
+        if (itemUsed == 2315 && useWith == 5504 || itemUsed == 5504
+                && useWith == 2315) {
+            Cooking.pastryCreation(c, 2315, 5504, 7212, "");
+        }
+        if (itemUsed == 7212 && useWith == 5982 || itemUsed == 5982
+                && useWith == 7212) {
+            Cooking.pastryCreation(c, 7212, 5982, 7214, "");
+        }
+        if (itemUsed == 1955 && useWith == 7214 || itemUsed == 7214
+                && useWith == 1955) {
+            Cooking.pastryCreation(c, 1955, 7214, 7216, "");
+        }
+        if (itemUsed == 2315 && useWith == 1951 || itemUsed == 1951 && useWith == 2315) {
+            Cooking.pastryCreation(c, 1951, 2315, 2321, "");
+        }
+        /**
+         * Pitta/ Ugthanki Kebab
+         */
+        if (itemUsed == 1865 && useWith == 1881 || itemUsed == 1881
+                && useWith == 1865) {
+            Cooking.cookingAddon(c, 1865, 1881, 1883, 0, 40);
+        }
+        if (itemUsed == 1987 && useWith == 1937 || itemUsed == 1937
+                && useWith == 1987) {
+            if (c.playerLevel[c.playerCooking] >= 35) {
+                c.getItems().addItem(1993, 1);
+                c.getItems().deleteItem(1937, 1);
+                c.getItems().deleteItem(1987, 1);
+                c.getPlayerAssistant().addSkillXP(200, c.playerCooking, true);
+            } else {
+                c.sendMessage(
+                        "You need grapes and a jug of water to make wine.");
+            }
+        }
+        //ornament kits end
 		if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
 			if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
 				c.getItems().deleteItem(26713, 1);

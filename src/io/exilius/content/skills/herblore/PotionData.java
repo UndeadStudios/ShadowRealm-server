@@ -113,7 +113,7 @@ public class PotionData {
 		SUPER_RESTORE(new GameItem(3024), 63, 142, new GameItem(3004), new GameItem(Items.RED_SPIDERS_EGGS)),
 		SUPER_STRENGTH(new GameItem(2440), 55, 125, new GameItem(Items.KWUARM_POTION_UNF), new GameItem(Items.LIMPWURT_ROOT)),
 		WEAPON_POISON(new GameItem(187), 60, 137, new GameItem(Items.KWUARM_POTION_UNF), new GameItem(Items.DRAGON_SCALE_DUST)),
-		WEAPON_POISON_PLUS(new GameItem(5937), 73, 165, new GameItem(6124), new GameItem(6016), new GameItem(Items.RED_SPIDERS_EGGS)),
+		WEAPON_POISON_PLUS(new GameItem(5937), 73, 165, new GameItem(5935), new GameItem(6016), new GameItem(Items.RED_SPIDERS_EGGS)),
 		WEAPON_POISON_PLUS_PLUS(new GameItem(5940), 82, 190, new GameItem(5935), new GameItem(2398), new GameItem(6018)),
 		ZAMORAK_BREW(new GameItem(2450), 78, 175, new GameItem(111), new GameItem(247)),
 

@@ -6,6 +6,7 @@ import io.exilius.content.PlayerEmotes;
 import io.exilius.content.QuestTab;
 import io.exilius.content.Sawmill;
 import io.exilius.content.UimStorageChest;
+import io.exilius.content.battle_pass.BattlePassInterface;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.cheatprevention.CheatEngineBlock;
 import io.exilius.content.combat.magic.CombatSpellData;
@@ -219,6 +220,8 @@ public class ClickingButtons implements PacketType {
 			c.getPA().removeAllWindows();
 			return;
 		}
+		if (BattlePassInterface.Companion.handleButton(actionButtonId, c)) return;
+
 		c.getPestControlRewards().click(actionButtonId);
 		if (c.getTitles().click(actionButtonId)) {
 			return;

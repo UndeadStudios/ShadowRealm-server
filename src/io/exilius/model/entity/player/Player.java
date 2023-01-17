@@ -9,6 +9,8 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.AchievementDiaryManager;
 import io.exilius.content.achievement_diary.RechargeItems;
+import io.exilius.content.battle_pass.BattlePassConfig;
+import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.content.bosses.Cerberus;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Vorkath;
@@ -195,6 +197,30 @@ public class Player extends Entity {
 
     @Getter
     @Setter
+    public int battlePassSeason = 0;
+    @Getter
+    @Setter
+    public long battlePassXP = 0;
+    @Getter
+    @Setter
+    public int battlePassLevel = 0;
+    @Getter
+    @Setter
+    public boolean[] battlePassFreeRwdsClaimed = new boolean[20];
+    @Getter
+    @Setter
+    public boolean[] battlePassPremiumRwdsClaimed = new boolean[20];
+    @Getter
+    @Setter
+    public boolean battlePassPremiumUnlocked = false;
+
+    @Getter
+    @Setter
+    public int battlePassPage = 0;
+
+
+    @Getter
+    @Setter
     public DailyTask currentDailyTask = DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.getDailyTask();
     @Getter
     @Setter
@@ -252,7 +278,6 @@ public class Player extends Entity {
     public int clue2Amount;
     public int clue3Amount;
     public int clue4Amount;
-    public int conobjectverison;
     public int[] tempInventory = new int[28], tempInventoryN = new int[28], tempEquipment = new int[28], tempEquipmentN = new int[28];
     public boolean rubyBoltSpecial;
     public boolean rubydragonBoltSpecial;
@@ -344,11 +369,13 @@ public class Player extends Entity {
         getItems().addContainerUpdate(ContainerUpdate.INVENTORY);
         getItems().addContainerUpdate(ContainerUpdate.EQUIPMENT);
     }
+
     private final TeleportInterface2 teleportInter = new TeleportInterface2(this);
 
     public TeleportInterface2 getTeleportInter() {
         return teleportInter;
     }
+
     private Channel session;
     public Stream inStream;
     public Stream outStream;
@@ -438,7 +465,9 @@ public class Player extends Entity {
      */
     private final CombatConfig combatConfigs = new CombatConfig(this);
 
-    public CombatConfig getCombatConfigs() { return this.combatConfigs; }
+    public CombatConfig getCombatConfigs() {
+        return this.combatConfigs;
+    }
 
     public void resetAggressionTimer() {
         aggressionTimer = System.currentTimeMillis();
@@ -450,14 +479,18 @@ public class Player extends Entity {
         }
         return System.currentTimeMillis() - aggressionTimer >= TimeUnit.MINUTES.toMillis(15);
     }
-    private  final Seedling seedling = new Seedling(this);
+
+    private final Seedling seedling = new Seedling(this);
     private final ItemUpgrading itemUpgradeSystem = new ItemUpgrading(this);
+
     public ItemUpgrading getItemUpgradeSystem() {
         return itemUpgradeSystem;
     }
-    public Seedling getSeedling(){
+
+    public Seedling getSeedling() {
         return seedling;
     }
+
     private boolean receivedCalendarCosmeticJune2021;
     public long serpHelmCombatTicks;
     //FOE
@@ -564,7 +597,7 @@ public class Player extends Entity {
     private final UltraMysteryBox ultraMysteryBox = new UltraMysteryBox(this);
     private final NormalMysteryBox normalMysteryBox = new NormalMysteryBox(this);
 
-    private final Present present  = new Present(this);
+    private final Present present = new Present(this);
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
     private final SlayerMysteryBox slayerMysteryBox = new SlayerMysteryBox(this);
@@ -639,7 +672,7 @@ public class Player extends Entity {
     private final ActionHandler actionHandler = new ActionHandler(this);
     private final DialogueHandler dialogueHandler = new DialogueHandler(this);
     private final FriendsList friendsList = new FriendsList(this);
-    private final Queue<io.exilius.net.Packet> queuedPackets = new ConcurrentLinkedQueue<>();
+    private final Queue<Packet> queuedPackets = new ConcurrentLinkedQueue<>();
     private final Queue<Packet> priorityPackets = new ConcurrentLinkedQueue<>();
     private final Potions potions = new Potions(this);
     private final Food food = new Food(this);
@@ -1373,6 +1406,7 @@ public class Player extends Entity {
 
     /**
      * Check if the player has hit the database access rate limit. If not it will set the database access time.
+     *
      * @return true if server should refuse access, false and set access time if they aren't at limit.
      */
     public boolean hitDatabaseRateLimit(boolean message) {
@@ -1486,7 +1520,7 @@ public class Player extends Entity {
             return;
         byte[] temp = new byte[outStream.currentOffset];
         System.arraycopy(outStream.buffer, 0, temp, 0, temp.length);
-        io.exilius.net.Packet packet = new io.exilius.net.Packet(-1, io.exilius.net.Packet.Type.FIXED, Unpooled.wrappedBuffer(temp));
+        Packet packet = new Packet(-1, Packet.Type.FIXED, Unpooled.wrappedBuffer(temp));
         session.writeAndFlush(packet);
         getOutStream().currentOffset = 0;
     }
@@ -1530,36 +1564,37 @@ public class Player extends Entity {
             }
         }
     }
+
     public final static int[][] FIRE_SPELLS = {
-            { 1158, 13, 711, 99, 100, 101, 8, 11, 554, 3, 556, 2, 558, 1, 0, 0 }, // fire strike
-            { 1169, 35, 711, 126, 127, 128, 12, 22, 556, 3, 554, 4, 562, 1, 0, 0 }, // fire bolt
-            { 1181, 59, 711, 129, 130, 131, 16, 35, 556, 4, 554, 5, 560, 1, 0, 0 }, // fire blast
-            { 1189, 75, 711, 155, 156, 157, 20, 42, 556, 5, 554, 7, 565, 1, 0, 0 } // fire wave
+            {1158, 13, 711, 99, 100, 101, 8, 11, 554, 3, 556, 2, 558, 1, 0, 0}, // fire strike
+            {1169, 35, 711, 126, 127, 128, 12, 22, 556, 3, 554, 4, 562, 1, 0, 0}, // fire bolt
+            {1181, 59, 711, 129, 130, 131, 16, 35, 556, 4, 554, 5, 560, 1, 0, 0}, // fire blast
+            {1189, 75, 711, 155, 156, 157, 20, 42, 556, 5, 554, 7, 565, 1, 0, 0} // fire wave
     };
 
     public final static int[][] AIR_SPELLS = {
-            { 1152, 1, 711, 90, 91, 92, 2, 5, 556, 1, 558, 1, 0, 0, 0, 0 }, // wind strike
-            { 1160, 17, 711, 117, 118, 119, 9, 13, 556, 2, 562, 1, 0, 0, 0, 0 }, // wind bolt
-            { 1172, 41, 711, 132, 133, 134, 13, 25, 556, 3, 560, 1, 0, 0, 0, 0 }, // wind blast
-            { 1183, 62, 711, 158, 159, 160, 17, 36, 556, 5, 565, 1, 0, 0, 0, 0 } // wind wave
+            {1152, 1, 711, 90, 91, 92, 2, 5, 556, 1, 558, 1, 0, 0, 0, 0}, // wind strike
+            {1160, 17, 711, 117, 118, 119, 9, 13, 556, 2, 562, 1, 0, 0, 0, 0}, // wind bolt
+            {1172, 41, 711, 132, 133, 134, 13, 25, 556, 3, 560, 1, 0, 0, 0, 0}, // wind blast
+            {1183, 62, 711, 158, 159, 160, 17, 36, 556, 5, 565, 1, 0, 0, 0, 0} // wind wave
     };
 
     public final static int[][] EARTH_SPELLS = {
-            { 1156, 9, 711, 96, 97, 98, 6, 9, 557, 2, 556, 1, 558, 1, 0, 0 }, // earth strike
-            { 1166, 29, 711, 123, 124, 125, 11, 20, 556, 2, 557, 3, 562, 1, 0, 0 }, // earth bolt
-            { 1177, 53, 711, 138, 139, 140, 15, 31, 556, 3, 557, 4, 560, 1, 0, 0 }, // earth blast
-            { 1188, 70, 711, 164, 165, 166, 19, 40, 556, 5, 557, 7, 565, 1, 0, 0 } // earth wave
+            {1156, 9, 711, 96, 97, 98, 6, 9, 557, 2, 556, 1, 558, 1, 0, 0}, // earth strike
+            {1166, 29, 711, 123, 124, 125, 11, 20, 556, 2, 557, 3, 562, 1, 0, 0}, // earth bolt
+            {1177, 53, 711, 138, 139, 140, 15, 31, 556, 3, 557, 4, 560, 1, 0, 0}, // earth blast
+            {1188, 70, 711, 164, 165, 166, 19, 40, 556, 5, 557, 7, 565, 1, 0, 0} // earth wave
     };
 
     public final static int[][] WATER_SPELLS = {
-            { 1154, 5, 711, 93, 94, 95, 4, 7, 555, 1, 556, 1, 558, 1, 0, 0 }, // water strike
-            { 1163, 23, 711, 120, 121, 122, 10, 16, 556, 2, 555, 2, 562, 1, 0, 0 }, // water bolt
-            { 1175, 47, 711, 135, 136, 137, 14, 28, 556, 3, 555, 3, 560, 1, 0, 0 }, // water blast
-            { 1185, 65, 711, 161, 162, 163, 18, 37, 556, 5, 555, 7, 565, 1, 0, 0 } // water wave
+            {1154, 5, 711, 93, 94, 95, 4, 7, 555, 1, 556, 1, 558, 1, 0, 0}, // water strike
+            {1163, 23, 711, 120, 121, 122, 10, 16, 556, 2, 555, 2, 562, 1, 0, 0}, // water bolt
+            {1175, 47, 711, 135, 136, 137, 14, 28, 556, 3, 555, 3, 560, 1, 0, 0}, // water blast
+            {1185, 65, 711, 161, 162, 163, 18, 37, 556, 5, 555, 7, 565, 1, 0, 0} // water wave
     };
 
     public boolean getAirSpells() {
-        switch(CombatSpellData.MAGIC_SPELLS[oldSpellId][0]) {
+        switch (CombatSpellData.MAGIC_SPELLS[oldSpellId][0]) {
             case 1152:
             case 1160:
             case 1172:
@@ -1568,8 +1603,9 @@ public class Player extends Entity {
         }
         return false;
     }
+
     public boolean getFireSpells() {
-        switch(getSpellId()) {
+        switch (getSpellId()) {
             case 1158:
             case 1169:
             case 1181:
@@ -1578,8 +1614,9 @@ public class Player extends Entity {
         }
         return false;
     }
+
     public boolean getEarthSpells() {
-        switch(getSpellId()) {
+        switch (getSpellId()) {
             case 1156:
             case 1166:
             case 1177:
@@ -1588,8 +1625,9 @@ public class Player extends Entity {
         }
         return false;
     }
+
     public boolean getWaterSpells() {
-        switch(getSpellId()) {
+        switch (getSpellId()) {
             case 1154:
             case 1163:
             case 1175:
@@ -1702,7 +1740,7 @@ public class Player extends Entity {
 
     public long disconnectTime;
 
-//    public void start(RoomDialogue roomdialogue) {
+    //    public void start(RoomDialogue roomdialogue) {
 //        this.roomdialogue = roomdialogue;
 //        roomdialogue.initialise();
 //        lastDialogueNewSystem = true;
@@ -1751,7 +1789,7 @@ public class Player extends Entity {
             return;
         }
         if (getHouse() != null) {
-            if(inConstruction()) {
+            if (inConstruction()) {
                 getPA().movePlayer(3080, 3492, 0);
                 getHouse().leave(this);
             }
@@ -1809,7 +1847,7 @@ public class Player extends Entity {
             this.clan.removeMember(this);
         }
         if (getHouse() != null) {
-            if(inConstruction()) {
+            if (inConstruction()) {
                 getPA().movePlayer(3080, 3492, 0);
                 getHouse().leave(this);
             }
@@ -1879,22 +1917,6 @@ public class Player extends Entity {
         if (!getRights().contains(Right.ADMINISTRATOR) && !getRights().contains(Right.GAME_DEVELOPER) && !getRights().contains(Right.OWNER)) {
             boolean debugMessage = true;
             //Right right = rank.rights;
-            if (!Server.isDebug()) {
-                if (getMode().isRegular())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Normal Mode", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isIronman())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isHardcoreIronman())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isGroupIronman())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Group Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isrogue())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isrogueiron())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-                if (getMode().isroguehc())
-                    com.everythingrs.hiscores.Hiscores.update("MxjDpC3luOV4t1mDTOmE12q7CkFDl5u0ePDD7MEetMhHVTjS2hdyTY5Xi1CRHB873wofeqzG", "Rogue Hardcore Ironman", this.getDisplayName(), rights.getPrimary().ordinal(), this.playerXP, debugMessage);
-            }
         }
 
 
@@ -1946,7 +1968,7 @@ public class Player extends Entity {
             Right.IRONMAN_SET.forEach(it -> getRights().remove(it));
             getRights().updatePrimary();
         }
-            logoutTimer.start(21600);
+        logoutTimer.start(21600);
         // Normalise death tracker to fix previous mapping errors
         getNpcDeathTracker().normalise();
         // Old equipment correction?
@@ -2031,7 +2053,7 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@red@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && (getLoginName().equalsIgnoreCase("osiris"))) {
             PlayerHandler.executeGlobalMessage("[@yel@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-       } else if (getLoginName().equals("exilius")) {
+        } else if (getLoginName().equals("exilius")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@Security manager@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
@@ -2154,8 +2176,8 @@ public class Player extends Entity {
          */
         getQuestTab().updateInformationTab();
         getPA().sendFrame126("Combat Level: " + combatLevel + "", 3983);
-        getPA().sendFrame126("Total level: \n"+totalLevel, 25544);
-       // getPA().sendFrame126(totalLevel + "", 3984);
+        getPA().sendFrame126("Total level: \n" + totalLevel, 25544);
+        // getPA().sendFrame126(totalLevel + "", 3984);
         getPA().resetFollow();
         getPA().clearClanChat();
         getPA().resetFollow();
@@ -2272,6 +2294,9 @@ public class Player extends Entity {
             KillLimitHandler.Companion.checkResetTimer(this);
         }
         DailyTaskHandler.Companion.loadPlayerTaskDataOnLogin(this);
+        if (BattlePassConfig.IS_ENABLED) {
+            BattlePassHandler.Companion.handlePlayerLogin(this);
+        }
 
 
     }
@@ -2284,7 +2309,7 @@ public class Player extends Entity {
         }
     }
 
-    public void debug(String message, Object...args) {
+    public void debug(String message, Object... args) {
         debug(Misc.replaceBracketsWithArguments(message, args));
     }
 
@@ -2307,6 +2332,7 @@ public class Player extends Entity {
     public void sendMessage(String s) {
         if (s.length() >= 220) {
             logger.error("String is greater than a 130 characters! ({}), player={} {}", s.length(), this, new Exception());
+            return;
         }
 
         if (getOutStream() != null) {
@@ -2563,8 +2589,8 @@ public class Player extends Entity {
     public void process() {
         //getDonationRewards().tick();
         if (getOpenInterface() == DailyTaskInterface.interfaceId) {
-        	DailyTaskInterface.Companion.open(this);
-        	}
+            DailyTaskInterface.Companion.open(this);
+        }
         raidsClipFix();
         processQueuedActions();
         processTickables();
@@ -2574,7 +2600,7 @@ public class Player extends Entity {
         if (getCannon() != null) {
             getCannon().tick(this);
         }
-        if(logoutTimer.finished()){
+        if (logoutTimer.finished()) {
             properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
@@ -2597,8 +2623,8 @@ public class Player extends Entity {
                 getPA().sendGameTimer(ClientGameTimer.OVERLOAD, TimeUnit.MINUTES, 0);
             }
         }
-        if(Boundary.isIn(this, Boundary.KARUULM_SLAYER_DUNGEON)) {
-            if(playerEquipment[playerFeet] == 23037 || playerEquipment[playerFeet] == 22951 || playerEquipment[playerFeet] == 21643/*getItems().playerHasEquipped(23037)*/) {
+        if (Boundary.isIn(this, Boundary.KARUULM_SLAYER_DUNGEON)) {
+            if (playerEquipment[playerFeet] == 23037 || playerEquipment[playerFeet] == 22951 || playerEquipment[playerFeet] == 21643/*getItems().playerHasEquipped(23037)*/) {
             } else {
                 appendDamage(4, Hitmark.HIT);
             }
@@ -2623,8 +2649,8 @@ public class Player extends Entity {
                 sendMessage("@red@Your faster clue scroll has run out!");
             }
         }
-        if(isXslimed){
-            if(Misc.random(60) == 6){
+        if (isXslimed) {
+            if (Misc.random(60) == 6) {
                 forcedChat("Oink!");
             }
         }
@@ -3079,9 +3105,11 @@ public class Player extends Entity {
     public RooftopAlkharid getRooftopAlkharid() {
         return this.rooftopAlkharid;
     }
+
     public RooftopPrifddinas getRooftopPrifddinas() {
         return rooftopPrifddinas;
     }
+
     public RooftopFalador getRooftopFalador() {
         return this.rooftopFalador;
     }
@@ -3114,6 +3142,7 @@ public class Player extends Entity {
         if (fightcave == null) fightcave = new FightCave(this);
         return fightcave;
     }
+
     public boolean hasClueScroll() {
         for (GameItem item : getItems().getHeldAndBankedItems()) {
             if (item != null && item.getDef().getName().toLowerCase().contains("clue scroll")) {
@@ -3316,7 +3345,8 @@ public class Player extends Entity {
                 getRights().setPrimary(Right.DIAMOND_CLUB);
                 //sendMessage("Please relog to receive your diamond club rank.");
             }
-        } if (amDonated >= 1000) {
+        }
+        if (amDonated >= 1000) {
             if (getRights().isOrInherits(Right.YOUTUBER) || getRights().isOrInherits(Right.IRONMAN) || getRights().isOrInherits(Right.ULTIMATE_IRONMAN) || getRights().isOrInherits(Right.OSRS) || getRights().isOrInherits(Right.HELPER) || getRights().isOrInherits(Right.MODERATOR) || getRights().isOrInherits(Right.HC_IRONMAN)) {
                 getRights().add(Right.ONYX_CLUB);
             } else
@@ -3349,7 +3379,6 @@ public class Player extends Entity {
 
         //sendMessage("Your updated total amount donated is now $" + amDonated + ".");
     }
-
 
 
     public int getPrivateChat() {
@@ -3904,7 +3933,7 @@ public class Player extends Entity {
             }
             currentX = getTeleportToX() - 8 * mapRegionX;
             currentY = getTeleportToY() - 8 * mapRegionY;
-                //this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);//this makes the sever crash for con
+            //this.getRegionProvider().removeNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);//this makes the sever crash for con
             absX = getTeleportToX();
             absY = getTeleportToY();
             this.getRegionProvider().addNpcClipping(RegionProvider.NPC_TILE_FLAG, absX, absY, heightLevel);
@@ -4991,6 +5020,7 @@ public class Player extends Entity {
     public void setIceQueenDamageCounter(int damage) {
         this.raidsDamageCounters[4] = damage;
     }
+
     public void setNexDamageCounter(int damage) {
         this.raidsDamageCounters[4] = damage;
     }
@@ -5054,6 +5084,7 @@ public class Player extends Entity {
     public void setDuelLossCounter(int counters) {
         this.counters[6] = counters;
     }
+
     public int getEliteClueCounter() {
         return counters[7];
     }
@@ -5159,6 +5190,7 @@ public class Player extends Entity {
     public NormalMysteryBox getNormalBoxInterface() {
         return normalMysteryBox;
     }
+
     public Present getPresent() {
         return present;
     }
@@ -5254,6 +5286,7 @@ public class Player extends Entity {
     public void setBofaCharge(int charge) {
         this.bofacharges = charge;
     }
+
     public int getbofaCharge() {
         return bofacharges;
     }
@@ -5423,7 +5456,6 @@ public class Player extends Entity {
             derwens_orbs = Lists.newArrayList();
         }
     }
-
 
 
     public void setAirPerkLvl(int perkLvl) {
@@ -5778,6 +5810,7 @@ public class Player extends Entity {
 
     /**
      * Gets the combo timer associated with combo eating
+     *
      * @return The {@link TickTimer} associated with Combo eating
      */
     public TickTimer getComboTimer() {
@@ -5866,6 +5899,7 @@ public class Player extends Entity {
     public String getDisplayName() {
         return displayName;
     }
+
     public String getDisplayNameLower() {
         return displayName.toLowerCase();
     }
@@ -5978,9 +6012,11 @@ public class Player extends Entity {
     public PvpWeapons getPvpWeapons() {
         return pvpWeapons;
     }
+
     public ToolLeprechaun getFarmingTools() {
         return toolLeprechaun;
     }
+
     @Override
     public int getBonus(Bonus bonus) {
         return this.getItems().getBonus(bonus);
@@ -6005,15 +6041,18 @@ public class Player extends Entity {
     public void setMigrationVersion(int migrationVersion) {
         this.migrationVersion = migrationVersion;
     }
+
     public Room toReplace;
     public Room replaceWith;
     public boolean getHouse;
     public boolean inHouse;
     private House house;
     public int RoomClicked;
+
     public House getHouse() {
         return house;
     }
+
     public void setHouse(House house) {
         this.house = house;
     }

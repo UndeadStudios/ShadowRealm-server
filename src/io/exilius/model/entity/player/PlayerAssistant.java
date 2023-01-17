@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement_diary.impl.WildernessDiaryEntry;
+import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.content.boosts.BoostType;
 import io.exilius.content.boosts.Booster;
 import io.exilius.content.boosts.Boosts;
@@ -29,7 +30,6 @@ import io.exilius.content.skills.crafting.Enchantment;
 import io.exilius.content.skills.mining.Mineral;
 import io.exilius.content.skills.slayer.SlayerUnlock;
 import io.exilius.content.skills.slayer.Task;
-import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.content.skills.smithing.Smelting.Bars;
 import io.exilius.content.skills.woodcutting.Tree;
 import io.exilius.content.tournaments.TourneyManager;
@@ -3266,6 +3266,7 @@ public class PlayerAssistant {
 			}
 			requestUpdates();
 		}
+		BattlePassHandler.Companion.handleXpGain(c, amount);
 		setSkillLevel(skill, c.playerLevel[skill], c.playerXP[skill]);
 		refreshSkill(skill);
 		return true;
@@ -4145,7 +4146,7 @@ public class PlayerAssistant {
 			if (t.getWood() == item)
 				return true;
 		}
-		for (Bars b : Smelting.Bars.values()) {
+		for (Bars b : Bars.values()) {
 			if (b.getBar() == item)
 				return true;
 		}

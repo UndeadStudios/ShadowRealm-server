@@ -130,7 +130,7 @@ public class ContainerAction1 implements PacketType {
 			break;
 
 
-			case 36022:
+			case 44022:
 			Listing.buyListing(c, removeSlot, 1);
 			break;
 		case 21578:
@@ -163,7 +163,7 @@ public class ContainerAction1 implements PacketType {
 			Listing.cancelListing(c, removeSlot, removeId);
 		break;
 		
-		case 44022: //Listing interface
+		case 48500: //Listing interface
 			if(c.isListing) {
 				Listing.openSelectedItem(c, removeId, 1, 0);
 			}

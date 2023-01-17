@@ -688,33 +688,6 @@ public class Commands implements PacketType {
                 votes.start();
                 }
 
-            if (playerCommand.toLowerCase().contentEquals("claim")) {
-                new Thread(() -> {
-                    try {
-                        Donation[] donations = Donation.donations("MLLnFosU8sgebEdogXuricTJPJnDPz6QSLjLZpMdnDjFlojMhTfWEfHmwTsesBF1yqFIvg1B",
-                                c.getLoginName());
-                        if (donations.length == 0) {
-                            c.sendMessage("You currently don't have any items waiting. You must donate first!");
-                            return;
-                        }
-                        if (donations[0].message != null) {
-                            c.sendMessage(donations[0].message);
-                            return;
-                        }
-                        for (Donation donate: donations) {
-                            String messaged = "Donation System:" + c.getDisplayName() + " has just Donated for " + ItemDef.forId(donate.product_id).getName();
-                            c.getInventory().addToInventory(new ImmutableItem(donate.product_id, donate.product_amount));
-                            Discord.writeannounceMessage(messaged);
-                        }
-                        c.sendMessage("Thank you for donating!");
-                     //  String message = "Donation System:" + c.getDisplayName() + " has just Donated for " + ItemDef.forId(donate.product_id).getName();
-                             } catch (Exception e) {
-                        c.sendMessage("Api Services are currently offline. Please check back shortly");
-                        e.printStackTrace();
-                    }
-                }).start();
-            }
-
 
             if (playerCommand.equals("forum")) {
                 c.getPA().sendFrame126(Configuration.WEBSITE, 12000);

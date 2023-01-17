@@ -1,5 +1,12 @@
 ---
-npc_id: 432
+npc_id:
+  - 426
+  - 427
+  - 428
+  - 429
+  - 430
+  - 431
+  - 432
 constant:
   accessibility: 0
   items:
@@ -81,6 +88,6 @@ uncommon:
 rare:
   accessibility: 70
   items:
-  - name: "leaf bladed spear"
+  - name: "leaf bladed sword"
     minimum: 1
     maximum: 1

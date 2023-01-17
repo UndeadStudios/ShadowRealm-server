@@ -173,6 +173,9 @@ public final class ObjectDef {
 				objectDef.name = "Home Teleport";
 
 				break;
+			case 10823:
+				objectDef.name = "Yew";
+				break;
 			case 10562:
 				objectDef.actions = new String[] { "Open", null, null, null, null };
 				break;

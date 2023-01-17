@@ -114,6 +114,7 @@ public class NPCDeath {
                 }
                 break;
             case 136:
+            case 1153:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_OGRES.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }

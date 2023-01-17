@@ -69956,8 +69956,8 @@
     "weight": 1.36,
     "equipment": {
       "slot": 3,
-      "arange": 128,
-      "rstr": 166,
+      "arange": 195,
+      "rstr": 198,
       "aspeed": 4
     }
   },
@@ -71367,6 +71367,10 @@
     "equipment": {
       "slot": 12
     }
+  },
+  "26500": {
+    "name": "Battle pass",
+    "weight": 5.0
   },
   "26502": {
     "name": "Battle pass",

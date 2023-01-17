@@ -71,6 +71,14 @@ public class BlockAnimation {
             case InfernoWaveData.TZKAL_ZUK:
                 return 7565;
             case Npcs.BRYOPHYTA:
+            case Npcs.MOSS_GIANT:
+            case Npcs.MOSS_GIANT_2:
+            case Npcs.MOSS_GIANT_3:
+            case Npcs.MOSS_GIANT_4:
+            case Npcs.MOSS_GIANT_5:
+            case Npcs.MOSS_GIANT_6:
+            case Npcs.MOSS_GIANT_7:
+            case Npcs.MOSS_GIANT_8:
                 return 4657;
             case InfernoWaveData.JAL_MEJJAK:
                 return 2869;

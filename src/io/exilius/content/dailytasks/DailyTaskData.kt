@@ -291,66 +291,6 @@ enum class DailyTaskData(
             complete = false
         )
     ),
-    RUNECRAFT_AIR_RUNE(
-        DailyTask(
-            "Do 15 Runecrafting runs of Air runes",
-            TaskDifficulties.EASY,
-            15,
-            7,
-            Skill.RUNECRAFTING,
-            1,
-            0,
-            complete = false
-        )
-    ),
-    RUNECRAFT_MIND_RUNE(
-        DailyTask(
-            "Do 15 Runecrafting runs of Mind runes",
-            TaskDifficulties.EASY,
-            250,
-            7,
-            Skill.RUNECRAFTING,
-            1,
-            0,
-            complete = false
-        )
-    ),
-    RUNECRAFT_LAW_RUNE(
-        DailyTask(
-            "Do 25 Runecrafting runs of Law runes",
-            TaskDifficulties.MEDIUM,
-            25,
-            14,
-            Skill.RUNECRAFTING,
-            54,
-            0,
-            complete = false
-        )
-    ),
-    RUNECRAFT_DEATH_RUNE(
-        DailyTask(
-            "Do 25 Runecrafting runs of Death runes",
-            TaskDifficulties.MEDIUM,
-            750,
-            14,
-            Skill.RUNECRAFTING,
-            65,
-            0,
-            complete = false
-        )
-    ),
-    RUNECRAFT_BLOOD_RUNE(
-        DailyTask(
-            "Do 45 Runecrafting runs of Blood runes",
-            TaskDifficulties.HARD,
-            45,
-            28,
-            Skill.RUNECRAFTING,
-            77,
-            0,
-            complete = false
-        )
-    ),
     THEIVE_BAKER_STALL(
         DailyTask(
             "Theive 75 from Baker Stall",

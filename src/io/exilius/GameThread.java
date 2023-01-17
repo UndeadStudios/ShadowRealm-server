@@ -1,5 +1,6 @@
 package io.exilius;
 
+import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.content.instances.InstanceHeight;
 import io.exilius.content.minigames.pk_arena.Highpkarena;
 import io.exilius.content.minigames.pk_arena.Lowpkarena;
@@ -46,6 +47,7 @@ public class GameThread extends Thread {
         tickables.add(i -> CycleEventHandler.getSingleton().process());
         tickables.add(i -> Server.getEventHandler().process());
         tickables.add(i -> Server.tickCount++);
+        tickables.add(i -> BattlePassHandler.Companion.checkSeasonExpiry());
     }
 
     private void tick() {

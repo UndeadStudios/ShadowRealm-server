@@ -152,32 +152,14 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(11862),//black phat
 						new GameItem(20784),//dragon claws
 						new GameItem(12817),//elysian
-						new GameItem(13343),//black santa hat
-						new GameItem(13344),//inverted santa hat
-						new GameItem(11847),//black hween mask
-						new GameItem(11863),//rainbow phat
-						new GameItem(1053),//green hween
-						new GameItem(1055),//blue hween
-						new GameItem(1057),//red h ween
-						new GameItem(1050),//santa hat
-						new GameItem(11863),//rainbow phat
-						new GameItem(1053),//green hween
-						new GameItem(1055),//blue hween
-						new GameItem(1057),//red h ween
-						new GameItem(1050),//santa hat
 						new GameItem(1038),//red phat
 						new GameItem(1040),//yellow phat
 						new GameItem(1042),//blue phat
 						new GameItem(1044),//green phat
 						new GameItem(1046),//purp phat
 						new GameItem(1048),//white phat
-						new GameItem(11862),//black phat
 						new GameItem(20784),//dragon claws
 						new GameItem(12817),//elysian
-						new GameItem(13343),//black santa hat
-						new GameItem(13344),//inverted santa hat
-						new GameItem(11847),//black hween mask
-						new GameItem(11863),//rainbow phat
 						new GameItem(1053),//green hween
 						new GameItem(1055),//blue hween
 						new GameItem(1057),//red h ween
@@ -219,6 +201,12 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(2403),//$10 scroll
 						new GameItem(2403),//$10 scroll
 						new GameItem(2403),//$10 scroll
+						new GameItem(2403),//$10 scroll
+						new GameItem(2403),//$10 scroll
+						new GameItem(761),//$100 scroll
+						new GameItem(761),//$100 
+						new GameItem(786),//$50 scroll
+						new GameItem(786),//$50 scroll
 						new GameItem(786)//$50 scroll
 				));
 	}

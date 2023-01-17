@@ -3,6 +3,8 @@ package io.exilius;
 import io.exilius.annotate.Init;
 import io.exilius.annotate.PostInit;
 import io.exilius.content.BadWords;
+import io.exilius.content.battle_pass.BattlePassConfig;
+import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.content.boosts.Boosts;
 import io.exilius.content.bosses.godwars.GodwarsEquipment;
 import io.exilius.content.bosses.godwars.GodwarsNPCs;
@@ -138,6 +140,7 @@ public class ServerStartup {
         FireOfExchangeBurnPrice.init();
         Server.getLogging().schedule();
         if (KillLimitHandler.killHandlerEnabled) KillLimitHandler.Companion.loadKillLimits();
+        if (BattlePassConfig.IS_ENABLED) BattlePassHandler.Companion.handleServerStartup();
 
         ZamorakGuardian.spawn();
 

@@ -352,6 +352,7 @@ public final class Position {
 				|| Boundary.isIn(this, Boundary.wizard_tower)
 				|| Boundary.isIn(this, Boundary.woodcutting_guild)
 				|| Boundary.isIn(this, Boundary.CLAN_WARS_FREE_FOR_ALL)
+				|| Boundary.isIn(this, Boundary.OGRE_PEN)
 
 		) {
 			return true;

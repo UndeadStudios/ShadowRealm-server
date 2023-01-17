@@ -16,7 +16,7 @@ common:
     minimum: 100
     maximum: 250
 rare:
-  accessibility: 30
+  accessibility: 20
   items:
   - name: "guthans warspear"
     minimum: 1

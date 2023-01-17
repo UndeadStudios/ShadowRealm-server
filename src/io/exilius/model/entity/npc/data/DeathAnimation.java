@@ -58,6 +58,14 @@ public class DeathAnimation extends NPCHandler {
             case 8194:
                 return 3262;
             case Npcs.BRYOPHYTA:
+            case Npcs.MOSS_GIANT:
+            case Npcs.MOSS_GIANT_2:
+            case Npcs.MOSS_GIANT_3:
+            case Npcs.MOSS_GIANT_4:
+            case Npcs.MOSS_GIANT_5:
+            case Npcs.MOSS_GIANT_6:
+            case Npcs.MOSS_GIANT_7:
+            case Npcs.MOSS_GIANT_8:
                 return 4659;
             case 2837: // unicorn
             case 2849:
@@ -578,12 +586,6 @@ public class DeathAnimation extends NPCHandler {
             case 422:
                 // case 423:
                 // begin new updates
-            case 891: // moss
-            case 2090:
-            case 2091:
-            case 2092:
-            case 2093:
-                return 4659;
             case 7258:
                 return 5542;
             case 2834: // bats

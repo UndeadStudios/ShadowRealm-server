@@ -869,7 +869,38 @@ public class PlayerSave {
                                 p.keepTitle = Boolean.parseBoolean(token2);
                             } else if (token.equals("killTitle")) {
                                 p.killTitle = Boolean.parseBoolean(token2);
-                            } else if (token.equals("character-historyItems")) {
+                            }
+
+
+                            else if (token.equals("battle-pass-season")) {
+                                p.setBattlePassSeason(Integer.parseInt(token2));
+                            }
+
+                            else if (token.equals("battle-pass-premium-unlocked")) {
+                                p.battlePassPremiumUnlocked = Boolean.parseBoolean(token2);
+                            }
+
+                            else if (token.equals("battle-pass-free-rwds-claimed")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.getBattlePassFreeRwdsClaimed()[j] = Boolean.parseBoolean(token3[j]);
+                                }
+                            }
+
+                            else if (token.equals("battle-pass-premium-rwds-claimed")) {
+                                for (int j = 0; j < token3.length; j++) {
+                                    p.getBattlePassPremiumRwdsClaimed()[j] = Boolean.parseBoolean(token3[j]);
+                                }
+                            }
+
+                            else if (token.equals("battle-pass-xp")) {
+                                p.setBattlePassXP(Long.parseLong(token2));
+                            }
+
+                            else if (token.equals("battle-pass-level")) {
+                                p.setBattlePassLevel(Integer.parseInt(token2));
+                            }
+
+                            else if (token.equals("character-historyItems")) {
                                 //System.err.println("Loading - Length of list="+token3.length+" saleSize="+p.historyItems.length);
                                 for (int j = 0; j < token3.length; j++) {
                                     p.historyItems[j] = Integer.parseInt(token3[j]);
@@ -2214,6 +2245,32 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("killTitle = ", 0, 12);
             characterfile.write(Boolean.toString(p.killTitle), 0, Boolean.toString(p.killTitle).length());
+            characterfile.newLine();
+            characterfile.write("battle-pass-season = ",0,21);
+            characterfile.write(Integer.toString(p.getBattlePassSeason()));
+            characterfile.newLine();
+            characterfile.write("battle-pass-premium-unlocked = ",0,31);
+            characterfile.write(Boolean.toString(p.isBattlePassPremiumUnlocked()));
+            characterfile.newLine();
+            StringBuilder freeBpRewads = new StringBuilder();
+            for (int i = 0; i < p.getBattlePassFreeRwdsClaimed().length; i++) {
+                freeBpRewads.append(p.getBattlePassFreeRwdsClaimed()[i]).append("\t");
+            }
+            characterfile.write("battle-pass-free-rwds-claimed = ");
+            characterfile.write(freeBpRewads.toString());
+            characterfile.newLine();
+            StringBuilder premiumBpRewards = new StringBuilder();
+            for (int i = 0; i < p.getBattlePassFreeRwdsClaimed().length; i++) {
+                premiumBpRewards.append(p.getBattlePassFreeRwdsClaimed()[i]).append("\t");
+            }
+            characterfile.write("battle-pass-premium-rwds-claimed = ");
+            characterfile.write(premiumBpRewards.toString());
+            characterfile.newLine();
+            characterfile.write("battle-pass-xp = ", 0, 17);
+            characterfile.write(Long.toString(p.getBattlePassXP()));
+            characterfile.newLine();
+            characterfile.write("battle-pass-level = ", 0, 20);
+            characterfile.write(Long.toString(p.getBattlePassLevel()));
             characterfile.newLine();
             characterfile.write("wave = ", 0, 7);
             characterfile.write(Integer.toString(p.waveId), 0, Integer.toString(p.waveId).length());

@@ -1,5 +1,20 @@
 package io.exilius.model.entity.player.save.backup;
 
+import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import io.exilius.Configuration;
+import io.exilius.Server;
+import io.exilius.content.battle_pass.BattlePassHandler;
+import io.exilius.model.entity.player.save.PlayerSave;
+import io.exilius.sql.DatabaseCredentials;
+import io.exilius.util.Misc;
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.apache.commons.net.ftp.FTPReply;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,19 +31,6 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import com.google.common.base.Preconditions;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import io.exilius.Configuration;
-import io.exilius.Server;
-import io.exilius.model.entity.player.save.PlayerSave;
-import io.exilius.sql.DatabaseCredentials;
-import io.exilius.util.Misc;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPReply;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * http://www.devx.com/tips/Tip/14049
@@ -60,7 +62,7 @@ public class PlayerSaveBackup {
         Files.createDirectories(backupFileDirectory.toPath());
         File saveFileDirectory = new File(Server.getSaveDirectory());
         Preconditions.checkState(saveFileDirectory.exists(), "No save directory [" + saveFileDirectory + "] exists.");
-
+        BattlePassHandler.Companion.checkSeasonExpiry();
         // dump sql database
         try {
             dumpMysqlDatabase();

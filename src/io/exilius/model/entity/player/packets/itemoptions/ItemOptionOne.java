@@ -3,6 +3,7 @@ package io.exilius.model.entity.player.packets.itemoptions;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.DiceHandler;
+import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.content.bosses.Cerberus;
 import io.exilius.content.bosses.mimic.MimicCasket;
 import io.exilius.content.combat.Hitmark;
@@ -144,6 +145,8 @@ public class ItemOptionOne implements PacketType {
         if (c.getQuesting().handleItemClick(itemId)) {
             return;
         }
+        if (BattlePassHandler.Companion.handleTicketRedemption(c, itemId)) return;
+
         Optional<Bone> bone = Prayer.isOperableBone(itemId);
         if (bone.isPresent()) {
             c.getPrayer().bury(bone.get());
