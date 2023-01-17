@@ -14,7 +14,7 @@ public class Giveaway extends Command {
 
 	@Override
 	public void execute(Player c, String commandName, String input) {
-		c.getPA().sendFrame126("https://www.exilius-osrs.com/index.php?/topic/7-exilius-release-competition/&ct=1584132590", 12000);
+		c.getPA().sendFrame126("https://www.endless-os.com/index.php?/topic/7-exilius-release-competition/&ct=1584132590", 12000);
 	}
 
 	@Override

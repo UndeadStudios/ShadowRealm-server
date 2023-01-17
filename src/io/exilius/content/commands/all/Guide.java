@@ -14,7 +14,7 @@ public class Guide extends Command {
 
 	@Override
 	public void execute(Player c, String commandName, String input) {
-		c.getPA().sendFrame126("https://www.exilius-osrs.com/index.php?/topic/199-guide-index/", 12000);//
+		c.getPA().sendFrame126("https://www.endless-os.com/index.php?/topic/199-guide-index/", 12000);//
 	}
 
 	@Override

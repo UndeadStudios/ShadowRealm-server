@@ -279,7 +279,7 @@ public class Server {
                 file.createNewFile();
             }
             BufferedReader minuteFile = new BufferedReader(new FileReader(file));
-            Votes.voteCount = Integer.parseInt(minuteFile.readLine());
+            //Votes.voteCount = Integer.parseInt(minuteFile.readLine());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -39,8 +39,8 @@ public class GameThread extends Thread {
         tickables.add(i -> Server.npcHandler.process());
         tickables.add(i -> Server.playerHandler.process());
         tickables.add(i -> Server.shopHandler.process());
-        tickables.add(i -> Server.startGlobalvoteCountCounter());
-        tickables.add(i -> Server.startvoteCountCounter());
+       // tickables.add(i -> Server.startGlobalvoteCountCounter());
+        //tickables.add(i -> Server.startvoteCountCounter());
         tickables.add(i -> Highpkarena.process());
         tickables.add(i -> Lowpkarena.process());
         tickables.add(i -> Server.getGlobalObjects().pulse());

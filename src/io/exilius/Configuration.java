@@ -28,7 +28,7 @@ public class Configuration {
 
 	public static boolean LOCK_EXPERIENCE = false;
 
-	public static String SERVER_NAME = "Exilius";
+	public static String SERVER_NAME = "Exilius Powered by Endless-Os";
 	public static final int PORT_DEFAULT = 52777;
 	public static final int PORT_TEST = 43595;
 
@@ -37,14 +37,14 @@ public class Configuration {
 
 	public static final String WEBSITE = "https://www.forums-exilius.com/";
 	public static final String FORUM_TOPIC_URL = "https://www.forums-exilius.com/index.php?/topic/";
-	public static final String VOTE_LINK = "https://exilius-osrs.com/vote";
+	public static final String VOTE_LINK = "https://endless-os.com/vote";
 	public static final String HISCORES_LINK = "https://exiliusosrs.everythingrs.com/services/hiscores";
 	public static final String STORE_LINK = "https://exiliusosrsps.everythingrs.com/services/store";
 	public static final String DISCORD_INVITE = "https://discord.gg/rRd5Gbmy4K";
-	public static final String RULES_LINK = "https://www.exilius-osrs.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
-	public static final String GUIDES_LINK = "https://www.exilius-osrs.com/index.php?/forum/11-guides/";
-	public static final String DONATOR_BENEFITS_LINK = "https://www.exilius-osrs.com/index.php?/topic/14-donator-benefits-guide/";
-	public static final String PRICE_GUIDE = "https://www.exilius-osrs.com/index.php?/topic/238-updated-price-guide-10242020/";
+	public static final String RULES_LINK = "https://www.endless-os.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
+	public static final String GUIDES_LINK = "https://www.endless-os.com/index.php?/forum/11-guides/";
+	public static final String DONATOR_BENEFITS_LINK = "https://www.endless-os.com/index.php?/topic/14-donator-benefits-guide/";
+	public static final String PRICE_GUIDE = "https://www.endless-os.com/index.php?/topic/238-updated-price-guide-10242020/";
 
 	public static final LocalDate exilius_V1_LAUNCH_DATE = LocalDate.of(2020, Month.MARCH, 13);
 	public static final LocalDate exilius_V2_LAUNCH_DATE = LocalDate.of(2021, Month.MAY, 1);

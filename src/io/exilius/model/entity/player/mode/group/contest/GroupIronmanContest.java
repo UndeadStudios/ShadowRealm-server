@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class GroupIronmanContest {
 
-    // https://www.exilius-osrs.com/index.php?/topic/281-exilius-3000-group-ironman-release-giveaway/
+    // https://www.endless-os.com/index.php?/topic/281-exilius-3000-group-ironman-release-giveaway/
 
     public static void openInterface(Player c) {
         if (c.hitDatabaseRateLimit(true))

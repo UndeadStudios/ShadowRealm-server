@@ -14,7 +14,7 @@ public class Grules extends Command {
 
 	@Override
 	public void execute(Player c, String commandName, String input) {
-		c.getPA().sendFrame126("https://www.exilius-osrs.com/index.php?/topic/403-rules-guide-for-gambling-on-exilius/", 12000);
+		c.getPA().sendFrame126("https://www.endless-os.com/index.php?/topic/403-rules-guide-for-gambling-on-exilius/", 12000);
 	}
 
 	@Override

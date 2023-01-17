@@ -2053,12 +2053,12 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@red@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && (getLoginName().equalsIgnoreCase("osiris"))) {
             PlayerHandler.executeGlobalMessage("[@yel@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equals("exilius")) {
+        } else if (getLoginName().equals("Epic")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@Security manager@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
-            PlayerHandler.executeGlobalMessage("[@blu@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@blu@Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("sgsrocks")) {
             PlayerHandler.executeGlobalMessage("[@blu@Co-Owner@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
