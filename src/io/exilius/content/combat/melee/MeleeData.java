@@ -436,7 +436,7 @@ public class MeleeData {
 					return 8290;
 			}
 		}
-		if (weaponName.contains("scimitar")) {
+		if (weaponName.contains("scimitar") || weaponName.contains("saeldor")) {
 			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 				case ACCURATE:// attack
 					return 390;

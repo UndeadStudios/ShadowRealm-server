@@ -85,7 +85,7 @@ public class WoodcuttingEvent extends Event<Player> {
             super.stop();
             return;
         }
-        if (Misc.random(tree.getChopdownChance()) == 0 && Misc.random(chopChance) == 5) {
+        if (Misc.random(tree.getChopdownChance()) == 0 && chops >= Misc.random(chopChance)) {
             int face = 0;
             Optional<WorldObject> worldObject = plr.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
             if (worldObject.isPresent()) {
