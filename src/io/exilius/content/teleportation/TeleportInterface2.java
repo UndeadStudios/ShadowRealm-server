@@ -441,7 +441,7 @@ public class TeleportInterface2 {
         Chaos_Fanatic(7, 103038, false, "Teleports you to Chaos Fanatic @red@(41 Wild)", new Position(2978, 3833, 0)),
         Chaos_Archaeologist(7, 103043, false, "Teleports you to Crazy Archaeologist @red@(23 Wild)", new Position(2984, 3713, 0)),
 
-        WOODCUTTING_GUILD(8, 102209, true, "WTeleports you to oodcutting guild", new Position(1658, 3505,0)),
+        WOODCUTTING_GUILD(8, 102209, true, "Teleports you to Woodcutting guild", new Position(1658, 3505,0)),
         GNOME_AGILITY_COURSE(8, 102214, true, "Teleports you to Gnome agility course", new Position(2477, 3438, 0)),
         BARBARIAN_AGILITY_COURSE(8, 102219, true, "Teleports you to barbarian agility course", new Position(2552, 3562, 0)),
         MINING_GUILD(8, 102224, true, "Teleports you to Mining guild.", new Position(3056,9777,0)),
