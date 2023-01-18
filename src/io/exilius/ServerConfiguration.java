@@ -6,7 +6,7 @@ import io.exilius.sql.DatabaseCredentials;
 
 /**
  * Contains the configuration stored in YAML format.
- * @author Michael Sasse (<a href="https://github.com/mikeysasse/">...</a>)
+ * @author Michael Sasse (https://github.com/mikeysasse/)
  */
 public class ServerConfiguration {
 

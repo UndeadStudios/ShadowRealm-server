@@ -13,20 +13,20 @@ public class Configuration {
 
 	public static final int CLIENT_VERSION = 233;
 	public static final int MAX_NPCS = 11957;
-	//public static final boolean DOUBLE_EXP = false;
+	public static final boolean DOUBLE_EXP = false;
 	public static final String UPDATE_MESSAGE = "Edgeville has been readded for clues, check teleports";
-	//public static String LOGOUT_MESSAGE = "Click here to logout!";
-	//public static String DEATH_MESSAGE = "Oh dear you are dead!";
+	public static String LOGOUT_MESSAGE = "Click here to logout!";
+	public static String DEATH_MESSAGE = "Oh dear you are dead!";
 
-	//public static boolean ADMIN_CAN_TRADE = false;
+	public static boolean ADMIN_CAN_TRADE = false;
 
-	//public static boolean ADMIN_DROP_ITEMS = false;
+	public static boolean ADMIN_DROP_ITEMS = false;
 
-	//public static boolean ADMIN_CAN_SELL_ITEMS = false;
+	public static boolean ADMIN_CAN_SELL_ITEMS = false;
 
-	//public static boolean MINI_GAMES = true;
+	public static boolean MINI_GAMES = true;
 
-	//public static boolean LOCK_EXPERIENCE = false;
+	public static boolean LOCK_EXPERIENCE = false;
 
 	public static String SERVER_NAME = "Exilius RePowered by @ Endless-Os";
 	public static final int PORT_DEFAULT = 52777;
@@ -286,10 +286,10 @@ public class Configuration {
 	 */
 	public static final boolean CRYSTAL_BOW_DEGRADES = true;
 
-	/*
+	/**
 	 * How often the server saves data.
 	 */
-	//public static final int SAVE_TIMER = 60; // Saves every one minute.
+	public static final int SAVE_TIMER = 60; // Saves every one minute.
 
 	/**
 	 * How far NPCs can walk.
@@ -311,7 +311,7 @@ public class Configuration {
 	 */
 	public static final int RESPAWN_X = 3091;
 	public static final int RESPAWN_Y = 3490;
-	//public static final int RESPAWN_Z = 0;
+	public static final int RESPAWN_Z = 0;
 
 	/**
 	 * The re-spawn point of when a duel ends.
@@ -353,8 +353,8 @@ public class Configuration {
 	public static final int ARDOUGNE_X = 2662;
 	public static final int ARDOUGNE_Y = 3305;
 
-	//public static final int WATCHTOWER_X = 2549;
-	//public static final int WATCHTOWER_Y = 3112;
+	public static final int WATCHTOWER_X = 2549;
+	public static final int WATCHTOWER_Y = 3112;
 
 	public static final int TROLLHEIM_X = 2888;
 	public static final int TROLLHEIM_Y = 3676;

@@ -76,7 +76,7 @@ public class GameThread extends Thread {
             long usedMemory = totalMemory - Runtime.getRuntime().freeMemory();
             joiner.add("memory=" + Misc.formatMemory(usedMemory) + "/" + Misc.formatMemory(totalMemory));
 
-            logger.info("Status [" + joiner + "]");
+            logger.info("Status [" + joiner.toString() + "]");
         }
     }
 
@@ -93,14 +93,15 @@ public class GameThread extends Thread {
             }
             long pastTime = System.currentTimeMillis() - time;
             totalCycleTime += pastTime;
-//            if (pastTime < 600) {
-//                try {
-//                    Thread.sleep(600 - pastTime);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-           // } else {
+            if (pastTime < 600) {
+                try {
+                    Thread.sleep(600 - pastTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else {
 //                logger.error("Game thread took " + Misc.insertCommas(pastTime + "") + "ms to process!");
             }
         }
     }
+}
