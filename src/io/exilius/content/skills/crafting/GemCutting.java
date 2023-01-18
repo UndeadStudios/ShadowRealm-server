@@ -1,15 +1,14 @@
 package io.exilius.content.skills.crafting;
 
-import java.util.Arrays;
-import java.util.Optional;
-
 import io.exilius.Server;
 import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
-import io.exilius.content.skills.smithing.Smelting;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.entity.player.Player;
+
+import java.util.Arrays;
+import java.util.Optional;
 
 public class GemCutting {
 
@@ -22,7 +21,7 @@ public class GemCutting {
 				return;
 			}
 			c.startAnimation(g.getAnimation());
-			Server.getEventHandler().submit(new Event<Player>("skilling", c, 2) {
+			Server.getEventHandler().submit(new Event<>("skilling", c, 2) {
 
 				@Override
 				public void execute() {
@@ -30,11 +29,6 @@ public class GemCutting {
 						stop();
 						return;
 					}
-//					if (Misc.random(300) == 0 && attachment.getInterfaceEvent().isExecutable()) {
-//						attachment.getInterfaceEvent().execute();
-//						super.stop();
-//						return;
-//					}
 					if (plr.getItems().playerHasItem(g.getUncut())) {
 						plr.getItems().deleteItem2(g.getUncut(), 1);
 						plr.getItems().addItem(g.getCut(), 1);

@@ -25,7 +25,6 @@ import io.exilius.util.Misc;
 import java.util.Optional;
 
 public class WoodcuttingEvent extends Event<Player> {
-    private static boolean woodcuttingTree;
     private final Tree tree;
     private final Hatchet hatchet;
     private final int objectId;
@@ -48,16 +47,10 @@ public class WoodcuttingEvent extends Event<Player> {
     @Override
     public void execute() {
         double osrsExperience;
-        double experience;
         int pieces = 0;
         pieces = handleOutfit(pieces);
         osrsExperience = tree.getExperience() + tree.getExperience() / 10 * pieces;
         if (canChop()) return;
-//		if (Misc.random(300) == 0 && attachment.getInterfaceEvent().isExecutable()) {
-//			attachment.getInterfaceEvent().execute();
-//			super.stop();
-//			return;
-//		}
         chops++;
 
         int chopChance = 1 + (int) (tree.getChopsRequired() * hatchet.getChopSpeed());
@@ -92,7 +85,7 @@ public class WoodcuttingEvent extends Event<Player> {
             super.stop();
             return;
         }
-        if (Misc.random(tree.getChopdownChance()) == 0 || tree.equals(Tree.NORMAL) || tree.equals(Tree.NORMAL2) || tree.equals(Tree.NORMAL3) || tree.equals(Tree.DEAD) || tree.equals(Tree.DEAD2) || tree.equals(Tree.DEAD3) || tree.equals(Tree.DEAD4) && Misc.random(chopChance) == 0) {
+        if (Misc.random(tree.getChopdownChance()) == 34 || tree.equals(Tree.NORMAL) || tree.equals(Tree.NORMAL2) || tree.equals(Tree.NORMAL3) || tree.equals(Tree.DEAD) || tree.equals(Tree.DEAD2) || tree.equals(Tree.DEAD3) || tree.equals(Tree.DEAD4) && Misc.random(chopChance) == 0) {
             int face = 0;
             Optional<WorldObject> worldObject = plr.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
             if (worldObject.isPresent()) {
@@ -115,30 +108,28 @@ public class WoodcuttingEvent extends Event<Player> {
             super.stop();
             return;
         }
-        if (!tree.equals(Tree.NORMAL)) {
-            if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
-                chops = 0;
-                int random = Misc.random(4);
-                plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
-                Achievements.increase(plr, AchievementType.WOODCUT, 1);
-                if ((plr.getItems().isWearingItem(13241) || plr.getItems().playerHasItem(13241)) && random == 2) {
-                    Firemaking.lightFire(plr, tree.getWood(), "infernal_axe");
-                    return;
-                }
-                handleDiary(tree);
-                foeArtefact(plr);
-                handleWildernessRewards();
-                handleRewards();
-                if ((SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2) {
-                    plr.sendMessage("You have run out of free inventory space.");
-                    super.stop();
-                    return;
-                }
-                handleDiary(tree);
-                handleWildernessRewards();
-                plr.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(plr) || (SkillcapePerks.isWearingMaxCape(plr) && plr.getWoodcuttingEffect()) && Misc.random(2) == 1 ? 2 : 1);
-
+        if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
+            chops = 0;
+            int random = Misc.random(4);
+            plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.WOODCUTTING.getId(), true);
+            Achievements.increase(plr, AchievementType.WOODCUT, 1);
+            if ((plr.getItems().isWearingItem(13241) || plr.getItems().playerHasItem(13241)) && random == 2) {
+                Firemaking.lightFire(plr, tree.getWood(), "infernal_axe");
+                return;
             }
+            handleDiary(tree);
+            foeArtefact(plr);
+            handleWildernessRewards();
+            handleRewards();
+            if ((SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2) {
+                plr.sendMessage("You have run out of free inventory space.");
+                super.stop();
+                return;
+            }
+            handleDiary(tree);
+            handleWildernessRewards();
+            plr.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(plr) || (SkillcapePerks.isWearingMaxCape(plr) && plr.getWoodcuttingEffect()) && Misc.random(2) == 1 ? 2 : 1);
+
         }
         if (super.getElapsedTicks() % 4 == 0) {
             plr.startAnimation(hatchet.getAnimation());
@@ -204,10 +195,6 @@ public class WoodcuttingEvent extends Event<Player> {
                     plr.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CUT_MAGIC_SEERS);
                 }
                 break;
-            case MAPLE:
-                break;
-            case NORMAL:
-                break;
             case OAK:
                 if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_OAK_TREES.getDailyTask().getTaskName())) {
                     System.out.println("Chopping a fucking oak tree you cunt");
@@ -255,7 +242,7 @@ public class WoodcuttingEvent extends Event<Player> {
             if (artefactRoll < 65) {//1/300
                 player.getItems().addItemUnderAnyCircumstance(11180, 1);//ancient coin foe for 200
                 player.sendMessage("You found a coin that can be used in the Fire of Exchange!");
-            } else if (artefactRoll >= 65 && artefactRoll <= 99) {//1/600
+            } else if (artefactRoll > 65 && artefactRoll < 99) {//1/600
                 player.getItems().addItemUnderAnyCircumstance(681, 1);//anicent talisman foe for 300
                 player.sendMessage("You found a talisman that can be used in the Fire of Exchange!");
             } else if (artefactRoll > 99) {//1/1000

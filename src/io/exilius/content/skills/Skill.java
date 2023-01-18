@@ -18,7 +18,7 @@ public enum Skill {
 	FLETCHING(9, 40),
 	FISHING(10, 55),
 	FIREMAKING(11, 50),
-	CRAFTING(12, 45),
+	CRAFTING(12, 50),
 	SMITHING(13, 70),
 	MINING(14, 55),
 	HERBLORE(15, 60),
@@ -82,7 +82,7 @@ public enum Skill {
 			case CONSTRUCTION:
 				return 23;
 			default:
-				return 0;
+				return 25;
 		}
 	}
 
@@ -90,66 +90,67 @@ public enum Skill {
 		return Stream.of(values()).filter(s -> s.id == id).findFirst().orElse(null);
 	}
 
-	public static int getIconId(Skill skill) {
-		switch (skill) {
-			case ATTACK:
-				return 134;
-			case STRENGTH:
-				return 135;
-			case DEFENCE:
-				return 136;
-			case RANGED:
-				return 137;
-			case PRAYER:
-				return 138;
-			case MAGIC:
-				return 139;
-			case RUNECRAFTING:
-				return 140;
-			case HITPOINTS:
-				return 141;
-			case AGILITY:
-				return 142;
-			case HERBLORE:
-				return 143;
-			case THIEVING:
-				return 144;
-			case CRAFTING:
-				return 145;
-			case FLETCHING:
-				return 146;
-			case MINING:
-				return 147;
-			case SMITHING:
-				return 148;
-			case FISHING:
-				return 14;
-			case COOKING:
-				return 150;
-			case FIREMAKING:
-				return 151;
-			case WOODCUTTING:
-				return 152;
-			case SLAYER:
-				return 153;
-			case FARMING:
-				return 154;
-			case HUNTER:
-				return 155;
-			case CONSTRUCTION:
-				return 156;
-			default:
-				return -1;
-		}
-	}
+//	public static int getIconId(Skill skill) {
+//		switch (skill) {
+//			case ATTACK:
+//				return 134;
+//			case STRENGTH:
+//				return 135;
+//			case DEFENCE:
+//				return 136;
+//			case RANGED:
+//				return 137;
+//			case PRAYER:
+//				return 138;
+//			case MAGIC:
+//				return 139;
+//			case RUNECRAFTING:
+//				return 140;
+//			case HITPOINTS:
+//				return 141;
+//			case AGILITY:
+//				return 142;
+//			case HERBLORE:
+//				return 143;
+//			case THIEVING:
+//				return 144;
+//			case CRAFTING:
+//				return 145;
+//			case FLETCHING:
+//				return 146;
+//			case MINING:
+//				return 147;
+//			case SMITHING:
+//				return 148;
+//			case FISHING:
+//				return 14;
+//			case COOKING:
+//				return 150;
+//			case FIREMAKING:
+//				return 151;
+//			case WOODCUTTING:
+//				return 152;
+//			case SLAYER:
+//				return 153;
+//			case FARMING:
+//				return 154;
+//			case HUNTER:
+//				return 155;
+//			case CONSTRUCTION:
+//				return 156;
+//			default:
+//				return -1;
+//		}
+//	}
 
 	public static Skill[] getCombatSkills() {
 		return Stream.of(values()).filter(skill -> skill.getId() <= 6).toArray(Skill[]::new);
 	}
 
-	public static Skill[] getNonCombatSkills() {
+/*	public static Skill[] getNonCombatSkills() {
 		return Stream.of(values()).filter(skill -> skill.getId() > 6).toArray(Skill[]::new);
-	}
+		}
+*/
 
 	public static final int MAXIMUM_SKILL_ID = 22;
 
@@ -164,9 +165,9 @@ public enum Skill {
 	private final int id;
 	private final int experienceRate;
 
-	Skill(int id) {
-		this(id, 1);
-	}
+//	Skill(int id) {
+//		this(id, 1);
+//	}
 
 	Skill(int id, int experienceRate) {
 		this.id = id;

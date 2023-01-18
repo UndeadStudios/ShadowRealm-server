@@ -2690,7 +2690,7 @@ public class ShopAssistant {
 				return;
 			}
 			c.getItems().deleteItem(25527, itemValue);
-			c.getItems().addItem(itemID + 1, amount * 2);
+			c.getItems().addItem(itemID, amount * 1);
 			c.getItems().sendInventoryInterface(3823);
 			logShop("bought", itemID, amount);
 			return;

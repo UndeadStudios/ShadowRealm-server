@@ -714,11 +714,11 @@ public class UseItem {
         if (itemUsed == 25859 && useWith == 23877 || itemUsed == 23877 && useWith == 25859) {
             if (c.playerLevel[c.playerCrafting] >= 75) {
                 if (!c.getItems().playerHasItem(25859) || !c.getItems().playerHasItem(23877, 100000) || !c.getItems().playerHasItem(2347)) {
-                    c.sendMessage("You must have 100,000 crystal shard, Enchanted crystal weapon seed in order to do this.");
+                    c.sendMessage("You must have a hammer, 100,000 crystal shard, Enchanted crystal weapon seed in order to do this.");
                     return;
                 }
-                c.getItems().deleteItem(25859, c.getItems().getInventoryItemSlot(25859), 1);
-                c.getItems().deleteItem(23877, 100000);
+                c.getItems().deleteItem(25859, 1);
+                c.getItems().deleteItem(23877, 100_000);
                 c.getItems().addItem(25865, 1);
                 c.getDH().sendItemStatement("You combine the two materials to create a Bow of Faerdhinen.", 25865);
                 c.getPA().addSkillXPMultiplied(10, c.playerCrafting, true);

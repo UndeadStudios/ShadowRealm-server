@@ -137,6 +137,7 @@ public class CrystalChest implements Lootable {
 				new GameItem(21547, 1),//small foe bone
 				new GameItem(21549, 1),//medium foe bone
 				new GameItem(21551, 1),//large foe bone
+				new GameItem(25859, 1),//Weapon seed
 				new GameItem(21553, 1)//rare foe bone
 		));//verac
 	}

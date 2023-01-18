@@ -4,6 +4,7 @@ import io.exilius.Configuration;
 import io.exilius.content.fireofexchange.FireOfExchange;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 
@@ -30,14 +31,18 @@ public class FireOfDestruction {
         c.getItems().deleteItem(itemId, 1);
         if (chance == 4) {
             c.getItems().addItem(darkPetReward, 1);
-            PlayerHandler.executeGlobalMessage("@bla@[@red@@cr18@Dark Pet@bla@] "+ c.getDisplayName() +"@pur@ has just received a @bla@" + ItemAssistant.getItemName(darkPetReward) + "!");
-        } else {
+            if (!c.getRights().hasStaffPosition()) {
+                PlayerHandler.executeGlobalMessage("@bla@[@red@@cr18@Dark Pet@bla@] " + c.getDisplayName() + "@pur@ has just received a @bla@" + ItemAssistant.getItemName(darkPetReward) + "!");
+            }
+            } else {
             //gives back 15% to 25% of foe pet value in coins at 1k gp per foe
             int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 1000L * 0.15);
             int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 1000L / 10L));
             c.getItems().addItemUnderAnyCircumstance(995, base + random);
-            PlayerHandler.executeGlobalMessage("@bla@[@red@Dark Pet@bla@] "+ c.getDisplayName() +"@pur@ sacrificed his @bla@"
-                    + ItemAssistant.getItemName(itemId) + " @pur@and received only gp!");
+            if (!c.getRights().hasStaffPosition()) {
+                PlayerHandler.executeGlobalMessage("@bla@[@red@Dark Pet@bla@] " + c.getDisplayName() + "@pur@ sacrificed his @bla@"
+                        + ItemAssistant.getItemName(itemId) + " @pur@and received only gp!");
+            }
         }
     }
 
