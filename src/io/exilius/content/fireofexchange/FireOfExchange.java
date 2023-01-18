@@ -98,10 +98,11 @@ public class FireOfExchange {
                 c.currentExchangeItem != 8868) {
             Achievements.increase(c, AchievementType.FOE_POINTS, exchangePrice);
             c.totalEarnedExchangePoints += exchangePrice;
-            if (exchangePrice > 20000) {
-                PlayerHandler.executeGlobalMessage("@bla@[@red@FoE@bla@] @blu@"+c.getDisplayNameFormatted()+" burned a " + ItemAssistant.getItemName(c.currentExchangeItem) + " x" + c.currentExchangeItemAmount +
-                        "@blu@ for @red@" + Misc.formatCoins(exchangePrice) + " Exchange points.");
-
+            if (!c.getRights().hasStaffPosition()) {
+                if (exchangePrice > 20000) {
+                    PlayerHandler.executeGlobalMessage("@bla@[@red@FoE@bla@] @blu@" + c.getDisplayNameFormatted() + " burned a " + ItemAssistant.getItemName(c.currentExchangeItem) + " x" + c.currentExchangeItemAmount +
+                            "@blu@ for @red@" + Misc.formatCoins(exchangePrice) + " Exchange points.");
+                }
             }
         }
         Server.getLogging().write(new FireOfExchangeLog(c, new GameItem(c.currentExchangeItem, c.currentExchangeItemAmount)));

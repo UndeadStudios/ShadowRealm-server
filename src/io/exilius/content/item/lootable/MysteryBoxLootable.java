@@ -3,9 +3,7 @@ package io.exilius.content.item.lootable;
 import io.exilius.model.definitions.ItemDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
-import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.GameItem;
-import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.util.Misc;
 
 import java.util.List;
@@ -48,31 +46,30 @@ public abstract class MysteryBoxLootable implements Lootable {
      */
     private int random;
     private boolean active;
-    private final int INTERFACE_ID = 47000;
     private final int ITEM_FRAME = 47101;
 
     public boolean isActive() {
         return active;
     }
 
-    public void draw() {
-        openInterface();
-        if (spinNum == 0) {
-            for (int i = 0; i < 66; i++) {
-                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-                GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
-                final int NOT_PRIZE_ID = NotPrize.getId();
-                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, 1);
-            }
-        } else {
-            for (int i = spinNum * 50 + 16; i < spinNum * 50 + 66; i++) {
-                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-                final int NOT_PRIZE_ID = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity())).getId();
-                sendItem(i, (spinNum + 1) * 50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
-            }
-        }
-        spinNum++;
-    }
+//    public void draw() {
+//        openInterface();
+//        if (spinNum == 0) {
+//            for (int i = 0; i < 66; i++) {
+//                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
+//                GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
+//                final int NOT_PRIZE_ID = NotPrize.getId();
+//                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, 1);
+//            }
+//        } else {
+//            for (int i = spinNum * 50 + 16; i < spinNum * 50 + 66; i++) {
+//                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
+//                final int NOT_PRIZE_ID = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity())).getId();
+//                sendItem(i, (spinNum + 1) * 50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
+//            }
+//        }
+//        spinNum++;
+//    }
 
     public void spin() {
 
@@ -129,7 +126,7 @@ public abstract class MysteryBoxLootable implements Lootable {
 
     public void setMysteryPrize() {
         random = Misc.random(100);
-        List<GameItem> itemList = random < 50 ? getLoot().get(MysteryBoxRarity.COMMON.getLootRarity()) : random >= 50
+        List<GameItem> itemList = random < 50 ? getLoot().get(MysteryBoxRarity.COMMON.getLootRarity()) : random > 50
                 && random <= 85 ? getLoot().get(MysteryBoxRarity.UNCOMMON.getLootRarity())
                 : getLoot().get(MysteryBoxRarity.RARE.getLootRarity());
         GameItem item = Misc.getRandomItem(itemList);
@@ -150,6 +147,7 @@ public abstract class MysteryBoxLootable implements Lootable {
         player.boxCurrentlyUsing = getItemId();
         spinNum = 0;
         player.getPA().sendString(ItemDef.forId(getItemId()).getName(), 47002);
+        int INTERFACE_ID = 47000;
         player.getPA().showInterface(INTERFACE_ID);
     }
 
@@ -198,10 +196,12 @@ public abstract class MysteryBoxLootable implements Lootable {
         if (random > 85) {
             String name = ItemDef.forId(mysteryPrize).getName();
             String itemName = ItemDef.forId(getItemId()).getName();
-            PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
-                    + player.getDisplayName()
-                    + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
-        }
+            if (!player.getRights().hasStaffPosition()) {
+                PlayerHandler.executeGlobalMessage("[<col=CC0000>" + itemName + "</col>] <col=255>"
+                        + player.getDisplayName()
+                        + "</col> hit the jackpot and got a <col=CC0000>" + name + "</col>!");
+            }
+            }
         active = false;
         player.inDonatorBox = true;
 
