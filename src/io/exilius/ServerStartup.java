@@ -58,7 +58,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Stuff to do on startup.
- * @author Michael Sasse (https://github.com/mikeysasse/)
+ * @author Michael Sasse (<a href="https://github.com/mikeysasse/">...</a>)
  */
 public class ServerStartup {
 

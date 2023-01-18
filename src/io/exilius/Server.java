@@ -194,7 +194,7 @@ public class Server {
             Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
             theUnsafe.setAccessible(true);
             Unsafe u = (Unsafe) theUnsafe.get(null);
-            Class cls = Class.forName("jdk.internal.module.IllegalAccessLogger");
+            Class<?> cls = Class.forName("jdk.internal.module.IllegalAccessLogger");
             Field logger = cls.getDeclaredField("logger");
             u.putObjectVolatile(cls, u.staticFieldOffset(logger), null);
         } catch (Exception ignored) {
@@ -276,8 +276,11 @@ public class Server {
             File file = new File("./Data/votes.log");
 
             if (!file.exists()) {
-                file.createNewFile();
+               // boolean success = file.createNewFile();
+                FileWriter writer = new FileWriter(file);
+                writer.close();
             }
+
             BufferedReader minuteFile = new BufferedReader(new FileReader(file));
             Votes.voteCount = Integer.parseInt(minuteFile.readLine());
         } catch (Exception e) {
@@ -290,7 +293,9 @@ public class Server {
             File file = new File("./Data/Globalvotes.log");
 
             if (!file.exists()) {
-                file.createNewFile();
+//                file.createNewFile();
+                FileWriter writer = new FileWriter(file);
+                writer.close();
             }
             BufferedReader minuteFile = new BufferedReader(new FileReader(file));
             Votes.globalvoteCount = Integer.parseInt(minuteFile.readLine());
