@@ -85,30 +85,29 @@ public class WoodcuttingEvent extends Event<Player> {
             super.stop();
             return;
         }
-//        if (Misc.random(tree.getChopdownChance()) == 34 || tree.equals(Tree.NORMAL) || tree.equals(Tree.NORMAL2) || tree.equals(Tree.NORMAL3) || tree.equals(Tree.DEAD) || tree.equals(Tree.DEAD2) || tree.equals(Tree.DEAD3) || tree.equals(Tree.DEAD4) && Misc.random(chopChance) == 5) {
-//            int face = 0;
-//            Optional<WorldObject> worldObject = plr.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
-//            if (worldObject.isPresent()) {
-//                face = worldObject.get().getFace();
-//            }
-        int stumpId = 0;
-        int face = 0;
-        if (tree.equals(Tree.REDWOOD)) {
-            face = (plr.absX < 1568) ? 1 : (plr.absX > 1573) ? 3 : (plr.absY < 3480) ? 0 : 2;
-            if (objectId == 29668)
-                stumpId = 29669;
-            else if (objectId == 29670)
-                stumpId = 29671;
+        if (Misc.random(tree.getChopdownChance()) == 0 && Misc.random(chopChance) == 5) {
+            int face = 0;
+            Optional<WorldObject> worldObject = plr.getRegionProvider().get(x, y).getWorldObject(objectId, x, y, 0);
+            if (worldObject.isPresent()) {
+                face = worldObject.get().getFace();
+            }
+            int stumpId = 0;
+            if (tree.equals(Tree.REDWOOD)) {
+                face = (plr.absX < 1568) ? 1 : (plr.absX > 1573) ? 3 : (plr.absY < 3480) ? 0 : 2;
+                if (objectId == 29668)
+                    stumpId = 29669;
+                else if (objectId == 29670)
+                    stumpId = 29671;
+            }
+
+            Server.getGlobalObjects().add(new GlobalObject(tree.equals(Tree.REDWOOD) ? stumpId : tree.getStumpId(), x, y, plr.heightLevel, face, 10, tree.getRespawnTime(), objectId));
+            plr.sendMessage("You get some " + ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase() + ".");
+            plr.getItems().addItem(tree.getWood(), 1);
 
 
-        Server.getGlobalObjects().add(new GlobalObject(tree.equals(Tree.REDWOOD) ? stumpId : tree.getStumpId(), x, y, plr.heightLevel, face, 10, tree.getRespawnTime(), objectId));
-        plr.sendMessage("You get some " + ItemCacheDefinition.forID(tree.getWood()).getName().toLowerCase() + ".");
-        plr.getItems().addItem(tree.getWood(), 1);
-
-
-        super.stop();
-        return;
-    }
+            super.stop();
+            return;
+        }
         if (Misc.random(chopChance) == 0 || chops >= tree.getChopsRequired()) {
             chops = 0;
             int random = Misc.random(4);
