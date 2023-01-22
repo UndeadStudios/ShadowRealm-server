@@ -1,8 +1,6 @@
 package io.exilius.content.skills.woodcutting;
 
 import io.exilius.Server;
-import io.exilius.content.dailytasks.DailyTaskData;
-import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 
@@ -13,6 +11,7 @@ public class Woodcutting {
 	public void chop(Player player, int objectId, int x, int y) {
 		Tree tree = Tree.forObject(objectId);
 		player.facePosition(x, y);
+		assert tree != null;
 		if (player.playerLevel[Player.playerWoodcutting] < tree.getLevelRequired()) {
 			player.sendMessage("You do not have the woodcutting level required to cut this tree down.");
 			return;

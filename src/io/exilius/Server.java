@@ -169,7 +169,6 @@ public class Server {
                 ch.qos.logback.classic.Logger root = (ch.qos.logback.classic.Logger)LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
                 root.setLevel(isDebug() || isTest() ? ch.qos.logback.classic.Level.ALL : ch.qos.logback.classic.Level.INFO);
                 loadData();
-                Discord.writeServerStatus("Server is now online!");
 
                 if (isDebug()) {
                     Configuration.DISABLE_NEW_ACCOUNT_CAPTCHA = true;
@@ -181,6 +180,7 @@ public class Server {
                 long endTime = System.nanoTime();
                 long elapsed = endTime - startTime;
                 System.out.println(Configuration.SERVER_NAME + " has successfully started up in " + TimeUnit.SECONDS.convert(elapsed, TimeUnit.NANOSECONDS)+ " seconds.");
+                Discord.writeServerStatus("** Server is now online! **");
             } catch (Exception e) {
                 logger.error("An error occurred while starting the server.", e);
                 e.printStackTrace();

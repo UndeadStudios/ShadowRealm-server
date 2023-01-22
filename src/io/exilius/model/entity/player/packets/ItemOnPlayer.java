@@ -13,6 +13,7 @@ import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.Discord;
 
 public class ItemOnPlayer implements PacketType {
 
@@ -82,6 +83,7 @@ public class ItemOnPlayer implements PacketType {
 			if(c.getLoginName().equalsIgnoreCase("rico")){
 				return;
 			}
+			Discord.writeServerSyncMessage(c.getDisplayName()+ " ** Gave " + other.getDisplayName() + ItemAssistant.getItemName(itemId) + " **");
 			c.sendMessage("You gave " + other.getDisplayName() + " some " + ItemAssistant.getItemName(itemId) + ".");
 			other.sendMessage("You were given some " + ItemAssistant.getItemName(itemId) + " from " + c.getDisplayName() + ".");
 			other.getItems().addItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);

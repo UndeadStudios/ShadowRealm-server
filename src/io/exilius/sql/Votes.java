@@ -14,7 +14,7 @@ import java.sql.*;
 public class Votes implements Runnable  {
 
     public static final String HOST = "localhost";
-    public static final String USER = "vote";
+    public static final String USER = "votes";
     public static final String PASS = "zazu";
     public static final String DATABASE = "vote";
 

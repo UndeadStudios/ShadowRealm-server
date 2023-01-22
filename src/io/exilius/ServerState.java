@@ -23,7 +23,7 @@ public enum ServerState {
 	 * Also counts as {@link ServerState#TEST} mode.
 	 */
 	DEBUG(Configuration.PORT_DEFAULT, false, false),
-	DEBUG_SQL(Configuration.PORT_DEFAULT, false, false),
+	DEBUG_SQL(Configuration.PORT_DEFAULT, false, true),
 	;
 
 	private final int port;

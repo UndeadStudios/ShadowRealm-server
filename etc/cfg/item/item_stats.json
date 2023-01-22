@@ -56327,7 +56327,7 @@
       "arange": 205,
       "rstr": 100,
       "prayer": 4,
-      "aspeed": 6
+      "aspeed": 5
     }
   },
   "29041": {
@@ -69029,8 +69029,85 @@
       "str": 0
     }
   },
+  "28715": {
+    "name": "Dr Cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
   "28728": {
     "name": "Veteran Cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28821": {
+    "name": "Justin's cape",
+    "equipable": true,
+    "weight": 0.453,
+    "weight": 1.814,
+    "equipment": {
+      "slot": 1,
+      "astab": 1,
+      "aslash": 1,
+      "acrush": 1,
+      "amagic": 1,
+      "arange": 1,
+      "dstab": 11,
+      "dslash": 11,
+      "dcrush": 11,
+      "dmagic": 11,
+      "drange": 11,
+      "str": 4,
+      "prayer": 2
+    }
+  },
+  "29570": {
+    "name": "Justin's Mythical cape",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28716": {
+    "name": "Dr Cape (Blue)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28717": {
+    "name": "Dr Cape (Red)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28718": {
+    "name": "Dr Cape (Purple)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28719": {
+    "name": "Dr Cape (Green)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28720": {
+    "name": "Dr Cape (Gold)",
     "equipable": true,
     "weight": 0.453,
     "equipment": {
@@ -69205,6 +69282,205 @@
       "slot": 0
     }
   },
+  "29095": {
+    "name": "Epic's platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29096": {
+    "name": "Epic's platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29097": {
+    "name": "Epic's boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "29098": {
+    "name": "Epic's kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "29099": {
+    "name": "Epic crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+
+  "28874": {
+    "name": "Justin's platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28875": {
+    "name": "Justin's platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28876": {
+    "name": "Justin's boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "28877": {
+    "name": "Justin's kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "28878": {
+    "name": "Justin crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "29395": {
+    "name": "Rico's platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29396": {
+    "name": "Rico's platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29397": {
+    "name": "Rico's boots",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "29398": {
+    "name": "Rico's kiteshield",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "29399": {
+    "name": "Rico crown",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
   "29163": {
     "name": "Bandos chestplate (g)",
     "equipable": true,
@@ -69252,6 +69528,62 @@
       "dcrush": 19,
       "drange": 15,
       "prayer": 1
+    }
+  },
+  "28721": {
+    "name": "Dr Cape (White)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28722": {
+    "name": "Dr Cape (Neon Green)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28723": {
+    "name": "Dr Cape (Neon Pink)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28724": {
+    "name": "Dr Cape (Neon Blue)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28725": {
+    "name": "Dr Cape (Neon Purple)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28726": {
+    "name": "Dr Cape (Neon Yellow)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
+    }
+  },
+  "28727": {
+    "name": "Dr Cape (Neon Teal)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 1
     }
   },
   "27226": {
@@ -69798,6 +70130,134 @@
       "drange": 28
     }
   },
+  "29137": {
+    "name": "Mod Sgs platebody V.3",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "29138": {
+    "name": "Mod Sgs platelegs V.3",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "29139": {
+    "name": "Mod Sgs boots V.3",
+    "equipable": true,
+    "weight": 1.36,
+    "equipment": {
+      "slot": 10,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0
+    }
+  },
+  "29140": {
+    "name": "Mod Sgs kiteshield V.3",
+    "equipable": true,
+    "weight": 5.443,
+    "equipment": {
+      "slot": 5,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "prayer": 0
+    }
+  },
+  "29141": {
+    "name": "Mod Sgs crown V.3",
+    "equipable": true,
+    "equipment": {
+      "slot": 0
+    }
+  },
+  "28870": {
+    "name": "Mod Sgs platebody",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28871": {
+    "name": "Mod Sgs platelegs",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+  "28872": {
+    "name": "Mod Sgs platebody V.2",
+    "equipable": true,
+    "weight": 9.979,
+    "equipment": {
+      "slot": 4,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
+
+  "28873": {
+    "name": "Mod Sgs platelegs V.2",
+    "equipable": true,
+    "weight": 10.432,
+    "equipment": {
+      "slot": 7,
+      "amagic": 0,
+      "arange": 0,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0
+    }
+  },
   "24780": {
     "name": "Amulet of blood fury",
     "equipable": true,
@@ -69956,9 +70416,9 @@
     "weight": 1.36,
     "equipment": {
       "slot": 3,
-      "arange": 195,
-      "rstr": 198,
-      "aspeed": 4
+      "arange": 128,
+      "rstr": 136,
+      "aspeed": 5
     }
   },
   "27473": {
@@ -71366,29 +71826,6 @@
     "weight": 0.004,
     "equipment": {
       "slot": 12
-    }
-  },
-  "26500": {
-    "name": "Battle pass",
-    "weight": 5.0
-  },
-  "26502": {
-    "name": "Battle pass",
-    "weight": 5.0
-  },
-  "26708": {
-    "name": "Dragon claws (or)",
-    "equipable": true,
-    "equipment": {
-      "slot": 3,
-      "astab": 51,
-      "aslash": 67,
-      "acrush": -4,
-      "dstab": 23,
-      "dslash": 36,
-      "dcrush": 17,
-      "str": 66,
-      "aspeed": 4
     }
   }
 }

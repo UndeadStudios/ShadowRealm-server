@@ -969,7 +969,7 @@ public class ShopAssistant {
 					case 23824:
 						return 4;
 					case 13438:
-						return 250;
+						return 500;
 					case 11887:
 						return 10;
 				}

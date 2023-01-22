@@ -3,7 +3,7 @@ package io.exilius.content.skills.woodcutting;
 import io.exilius.content.bosses.hespori.Hespori;
 
 public enum Tree {
-	NORMAL(new int[] { 1276, 1278, 1279 }, 1342, 1511, 1, 8, 25, 25, 10, 11500),
+	NORMAL(new int[] { 1276, 1278, 1279 }, 1342, 1511, 1, 8, 29, 25, 10, 11500),
 
 	//NORMAL(new int[] { 1276, 1278, 1279 }, 1342, 1511, 1, 5, 100, 25, 15, 12000),
 	DEAD(new int[] { 1282 }, 1347, 1511, 1, 5, 100, 25, 15, 12000),
@@ -59,10 +59,6 @@ public enum Tree {
 		this.chopsRequired = chopsRequired;
 		this.respawn = respawn;
 		this.petChance = petChance;
-	}
-
-	public int[] getTreeIds() {
-		return treeIds;
 	}
 
 	public int getStumpId() {

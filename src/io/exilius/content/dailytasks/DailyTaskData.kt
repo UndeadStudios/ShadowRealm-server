@@ -125,7 +125,7 @@ enum class DailyTaskData(
     ),
     CHOP_MAPLE_TREE(
         DailyTask(
-            "Cut 750 Maple logs",
+            "Cut 500 Maple logs",
             TaskDifficulties.MEDIUM,
             500,
             14,
@@ -137,7 +137,7 @@ enum class DailyTaskData(
     ),
     CHOP_YEW_TREE(
         DailyTask(
-            "Cut 750 yew logs",
+            "Cut 500 yew logs",
             TaskDifficulties.MEDIUM,
             500,
             14,

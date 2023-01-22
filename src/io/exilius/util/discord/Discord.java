@@ -29,15 +29,15 @@ public class Discord {
         sendChannelMessage("server-sync", message, args);
     }
     public static void writeannounceMessage(String message, Object...args) {
-        sendChannelMessage("ingame-announcements", message, args);
+        sendChannelMessage("\uD83D\uDD25-ingame-announcements", message, args);
     }
 
     public static void writeBugMessage(String message, Object...args) {
-        sendChannelMessage("bug-sync", message, args);
+        sendChannelMessage("\uD83D\uDD75\uD83C\uDFFBbug-sync", message, args);
     }
 
     public static void writetickets(String message, Object...args) {
-        sendChannelMessage("ingame-tickets", message, args);
+        sendChannelMessage("\uD83C\uDFAB-ingame-tickets", message, args);
     }
 
     public static void writepunishments(String message, Object...args) {
@@ -89,7 +89,7 @@ public class Discord {
                 if (channel == null)
                     return;
                 channel.sendMessage(Misc.replaceBracketsWithArguments(message, args)).queue();
-           } catch (Exception e) {
+            } catch (Exception e) {
                 if (e.getCause() != null && e.getCause().getMessage() != null) {
                     String errorMessage = e.getCause().getMessage();
                     if (errorMessage.contains("java.net.SocketTimeoutException")) {

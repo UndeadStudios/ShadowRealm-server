@@ -12,6 +12,7 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.bank.BankPin;
+import io.exilius.util.discord.Discord;
 
 public class InputField implements PacketType {
 
@@ -63,8 +64,12 @@ public class InputField implements PacketType {
 				if (staff.size() > 0) {
 					PlayerHandler.sendMessage("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb to view their request.", staff);
 					player.sendMessage("You request has been sent, please wait as a staff member gets back to you.");
+					Discord.writetickets("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb ingame to view their request.", staff);
 				} else {
-					player.sendMessage("There are no staff online to help you at this time, please be patient.");
+					player.sendMessage("@red@There are no staff online to help you at this time, please be patient");
+					player.sendMessage("@gre@ A message has been sent to the staff in discord");
+					player.sendMessage("@dre@ do not message the staff when they get on they will review your ticket & contact you.");
+					Discord.writetickets( player.getDisplayName() + "**__[HelpDB] __** ** is requesting help, type ::helpdb ingame to view their request. **");
 				}
 			}
 			player.getPA().removeAllWindows();

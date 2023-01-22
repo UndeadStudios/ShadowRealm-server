@@ -444,7 +444,7 @@ public class RaidsChestItems {
                 new GameItem(21015, 1),  //dinhs bulwark
                 new GameItem(21012, 1),  //dragon hunter crossbow
                 new GameItem(21006, 1),  //koadi wand
-                new GameItem(20997, 1),  //twisted bow
+
                 new GameItem(21034, 1), //arcane scroll
                 new GameItem(21079, 1), //dex scroll   		        COMMON
                 new GameItem(21000, 1),  //twisted buckler

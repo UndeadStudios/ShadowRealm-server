@@ -6,7 +6,7 @@ import org.flywaydb.core.api.migration.Context;
 /**
  * @author Chris | 8/14/21
  */
-public class V15__vote_record_table_add_site_id extends BaseJavaMigration {
+public class V14__vote_record_table_add_site_id extends BaseJavaMigration {
     @Override
     public void migrate(Context context) throws Exception {
         context.getConnection().createStatement().execute("ALTER TABLE vote_record ADD site_id INT NOT NULL DEFAULT 0");

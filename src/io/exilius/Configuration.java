@@ -3,6 +3,8 @@ package io.exilius;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.player.Position;
 import io.exilius.util.Misc;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -470,4 +472,12 @@ public class Configuration {
 
 	public final static int[] ALCOHOL_RELATED_ITEMS = { 8940, 3803, 3712, 3711,
 			2092, 2074, 3801 };
+
+    public static class V14__leaderboards_add_composite_key extends BaseJavaMigration {
+        @Override
+        public void migrate(Context context) throws Exception {
+            context.getConnection().createStatement().execute("ALTER TABLE leaderboards add primary key(username, type, date)");
+            context.getConnection().createStatement().execute("DROP INDEX idx_amount ON leaderboards");
+        }
+    }
 }

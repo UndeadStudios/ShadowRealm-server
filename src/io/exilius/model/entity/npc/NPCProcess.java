@@ -30,6 +30,7 @@ import io.exilius.model.entity.player.*;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.sql.Votes;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.Discord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,9 +89,10 @@ public class NPCProcess {
         }
         if(Server.getVoteCounter() >= 24){
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
-            PlayerHandler.executeGlobalMessage("Vote Boss Has spawned");
+            PlayerHandler.executeGlobalMessage("@dre@[Vote System] Vote Boss Has spawned");
             Votes.voteCount = 0;
             Server.setvoteCountCounter(0);
+            Discord.writeannounceMessage("**__ [VOTE SYSTEM] @here Vote boss has now spawned!! __**");
         }
         if (npc.actionTimer > 0) {
             npc.actionTimer--;

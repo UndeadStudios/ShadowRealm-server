@@ -43,8 +43,8 @@ public class Raids {
     private int groupPoints;
 
     public static boolean isMissingRequirements(Player c) {
-        if (c.totalLevel < c.getMode().getTotalLevelNeededForRaids()) {
-            c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForRaids() + " to join this raid!");
+        if (c.totalLevel < 1000) {
+            c.sendMessage("You need a total level of at least 1000 to join this raid!");
             return true;
         }
 
@@ -340,9 +340,9 @@ public class Raids {
         }
 
         int chance = Misc.random(1000);
-        int rareChance = 975 + myRank;
+        int rareChance = 900 + myRank;
         if (player.getItems().playerHasItem(21046)) {
-            rareChance = 971 + myRank;
+            rareChance = 896 + myRank;
             player.getItems().deleteItem(21046, 1);
             player.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate.");
             player.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
