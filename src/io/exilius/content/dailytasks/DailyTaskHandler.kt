@@ -6,7 +6,6 @@ import com.google.gson.JsonParser
 import io.exilius.Server
 import io.exilius.model.entity.player.Player
 import io.exilius.model.entity.player.PlayerHandler
-import io.exilius.sql.donation.reclaim.ReclaimQuery
 import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
@@ -205,8 +204,8 @@ class DailyTaskHandler {
         private fun completeTask(player: Player) {
             if (player.bot) return
             val task = player.currentDailyTask ?: return
-            player.dailyTaskPoints += task.minRewardPoints
             player.currentDailyTask.complete = true
+            player.dailyTaskPoints += task.minRewardPoints
             player.sendMessage("@red@[Daily Task]@blu@ You have completed your task and were awarded ${task.minRewardPoints} points!")
             PlayerHandler.executeGlobalMessage("@red@[Daily Task]@blu@ ${player.loginName} just completed a @red@${task.difficulty.toString().lowercase()}@blu@ daily task!")
         }

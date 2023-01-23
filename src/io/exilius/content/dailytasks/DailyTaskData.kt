@@ -1315,7 +1315,7 @@ enum class DailyTaskData(
         DailyTask(
             "Kill 75 Kree'arra ",
             TaskDifficulties.HARD,
-            250,
+            75,
             28,
             Skill.HITPOINTS,
             80,

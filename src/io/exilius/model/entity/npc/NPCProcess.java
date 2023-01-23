@@ -90,9 +90,10 @@ public class NPCProcess {
         if(Server.getVoteCounter() >= 24){
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
             PlayerHandler.executeGlobalMessage("@dre@[Vote System] Vote Boss Has spawned");
+            new io.exilius.model.entity.player.broadcasts.Broadcast("[Vote System] Vote Boss Has spawned at " + Server.getVoteCounter() + " Votes!").submit();
             Votes.voteCount = 0;
             Server.setvoteCountCounter(0);
-            Discord.writeannounceMessage("**__ [VOTE SYSTEM] @here Vote boss has now spawned!! __**");
+            Discord.writeannounceMessage("**__ [VOTE SYSTEM] @here Vote boss has now spawned at " + Server.getVoteCounter() + " Votes!");
         }
         if (npc.actionTimer > 0) {
             npc.actionTimer--;

@@ -9,6 +9,7 @@ import io.exilius.model.entity.player.*;
 import io.exilius.model.entity.player.mode.Mode;
 import io.exilius.model.entity.player.mode.ModeType;
 import io.exilius.model.entity.player.mode.group.GroupIronman;
+import io.exilius.util.discord.Discord;
 
 import java.util.function.Consumer;
 
@@ -108,6 +109,7 @@ public class TutorialDialogue extends DialogueBuilder {
 
         player.start(new DialogueBuilder(player).setNpcId(TUTORIAL_NPC).npc("Enjoy your stay on " + Configuration.SERVER_NAME + "!"));
         PlayerHandler.executeGlobalMessage("[@blu@New Player@bla@] " + player.getDisplayNameFormatted() + " @bla@has logged in! Welcome!");
+        Discord.writeannounceMessage("**[New Player]** " + player.getDisplayNameFormatted() + " Has just joined Exilius! Please welcome them");
     }
 
     public TutorialDialogue(Player player, boolean repeat) {
