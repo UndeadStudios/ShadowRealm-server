@@ -2068,7 +2068,7 @@ public class Player extends Entity {
         } else if (getLoginName().equals("fennix")) {
             PlayerHandler.executeGlobalMessage("[<col=212>Owner & Dev@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("sgsrocks")) {
-            PlayerHandler.executeGlobalMessage("[<col=000049><shad=B4B400>Co-Owner & Dev@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[<col=000049><shad=B4B400>Co-Owner & Dev</col></shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
             PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }

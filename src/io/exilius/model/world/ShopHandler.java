@@ -16,8 +16,8 @@ import java.util.List;
 
 public class ShopHandler {
 
-	public static int MaxShops = 400;
-	public static int MaxShopItems = 400;
+	public static int MaxShops = 500;
+	public static int MaxShopItems = 500;
 	public static int MaxShowDelay = 10;
 	public static int MaxSpecShowDelay = 60;
 	public static int[][] ShopItems = new int[MaxShops][MaxShopItems];

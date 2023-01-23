@@ -138,7 +138,7 @@ public class Configuration {
 	 * The highest amount ID. Change is not needed here unless loading items higher
 	 * than the 667 revision.
 	 */
-	public static final int ITEM_LIMIT = 60_000;
+	public static final int ITEM_LIMIT = 60000;
 
 	/**
 	 * The size of a players bank.

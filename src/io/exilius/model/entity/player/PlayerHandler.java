@@ -11,6 +11,7 @@ import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.mode.group.GroupIronmanRepository;
+import io.exilius.model.world.GlobalDropsHandler;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.net.PacketBuilder;
 import io.exilius.net.login.LoginReturnCode;
@@ -599,6 +600,10 @@ public class PlayerHandler {
 		}
 
 		str.endFrameVarSizeWord();
+		if (plr.refresh) {
+			GlobalDropsHandler.reset((Player)plr);
+			plr.refresh = false;
+		}
 	}
 
 	/**

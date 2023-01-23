@@ -50,6 +50,7 @@ import io.exilius.model.entity.player.save.PlayerSave;
 import io.exilius.model.entity.player.save.backup.PlayerSaveBackup;
 import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.lobby.LobbyManager;
+import io.exilius.model.world.GlobalDropsHandler;
 import io.exilius.model.world.ShopHandler;
 import io.exilius.punishments.PunishmentCycleEvent;
 import io.exilius.util.Reflection;
@@ -127,6 +128,7 @@ public class ServerStartup {
         NpcSpawnLoader.load();
         //NPCSpawns.loadNPCSpawns();
         MonsterHunt.spawnNPC();
+        GlobalDropsHandler.initialize();
         Runtime.getRuntime().addShutdownHook(new ShutdownHook());
         CommandManager.initializeCommands();
         NightmareStatusNPC.init();

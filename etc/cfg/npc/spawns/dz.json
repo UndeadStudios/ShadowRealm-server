@@ -9,6 +9,15 @@
     "walkingType": "FACE_SOUTH"
   },
   {
+    "id":11960,
+    "position": {
+      "x":3812,
+      "y":2856,
+      "height":0
+    },
+    "walkingType": "FACE_SOUTH"
+  },
+  {
     "id": 8781,
     "position": {
       "x": 3784,

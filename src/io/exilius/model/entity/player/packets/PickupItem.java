@@ -18,6 +18,7 @@ import io.exilius.model.multiplayersession.MultiplayerSessionFinalizeType;
 import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
+import io.exilius.model.world.GlobalDropsHandler;
 
 /**
  * Pickup Item
@@ -136,6 +137,7 @@ public class PickupItem implements PacketType {
 
     private void pickup(Player c) {
         Server.itemHandler.removeGroundItem(c, c.itemId, c.itemX, c.itemY, c.heightLevel, true);
+        GlobalDropsHandler.pickup(c,  c.itemId, c.itemX, c.itemY);
         c.getPA().sendSound(2582);
     }
 

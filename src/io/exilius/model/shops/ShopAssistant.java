@@ -103,7 +103,8 @@ public class ShopAssistant {
 		// synchronized (c) {
 		int TotalItems = 0;
 		for (int i = 0; i < ShopHandler.MaxShopItems; i++) {
-			if (ShopHandler.ShopItems[ShopID][i] > 0) {
+			if (ShopHandler.ShopItems[ShopID][i] > 0 && ShopHandler.ShopItemsN[ShopID][i] > 0
+					||  i <= ShopHandler.ShopItemsStandard[ShopID]) {
 				TotalItems++;
 			}
 		}
@@ -117,7 +118,6 @@ public class ShopAssistant {
 			c.getPA().sendInterfaceHidden(1, 64017);
 		}
 
-		if (c.getOutStream() != null) {
 			c.getOutStream().createFrameVarSizeWord(53);
 			c.getOutStream().writeUnsignedWord(64016);
 			c.getOutStream().writeUnsignedWord(TotalItems);
@@ -142,7 +142,7 @@ public class ShopAssistant {
 			}
 			c.getOutStream().endFrameVarSizeWord();
 			c.flushOutStream();
-		}
+		//}
 	}
 
 	public static int getBuyFromShopPrice(int shopId, int itemId) {

@@ -133,3 +133,12 @@
     },
     "walkingType": "WALK"
   },
+  {
+"id":11960,
+    "position": {
+      "x":3812,
+      "y":2856,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },

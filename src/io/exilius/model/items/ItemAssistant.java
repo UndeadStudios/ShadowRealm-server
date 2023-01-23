@@ -437,7 +437,7 @@ public class ItemAssistant {
 	}
 
 	public void replaceItem(Player c, int i, int l) {
-		for (int playerItem : c.playerItems) {
+		for (int playerItem : player.playerItems) {
 			if (playerHasItem(i, 1)) {
 				deleteItem(i, getInventoryItemSlot(i), 1);
 				addItem(l, 1);
@@ -1322,13 +1322,13 @@ public class ItemAssistant {
 					player.playerEquipmentN[targetSlot] += toEquipN;
 				} else if (targetSlot != 5 && targetSlot != 3) {
 					if (playerHasItem(toRemove, 1) &&stackable) {
-						player.playerItems[slot] = 0;// c.playerItems[slot] =
+						player.playerItems[slot] = 0;// player.playerItems[slot] =
 						// toRemove + 1;
-						player.playerItemsN[slot] = 0;// c.playerItemsN[slot] =
+						player.playerItemsN[slot] = 0;// player.playerItemsN[slot] =
 						// toRemoveN;
-						if (toRemove > 0 && toRemoveN > 0) // c.playerEquipment[targetSlot]
+						if (toRemove > 0 && toRemoveN > 0) // player.playerEquipment[targetSlot]
 							// = toEquip - 1;
-							addItem(toRemove, toRemoveN);// c.playerEquipmentN[targetSlot]
+							addItem(toRemove, toRemoveN);// player.playerEquipmentN[targetSlot]
 						// = toEquipN;
 					} else {
 						player.playerItems[slot] = toRemove + 1;
@@ -1357,15 +1357,15 @@ public class ItemAssistant {
 						if (wearingShield && wearingWeapon) {
 							if (freeSlots() > 0) {
 								if (playerHasItem(toRemove, 1) &&stackable) {
-									player.playerItems[slot] = 0;// c.playerItems[slot]
+									player.playerItems[slot] = 0;// player.playerItems[slot]
 									// = toRemove + 1;
-									player.playerItemsN[slot] = 0;// c.playerItemsN[slot]
+									player.playerItemsN[slot] = 0;// player.playerItemsN[slot]
 									// = toRemoveN;
-									if (toRemove > 0 && toRemoveN > 0) // c.playerEquipment[targetSlot]
+									if (toRemove > 0 && toRemoveN > 0) // player.playerEquipment[targetSlot]
 										// =
 										// toEquip
 										// - 1;
-										addItem(toRemove, toRemoveN);// c.playerEquipmentN[targetSlot]
+										addItem(toRemove, toRemoveN);// player.playerEquipmentN[targetSlot]
 									// =
 									// toEquipN;
 								} else {
@@ -1389,14 +1389,14 @@ public class ItemAssistant {
 							updateSlot(Player.playerShield);
 						} else {
 							if (playerHasItem(toRemove, 1) &&stackable) {
-								player.playerItems[slot] = 0;// c.playerItems[slot] =
+								player.playerItems[slot] = 0;// player.playerItems[slot] =
 								// toRemove + 1;
-								player.playerItemsN[slot] = 0;// c.playerItemsN[slot]
+								player.playerItemsN[slot] = 0;// player.playerItemsN[slot]
 								// = toRemoveN;
-								if (toRemove > 0 && toRemoveN > 0) // c.playerEquipment[targetSlot]
+								if (toRemove > 0 && toRemoveN > 0) // player.playerEquipment[targetSlot]
 									// = toEquip
 									// - 1;
-									addItem(toRemove, toRemoveN);// c.playerEquipmentN[targetSlot]
+									addItem(toRemove, toRemoveN);// player.playerEquipmentN[targetSlot]
 								// =
 								// toEquipN;
 							} else {
@@ -1408,14 +1408,14 @@ public class ItemAssistant {
 						}
 					} else {
 						if (playerHasItem(toRemove, 1) &&stackable) {
-							player.playerItems[slot] = 0;// c.playerItems[slot] =
+							player.playerItems[slot] = 0;// player.playerItems[slot] =
 							// toRemove + 1;
-							player.playerItemsN[slot] = 0;// c.playerItemsN[slot] =
+							player.playerItemsN[slot] = 0;// player.playerItemsN[slot] =
 							// toRemoveN;
-							if (toRemove > 0 && toRemoveN > 0) // c.playerEquipment[targetSlot]
+							if (toRemove > 0 && toRemoveN > 0) // player.playerEquipment[targetSlot]
 								// = toEquip -
 								// 1;
-								addItem(toRemove, toRemoveN);// c.playerEquipmentN[targetSlot]
+								addItem(toRemove, toRemoveN);// player.playerEquipmentN[targetSlot]
 							// = toEquipN;
 						} else {
 							player.playerItems[slot] = toRemove + 1;
@@ -1425,8 +1425,8 @@ public class ItemAssistant {
 						player.playerEquipmentN[targetSlot] = toEquipN;
 					}
 				}
-				//GameItem value = new GameItem(c.playerEquipment[targetSlot], c.playerEquipmentN[targetSlot]);
-				//c.getEquipment().update(Slot.valueOf(targetSlot), value);
+				//GameItem value = new GameItem(player.playerEquipment[targetSlot], player.playerEquipmentN[targetSlot]);
+				//player.getEquipment().update(Slot.valueOf(targetSlot), value);
 				player.getItems().addContainerUpdate(ContainerUpdate.EQUIPMENT);
 			}
 			
@@ -1779,7 +1779,7 @@ public class ItemAssistant {
 			return false;
 		}
 		//		if (!playerHasItem(itemId)) {
-		//			c.sendMessage("There is not enough space in your inventory.");
+		//			player.sendMessage("There is not enough space in your inventory.");
 		//			return false;
 		//		}
 		if (itemAmount <= 0)
@@ -2471,7 +2471,35 @@ public class ItemAssistant {
 			player.flushOutStream();
 		}
 	}
-
+	public void createGroundItem(int itemID, int itemX, int itemY, int itemAmount, int height) {
+		if (player.heightLevel != height) {
+			return;
+		}
+		if (player.getOutStream() != null) {
+			player.getOutStream().createFrame(85);
+			player.getOutStream().writeByteC((itemY - 8 * player.mapRegionY));
+			player.getOutStream().writeByteC((itemX - 8 * player.mapRegionX));
+			player.getOutStream().createFrame(44);
+			player.getOutStream().writeWordBigEndianA(itemID);
+			player.getOutStream().writeDWord_v1(itemAmount);
+			player.getOutStream().writeByte(0);
+			player.flushOutStream();
+		}
+	}
+	/**
+	 * Pickup items from the ground.
+	 **/
+	public void removeGroundItem(int itemID, int itemX, int itemY, int Amount) {
+		// synchronized (c) {
+		player.getOutStream().createFrame(85);
+		player.getOutStream().writeByteC((itemY - 8 * player.mapRegionY));
+		player.getOutStream().writeByteC((itemX - 8 * player.mapRegionX));
+		player.getOutStream().createFrame(156);
+		player.getOutStream().writeByteS(0);
+		player.getOutStream().writeWord(itemID);
+		player.flushOutStream();
+		// }
+	}
 	public void removeGroundItem(GroundItem groundItem) {
 		removeGroundItem(groundItem, true);
 	}

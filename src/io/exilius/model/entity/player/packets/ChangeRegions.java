@@ -3,6 +3,7 @@ package io.exilius.model.entity.player.packets;
 import io.exilius.Server;
 import io.exilius.model.entity.player.PacketType;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.world.GlobalDropsHandler;
 
 /**
  * Change Regions
@@ -13,6 +14,7 @@ public class ChangeRegions implements PacketType {
 	public void processPacket(Player c, int packetType, int packetSize) {
 		c.getFarming().regionChanged();
 		Server.itemHandler.reloadItems(c);
+		GlobalDropsHandler.reset(c);
 		Server.getGlobalObjects().updateRegionObjects(c);
 		if (c.getPA().viewingOtherBank) {
 			c.getPA().resetOtherBank();
