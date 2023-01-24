@@ -118,6 +118,7 @@ class BattlePassInterface(val player: Player) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
                     player.sendMessage("You don't have enough inventory space to claim this reward.")
+                    return
                 }
             } else if (premiumLevelBtns.contains(buttonID)) {
                 if (!player.battlePassPremiumUnlocked) {
@@ -143,6 +144,7 @@ class BattlePassInterface(val player: Player) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
                     player.sendMessage("You don't have enough inventory space to claim this reward.")
+                    return
                 }
             } else {
                 return
