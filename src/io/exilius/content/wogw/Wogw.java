@@ -141,6 +141,10 @@ public class Wogw {
 	}
 
 	public static void donateItem(Player player, int itemId) {
+		if(player.getRights().isOrInherits(Right.ADMINISTRATOR)){
+			player.sendMessage("@cr1@You cant not donate to the well.");
+			return;
+		}
 		player.start(new DialogueBuilder(player)
 				.itemStatement(itemId, "Please select your donation choice for @blu@" + Misc.formatCoins(getFoeRate(itemId)) + ".")
 				.option(
@@ -177,6 +181,10 @@ public class Wogw {
 	}
 
 	public static void donate(Player player, int amount, int itemId, int choice) {
+		if(player.getRights().isOrInherits(Right.ADMINISTRATOR)){
+			player.sendMessage("@cr1@You cant not donate to the well.");
+			return;
+		}
 		if (amount < LEAST_ACCEPTED_AMOUNT) {
 			player.sendMessage("You must donate at least one million coins.");
 			return;
