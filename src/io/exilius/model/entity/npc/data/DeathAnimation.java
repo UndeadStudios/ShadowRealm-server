@@ -22,6 +22,20 @@ public class DeathAnimation extends NPCHandler {
                 return 6092;
             case 8703:
                 return 5321;
+            case Npcs.BABY_BLUE_DRAGON:
+            case Npcs.BABY_BLUE_DRAGON_2:
+            case Npcs.BABY_BLUE_DRAGON_3:
+            case Npcs.BABY_RED_DRAGON:
+            case Npcs.BABY_RED_DRAGON_2:
+            case Npcs.BABY_RED_DRAGON_3:
+            case Npcs.BABY_RED_DRAGON_4:
+            case Npcs.BABY_GREEN_DRAGON:
+            case Npcs.BABY_GREEN_DRAGON_2:
+            case Npcs.BABY_GREEN_DRAGON_3:
+            case Npcs.BABY_BLACK_DRAGON:
+            case Npcs.BABY_BLACK_DRAGON_2:
+            case Npcs.BABY_BLACK_DRAGON_3:
+                return 28;
             case 5823:
             case 5824:
             case 5825:

@@ -257,6 +257,20 @@ public class BlockAnimation {
             case 3286:
             case 3287:
                 return 165;
+            case Npcs.BABY_BLUE_DRAGON:
+            case Npcs.BABY_BLUE_DRAGON_2:
+            case Npcs.BABY_BLUE_DRAGON_3:
+            case Npcs.BABY_RED_DRAGON:
+            case Npcs.BABY_RED_DRAGON_2:
+            case Npcs.BABY_RED_DRAGON_3:
+            case Npcs.BABY_RED_DRAGON_4:
+            case Npcs.BABY_GREEN_DRAGON:
+            case Npcs.BABY_GREEN_DRAGON_2:
+            case Npcs.BABY_GREEN_DRAGON_3:
+            case Npcs.BABY_BLACK_DRAGON:
+            case Npcs.BABY_BLACK_DRAGON_2:
+            case Npcs.BABY_BLACK_DRAGON_3:
+                return 26;
             case 6369: // Agrith-na-na
                 return 3500;
             case 6370: // Flambeed

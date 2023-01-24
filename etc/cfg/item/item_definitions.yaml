@@ -75054,4 +75054,201 @@
   description: "A pack containing 100 pieces of soft clay."
   shopValue: 10
   untradeable: false
-- id: 28024
+- id: 28993
+  name: "Gilded Guthan's helm"
+  description: "Gilded Guthan the Infested's helm."
+  shopValue: 930000
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28994
+  name: "Gilded Guthan's warspear"
+  description: "Gilded Guthan the Infested's warspear."
+  shopValue: 900000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 28995
+  name: "Gilded Guthan's platebody"
+  description: "Gilded Guthan the Infested's plate body armour."
+  shopValue: 800000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28996
+  name: "Gilded Guthan's chainskirt"
+  description: "Gilded Guthan the Infested's chainskirt."
+  shopValue: 850000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28997
+  name: "Gilded Dharok's helm"
+  description: "Gilded Dharok the Wretched's helm."
+  shopValue: 1030000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 28998
+  name: "Gilded Dharok's greataxe"
+  description: "Gilded Dharok the Wretched's greataxe."
+  shopValue: 1000000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+    - skill: "STRENGTH"
+      level: 70
+- id: 28999
+  name: "Gilded Dharok's platebody"
+  description: "Gilded Dharok the Wretched's plate body armour."
+  shopValue: 1000000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29000
+  name: "Gilded Dharok's platelegs"
+  description: "Gilded Dharok the Wretched's plate leg armour."
+  shopValue: 1050000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29001
+  name: "Gilded Ahrim's hood"
+  description: "Gilded Ahrim the Blighted's leather hood."
+  shopValue: 130000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "MAGIC"
+      level: 70
+- id: 29002
+  name: "Gilded Ahrim's staff"
+  description: "Gilded Ahrim the Blighted's quarterstaff."
+  shopValue: 200000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+    - skill: "MAGIC"
+      level: 70
+- id: 29003
+  name: "Gilded Ahrim's robetop"
+  description: "Gilded Ahrim the Blighted's armoured robe top."
+  shopValue: 500000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "MAGIC"
+      level: 70
+- id: 29004
+  name: "Gilded Ahrim's robeskirt"
+  description: "Gilded Ahrim the Blighted's armoured robe skirt."
+  shopValue: 470000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "MAGIC"
+      level: 70
+- id: 29005
+  name: "Gilded Karil's coif"
+  description: "Gilded Karil the Tainted's coif and facemask."
+  shopValue: 400000
+  equipmentModelType: "FULL_HELMET"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 29006
+  name: "Gilded Karil's crossbow"
+  description: "Gilded Karil the Tainted's repeating crossbow."
+  shopValue: 800000
+  requirements:
+    - skill: "RANGED"
+      level: 70
+- id: 29007
+  name: "Gilded Karil's leathertop"
+  description: "Gilded Karil the Tainted's leather body armour."
+  shopValue: 500000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 29008
+  name: "Gilded Karil's leatherskirt"
+  description: "Gilded Karil the Tainted's leather skirt."
+  shopValue: 470000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+    - skill: "RANGED"
+      level: 70
+- id: 29009
+  name: "Gilded Torag's helm"
+  description: "Gilded Torag the Corrupted's helm."
+  shopValue: 830000
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29010
+  name: "Gilded Torag's hammers"
+  description: "Gilded Torag the Corrupted's twin hammers."
+  shopValue: 800000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+    - skill: "STRENGTH"
+      level: 70
+- id: 29011
+  name: "Gilded Torag's platebody"
+  description: "Gilded Torag the Corrupted's plate body armour."
+  shopValue: 800000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29012
+  name: "Gilded Torag's platelegs"
+  description: "Gilded Torag the Corrupted's plate leg armour."
+  shopValue: 850000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29013
+  name: "Gilded Verac's helm"
+  description: "Gilded Verac the Defiled's helm."
+  shopValue: 830000
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29014
+  name: "Gilded Verac's flail"
+  description: "Gilded Verac the Defiled's flail."
+  shopValue: 800000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 29015
+  name: "Gilded Verac's brassard"
+  description: "Gilded Verac the Defiled's brassard."
+  shopValue: 800000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 70
+- id: 29016
+  name: "Gilded Verac's plateskirt"
+  description: "Gilded Verac the Defiled's plate skirt."
+  shopValue: 850000
+  requirements:
+    - skill: "DEFENCE"
+      level: 70

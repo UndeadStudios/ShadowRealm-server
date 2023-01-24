@@ -888,13 +888,20 @@ public class AttackAnimation extends NPCHandler {
 		case 239:// drags
 			case 7940:
 			return npc.getAttackType() == CombatType.MELEE ? 80 : 81;
-		case 241:
-		case 242:
-		case 243:
-		case 244:
-		case 245:
-		case 246:
-			return 80;
+			case Npcs.BABY_BLUE_DRAGON:
+			case Npcs.BABY_BLUE_DRAGON_2:
+			case Npcs.BABY_BLUE_DRAGON_3:
+			case Npcs.BABY_RED_DRAGON:
+			case Npcs.BABY_RED_DRAGON_2:
+			case Npcs.BABY_RED_DRAGON_3:
+			case Npcs.BABY_RED_DRAGON_4:
+			case Npcs.BABY_GREEN_DRAGON:
+			case Npcs.BABY_GREEN_DRAGON_2:
+			case Npcs.BABY_GREEN_DRAGON_3:
+			case Npcs.BABY_BLACK_DRAGON:
+			case Npcs.BABY_BLACK_DRAGON_2:
+			case Npcs.BABY_BLACK_DRAGON_3:
+			return 25;
 			case 247: // Red dragon
 			case 248: // Red dragon
 			case 249: // Red dragon
