@@ -434,6 +434,7 @@ public class TeleportInterface2 {
         Wilderness_Agility_Course(7, 103003, false, "Teleports you to Wilderness Agility Course @red@(52)", new Position(3003, 3934, 0)),
         Wildy_event(7, 103008, false, "Teleports you to the Wildy event", new Position(MonsterHunt.getCurrentLocation().getX(), MonsterHunt.getCurrentLocation().getY(), 0)),
         King_black_dragon(7, 103013, false, "Teleports you to King Black Dragon @red@(42 Wild)", new Position(3005, 3849, 0)),
+        CALLISTO(7, 102209, false, "Teleports you to Callisto @red@(40 Wild)", new Position(3322, 3835,0)),
         Vetion(7, 103018, false, "Teleports you to Vet'ion @red@(40 Wild)", new Position(3200, 3794, 0)),
         Scorpia(7, 103023, false, "Teleports you to Scorpia @red@(54 Wild)", new Position(3233, 3945, 0)),
         Venenatis(7, 103028, false, "Teleports you to Venenatis @red@(28 Wild)", new Position(3345, 3754, 0)),

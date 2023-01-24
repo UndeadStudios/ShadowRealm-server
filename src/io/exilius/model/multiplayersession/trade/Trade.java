@@ -30,10 +30,10 @@ public class Trade extends Multiplayer {
 			requested.sendMessage("This person cannot trade.");
 			return false;
 		}
-		if(player.getRights().getPrimary().equals(Right.YOUTUBER)){
-			player.sendMessage("You cant not trade.");
-			return false;
-		}
+//		if(player.getRights().getPrimary().equals(Right.YOUTUBER)){
+//			player.sendMessage("You cant not trade.");
+//			return false;
+//		}
 //		if(requested.getRights().getPrimary().equals(Right.YOUTUBER)){
 //			requested.sendMessage("You can't trade youtubers.");
 //			return false;
