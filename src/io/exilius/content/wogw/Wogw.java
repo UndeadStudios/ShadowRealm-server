@@ -141,7 +141,7 @@ public class Wogw {
 	}
 
 	public static void donateItem(Player player, int itemId) {
-		if(player.getRights().isOrInherits(Right.ADMINISTRATOR)){
+		if(player.getRights().getPrimary().isOrInherits(Right.ADMINISTRATOR)){
 			player.sendMessage("@cr1@You cant not donate to the well.");
 			return;
 		}
@@ -181,7 +181,7 @@ public class Wogw {
 	}
 
 	public static void donate(Player player, int amount, int itemId, int choice) {
-		if(player.getRights().isOrInherits(Right.ADMINISTRATOR)){
+		if(player.getRights().getPrimary().isOrInherits(Right.ADMINISTRATOR)){
 			player.sendMessage("@cr1@You cant not donate to the well.");
 			return;
 		}
