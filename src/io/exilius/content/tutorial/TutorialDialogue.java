@@ -114,8 +114,8 @@ public class TutorialDialogue extends DialogueBuilder {
         PlayerHandler.executeGlobalMessage("[@blu@New Player@bla@] " + player.getDisplayNameFormatted() + " @bla@has logged in! Welcome!");
         EmbedBuilder db = new EmbedBuilder();
         db.setTitle("[New Player]");
-        db.setDescription( player.getDisplayName() + "has just joined Exilius-OSRS for the first time please welcome him");
-        db.setImage("https://i.giphy.com/media/eoVusT7Pi9ODe/giphy.webp");
+        db.setDescription( player.getDisplayName() + " has just joined Exilius-OSRS for the first time please welcome him");
+        db.setImage("https://media.tenor.com/nVSmF0rmEOsAAAAd/whats-up-wazzup.gif");
         db.setColor(new java.awt.Color(0xB00D03));
         Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(db.build()).queue();
         //Discord.writeannounceMessage("[New Player] " + player.getDisplayName() + " Has just joined Exilius! Please welcome them");

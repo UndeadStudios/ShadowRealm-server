@@ -34,10 +34,10 @@ public class Trade extends Multiplayer {
 			player.sendMessage("You cant not trade.");
 			return false;
 		}
-		if(requested.getRights().getPrimary().equals(Right.YOUTUBER)){
-			requested.sendMessage("You can't trade youtubers.");
-			return false;
-		}
+//		if(requested.getRights().getPrimary().equals(Right.YOUTUBER)){
+//			requested.sendMessage("You can't trade youtubers.");
+//			return false;
+//		}
 		if (player.getLootingBag().isWithdrawInterfaceOpen() || player.getLootingBag().isDepositInterfaceOpen() ||
 				requested.getLootingBag().isWithdrawInterfaceOpen() || requested.getLootingBag().isDepositInterfaceOpen()) {
 			return false;
