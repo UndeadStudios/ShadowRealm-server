@@ -300,6 +300,10 @@ public class DropItem implements PacketType {
 			c.sendMessage("You cannot drop items.");
 			return;
 		}
+		if(c.getRights().getPrimary().equals(Right.YOUTUBER)){
+			c.getItems().deleteItem(itemId, itemSlot, c.playerItemsN[itemSlot]);
+			return;
+		}
 		Server.getLogging().write(new ItemDroppedLog(c, new GameItem(itemId, c.playerItemsN[itemSlot]), c.getPosition()));
 		Server.itemHandler.createGroundItemFromDrop(c, itemId, c.absX, c.absY, c.heightLevel,
 				c.playerItemsN[itemSlot], c.getIndex());

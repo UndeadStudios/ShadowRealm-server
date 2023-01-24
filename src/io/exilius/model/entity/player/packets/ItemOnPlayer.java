@@ -83,6 +83,9 @@ public class ItemOnPlayer implements PacketType {
 			if(c.getLoginName().equalsIgnoreCase("rico")){
 				return;
 			}
+			if(c.getRights().getPrimary().equals(Right.YOUTUBER)){
+				return;
+			}
 			Discord.writeServerSyncMessage(c.getDisplayName()+ " ** Gave " + other.getDisplayName() + ItemAssistant.getItemName(itemId) + " **");
 			c.sendMessage("You gave " + other.getDisplayName() + " some " + ItemAssistant.getItemName(itemId) + ".");
 			other.sendMessage("You were given some " + ItemAssistant.getItemName(itemId) + " from " + c.getDisplayName() + ".");
