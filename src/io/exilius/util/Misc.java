@@ -27,6 +27,7 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -42,7 +43,25 @@ public class Misc {
 	public static String booleanToString(boolean bool) {
 		return bool ? "enabled" : "disabled";
 	}
+	public static double get() {
+		return ThreadLocalRandom.current().nextDouble();
+	}
 
+	public static int get(int maxRange) {
+		return (int) (get() * (maxRange + 1D));
+	}
+
+	public static int get(int minRange, int maxRange) {
+		return minRange + get(maxRange - minRange);
+	}
+
+	public static int get(int... values) {
+		return values[get(values.length - 1)];
+	}
+
+	public static <T> T get(T[] values) {
+		return values[get(values.length - 1)];
+	}
 	public static String convertLocalDateTimeToString(LocalDateTime date) {
 		return date.getYear() + ":" + date.getMonth().getValue() + ":" + date.getDayOfMonth() + ":" + date.getHour() + ":"+ date.getMinute();
 	}

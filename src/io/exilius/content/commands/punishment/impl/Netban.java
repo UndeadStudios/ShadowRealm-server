@@ -11,6 +11,8 @@ import io.exilius.model.entity.player.save.PlayerAddresses;
 import io.exilius.model.entity.player.save.PlayerSaveOffline;
 import io.exilius.util.dateandtime.TimeSpan;
 import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.io.File;
 
@@ -22,6 +24,7 @@ public class Netban implements PunishmentCommandParser {
         return "netban";
     }
 
+    @SneakyThrows
     @Override
     public void add(Player staff, PunishmentCommandArgs args) {
         Player player = args.getPlayerForDisplayName();
@@ -37,7 +40,14 @@ public class Netban implements PunishmentCommandParser {
 
         PlayerHandler.nonNullStream().filter(it -> addresses.equals(it.getValidAddresses()) && it.getRights().isNot(Right.OWNER)).forEach(Player::forceLogout);
         staff.sendMessage("Banned all known addresses for {}.", player.getDisplayNameFormatted());
-        Discord.writepunishments(staff.getDisplayName()+ " Banned all known addresses for {}. `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
+        EmbedBuilder db = new EmbedBuilder();
+        db.setTitle("[Tha Punisher]");
+        db.setDescription(staff.getDisplayName()+ " Banned all addresses for "+ player.getDisplayNameFormatted() + " for the time of " + duration);
+        db.setImage("https://media.tenor.com/vkDCjozbDksAAAAC/ban-hammer-cinzou.gif");
+        db.setColor(new java.awt.Color(0xB00D03));
+        Discord.getJDA().getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
+
+        //Discord.writepunishments(staff.getDisplayName()+ " Banned all known addresses for {}. `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
     }
 
     @Override

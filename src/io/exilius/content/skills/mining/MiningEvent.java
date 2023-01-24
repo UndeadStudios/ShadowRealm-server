@@ -11,6 +11,7 @@ import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.skills.Skill;
 import io.exilius.content.skills.smithing.Smelting;
+import io.exilius.model.Items;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.cycleevent.Event;
 import io.exilius.model.definitions.ItemDef;
@@ -364,12 +365,18 @@ public class MiningEvent extends Event<Player> {
                     plr.sendMessage("The Star run out of star dust.");
                     ShootingStar.despawn(false);
                     plr.getPA().stopSkilling();
-                    ShootingStar.MAXIMUM_MINING_AMOUNT = 250;
+                    ShootingStar.MAXIMUM_MINING_AMOUNT = 600;
                     plr.stopAnimation();
                     stop();
                     return;
                 }
-                plr.getItems().addItem(25527, 1);
+            if (plr.getItems().isWearingItem(Items.MINING_CAPE)) {
+                plr.getItems().addItem(25527, 2);
+            } else if (plr.getItems().isWearingItem(Items.MINING_CAPET)) {
+                    plr.getItems().addItem(25527, 2);
+                } else if (!plr.getItems().isWearingItem(Items.MINING_CAPE)) {
+                    plr.getItems().addItem(25527, 1);
+                }
                 ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
                 //plr.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
                 if (Misc.random(200) == 5) {

@@ -136,7 +136,7 @@ rare:
     minimum: 1
     maximum: 1
 very_rare:
-  accessibility: 3000
+  accessibility: 1000
   items:
   - name: "jar of stone"
     minimum: 1

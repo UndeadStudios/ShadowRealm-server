@@ -31,6 +31,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static io.exilius.model.entity.npc.drops.DropManager.getModifier;
+import static io.exilius.model.entity.npc.drops.DropManager.getModifier1;
+
 public class QuestTab {
 
     public enum Tab {
@@ -143,7 +146,7 @@ public class QuestTab {
         // Player Information
         player.getPA().sendFrame126("@or1@- Rank: @gre@" + player.getRights().buildCrownString() + " " + player.getRights().getPrimary().toString(), lines.get(index++));
         player.getPA().sendFrame126("@or1@- Total donated: @gre@$" + player.amDonated, lines.get(index++));
-        player.getPA().sendFrame126("@or1@- Drop rate bonus: @gre@" + DropManager.getModifier1(player), lines.get(index++));
+        player.getPA().sendFrame126("@or1@- Drop rate bonus: @cya@" + getModifier1(player) + "%", lines.get(index++));
 
         // Time played
         long milliseconds = (long) player.playTime * 600;
@@ -153,6 +156,9 @@ public class QuestTab {
         player.getPA().sendFrame126("@or1@- Time Played: @gre@"+time, lines.get(index++));
 
         player.getPA().sendFrame126("@or1@- KDR: @gre@"+ (double)(player.deathcount == 0 ? player.killcount + player.deathcount : player.killcount/player.deathcount), lines.get(index++));
+
+            player.getPA().sendFrame126("@or1@- Daily Task:", lines.get(index++));
+            player.getPA().sendFrame126("@gre@ " + player.getCurrentDailyTask().getTaskName(), lines.get(index++));
 
         if (player.getSlayer().getTask().isEmpty()) {
             player.getPA().sendFrame126("@or1@- Slayer Task:", lines.get(index++));
@@ -169,6 +175,7 @@ public class QuestTab {
         points(player.getSlayer().getPoints(), "Slayer Points", lines.get(index++));
         points(player.pcPoints, "Pest Control Points", lines.get(index++));
         points(player.exchangePoints, "Exchange Points", lines.get(index++));
+        //points(player.currentDailyTask, "Exchange Points", lines.get(index++));
         while (index < lines.size()) {
             player.getPA().sendString("", lines.get(index++));
         }

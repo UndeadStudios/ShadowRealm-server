@@ -31,6 +31,8 @@ import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.sql.Votes;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.EmbedBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,6 +67,7 @@ public class NPCProcess {
         processing();
     }
 
+    @SneakyThrows
     private void processing() {
         if (npc.getInstance() != null) {
             npc.getInstance().tick(npc);
@@ -91,9 +94,16 @@ public class NPCProcess {
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
             PlayerHandler.executeGlobalMessage("@dre@[Vote System] Vote Boss Has spawned");
             new io.exilius.model.entity.player.broadcasts.Broadcast("[Vote System] Vote Boss Has spawned at " + Server.getVoteCounter() + " Votes!").submit();
+           // Discord.writeannounceMessage("**__ [VOTE SYSTEM] Vote boss has now spawned at " + Server.getVoteCounter() + " Votes!");
             Votes.voteCount = 0;
             Server.setvoteCountCounter(0);
-            Discord.writeannounceMessage("**__ [VOTE SYSTEM] @here Vote boss has now spawned at " + Server.getVoteCounter() + " Votes!");
+            EmbedBuilder db = new EmbedBuilder();
+            db.setTitle("Exilius Server Status");
+            db.setDescription("Server is now online!");
+            db.setImage("https://endless-os.com/logo.png");
+            db.setColor(new java.awt.Color(0xB00D03));
+            Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(db.build()).queue();
+
         }
         if (npc.actionTimer > 0) {
             npc.actionTimer--;

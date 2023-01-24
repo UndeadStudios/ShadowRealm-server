@@ -7,6 +7,8 @@ import io.exilius.model.entity.player.save.PlayerAddresses;
 import io.exilius.punishments.PunishmentType;
 import io.exilius.util.dateandtime.TimeSpan;
 import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 public class NetMute extends OnlinePlayerPCP {
     @Override
@@ -19,6 +21,7 @@ public class NetMute extends OnlinePlayerPCP {
         return true;
     }
 
+    @SneakyThrows
     @Override
     public void add(Player staff, Player player, TimeSpan duration) {
         PlayerAddresses addresses = player.getValidAddresses();
@@ -29,7 +32,14 @@ public class NetMute extends OnlinePlayerPCP {
             Server.getPunishments().add(PunishmentType.NET_MUTE, duration, addresses.getUUID());
         staff.sendMessage("Muted all '{}' addresses for {}.", player.getDisplayNameFormatted(), duration);
         player.sendMessage("You've been muted by {} for {}.", staff.getDisplayNameFormatted(), duration.toString());
-        Discord.writepunishments(staff.getDisplayName()+ " Muted all addresses for `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
+        EmbedBuilder db = new EmbedBuilder();
+        db.setTitle("[Tha Punisher]");
+        db.setDescription(staff.getDisplayName()+ " Muted all addresses for "+ player.getDisplayNameFormatted() + " for the time of " + duration);
+        db.setImage("https://media.tenor.com/vkDCjozbDksAAAAC/ban-hammer-cinzou.gif");
+        db.setColor(new java.awt.Color(0xB00D03));
+        Discord.getJDA().getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
+
+        //Discord.writepunishments(staff.getDisplayName()+ " Muted all addresses for `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
 
     }
 

@@ -601,15 +601,37 @@ KeyToClue.dropKey(player, npc, location);
         });
     }
 
-    private double getModifier(Player player) {
+    public static double getModifier(Player player) {
         double modifier = 1.0;
-        modifier += player.getMode().getDropModifier();
+       // modifier += player.getMode().getDropModifier();
         if (player.getItems().isWearingItem(2572)) {
             modifier -= .03;
         } else if (player.getItems().isWearingItem(12785)) {
             modifier -= .08;
-        } else if (player.getItems().isWearingItem(773)){
-            modifier -= .08;
+        }
+        if (player.getItems().playerHasItem(30121) || (player.hasFollower && player.petSummonId == 30121)) {
+            modifier -= .20;
+        } else if (player.getItems().playerHasItem(30021) || player.getItems().playerHasItem(30114)
+                || (player.hasFollower && (player.petSummonId == 30114 || player.petSummonId == 30120))
+                || (player.hasFollower && (player.petSummonId == 30021 || player.petSummonId == 30122))) {
+            modifier -= .10;
+        } else if (player.getItems().playerHasItem(30014) || (player.hasFollower && (player.petSummonId == 30014 || player.petSummonId == 30020 || player.petSummonId == 30022))) {
+            modifier -= .05;
+        }
+        if (Hespori.KRONOS_TIMER > 0) {
+            modifier -= .10;
+        }
+        if (player.getItems().isWearingItem(28347)) {
+            modifier -= .05;
+        }
+        if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
+            modifier -= .15;
+        }
+        if (player.isSkulled == true ) {
+            modifier -= .05;
+        }
+        if (player.isSkulled == true && Boundary.isIn(player, Boundary.REV_CAVE)) {
+            modifier -= .05;
         }
         if (player.getItems().playerHasItem(30121) || (player.hasFollower && player.petSummonId == 30121)) {
             modifier -= .20;
@@ -623,30 +645,39 @@ KeyToClue.dropKey(player, npc, location);
         } else if (player.getItems().playerHasItem(30014) || (player.hasFollower && (player.petSummonId == 30014 || player.petSummonId == 30020 || player.petSummonId == 30022))) {
             modifier -= .05;
         }
-        if (player.isSkulled == true && Boundary.isIn(player, Boundary.REV_CAVE)) {
+        if (VotePanelManager.hasDropBoost(player)) {
             modifier -= .100;
         }
+        if (player.getMode().is5x()) {
+            modifier -= .05;
+        }
+        if (player.getMode().isroguehc()) {
+            modifier -= .02;
+        }
+
         if (VotePanelManager.hasDropBoost(player)) {
             modifier -= .100;
         }
         if (player.getRights().contains(Right.Divine_Club)) {
-            modifier -= 0.100;
+            modifier -= .13;
         } else if (player.getRights().contains(Right.Mythic_Club)) {
-                modifier -= 0.095;
+            modifier -= .115;
         } else if (player.getRights().contains(Right.ONYX_CLUB)) {
-                modifier -= 0.080;
+            modifier -= .08;
         } else if (player.getRights().contains(Right.DIAMOND_CLUB)) {
-            modifier -= 0.060;
+            modifier -= .06;
         } else if (player.getRights().contains(Right.LEGENDARY_DONATOR)) {
-            modifier -= 0.050;
+            modifier -= .05;
         } else if (player.getRights().contains(Right.EXTREME_DONOR)) {
-            modifier -= 0.040;
+            modifier -= .04;
         } else if (player.getRights().contains(Right.REGULAR_DONATOR)) {
-            modifier -= 0.030;
+            modifier -= .03;
         }
 
+        //modifier += -(player.getMode().getDropModifier() * 100);
         if (Wogw._20_PERCENT_DROP_RATE_TIMER > 0)
             modifier -= 0.2;
+        //modifier += -(player.getMode().getDropModifier() * 100);
 
         return modifier;
     }
@@ -672,14 +703,20 @@ KeyToClue.dropKey(player, npc, location);
         if (player.getItems().isWearingItem(28347)) {
             modifier += 5;
         }
+        if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
+            modifier += 15;
+        }
+        if (player.isSkulled == true ) {
+            modifier += 5;
+        }
         if (player.isSkulled == true && Boundary.isIn(player, Boundary.REV_CAVE)) {
-            modifier += 10;
+            modifier += 5;
         }
         modifier += -(player.getMode().getDropModifier() * 100);
         if (player.getRights().contains(Right.Divine_Club)) {
-            modifier += 18.5;
+            modifier += 13;
         } else if (player.getRights().contains(Right.Mythic_Club)) {
-                modifier += 13.5;
+                modifier += 11.5;
         } else if (player.getRights().contains(Right.ONYX_CLUB)) {
                 modifier += 8;
             } else if (player.getRights().contains(Right.DIAMOND_CLUB)) {

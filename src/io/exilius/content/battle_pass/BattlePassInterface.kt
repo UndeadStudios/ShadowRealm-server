@@ -5,6 +5,7 @@ import io.exilius.content.battle_pass.BattlePassHandler.Companion.xpUntilNextLev
 import io.exilius.model.entity.player.Player
 import io.exilius.model.entity.player.PlayerAssistant
 import io.exilius.model.items.GameItem
+import io.exilius.model.items.ImmutableItem
 
 
 class BattlePassInterface(val player: Player) {
@@ -113,7 +114,11 @@ class BattlePassInterface(val player: Player) {
                 println("Free Btn Index clicked $rewardIndex")
                 reward = BattlePassHandler.freeRewards[modifiedIndex]
                 player.battlePassFreeRwdsClaimed[modifiedIndex] = true
-                player.items.addItem(reward.id, reward.amount)
+                if (player.getInventory().hasRoomInInventory(ImmutableItem(reward.id))) {
+                    player.items.addItem(reward.id, reward.amount)
+                } else {
+                    player.sendMessage("You don't have enough inventory space to claim this reward.")
+                }
             } else if (premiumLevelBtns.contains(buttonID)) {
                 if (!player.battlePassPremiumUnlocked) {
                     player.sendMessage("You must purchase a battle pass to claim this premium reward!")
@@ -134,7 +139,11 @@ class BattlePassInterface(val player: Player) {
                 println("Premium Btn Index clicked $rewardIndex")
                 reward = BattlePassHandler.premiumRewards[modifiedIndex]
                 player.battlePassPremiumRwdsClaimed[modifiedIndex] = true
-                player.items.addItem(reward.id, reward.amount)
+                if (player.getInventory().hasRoomInInventory(ImmutableItem(reward.id))) {
+                    player.items.addItem(reward.id, reward.amount)
+                } else {
+                    player.sendMessage("You don't have enough inventory space to claim this reward.")
+                }
             } else {
                 return
             }

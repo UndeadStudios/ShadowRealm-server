@@ -9,6 +9,10 @@ import io.exilius.model.entity.player.packets.itemoptions.ItemOptionOne;
 import io.exilius.model.entity.player.packets.itemoptions.ItemOptionThree;
 import io.exilius.model.entity.player.packets.itemoptions.ItemOptionTwo;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +43,7 @@ public class PacketHandler {
 		}
 	}
 
+	@SneakyThrows
 	private static void invalidPacket(Player c, String message, int packetType, int packetSize, boolean logout, Exception exception) {
 		String previous = Misc.reverse(c.getPreviousPackets()).toString();
 		if (exception == null) {
@@ -49,6 +54,8 @@ public class PacketHandler {
 
 		if (logout) {
 			c.forceLogout();
+			Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+
 		}
 	}
 

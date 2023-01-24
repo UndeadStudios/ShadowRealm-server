@@ -20,6 +20,9 @@ import io.exilius.util.Misc;
 import io.exilius.util.Stream;
 import io.exilius.util.discord.Discord;
 import io.exilius.util.logging.global.LoginLog;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -205,6 +208,7 @@ public class PlayerHandler {
 		loginQueue.add(player);
 	}
 
+	@SneakyThrows
 	private void processLoginQueue() {
 		Player playerLoggingIn;
 		int processed = 0;
@@ -245,6 +249,7 @@ public class PlayerHandler {
 				}
 			} catch (Exception e) {
 				playerLoggingIn.forceLogout();
+				//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
 				playerLoggingIn.getPA().sendLogout();
 				playerLoggingIn.initialized = false;
 				playerLoggingIn.saveCharacter = false;
@@ -262,6 +267,7 @@ public class PlayerHandler {
 		return logoutQueue.stream().anyMatch(it -> it.getPlayer().getLoginName().equalsIgnoreCase(username));
 	}
 
+	@SneakyThrows
 	private void processLogoutQueue() {
 		PlayerSaveExecutor playerLoggingOut;
 		int processed = 0;
@@ -270,6 +276,7 @@ public class PlayerHandler {
 				playerLoggingOut.getPlayer().isActive = false;
 				players[playerLoggingOut.getPlayer().getIndex()] = null;
 				playerLoggingOut.getPlayer().setIndex(0);
+				//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
 				if (Server.isTest() && !playerLoggingOut.getPlayer().isBot() || updateRunning) {
 					logger.info("Logged out '{}', {} in queue.", playerLoggingOut.getPlayer().getLoginName(), logoutQueue.size());
 				}
@@ -279,10 +286,12 @@ public class PlayerHandler {
 		}
 	}
 
+	@SneakyThrows
 	public void process() {
 		processLoginQueue();
 		processLogoutQueue();
 		processQueuedActions();
+		//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
 
 		nonNullStream().forEach(player -> {
 			if (player.isReadyToLogout() || kickAllPlayers) {
@@ -297,6 +306,8 @@ public class PlayerHandler {
 		});
 
 		updateOnlinePlayers();
+		Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+
 
 		onlinePlayers.forEach(player -> {
 			try {
@@ -600,11 +611,11 @@ public class PlayerHandler {
 		}
 
 		str.endFrameVarSizeWord();
-		if (plr.refresh) {
-			GlobalDropsHandler.reset((Player)plr);
-			plr.refresh = false;
+//		if (plr.refresh) {
+//			GlobalDropsHandler.reset((Player)plr);
+//			plr.refresh = false;
 		}
-	}
+//	}
 
 	/**
 	 * int id = plr.playerList[index].getIndex();

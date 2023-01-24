@@ -4,9 +4,12 @@ package io.exilius.util.discord;
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.ServerState;
+import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.TextChannel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,6 +59,7 @@ public class Discord {
 
     public static void writeFoeMessage(String message, Object...args) {
         writeServerSyncMessage(message, args);
+
         sendChannelMessage("foe-sync", message, args);
     }
 
@@ -119,10 +123,11 @@ public class Discord {
         return channels.get(name);
     }
 
-    private static JDA getJDA() throws LoginException, InterruptedException {
+    public static JDA getJDA() throws LoginException, InterruptedException {
         if (jda == null) {
             jda = JDABuilder.createDefault("MTAwNDExNDAyNTA0ODcxNTM4Ng.GX1HBB.RIIPCLrWOrTrDWXP3iUPIqwH_zqe64oms20MEI").build();
             jda.awaitReady();
+            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1.6)) + " players!"));
         }
 
         return jda;

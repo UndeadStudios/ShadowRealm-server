@@ -20,6 +20,7 @@ public class Slayer extends Command {
 			return;
 		}
 		c.getPA().startTeleport(3082, 3499, 0, "modern", false);
+		c.stopAnimation();
 	}
 
 	@Override

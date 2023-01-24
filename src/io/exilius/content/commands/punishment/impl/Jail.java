@@ -5,6 +5,7 @@ import io.exilius.content.commands.punishment.OnlinePlayerPCP;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.dateandtime.TimeSpan;
 import io.exilius.util.discord.Discord;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 public class Jail extends OnlinePlayerPCP {
 
@@ -33,6 +34,12 @@ public class Jail extends OnlinePlayerPCP {
         player.heightLevel = 0;
         player.jailEnd = duration.offsetCurrentTimeMillis();
         Discord.writepunishments(staff.getDisplayName() + " Jailed `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
+
+        EmbedBuilder db = new EmbedBuilder();
+        db.setTitle("[Tha Punisher]");
+        db.setDescription(staff.getDisplayName()+ " Jailed all addresses for "+ player.getDisplayNameFormatted() + " for the time of " + duration);
+        db.setImage("https://media.tenor.com/vkDCjozbDksAAAAC/ban-hammer-cinzou.gif");
+        db.setColor(new java.awt.Color(0xB00D03));
 
 
         player.sendMessage("@red@You have been jailed by {} for {}.", staff.getDisplayNameFormatted(), duration.toString());

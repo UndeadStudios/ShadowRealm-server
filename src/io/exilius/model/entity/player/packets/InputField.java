@@ -13,9 +13,12 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.bank.BankPin;
 import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 public class InputField implements PacketType {
 
+	@SneakyThrows
 	@Override
 	public void processPacket(Player player, int packetType, int packetSize) {
 		player.interruptActions();
@@ -64,12 +67,24 @@ public class InputField implements PacketType {
 				if (staff.size() > 0) {
 					PlayerHandler.sendMessage("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb to view their request.", staff);
 					player.sendMessage("You request has been sent, please wait as a staff member gets back to you.");
-					Discord.writetickets("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb ingame to view their request.", staff);
+					EmbedBuilder db = new EmbedBuilder();
+					db.setTitle("Help System");
+					db.setDescription( player.getDisplayName() + " Needs help get ingame and do ::helpdb to view ticket!");
+					db.setImage("https://media.tenor.com/yi5btxWVAwwAAAAC/help-shouting.gif");
+					db.setColor(new java.awt.Color(0xB00D03));
+					Discord.getJDA().getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
+					//Discord.writetickets("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb ingame to view their request.", staff);
 				} else {
 					player.sendMessage("@red@There are no staff online to help you at this time, please be patient");
 					player.sendMessage("@gre@ A message has been sent to the staff in discord");
 					player.sendMessage("@dre@ do not message the staff when they get on they will review your ticket & contact you.");
-					Discord.writetickets( player.getDisplayName() + "**__[HelpDB] __** ** is requesting help, type ::helpdb ingame to view their request. **");
+					EmbedBuilder db = new EmbedBuilder();
+					db.setTitle("Help System");
+					db.setDescription( player.getDisplayName() + "Needs help get ingame and do ::helpdb to view ticket!");
+					db.setImage("https://media.tenor.com/yi5btxWVAwwAAAAC/help-shouting.gif");
+					db.setColor(new java.awt.Color(0xB00D03));
+					Discord.getJDA().getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
+//					Discord.writetickets( player.getDisplayName() + "**__[HelpDB] __** ** is requesting help, type ::helpdb ingame to view their request. **");
 				}
 			}
 			player.getPA().removeAllWindows();

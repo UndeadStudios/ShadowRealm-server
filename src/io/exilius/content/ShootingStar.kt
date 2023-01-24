@@ -7,12 +7,16 @@ import io.exilius.model.entity.player.Position
 import io.exilius.model.world.objects.GlobalObject
 import io.exilius.util.Misc
 import io.exilius.util.Stopwatch
+import io.exilius.util.discord.Discord
+import net.dv8tion.jda.api.EmbedBuilder
+import java.awt.Color
 import java.util.function.Consumer
+
 
 object ShootingStar {
     private const val TIME = 1800000
     @JvmField
-    var MAXIMUM_MINING_AMOUNT = 250
+    var MAXIMUM_MINING_AMOUNT = 600
     private val timer = Stopwatch().reset()
     @JvmField
     var CRASHED_STAR: CrashedStar? = null
@@ -26,7 +30,7 @@ object ShootingStar {
     @JvmStatic
     fun spawnStar() {
         if (CRASHED_STAR == null) {
-            PlayerHandler.getPlayers().forEach(Consumer { p: Player -> })
+            PlayerHandler.getPlayers().forEach(Consumer { _: Player -> })
             if (timer.elapsed(TIME.toLong())) {
                 var locationData = random
                 if (location != null) {
@@ -34,6 +38,13 @@ object ShootingStar {
                         locationData = random
                     }
                 }
+
+                val eb = EmbedBuilder()
+                eb.setTitle("A Shooting Star Has Fallen!")
+                eb.setDescription(locationData.clue)
+                eb.setImage("https://oldschool.runescape.wiki/images/Shooting_Star_crashing.gif?2f51a")
+                eb.setColor(Color(0xB00D03))
+                Discord.getJDA().getTextChannelById("1064970750408265878")!!.sendMessageEmbeds(eb.build()).queue()
                 location = locationData
                 CRASHED_STAR = CrashedStar(GlobalObject(STAR_IDS+Misc.random(6), locationData.spawnPos), locationData)
                 Server.getGlobalObjects().add(CRASHED_STAR!!.starObject)
@@ -67,7 +78,7 @@ object ShootingStar {
                     p.sendMessage("The star has been fully mined.")
                 }
             }
-            PlayerHandler.executeGlobalMessage("@pur@The star is forcasted to crash again in one hour!")
+            PlayerHandler.executeGlobalMessage("@pur@The star is forecasted to crash again in one hour!")
             Server.getGlobalObjects().remove(CRASHED_STAR!!.starObject)
             CRASHED_STAR = null
         }

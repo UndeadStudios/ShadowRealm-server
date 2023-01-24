@@ -180,6 +180,9 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelFutureListener;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1723,11 +1726,15 @@ public class Player extends Entity {
         this.protectionPrayersShiftRight = protectionPrayersShiftRight;
     }
 
+    @SneakyThrows
     public boolean isDisconnected() {
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         return disconnected;
     }
 
+    @SneakyThrows
     public void setDisconnected(boolean disconnected) {
+       // Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         this.disconnected = disconnected;
     }
 
@@ -1767,6 +1774,7 @@ public class Player extends Entity {
         return getOpenInterface() == interfaceId;
     }
 
+    @SneakyThrows
     public void attemptLogout() {
         DuelSession duelSession = (DuelSession) Server.getMultiplayerSessionListener().getMultiplayerSession(this, MultiplayerSessionType.DUEL);
         if (Objects.nonNull(duelSession) && duelSession.getStage().getStage() > MultiplayerSessionStage.REQUEST) {
@@ -1799,19 +1807,24 @@ public class Player extends Entity {
             properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
+            //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         }
     }
 
     /**
      * Force the player to immediately disconnect from the game.
      */
+    @SneakyThrows
     public void forceLogout() {
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         forceLogout = true;
     }
 
 
+    @SneakyThrows
     public void setDisconnected() {
         setDisconnected(true);
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         disconnectTime = System.currentTimeMillis();
     }
 
@@ -1826,11 +1839,14 @@ public class Player extends Entity {
                 || !bot && System.currentTimeMillis() - lastPacketReceived > 30000;
     }
 
+    @SneakyThrows
     public void destruct() {
         if (destructed)
             return;
         destructed = true;
+        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         getPA().sendLogout();
+
 
         if (session != null && session.isOpen()) {
             session.writeAndFlush(new PacketBuilder(109).toPacket()).addListener(ChannelFutureListener.CLOSE);
@@ -1960,6 +1976,7 @@ public class Player extends Entity {
         return getIndex() > 0;
     }
 
+    @SneakyThrows
     public void finishLogin() {
         Server.getLogging().write(new ConnectionLog(this, true, null));
         queuedLoginActions.forEach(it -> it.accept(this));
@@ -2023,10 +2040,12 @@ public class Player extends Entity {
             sendMessage("@bla@Welcome back to " + Configuration.SERVER_NAME + ", " + getDisplayNameFormatted() + ".");
             sendMessage("@gre@Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!");
             sendMessage("@red@Remember to check out the battle pass and claim rewards for levels! use ::bp");
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         } else {
             sendMessage("@bla@Welcome to " + Configuration.SERVER_NAME + ", don't forget to join the <col=255>::discord</col>!");
             sendMessage("@gre@Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!");
             sendMessage("@red@Remember to check out the battle pass and claim rewards for levels! use ::bp");
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         }
 
         if (Reclaim.isReclaimPeriod() && Server.isPublic()) {
@@ -2594,6 +2613,7 @@ public class Player extends Entity {
         setTickable(null);
     }
 
+    @SneakyThrows
     public void process() {
         //getDonationRewards().tick();
         if (getOpenInterface() == DailyTaskInterface.interfaceId) {
@@ -2609,11 +2629,12 @@ public class Player extends Entity {
             getCannon().tick(this);
         }
         if (logoutTimer.finished()) {
+          //  Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
             properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
             logoutTimer.stop();
-        }
+   }
         // If player hasn't completed tutorial, no dialogues are open and mode selection interface isn't open, then we open it.
         if (!isCompletedTutorial()
                 && (getDialogueBuilder() == null || getDialogueBuilder().getCurrent() == null)

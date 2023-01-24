@@ -127,7 +127,7 @@ rare:
       minimum: 1
       maximum: 1
 very_rare:
-  accessibility: 10000
+  accessibility: 1000
   items:
   - item: 28025
     minimum: 1

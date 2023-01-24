@@ -25,7 +25,7 @@ common:
       minimum: 2500000
       maximum: 2500000
 uncommon:
-  accessibility: 50
+  accessibility: 8
   items:
     - name: "vote ticket"
       minimum: 2
@@ -43,7 +43,7 @@ uncommon:
       minimum: 5000000
       maximum: 10000000
 rare:
-  accessibility: 120
+  accessibility: 12
   items:
     - item: 6769
       minimum: 1
@@ -58,7 +58,7 @@ rare:
       minimum: 3
       maximum: 10
 very_rare:
-  accessibility: 5000
+  accessibility: 25
   items:
     - item: 6769
       minimum: 1

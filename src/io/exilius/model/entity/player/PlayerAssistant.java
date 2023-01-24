@@ -64,6 +64,10 @@ import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.net.outgoing.messages.ComponentVisibility;
 import io.exilius.util.Misc;
 import io.exilius.util.Stream;
+import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -873,10 +877,13 @@ public class PlayerAssistant {
 
 	}
 
+	@SneakyThrows
 	public void sendLogout() {
 		if (c.getOutStream() != null) {
 			c.getOutStream().createFrame(109);
 			c.flushOutStream();
+			Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+
 		}
 	}
 

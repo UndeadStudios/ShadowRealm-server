@@ -2,6 +2,7 @@ package io.exilius;
 
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import io.exilius.content.DiscordConnection;
 import io.exilius.content.minigames.CastleWars;
 import io.exilius.model.AttributesSerializable;
 import io.exilius.model.cycleevent.EventHandler;
@@ -29,6 +30,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import net.dv8tion.jda.api.EmbedBuilder;
 import org.flywaydb.core.Flyway;
 import org.slf4j.LoggerFactory;
 import sun.misc.Unsafe;
@@ -175,12 +177,18 @@ public class Server {
                     Configuration.DISABLE_CHANGE_ADDRESS_CAPTCHA = true;
                     Configuration.DISABLE_CAPTCHA_EVERY_LOGIN = true;
                 }
-
                 bindPorts();
+                if (isPublic()) {
+                    EmbedBuilder db = new EmbedBuilder();
+                    db.setTitle("Exilius Server Status");
+                    db.setDescription("@here Server is now online!");
+                    db.setImage("https://endless-os.com/logo.png");
+                    db.setColor(new java.awt.Color(0xB00D03));
+                    Discord.getJDA().getTextChannelById("1064974101611040829").sendMessageEmbeds(db.build()).queue();
+                }
                 long endTime = System.nanoTime();
                 long elapsed = endTime - startTime;
                 System.out.println(Configuration.SERVER_NAME + " has successfully started up in " + TimeUnit.SECONDS.convert(elapsed, TimeUnit.NANOSECONDS)+ " seconds.");
-                Discord.writeServerStatus("** Server is now online! **");
             } catch (Exception e) {
                 logger.error("An error occurred while starting the server.", e);
                 e.printStackTrace();
@@ -188,7 +196,9 @@ public class Server {
             }
         }).start();
     }
-
+    public static long getEnd(long ticks) {
+        return getTickCount() + ticks;
+    }
     public static void disableWarning() {
         try {
             Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");

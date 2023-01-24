@@ -7,6 +7,7 @@ import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ImmutableItem;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.sql.*;
 
@@ -51,12 +52,10 @@ public class Votes implements Runnable  {
 
             String name = player.getLoginName();//.replace(" ", "_");
             ResultSet rs = executeQuery("SELECT * FROM votes WHERE username='"+name+"' AND claimed=0 AND voted_on != -1");
-
             while (rs.next()) {
                 String ipAddress = rs.getString("ip_address");
                 int siteId = rs.getInt("site_id");
                 switch (siteId) {// add products according to their ID in the ACP
-
 
                     case 1: // example
                         String message = "Vote System:" + player.getLoginName() + " has just voted on Rune-locus";

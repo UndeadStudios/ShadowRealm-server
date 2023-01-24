@@ -160,7 +160,7 @@ public class GroupIronmanRepository {
                 logger.debug("Removed player from online group on logout player={}, group={}", player, group);
                 if (group.getOnline().isEmpty()) {
                     group.setCollectionLog(null);
-                    logger.debug("Disposing group collection log because all players are offine in group {}", group);
+                    logger.debug("Disposing group collection log because all players are offline in group {}", group);
                 }
             }
         });
