@@ -35,7 +35,7 @@ public class DiscordConnection extends ListenerAdapter {
 //		builder.addEventListeners(new PrivateMessageReceived());
         try {
             jda = builder.build();
-            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1.6)) + " players!"));
+            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
         } catch (LoginException e) {
             e.printStackTrace();
         }

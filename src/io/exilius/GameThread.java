@@ -10,6 +10,10 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.net.ChannelHandler;
 import io.exilius.net.login.RS2LoginProtocol;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,6 +54,7 @@ public class GameThread extends Thread {
         tickables.add(i -> BattlePassHandler.Companion.checkSeasonExpiry());
     }
 
+    @SneakyThrows
     private void tick() {
         for (Consumer<GameThread> tickable : tickables) {
             try {
@@ -77,6 +82,7 @@ public class GameThread extends Thread {
             joiner.add("memory=" + Misc.formatMemory(usedMemory) + "/" + Misc.formatMemory(totalMemory));
 
             logger.info("Status [" + joiner.toString() + "]");
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         }
     }
 

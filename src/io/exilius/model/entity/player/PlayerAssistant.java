@@ -882,7 +882,7 @@ public class PlayerAssistant {
 		if (c.getOutStream() != null) {
 			c.getOutStream().createFrame(109);
 			c.flushOutStream();
-			Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+			Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
 
 		}
 	}

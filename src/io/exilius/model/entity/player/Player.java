@@ -1728,13 +1728,13 @@ public class Player extends Entity {
 
     @SneakyThrows
     public boolean isDisconnected() {
-        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         return disconnected;
     }
 
     @SneakyThrows
     public void setDisconnected(boolean disconnected) {
-       // Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+       // Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         this.disconnected = disconnected;
     }
 
@@ -1807,7 +1807,7 @@ public class Player extends Entity {
             properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
-            //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+            //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         }
     }
 
@@ -1816,7 +1816,7 @@ public class Player extends Entity {
      */
     @SneakyThrows
     public void forceLogout() {
-        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         forceLogout = true;
     }
 
@@ -1824,7 +1824,8 @@ public class Player extends Entity {
     @SneakyThrows
     public void setDisconnected() {
         setDisconnected(true);
-        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         disconnectTime = System.currentTimeMillis();
     }
 
@@ -1844,7 +1845,7 @@ public class Player extends Entity {
         if (destructed)
             return;
         destructed = true;
-        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         getPA().sendLogout();
 
 
@@ -2040,12 +2041,12 @@ public class Player extends Entity {
             sendMessage("@bla@Welcome back to " + Configuration.SERVER_NAME + ", " + getDisplayNameFormatted() + ".");
             sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
             sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
-            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         } else {
             sendMessage("@bla@Welcome to " + Configuration.SERVER_NAME + ", don't forget to join the <col=255>::discord</col>!");
             sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
             sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
-            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         }
 
         if (Reclaim.isReclaimPeriod() && Server.isPublic()) {
@@ -2629,7 +2630,7 @@ public class Player extends Entity {
             getCannon().tick(this);
         }
         if (logoutTimer.finished()) {
-          //  Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
+          //  Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
             properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
