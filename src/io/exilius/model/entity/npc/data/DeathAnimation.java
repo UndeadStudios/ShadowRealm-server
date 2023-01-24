@@ -148,9 +148,13 @@ public class DeathAnimation extends NPCHandler {
             case 2479:
             case 2480:
                 return 6256;
-            case 9032://bear
-            case 2838:
-            case 3423:
+            case Npcs.BLACK_BEAR:
+            case Npcs.GRIZZLY_BEAR:
+            case Npcs.GRIZZLY_BEAR_2:
+            case Npcs.ANGRY_BEAR:
+            case Npcs.REANIMATED_BEAR:
+            case Npcs.ANGRY_BEAR_2:
+            case Npcs.CRYSTALLINE_BEAR:
                 return 4929;
             case 9033://dragon
                 return 92;

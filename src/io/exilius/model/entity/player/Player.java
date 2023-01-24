@@ -2038,13 +2038,13 @@ public class Player extends Entity {
         potions.resetOverload();
         if (completedTutorial) {
             sendMessage("@bla@Welcome back to " + Configuration.SERVER_NAME + ", " + getDisplayNameFormatted() + ".");
-            sendMessage("@gre@Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!");
-            sendMessage("@red@Remember to check out the battle pass and claim rewards for levels! use ::bp");
+            sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
+            sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
             Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         } else {
             sendMessage("@bla@Welcome to " + Configuration.SERVER_NAME + ", don't forget to join the <col=255>::discord</col>!");
-            sendMessage("@gre@Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!");
-            sendMessage("@red@Remember to check out the battle pass and claim rewards for levels! use ::bp");
+            sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
+            sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
             Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1.6) + " players!"));
         }
 
@@ -2069,27 +2069,27 @@ public class Player extends Entity {
             getEventCalendar().progress(EventChallenge.HAVE_126_COMBAT);
         }
         if (getRights().getPrimary().equals(Right.HELPER)) {
-            PlayerHandler.executeGlobalMessage("[@red@helper@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@red@<shad=0>Helper</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.MODERATOR)) {
-            PlayerHandler.executeGlobalMessage("[@red@Mod@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@red@<shad=0>Mod</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.GAME_DEVELOPER)) {
-            PlayerHandler.executeGlobalMessage("[@red@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@red@<shad=0>Developer</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && (getLoginName().equalsIgnoreCase("osiris"))) {
-            PlayerHandler.executeGlobalMessage("[@yel@Admin@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@yel@<shad=0>Admin</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("epic")) {
-            PlayerHandler.executeGlobalMessage("[@cya@Owner & Main Dev@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@cya@<shad=0>Owner & Main Dev</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("fearful")) {
-            PlayerHandler.executeGlobalMessage("[@pur@Owner@bla@] @gre@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@pur@<shad=0>Owner</shad>@bla@] @gre@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
-            PlayerHandler.executeGlobalMessage("[@blu@Security manager@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Security manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
             PlayerHandler.executeGlobalMessage("[@red@Owner@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("fennix")) {
-            PlayerHandler.executeGlobalMessage("[<col=212>Owner & Dev@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[<col=212><shad=0>Owner & Dev</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("sgsrocks")) {
             PlayerHandler.executeGlobalMessage("[<col=000049><shad=B4B400>Co-Owner & Dev</col></shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
-            PlayerHandler.executeGlobalMessage("[@blu@Developer@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Developer</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }
         if (getSlayer().superiorSpawned) {
             getSlayer().superiorSpawned = false;

@@ -165,10 +165,6 @@ public class AttackAnimation extends NPCHandler {
 		case 3286:
 		case 3287:
 			return 164;
-		case 9032://bear
-		case 2838:
-		case 3423:
-			return 4925;
 		case 9033://dragon
 			if (npc.getAttackType() == CombatType.DRAGON_FIRE) {
 				return 84;
@@ -902,6 +898,14 @@ public class AttackAnimation extends NPCHandler {
 			case Npcs.BABY_BLACK_DRAGON_2:
 			case Npcs.BABY_BLACK_DRAGON_3:
 			return 25;
+			case Npcs.BLACK_BEAR:
+			case Npcs.GRIZZLY_BEAR:
+			case Npcs.GRIZZLY_BEAR_2:
+			case Npcs.ANGRY_BEAR:
+			case Npcs.REANIMATED_BEAR:
+			case Npcs.ANGRY_BEAR_2:
+			case Npcs.CRYSTALLINE_BEAR:
+				return 4925;
 			case 247: // Red dragon
 			case 248: // Red dragon
 			case 249: // Red dragon
