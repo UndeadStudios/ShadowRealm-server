@@ -434,13 +434,14 @@ public class TeleportInterface2 {
         Wilderness_Agility_Course(7, 103003, false, "Teleports you to Wilderness Agility Course @red@(52)", new Position(3003, 3934, 0)),
         Wildy_event(7, 103008, false, "Teleports you to the Wildy event", new Position(MonsterHunt.getCurrentLocation().getX(), MonsterHunt.getCurrentLocation().getY(), 0)),
         King_black_dragon(7, 103013, false, "Teleports you to King Black Dragon @red@(42 Wild)", new Position(3005, 3849, 0)),
-        CALLISTO(7, 102209, false, "Teleports you to Callisto @red@(40 Wild)", new Position(3322, 3835,0)),
-        Vetion(7, 103018, false, "Teleports you to Vet'ion @red@(40 Wild)", new Position(3200, 3794, 0)),
+         Vetion(7, 103018, false, "Teleports you to Vet'ion @red@(40 Wild)", new Position(3200, 3794, 0)),
         Scorpia(7, 103023, false, "Teleports you to Scorpia @red@(54 Wild)", new Position(3233, 3945, 0)),
         Venenatis(7, 103028, false, "Teleports you to Venenatis @red@(28 Wild)", new Position(3345, 3754, 0)),
         Chaos_Elemental(7, 103033, false, "Teleports you to Chaos Elemental @red@(50 Wild)", new Position(3285, 3925, 0)),
         Chaos_Fanatic(7, 103038, false, "Teleports you to Chaos Fanatic @red@(41 Wild)", new Position(2978, 3833, 0)),
         Chaos_Archaeologist(7, 103043, false, "Teleports you to Crazy Archaeologist @red@(23 Wild)", new Position(2984, 3713, 0)),
+
+        CALLISTO(7, 103048, false, "Teleports you to Callisto @red@(40 Wild)", new Position(3322, 3835,0)),
 
         WOODCUTTING_GUILD(8, 102209, true, "Teleports you to Woodcutting guild", new Position(1658, 3505,0)),
         GNOME_AGILITY_COURSE(8, 102214, true, "Teleports you to Gnome agility course", new Position(2477, 3438, 0)),

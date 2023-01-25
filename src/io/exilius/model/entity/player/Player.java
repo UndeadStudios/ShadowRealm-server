@@ -2080,7 +2080,7 @@ public class Player extends Entity {
         } else if (getLoginName().equals("epic")) {
             PlayerHandler.executeGlobalMessage("[@cya@<shad=0>Owner & Main Dev</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("fearful")) {
-            PlayerHandler.executeGlobalMessage("[@pur@<shad=0>Owner</shad>@bla@] @gre@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+            PlayerHandler.executeGlobalMessage("[@pur@<shad=0>Owner</shad>@bla@] @pur@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Security manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {

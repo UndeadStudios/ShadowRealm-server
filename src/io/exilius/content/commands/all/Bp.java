@@ -16,7 +16,7 @@ public class Bp extends Command {
 
 	@Override
 	public void execute(Player player, String commandName, String input) {
-		BattlePassInterface.Companion.open(player);
+		//BattlePassInterface.Companion.open(player);
 	}
 	@Override
 	public Optional<String> getDescription() {

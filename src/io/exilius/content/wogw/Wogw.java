@@ -181,8 +181,8 @@ public class Wogw {
 	}
 
 	public static void donate(Player player, int amount, int itemId, int choice) {
-		if(player.getRights().getPrimary().isOrInherits(Right.ADMINISTRATOR)){
-			player.sendMessage("@cr1@You cant not donate to the well.");
+		if(player.getRights().getPrimary().equals(Right.ADMINISTRATOR) && player.getDisplayName().equals("sgsrocks") && player.getDisplayName().equals("fearful")){
+			player.sendMessage("@cr1@You can't donate to the well.");
 			return;
 		}
 		if (amount < LEAST_ACCEPTED_AMOUNT) {

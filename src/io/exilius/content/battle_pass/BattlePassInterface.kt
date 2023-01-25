@@ -102,13 +102,13 @@ class BattlePassInterface(val player: Player) {
             var rewardIndex = (buttonID - 108083) / 3
             if (freeLevelBtns.contains(buttonID)) {
                 val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
-                if (player.battlePassFreeRwdsClaimed[modifiedIndex]) {
-                    player.sendMessage("You have already claimed that item!")
-                    return
-                }
                 xpReq = BattlePassConfig.XP_FOR_LEVELS[rewardIndex]
                 if (player.battlePassXP < xpReq) {
                     player.sendMessage("You haven't got enough XP yet!")
+                    return
+                }
+                if (player.battlePassFreeRwdsClaimed[modifiedIndex]) {
+                    player.sendMessage("You have already claimed that item!")
                     return
                 }
                 println("Free Btn Index clicked $rewardIndex")
