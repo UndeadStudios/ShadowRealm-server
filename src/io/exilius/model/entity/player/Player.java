@@ -599,7 +599,7 @@ public class Player extends Entity {
     private final YoutubeMysteryBox youtubeMysteryBox = new YoutubeMysteryBox(this);
     private final UltraMysteryBox ultraMysteryBox = new UltraMysteryBox(this);
     private final NormalMysteryBox normalMysteryBox = new NormalMysteryBox(this);
-
+    private final MoneyBox moneyBox = new MoneyBox(this);
     private final Present present = new Present(this);
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
@@ -2023,6 +2023,7 @@ public class Player extends Entity {
         inDonatorBox = false;
         getSuperMysteryBox().canMysteryBox();
         getNormalMysteryBox().canMysteryBox();
+        getMoneyBox().canMysteryBox();
         getUltraMysteryBox().canMysteryBox();
         getYoutubeMysteryBox().canMysteryBox();
         getFoeMysteryBox().canMysteryBox();
@@ -5220,7 +5221,9 @@ public class Player extends Entity {
     public NormalMysteryBox getNormalBoxInterface() {
         return normalMysteryBox;
     }
-
+public MoneyBox getMoneyBoxInterface() {
+        return moneyBox;
+}
     public Present getPresent() {
         return present;
     }
@@ -5722,7 +5725,9 @@ public class Player extends Entity {
     public NormalMysteryBox getNormalMysteryBox() {
         return normalMysteryBox;
     }
-
+    public MoneyBox getMoneyBox() {
+        return moneyBox;
+    }
     public boolean isInTradingPost() {
         return inTradingPost;
     }

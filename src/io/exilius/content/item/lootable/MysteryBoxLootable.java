@@ -110,12 +110,13 @@ public abstract class MysteryBoxLootable implements Lootable {
                 MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
                 GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
                 final int NOT_PRIZE_ID = NotPrize.getId();
-                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, 1);
+                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, NotPrize.getAmount());
             }
         } else {
             for (int i = spinNum * 50 + 16; i < spinNum * 50 + 66; i++) {
                 MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-                final int NOT_PRIZE_ID = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity())).getId();
+                GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
+                final int NOT_PRIZE_ID = NotPrize.getId();
                 sendItem(i, (spinNum + 1) * 50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
             }
         }
@@ -158,7 +159,7 @@ public abstract class MysteryBoxLootable implements Lootable {
 
     public void quickOpen() {
 
-        if (player.getUltraInterface().isActive() || player.getSuperBoxInterface().isActive() || player.getNormalBoxInterface().isActive() || player.getFoeInterface().isActive()) {
+        if (player.getUltraInterface().isActive() || player.getSuperBoxInterface().isActive() || player.getNormalBoxInterface().isActive() || player.getFoeInterface().isActive() || player.getMoneyBoxInterface().isActive()) {
             player.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
 
             return;
@@ -211,6 +212,7 @@ public abstract class MysteryBoxLootable implements Lootable {
         // Can now spin again
         canMysteryBox = true;
         player.getNormalMysteryBox().canMysteryBox();
+        player.getMoneyBox().canMysteryBox();
         player.getUltraMysteryBox().canMysteryBox();
         player.getSuperMysteryBox().canMysteryBox();
         player.getFoeMysteryBox().canMysteryBox();

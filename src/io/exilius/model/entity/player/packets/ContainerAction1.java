@@ -156,6 +156,8 @@ public class ContainerAction1 implements PacketType {
 					case 8167:
 							c.getFoeMysteryBox().roll(c);
 						break;
+					case 28827:
+						c.getMoneyBox().roll(c);
 				}
 				break;
 		

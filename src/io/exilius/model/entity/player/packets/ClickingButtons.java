@@ -455,13 +455,13 @@ public class ClickingButtons implements PacketType {
 			c.getBH().teleportToTarget();
 			break;
 		case 183156:
-			if (c.inDonatorBox == false && !c.getUltraInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive()) {
+			if (c.inDonatorBox == false && !c.getUltraInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive() && !c.getMoneyBoxInterface().isActive()) {
 				CheatEngineBlock.DonatorBoxAlert(c);
 				return;
 			}
 			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) ||
 					!(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) ||
-					!(c.getYoutubeMysteryBox().canMysteryBox)
+					!(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)
 			) {
 				c.getPA().showInterface(47000);
 				c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
@@ -484,6 +484,9 @@ public class ClickingButtons implements PacketType {
 			case 8167:
 				c.getFoeMysteryBox().spin();
 				break;
+				case 28827:
+					c.getMoneyBox().spin();
+					break;
 			}
 			break;
 		case 117112:

@@ -75252,3 +75252,9 @@
   requirements:
     - skill: "DEFENCE"
       level: 70
+- id: 28827
+  name: "Money box"
+  description: "Oooh, I wonder what could be inside?"
+  shopValue: 1
+
+
