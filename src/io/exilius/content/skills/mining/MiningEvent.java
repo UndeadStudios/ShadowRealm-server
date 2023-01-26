@@ -262,12 +262,12 @@ public class MiningEvent extends Event<Player> {
          */
         osrsExperience = mineral.getExperience() + mineral.getExperience() / 10 * pieces;
         plr.getPA().addSkillXPMultiplied((int) osrsExperience, Skill.MINING.getId(), true);
-        System.out.println("player : " + plr.getLoginName() + " is mining minderal: " + mineral);
+        //System.out.println("player : " + plr.getLoginName() + " is mining mineral: " + mineral);
         switch (mineral) {
             case ADAMANT:
 
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_ADAMANT_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                    //System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
@@ -275,7 +275,7 @@ public class MiningEvent extends Event<Player> {
             case AMETHYST:
             case ADAMANT2:
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_AMATHYST_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                    //System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
@@ -286,7 +286,7 @@ public class MiningEvent extends Event<Player> {
                     plr.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
                 }
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_COAL_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                    //System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
@@ -294,7 +294,7 @@ public class MiningEvent extends Event<Player> {
             case COPPER:
 
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_COPPER_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                    //System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
@@ -307,7 +307,7 @@ public class MiningEvent extends Event<Player> {
                 break;
             case GOLD:
             case GOLD2:
-                System.out.println("MINING GOLD BAYBAYYYYYYYYYY");
+                //System.out.println("MINING GOLD BAYBAYYYYYYYYYY");
 
                 if (Boundary.isIn(plr, Boundary.TZHAAR_CITY_BOUNDARY)) {
                     plr.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.MINE_GOLD_KAR);
@@ -315,7 +315,7 @@ public class MiningEvent extends Event<Player> {
                 if (Boundary.isIn(plr, Boundary.RELLEKKA_BOUNDARY)) {
                 }
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_GOLD_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                   // System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }
@@ -332,7 +332,7 @@ public class MiningEvent extends Event<Player> {
                     plr.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
                 }
                 if (plr.getCurrentDailyTask().getTaskName().equals(DailyTaskData.MINE_IRON_ORE.getDailyTask().getTaskName())) {
-                    System.out.println("MINING Task - gold thingy......");
+                   // System.out.println("MINING Task - gold thingy......");
 
                     DailyTaskHandler.Companion.handleProgress(plr, 1);
                 }

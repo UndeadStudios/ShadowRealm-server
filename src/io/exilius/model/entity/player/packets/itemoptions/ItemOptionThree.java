@@ -5,9 +5,7 @@ import io.exilius.content.combat.magic.SanguinestiStaff;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dialogue.impl.AmethystChiselDialogue;
-import io.exilius.content.item.lootable.impl.NormalMysteryBox;
-import io.exilius.content.item.lootable.impl.SuperMysteryBox;
-import io.exilius.content.item.lootable.impl.UltraMysteryBox;
+import io.exilius.content.item.lootable.impl.*;
 import io.exilius.content.items.Degrade;
 import io.exilius.content.items.Degrade.DegradableItem;
 import io.exilius.content.items.PvpWeapons;
@@ -213,6 +211,12 @@ public class ItemOptionThree implements PacketType {
                 break;
             case 13346:
                 new UltraMysteryBox(c).quickOpen();
+                break;
+            case 6830:
+                new Raids2mbox(c).quickOpen();
+                break;
+            case 10025:
+                new Raids1mbox(c).quickOpen();
                 break;
             case 6199:
                 new NormalMysteryBox(c).quickOpen();

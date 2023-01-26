@@ -24,21 +24,22 @@ public class FireOfDestruction {
             c.sendMessage("You do not have an item to burn.");
             return;
         }
-        int chance = Misc.random(4);
+        int chance = Misc.random(3);
         int darkPetReward = findDarkVersion(c, itemId);
 
 
         c.getItems().deleteItem(itemId, 1);
-        if (chance == 4) {
+        if (chance == 3) {
             c.getItems().addItem(darkPetReward, 1);
             if (!c.getRights().hasStaffPosition()) {
                 PlayerHandler.executeGlobalMessage("@bla@[@red@@cr18@Dark Pet@bla@] " + c.getDisplayName() + "@pur@ has just received a @bla@" + ItemAssistant.getItemName(darkPetReward) + "!");
             }
             } else {
             //gives back 15% to 25% of foe pet value in coins at 1k gp per foe
-            int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 1000L * 0.15);
-            int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 1000L / 10L));
-            c.getItems().addItemUnderAnyCircumstance(995, base + random);
+//            int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 500L * 0.10);
+//            int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 500L / 5L));
+            c.getItems().addItemUnderAnyCircumstance(995, 10_000_000);
+            c.getItems().addItemUnderAnyCircumstance(692, 1);
             if (!c.getRights().hasStaffPosition()) {
                 PlayerHandler.executeGlobalMessage("@bla@[@red@Dark Pet@bla@] " + c.getDisplayName() + "@pur@ sacrificed his @bla@"
                         + ItemAssistant.getItemName(itemId) + " @pur@and received only gp!");

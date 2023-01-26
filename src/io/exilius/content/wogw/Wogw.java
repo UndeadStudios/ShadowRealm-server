@@ -141,7 +141,7 @@ public class Wogw {
 	}
 
 	public static void donateItem(Player player, int itemId) {
-		if(player.getRights().getPrimary().equals(Right.ADMINISTRATOR) && player.getDisplayName().equals("sgsrocks") && player.getDisplayName().equals("fearful")){
+		if(player.getRights().getPrimary().equals(Right.ADMINISTRATOR) && player.getDisplayName().equals("sgsrocks") && player.getDisplayName().equals("fearful") && player.getRights().getDisplayedRights().equals(Right.ADMINISTRATOR)){
 			player.sendMessage("@cr1@You can't donate to the well.");
 			return;
 		}

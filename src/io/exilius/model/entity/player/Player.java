@@ -598,6 +598,8 @@ public class Player extends Entity {
     public int boxCurrentlyUsing;
     private final YoutubeMysteryBox youtubeMysteryBox = new YoutubeMysteryBox(this);
     private final UltraMysteryBox ultraMysteryBox = new UltraMysteryBox(this);
+    private final Raids1mbox raidsmysterybox = new Raids1mbox(this);
+    private final Raids2mbox raids2mysterybox = new Raids2mbox(this);
     private final NormalMysteryBox normalMysteryBox = new NormalMysteryBox(this);
     private final MoneyBox moneyBox = new MoneyBox(this);
     private final Present present = new Present(this);
@@ -2024,6 +2026,8 @@ public class Player extends Entity {
         getSuperMysteryBox().canMysteryBox();
         getNormalMysteryBox().canMysteryBox();
         getMoneyBox().canMysteryBox();
+        getRaidsmbox().canMysteryBox();
+        getRaids2mbox().canMysteryBox();
         getUltraMysteryBox().canMysteryBox();
         getYoutubeMysteryBox().canMysteryBox();
         getFoeMysteryBox().canMysteryBox();
@@ -5213,6 +5217,12 @@ public class Player extends Entity {
     public UltraMysteryBox getUltraInterface() {
         return ultraMysteryBox;
     }
+    public Raids2mbox getraids2mInterface() {
+        return raids2mysterybox;
+    }
+    public Raids1mbox getraids1mInterface() {
+        return raidsmysterybox;
+    }
 
     public FoeMysteryBox getFoeInterface() {
         return foeMysteryBox;
@@ -5716,6 +5726,12 @@ public MoneyBox getMoneyBoxInterface() {
 
     public UltraMysteryBox getUltraMysteryBox() {
         return ultraMysteryBox;
+    }
+    public Raids2mbox getRaids2mbox() {
+        return raids2mysterybox;
+    }
+    public Raids1mbox getRaidsmbox() {
+        return raidsmysterybox;
     }
 
     public YoutubeMysteryBox getYoutubeMysteryBox() {

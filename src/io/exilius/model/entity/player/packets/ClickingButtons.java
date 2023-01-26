@@ -455,13 +455,13 @@ public class ClickingButtons implements PacketType {
 			c.getBH().teleportToTarget();
 			break;
 		case 183156:
-			if (c.inDonatorBox == false && !c.getUltraInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive() && !c.getMoneyBoxInterface().isActive()) {
+			if (c.inDonatorBox == false && !c.getUltraInterface().isActive() && !c.getraids1mInterface().isActive() && !c.getraids2mInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive() && !c.getMoneyBoxInterface().isActive()) {
 				CheatEngineBlock.DonatorBoxAlert(c);
 				return;
 			}
 			if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) ||
 					!(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) ||
-					!(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)
+					!(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)|| !(c.getRaids2mbox().canMysteryBox)|| !(c.getRaidsmbox().canMysteryBox)
 			) {
 				c.getPA().showInterface(47000);
 				c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
@@ -472,9 +472,9 @@ public class ClickingButtons implements PacketType {
 			case 12789:
 				c.getYoutubeMysteryBox().spin();
 				break;
-			case 13346: //ultra rare
-				c.getUltraMysteryBox().spin();
-				break;
+				case 13346: //ultra rare
+					c.getUltraMysteryBox().spin();
+					break;
 			case 6199:
 				c.getNormalMysteryBox().spin();
 				break;
@@ -486,6 +486,12 @@ public class ClickingButtons implements PacketType {
 				break;
 				case 28827:
 					c.getMoneyBox().spin();
+					break;
+				case 6830:
+					c.getRaids2mbox().spin();
+					break;
+				case 10025:
+					c.getRaidsmbox().spin();
 					break;
 			}
 			break;

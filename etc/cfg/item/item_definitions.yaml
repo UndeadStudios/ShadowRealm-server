@@ -33061,8 +33061,8 @@
   description: "A bauble shaped like a gift painted yellow."
   shopValue: 1
 - id: 6830
-  name: "BETA BOX"
-  description: "A bauble shaped like a gift painted red."
+  name: "Raids 2 mbox"
+  description: "Raids 2 mystery"
   shopValue: 1
   untradeable: true
   undroppable: true
@@ -47970,8 +47970,8 @@
   description: "Null"
   shopValue: 1
 - id: 10025
-  name: "Magic box"
-  description: "Null"
+  name: "Raids 1 mbox"
+  description: "raids 1 mystery"
   shopValue: 600
   noteId: 10026
 - id: 10026

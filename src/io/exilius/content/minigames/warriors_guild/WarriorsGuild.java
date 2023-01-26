@@ -170,10 +170,10 @@ public class WarriorsGuild {
 	public void dropDefender(int x, int y) {
 		int amount = player.getItems().getItemAmount(8851);
 		if (isActive() && Boundary.isIn(player, CYCLOPS_BOUNDARY) && !Boundary.isIn(player, WAITING_ROOM_BOUNDARY) && amount > 1) {
-			int chance = chance();
+			int chance = 100;
 			int current = currentDefender();
 			int item = current == -1 ? DEFENDER_DATA[0][0] : nextDefender();
-			if (Misc.random(chance) == 0) {
+			if (Misc.random(chance) >= 75) {
 				player.getItems().addItem( item, 1);
 				player.sendMessage("@blu@The cyclops dropped a " + ItemAssistant.getItemName(item) + " in your inventory.", 600000);
 			}

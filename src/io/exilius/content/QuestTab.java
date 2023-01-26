@@ -157,8 +157,9 @@ public class QuestTab {
 
         player.getPA().sendFrame126("@or1@- KDR: @gre@"+ (double)(player.deathcount == 0 ? player.killcount + player.deathcount : player.killcount/player.deathcount), lines.get(index++));
 
-            player.getPA().sendFrame126("@or1@- Daily Task:", lines.get(index++));
-            player.getPA().sendFrame126("@gre@ " + player.getCurrentDailyTask().getTaskName(), lines.get(index++));
+        player.getPA().sendFrame126("@or1@- Daily Task:", lines.get(index++));
+        player.getPA().sendFrame126("@cya@ " + player.getCurrentDailyTask().getTaskName(), lines.get(index++));
+        player.getPA().sendFrame126("@gre@ " + player.getCurrentDailyTask().getProgress() + " / " + player.getCurrentDailyTask().getActionsRequired(), lines.get(index++));
 
         if (player.getSlayer().getTask().isEmpty()) {
             player.getPA().sendFrame126("@or1@- Slayer Task:", lines.get(index++));

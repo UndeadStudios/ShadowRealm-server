@@ -42,7 +42,7 @@ class BattlePassInterface(val player: Player) {
         }
 
         fun sendData(player: Player, pageSent: Int) {
-            println("page send: $pageSent")
+           // println("page send: $pageSent")
             var page = pageSent
             if (page > 4) {
                 page = 4
@@ -52,7 +52,7 @@ class BattlePassInterface(val player: Player) {
                 page = 0
                 return
             }
-            println("new page: $page")
+           // println("new page: $page")
             player.battlePassPage = page
             player.pa.sendString(pageStr, "Page ${page + 1}")
             player.pa.sendString(timeStr, getDaysUntilEndDate())
@@ -100,9 +100,12 @@ class BattlePassInterface(val player: Player) {
             val reward: GameItem?
             val xpReq: Long?
             var rewardIndex = (buttonID - 108083) / 3
+            //println("player.battlePassPage = ${player.battlePassPage}")
             if (freeLevelBtns.contains(buttonID)) {
                 val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
-                xpReq = BattlePassConfig.XP_FOR_LEVELS[rewardIndex]
+                //println("mod index = $modifiedIndex")
+                xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
+               // println("XP REQ = $xpReq")
                 if (player.battlePassXP < xpReq) {
                     player.sendMessage("You haven't got enough XP yet!")
                     return
@@ -111,14 +114,15 @@ class BattlePassInterface(val player: Player) {
                     player.sendMessage("You have already claimed that item!")
                     return
                 }
-                println("Free Btn Index clicked $rewardIndex")
+                //println("Free Btn Index clicked $rewardIndex")
                 reward = BattlePassHandler.freeRewards[modifiedIndex]
+                //println("Free reward for index = ${reward.id} x ${reward.amount} name: ${reward.def.name}")
                 player.battlePassFreeRwdsClaimed[modifiedIndex] = true
-                if (player.getInventory().hasRoomInInventory(ImmutableItem(reward.id))) {
+                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id))) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
-                    player.sendMessage("You don't have enough inventory space to claim this reward.")
-                    return
+                    player.items.addItemToBankOrDrop(reward.id, reward.amount)
+                    player.sendMessage("You don't have enough inventory so the reward was sent to bank.")
                 }
             } else if (premiumLevelBtns.contains(buttonID)) {
                 if (!player.battlePassPremiumUnlocked) {
@@ -126,25 +130,26 @@ class BattlePassInterface(val player: Player) {
                     return
                 }
                 rewardIndex-=4
-
-                xpReq = BattlePassConfig.XP_FOR_LEVELS[rewardIndex]
+                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
+               // println("Prem mod index: $modifiedIndex")
+                xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
+                //println("Prem XP req: $xpReq")
                 if (player.battlePassXP < xpReq) {
                     player.sendMessage("You haven't got enough XP yet!")
                     return
                 }
-                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
                 if (player.battlePassPremiumRwdsClaimed[modifiedIndex]) {
                     player.sendMessage("You have already claimed that item!")
                     return
                 }
-                println("Premium Btn Index clicked $rewardIndex")
+                //println("Premium Btn Index clicked $rewardIndex")
                 reward = BattlePassHandler.premiumRewards[modifiedIndex]
                 player.battlePassPremiumRwdsClaimed[modifiedIndex] = true
-                if (player.getInventory().hasRoomInInventory(ImmutableItem(reward.id))) {
+                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id))) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
-                    player.sendMessage("You don't have enough inventory space to claim this reward.")
-                    return
+                    player.items.addItemToBankOrDrop(reward.id, reward.amount)
+                    player.sendMessage("You don't have enough inventory so the reward was sent to bank.")
                 }
             } else {
                 return
@@ -163,7 +168,7 @@ class BattlePassInterface(val player: Player) {
                 purchaseBtn -> player.pa.sendFrame126("https://exiliusosrsps.everythingrs.com/services/store/", 12000)
                 else -> claimRewards(buttonID, player)
             }
-            println("Button being handled in BattlePass interface: $buttonID")
+            //println("Button being handled in BattlePass interface: $buttonID")
             return true
         }
     }

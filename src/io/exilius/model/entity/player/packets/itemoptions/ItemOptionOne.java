@@ -327,11 +327,6 @@ public class ItemOptionOne implements PacketType {
                 c.getDH().sendDialogues(361, Npcs.BOSS_POINT_SHOP);
                 break;
 
-        case 6830:   
-            c.getItems().deleteItem(6830, 1);
-            c.gfx100(263);
-            Starter.addStarterItems(c);
-            break;
 
             case 6829://yt video giveaway box tier 1
                 if (c.getItems().freeSlots() > 20) {
@@ -549,6 +544,32 @@ public class ItemOptionOne implements PacketType {
                 }
                 else if (c.getItems().playerHasItem(28827)) {
                     c.getMoneyBox().openInterface();
+                    c.inDonatorBox = true;
+                    c.stopMovement();
+                    return;
+                }
+                break;
+            case 10025:
+                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                    c.getPA().showInterface(47000);
+                    c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
+                    return;
+                }
+                else if (c.getItems().playerHasItem(10025)) {
+                    c.getRaidsmbox().openInterface();
+                    c.inDonatorBox = true;
+                    c.stopMovement();
+                    return;
+                }
+                break;
+            case 6830:
+                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                    c.getPA().showInterface(47000);
+                    c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
+                    return;
+                }
+                else if (c.getItems().playerHasItem(6830)) {
+                    c.getRaids2mbox().openInterface();
                     c.inDonatorBox = true;
                     c.stopMovement();
                     return;

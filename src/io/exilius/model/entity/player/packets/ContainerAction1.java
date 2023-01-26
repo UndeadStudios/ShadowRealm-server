@@ -128,8 +128,6 @@ public class ContainerAction1 implements PacketType {
 			}
 
 			break;
-
-
 			case 44022:
 			Listing.buyListing(c, removeSlot, 1);
 			break;
@@ -154,10 +152,17 @@ public class ContainerAction1 implements PacketType {
 						c.getSuperMysteryBox().roll(c);
 						break;
 					case 8167:
-							c.getFoeMysteryBox().roll(c);
+						c.getFoeMysteryBox().roll(c);
+						break;
+					case 6830:
+						c.getRaids2mbox().roll(c);
+						break;
+					case 10025:
+						c.getRaidsmbox().roll(c);
 						break;
 					case 28827:
 						c.getMoneyBox().roll(c);
+						break;
 				}
 				break;
 		

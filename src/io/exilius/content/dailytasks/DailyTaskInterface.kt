@@ -42,7 +42,7 @@ class DailyTaskInterface {
         }
 
         private fun sendTaskData(player: Player) {
-            println("Sending task data for player ${player.loginName}")
+            //println("Sending task data for player ${player.loginName}")
             if (player.openInterface != interfaceId) return
             val task = player.currentDailyTask ?: return
             player.pa.sendString(taskName, task.taskName)

@@ -64,11 +64,11 @@ public class PlayerSaveBackup {
         Preconditions.checkState(saveFileDirectory.exists(), "No save directory [" + saveFileDirectory + "] exists.");
         BattlePassHandler.Companion.checkSeasonExpiry();
         // dump sql database
-        try {
-            dumpMysqlDatabase();
-        } catch (Exception e) {
-            logger.error("Error while dumping mysql database", e);
-        }
+//        try {
+//            dumpMysqlDatabase();
+//        } catch (Exception e) {
+//            logger.error("Error while dumping mysql database", e);
+//        }
 
         // Create new backup and delete expired ones
         File created = createBackupFile(localDateTime, backupFileDirectory, saveFileDirectory);

@@ -4,10 +4,13 @@ name: "Vote Shop"
 items:
 - name: "vote crystal"
 - id: 2528
+  price: 10
 - name: "ring of wealth"
 - name: "Fury Ornament kit"
 - name: "ring of wealth scroll"
+  price: 150
 - name: "vote mystery box"
+  price: 1
 - name: "fire cape"
 - name: "dragon defender ornament kit"
   price: 50
@@ -21,20 +24,27 @@ items:
 - id: 22093
   price: 50
 - id: 13116
-  price: 640
+  price: 150
 - id: 13233
   price: 500
 - id: 12791
   price: 120
 - id: 23804
-  price: 400
+  price: 50
 - id: 2403
-  price: 1200
+  price: 250
 - id: 6199
-  price: 500
+  price: 100
 - id: 6828
-  price: 1000
+  price: 250
 - id: 13346
-  price: 1500
+  price: 500
 - name: "goldsmith gauntlets"
 - id: 30023
+  price: 30
+- id: 775
+  price: 30
+- id: 7409
+  price: 30
+- id: 7462
+  price: 30

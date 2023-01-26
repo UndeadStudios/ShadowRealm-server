@@ -237,7 +237,7 @@ public abstract class Mode {
 	}
 
 	public int getTotalLevelNeededForRaids() {
-		return 1250;
+		return 1000;
 	}
 
 	public int getTotalLevelForTob() {

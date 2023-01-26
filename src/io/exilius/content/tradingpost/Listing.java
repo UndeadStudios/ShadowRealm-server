@@ -421,7 +421,7 @@ public class Listing {
 			return;
 		List<Sale> sales = getSales(c.getLoginName());
 		if (sales.size() <= id) {
-			c.sendMessage("There is no item at that slot.");
+			//c.sendMessage("There is no item at that slot.");
 			return;
 		}
 

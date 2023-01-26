@@ -69,6 +69,12 @@ public class NPCDeath {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
                 break;
+            case 7249:
+            case 423:
+                if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_DUST_DEVILS.getDailyTask().getTaskName())) {
+                    DailyTaskHandler.Companion.handleProgress(player, 1);
+                }
+                break;
             case 100:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_ROCKCRABS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
