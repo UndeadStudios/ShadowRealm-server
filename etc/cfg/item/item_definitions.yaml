@@ -64163,8 +64163,8 @@
   noted: true
   stackable: true
 - id: 19483
-  name: "null"
-  description: "Unknown"
+  name: "Mike's Torva Full Helm"
+  description: "Mike's Torva Full Helm"
   shopValue: 1
 - id: 19484
   name: "Dragon javelin"
@@ -64230,8 +64230,8 @@
   noted: true
   stackable: true
 - id: 19495
-  name: "null"
-  description: "Unknown"
+  name: "Mike's torva platelegs"
+  description: "Mike's torva platelegs"
   shopValue: 1
 - id: 19496
   name: "Uncut zenyte"
@@ -64245,8 +64245,8 @@
   noted: true
   stackable: true
 - id: 19498
-  name: "null"
-  description: "Unknown"
+  name: "Mike's torva platebody"
+  description: "mike's Torva platebody"
   shopValue: 1
 - id: 19499
   name: "Zenyte ring"

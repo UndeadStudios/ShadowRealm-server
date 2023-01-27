@@ -68278,6 +68278,63 @@
       "prayer": 5
     }
   },
+  "19495": {
+    "name": "Mike's Torva Platelegs",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 7,
+      "astab": 34,
+      "aslash": 34,
+      "acrush": 34,
+      "amagic": -31,
+      "arange": -17,
+      "dstab": 120,
+      "dslash": 102,
+      "dcrush": 103,
+      "dmagic": -24,
+      "drange": 133,
+      "prayer": 8
+    }
+  },
+  "19498": {
+    "name": "Mike's Torva Platebody",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 4,
+      "astab": 34,
+      "aslash": 34,
+      "acrush": 34,
+      "amagic": -40,
+      "arange": -20,
+      "dstab": 172,
+      "dslash": 170,
+      "dcrush": 137,
+      "dmagic": -16,
+      "drange": 182,
+      "prayer": 8
+    }
+  },
+  "19483": {
+    "name": "Mike's Torva Full Helm",
+    "equipable": true,
+    "weight": 2.7,
+    "equipment": {
+      "slot": 0,
+      "astab": 34,
+      "aslash": 24,
+      "acrush": 34,
+      "amagic": -6,
+      "arange": -2,
+      "dstab": 100,
+      "dslash": 103,
+      "dcrush": 89,
+      "dmagic": -6,
+      "drange": 107,
+      "prayer": 5
+    }
+  },
   "8812": {
     "name": "Lava Torva Platelegs",
     "equipable": true,

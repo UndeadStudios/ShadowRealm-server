@@ -39,8 +39,8 @@ public class TobContainer {
             return;
         }
 
-        if (player.getPA().calculateTotalLevel() < player.getMode().getTotalLevelForTob()) {
-            player.sendStatement("You need " + Misc.insertCommas(player.getMode().getTotalLevelForTob()) + " total level to compete.");
+        if (player.getPA().calculateTotalLevel() < TobParty.getTotalLevelForTob()) {
+            player.sendStatement("You need " + Misc.insertCommas(TobParty.getTotalLevelForTob()) + " total level to compete.");
             return;
         }
 

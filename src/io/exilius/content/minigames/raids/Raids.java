@@ -339,10 +339,10 @@ public class Raids {
             myRank = 24;
         }
 
-        int chance = Misc.random(1000);
-        int rareChance = 975 + myRank;
+        int chance = Misc.random(100);
+        int rareChance = 89 + myRank;
         if (player.getItems().playerHasItem(21046)) {
-            rareChance = 969 + myRank;
+            rareChance = 83 + myRank;
             player.getItems().deleteItem(21046, 1);
             player.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate.");
             player.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);

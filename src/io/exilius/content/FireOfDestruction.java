@@ -39,10 +39,10 @@ public class FireOfDestruction {
 //            int base = (int) (FireOfExchange.getExchangeShopPrice(itemId) * 500L * 0.10);
 //            int random = Misc.random((int) (FireOfExchange.getExchangeShopPrice(itemId) * 500L / 5L));
             c.getItems().addItemUnderAnyCircumstance(995, 10_000_000);
-            c.getItems().addItemUnderAnyCircumstance(692, 1);
+            c.getItems().addItemUnderAnyCircumstance(691, 1);
             if (!c.getRights().hasStaffPosition()) {
                 PlayerHandler.executeGlobalMessage("@bla@[@red@Dark Pet@bla@] " + c.getDisplayName() + "@pur@ sacrificed his @bla@"
-                        + ItemAssistant.getItemName(itemId) + " @pur@and received only gp!");
+                        + ItemAssistant.getItemName(itemId) + " @pur@and received only gp & 10k foe!");
             }
         }
     }

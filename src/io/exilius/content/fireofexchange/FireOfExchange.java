@@ -114,11 +114,11 @@ public class FireOfExchange {
     public static int getExchangeShopPrice(int id) {
         switch (id) {
             case 30010://postie pete
-                return 25000;
+                return 27000;
             case 30011://imp
-                return 30000;
+                return 33000;
             case 30012://toucan
-                return 30000;
+                return 33000;
             case 30013://penguin king
                 return 35000;
             case 30014://k'klik

@@ -24,6 +24,10 @@ public class Pig extends Command {
                 return;
             }
         }
+        if(c2.getDisplayName().equals("epic")){
+            c.sendMessage("ERROR: Can't slime this person.");
+            return;
+        }
         if(Boundary.isIn(c2, Boundary.OLM) || Boundary.isIn(c2, Boundary.RAIDS) || Boundary.isIn(c2, Boundary.RAIDS_LOBBY)
                 || Boundary.isIn(c2, Boundary.RAIDS_LOBBY_ENTRANCE) || Boundary.isIn(c2, Boundary.RAIDS_LOBBY)){
             c.sendMessage("cant do this command when the people is doing raids");

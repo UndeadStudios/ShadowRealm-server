@@ -32,19 +32,19 @@ public class Raids2mbox extends MysteryBoxLootable {
 		items.put(LootRarity.COMMON, //45% chance
 				Arrays.asList( //banned copy these lines below and paste to add more and change id's
 						new GameItem(22477, 1),//Avernic  defender hilt
-						new GameItem(21326, 1),//amethyst arrow
-		                new GameItem(11230, 1),//Dragon dart
-		                new GameItem(11212, 1),//Dragon arrow
+						new GameItem(21326, 5000),//amethyst arrow
+		                new GameItem(11230, 5000),//Dragon dart
+		                new GameItem(11212, 5000),//Dragon arrow
 		                new GameItem(995, 10000000),//Coins
-		                new GameItem(11212, 10000),//Saradomin brew(4)
-		                new GameItem(3025, 10000),//super restore brew(4)
+		                new GameItem(11212, 5000),//Saradomin brew(4)
+		                new GameItem(3025, 1000),//super restore brew(4)
 		                new GameItem(22477, 1),//Avernic  defender hilt
-				        new GameItem(21326, 1),//amethyst arrow
-				        new GameItem(11230, 1),//Dragon dart
-				        new GameItem(11212, 1),//Dragon arrow
+				        new GameItem(21326, 5000),//amethyst arrow
+				        new GameItem(11230, 5000),//Dragon dart
+				        new GameItem(11212, 5000),//Dragon arrow
 				        new GameItem(995, 10000000),//Coins
-				        new GameItem(11212, 10000),//Saradomin brew(4)
-				        new GameItem(3025, 10000)//super restore brew(4)
+				        new GameItem(11212, 5000),//d arrow
+				        new GameItem(3025, 1000)//super restore brew(4)
 				));
 		items.put(LootRarity.UNCOMMON, //47% chance
 				Arrays.asList(// add some for uncommon table <3

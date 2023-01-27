@@ -241,7 +241,7 @@ public abstract class Mode {
 	}
 
 	public int getTotalLevelForTob() {
-		return 1500;
+		return 1450;
 	}
 	public int getTotalLevelForTBD() {
 		return 1750;

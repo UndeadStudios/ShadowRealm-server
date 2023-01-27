@@ -8,6 +8,7 @@ import io.exilius.content.instances.InstanceConfiguration;
 import io.exilius.content.instances.InstancedArea;
 import io.exilius.content.minigames.tob.TobConstants;
 import io.exilius.content.minigames.tob.TobRoom;
+import io.exilius.content.minigames.tob.party.TobParty;
 import io.exilius.content.minigames.tob.rooms.RoomSevenTreasure;
 import io.exilius.model.collisionmap.WorldObject;
 import io.exilius.model.entity.npc.pets.PetHandler;
@@ -64,8 +65,8 @@ public class TobInstance extends InstancedArea {
         initialiseNextRoom(playerList.get(0));
         TobRoom tobRoom = TobConstants.ROOM_LIST.get(0);
         playerList.forEach(plr -> {
-            if (plr.getPA().calculateTotalLevel() < plr.getMode().getTotalLevelForTob()) {
-                plr.sendStatement("You need " + Misc.insertCommas(plr.getMode().getTotalLevelForTob()) + " total level to compete.");
+            if (plr.getPA().calculateTotalLevel() < TobParty.getTotalLevelForTob()) {
+                plr.sendStatement("You need " + Misc.insertCommas(TobParty.getTotalLevelForTob()) + " total level to compete.");
                 return;
             }
 

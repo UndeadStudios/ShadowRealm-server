@@ -12,11 +12,13 @@ public class TobParty extends PlayerParty {
     public TobParty() {
         super(TYPE, 5);
     }
-
+    public static int getTotalLevelForTob() {
+        return 1000;
+    }
     @Override
     public boolean canJoin(Player invitedBy, Player invited) {
-        if (invited.getPA().calculateTotalLevel() < invited.getMode().getTotalLevelForTob()) {
-            invited.sendStatement("You need " + Misc.insertCommas(invited.getMode().getTotalLevelForTob()) + " total level to compete.");
+        if (invited.getPA().calculateTotalLevel() < getTotalLevelForTob()) {
+            invited.sendStatement("You need " + Misc.insertCommas(getTotalLevelForTob()) + " total level to compete.");
             invitedBy.sendMessage(invited.getDisplayNameFormatted() + " doesn't have the requirements to compete.");
             return false;
         }
