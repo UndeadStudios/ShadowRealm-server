@@ -44,9 +44,10 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
     private static final Location CENTER = new Location(1364, 10265);
 
     //Where firewalk ball goes
-    private static final Boundary NORTH_WEST = new Boundary(1361, 10271, 1363, 10273);
-    private static final Boundary NORTH_EAST = new Boundary(1370, 10271, 1372, 10273);
-    private static final Boundary SOUTH_EAST = new Boundary(1370, 10262, 1372, 10264);
+    private static final Boundary NORTH_WEST = new Boundary(1364, 10270, 1364, 10270);
+    private static final Boundary NORTH_EAST = new Boundary(1369, 10270, 1369, 10270);
+    private static final Boundary SOUTH_WEST = new Boundary(1364, 10265, 1364, 10265);
+    private static final Boundary SOUTH_EAST = new Boundary(1369, 10265, 1369, 10265);
 
     //Lightning npc spawn locs
     private static final Location[] LIGHTNING_SPAWNS = {
@@ -107,7 +108,7 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
     public AlchemicalHydra(Player player) {
         super(player, AREA);
 
-    	this.player = player;
+        this.player = player;
         if (Boundary.isIn(player, AREA)) {
             player.getPA().movePlayerUnconditionally(player.getX(), player.getY(), getHeight());
         } else {
@@ -122,7 +123,7 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
         npc.getHealth().resolveStatus(HealthStatus.POISON, Integer.MAX_VALUE);
         npc.getHealth().resolveStatus(HealthStatus.VENOM, Integer.MAX_VALUE);
         setupVents();
-        
+
     }
 
     private NPC npc;
@@ -147,37 +148,37 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
             return;
         }
         if(transforming)
-        	return;
+            return;
         if(!fireAttackExecuting) {
-	        npc.setPlayerAttackingIndex(player.getIndex());
-			npc.facePlayer(player.getIndex());
-			npc.underAttack = true;
-			npc.walkingHome = false;
+            npc.setPlayerAttackingIndex(player.getIndex());
+            npc.facePlayer(player.getIndex());
+            npc.underAttack = true;
+            npc.walkingHome = false;
         } else {
-        	npc.setPlayerAttackingIndex(0);
+            npc.setPlayerAttackingIndex(0);
             npc.facePlayer(0);
             npc.underAttack = false;
             npc.lastRandomlySelectedPlayer = 0;
         }
-		npc.lastDamageTaken = System.currentTimeMillis();
+        npc.lastDamageTaken = System.currentTimeMillis();
         checkTransform();
         if (sprayed) {
             buffed = false;
         }
         if(ventTicks >= 4 && ventTicks <= 11) {
-        	  if (currentStage != HydraStage.ENRAGED) {
-                  if (Boundary.isIn(npc, currentStage.getBoundary())) {
-                      sprayed = true;
-                  } else if (!sprayed && HydraStage.stream()
-                          .filter(hydraStage -> hydraStage != currentStage)
-                          .anyMatch(hydraStage -> Boundary.isIn(npc, hydraStage.getBoundary()))) {
-                  
-                      buffed = true;
-                  }
+            if (currentStage != HydraStage.ENRAGED) {
+                if (Boundary.isIn(npc, currentStage.getBoundary())) {
+                    sprayed = true;
+                } else if (!sprayed && HydraStage.stream()
+                        .filter(hydraStage -> hydraStage != currentStage)
+                        .anyMatch(hydraStage -> Boundary.isIn(npc, hydraStage.getBoundary()))) {
 
-              }
+                    buffed = true;
+                }
+
+            }
         } else if(ventTicks >= 26) {
-        	ventTicks = 0;
+            ventTicks = 0;
         }
     }
 
@@ -187,8 +188,8 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
     }
 
     public void doAttack() {
-    	if(transforming)
-    		return;
+        if(transforming)
+            return;
         if (tickCount % 6 == 0) {
             if (Boundary.isIn(player, AREA)) {
                 if (fireAttackExecuting)
@@ -320,9 +321,9 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
                     steps.stream().forEach(loc -> sendProjectileToTile(loc, LIGHTNING_PROJECTILE));
                 } else if (tick >= 2 && tick <= 15) {
                     steps.stream().forEach(loc -> {
-                    	Location nextStep = npc.getRegionProvider().get(loc.getX(), loc.getY()).getNextStepLocation(loc.getX(), loc.getY(), player.getX(), player.getY(), getHeight(), 1, 1);
-                    	loc.setX(nextStep.getX());
-                    	loc.setY(nextStep.getY());
+                        Location nextStep = npc.getRegionProvider().get(loc.getX(), loc.getY()).getNextStepLocation(loc.getX(), loc.getY(), player.getX(), player.getY(), getHeight(), 1, 1);
+                        loc.setX(nextStep.getX());
+                        loc.setY(nextStep.getY());
                         player.getPA().stillGfx(LIGHTNING_GFX, loc.getX(), loc.getY(), 0, 0);
                         if (player.getLocation().equalsIgnoreHeight(loc)) {
                             player.freezeTimer = 5;
@@ -458,6 +459,8 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
             zones = new Boundary[]{SOUTH, EAST, SOUTH_EAST};
         } else if (player.getX() <= center.getX() && player.getY() >= center.getY()) { //NORTH_WEST
             zones = new Boundary[]{NORTH, WEST, NORTH_WEST};
+        } else if (player.getX() <= center.getX() && player.getY() <= center.getY()) { //SOUTH_WEST
+            zones = new Boundary[]{SOUTH, WEST, SOUTH_WEST};
         }
         return zones;
     }
@@ -612,34 +615,34 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
 
 
     private boolean transforming;
-    
+
     public void checkTransform() {
-    	
+
         if (npc != null) {
             if (npc.getHealth().getCurrentHealth() <= currentStage.getHealth() - 275) {
-            	transforming = true;
+                transforming = true;
                 npc.freezeTimer = 5;
                 if (currentStage == HydraStage.ENRAGED) {
-					npc.startAnimation(currentStage.getDeathAnimation());
-                	 CycleEventHandler.getSingleton().addEvent(npc, new CycleEvent() {
-                         @Override
-						public void execute(CycleEventContainer container) {
-                        	 if (container.getTotalTicks() == 4) {
-								npc.startAnimation(8258);
-								npc.requestTransform(currentStage.getDeathID());
-							} else if(container.getTotalTicks() == 10) {
-								transforming = false;
-								container.stop();
-							}
+                    npc.startAnimation(currentStage.getDeathAnimation());
+                    CycleEventHandler.getSingleton().addEvent(npc, new CycleEvent() {
+                        @Override
+                        public void execute(CycleEventContainer container) {
+                            if (container.getTotalTicks() == 4) {
+                                npc.startAnimation(8258);
+                                npc.requestTransform(currentStage.getDeathID());
+                            } else if(container.getTotalTicks() == 10) {
+                                transforming = false;
+                                container.stop();
+                            }
 
-						}
-                     }, 1);
+                        }
+                    }, 1);
                     return;
                 }
-                
+
                 HydraStage lastStage = currentStage;
                 npc.requestTransform(lastStage.getDeathID());
-                
+
                 currentStage = HydraStage.values()[currentStage.ordinal() + 1];
                 sprayed = currentStage == HydraStage.ENRAGED;
                 buffed = false;
@@ -648,16 +651,16 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
                 CycleEventHandler.getSingleton().addEvent(npc, new CycleEvent() {
                     @Override
                     public void execute(CycleEventContainer container) {
-                    	if(container.getTotalTicks() == 1) {
+                        if(container.getTotalTicks() == 1) {
                             npc.startAnimation(lastStage.getDeathAnimation());
-                    	}
-						if (container.getTotalTicks() == (lastStage == HydraStage.POISON ? 4 : 3)) {
-							npc.startAnimation(currentStage.getTransformation());
-							npc.requestTransform(currentStage.getNpcId());
-							transforming = false;
-							tickCount = 0;
-							container.stop();
-						}
+                        }
+                        if (container.getTotalTicks() == (lastStage == HydraStage.POISON ? 4 : 3)) {
+                            npc.startAnimation(currentStage.getTransformation());
+                            npc.requestTransform(currentStage.getNpcId());
+                            transforming = false;
+                            tickCount = 0;
+                            container.stop();
+                        }
 
                     }
                 }, 1);
@@ -665,24 +668,24 @@ public class AlchemicalHydra extends LegacySoloPlayerInstance {
             }
         }
     }
-    
-    public void setupVents() {
-    	player.getPA().sendPlayerObjectAnimation(1371, 10263, 5771, 10, 0);
-    	player.getPA().sendPlayerObjectAnimation(1371, 10272, 5771, 10, 0);
-    	player.getPA().sendPlayerObjectAnimation(1362, 10272, 5771, 10, 0);
-    }
-    
 
-	public void respawn() {
-		tickCount = 0;
-		performedAttacks = 0;
-		buffed = false;
-		fireAttackExecuting = false;
-		sprayed = false;
-		currentStage = HydraStage.POISON;
-		transforming = false;
+    public void setupVents() {
+        player.getPA().sendPlayerObjectAnimation(1371, 10263, 5771, 10, 0);
+        player.getPA().sendPlayerObjectAnimation(1371, 10272, 5771, 10, 0);
+        player.getPA().sendPlayerObjectAnimation(1362, 10272, 5771, 10, 0);
+    }
+
+
+    public void respawn() {
+        tickCount = 0;
+        performedAttacks = 0;
+        buffed = false;
+        fireAttackExecuting = false;
+        sprayed = false;
+        currentStage = HydraStage.POISON;
+        transforming = false;
         npc = NPCSpawning.spawnNpc(this, currentStage.getNpcId(), CENTER.getX(), CENTER.getY(), getHeight(), 0, 1);
         npc.getHealth().resolveStatus(HealthStatus.POISON, Integer.MAX_VALUE);
         npc.getHealth().resolveStatus(HealthStatus.VENOM, Integer.MAX_VALUE);
-	}
+    }
 }

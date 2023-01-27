@@ -45,7 +45,7 @@ public class Raids2mbox extends MysteryBoxLootable {
 				        new GameItem(995, 10000000),//Coins
 				        new GameItem(11212, 10000),//Saradomin brew(4)
 				        new GameItem(3025, 10000)//super restore brew(4)
-				);
+				));
 		items.put(LootRarity.UNCOMMON, //47% chance
 				Arrays.asList(// add some for uncommon table <3
 						new GameItem(995, 50000000),//Coins
@@ -58,7 +58,7 @@ public class Raids2mbox extends MysteryBoxLootable {
 						new GameItem(22324, 1),//Ghrazi Rapier
 		                new GameItem(2396, 1),//$25 scroll
 		                new GameItem(22327, 1)//Justiciar Chestguard
-		  );
+		  ));
 		items.put(LootRarity.RARE,//8% chance
 				Arrays.asList(//add some for rare table too
 						new GameItem(995, 100000000),//Coins
