@@ -95,6 +95,10 @@ public class TutorialDialogue extends DialogueBuilder {
                 player.setMode(Mode.forType(ModeType.GROUP_IRONMAN));
                 player.getRights().setPrimary(Right.GROUP_IRONMAN);
                 break;
+            case ROGUE_IRONMAN:
+                player.setMode(Mode.forType(ModeType.ROGUE_IRONMAN));
+                player.getRights().setPrimary(Right.ROGUE_IRONMAN);
+                break;
             default:
                 player.setMode(Mode.forType(ModeType.STANDARD));
                 break;

@@ -214,11 +214,11 @@ public abstract class MysteryBoxLootable implements Lootable {
         canMysteryBox = true;
         player.getNormalMysteryBox().canMysteryBox();
         player.getMoneyBox().canMysteryBox();
+        player.getRaids2mbox().canMysteryBox();
+        player.getRaidsmbox().canMysteryBox();
         player.getUltraMysteryBox().canMysteryBox();
         player.getSuperMysteryBox().canMysteryBox();
         player.getFoeMysteryBox().canMysteryBox();
         player.getYoutubeMysteryBox().canMysteryBox();
-        player.getRaids2mbox().canMysteryBox();
-        player.getRaidsmbox().canMysteryBox();
     }
 }

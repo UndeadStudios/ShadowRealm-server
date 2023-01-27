@@ -33,35 +33,35 @@ public class Raids1mbox extends MysteryBoxLootable {
 				Arrays.asList( //banned copy these lines below and paste to add more and change id's
 						new GameItem(21326, 5000),//amethyst arrow
 						new GameItem(995, 15000000),//coins
-						new GameItem(2403),//$10 scroll
-		                new GameItem(21034),//dexterous prayer scroll
-		                new GameItem(21079),//arcane prayer scroll
+						new GameItem(2403, 1),//$10 scroll
+		                new GameItem(21034, 1),//dexterous prayer scroll
+		                new GameItem(21079, 1),//arcane prayer scroll
 		                new GameItem(995, 20000000),//coin
 		                new GameItem(11212, 5000),//Dragon arrow
 		                new GameItem(11230, 5000),//Dragon dart
-		                new GameItem(21000),//twisted buckler
-		                new GameItem(21015),//dinh's bulwark
-		                new GameItem(3456))//common raids key
+		                new GameItem(21000, 1),//twisted buckler
+		                new GameItem(21015, 1),//dinh's bulwark
+		                new GameItem(3456, 1))//common raids key
 
 		);
 		items.put(LootRarity.UNCOMMON, //45% chance
 				Arrays.asList(// add some for uncommon table
 						new GameItem(995, 50000000),//coin
-						new GameItem(3464, 1),//rare raids key
-						new GameItem(2396),//$25 scroll
-						new GameItem(20851),//olmlet
-						new GameItem(21012),//dragon hunter crossbow
+						new GameItem(3464, 2),//rare raids key
+						new GameItem(2396, 1),//$25 scroll
+						new GameItem(20851, 1),//Olm let
+						new GameItem(21012, 1),//dragon hunter crossbow
 						new GameItem(20784, 1),//dragon claws
-						new GameItem(21018),//ancestral hat
-						new GameItem(21024),//ancestral robe bottom
-						new GameItem(21021),//ancestral robe top
-						new GameItem(21079),//arcane prayer scroll
-		                new GameItem(21034))//dexterous prayer scroll
+						new GameItem(21018, 1),//ancestral hat
+						new GameItem(21024, 1),//ancestral robe bottom
+						new GameItem(21021, 1),//ancestral robe top
+						new GameItem(21079, 1),//arcane prayer scroll
+		                new GameItem(21034, 1))//dexterous prayer scroll
 		);
 		items.put(LootRarity.RARE,//8% chance
 				Arrays.asList(//add some for rare table too
-						new GameItem(21006),//kodai wand
-						new GameItem(786),//$50 scroll
+						new GameItem(21006, 1),//KoDai wand
+						new GameItem(786, 1),//$50 scroll
 				        new GameItem(20997, 1)//twisted bow
 
 				));
