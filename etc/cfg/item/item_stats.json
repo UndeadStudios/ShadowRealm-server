@@ -72279,5 +72279,26 @@
       "str": 80,
       "aspeed": 4
     }
+  },
+  "26482": {
+    "name": "Abyssal whip (or)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 3,
+      "aslash": 82,
+      "str": 82,
+      "aspeed": 4
+    }
+  },
+  "26484": {
+    "name": "Abyssal tentacle (or)",
+    "equipable": true,
+    "equipment": {
+      "slot": 3,
+      "aslash": 90,
+      "str": 86,
+      "aspeed": 4
+    }
   }
 }

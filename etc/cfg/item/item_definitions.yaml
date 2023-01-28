@@ -75265,4 +75265,18 @@
       level: 75
     - skill: "MAGIC"
       level: 60
-
+- id: 26482
+  name: "Abyssal whip (or)"
+  description: "A weapon plucked from the shattered abyss."
+  shopValue: 1300000
+  requirements:
+    - skill: "ATTACK"
+      level: 70
+- id: 26484
+  name: "Abyssal tentacle (or)"
+  description: "A weapon plucked from the shattered abyss, embedded in a spiked chain."
+  shopValue: 2200000
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 75
