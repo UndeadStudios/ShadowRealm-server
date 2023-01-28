@@ -72261,5 +72261,23 @@
       "drange": 84,
       "prayer": 4
     }
+  },
+  "27690": {
+    "name": "Voidwaker",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "astab": 70,
+      "aslash": 80,
+      "acrush": -2,
+      "amagic": 5,
+      "dstab": 0,
+      "dslash":1,
+      "dcrush": 0,
+      "dmagic": 2,
+      "str": 80,
+      "aspeed": 4
+    }
   }
 }

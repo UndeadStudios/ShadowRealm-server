@@ -75256,5 +75256,13 @@
   name: "Money box"
   description: "Oooh, I wonder what could be inside?"
   shopValue: 1
-
+- id: 27690
+  name: "Voidwaker"
+  description: "A truly fearsome weapon."
+  shopValue: 2000000
+  requirements:
+    - skill: "ATTACK"
+      level: 75
+    - skill: "MAGIC"
+      level: 60
 
