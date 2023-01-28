@@ -4,8 +4,8 @@ constant:
   accessibility: 0
   items:
     - name: "vote crystal"
-      minimum: 1
-      maximum: 1
+      minimum: 3
+      maximum: 5
 common:
   accessibility: 4
   items:

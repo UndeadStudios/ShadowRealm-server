@@ -51,6 +51,9 @@ rare:
   - name: "dragon spear"
     minimum: 1
     maximum: 1
+  - item: 406
+    minimum: 1
+    maximum: 5
   - item: 4185
     maximum: 3
     minimum: 2
@@ -61,5 +64,8 @@ very_rare:
   accessibility: 950
   items:
     - item: 28347
+      maximum: 1
+      minimum: 1
+    - item: 995
       maximum: 1
       minimum: 1

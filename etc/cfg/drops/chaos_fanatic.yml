@@ -59,7 +59,7 @@ uncommon:
     maximum: 15
   - name: "casket"
     minimum: 1
-    maximum: 1
+    maximum: 5
 rare:
   accessibility: 75
   items:
@@ -82,5 +82,8 @@ very_rare:
   accessibility: 1000
   items:
   - item: 28347
+    maximum: 1
+    minimum: 1
+  - item: 995
     maximum: 1
     minimum: 1

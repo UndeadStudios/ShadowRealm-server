@@ -63,6 +63,9 @@ rare:
   - name: "dragon pickaxe"
     minimum: 1
     maximum: 1
+  - name: "casket"
+    minimum: 1
+    maximum: 5
   - name: "dragon 2h sword"
     minimum: 1
     maximum: 1
@@ -78,3 +81,6 @@ very_rare:
   - item: 6792
     maximum: 3
     minimum: 2
+  - item: 995
+    maximum: 1
+    minimum: 1

@@ -7,17 +7,17 @@
   - name: youtube mystery box
     amount: 1
   - id: 2528 # lamp
-    amount: 1
+    amount: 2
   - id: 11937
     amount: 100
 
-- code: "exilius"
+- code: "banned"
   rewards:
     - name: coins
       amount: 1500000
     - name: youtube mystery box
       amount: 1
     - id: 2528 # lamp
-      amount: 1
+      amount: 2
     - id: 11937
       amount: 100

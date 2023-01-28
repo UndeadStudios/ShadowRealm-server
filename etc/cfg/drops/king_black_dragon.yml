@@ -72,6 +72,9 @@ uncommon:
 rare:
   accessibility: 150
   items:
+  - name: "casket"
+    minimum: 1
+    maximum: 10
   - name: "dragon pickaxe"
     minimum: 1
     maximum: 1
@@ -82,5 +85,8 @@ very_rare:
   accessibility: 1000
   items:
   - name: "draconic visage"
+    minimum: 1
+    maximum: 1
+  - item: 995
     minimum: 1
     maximum: 1
