@@ -24,72 +24,49 @@ public class SuperMysteryBox extends MysteryBoxLootable {
     static {
         items.put(LootRarity.COMMON,//50% chance
                 Arrays.asList(
-                        new GameItem(12873),//guthan set
-                        new GameItem(12875),//verac set
-                        new GameItem(12877),//dharok set
-                        new GameItem(12881),//ahrim set
-                        new GameItem(12883),//karil set
-                        new GameItem(2572),//ring of wealth
-                        new GameItem(6585),//fury
-                        new GameItem(4151),//whip
-                        new GameItem(11838),//saradomin sword
+                        new GameItem(11840),//dragon boots
+                        new GameItem(11836),//bandos boots
+                        new GameItem(6585),//amulet of fury
+                        new GameItem(6737),//berserker ring
+                        new GameItem(6889),//mages book
                         new GameItem(12873),//guthan set
                         new GameItem(12875),//verac set
                         new GameItem(12877),//dharok set
                         new GameItem(12879),//torags set
                         new GameItem(12881),//ahrim set
                         new GameItem(12883),//karil set
-                        new GameItem(2572),//ring of wealth
-                        new GameItem(6585),//fury
-                        new GameItem(4151),//whip
-                        new GameItem(11838),//saradomin sword
-                        new GameItem(11804),//BGS
-                        new GameItem(11806),//SGS
-                        new GameItem(11808),//ZGS
-                        new GameItem(11770),//seers (i)
-                        new GameItem(11771),//archers (i)
-                        new GameItem(11772),//warrior (i)
-                        new GameItem(11773),//berserker (i)
-                        new GameItem(11804),//BGS
-                        new GameItem(11806),//SGS
-                        new GameItem(11808),//ZGS
-                        new GameItem(11770),//seers (i)
-                        new GameItem(11771),//archers (i)
-                        new GameItem(11772),//warrior (i)
-                        new GameItem(11773)//berserker (i)
+                        new GameItem(2577),//ranger boots
+                        new GameItem(6570),//,fire cape
+                        new GameItem(12596),//rangers tunic
+                        new GameItem(11920),//dragon pickaxe
+                        new GameItem(6739),//dragon axe
+                        new GameItem(6733),//archers ring
+                        new GameItem(6731),//seers ring
+                        new GameItem(6735),//warrior ring
+                        new GameItem(6769)//$5 scroll
 
                 ));
 
         items.put(LootRarity.UNCOMMON,//40% Chance
                 Arrays.asList(
-                        new GameItem(12873),//guthan set
-                        new GameItem(12875),//verac set
-                        new GameItem(12877),//dharok set
-                        new GameItem(12879),//torags set
-                        new GameItem(12881),//ahrim set
-                        new GameItem(12883),//karil set
+                        new GameItem(2403, 1),//10 dollar scroll
                         new GameItem(2572),//ring of wealth
-                        new GameItem(6585),//fury
-                        new GameItem(4151),//whip
+                        new GameItem(12924),//Toxic blowpipe (empty)
+                        new GameItem(11806),//Dragon crossbow
+                        new GameItem(11907),//trident of the sea
+                        new GameItem(11806),//Dragon crossbow
+                        new GameItem(11907),//trident of the sea
                         new GameItem(11838),//saradomin sword
                         new GameItem(2572),//ring of wealth
-                        new GameItem(6585),//fury
-                        new GameItem(4151),//whip
                         new GameItem(11838),//saradomin sword
                         new GameItem(11804),//BGS
                         new GameItem(11806),//SGS
                         new GameItem(11808),//ZGS
-                        new GameItem(11770),//seers (i)
-                        new GameItem(11771),//archers (i)
-                        new GameItem(11772),//warrior (i)
-                        new GameItem(11773),//berserker (i)
-                        new GameItem(11804),//BGS
-                        new GameItem(11806),//SGS
-                        new GameItem(11808),//ZGS
-                        new GameItem(11770),//seers (i)
-                        new GameItem(11771),//archers (i)
-                        new GameItem(11772),//warrior (i)
-                        new GameItem(11773)//berserker (i)
+                        new GameItem(12924),//Toxic blowpipe (empty)
+                        new GameItem(11806),//Dragon crossbow
+                        new GameItem(11907),//trident of the sea
+                        new GameItem(2403, 1)//10 dollar scroll
+
                 )
         );
 
@@ -101,13 +78,13 @@ public class SuperMysteryBox extends MysteryBoxLootable {
                         new GameItem(11830),//armadyls legs
                         new GameItem(11832),//bandos chestplate
                         new GameItem(11834),//bandos tassets
-                        new GameItem(4084),//sled
                         new GameItem(13346),//ultra mystery box
                         new GameItem(11785),//armadyl crossbow
                         new GameItem(2403, 1),//10 dollar scroll
                         new GameItem(13239, 1),//primordial boots
                         new GameItem(13235, 1),//eternal boots
                         new GameItem(13237, 1),//pegasian boots
+                        new GameItem(2403, 1),//10 dollar scroll
                         new GameItem(12785)));//ring of wealth (i)
     }
 

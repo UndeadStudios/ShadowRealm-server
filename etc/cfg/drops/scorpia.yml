@@ -63,3 +63,6 @@ very_rare:
   - name: "dragon pickaxe"
     minimum: 1
     maximum: 1
+  - item: 6769
+    minimum: 1
+    maximum: 1

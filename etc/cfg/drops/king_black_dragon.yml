@@ -87,6 +87,6 @@ very_rare:
   - name: "draconic visage"
     minimum: 1
     maximum: 1
-  - item: 995
+  - item: 6769
     minimum: 1
     maximum: 1

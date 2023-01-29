@@ -75,6 +75,9 @@ public class MeleeMaxHit {
 		if (hasObsidianEffect(c)) {
 			base = (base * 1.20);
 		}
+		if (c.getItems().isWearingItem(19480)) {
+			base = (base * 1.20);
+		}
 
 		boolean hasDarkVersion = (c.petSummonId == 30115 || c.petSummonId == 30120 || c.petSummonId == 30122);
 		if (c.hasFollower && ((
@@ -83,11 +86,12 @@ public class MeleeMaxHit {
 			if (hasDarkVersion) {
 				base *= 1.10;
 			} else if (Misc.random(1) == 1) {
-					base *= 1.10;
+				base *= 1.10;
 			}
 		}
 		return (int) Math.floor(base);
 	}
+
 
 	public static double getEffectiveStr(Player c) {
 		return CombatFormula.getPrayerBoostedLevel(c.getLevel(Skill.STRENGTH), CombatFormula.getPrayerStrengthBonus(c))

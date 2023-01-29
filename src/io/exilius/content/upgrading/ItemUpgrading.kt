@@ -1,5 +1,6 @@
 package io.exilius.content.upgrading
 
+import io.exilius.model.definitions.ItemDef
 import io.exilius.model.entity.player.Player
 import io.exilius.model.items.GameItem
 import io.exilius.model.items.ItemCacheDefinition
@@ -102,7 +103,7 @@ class ItemUpgrading(val player: Player) {
      */
     fun selectItem(itemIdClicked: Int) {
         val data = UpgradeData.values().lastOrNull { it.originalItemID == itemIdClicked } ?: return
-        player.pa.sendString(Misc.capitalize(ItemCacheDefinition.forID(data.upgradedItem.id).getName()), 26005)
+        player.pa.sendString(Misc.capitalize(ItemDef.forId(data.upgradedItem.id).name), 26005)
         player.pa.sendItemOnInterface(data.upgradedItem.id, 0, 26007, data.upgradedItem.amount)
         player.pa.sendString(Misc.format(data.price.toLong()) + "gp", 26011)
         player.pa.sendString(data.successRate.toString() + "%", 26012)
@@ -137,7 +138,7 @@ class ItemUpgrading(val player: Player) {
             player.items.deleteItem(selectedItem, 1)
             player.items.addItem(data.upgradedItem.id, 1)
             player.sendMessage(
-                "You upgrade your item and receive a ${ItemCacheDefinition.forID(data.upgradedItem.id).getName()}."
+                "You upgrade your item and receive a ${ItemDef.forId(data.upgradedItem.id).name}."
             )
             // We clear the interface if they successfully upgrade,
             resetInterface()

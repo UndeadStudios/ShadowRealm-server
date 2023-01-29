@@ -97,12 +97,12 @@ public class NPCProcess {
            // Discord.writeannounceMessage("**__ [VOTE SYSTEM] Vote boss has now spawned at " + Server.getVoteCounter() + " Votes!");
             Votes.voteCount = 0;
             Server.setvoteCountCounter(0);
-            EmbedBuilder db = new EmbedBuilder();
-            db.setTitle("Exilius Server Status");
-            db.setDescription("Server is now online!");
-            db.setImage("https://endless-os.com/logo.png");
-            db.setColor(new java.awt.Color(0xB00D03));
-            Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(db.build()).queue();
+            EmbedBuilder eb = new EmbedBuilder();
+            eb.setTitle("[VOTE SYSTEM] Vote boss has now spawned!");
+            eb.setDescription("Votes: " + Server.getVoteCounter() );
+            eb.setImage("https://i.gyazo.com/70bcc63ceb4a74611bca0387c1d3affa.png");
+            eb.setColor(new java.awt.Color(0xB00D03));
+            Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
 
         }
         if (npc.actionTimer > 0) {

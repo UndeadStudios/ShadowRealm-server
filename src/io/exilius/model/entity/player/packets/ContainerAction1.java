@@ -157,6 +157,9 @@ public class ContainerAction1 implements PacketType {
 					case 6830:
 						c.getRaids2mbox().roll(c);
 						break;
+					case 28825:
+						c.getNexBox().roll(c);
+						break;
 					case 10025:
 						c.getRaidsmbox().roll(c);
 						break;

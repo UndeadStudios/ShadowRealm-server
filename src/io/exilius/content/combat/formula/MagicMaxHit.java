@@ -85,6 +85,9 @@ public class MagicMaxHit {
 		}
 		boolean hasDarkVersion = (c.petSummonId == 30117 || c.petSummonId == 30120 || c.petSummonId == 30122);
 
+		if (c.getItems().isWearingItem(19480)) {
+			damageMultiplier += .20;
+		}
 		if (c.hasFollower
 				&& ((c.petSummonId == 30017 || c.petSummonId == 30020 || c.petSummonId == 30022))
 				|| (hasDarkVersion)){

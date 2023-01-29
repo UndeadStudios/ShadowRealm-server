@@ -254,7 +254,9 @@ public class MeleeData {
 			c.playerWalkIndex = 247;
 			c.playerRunIndex = 248;
 			break;
-		case 4151:
+			case 4151:
+			case 26482:
+			case 26484:
 		case 12773:
 		case 12774:
 		case 12006:
@@ -362,6 +364,8 @@ public class MeleeData {
 		}
 
 		if (weaponName.contains("ghrazi rapier")) {
+			return 8145;
+		}if (weaponName.contains("voidwaker")) {
 			return 8145;
 		}
 		if (weaponName.contains("zamorakian")) {
@@ -599,7 +603,9 @@ public class MeleeData {
 			return 2062;
 		case 4734: // karil
 			return 2075;
-		case 4151:
+			case 4151:
+			case 26484:
+			case 26482:
 			case 28213:
 			case 28214:
 			case 28215:
@@ -692,7 +698,9 @@ public class MeleeData {
 			return 3295;
 		case 7158:
 			return 410;
-		case 4151:
+			case 4151:
+			case 26482:
+			case 26484:
 			case 28213:
 			case 28214:
 			case 28215:

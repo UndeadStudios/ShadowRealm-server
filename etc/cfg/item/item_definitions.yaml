@@ -40263,27 +40263,38 @@
     - skill: "DEFENCE"
       level: 40
 - id: 8465
-  name: "Null"
+  name: "Godly Torva Fullhelm"
   description: "A cape made of ancient, enchanted rocks."
   shopValue: 1
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 8466
   name: "Rune heraldic helm"
   description: "Null"
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
 - id: 8467
-  name: "Null"
-  description: "Null"
+  name: "Godly Torva Platebody"
+  description: "Godly Torva Platebody"
   shopValue: 1
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 8468
   name: "Rune heraldic helm"
   description: "Null"
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
 - id: 8469
-  name: "Null"
-  description: "Null"
+  name: "Godly Torva Platelegs"
+  description: "Godly Torva Platelegs"
   shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 8470
   name: "Rune heraldic helm"
   description: "Null"
@@ -64165,7 +64176,11 @@
 - id: 19483
   name: "Mike's Torva Full Helm"
   description: "Mike's Torva Full Helm"
-  shopValue: 1
+  shopValue: 2147000
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 19484
   name: "Dragon javelin"
   description: "A dragon tipped javelin."
@@ -64233,6 +64248,9 @@
   name: "Mike's torva platelegs"
   description: "Mike's torva platelegs"
   shopValue: 1
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 19496
   name: "Uncut zenyte"
   description: "This would be worth more cut."
@@ -64247,7 +64265,11 @@
 - id: 19498
   name: "Mike's torva platebody"
   description: "mike's Torva platebody"
-  shopValue: 1
+  shopValue: 214700000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 80
 - id: 19499
   name: "Zenyte ring"
   description: "A fiery glow emanates from this ring."
@@ -75280,3 +75302,8 @@
   requirements:
     - skill: "ATTACK"
       level: 75
+
+- id: 22800
+  name: "Bird nest"
+  description: "A bird nest."
+  shopValue: 1000

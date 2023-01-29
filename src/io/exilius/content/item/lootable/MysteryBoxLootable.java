@@ -159,14 +159,14 @@ public abstract class MysteryBoxLootable implements Lootable {
 
     public void quickOpen() {
 
-        if (player.getUltraInterface().isActive() ||player.getraids2mInterface().isActive() ||  player.getraids1mInterface().isActive() || player.getSuperBoxInterface().isActive() || player.getNormalBoxInterface().isActive() || player.getFoeInterface().isActive() || player.getMoneyBoxInterface().isActive()) {
+        if (player.getUltraInterface().isActive() ||player.getraids2mInterface().isActive() ||player.getNexBoxInterface().isActive() ||  player.getraids1mInterface().isActive() || player.getSuperBoxInterface().isActive() || player.getNormalBoxInterface().isActive() || player.getFoeInterface().isActive() || player.getMoneyBoxInterface().isActive()) {
             player.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
 
             return;
         }
         if (!(player.getSuperMysteryBox().canMysteryBox) || !(player.getNormalMysteryBox().canMysteryBox) ||
                 !(player.getUltraMysteryBox().canMysteryBox) || !(player.getFoeMysteryBox().canMysteryBox) ||
-                !(player.getYoutubeMysteryBox().canMysteryBox) || !(player.getRaidsmbox().canMysteryBox)|| !(player.getRaids2mbox().canMysteryBox)) {
+                !(player.getYoutubeMysteryBox().canMysteryBox) || !(player.getRaidsmbox().canMysteryBox) || !(player.getNexBox().canMysteryBox)|| !(player.getRaids2mbox().canMysteryBox)) {
             player.getPA().showInterface(47000);
             player.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
             return;
@@ -191,6 +191,7 @@ public abstract class MysteryBoxLootable implements Lootable {
             player.getYoutubeMysteryBox().canMysteryBox();
             player.getRaidsmbox().canMysteryBox();
             player.getRaids2mbox().canMysteryBox();
+            player.getNexBox().canMysteryBox();
             return;
         }
 
@@ -216,6 +217,7 @@ public abstract class MysteryBoxLootable implements Lootable {
         player.getMoneyBox().canMysteryBox();
         player.getRaids2mbox().canMysteryBox();
         player.getRaidsmbox().canMysteryBox();
+        player.getNexBox().canMysteryBox();
         player.getUltraMysteryBox().canMysteryBox();
         player.getSuperMysteryBox().canMysteryBox();
         player.getFoeMysteryBox().canMysteryBox();

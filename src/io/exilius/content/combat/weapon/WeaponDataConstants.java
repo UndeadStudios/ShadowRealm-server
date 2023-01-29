@@ -58,7 +58,7 @@ public class WeaponDataConstants {
         // swords
         Items.DRAGON_SWORD, Items.RUNE_SWORD, Items.BRONZE_SWORD, Items.IRON_SWORD, Items.STEEL_SWORD, Items.BLACK_SWORD, Items.MITHRIL_SWORD, Items.ADAMANT_SWORD,
         Items.ANGER_SWORD, Items.TRAINING_SWORD, Items.WOODEN_SWORD, Items.SPORK, Items.RAPIER, Items.GHRAZI_RAPIER, Items.TOKTZ_XIL_AK, Items.LEAF_BLADED_SWORD,
-        Items.WILDERNESS_SWORD_1, Items.WILDERNESS_SWORD_2, Items.WILDERNESS_SWORD_3, Items.WILDERNESS_SWORD_4,
+        Items.WILDERNESS_SWORD_1,27690, Items.WILDERNESS_SWORD_2, Items.WILDERNESS_SWORD_3, Items.WILDERNESS_SWORD_4,
     };
 
     // [[accurate, crush], [aggressive, crush], [shared, stab], [defensive, crush]]
@@ -82,7 +82,7 @@ public class WeaponDataConstants {
 
     // [[accurate, slash], [shared, slash], [defensive, slash]]
     public static final int[] WHIPS = {
-            Items.ABYSSAL_WHIP, Items.FROZEN_ABYSSAL_WHIP, Items.VOLCANIC_ABYSSAL_WHIP, Items.ABYSSAL_TENTACLE, 28213, 28214, 28215, 28216, 28217, 28218, 28219, 28220
+            Items.ABYSSAL_WHIP, 26482, 26484, Items.FROZEN_ABYSSAL_WHIP, Items.VOLCANIC_ABYSSAL_WHIP, Items.ABYSSAL_TENTACLE, 28213, 28214, 28215, 28216, 28217, 28218, 28219, 28220
     };
 
     // [[accurate, slash], [aggressive, slash], [aggressive, crush], [defensive, slash]]

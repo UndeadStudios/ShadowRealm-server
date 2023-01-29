@@ -18,6 +18,7 @@ import io.exilius.content.bosses.godwars.God;
 import io.exilius.content.bosses.godwars.Godwars;
 import io.exilius.content.bosses.godwars.GodwarsEquipment;
 import io.exilius.content.bosses.hespori.Hespori;
+import io.exilius.content.bosses.nex.Nex;
 import io.exilius.content.bosses.nightmare.NightmareConstants;
 import io.exilius.content.bosses.zulrah.Zulrah;
 import io.exilius.content.bosspoints.BossPoints;
@@ -598,6 +599,7 @@ public class Player extends Entity {
     public int boxCurrentlyUsing;
     private final YoutubeMysteryBox youtubeMysteryBox = new YoutubeMysteryBox(this);
     private final UltraMysteryBox ultraMysteryBox = new UltraMysteryBox(this);
+    private final NexBox nexBox = new NexBox(this);
     private final Raids1mbox raidsmysterybox = new Raids1mbox(this);
     private final Raids2mbox raids2mysterybox = new Raids2mbox(this);
     private final NormalMysteryBox normalMysteryBox = new NormalMysteryBox(this);
@@ -2080,7 +2082,7 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@red@<shad=0>Mod</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getRights().getPrimary().equals(Right.GAME_DEVELOPER)) {
             PlayerHandler.executeGlobalMessage("[@red@<shad=0>Developer</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && !getLoginName().equals("rico") && !getDisplayName().equals("rico")) {
+        } else if (getRights().getPrimary().equals(Right.ADMINISTRATOR) && !getLoginName().equals("rico") && !getDisplayName().equals("rico") && !getLoginName().equals("junior") && !getDisplayName().equals("junior")) {
             PlayerHandler.executeGlobalMessage("[@yel@<shad=0>Admin</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("epic")) {
             PlayerHandler.executeGlobalMessage("[@cya@<shad=0>Owner & Main Dev</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
@@ -2088,6 +2090,8 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@pur@<shad=0>Owner</shad>@bla@] @pur@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Security manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
+        } else if (getLoginName().equalsIgnoreCase("junior")) {
+            PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Exilius manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
             PlayerHandler.executeGlobalMessage("[@red@<shad=0>Owner</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("fennix")) {
@@ -5217,6 +5221,9 @@ public class Player extends Entity {
     public UltraMysteryBox getUltraInterface() {
         return ultraMysteryBox;
     }
+    public NexBox getNexBoxInterface() {
+        return nexBox;
+    }
     public Raids2mbox getraids2mInterface() {
         return raids2mysterybox;
     }
@@ -5726,6 +5733,9 @@ public MoneyBox getMoneyBoxInterface() {
 
     public UltraMysteryBox getUltraMysteryBox() {
         return ultraMysteryBox;
+    }
+    public NexBox getNexBox() {
+        return nexBox;
     }
     public Raids2mbox getRaids2mbox() {
         return raids2mysterybox;

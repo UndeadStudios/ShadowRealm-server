@@ -3,6 +3,7 @@ package io.exilius.model;
 public class Items {
 
     public static final int DEATH_CAPE = 28347;
+    public static final int Godly_CAPE = 19480;
 
     private Items() {}
 

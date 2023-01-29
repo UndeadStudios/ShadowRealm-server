@@ -121,6 +121,9 @@ public class RangeMaxHit extends RangeData {
 		}
 		boolean hasDarkVersion = (c.petSummonId == 30116 || c.petSummonId == 30120 || c.petSummonId == 30122);
 
+		if (c.getItems().isWearingItem(19480)) {
+			b *= 1.20;
+		}
 		if (c.hasFollower
 				&& ((c.petSummonId == 30016  || c.petSummonId == 30020 || c.petSummonId == 30022)
 				|| (hasDarkVersion))) {

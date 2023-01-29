@@ -326,7 +326,7 @@ public class TeleportInterface2 {
         Hespori(1, 102219, true, "Teleports you to Hispori", new Position(3075, 3499, 0)),
         Gambling_Zone(1, 102224, true, "Teleports you to  the Ganbling Zone", new Position(2129, 9489, 0)),
         Skilling_Island(1, 102229, true, "Teleports you to the Skilling Island", new Position(3803, 3538, 0)),
-        Vote_boss(1, 102234, true, "The Boss only spawns every 100 votes.", new Position(1886, 9320, 0)),
+        Vote_boss(1, 102234, true, "The Boss only spawns every 25 votes.", new Position(1886, 9320, 0)),
 
         AL_KHARID(2, 102209, true, "Teleports you to Al Kharid", new Position(3293, 3179, 0)),
         Arceuus(2, 102214, true, "Teleports you to Arceuus", new Position(1679, 3745, 0)),
@@ -368,7 +368,7 @@ public class TeleportInterface2 {
         SLAYER_TOWER(3, 102254, true, "Teleports you to Slayer Tower", new Position(3428, 3538, 0)),
         Mount_Karuulm(3, 103003, true, "Teleports you to Mount Karuulm", new Position(1311, 3795, 0)),
         Smoke_Devils(3, 103008, true, "Teleports you to Smoke Devils", new Position(2404, 9415, 0)),
-        Crystal_cavern(3, 103013, true, "Teleports you to Crystal caverns", new Position(3272, 6052, 0)),
+         Demonic_Gorillas(3, 103013, true, "Teleports you to the Demonic Gorillas", new Position(2124, 5660, 0)),
 
         Barrelchest(4, 102209, true, "Teleports you to the Barrelchest", new Position(2903, 3612, 0)),
         Bryophyta(4, 102214, true, "Teleports you to the Bryophyta", new Position(3174, 9898, 0)),
@@ -381,7 +381,6 @@ public class TeleportInterface2 {
         Grotesque_Guardians(4, 102249, true, "Teleports you to the Grotesque Guardians", new Position(3428, 3541, 2)),
         Thermonuclear_Smoke_Devil(4, 102254, true, "Teleports you to the Thermonuclear Smoke Devil", new Position(2404, 9415, 0)),
         Kraken(4, 103003, true, "Teleports you to the Kraken", new Position(2280, 10016, 0)),
-        Demonic_Gorillas(4, 103008, true, "Teleports you to the Demonic Gorillas", new Position(2124, 5660, 0)),
         Godwars(4, 103013, true, "Teleports you to the Godwars.", new Position(2948, 3147, 0)),
         Corporeal_Beast(4, 103018, true, "Teleports you to the Corporeal Beast", new Position(2964, 4382, 2)),
         Zulrah(4, 103023, true, "Teleports you to the Zulrah", new Position(2203, 3056, 0)),
@@ -404,6 +403,7 @@ public class TeleportInterface2 {
         Myths_Guild(5, 102254, true, "Teleports you to the Myths' Guild basement.", new Position(1935, 9010, 1)),
         Taverly_Dungeon(5, 103003, true, "Teleports you to the Taverly Dungeon.", new Position(2883, 9800, 0)),
         Stronghold_Slayer_Cave(5, 103008, true, "Teleports you to the Stronghold Slayer Cave.", new Position(2452, 9820, 0)),
+        Crystal_cavern(5, 103013, true, "Teleports you to Crystal caverns", new Position(3272, 6052, 0)),
 
         Theatre_of_Blood(6, 102209, true, "Teleports you to Theatre of Blood", new Position(3671, 3219, 0)),
         Chambers_of_Xeric(6, 102214, true, "Teleports you to Chambers of Xeric", new Position(3033, 6067, 0)),

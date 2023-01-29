@@ -21,7 +21,6 @@ public class MasterClue {
 			player.sendMessage("A " + Skill.forId(player.masterClueRequirement[0]).name().toLowerCase() + " level of " + player.masterClueRequirement[1] + " and " + Skill.forId(player.masterClueRequirement[2]).name().toLowerCase() + " level of " + player.masterClueRequirement[3] + " is what you need.");
 		} else {
 			player.sendMessage("One of each, easy, medium and hard clue scroll is what I ask from you.");
-			return;
 		}
 	}
 

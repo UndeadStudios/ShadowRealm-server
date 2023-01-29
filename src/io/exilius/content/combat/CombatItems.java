@@ -244,7 +244,7 @@ public class CombatItems {
 		return c.getItems().isWearingItem(Items.AVAS_ACCUMULATOR)
 				|| c.getItems().isWearingItem(Items.ACCUMULATOR_MAX_CAPE)
 				|| c.getItems().isWearingItem(Items.RANGING_CAPE)
-				|| c.getItems().isWearingItem(Items.RANGE_MASTER_CAPE) || c.getItems().isWearingItem(Items.DEATH_CAPE);
+				|| c.getItems().isWearingItem(Items.RANGE_MASTER_CAPE) || c.getItems().isWearingItem(Items.DEATH_CAPE) || c.getItems().isWearingItem(Items.Godly_CAPE);
 	}
 
 	public boolean consumeDart() {

@@ -60341,7 +60341,7 @@
       "dstab": 2,
       "dslash": 18,
       "dcrush": 20,
-      "str": 215,
+      "str": 235,
       "aspeed": 4
     }
   },
@@ -60358,7 +60358,7 @@
       "dstab": 2,
       "dslash": 18,
       "dcrush": 20,
-      "str": 215,
+      "str": 245,
       "aspeed": 4
     }
   },
@@ -65586,20 +65586,20 @@
     "weight": 0.453,
     "equipment": {
       "slot": 1,
-      "astab": 24,
-      "aslash": 24,
-      "acrush": 24,
-      "amagic": 21,
-      "arange": 21,
-      "dstab": 22,
-      "dslash": 22,
-      "dcrush": 22,
-      "dmagic": 22,
-      "drange": 22,
-      "str": 17,
-      "rstr": 17,
-      "mdmg": 17,
-      "prayer": 10
+      "astab": 34,
+      "aslash": 34,
+      "acrush": 34,
+      "amagic": 31,
+      "arange": 31,
+      "dstab": 32,
+      "dslash": 32,
+      "dcrush": 32,
+      "dmagic": 32,
+      "drange": 32,
+      "str": 22,
+      "rstr": 22,
+      "mdmg": 22,
+      "prayer": 14
     }
   },
   "24134": {
@@ -68413,6 +68413,64 @@
       "drange": 117,
       "str": 12,
       "prayer": 8
+    }
+  },
+  "8469": {
+    "name": "Godly Torva Platelegs",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 7,
+      "astab": 74,
+      "aslash": 74,
+      "acrush": 74,
+      "amagic": -11,
+      "arange": -5,
+      "dstab": 200,
+      "dslash": 182,
+      "dcrush": 193,
+      "dmagic": -17,
+      "drange": 203,
+      "prayer": 12
+    }
+  },
+  "8467": {
+    "name": "godly Torva Platebody",
+    "equipable": true,
+    "weight": 9.0,
+    "equipment": {
+      "slot": 4,
+      "astab": 84,
+      "aslash": 84,
+      "acrush": 84,
+      "amagic": -20,
+      "arange": -10,
+      "dstab": 212,
+      "dslash": 210,
+      "dcrush": 177,
+      "dmagic": -6,
+      "drange": 209,
+      "prayer": 12
+    }
+  },
+  "8465": {
+    "name": "Godly Torva Full Helm",
+    "equipable": true,
+    "weight": 2.7,
+    "equipment": {
+      "slot": 0,
+      "astab": 64,
+      "aslash": 64,
+      "acrush": 64,
+      "amagic": -1,
+      "arange": 4,
+      "dstab": 140,
+      "dslash": 133,
+      "dcrush": 129,
+      "dmagic": -2,
+      "drange": 147,
+      "str": 14,
+      "prayer": 14
     }
   },
   "26235": {
@@ -72268,15 +72326,15 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "astab": 70,
-      "aslash": 80,
-      "acrush": -2,
-      "amagic": 5,
-      "dstab": 0,
-      "dslash":1,
-      "dcrush": 0,
-      "dmagic": 2,
-      "str": 80,
+      "astab": 145,
+      "aslash": 130,
+      "acrush": 120,
+      "amagic": 0,
+      "dstab": 40,
+      "dslash":20,
+      "dcrush": 10,
+      "dmagic": 12,
+      "str": 150,
       "aspeed": 4
     }
   },
@@ -72286,9 +72344,9 @@
     "weight": 0.453,
     "equipment": {
       "slot": 3,
-      "aslash": 82,
-      "str": 82,
-      "aspeed": 4
+      "aslash": 122,
+      "str": 122,
+      "aspeed": 3
     }
   },
   "26484": {
@@ -72296,9 +72354,9 @@
     "equipable": true,
     "equipment": {
       "slot": 3,
-      "aslash": 90,
-      "str": 86,
-      "aspeed": 4
+      "aslash": 140,
+      "str": 126,
+      "aspeed": 3
     }
   }
 }

@@ -108,9 +108,14 @@ public class UnbearableChest implements Lootable {
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
-        if (c.getItems().playerHasItem(28347)) {
-            rareChance = 930;
-            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
+//        if (c.getItems().playerHasItem(28347)) {
+//            rareChance = 930;
+//            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
+//            c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
+//        }
+        if (c.getItems().playerHasItem(19480)) {
+            rareChance = 940;
+            c.sendMessage("@blu@You're Godly Cape has given you a increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
         List<GameItem> itemList = random <= rareChance ? items.get(LootRarity.COMMON) : items.get(LootRarity.RARE);
@@ -119,16 +124,21 @@ public class UnbearableChest implements Lootable {
 
     private static GameItem randomChestRewards(Player c, int chance) {
         int random = Misc.random(chance);
-        int rareChance = 980;
+        int rareChance = 970;
         if (c.getItems().playerHasItem(21046)) {
             rareChance = 950;
             c.getItems().deleteItem(21046, 1);
             c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
-        if (c.getItems().isWearingItem(28347)) {
-            rareChance = 945;
-            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
+//        if (c.getItems().isWearingItem(28347)) {
+//            rareChance = 945;
+//            c.sendMessage("@red@You're Death Cape has given you a increased drop rate." );
+//            c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
+//        }
+        if (c.getItems().isWearingItem(19480)) {
+            rareChance = 940;
+            c.sendMessage("@blu@You're Godly Cape has given you a increased drop rate." );
             c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
         List<GameItem> itemList;

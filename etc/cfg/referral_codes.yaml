@@ -21,3 +21,14 @@
       amount: 2
     - id: 11937
       amount: 100
+
+- code: "mikeap"
+  rewards:
+    - name: coins
+      amount: 2000000
+    - id: 8467 #foe box
+      amount: 1
+    - name: youtube mystery box
+      amount: 1
+    - id: 2528 # lamp
+      amount: 3

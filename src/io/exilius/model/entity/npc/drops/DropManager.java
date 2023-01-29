@@ -624,8 +624,14 @@ KeyToClue.dropKey(player, npc, location);
         if (player.getItems().isWearingItem(28347)) {
             modifier -= .05;
         }
+        if (player.getItems().isWearingItem(19480)) {
+            modifier -= .07;
+        }
         if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
             modifier -= .15;
+        }
+        if (player.getItems().isWearingItem(19480) && player.isSkulled == true ) {
+            modifier -= .17;
         }
         if (player.isSkulled == true ) {
             modifier -= .05;
@@ -703,8 +709,14 @@ KeyToClue.dropKey(player, npc, location);
         if (player.getItems().isWearingItem(28347)) {
             modifier += 5;
         }
+        if (player.getItems().isWearingItem(19480)) {
+            modifier += 7;
+        }
         if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
             modifier += 15;
+        }
+        if (player.getItems().isWearingItem(19480) && player.isSkulled == true ) {
+            modifier += 17;
         }
         if (player.isSkulled == true ) {
             modifier += 5;

@@ -474,7 +474,7 @@ public class ItemOptionOne implements PacketType {
                 }));
           	break;
             case 12789:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox)|| !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox)  || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox)|| !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
@@ -486,7 +486,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 13346:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox)  || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -498,7 +498,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 6199:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox)  || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -511,7 +511,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 6828:
-        		if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+        		if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
         			c.getPA().showInterface(47000);
         			c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
         			return;
@@ -524,7 +524,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 8167:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
@@ -537,7 +537,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 28827:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
@@ -550,7 +550,7 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 10025:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
@@ -563,12 +563,25 @@ public class ItemOptionOne implements PacketType {
                 }
                 break;
             case 6830:
-                if (!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                if (!(c.getSuperMysteryBox().canMysteryBox) ||!(c.getNexBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
                     c.getPA().showInterface(47000);
                     c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
                     return;
                 }
                 else if (c.getItems().playerHasItem(6830)) {
+                    c.getRaids2mbox().openInterface();
+                    c.inDonatorBox = true;
+                    c.stopMovement();
+                    return;
+                }
+                break;
+            case 28825:
+                if (!(c.getRaids2mbox().canMysteryBox) ||!(c.getRaidsmbox().canMysteryBox) ||!(c.getSuperMysteryBox().canMysteryBox) || !(c.getNormalMysteryBox().canMysteryBox) || !(c.getPresent().canMysteryBox) || !(c.getUltraMysteryBox().canMysteryBox) || !(c.getFoeMysteryBox().canMysteryBox) || !(c.getYoutubeMysteryBox().canMysteryBox) || !(c.getMoneyBox().canMysteryBox)) {
+                    c.getPA().showInterface(47000);
+                    c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
+                    return;
+                }
+                else if (c.getItems().playerHasItem(28825)) {
                     c.getRaids2mbox().openInterface();
                     c.inDonatorBox = true;
                     c.stopMovement();

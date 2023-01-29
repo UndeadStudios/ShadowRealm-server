@@ -2,65 +2,66 @@
 id: 121
 name: "Boss Points Shop"
 items:
-
-- name: "cooked karambwan noted"
-  price: 1
-- name: "anglerfish noted"
-  price: 2
-- name: "dragon bones noted"
-  price: 2
-- name: "dragon arrow"
-  price: 2
-- name: "dragon dart"
-  price: 2
-- name: "dragon javelin"
-  price: 3
-
-- name: "divine ranging potion4 noted"
-  price: 50
-- name: "divine magic potion4 noted"
-  price: 50
-- name: "divine super combat potion4 noted"
-  price: 50
-
+- id: 22731
+  price: 2000
+- id: 11840
+  price: 1000
+- id: 2577
+  price: 1000
+- id: 406
+  amount: 25
+  price: 1500
+- id: 21028
+  price: 1000
+- id: 2403
+  price: 2500
+- id: 12004
+  price: 1000
+- id: 11920
+  price: 1000
+- id: 6739
+  price: 1000
+- id: 6731
+  price: 250
+- id: 6733
+  price: 250
+- id: 6737
+  price: 250
+- id: 13229
+  price: 1500
+- id: 13231
+  price: 1500
+- id: 13227
+  price: 1500
+- id: 12927
+  price: 2000
+- id: 12922
+  price: 1500
+- id: 24777
+  price: 2000
+- id: 19529
+  price: 1500
 - name: "casket"
-  price: 200
+  price: 75
 - name: "crystal key"
-  price: 450
-
-
+  price: 200
 - name: "overload 4"
   price: 225
-
 - name: "fighter torso"
-  price: 1000
+  price: 500
 - name: "uncut onyx"
-  price: 1000
+  price: 500
 - id: 12020
-  price: 1000
-
+  price: 50
 - name: "darklight"
-  price: 1350
-- name: "berserker necklace"
-  price: 1500
-- name: "master wand"
-  price: 1900
-- name: "mages book"
-  price: 3900
-
+  price: 750
 - name: "royal seed pod"
-  price: 2000
-
-- name: "rune pouch"
-  price: 2500
-
-- name: "crystal weapon seed"
-  price: 5000
+  price: 800
 - name: "zamorakian spear"
-  price: 5000
+  price: 1000
 - name: "ring of wealth"
-  price: 5400
+  price: 2000
 - name: "ammo mould"
   price: 250
 - name: "ring of wealth scroll"
-  price: 25000
+  price: 5000

@@ -212,6 +212,9 @@ public class ItemOptionThree implements PacketType {
             case 13346:
                 new UltraMysteryBox(c).quickOpen();
                 break;
+            case 22825:
+                new NexBox(c).quickOpen();
+                break;
             case 6830:
                 new Raids2mbox(c).quickOpen();
                 break;
