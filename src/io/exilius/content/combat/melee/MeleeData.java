@@ -255,8 +255,6 @@ public class MeleeData {
 			c.playerRunIndex = 248;
 			break;
 			case 4151:
-			case 26482:
-			case 26484:
 		case 12773:
 		case 12774:
 		case 12006:
@@ -367,8 +365,6 @@ public class MeleeData {
 
 		if (weaponName.contains("ghrazi rapier")) {
 			return 8145;
-		}if (weaponName.contains("voidwaker")) {
-			return 8145;
 		}
 		if (weaponName.contains("zamorakian")) {
 			return 2080;
@@ -442,7 +438,7 @@ public class MeleeData {
 					return 8290;
 			}
 		}
-		if (weaponName.contains("scimitar") || weaponName.contains("saeldor")) {
+		if (weaponName.contains("scimitar") || weaponName.contains("saeldor") || weaponName.contains("voidwaker")) {
 			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 				case ACCURATE:// attack
 					return 390;
@@ -606,8 +602,6 @@ public class MeleeData {
 		case 4734: // karil
 			return 2075;
 			case 4151:
-			case 26484:
-			case 26482:
 			case 28213:
 			case 28214:
 			case 28215:
@@ -703,8 +697,6 @@ public class MeleeData {
 		case 7158:
 			return 410;
 			case 4151:
-			case 26482:
-			case 26484:
 			case 28213:
 			case 28214:
 			case 28215:
