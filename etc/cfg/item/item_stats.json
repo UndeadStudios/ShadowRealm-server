@@ -72358,5 +72358,101 @@
       "str": 126,
       "aspeed": 3
     }
+  },
+  "29364": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29365": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29366": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29367": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29368": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29369": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29370": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29371": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29372": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29373": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29374": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
+  },
+  "29375": {
+    "name": "Gnome scarf",
+    "equipable": true,
+    "weight": 0.01,
+    "equipment": {
+      "slot": 2
+    }
   }
 }
