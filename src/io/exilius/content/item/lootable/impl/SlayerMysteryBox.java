@@ -18,7 +18,7 @@ import java.util.Map;
  * Revamped a simple means of receiving a random item based on chance.
  *
  * @author Jason MacKeigan
- * @date Oct 29, 2014, 1:43:44 PM
+ * {@code @date} Oct 29, 2014, 1:43:44 PM
  */
 public class SlayerMysteryBox extends MysteryBoxLootable {
 
@@ -27,8 +27,8 @@ public class SlayerMysteryBox extends MysteryBoxLootable {
 	 */
 	private static final Map<LootRarity, List<GameItem>> items = new HashMap<>();
 
-	/**
-	 * Stores an array of items into each map with the corresponding rarity to the list
+	/*
+	  Stores an array of items into each map with the corresponding rarity to the list
 	 */
 	static {
 		items.put(LootRarity.COMMON, //50% chance
@@ -59,20 +59,20 @@ public class SlayerMysteryBox extends MysteryBoxLootable {
 				));
 			items.put(LootRarity.UNCOMMON, //50% chance
 					Arrays.asList(
-							new GameItem(691),//FoE point certificate
-							new GameItem(2572),//row
-							new GameItem(4151),//whip
+							new GameItem(691,1),//FoE point certificate
+							new GameItem(2572,1),//row
+							new GameItem(4151,1),//whip
 							new GameItem(6585, 1),//fury
 							new GameItem(9242, 100),//ruby bolts (e)
-							new GameItem(11840),//dragon boots
+							new GameItem(11840,1),//dragon boots
 							new GameItem(406, 5),//pvm casket
 		new GameItem(2528, 2),//experience lamp
 		new GameItem(990, 10),//crystal key
 				new GameItem(11730,1),//overload potion
-				new GameItem(691),//FoE point certificate
-				new GameItem(2572),//row
+				new GameItem(691,1),//FoE point certificate
+				new GameItem(2572,1),//row
 				new GameItem(892, 250),//rune arrows
-				new GameItem(4151),//whip
+				new GameItem(4151,1),//whip
 				new GameItem(6585, 1),//fury
 				new GameItem(406, 5),//pvm casket
 		new GameItem(2528, 2),//experience lamp
@@ -85,20 +85,20 @@ public class SlayerMysteryBox extends MysteryBoxLootable {
 			items.put(LootRarity.RARE,//8% chance
 					Arrays.asList(
 							new GameItem(19835, 1),//master clue
-							new GameItem(892, 2500),//rune arrows
+							new GameItem(892, 2_500),//rune arrows
 							new GameItem(23951, 2),//crystalline key
 							new GameItem(FragmentOfSeren.KEY, 2),//serens key
 							new GameItem(TheUnbearable.KEY, 2),//sotetsegs key
 							new GameItem(6199, 1),//mystery box
-		new GameItem(691),//FoE point certificate
-				new GameItem(23804),//imbue dust
-				new GameItem(12018),//salve ei
+		new GameItem(691,1),//FoE point certificate
+				new GameItem(23804,1),//imbue dust
+				new GameItem(12018,1),//salve ei
 				new GameItem(19835, 1),//master clue
 				new GameItem(23951, 2),//crystalline key
 				new GameItem(FragmentOfSeren.KEY, 2),//serens key
 				new GameItem(TheUnbearable.KEY, 2),//sotetsegs key
-				new GameItem(23804),//imbue dust
-				new GameItem(12018),//salve ei
+				new GameItem(23804,1),//imbue dust
+				new GameItem(12018,1),//salve ei
 				new GameItem(20724, 1),//imbued heart
 		new GameItem(6199, 1),//mystery box
 		new GameItem(990, 20),//crystal key

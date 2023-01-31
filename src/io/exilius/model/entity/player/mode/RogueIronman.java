@@ -8,7 +8,7 @@ public class RogueIronman extends IronmanMode {
 
     @Override
     public double getDropModifier() {
-        return -0.07;
+        return -0.05;
     }
 
     @Override

@@ -38,7 +38,7 @@ enum class UpgradeData(
 
     RING_OF_WEALTH(Categories.ACCESSORIES, 2572, GameItem(12785, 1), 10_000_000, 20.0),//into rowi
     RAIDS_1_MBOX(Categories.OTHER,10025, GameItem(6830,1),100_000_000,1.0),//into raids 2 mbox
-    RAIDS_2_MBOX(Categories.OTHER,6830, GameItem(6199,1),200_000_000,1.0),//into nex box
+    RAIDS_2_MBOX(Categories.OTHER,6830, GameItem(28825,1),200_000_000,1.0),//into nex box
     CASKET(Categories.OTHER,406,GameItem(28827,1),1_000_000,1.0),//into money box
     SUPER_MYSTERY_BOX(Categories.OTHER,6828, GameItem(13346,1),100_000_000,1.0),//into ultra mystery box
     CRYSTALLINE_KEY(Categories.OTHER,23951, GameItem(23776,1),100_000_000,1.0),//into hunllef's key

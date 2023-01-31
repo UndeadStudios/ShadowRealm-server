@@ -16,7 +16,7 @@ import java.util.Map;
  * Revamped a simple means of receiving a random item based on chance.
  *
  * @author Jason MacKeigan
- * @date Oct 29, 2014, 1:43:44 PM
+ * {@code @date} Oct 29, 2014, 1:43:44 PM
  */
 public class UltraMysteryBox extends MysteryBoxLootable {
 
@@ -25,8 +25,8 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 	 */
 	private static final Map<LootRarity, List<GameItem>> items = new HashMap<>();
 
-	/**
-	 * Stores an array of items into each map with the corresponding rarity to the list
+	/*
+	  Stores an array of items into each map with the corresponding rarity to the list
 	 */
 	static {
 		items.put(LootRarity.COMMON, //50% chance
@@ -80,7 +80,7 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(12002, 1),//occult necklace
 						new GameItem(13239, 1),//primordial boots
 						new GameItem(13235, 1),//eternal boots
-						new GameItem(13237))//pegasian boots)
+						new GameItem(13237,1))//pegasian boots)
 
 		);
 		items.put(LootRarity.UNCOMMON, //50% chance
@@ -156,7 +156,7 @@ public class UltraMysteryBox extends MysteryBoxLootable {
 						new GameItem(761, 1),//$100 scroll
 						new GameItem(786, 1),//$50 scroll
 						new GameItem(786, 1),//$50 scroll
-						new GameItem(786)//$50 scroll
+						new GameItem(786,1)//$50 scroll
 
 				));
 	}

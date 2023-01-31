@@ -11536,7 +11536,7 @@
   },
   "2215": {
     "name": "General Graardor",
-    "hitpoints": 255,
+    "hitpoints": 455,
     "combatLevel": 624,
     "attackSpeed": 6,
     "attackLevel": 280,
@@ -28398,7 +28398,7 @@
   },
   "6493": {
     "name": "Commander Zilyana",
-    "hitpoints": 255,
+    "hitpoints": 455,
     "combatLevel": 596,
     "attackSpeed": 2,
     "attackLevel": 280,
@@ -28441,7 +28441,7 @@
   },
   "6495": {
     "name": "K'ril Tsutsaroth",
-    "hitpoints": 255,
+    "hitpoints": 455,
     "combatLevel": 650,
     "attackSpeed": 6,
     "attackLevel": 340,

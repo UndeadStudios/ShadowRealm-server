@@ -35,6 +35,9 @@ import io.exilius.model.items.EquipmentSet;
 import io.exilius.model.items.GameItem;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.util.stream.IntStream;
 
@@ -542,9 +545,18 @@ public class NPCDeath {
         }
     }
 
+    @SneakyThrows
     public static void announceKc(Player player, GameItem item, int kc) {
         PlayerHandler.executeGlobalMessage("@pur@" + player.getDisplayNameFormatted() + " received a drop: " +
                 "" + ItemDef.forId(item.getId()).getName() + " x " + item.getAmount() + " at <col=E9362B>" + kc  + "</col>@pur@ kills.");
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.setTitle("[Drop System]");
+        eb.setDescription(player.getDisplayName() + " Has received a drop: " +
+                "" + ItemDef.forId(item.getId()).getName() + " x " + item.getAmount());
+        eb.setFooter("at " + kc + " KC!");
+        eb.setImage("https://media.tenor.com/JbLU0gejMa8AAAAC/thumbs-up.gif");
+        eb.setColor(new java.awt.Color(0, 255, 255));
+        Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
     }
 
     public static boolean isDoubleDrops() {

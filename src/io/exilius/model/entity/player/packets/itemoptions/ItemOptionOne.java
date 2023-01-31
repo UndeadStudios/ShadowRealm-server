@@ -582,7 +582,7 @@ public class ItemOptionOne implements PacketType {
                     return;
                 }
                 else if (c.getItems().playerHasItem(28825)) {
-                    c.getRaids2mbox().openInterface();
+                    c.getNexBox().openInterface();
                     c.inDonatorBox = true;
                     c.stopMovement();
                     return;

@@ -60815,6 +60815,57 @@
       level: 42
     - skill: "STRENGTH"
       level: 42
+- id: 26471
+  name: "Eternal void top"
+  description: "Broken superior torso armour from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26469
+  name: "Eternal void robe"
+  description: "Broken superior leg armour from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26475
+  name: "Eternal void helm"
+  description: "Broken superior Helmet from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 27005
+  name: "Eternal void helm"
+  description: "Broken superior Helmet from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
 - id: 13074
   name: "Pharaoh's sceptre (8)"
   description: "Fully charged: This sceptre is fully charged. Charges used: This Sceptre\
@@ -75302,7 +75353,10 @@
   requirements:
     - skill: "ATTACK"
       level: 75
-
+- id: 26708
+  name: "Dragon claws (or)"
+  description: "A set of fighting claws (or)."
+  shopValue: 11600000
 - id: 22800
   name: "Bird nest"
   description: "A bird nest."

@@ -55649,6 +55649,21 @@
       "aspeed": 4
     }
   },
+  "26708": {
+    "name": "Dragon claws (or)",
+    "equipable": true,
+    "equipment": {
+      "slot": 3,
+      "astab": 51,
+      "aslash": 67,
+      "acrush": -14,
+      "dstab": 23,
+      "dslash": 36,
+      "dcrush": 17,
+      "str": 66,
+      "aspeed": 4
+    }
+  },
   "20785": {
     "name": "Dragon warhammer",
     "equipable": true,
@@ -66221,6 +66236,34 @@
       "prayer": 3
     }
   },
+  "26469": {
+    "name": "Eternal void top",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 4,
+      "dstab": 105,
+      "dslash": 105,
+      "dcrush": 105,
+      "dmagic": 105,
+      "drange": 105,
+      "prayer": 13
+    }
+  },
+  "26471": {
+    "name": "Eternal void robe",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 7,
+      "dstab": 100,
+      "dslash": 100,
+      "dcrush": 100,
+      "dmagic": 100,
+      "drange": 100,
+      "prayer": 13
+    }
+  },
   "24181": {
     "name": "Void knight mace (l)",
     "equipable": true,
@@ -66277,6 +66320,32 @@
       "dcrush": 6,
       "dmagic": 6,
       "drange": 6
+    }
+  },
+  "26475": {
+    "name": "Eternal Void helm",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 0,
+      "dstab": 86,
+      "dslash": 86,
+      "dcrush": 86,
+      "dmagic": 86,
+      "drange": 86
+    }
+  },
+  "27005": {
+    "name": "Eternal Void helm",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 0,
+      "dstab": 46,
+      "dslash": 46,
+      "dcrush": 46,
+      "dmagic": 46,
+      "drange": 46
     }
   },
   "24185": {

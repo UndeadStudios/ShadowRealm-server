@@ -52,25 +52,6 @@ public abstract class MysteryBoxLootable implements Lootable {
         return active;
     }
 
-//    public void draw() {
-//        openInterface();
-//        if (spinNum == 0) {
-//            for (int i = 0; i < 66; i++) {
-//                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-//                GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
-//                final int NOT_PRIZE_ID = NotPrize.getId();
-//                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, 1);
-//            }
-//        } else {
-//            for (int i = spinNum * 50 + 16; i < spinNum * 50 + 66; i++) {
-//                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-//                final int NOT_PRIZE_ID = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity())).getId();
-//                sendItem(i, (spinNum + 1) * 50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
-//            }
-//        }
-//        spinNum++;
-//    }
-
     public void spin() {
 
         // Server side checks for spin

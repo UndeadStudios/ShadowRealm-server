@@ -91,6 +91,7 @@ public class IronmanMode extends Mode {
 		case 114:
 		case 190:
 		case 147:
+			case 67:
 			case 143:
 			return true;
 		}

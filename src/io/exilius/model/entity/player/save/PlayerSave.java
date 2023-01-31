@@ -2252,17 +2252,27 @@ public class PlayerSave {
             characterfile.write("battle-pass-premium-unlocked = ",0,31);
             characterfile.write(Boolean.toString(p.isBattlePassPremiumUnlocked()));
             characterfile.newLine();
+			
+			
+			
+            // FREE BATTLEPASS SAVE
             StringBuilder freeBpRewads = new StringBuilder();
             for (int i = 0; i < p.getBattlePassFreeRwdsClaimed().length; i++) {
                 freeBpRewads.append(p.getBattlePassFreeRwdsClaimed()[i]).append("\t");
             }
+
             characterfile.write("battle-pass-free-rwds-claimed = ");
             characterfile.write(freeBpRewads.toString());
             characterfile.newLine();
+
+            // PREMIUM BATTLEPASS SAVE'
             StringBuilder premiumBpRewards = new StringBuilder();
-            for (int i = 0; i < p.getBattlePassFreeRwdsClaimed().length; i++) {
-                premiumBpRewards.append(p.getBattlePassFreeRwdsClaimed()[i]).append("\t");
+            for (int i = 0; i < p.getBattlePassPremiumRwdsClaimed().length; i++) {
+                premiumBpRewards.append(p.getBattlePassPremiumRwdsClaimed()[i]).append("\t");
             }
+			
+			
+			
             characterfile.write("battle-pass-premium-rwds-claimed = ");
             characterfile.write(premiumBpRewards.toString());
             characterfile.newLine();

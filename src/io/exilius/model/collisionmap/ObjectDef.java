@@ -39,6 +39,7 @@ public final class ObjectDef {
 				break;
 			case 36062:
 				objectDef.description = "Teleports you anywhere around Exilius.";
+				objectDef.animation = -1;
 				objectDef.actions = new String[] { "Activate", "Previous Location", null, null, null };
 				break;
 			case 4152:

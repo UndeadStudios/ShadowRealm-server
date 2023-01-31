@@ -1349,12 +1349,8 @@ public class PlayerAssistant {
 			c.getOutStream().writeUnsignedWord(frame);
 			c.getOutStream().writeDWord(slot);
 			c.getOutStream().writeUnsignedWord(item + 1);
-			if (amount > 254) {
-				c.getOutStream().writeByte(255);
-				c.getOutStream().writeDWord(amount);
-			} else {
-				c.getOutStream().writeByte(amount);
-			}
+			c.getOutStream().writeByte(255);
+			c.getOutStream().writeDWord(amount);
 			c.getOutStream().endFrameVarSizeWord();
 		}
 	}
