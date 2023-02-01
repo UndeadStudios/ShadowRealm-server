@@ -713,12 +713,12 @@ public class UseItem {
         }
         if (itemUsed == 25859 && useWith == 23877 || itemUsed == 23877 && useWith == 25859) {
             if (c.playerLevel[c.playerCrafting] >= 75) {
-                if (!c.getItems().playerHasItem(25859) || !c.getItems().playerHasItem(23877, 100000) || !c.getItems().playerHasItem(2347)) {
-                    c.sendMessage("You must have a hammer, 100,000 crystal shard, Enchanted crystal weapon seed in order to do this.");
+                if (!c.getItems().playerHasItem(25859) || !c.getItems().playerHasItem(23877, 150000) || !c.getItems().playerHasItem(2347)) {
+                    c.sendMessage("You must have a hammer, 150,000 crystal shard, Enchanted crystal weapon seed in order to do this.");
                     return;
                 }
                 c.getItems().deleteItem(25859, 1);
-                c.getItems().deleteItem(23877, 100_000);
+                c.getItems().deleteItem(23877, 150_000);
                 c.getItems().addItem(25865, 1);
                 c.getDH().sendItemStatement("You combine the two materials to create a Bow of Faerdhinen.", 25865);
                 c.getPA().addSkillXPMultiplied(10, c.playerCrafting, true);
@@ -2075,6 +2075,42 @@ public class UseItem {
 					}
 
 					player.getItems().deleteItem(2528, 1);
+					player.sendMessage("The lamp mysteriously vanishes...");
+
+					player.getPA().closeAllWindows();
+				}
+			}
+
+			return;
+		}
+		if (npcId == 7599) {//lamp on hunter for hunter xp
+			if (itemId == 27299) {
+				if (player.getItems().playerHasItem(27299, 1)) {
+					if (!player.getMode().isOsrs() && !player.getMode().is5x()) {
+						player.getPA().addSkillXP(1_250_000, 0, true);
+						player.getPA().addSkillXP(1_250_000, 1, true);
+						player.getPA().addSkillXP(1_250_000, 2, true);
+						player.getPA().addSkillXP(1_250_000, 21, true);
+						player.getPA().addSkillXP(1_250_000, 4, true);
+						player.getPA().addSkillXP(1_250_000, 10, true);
+						player.getPA().addSkillXP(1_250_000, 11, true);
+						player.getPA().addSkillXP(1_250_000, 12, true);
+						player.getPA().addSkillXP(1_250_000, 13, true);
+						player.getPA().addSkillXP(1_250_000, 14, true);
+					} else {
+						player.getPA().addSkillXP(1_250_000, 0, true);
+						player.getPA().addSkillXP(1_250_000, 1, true);
+						player.getPA().addSkillXP(1_250_000, 2, true);
+						player.getPA().addSkillXP(1_250_000, 21, true);
+						player.getPA().addSkillXP(1_250_000, 4, true);
+						player.getPA().addSkillXP(1_250_000, 10, true);
+						player.getPA().addSkillXP(1_250_000, 11, true);
+						player.getPA().addSkillXP(1_250_000, 12, true);
+						player.getPA().addSkillXP(1_250_000, 13, true);
+						player.getPA().addSkillXP(1_250_000, 14, true);
+					}
+
+					player.getItems().deleteItem(27299, 1);
 					player.sendMessage("The lamp mysteriously vanishes...");
 
 					player.getPA().closeAllWindows();

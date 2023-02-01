@@ -988,7 +988,16 @@ public class ItemOptionOne implements PacketType {
 			}*/
 
         if (itemId == 2528) {
-        	c.inLamp = true;
+            c.inLamp = true;
+            c.usingLamp = true;
+            c.normalLamp = true;
+            c.antiqueLamp = false;
+            c.sendMessage("You rub the lamp...");
+            c.getPA().showInterface(25330);
+        }
+
+        if (itemId == 27299) {
+            c.inLamp = true;
             c.usingLamp = true;
             c.normalLamp = true;
             c.antiqueLamp = false;

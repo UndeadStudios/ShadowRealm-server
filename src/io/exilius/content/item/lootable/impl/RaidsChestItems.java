@@ -481,7 +481,6 @@ public class RaidsChestItems {
                 new GameItem(21003, 1), //elder maul      	 	 UNCOMMON
                 new GameItem(20784, 1),  //D claws
                 new GameItem(21018, 1),//ancestral hat
-                new GameItem(20997, 1),  //twisted bow			UNCOMMON
                 new GameItem(21024, 1),//ancestral bottom
                 new GameItem(21003, 1), //elder maul      		  UNCOMMON
                 new GameItem(20784, 1),  //D claws

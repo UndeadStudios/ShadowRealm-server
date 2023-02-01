@@ -181,6 +181,21 @@ public class RangeCombatFormula implements CombatFormula {
                     multiplier += getTwistedBowAccuracyBoost(magicLevel, Boundary.isIn(attacker, Boundary.XERIC));
                 }
             }
+            if (attacker.getItems().isWearingItem(8029, Player.playerWeapon)) {
+                if (defender.isNPC()) {
+                    double damageCap = 140.0;
+                    int magicLevel = 0;
+                    if (defender.isPlayer())
+                        magicLevel = defender.asPlayer().playerLevel[Skill.MAGIC.getId()];
+                    else {
+                        NpcCombatDefinition definition = defender.asNPC().getCombatDefinition();
+                        if (definition != null) {
+                            magicLevel = definition.getLevel(NpcCombatSkill.MAGIC);
+                        }
+                    }
+                    multiplier += getTwistedBowAccuracyBoost(magicLevel, Boundary.isIn(attacker, Boundary.XERIC));
+                }
+            }
             hit *= multiplier;
             hit = Math.floor(hit);
         } else {

@@ -105,12 +105,15 @@ public class TheatreOfBloodChest implements Lootable {
     public Map<LootRarity, List<GameItem>> getLoot() {
         return items;
     }
+    private static Player c;
 
     public static List<GameItem> getRandomItems(boolean rollRares, int size) {
         List<GameItem> rewards = Lists.newArrayList();
         int rareChance = 9;
         if (Hespori.activeKronosSeed) {
             rareChance = 5;
+        } else if (c.getItems().playerHasItem(21046, 1)) {
+            rareChance = 7;
         }
 
         if (rollRares && Misc.trueRand(rareChance) == 0) {
@@ -139,6 +142,8 @@ public class TheatreOfBloodChest implements Lootable {
         Achievements.increase(player, AchievementType.TOB, 1);
         if (Hespori.activeKronosSeed == true) {
             player.sendMessage("@red@The @gre@Kronos seed@red@ doubles your chances!" );
+        }else if (c.getItems().playerHasItem(21046, 1)) {
+            player.sendMessage("@red@The Tablet increased your chances by 20%!" );
         }
         player.getItems().addItem(995, 500_000 + Misc.random(1_000_000));
         List<GameItem> rareItemList = items.get(LootRarity.RARE);

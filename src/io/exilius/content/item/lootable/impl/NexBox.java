@@ -47,8 +47,10 @@ public class NexBox extends MysteryBoxLootable {
 						new GameItem(3460, 8),//nex key
 						new GameItem(3460, 8),//nex key
 						new GameItem(26235,1),//Zaryte vambraces
-						new GameItem(26370,1),//ancient hilt
-						new GameItem(27184,1)//ancient godsword
+						new GameItem(12002,1),//torva full helm
+		new GameItem(11806,1)//torva platelegs
+						//new GameItem(26370,1),//ancient hilt
+						//new GameItem(27184,1)//ancient godsword
 		));
 		items.put(LootRarity.RARE,//8% chance
 				Arrays.asList(

@@ -56340,7 +56340,19 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
+      "prayer": 4,
+      "aspeed": 6
+    }
+  },
+  "8029": {
+    "name": "Godly Twisted bow",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 3,
+      "arange": 205,
+      "rstr": 105,
       "prayer": 4,
       "aspeed": 5
     }
@@ -56352,7 +56364,7 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56364,7 +56376,7 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56376,7 +56388,7 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56388,7 +56400,7 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56400,7 +56412,7 @@
     "equipment": {
       "slot": 3,
       "arange": 205,
-      "rstr": 100,
+      "rstr": 85,
       "prayer": 4,
       "aspeed": 6
     }

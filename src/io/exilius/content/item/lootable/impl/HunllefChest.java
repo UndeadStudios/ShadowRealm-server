@@ -125,7 +125,7 @@ public class HunllefChest implements Lootable {
     }
 
     public static void rolledCommon(Player c) {
-        int crystalshardbonus = Misc.random(29) + 10;
+        int crystalshardbonus = Misc.random(150) + 50;
         if (randomNumber() < 750) { //not a rare
             if (c.getItems().playerHasItem(KEY)) {
                 c.getItems().deleteItem(KEY, 1);

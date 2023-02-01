@@ -53,9 +53,18 @@ public class RangeMaxHit extends RangeData {
 				if (c.debugMessage) {
 					c.sendMessage("Twisted bow accuracy boost: " + boost);
 				}
+				if (c.npcAttackingIndex > 0 && c.getItems().isWearingItem(8029)) {
+					//Optional<NPC> npc2 = NPCHandler.getNpcAtIndex(c.npcAttackingIndex);
+					if (npc.isPresent()) {
+						//double boost2 = getTwistedBowAccuracyBoost(getBestTwistedBowMagicLevel(npc.get()));
+						rangeLevel += (rangeLevel * boost);
+						if (c.debugMessage) {
+							c.sendMessage("Twisted bow accuracy boost: " + boost);
+						}
+					}
+				}
 			}
 		}
-
 		if (c.fullVoidRange()) {
 			rangeLevel += actualRangeLevel * .1;
 		}
@@ -146,6 +155,15 @@ public class RangeMaxHit extends RangeData {
 					max = 42;
 				if (c.debugMessage) {
 					c.sendMessage("Twisted bow damage boost: " + boost);
+				}
+				if (c.getItems().isWearingItem(8029)) {
+					//ouble boost2 = getTwistedBowDamageBoost(getBestTwistedBowMagicLevel(npc), Boundary.FULL_RAIDS.in(c));
+					max *= boost;
+					if (max < 42)
+						max = 42;
+					if (c.debugMessage) {
+						c.sendMessage("Twisted bow damage boost: " + boost);
+					}
 				}
 			}
 		}

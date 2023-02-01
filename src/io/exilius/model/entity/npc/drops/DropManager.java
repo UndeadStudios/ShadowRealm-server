@@ -627,10 +627,10 @@ KeyToClue.dropKey(player, npc, location);
         if (player.getItems().isWearingItem(19480)) {
             modifier -= .07;
         }
-        if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
+        if (player.getItems().isWearingItem(28347) && player.isSkulled == true && Boundary.isIn(player, Boundary.WILDERNESS)) {
             modifier -= .15;
         }
-        if (player.getItems().isWearingItem(19480) && player.isSkulled == true ) {
+        if (player.getItems().isWearingItem(19480) && player.isSkulled == true && Boundary.isIn(player, Boundary.WILDERNESS)) {
             modifier -= .17;
         }
         if (player.isSkulled == true ) {
@@ -712,14 +712,11 @@ KeyToClue.dropKey(player, npc, location);
         if (player.getItems().isWearingItem(19480)) {
             modifier += 7;
         }
-        if (player.getItems().isWearingItem(28347) && player.isSkulled == true ) {
+        if (player.getItems().isWearingItem(28347) && player.isSkulled == true && Boundary.isIn(player, Boundary.WILDERNESS)) {
             modifier += 15;
         }
-        if (player.getItems().isWearingItem(19480) && player.isSkulled == true ) {
+        if (player.getItems().isWearingItem(19480) && player.isSkulled == true && Boundary.isIn(player, Boundary.WILDERNESS)) {
             modifier += 17;
-        }
-        if (player.isSkulled == true ) {
-            modifier += 5;
         }
         if (player.isSkulled == true && Boundary.isIn(player, Boundary.REV_CAVE)) {
             modifier += 5;

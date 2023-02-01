@@ -1436,6 +1436,15 @@ public class ClickingButtons implements PacketType {
 					c.sendMessage("...and you gain some experience!");
 					c.getPA().closeAllWindows();
 				}
+				if (c.getItems().playerHasItem(27299)) {
+					c.usingLamp = false;
+					c.inLamp = false;
+					c.getPA().addSkillXP(1_225_000, c.antiqueItemResetSkillId, true);
+					c.getItems().deleteItem(27299, 1);
+					c.sendMessage("The antique Lamp mysteriously vanishes...");
+					c.sendMessage("...and you gain some experience!");
+					c.getPA().closeAllWindows();
+				}
 
 
 			}

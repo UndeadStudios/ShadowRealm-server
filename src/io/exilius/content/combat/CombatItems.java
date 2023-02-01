@@ -205,7 +205,7 @@ public class CombatItems {
 	}
 
 	public boolean usingTwistedBow() {
-		return c.playerEquipment[Player.playerWeapon] == Items.TWISTED_BOW;
+		return c.playerEquipment[Player.playerWeapon] == Items.TWISTED_BOW ||c.playerEquipment[Player.playerWeapon] == 8029;
 	}
 
 	public boolean usingDbow() {

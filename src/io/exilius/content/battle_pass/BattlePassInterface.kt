@@ -118,7 +118,7 @@ class BattlePassInterface(val player: Player) {
                 reward = BattlePassHandler.freeRewards[modifiedIndex]
                 //println("Free reward for index = ${reward.id} x ${reward.amount} name: ${reward.def.name}")
                 player.battlePassFreeRwdsClaimed[modifiedIndex] = true
-                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id))) {
+                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id).withAmount(reward.amount))) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
                     player.items.addItemToBankOrDrop(reward.id, reward.amount)
@@ -145,7 +145,7 @@ class BattlePassInterface(val player: Player) {
                 //println("Premium Btn Index clicked $rewardIndex")
                 reward = BattlePassHandler.premiumRewards[modifiedIndex]
                 player.battlePassPremiumRwdsClaimed[modifiedIndex] = true
-                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id))) {
+                if (player.inventory.hasRoomInInventory(ImmutableItem(reward.id).withAmount(reward.amount))) {
                     player.items.addItem(reward.id, reward.amount)
                 } else {
                     player.items.addItemToBankOrDrop(reward.id, reward.amount)
