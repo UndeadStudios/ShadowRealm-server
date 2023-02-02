@@ -69,7 +69,7 @@ public abstract class MysteryBoxLootable implements Lootable {
         // Initiate spin
         player.sendMessage(":resetBox");
         for (int i = 0; i < 66; i++) {
-            player.getPA().mysteryBoxItemOnInterface(-1, 1, ITEM_FRAME, i);
+            player.getPA().sendFrame34a(ITEM_FRAME, -1, i, 1);
         }
         spinNum = 0;
         player.sendMessage(":spin");
@@ -86,21 +86,16 @@ public abstract class MysteryBoxLootable implements Lootable {
 
         // Send items to interface
         // Move non-prize items client side if you would like to reduce server load
-        if (spinNum == 0) {
+        System.out.println("Spin number = " + spinNum);
+
             for (int i = 0; i < 66; i++) {
                 MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
                 GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
                 final int NOT_PRIZE_ID = NotPrize.getId();
-                sendItem(i, 55, mysteryPrize, NOT_PRIZE_ID, NotPrize.getAmount());
+                sendItem(i, 55, mysteryPrize, mysteryAmount, NOT_PRIZE_ID, NotPrize.getAmount());
+                System.out.println("Sent the first mystery prize  Item: " + mysteryPrize + " amount: " + mysteryAmount);
             }
-        } else {
-            for (int i = spinNum * 50 + 16; i < spinNum * 50 + 66; i++) {
-                MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
-                GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
-                final int NOT_PRIZE_ID = NotPrize.getId();
-                sendItem(i, (spinNum + 1) * 50 + 5, mysteryPrize, NOT_PRIZE_ID, mysteryAmount);
-            }
-        }
+
 
         spinNum++;
         openInterface();
@@ -117,11 +112,11 @@ public abstract class MysteryBoxLootable implements Lootable {
 
     }
 
-    public void sendItem(int i, int prizeSlot, int PRIZE_ID, int NOT_PRIZE_ID, int amount) {
+    public void sendItem(int i, int prizeSlot, int PRIZE_ID, int prizeAmount, int NOT_PRIZE_ID, int amount) {
         if (i == prizeSlot) {
-            player.getPA().mysteryBoxItemOnInterface(PRIZE_ID, amount, ITEM_FRAME, i);
+            player.getPA().sendFrame34a(ITEM_FRAME, PRIZE_ID, i, prizeAmount);
         } else {
-            player.getPA().mysteryBoxItemOnInterface(NOT_PRIZE_ID, amount, ITEM_FRAME, i);
+            player.getPA().sendFrame34a(ITEM_FRAME, NOT_PRIZE_ID, i, amount);
         }
     }
 

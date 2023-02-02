@@ -455,7 +455,7 @@ public class ClickingButtons implements PacketType {
 			c.getBH().teleportToTarget();
 			break;
 		case 183156:
-			if (c.inDonatorBox == false && !c.getUltraInterface().isActive() && !c.getNexBoxInterface().isActive() && !c.getraids1mInterface().isActive() && !c.getraids2mInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive() && !c.getMoneyBoxInterface().isActive()) {
+			if (!c.inDonatorBox && !c.getUltraInterface().isActive() && !c.getNexBoxInterface().isActive() && !c.getraids1mInterface().isActive() && !c.getraids2mInterface().isActive() && !c.getSuperBoxInterface().isActive() && !c.getNormalBoxInterface().isActive() && !c.getFoeInterface().isActive() && !c.getMoneyBoxInterface().isActive()) {
 				CheatEngineBlock.DonatorBoxAlert(c);
 				return;
 			}
@@ -466,6 +466,9 @@ public class ClickingButtons implements PacketType {
 				c.getPA().showInterface(47000);
 				c.sendMessage("@red@[WARNING] @blu@Please do not interrupt or you @red@WILL@blu@ lose items! @red@NO REFUNDS");
 				return;
+			}
+			for (int i = 0; i < 66; i++) {
+				c.getPA().sendFrame34a(47101, -1, i, 1);
 			}
 
 			switch(c.boxCurrentlyUsing) {

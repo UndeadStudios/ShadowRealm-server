@@ -1343,8 +1343,7 @@ public class PlayerAssistant {
 			});
 		}
 	}
-	public void mysteryBoxItemOnInterface(int item, int amount , int frame, int slot) {
-		if (c.getOutStream() != null && c != null) {
+	public void mysteryBoxItemOnInterface(int frame, int item , int slot, int amount) {
 			c.getOutStream().createFrameVarSizeWord(34);
 			c.getOutStream().writeUnsignedWord(frame);
 			c.getOutStream().writeDWord(slot);
@@ -1352,7 +1351,7 @@ public class PlayerAssistant {
 			c.getOutStream().writeByte(255);
 			c.getOutStream().writeDWord(amount);
 			c.getOutStream().endFrameVarSizeWord();
-		}
+
 	}
 
 	/**
