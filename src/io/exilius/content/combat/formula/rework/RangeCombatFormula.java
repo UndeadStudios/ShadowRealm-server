@@ -180,8 +180,7 @@ public class RangeCombatFormula implements CombatFormula {
                     }
                     multiplier += getTwistedBowAccuracyBoost(magicLevel, Boundary.isIn(attacker, Boundary.XERIC));
                 }
-            }
-            if (attacker.getItems().isWearingItem(8029, Player.playerWeapon)) {
+            }else if (attacker.getItems().isWearingItem(8029, Player.playerWeapon)) {
                 if (defender.isNPC()) {
                     double damageCap = 140.0;
                     int magicLevel = 0;
@@ -193,7 +192,7 @@ public class RangeCombatFormula implements CombatFormula {
                             magicLevel = definition.getLevel(NpcCombatSkill.MAGIC);
                         }
                     }
-                    multiplier += getTwistedBowAccuracyBoost(magicLevel, Boundary.isIn(attacker, Boundary.XERIC));
+                    multiplier += getGTwistedBowAccuracyBoost(magicLevel, Boundary.isIn(attacker, Boundary.XERIC));
                 }
             }
             hit *= multiplier;
@@ -394,6 +393,25 @@ public class RangeCombatFormula implements CombatFormula {
                     }
                     multiplier = getTwistedBowDamageBoost(magicLevel, Boundary.isIn(player, Boundary.XERIC));
                 }
+                hit *= multiplier;
+                hit = Math.floor(hit);
+            } else {
+                hit *= specialAttackMultiplier;
+                hit = Math.floor(hit);
+            }
+        if (player.getItems().isWearingItem(8029, Player.playerWeapon)) {
+                if (defender.isNPC()) {
+                    int magicLevel = 1;
+                    if (defender.isPlayer()) {
+                        magicLevel = defender.asPlayer().playerLevel[Skill.DEFENCE.getId()];
+                    } else {
+                        NpcCombatDefinition definition = defender.asNPC().getCombatDefinition();
+                        if (definition != null) {
+                            magicLevel = definition.getLevel(NpcCombatSkill.MAGIC);
+                        }
+                    }
+                    multiplier = getGTwistedBowDamageBoost(magicLevel, Boundary.isIn(player, Boundary.XERIC));
+                }
             }
             hit *= multiplier;
             hit = Math.floor(hit);
@@ -484,6 +502,8 @@ public class RangeCombatFormula implements CombatFormula {
         return 1.0;
     }
 
+
+
     public static double getTwistedBowAccuracyBoost(int magicLevel, boolean cox) {
         if (magicLevel > (cox ? 350 : 250))
             magicLevel = (cox ? 350 : 250);
@@ -492,6 +512,19 @@ public class RangeCombatFormula implements CombatFormula {
     }
 
     public static double getTwistedBowDamageBoost(int magicLevel, boolean cox) {
+        if (magicLevel > (cox ? 275 : 250))
+            magicLevel = (cox ? 275 : 250);
+        double boost = 275 + ((2d * magicLevel - 16d) / 100d) - (Math.pow((3d * magicLevel / 14d) - 140d, 2) / 100d);
+        return (Math.min(boost, cox ? 300 : 275) / 120);
+    }
+
+    public static double getGTwistedBowAccuracyBoost(int magicLevel, boolean cox) {
+        if (magicLevel > (cox ? 350 : 250))
+            magicLevel = (cox ? 350 : 250);
+        double boost = 140 + ((3d * magicLevel - 10d) / 100d) - (Math.pow(3d * magicLevel / 10d - 100d, 2) / 100d);
+        return (Math.min(boost, 140) / 100);
+    }
+    public static double getGTwistedBowDamageBoost(int magicLevel, boolean cox) {
         if (magicLevel > (cox ? 350 : 250))
             magicLevel = (cox ? 350 : 250);
         double boost = 250 + ((3d * magicLevel - 14d) / 100d) - (Math.pow((3d * magicLevel / 10d) - 140d, 2) / 100d);

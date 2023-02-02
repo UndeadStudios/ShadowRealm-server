@@ -10351,7 +10351,7 @@
     "strengthLevel": 270,
     "defenceLevel": 270,
     "rangeLevel": 270,
-    "magicLevel": 270,
+    "magicLevel": 230,
     "stabDef": 70,
     "slashDef": 70,
     "crushDef": 70,
@@ -31960,7 +31960,7 @@
     "strengthLevel": 585,
     "defenceLevel": 246,
     "rangeLevel": 1,
-    "magicLevel": 246,
+    "magicLevel": 205,
     "stabDef": 155,
     "slashDef": 165,
     "crushDef": 105,
@@ -32120,11 +32120,13 @@
     "attackLevel": 150,
     "strengthLevel": 150,
     "defenceLevel": 138,
+    "magicLevel": 90,
     "range": 150,
+    "magic": 100,
     "stabDef": -5,
     "slashDef": 72,
     "crushDef": 50,
-    "rangeDef": 0,
+    "rangeDef": -25,
     "magicDef": 60
   },
   "7562": {
@@ -32134,11 +32136,12 @@
     "attackLevel": 150,
     "strengthLevel": 150,
     "defenceLevel": 138,
+    "magic": 100,
     "range": 150,
     "stabDef": -5,
     "slashDef": 72,
     "crushDef": 50,
-    "rangeDef": 0,
+    "rangeDef": -25,
     "magicDef": 60
   },
   "7563": {
@@ -32147,13 +32150,14 @@
     "attackSpeed": 4,
     "attackLevel": 150,
     "strengthLevel": 150,
-    "defenceLevel": 138,
+    "defenceLevel": 60,
+    "magic": 100,
     "range": 150,
     "stabDef": -5,
     "slashDef": 72,
     "crushDef": 50,
-    "rangeDef": 0,
-    "magicDef": 60
+    "rangeDef": -25,
+    "magicDef": 160
   },
   "7566": {
     "name": "Vasa Nistirio",
@@ -38634,7 +38638,9 @@
   },
   "7413": {
     "name": "Max dummy",
-    "hitpoints": 50000
+    "hitpoints": 50000,
+    "magicLevel": 230,
+    "magic": 100
   },
   "11278": {
     "name": "Nex",

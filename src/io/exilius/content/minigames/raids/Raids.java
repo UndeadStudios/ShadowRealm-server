@@ -331,10 +331,10 @@ public class Raids {
             myRank = 24;
         }
 
-        int chance = Misc.random(200);
-        int rareChance = 195 + myRank;
+        int chance = Misc.random(150);
+        int rareChance = 140 + myRank;
         if (player.getItems().playerHasItem(21046)) {
-            rareChance = 190 + myRank;
+            rareChance = 135 + myRank;
             player.getItems().deleteItem(21046, 1);
             player.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate.");
             player.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
@@ -610,9 +610,9 @@ public class Raids {
 				return;
 			}
 			if(path == 0) {
-				spawnRaidsNpc(7563, 3276,5331, height + 1, 1, 300, 25, 400, 220,true);
+				spawnRaidsNpc(7563, 3276,5331, height + 1, 1, 300, 25, 400, 60,true);
 			}else {
-				spawnRaidsNpc(7563, 3308,5331, height + 1, 1, 300, 25, 400, 220,true);
+				spawnRaidsNpc(7563, 3308,5331, height + 1, 1, 300, 25, 400, 60,true);
 			}
 			mobAmount+=1;
 			mutta = true;

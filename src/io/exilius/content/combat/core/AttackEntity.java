@@ -861,8 +861,10 @@ public class AttackEntity {
         String name = definition.getName().toLowerCase();
         boolean isLongRange = player.getCombatConfigs().getAttackStyle() == 2;
 
-        if (name.contains("twisted bow"))
+        if (name.contains("twisted bow") && !name.equals("Godly twisted bow"))
             return 10;
+        if (name.equals("Godly twisted bow"))
+            return 11;
         else if (name.contains("bow of faerdhinen"))
             return 10;
         else if (name.contains("dark bow"))

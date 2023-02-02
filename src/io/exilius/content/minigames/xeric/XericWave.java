@@ -165,9 +165,9 @@ public class XericWave {
 		case VESPULA:
 			return 280;
 		case TEKTON:
-			return 450;
+			return 470;
 		case MUTTADILE:
-			return 400;
+			return 60;
 		case VASA:
 			return 300;
 		case ICE_DEMON:

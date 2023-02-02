@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class TwistedBowTest {
 
-    int[] accuracyTestValues = {20, 50, 70, 100, 120, 170, 200, 500};
+    int[] accuracyTestValues = {20, 50, 70, 100, 120, 170, 200, 500, 700, 900};
 
     @Test
     public void testTwistedBowFormula() {

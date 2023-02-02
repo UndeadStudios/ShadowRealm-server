@@ -89738,8 +89738,8 @@
   "levels": {
     "MAGIC": 1,
     "ATTACK": 150,
-    "DEFENCE": 138,
-    "RANGE": 150,
+    "DEFENCE": 60,
+    "RANGE": 100,
     "STRENGTH": 150,
     "HITPOINTS": 250
   },

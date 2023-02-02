@@ -56339,8 +56339,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
-      "rstr": 85,
+      "arange": 180,
+      "rstr": 95,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56351,7 +56351,7 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
+      "arange": 195,
       "rstr": 105,
       "prayer": 4,
       "aspeed": 5
@@ -56363,7 +56363,7 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
+      "arange": 175,
       "rstr": 85,
       "prayer": 4,
       "aspeed": 6
@@ -56375,8 +56375,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
-      "rstr": 85,
+      "arange": 180,
+      "rstr": 95,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56387,8 +56387,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
-      "rstr": 85,
+      "arange": 180,
+      "rstr": 95,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56399,8 +56399,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
-      "rstr": 85,
+      "arange": 180,
+      "rstr": 95,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56411,8 +56411,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 205,
-      "rstr": 85,
+      "arange": 180,
+      "rstr": 95,
       "prayer": 4,
       "aspeed": 6
     }

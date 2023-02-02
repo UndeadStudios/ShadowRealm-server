@@ -27,7 +27,18 @@ public class RangeMaxHit extends RangeData {
 		NpcStats stats = NpcStats.forId(npc.getNpcId());
 		return Math.max(stats.getMagicLevel(), stats.getMagic());
 	}
+	public static int getBestGTwistedBowMagicLevel(NPC npc) {
+		NpcStats stats = NpcStats.forId(npc.getNpcId());
+		return Math.max(stats.getMagicLevel(), stats.getMagic());
+	}
 
+
+	public static double getGTwistedBowAccuracyBoost(int magicLevel) {
+		if (magicLevel > 500)
+			magicLevel = 500;
+		double boost = 380 + ((3d * magicLevel - 10d) / 100d) - (Math.pow(3d * magicLevel / 10d - 100d, 2) / 100d);
+		return (Math.min(boost, 380) / 100);
+	}
 	public static double getTwistedBowAccuracyBoost(int magicLevel) {
 		if (magicLevel > 500)
 			magicLevel = 500;
@@ -38,8 +49,16 @@ public class RangeMaxHit extends RangeData {
 	public static double getTwistedBowDamageBoost(int magicLevel, boolean cox) {
 		if (magicLevel > 500)
 			magicLevel = 500;
-		double boost = 1450 + ((3d * magicLevel - 14d) / 100d) - (Math.pow((3d * magicLevel / 10d) - 140d, 2) / 100d);
-		return (Math.min(boost, cox ? 1550 : 1450) / 100);
+
+		double boost = 850 + ((2d * magicLevel - 16d) / 100d) - (Math.pow((3d * magicLevel / 14d) - 140d, 2) / 100d);
+		return (Math.min(boost, cox ? 950 : 850) / 120);
+	}
+
+	public static double getGTwistedBowDamageBoost(int magicLevel, boolean cox) {
+		if (magicLevel > 500)
+			magicLevel = 500;
+		double boost = 1050 + ((2d * magicLevel - 14d) / 100d) - (Math.pow((3d * magicLevel / 10d) - 140d, 2) / 100d);
+		return (Math.min(boost, cox ? 1150 : 1050) / 100);
 	}
 
 	public static int calculateRangeAttack(Player c) {
@@ -52,14 +71,13 @@ public class RangeMaxHit extends RangeData {
 				rangeLevel += (rangeLevel * boost);
 				if (c.debugMessage) {
 					c.sendMessage("Twisted bow accuracy boost: " + boost);
-				}
-				if (c.npcAttackingIndex > 0 && c.getItems().isWearingItem(8029)) {
+				}else if (c.npcAttackingIndex > 0 && c.getItems().isWearingItem(8029)) {
 					//Optional<NPC> npc2 = NPCHandler.getNpcAtIndex(c.npcAttackingIndex);
 					if (npc.isPresent()) {
-						//double boost2 = getTwistedBowAccuracyBoost(getBestTwistedBowMagicLevel(npc.get()));
-						rangeLevel += (rangeLevel * boost);
+						double boost2 = getGTwistedBowAccuracyBoost(getBestGTwistedBowMagicLevel(npc.get()));
+						rangeLevel += (rangeLevel * boost2);
 						if (c.debugMessage) {
-							c.sendMessage("Twisted bow accuracy boost: " + boost);
+							c.sendMessage("Godly Twisted bow accuracy boost: " + boost2);
 						}
 					}
 				}
@@ -155,14 +173,13 @@ public class RangeMaxHit extends RangeData {
 					max = 42;
 				if (c.debugMessage) {
 					c.sendMessage("Twisted bow damage boost: " + boost);
-				}
-				if (c.getItems().isWearingItem(8029)) {
-					//ouble boost2 = getTwistedBowDamageBoost(getBestTwistedBowMagicLevel(npc), Boundary.FULL_RAIDS.in(c));
-					max *= boost;
+				}else if (c.getItems().isWearingItem(8029)) {
+					double boostG = getGTwistedBowDamageBoost(getBestGTwistedBowMagicLevel(npc), Boundary.FULL_RAIDS.in(c));
+					max *= boostG;
 					if (max < 42)
 						max = 42;
 					if (c.debugMessage) {
-						c.sendMessage("Twisted bow damage boost: " + boost);
+						c.sendMessage("Godly Twisted bow damage boost: " + boostG);
 					}
 				}
 			}

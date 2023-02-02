@@ -38448,6 +38448,9 @@
   name: "Godly Twisted Bow"
   description: "Godly Twisted Bow"
   shopValue: 1
+  requirements:
+    - skill: "RANGED"
+      level: 80
 - id: 8030
   name: "Extra weapons rack"
   description: "Null"
