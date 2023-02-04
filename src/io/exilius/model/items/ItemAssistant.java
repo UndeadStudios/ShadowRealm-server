@@ -931,6 +931,20 @@ public class ItemAssistant {
 
 	public boolean canEquip(int wearID) {
 		ItemDef item = ItemDef.forId(wearID);
+
+		if (item.getName().contains("abyssal") &&  item.getName().contains("void waker") ) {
+			if(player.playerLevel[0] < 70) {
+				player.sendMessage("You must have a attack level of at least 75 to weild this");
+				return false;
+			}
+		}
+
+		if (item.getName().contains("Godly Torva") && item.getName().contains("Death Cape")) {
+			if(player.playerLevel[1] < 70) {
+				player.sendMessage("You must have a attack level of at least 75 to weild this");
+				return false;
+			}
+		}
 		switch (wearID) {
 		case 4587:
 		case 20000:
@@ -940,16 +954,16 @@ public class ItemAssistant {
 				}
 			}
 			break;
-		case 12902:
-			if(player.playerLevel[0] < 75) {
-				player.sendMessage("You must have a attack level of at least 75 to weild the toxic staff (uncharged)");
-				return false;
-			}
-			if(player.playerLevel[6] < 75) {
-				player.sendMessage("You must have a magic level of at least 75 to weild the toxic staff (uncharged)");
-				return false;
-			}
-			break;
+			case 12902:
+				if(player.playerLevel[0] < 75) {
+					player.sendMessage("You must have a attack level of at least 75 to weild the toxic staff (uncharged)");
+					return false;
+				}
+				if(player.playerLevel[6] < 75) {
+					player.sendMessage("You must have a magic level of at least 75 to weild the toxic staff (uncharged)");
+					return false;
+				}
+				break;
 		case 13108:
 		case 13109:
 		case 13110:

@@ -85,6 +85,7 @@ class BattlePassHandler {
             }
             player.items.deleteItem(BattlePassConfig.BATTLE_PASS_ITEM_ID, player.items.getInventoryItemSlot(BattlePassConfig.BATTLE_PASS_ITEM_ID), 1)
             player.battlePassPremiumUnlocked = true
+            resetPlayerBattlePassPremium(player)
             player.sendMessage("You've have unlocked this seasons premium track!")
             return true
         }
@@ -127,6 +128,10 @@ class BattlePassHandler {
             player.battlePassPremiumRwdsClaimed = BooleanArray(20)
             player.battlePassPremiumUnlocked = false
             println("BATTLE PASS RESET FOR ${player.loginName}")
+        }
+        fun resetPlayerBattlePassPremium(player: Player) {
+            player.battlePassPremiumRwdsClaimed = BooleanArray(20)
+            println("BATTLE PASS Premium RESET FOR ${player.loginName}")
         }
 
     }

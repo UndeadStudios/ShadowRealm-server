@@ -125,7 +125,7 @@ public class HunllefChest implements Lootable {
     }
 
     public static void rolledCommon(Player c) {
-        int crystalshardbonus = Misc.random(1000) + 50;
+        int crystalshardbonus = Misc.random(1000) + 20;
         if (randomNumber() < 750) { //not a rare
             if (c.getItems().playerHasItem(KEY)) {
                 c.getItems().deleteItem(KEY, 1);
@@ -144,7 +144,7 @@ public class HunllefChest implements Lootable {
         }
     }
     public static void rolledRare(Player c, int rareChance) {
-        int crystalshardbonus = Misc.random(29) + 10;
+        int crystalshardbonus = Misc.random(2000) + 30;
         if (c.getItems().playerHasItem(KEY)) {
             c.getItems().deleteItem(KEY, 1);
             c.startAnimation(ANIMATION);
@@ -154,9 +154,8 @@ public class HunllefChest implements Lootable {
             }
             c.getItems().addItem(rarereward.getId(), rarereward.getAmount() * 1);
             if (c.getItems().playerHasItem(21046)) {
-                c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
                 c.getItems().deleteItem(21046, 1);
-                c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
+                c.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
             }
             c.getItems().addItem(23877, crystalshardbonus);
             NPCDeath.announce(c, rarereward, Npcs.CRYSTALLINE_HUNLLEF);
@@ -176,6 +175,7 @@ public class HunllefChest implements Lootable {
         final int random = randomNumber();
         int rareChance = 850;
         if (c.getItems().playerHasItem(21046)) {
+            c.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate." );
             rareChance = 830;
         }
         if (random < rareChance) {

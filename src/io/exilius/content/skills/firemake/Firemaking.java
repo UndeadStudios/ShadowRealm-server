@@ -24,11 +24,10 @@ public class Firemaking {
 			player.sendMessage("You can not light fires here.");
 			return;
 		}
-		double osrsExperience = 0;
-		double regExperience = 0;
+		double osrsExperience;
 		int pieces = 0;
-		for (int i = 0; i < pyromancerOutfit.length; i++) {
-			if (player.getItems().isWearingItem(pyromancerOutfit[i])) {
+		for (int j : pyromancerOutfit) {
+			if (player.getItems().isWearingItem(j)) {
 				pieces++;
 			}
 		}
@@ -63,7 +62,7 @@ public class Firemaking {
 			return;
 		}
 		if (log.getlogId() == logUsed) {
-			if (usage != "infernal_axe") {
+			if (!usage.equals("infernal_axe")) {
 				if (!player.getItems().playerHasItem(logUsed)) {
 					player.sendMessage("You do not have anymore of this log.");
 					return;
@@ -73,7 +72,7 @@ public class Firemaking {
 			coords[0] = player.absX;
 			coords[1] = player.absY;
 
-			if (usage == "tinderbox") {
+			if (usage.equals("tinderbox")) {
 				if (System.currentTimeMillis() - player.lastFire > 3000) {
 					player.startAnimation(733);
 					time[0] = 4;
@@ -104,14 +103,15 @@ public class Firemaking {
 					System.out.println("Burnign oak logs");
 				}
 				player.getItems().deleteItem(log.getlogId(), player.getItems().getItemSlot(log.getlogId()), 1);
-				Server.itemHandler.createGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, 1,
-						player.getIndex());
+				//Server.itemHandler.createGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, 1,
+					//	player.getIndex());
 
 				CycleEventHandler.getSingleton().addEvent(player, new CycleEvent() {
 					@Override
 					public void execute(CycleEventContainer container) {
 						Server.getGlobalObjects().add(new GlobalObject(5249, coords[0], coords[1], player.heightLevel, 0, 10, 50, -1));
-						Server.itemHandler.removeGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, false);
+					//	Server.itemHandler.removeGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, false);
+						//Server.itemHandler.removeGroundItem(player, log.getlogId(), false);
 						player.playerIsFiremaking = false;
 						container.stop();
 					}
@@ -136,25 +136,24 @@ public class Firemaking {
 					@Override
 					public void execute(CycleEventContainer container) {
 						player.startAnimation(65535);
+						//Server.itemHandler.removeGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, false);
 						container.stop();
 					}
 
 					@Override
 					public void onStopped() {
-
+						//Server.itemHandler.removeGroundItem(player, log.getlogId(), coords[0], coords[1], player.heightLevel, false);
+						Server.itemHandler.createGroundItem(player, 592, coords[0], coords[1], player.heightLevel, 1);
 					}
 				}, time[1]);
 				player.facePosition(player.absX + 1, player.absY);
 				player.getPA().sendSound(2596);
 				player.lastFire = System.currentTimeMillis();
 			}
-			/**
-			 * Experience calculation
-			 */
 			osrsExperience = log.getExperience() + log.getExperience() / 10 * pieces;
 			
-			if (usage == "infernal_axe") {
-				player.getPA().addSkillXPMultiplied((int) osrsExperience / 2, 11, true);
+			if (usage.equals("infernal_axe")) {
+				player.getPA().addSkillXPMultiplied((int)osrsExperience / 2, 11, true);
 			} else {
 				player.getPA().addSkillXPMultiplied((int) osrsExperience, 11, true);
 			}

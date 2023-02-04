@@ -123,7 +123,7 @@ public abstract class MysteryBoxLootable implements Lootable {
     public void openInterface() {
         player.boxCurrentlyUsing = getItemId();
         spinNum = 0;
-        player.getPA().sendString(ItemDef.forId(getItemId()).getName(), 47002);
+        player.getPA().sendString("@red@ "+ ItemDef.forId(getItemId()).getName(), 47002);
         int INTERFACE_ID = 47000;
         player.getPA().showInterface(INTERFACE_ID);
     }

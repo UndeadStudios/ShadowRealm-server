@@ -68496,7 +68496,7 @@
       "prayer": 8
     }
   },
-  "8469": {
+  "29376": {
     "name": "Godly Torva Platelegs",
     "equipable": true,
     "weight": 9.0,
@@ -68515,7 +68515,7 @@
       "prayer": 12
     }
   },
-  "8467": {
+  "29377": {
     "name": "godly Torva Platebody",
     "equipable": true,
     "weight": 9.0,
@@ -68534,7 +68534,7 @@
       "prayer": 12
     }
   },
-  "8465": {
+  "29378": {
     "name": "Godly Torva Full Helm",
     "equipable": true,
     "weight": 2.7,
@@ -69810,14 +69810,14 @@
     "equipment": {
       "slot": 0,
       "amagic": -1,
-      "arange": 12,
-      "dstab": 3,
-      "dslash": 4,
-      "dcrush": 3,
-      "dmagic": 6,
-      "drange": 4,
-      "arange": 5,
-      "prayer": 0
+      "arange": 60,
+      "dstab": 23,
+      "dslash": 24,
+      "dcrush": 23,
+      "dmagic": 36,
+      "drange": 24,
+      "rstr": 10,
+      "prayer": 5
     }
   },
   "27229": {
@@ -69828,13 +69828,13 @@
       "slot": 4,
       "amagic": -4,
       "arange": 73,
-      "dstab": 37,
-      "dslash": 35,
-      "dcrush": 38,
-      "dmagic": 25,
-      "drange": 33,
-      "arange": 30,
-      "prayer": 0
+      "dstab": 47,
+      "dslash": 45,
+      "dcrush": 48,
+      "dmagic": 55,
+      "drange": 43,
+      "rstr": 15,
+      "prayer": 6
     }
   },
   "27232": {
@@ -69845,13 +69845,64 @@
       "slot": 7,
       "amagic": -2,
       "arange": 73,
-      "dstab": 26,
-      "dslash": 24,
-      "dcrush": 29,
-      "dmagic": 19,
-      "drange": 22,
-      "arange": 30,
-      "prayer": 0
+      "dstab": 36,
+      "dslash": 34,
+      "dcrush": 39,
+      "dmagic": 59,
+      "drange": 32,
+      "rstr": 11,
+      "prayer": 4
+    }
+  },
+  "29381": {
+    "name": "Godly Masori mask",
+    "equipable": true,
+    "equipment": {
+      "slot": 0,
+      "amagic": -1,
+      "arange": 80,
+      "dstab": 43,
+      "dslash": 44,
+      "dcrush": 43,
+      "dmagic": 56,
+      "drange": 44,
+      "arange": 45,
+      "rstr": 20,
+      "prayer": 7
+    }
+  },
+  "29382": {
+    "name": "Godly Masori body",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 4,
+      "amagic": -4,
+      "arange": 103,
+      "dstab": 77,
+      "dslash": 75,
+      "dcrush": 78,
+      "dmagic": 95,
+      "drange": 73,
+      "rstr": 25,
+      "prayer": 8
+    }
+  },
+  "29380": {
+    "name": "Godly Masori chaps",
+    "equipable": true,
+    "weight": 5.0,
+    "equipment": {
+      "slot": 7,
+      "amagic": -2,
+      "arange": 93,
+      "dstab": 56,
+      "dslash": 54,
+      "dcrush": 59,
+      "dmagic": 79,
+      "drange": 52,
+      "rstr": 20,
+      "prayer": 6
     }
   },
   "27363": {

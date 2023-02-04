@@ -17,10 +17,6 @@ public class Skull extends Command {
 
 	@Override
 	public void execute(Player c, String commandName, String input) {
-		if (c.getPosition().inWild()) {
-			c.sendMessage("You cannot use this command in the wilderness.");
-			return;
-		}
 		c.isSkulled = true;
 		c.skullTimer = Configuration.SKULL_TIMER;
 		c.headIconPk = 0;

@@ -331,22 +331,22 @@ public class Raids {
             myRank = 24;
         }
 
-        int chance = Misc.random(150);
-        int rareChance = 140 + myRank;
+        int chance = Misc.random(100);
+        int rareChance = 88 + myRank;
         if (player.getItems().playerHasItem(21046)) {
-            rareChance = 135 + myRank;
+            rareChance = 83 + myRank;
             player.getItems().deleteItem(21046, 1);
             player.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate.");
             player.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
-        if (chance > 0 && chance < rareChance) {
-            player.getItems().addItemUnderAnyCircumstance(COMMON_KEY, 1);
+        if (chance >= 0 && chance <= rareChance) {
+            player.getItems().addItemorDrop(COMMON_KEY, 1);
             player.getEventCalendar().progress(EventChallenge.COMPLETE_X_RAIDS);
 //            LeaderboardUtils.addCount(LeaderboardType.COX, player, 1);
             Achievements.increase(player, AchievementType.COX, 1);
             player.sendMessage("@red@You have just received a @bla@Common Key.");
-        } else if (chance > rareChance) {
-            player.getItems().addItemUnderAnyCircumstance(RARE_KEY, 1);
+        } else if (chance >= rareChance) {
+            player.getItems().addItemorDrop(RARE_KEY, 1);
             player.getEventCalendar().progress(EventChallenge.COMPLETE_X_RAIDS);
 //            LeaderboardUtils.addCount(LeaderboardType.COX, player, 1);
             Achievements.increase(player, AchievementType.COX, 1);
@@ -355,23 +355,23 @@ public class Raids {
         }
         if (!kronosReward) {
             if (player.raidCount == 25) {
-                player.getItems().addItemUnderAnyCircumstance(22388, 1);
+                player.getItems().addItemorDrop(22388, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 25 Raids and obtained the Xeric's Guard Cape!");
             }
             if (player.raidCount == 50) {
-                player.getItems().addItemUnderAnyCircumstance(22390, 1);
+                player.getItems().addItemorDrop(22390, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 50 Raids and obtained the Xeric's Warrior Cape!");
             }
             if (player.raidCount == 100) {
-                player.getItems().addItemUnderAnyCircumstance(22392, 1);
+                player.getItems().addItemorDrop(22392, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 100 Raids and obtained the Xeric's Sentinel Cape!");
             }
             if (player.raidCount == 250) {
-                player.getItems().addItemUnderAnyCircumstance(22394, 1);
+                player.getItems().addItemorDrop(22394, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 250 Raids and obtained the Xeric's General Cape!");
             }
             if (player.raidCount == 500) {
-                player.getItems().addItemUnderAnyCircumstance(22396, 1);
+                player.getItems().addItemorDrop(22396, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 500 Raids and obtained the Xeric's Champions Cape!");
             }
         }

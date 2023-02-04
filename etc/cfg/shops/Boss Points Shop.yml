@@ -9,8 +9,7 @@ items:
 - id: 2577
   price: 1000
 - id: 406
-  amount: 25
-  price: 1500
+  price: 50
 - id: 21028
   price: 1000
 - id: 2403

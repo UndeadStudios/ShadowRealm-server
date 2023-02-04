@@ -667,7 +667,7 @@
                 "teleport": [2203, 3056, 0]
             },
             {
-                "names": [ "cerberus" ],
+                "names": [ "hellhound", "cerberus" ],
                 "level": 91,
                 "experience": 450,
                 "minimum": 5,
@@ -685,7 +685,7 @@
                 "teleport": [1558, 3696, 0]
             },
             {
-                "names": [ "demonic gorilla" ],
+                "names": [ "black demon", "demonic gorilla" ],
                 "level": 1,
                 "experience": 250,
                 "minimum": 20,
@@ -1043,7 +1043,7 @@
         "pointRewards": [ 50 ],
         "available": [
             {
-                "names": [ "cerberus" ],
+                "names": [ "hellhound", "cerberus" ],
                 "level": 91,
                 "experience": 450,
                 "minimum": 10,

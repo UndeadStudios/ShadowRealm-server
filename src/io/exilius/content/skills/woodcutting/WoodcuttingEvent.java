@@ -207,6 +207,18 @@ public class WoodcuttingEvent extends Event<Player> {
                     plr.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_OAK_FREM);
                 }
                 break;
+            case NORMAL2:
+            case NORMAL3:
+            case DEAD:
+            case DEAD2:
+            case DEAD3:
+            case DEAD4:
+            case NORMAL:
+                if (plr.currentDailyTask.getTaskName().equals(DailyTaskData.CHOP_NORMAL_TREE.getDailyTask().getTaskName())) {
+                    //System.out.println("Chopping a fucking normal tree you cunt");
+                    DailyTaskHandler.Companion.handleProgress(plr, 1);
+                }
+                break;
             case WILLOW:
             case WILLOW2:
                 if (Boundary.isIn(plr, Boundary.FALADOR_BOUNDARY)) {

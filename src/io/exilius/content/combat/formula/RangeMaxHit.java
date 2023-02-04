@@ -42,23 +42,22 @@ public class RangeMaxHit extends RangeData {
 	public static double getTwistedBowAccuracyBoost(int magicLevel) {
 		if (magicLevel > 500)
 			magicLevel = 500;
-		double boost = 240 + ((3d * magicLevel - 10d) / 100d) - (Math.pow(3d * magicLevel / 10d - 100d, 2) / 100d);
-		return (Math.min(boost, 240) / 100);
+		double boost = 140 + ((3d * magicLevel - 10d) / 100d) - (Math.pow(3d * magicLevel / 10d - 100d, 2) / 100d);
+		return (Math.min(boost, 140) / 100);
 	}
 
 	public static double getTwistedBowDamageBoost(int magicLevel, boolean cox) {
 		if (magicLevel > 500)
 			magicLevel = 500;
-
-		double boost = 850 + ((2d * magicLevel - 16d) / 100d) - (Math.pow((3d * magicLevel / 14d) - 140d, 2) / 100d);
-		return (Math.min(boost, cox ? 950 : 850) / 120);
+		double boost = 280 + ((1.5d * magicLevel - 14d) / 100d) - (Math.pow((1d * magicLevel / 10d) - 140d, 2) / 100d);
+		return (Math.min(boost, cox ? 305 : 230) / 100);
 	}
 
 	public static double getGTwistedBowDamageBoost(int magicLevel, boolean cox) {
 		if (magicLevel > 500)
 			magicLevel = 500;
-		double boost = 1050 + ((2d * magicLevel - 14d) / 100d) - (Math.pow((3d * magicLevel / 10d) - 140d, 2) / 100d);
-		return (Math.min(boost, cox ? 1150 : 1050) / 100);
+		double boost = 650 + ((1.5d * magicLevel - 14d) / 100d) - (Math.pow((1.5d * magicLevel / 14d) - 140d, 2) / 100d);
+		return (Math.min(boost, cox ? 750 : 650) / 100);
 	}
 
 	public static int calculateRangeAttack(Player c) {

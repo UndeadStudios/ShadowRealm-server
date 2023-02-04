@@ -40265,7 +40265,7 @@
   requirements:
     - skill: "DEFENCE"
       level: 40
-- id: 8465
+- id: 29378
   name: "Godly Torva Fullhelm"
   description: "A cape made of ancient, enchanted rocks."
   shopValue: 1
@@ -40278,7 +40278,7 @@
   description: "Null"
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
-- id: 8467
+- id: 29377
   name: "Godly Torva Platebody"
   description: "Godly Torva Platebody"
   shopValue: 1
@@ -40291,7 +40291,7 @@
   description: "Null"
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
-- id: 8469
+- id: 29376
   name: "Godly Torva Platelegs"
   description: "Godly Torva Platelegs"
   shopValue: 1
@@ -75415,4 +75415,18 @@
 - id: 29375
   name: "Gnome scarf"
   description: "A scarf. You feel your upper lip stiffening."
+  shopValue: 1000
+- id: 29380
+  name: "Godly Masori Chaps"
+  description: "Godly Masori Chaps."
+  shopValue: 1000
+- id: 29381
+  name: "Godly Masori Mask"
+  description: "Godly Masori Mask."
+  equipmentModelType: "FULL_MASK"
+  shopValue: 1000
+- id: 29382
+  name: "Godly Masori Body"
+  description: "Godly Masori Body."
+  equipmentModelType: "FULL_BODY"
   shopValue: 1000

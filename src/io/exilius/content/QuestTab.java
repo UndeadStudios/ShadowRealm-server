@@ -123,7 +123,7 @@ public class QuestTab {
         int index = 0;
 
         // Server Information
-        player.getPA().sendFrame126("@cr2@@or1@ Server Information", lines.get(index++));
+        player.getPA().sendFrame126("@cr10@@or1@ Server Information", lines.get(index++));
 
 
         if (player.getRights().contains(Right.OWNER)) {
@@ -141,7 +141,7 @@ public class QuestTab {
 
         index = addBoostsInformation(lines, index);
 
-        player.getPA().sendFrame126("@cr1@@or1@ Player Information", lines.get(index++));
+        player.getPA().sendFrame126("@cr5@@or1@ Player Information", lines.get(index++));
 
         // Player Information
         player.getPA().sendFrame126("@or1@- Rank: @gre@" + player.getRights().buildCrownString() + " " + player.getRights().getPrimary().toString(), lines.get(index++));

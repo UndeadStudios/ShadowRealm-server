@@ -502,8 +502,6 @@ public class RangeCombatFormula implements CombatFormula {
         return 1.0;
     }
 
-
-
     public static double getTwistedBowAccuracyBoost(int magicLevel, boolean cox) {
         if (magicLevel > (cox ? 350 : 250))
             magicLevel = (cox ? 350 : 250);
@@ -512,10 +510,10 @@ public class RangeCombatFormula implements CombatFormula {
     }
 
     public static double getTwistedBowDamageBoost(int magicLevel, boolean cox) {
-        if (magicLevel > (cox ? 275 : 250))
-            magicLevel = (cox ? 275 : 250);
-        double boost = 275 + ((2d * magicLevel - 16d) / 100d) - (Math.pow((3d * magicLevel / 14d) - 140d, 2) / 100d);
-        return (Math.min(boost, cox ? 300 : 275) / 120);
+        if (magicLevel > (cox ? 305 : 260))
+            magicLevel = (cox ? 305 : 260);
+        double boost = 280 + ((1.5d * magicLevel - 14d) / 100d) - (Math.pow((1d * magicLevel / 10d) - 140d, 2) / 100d);
+        return (Math.min(boost, cox ? 305 : 220) / 100);
     }
 
     public static double getGTwistedBowAccuracyBoost(int magicLevel, boolean cox) {
@@ -525,10 +523,10 @@ public class RangeCombatFormula implements CombatFormula {
         return (Math.min(boost, 140) / 100);
     }
     public static double getGTwistedBowDamageBoost(int magicLevel, boolean cox) {
-        if (magicLevel > (cox ? 350 : 250))
-            magicLevel = (cox ? 350 : 250);
-        double boost = 250 + ((3d * magicLevel - 14d) / 100d) - (Math.pow((3d * magicLevel / 10d) - 140d, 2) / 100d);
-        return (Math.min(boost, cox ? 350 : 250) / 100);
+        if (magicLevel > (cox ? 450 : 350))
+            magicLevel = (cox ? 450 : 350);
+        double boost = 350 + ((1.5d * magicLevel - 16d) / 100d) - (Math.pow((1d * magicLevel / 14d) - 140d, 2) / 100d);
+        return (Math.min(boost, cox ? 450 : 350) / 100);
     }
 
 
