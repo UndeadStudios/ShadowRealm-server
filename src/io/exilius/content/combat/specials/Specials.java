@@ -25,6 +25,7 @@ public enum Specials {
 	ARCLIGHT(new ArcLight()),
 	ABYSSAL_BLUDGEON(new AbyssalBludgeon()),
 	ARMADYL_CROSSBOW(new ArmadylCrossbow()),
+	ANCIENT_GODSWORD(new AncientGodsword()),
 	DRAGON_CROSSBOW(new DragonCrossbow()),
 	ABYSSAL_WHIP(new AbyssalWhip()),
 	ABYSSAL_DAGGER(new AbyssalDagger()),
