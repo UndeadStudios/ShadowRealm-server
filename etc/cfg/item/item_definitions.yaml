@@ -74073,28 +74073,28 @@
   name: "Ancient ceremonial boots"
   description: "A ceremonial boots dedicated to an ancient god."
   shopValue: 40000
-- id: 26230
+- id: 29230
   name: "burning Skeleton boots"
   description: "Null"
   shopValue: 1
   untradeable: true
-- id: 26231
+- id: 29231
   name: "burning Skeleton gloves"
   description: "Null"
   shopValue: 1
   untradeable: true
-- id: 26232
+- id: 29232
   name: "burning Skeleton mask"
   description: "Null"
   shopValue: 1
   untradeable: true
   equipmentModelType: "FULL_MASK"
-- id: 26233
+- id: 29233
   name: "burning Skeleton leggings"
   description: "Null"
   shopValue: 1
   untradeable: true
-- id: 26234
+- id: 29234
   name: "burning Skeleton shirt"
   description: "Null"
   shopValue: 1
@@ -75430,3 +75430,18 @@
   description: "Godly Masori Body."
   equipmentModelType: "FULL_BODY"
   shopValue: 1000
+- id: 26233
+  name: "Ancient godsword"
+  description: "A graceful, heavy sword."
+  shopValue: 1250000
+  noteId: 26234
+  requirements:
+    - skill: "ATTACK"
+      level: 75
+- id: 26234
+  name: "Ancient godsword"
+  description: "Swap this note at any bank for the equivelent item."
+  noteId: 11806
+  noted: true
+  stackable: true
+

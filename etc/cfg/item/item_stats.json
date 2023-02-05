@@ -70614,7 +70614,7 @@
       "dcrush": 0
     }
   },
-  "26230": {
+  "29230": {
     "name": "burning skeleton boots",
     "equipable": true,
     "weight": 1.36,
@@ -70627,7 +70627,7 @@
       "dcrush": 0
     }
   },
-  "26231": {
+  "29231": {
     "name": "burning skeleton Gloves",
     "equipable": true,
     "weight": 1.36,
@@ -70640,7 +70640,7 @@
       "dcrush": 0
     }
   },
-  "26232": {
+  "29232": {
     "name": "burning skeleton mask",
     "equipable": true,
     "weight": 1.36,
@@ -70653,7 +70653,7 @@
       "dcrush": 0
     }
   },
-  "26233": {
+  "29233": {
     "name": "burning skeleton leggins",
     "equipable": true,
     "weight": 1.36,
@@ -70666,7 +70666,7 @@
       "dcrush": 0
     }
   },
-  "26234": {
+  "29234": {
     "name": "burning skeleton shirt",
     "equipable": true,
     "weight": 1.36,
@@ -72585,6 +72585,19 @@
     "weight": 0.01,
     "equipment": {
       "slot": 2
+    }
+  },
+  "26233": {
+    "name": "Ancient godsword",
+    "equipable": true,
+    "weight": 10.0,
+    "equipment": {
+      "slot": 3,
+      "aslash": 132,
+      "acrush": 80,
+      "str": 132,
+      "prayer": 8,
+      "aspeed": 6
     }
   }
 }
