@@ -1,18 +1,5 @@
 //package io.exilius.content.commands.all;
 //
-//import java.sql.Timestamp;
-//import java.time.Duration;
-//import java.time.Instant;
-//import java.time.LocalDate;
-//import java.time.LocalDateTime;
-//import java.time.temporal.ChronoUnit;
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Map;
-//import java.util.Optional;
-//import java.util.concurrent.TimeUnit;
-//import java.util.stream.Collectors;
-//
 //import io.exilius.Configuration;
 //import io.exilius.Server;
 //import io.exilius.content.achievement.AchievementType;
@@ -32,9 +19,25 @@
 //import io.exilius.model.items.ImmutableItem;
 //import io.exilius.sql.Votes;
 //import io.exilius.sql.eventcalendar.queries.AddParticipantEntryOnVoteQuery;
-//import io.exilius.sql.vote.*;
+//import io.exilius.sql.vote.GetVoteTimesQuery;
+//import io.exilius.sql.vote.VoteClaimQuery;
+//import io.exilius.sql.vote.VoteRecord;
+//import io.exilius.sql.vote.VoteThrottlerUpdateQuery;
 //import io.exilius.util.DateUtils;
 //import io.exilius.util.logging.player.VotedLog;
+//
+//import java.sql.Timestamp;
+//import java.time.Duration;
+//import java.time.Instant;
+//import java.time.LocalDate;
+//import java.time.LocalDateTime;
+//import java.time.temporal.ChronoUnit;
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Map;
+//import java.util.Optional;
+//import java.util.concurrent.TimeUnit;
+//import java.util.stream.Collectors;
 //
 ///**
 // * Changes the password of the player.
@@ -42,7 +45,7 @@
 // * @author Emiel
 // *
 // */
-//public class Voted extends Command {
+//public class claimvote extends Command {
 //
 //	private static final long XP_SCROLL_TICKS = TimeUnit.MINUTES.toMillis(30) / 600;
 //	private static final int GP_REWARD = 1_000_000;
@@ -136,10 +139,12 @@
 //		if (Boundary.isIn(c, Boundary.OUTLAST) || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_AREA) || Boundary.isIn(c, Boundary.LUMBRIDGE_OUTLAST_LOBBY)) {
 //			c.sendMessage("You cannot do this right now.");
 //			return;
-//	}
+//		}
 //		Thread votes2 = new Thread(new Votes(c));
 //		votes2.start();
 //		Server.getLogging().write(new VotedLog(c, votes, "Received rewards for these votes"));
+//
+//		Server.getDatabaseManager().exec(new VoteThrottlerUpdateQuery(c, LocalDateTime.now(), votes));
 //		Server.getDatabaseManager().exec(new AddParticipantEntryOnVoteQuery(new ChallengeParticipant(c, EventCalendar.getDateProvider())));
 //
 //		int voteCount = votes.size();
@@ -159,7 +164,7 @@
 //		incrementGlobalVote(voteCount);
 //		Server.setvoteCountCounter(voteCount);
 //
-//				}
+//	}
 //
 //	@Override
 //	public Optional<String> getDescription() {

@@ -351,7 +351,9 @@ public class Raids {
 //            LeaderboardUtils.addCount(LeaderboardType.COX, player, 1);
             Achievements.increase(player, AchievementType.COX, 1);
             player.sendMessage("@red@You have just received a @pur@Rare Key.");
-            PlayerHandler.executeGlobalMessage("@bla@[@blu@RAIDS@bla@] " + player.getDisplayName() + "@pur@ has just received a @bla@Rare Raids Key!");
+            if (player.getRights().isNotAdmin()) {
+                PlayerHandler.executeGlobalMessage("@bla@[@blu@RAIDS@bla@] " + player.getDisplayName() + "@pur@ has just received a @bla@Rare Raids Key!");
+            }
         }
         if (!kronosReward) {
             if (player.raidCount == 25) {
@@ -746,10 +748,6 @@ public class Raids {
 			player.raidCount+=1;
 			if (Boundary.isIn(player, Boundary.FULL_RAIDS)) {
 				giveReward(player, false);
-				if (Hespori.activeKronosSeed) {
-                    giveReward(player, true);
-                    player.sendMessage("@red@The @gre@Kronos seed@red@ doubles your chances!" );
-                }
 			}
             resetDamage(player);
 			player.healEverything();

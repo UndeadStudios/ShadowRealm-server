@@ -51,33 +51,19 @@ public class TheatreOfBloodChest implements Lootable {
 
         items.put(LootRarity.RARE, Arrays.asList(
                 new GameItem(Items.JUSTICIAR_FACEGUARD),
-                new GameItem(Items.JUSTICIAR_FACEGUARD),
-                new GameItem(Items.JUSTICIAR_FACEGUARD),
+                new GameItem(6830, 1),  //raids 2 box
+                new GameItem(2403, 1),  //$10 Scroll
+                new GameItem(786, 1),  //$50 scroll
 
-                new GameItem(Items.JUSTICIAR_CHESTGUARD),
-                new GameItem(Items.JUSTICIAR_CHESTGUARD),
                 new GameItem(Items.JUSTICIAR_CHESTGUARD),
 
                 new GameItem(Items.JUSTICIAR_LEGGUARDS),
-                new GameItem(Items.JUSTICIAR_LEGGUARDS),
-                new GameItem(Items.JUSTICIAR_LEGGUARDS),
 
-                new GameItem(Items.GHRAZI_RAPIER),
-                new GameItem(Items.GHRAZI_RAPIER),
                 new GameItem(Items.GHRAZI_RAPIER),
 
                 new GameItem(Items.SANGUINESTI_STAFF),
-                new GameItem(Items.SANGUINESTI_STAFF),
-                new GameItem(Items.SANGUINESTI_STAFF),
 
                 new GameItem(Items.AVERNIC_DEFENDER_HILT),
-                new GameItem(Items.AVERNIC_DEFENDER_HILT),
-                new GameItem(Items.AVERNIC_DEFENDER_HILT),
-                new GameItem(Items.AVERNIC_DEFENDER_HILT),
-                new GameItem(Items.AVERNIC_DEFENDER_HILT),
-                new GameItem(Items.AVERNIC_DEFENDER_HILT),
-
-                new GameItem(Items.SCYTHE_OF_VITUR),
                 new GameItem(Items.SCYTHE_OF_VITUR)
 
         ));
@@ -109,9 +95,9 @@ public class TheatreOfBloodChest implements Lootable {
 
     public static List<GameItem> getRandomItems(boolean rollRares, int size) {
         List<GameItem> rewards = Lists.newArrayList();
-        int rareChance = 9;
+        int rareChance = 8;
         if (Hespori.activeKronosSeed) {
-            rareChance = 5;
+            rareChance = 4;
         }
 
         if (rollRares && Misc.trueRand(rareChance) == 0) {
@@ -145,13 +131,14 @@ public class TheatreOfBloodChest implements Lootable {
         List<GameItem> rareItemList = items.get(LootRarity.RARE);
         for (GameItem reward : rewards) {
             if (rareItemList.stream().anyMatch(rareItem -> reward.getId() == rareItem.getId())) {
-                if (!player.getDisplayName().equalsIgnoreCase("thimble") && !player.getDisplayName().equalsIgnoreCase("top hat")) {
+                if (player.getRights().isNotAdmin()) {
                     PlayerHandler.executeGlobalMessage("@pur@" + player.getDisplayNameFormatted() + " received a drop: "
                             + ItemDef.forId(reward.getId()).getName() + " x " + reward.getAmount() + " from Theatre of Blood.");
                 }
+            }
                 player.getCollectionLog().handleDrop(player, Npcs.THE_MAIDEN_OF_SUGADINTI, rewards.get(0).getId(), 1);
             }
-        }
+
 
         for (GameItem item : rewards) {
             player.getInventory().addAnywhere(new ImmutableItem(item.getId(), item.getAmount()));

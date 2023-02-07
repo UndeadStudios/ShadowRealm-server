@@ -5,7 +5,7 @@ class BattlePassConfig {
     companion object{
 
         const val IS_ENABLED = true
-        const val SEASON_LENGTH: Long = 60
+        const val SEASON_LENGTH: Long = 30
         const val BATTLE_PASS_ITEM_ID = 26502
 
         val XP_FOR_LEVELS = longArrayOf(

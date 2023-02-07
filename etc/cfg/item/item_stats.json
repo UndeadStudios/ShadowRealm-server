@@ -40577,7 +40577,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11217": {
@@ -40585,7 +40585,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11222": {
@@ -40593,7 +40593,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11227": {
@@ -40601,7 +40601,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11228": {
@@ -40609,7 +40609,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11229": {
@@ -40617,7 +40617,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 60
+      "rstr": 65
     }
   },
   "11230": {
@@ -57517,8 +57517,7 @@
     "equipable": true,
     "equipment": {
       "slot": 13,
-      "rstr": 55,
-      "rstr": 80
+      "rstr": 55
     }
   },
   "21328": {

@@ -28,19 +28,22 @@ public class VoteClaimQuery implements SqlQuery<List<VoteRecord>> {
         List<VoteRecord> voteRecords = new ArrayList<>();
 
         PreparedStatement select = connection.prepareStatement(
-                "SELECT * FROM votes WHERE username = ? AND date_claimed IS NULL AND completed=1",
+                "SELECT * FROM votes WHERE username = ? AND voted_on IS NULL AND claimed=0",
                 ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         select.setString(1, player.getLoginNameLower());
         ResultSet rs = select.executeQuery();
 
         while (rs.next()) {
-            rs.updateTimestamp("date_claimed", Timestamp.valueOf(now));
+            rs.updateTimestamp("started_on", Timestamp.valueOf(now));
             rs.updateRow();
 
             int siteId = rs.getInt("site_id");
-            var timestamp = rs.getTimestamp("date_voted");
+            var timestamp = rs.getTimestamp("voted_on");
 
-            voteRecords.add(new VoteRecord(siteId, timestamp, false));
+            voteRecords.add(new VoteRecord(siteId, null, true));
+
+            for (VoteRecord voteRecord : voteRecords)
+                voteRecord.setThrottled(true);
         }
 
         // Check if they've voted within 12 hours on this site already

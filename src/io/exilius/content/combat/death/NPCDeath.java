@@ -556,8 +556,10 @@ public class NPCDeath {
 
     @SneakyThrows
     public static void announceKc(Player player, GameItem item, int kc) {
-        PlayerHandler.executeGlobalMessage("@pur@" + player.getDisplayNameFormatted() + " received a drop: " +
-                "" + ItemDef.forId(item.getId()).getName() + " x " + item.getAmount() + " at <col=E9362B>" + kc  + "</col>@pur@ kills.");
+        if(player.getRights().isNotAdmin()) {
+            PlayerHandler.executeGlobalMessage("@pur@" + player.getDisplayNameFormatted() + " received a drop: " +
+                    "" + ItemDef.forId(item.getId()).getName() + " x " + item.getAmount() + " at <col=E9362B>" + kc + "</col>@pur@ kills.");
+        }
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("[Drop System]");
         eb.setDescription(player.getDisplayName() + " Has received a drop: " +

@@ -69,7 +69,7 @@ public final class BadWords {
             "dottk",
 
             /* Individual server names */
-            "kratos",
+            "kronos",
             "atlas",
             "osscape",
             "alora",

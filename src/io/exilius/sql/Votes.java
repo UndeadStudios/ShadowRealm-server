@@ -6,11 +6,14 @@ import io.exilius.content.achievement.Achievements;
 import io.exilius.content.vote_panel.VotePanelManager;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.items.ImmutableItem;
+import io.exilius.sql.vote.VoteRecord;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Votes implements Runnable  {
@@ -51,6 +54,8 @@ public class Votes implements Runnable  {
                 return;
             }
 
+            List<VoteRecord> voteRecords = new ArrayList<>();
+
             String name = player.getLoginName();//.replace(" ", "_");
             ResultSet rs = executeQuery("SELECT * FROM votes WHERE username='"+name+"' AND claimed=0 AND voted_on != -1");
             while (rs.next()) {
@@ -68,9 +73,6 @@ public class Votes implements Runnable  {
                         if (petroll < 2) {
                             Discord.writeannounceMessage(message2);
                             player.getInventory().addAnywhere(new ImmutableItem(21262, 1));
-                        }
-                        if (player.getRights().isNotAdmin()) {
-                            VotePanelManager.addVote(player.getLoginName());
                         }
                         if (petroll < 65) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
@@ -94,9 +96,6 @@ public class Votes implements Runnable  {
                         if (petroll2 < 65) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        if (player.getRights().isNotAdmin()) {
-                            VotePanelManager.addVote(player.getLoginName());
-                        }
                         if (petroll2 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
@@ -115,9 +114,6 @@ public class Votes implements Runnable  {
                         player.getInventory().addAnywhere(new ImmutableItem(995, 100_000));
                         if (petroll3 < 65) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
-                        }
-                        if (player.getRights().isNotAdmin()) {
-                            VotePanelManager.addVote(player.getLoginName());
                         }
                         if (petroll3 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
@@ -141,9 +137,6 @@ public class Votes implements Runnable  {
                         if (petroll4 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        if (player.getRights().isNotAdmin()) {
-                            VotePanelManager.addVote(player.getLoginName());
-                        }
                         this.voteCount += 1;
                         this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
@@ -164,9 +157,6 @@ public class Votes implements Runnable  {
                         if (petroll5 < 25) {
                             player.getInventory().addAnywhere(new ImmutableItem(11739, 1));
                         }
-                        if (player.getRights().isNotAdmin()) {
-                            VotePanelManager.addVote(player.getLoginName());
-                        }
                         this.voteCount += 1;
                         this.globalvoteCount += 1;
                         Server.setvoteCountCounter(this.voteCount);
@@ -175,13 +165,13 @@ public class Votes implements Runnable  {
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
                 }
-
                 // -- ADD CODE HERE TO GIVE TOKENS OR WHATEVER
 
                 System.out.println("[Vote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
 
                 rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
                 rs.updateRow();
+
             }
 
             destroy();

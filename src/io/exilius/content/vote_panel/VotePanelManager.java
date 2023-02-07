@@ -153,7 +153,6 @@ public class VotePanelManager {
      * @param playerName
      */
 
-    private static Player player;
     public static void addVote(String playerName) {
         if (wrapper.getVotes().containsKey(playerName.toLowerCase())) {
             VoteUser user = wrapper.getVotes().get(playerName.toLowerCase());

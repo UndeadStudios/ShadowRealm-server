@@ -557,8 +557,10 @@ public class DialogueHandler {
 				c.getPA().createPlayersStillGfx(1294, 3039, 4774, 0, 0);
 				c.getItems().deleteItem(13273, 1);
 				c.getItems().addItem(reward, 1);
-				PlayerHandler.executeGlobalMessage("@red@" + c.getDisplayName() + " received a drop: "
-						+ ItemAssistant.getItemName(reward) + "@bla@.");
+				if (c.getRights().isNotAdmin()) {
+					PlayerHandler.executeGlobalMessage("@red@" + c.getDisplayName() + " received a drop: "
+							+ ItemAssistant.getItemName(reward) + "@bla@.");
+				}
 				// PlayerHandler.executeGlobalMessage("@red@[Lootations]@cr19@
 				// <col=255><img="+rights+">" + Misc.formatPlayerName(c.playerName) + "</col>
 				// received @blu@1@bla@x @blu@" + Item.getItemName(reward) + ".");
