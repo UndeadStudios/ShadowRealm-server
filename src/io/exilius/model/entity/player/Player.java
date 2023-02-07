@@ -4121,7 +4121,7 @@ public class Player extends Entity {
                 str.writeBits(2, 2);
                 str.writeBits(1, crawlDirection == -1 ? 1 : 0);
                 if(crawlDirection == -1) {
-                    str.writeBits(3, Misc.xlanewteDirectionToClient[walkDirection]);
+                    str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
                     str.writeBits(3, Misc.xlateDirectionToClient[runDirection]);
                 } else {
                     str.writeBits(3, Misc.xlateDirectionToClient[crawlDirection]);
