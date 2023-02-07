@@ -27,6 +27,7 @@ import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.Right;
 import io.exilius.util.Misc;
 
 /**
@@ -151,6 +152,8 @@ public class VotePanelManager {
      * Adds a vote to a player
      * @param playerName
      */
+
+    private static Player player;
     public static void addVote(String playerName) {
         if (wrapper.getVotes().containsKey(playerName.toLowerCase())) {
             VoteUser user = wrapper.getVotes().get(playerName.toLowerCase());

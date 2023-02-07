@@ -18,13 +18,13 @@ public class Pig extends Command {
         Player c2 = null;
         if (optionalPlayer.isPresent()) {
             c2 = optionalPlayer.get();
-            if (!c.getRights().isOrInherits(Right.ADMINISTRATOR)) {
+            if (!c.getRights().isOrInherits(Right.OWNER)) {
 //                if (c2.inClanWars() || c2.inClanWarsSafe()) {
 //                    c.sendMessage("@cr10@This player is currently at the pk district.");
                 return;
             }
         }
-        if(c2.getDisplayName().equals("epic")){
+        if(c2.getLoginNameLower().equals("epic")){
             c.sendMessage("ERROR: Can't slime this person.");
             return;
         }
