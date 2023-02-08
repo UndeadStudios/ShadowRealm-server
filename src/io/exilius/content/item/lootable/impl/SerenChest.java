@@ -111,7 +111,7 @@ public class SerenChest implements Lootable {
             itemList = items.get(LootRarity.RARE);
             GameItem chooseRandomItem = Misc.getRandomItem(itemList);
             ItemDef def = ItemDef.forId(chooseRandomItem.getId());
-            if (!c.getDisplayName().equalsIgnoreCase("thimble") && !c.getDisplayName().equalsIgnoreCase("top hat")) {
+            if (!c.getDisplayName().equalsIgnoreCase("epic") && !c.getDisplayName().equalsIgnoreCase("banned")) {
                 PlayerHandler.executeGlobalMessage("@bla@[<col=7f0000>SEREN@bla@] <col=990000>" + c.getDisplayName() + "@bla@ has just received a <col=990000>" + def.getName() + ".");
             }
             return chooseRandomItem;
@@ -136,7 +136,7 @@ public class SerenChest implements Lootable {
             itemList = items.get(LootRarity.RARE);
             GameItem chooseRandomItem = Misc.getRandomItem(itemList);
             ItemDef def = ItemDef.forId(chooseRandomItem.getId());
-            if (!c.getDisplayName().equalsIgnoreCase("thimble") && !c.getDisplayName().equalsIgnoreCase("top hat")) {
+            if (!c.getDisplayName().equalsIgnoreCase("Epic") && !c.getDisplayName().equalsIgnoreCase("banned")) {
                 PlayerHandler.executeGlobalMessage("@bla@[<col=7f0000>SEREN@bla@] <col=990000>" + c.getDisplayName() + "@bla@ has just received a <col=990000>" + def.getName() + ".");
             }
             return chooseRandomItem;

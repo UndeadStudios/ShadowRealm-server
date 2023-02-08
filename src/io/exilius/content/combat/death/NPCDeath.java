@@ -549,7 +549,7 @@ public class NPCDeath {
     }
 
     public static void announce(Player player, GameItem item, int npcId) {
-        if (!player.getDisplayName().equalsIgnoreCase("thimble") && !player.getDisplayName().equalsIgnoreCase("top hat")) {
+        if (!player.getDisplayName().equalsIgnoreCase("epic") && !player.getDisplayName().equalsIgnoreCase("banned")) {
             announceKc(player, item, player.getNpcDeathTracker().getKc(NpcDef.forId(npcId).getName()));
         }
     }

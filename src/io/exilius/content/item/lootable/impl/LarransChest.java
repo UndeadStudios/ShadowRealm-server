@@ -84,7 +84,7 @@ public class LarransChest implements Lootable {
 			List<GameItem> itemList = random == 0 ? items.get(LootRarity.RARE) : items.get(LootRarity.COMMON);
 			GameItem reward = Misc.getRandomItem(itemList);
 			if (random == 0) {
-				if (!c.getDisplayName().equalsIgnoreCase("thimble") && !c.getDisplayName().equalsIgnoreCase("top hat")) {
+				if (!c.getDisplayName().equalsIgnoreCase("epic") && !c.getDisplayName().equalsIgnoreCase("banned")) {
 
 					PlayerHandler.executeGlobalMessage("@pur@" + c.getDisplayNameFormatted() + " received a drop: " +
 							"" + ItemDef.forId(reward.getId()).getName() + " x " + reward.getAmount() + " from Larran's chest.");
