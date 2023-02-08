@@ -397,6 +397,9 @@ public class Player extends Entity {
     public int heightLevel;
     public int dir1 = -1;
     public int dir2 = -1;
+    public int walkDirection = -1;
+    public int runDirection = -1;
+    public int crawlDirection = -1;
     public int poimiX;
     public int poimiY;
     public int playerListSize;
@@ -569,6 +572,7 @@ public class Player extends Entity {
     public boolean breakVials;
     public boolean collectCoins;
     private boolean runningToggled = true;
+    private boolean crawlToggled = false;
     // Trading post.
     public long lastTradingPostView;
     public boolean inSelecting;
@@ -3871,7 +3875,7 @@ public class Player extends Entity {
     }
 
     public boolean isRunning() {
-        return isNewWalkCmdIsRunning() || dir2 > -1;
+        return isNewWalkCmdIsRunning() || runDirection > -1;
     }
 
     public void stopMovement() {
@@ -3958,7 +3962,7 @@ public class Player extends Entity {
     public void getNextPlayerMovement() {
         mapRegionDidChange = false;
         didTeleport = false;
-        dir1 = dir2 = -1;
+        walkDirection = runDirection = -1;
         if (getTeleportToX() != -1 && getTeleportToY() != -1) {
             mapRegionDidChange = true;
             if (mapRegionX != -1 && mapRegionY != -1) {
@@ -3991,13 +3995,16 @@ public class Player extends Entity {
                 resetWalkingQueue();
                 return;
             }
-            dir1 = getNextWalkingDirection();
-            if (dir1 == -1) {
+            walkDirection = getNextWalkingDirection();
+            if (walkDirection == -1) {
                 runningDistanceTravelled = 0;
                 return;
             }
+            if(isCrawlingToggled() && getMovementState().isCrawlingEnabled()) {
+                crawlDirection = getNextWalkingDirection();
+            }
             if (isRunningToggled() && getMovementState().isRunningEnabled()) {
-                dir2 = getNextWalkingDirection();
+                runDirection = getNextWalkingDirection();
                 runningDistanceTravelled++;
             } else {
                 runningDistanceTravelled = 0;
@@ -4086,7 +4093,7 @@ public class Player extends Entity {
             str.writeBits(7, currentX);
             return;
         }
-        if (dir1 == -1) {
+        if (walkDirection == -1) {
             // don't have to update the character position, because we're just
             // standing
             str.createFrameVarSizeWord(81);
@@ -4103,17 +4110,22 @@ public class Player extends Entity {
             str.createFrameVarSizeWord(81);
             str.initBitAccess();
             str.writeBits(1, 1);
-            if (dir2 == -1) {
+            if (runDirection == -1) {
                 isMoving = true;
                 str.writeBits(2, 1);
-                str.writeBits(3, Misc.xlateDirectionToClient[dir1]);
+                str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
                 if (isUpdateRequired()) str.writeBits(1, 1);
                 else str.writeBits(1, 0);
             } else {
                 isMoving = true;
                 str.writeBits(2, 2);
-                str.writeBits(3, Misc.xlateDirectionToClient[dir1]);
-                str.writeBits(3, Misc.xlateDirectionToClient[dir2]);
+                str.writeBits(1, crawlDirection == -1 ? 1 : 0);
+                if(crawlDirection == -1) {
+                    str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
+                    str.writeBits(3, Misc.xlateDirectionToClient[runDirection]);
+                } else {
+                    str.writeBits(3, Misc.xlateDirectionToClient[crawlDirection]);
+                }
                 if (isUpdateRequired()) str.writeBits(1, 1);
                 else str.writeBits(1, 0);
             }
@@ -4122,21 +4134,26 @@ public class Player extends Entity {
 
     public void updatePlayerMovement(Stream str) {
         // synchronized(this) {
-        if (dir1 == -1) {
+        if (walkDirection == -1) {
             if (isUpdateRequired() || isChatTextUpdateRequired()) {
                 str.writeBits(1, 1);
                 str.writeBits(2, 0);
             } else str.writeBits(1, 0);
-        } else if (dir2 == -1) {
+        } else if (runDirection == -1 && crawlDirection == -1) {
             str.writeBits(1, 1);
             str.writeBits(2, 1);
-            str.writeBits(3, Misc.xlateDirectionToClient[dir1]);
+            str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
             str.writeBits(1, (isUpdateRequired() || isChatTextUpdateRequired()) ? 1 : 0);
         } else {
             str.writeBits(1, 1);
             str.writeBits(2, 2);
-            str.writeBits(3, Misc.xlateDirectionToClient[dir1]);
-            str.writeBits(3, Misc.xlateDirectionToClient[dir2]);
+            str.writeBits(1, crawlDirection == -1 ? 1 : 0);
+            if(crawlDirection == -1) {
+                str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
+                str.writeBits(3, Misc.xlateDirectionToClient[runDirection]);
+            } else {
+                str.writeBits(3, Misc.xlateDirectionToClient[crawlDirection]);
+            }
             str.writeBits(1, (isUpdateRequired() || isChatTextUpdateRequired()) ? 1 : 0);
         }
     }
@@ -4150,7 +4167,7 @@ public class Player extends Entity {
         str.writeBits(5, y < 0 ? y + 32 : y);
         str.writeBits(5, x < 0 ? x + 32 : x);
         str.writeBits(1, flag ? 1 : 0);
-        str.writeBits(14, npc.getNpcId());
+        str.writeBits(16, npc.getNpcId());
         boolean pet = PetHandler.getItemIdForNpcId(npc.getNpcId()) != 0;
         if (pet && npc.spawnedBy == getIndex()) {
             str.writeBits(2, 2);
@@ -5726,7 +5743,13 @@ public MoneyBox getMoneyBoxInterface() {
     public boolean isRunningToggled() {
         return runningToggled;
     }
+    public void setCrawlingToggled(boolean crawlingToggled) {
+        this.crawlToggled = crawlingToggled;
+    }
 
+    public boolean isCrawlingToggled() {
+        return crawlToggled;
+    }
     public RechargeItems getRechargeItems() {
         return rechargeItems;
     }
