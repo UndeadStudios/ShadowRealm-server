@@ -748,6 +748,10 @@ public class Raids {
 			player.raidCount+=1;
 			if (Boundary.isIn(player, Boundary.FULL_RAIDS)) {
 				giveReward(player, false);
+				if (Hespori.activeKronosSeed) {
+                    giveReward(player, true);
+                    player.sendMessage("@red@The @gre@Kronos seed@red@ doubles your chances!" );
+                }
 			}
             resetDamage(player);
 			player.healEverything();
