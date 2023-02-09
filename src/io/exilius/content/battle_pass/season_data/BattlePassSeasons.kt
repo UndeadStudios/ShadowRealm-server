@@ -264,129 +264,129 @@ enum class BattlePassSeasons(
         )
     ),
     SEASON_THREE( //banned do this season
-        startDate = LocalDateTime.of(2023, 2, 20, 0,0,0),
+        startDate = LocalDateTime.of(2023, 2, 14, 0,0,0),
         freeRewards = arrayListOf(
-            GameItem(
-                1042, 1
+            GameItem(//edit here banned change all ids and amounts this is the free rewards
+                990, 10
             ),
             GameItem(
-                1043, 1
+                995, 20000000
             ),
             GameItem(
-                1044, 1
+                6686, 50
             ),
             GameItem(
-                1045, 1
+                3025, 50
             ),
             GameItem(
-                1046, 1
+                6199, 1
             ),
             GameItem(
-                1047, 1
+                406, 10
             ),
             GameItem(
-                1048, 1
+                23951, 3
             ),
             GameItem(
-                1049, 1
+                12696, 100
             ),
             GameItem(
-                1050, 1
+                693, 1
             ),
             GameItem(
-                1051, 1
+                6828, 1
             ),
             GameItem(
-                1052, 1
+                995, 20000000
             ),
             GameItem(
-                1053, 1
+                8167, 1
             ),
             GameItem(
-                1054, 1
+                23933, 25
             ),
             GameItem(
-                1055, 1
+                12789, 1
             ),
             GameItem(
-                1056, 1
+                22374, 5
             ),
             GameItem(
-                1057, 1
+                21046, 25
             ),
             GameItem(
-                1058, 1
+                693, 2
             ),
             GameItem(
-                1059, 1
+                995, 30000000
             ),
             GameItem(
-                1060, 1
+                13346, 2
             ),
             GameItem(
-                1061, 1
+                2403, 1
             ),
         ),
         premiumRewards = arrayListOf(
-            GameItem(
-                44, 1
+            GameItem(//baned changes these ids this is premium rewards
+                990, 20
             ),
             GameItem(
-                45, 1
+                995, 50000000
             ),
             GameItem(
-                46, 1
+                6686, 250
             ),
             GameItem(
-                47, 1
+                3025, 250
             ),
             GameItem(
-                48, 1
+                6828, 1
             ),
             GameItem(
-                49, 1
+                13438, 5
             ),
             GameItem(
-                46, 1
+                23951, 7
             ),
             GameItem(
-                47, 1
+                23686, 150
             ),
             GameItem(
-                48, 1
+                693, 3
             ),
             GameItem(
-                49, 1
+                10025, 1
             ),
             GameItem(
-                50, 1
+                995, 50000000
             ),
             GameItem(
-                51, 1
+                8167, 2
             ),
             GameItem(
-                52, 1
+                23933, 75
             ),
             GameItem(
-                53, 1
+                12789, 2
             ),
             GameItem(
-                54, 1
+                22374, 5
             ),
             GameItem(
-                55, 1
+                21046, 50
             ),
             GameItem(
-                56, 1
+                693, 3
             ),
             GameItem(
-                57, 1
+                995, 100000000
             ),
             GameItem(
-                58, 1
+                13346, 2
             ),
             GameItem(
-                59, 1
+                6830, 1
             ),
         )
     ),

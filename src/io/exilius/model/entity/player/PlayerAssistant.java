@@ -3272,7 +3272,11 @@ public class PlayerAssistant {
 			}
 			requestUpdates();
 		}
-		BattlePassHandler.Companion.handleXpGain(c, amount);
+		if (c.getMode().is5x()) {
+			BattlePassHandler.Companion.handleXpGain(c, amount * 4);
+	} else {
+			BattlePassHandler.Companion.handleXpGain(c, amount);
+		}
 		setSkillLevel(skill, c.playerLevel[skill], c.playerXP[skill]);
 		refreshSkill(skill);
 		return true;
