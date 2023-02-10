@@ -96,7 +96,7 @@ public class ByteStream {
 		int var1 = 0;
 
 		int var2;
-		for (var2 = this.readUSmart(); var2 == 32767; var2 = this.readUSmart()) {
+		for (var2 = this.get_unsignedsmart_byteorshort(); var2 == 32767; var2 = this.get_unsignedsmart_byteorshort()) {
 			var1 += 32767;
 		}
 
