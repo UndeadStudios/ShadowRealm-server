@@ -6,6 +6,7 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.AchievementDiaryKills;
 import io.exilius.content.bosses.Cerberus;
+import io.exilius.content.bosses.RevenantMaledictus;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.bosses.godwars.GodwarsNPCs;
@@ -364,6 +365,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         switch (npc.getNpcId()) {
                 case Npcs.NEX:
                     return 4;
+            case 11246:
+                return 10;
         case InfernoWaveData.JAL_NIB:
             return 4;
         case InfernoWaveData.JAL_MEJRAH: 
@@ -912,6 +915,7 @@ public static void addNPC(int npcType, int x, int y, int h) {
             case 1257:
             case 11246:
             case Npcs.NEX:
+
             case 11283:
             case 11284:
             case 11285:
@@ -1908,6 +1912,9 @@ public static void addNPC(int npcType, int x, int y, int h) {
                     if (hydraInstance.isPresent()) {
                         hydraInstance.get().doAttack();
                         return;
+                    }
+                    if (npc.getNpcId() == 11246) {
+                        RevenantMaledictus.attack(npc);
                     }
                     npc.attackTimer = getNpcDelay(npc);
                     if (npc.getNpcId() == Npcs.CERBERUS && Cerberus.cerberusSpecials(npc, c)) {

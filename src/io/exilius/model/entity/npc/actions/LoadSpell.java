@@ -1,6 +1,7 @@
 package io.exilius.model.entity.npc.actions;
 
 import io.exilius.Server;
+import io.exilius.content.bosses.RevenantMaledictus;
 import io.exilius.content.bosses.Skotizo;
 import io.exilius.content.bosses.Tekton;
 import io.exilius.content.bosses.hespori.Hespori;
@@ -228,6 +229,36 @@ public class LoadSpell {
                         break;
                 }
                 break;
+            case 11246:
+                chance = Misc.random(10);
+                if (chance > 1 && chance < 9) {
+                    npc.setAttackType(CombatType.MAGE);
+                    npc.attackTimer = 7;
+                    npc.hitDelayTimer = 4;
+                    int endGfx = -1;
+                    int projectileId = -1;
+                    if (RevenantMaledictus.phase == 0) {
+                        projectileId = 1997;
+                        endGfx = 1998;
+                    } else if (RevenantMaledictus.phase == 1) {
+                        projectileId = 2002;
+                        endGfx = 2003;
+                    } else if (RevenantMaledictus.phase == 2) {
+                        projectileId = 2007;
+                        endGfx = 2008;
+                    }
+                    npc.endGfx = endGfx;
+                    npc.projectileId = projectileId;
+                    break;
+
+                } else {
+                    npc.setAttackType(CombatType.MELEE);
+                    npc.attackTimer = 5;
+                    npc.hitDelayTimer = 3;
+                    npc.projectileId = -1;
+                    npc.endGfx = -1;
+                    break;
+                }
             case 9293:
                 int random122 = Misc.random(6);
                 if (random122 <= 2) {

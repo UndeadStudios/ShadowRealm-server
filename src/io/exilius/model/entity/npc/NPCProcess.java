@@ -2,10 +2,7 @@ package io.exilius.model.entity.npc;
 
 import io.exilius.Configuration;
 import io.exilius.Server;
-import io.exilius.content.bosses.CorporealBeast;
-import io.exilius.content.bosses.Scorpia;
-import io.exilius.content.bosses.Skotizo;
-import io.exilius.content.bosses.Vorkath;
+import io.exilius.content.bosses.*;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hydra.AlchemicalHydra;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
@@ -223,6 +220,12 @@ public class NPCProcess {
                 npc.getHealth().setCurrentHealth(200);
             }
             Scorpia.spawnHealer();
+        }
+        if (type == 11246) {
+            if (npc.walkingHome) {
+                npc.getHealth().setCurrentHealth(2500);
+            }
+
         }
         if (type == Npcs.CORPOREAL_BEAST) {
             CorporealBeast.checkCore(npc);
@@ -450,7 +453,9 @@ public class NPCProcess {
                     npc.startAnimation(-1);
                     npc.gfx0(1005);
                 }
-
+                if(npc.getNpcId() == 11246) {
+                    npc.forceChat("My house bitch!");
+                }
                 if (npc.getNpcId() == 6611) {
                     npc.requestTransform(6612);
                     npc.getHealth().reset();
@@ -693,6 +698,12 @@ public class NPCProcess {
 
                     case 6615:
                         Scorpia.stage = 0;
+                        break;
+                    case 11246:
+                        RevenantMaledictus.stage = 0;
+                        RevenantMaledictus.revenantmaledictusHealed = false;
+                        RevenantMaledictus.currentAttack = 0;
+                        RevenantMaledictus.phase = -1;
                         break;
                     case 6600:
                         NPCSpawning.spawnNpc(6601, npc.absX, npc.absY, 0, 0, 0);

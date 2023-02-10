@@ -236,6 +236,8 @@ public class NpcAggression {
 
 
         switch (npc.getNpcId()) {
+            case 11246:
+                return true;
             case 2005: // Lesser demon 82
             case 2006: // Lesser demon 82
             case 2007: // Lesser demon 82

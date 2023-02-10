@@ -65,7 +65,10 @@ public class ByteStream {
 		}
 		return getUShort() - 32768;
 	}
-
+	public int get_unsignedsmart_byteorshort() {
+		int peek = buffer[offset] & 0xFF;
+		return peek < 0x80 ? this.getUByte() : this.getUShort() - 0x8000;
+	}
 	public String getNString() {
 		int i = offset;
 		while (buffer[offset++] != 0)
