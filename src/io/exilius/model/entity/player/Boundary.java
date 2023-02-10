@@ -17,6 +17,7 @@ import java.util.Optional;
 public class Boundary {
 
 
+
     /**
 	 * Calculates the lowest/highest position based on the positions provided.
 	 *
@@ -701,7 +702,7 @@ public class Boundary {
 	public static final Boundary VORKATH = new Boundary(2257, 4052, 2288, 4079);
 	public static final Boundary OURIANA_ALTAR = new Boundary(2995, 5559, 3092, 5645);
 	public static final Boundary OURIANA_ALTAR_BANK = new Boundary(3010, 5618, 3026, 5630);
-
+	public static final Boundary REVENANT_MALEDICTUS = new Boundary(3225, 10191, 3249, 10212);
 	public static final Boundary GROUP_IRONMAN_FORMING = new Boundary(new Position(3059, 3032, 0), new Position(3179, 3134, 0));
 	public static final Boundary wild_slayer_save = new Boundary(3320, 10029, 3473, 10192);
 	public static Location centerAsLocation(Boundary boundary) {

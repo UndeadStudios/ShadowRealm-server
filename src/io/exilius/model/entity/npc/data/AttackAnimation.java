@@ -25,6 +25,12 @@ public class AttackAnimation extends NPCHandler {
 		}
 		
 		switch (npc.getNpcId()) {
+			case 11246://nex anim by the plateau
+				if (npc.getAttackType() == CombatType.MELEE) {
+					return 9277;
+				} else if (npc.getAttackType() == CombatType.MAGE) {
+					return 9279;
+				}
 			case 3019:
 				return 6249;
 			case 8703:

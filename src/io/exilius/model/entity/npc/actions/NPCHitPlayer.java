@@ -396,7 +396,7 @@ public class NPCHitPlayer {
                             if (c.protectingMelee() && !protectionIgnored) {
                                 if (npc.getNpcId() == 5890)
                                     damage /= 3;
-                                else if (npc.getNpcId() == 963 || npc.getNpcId() == 11299 || npc.getNpcId() == 965 || npc.getNpcId() == 8349
+                                else if (npc.getNpcId() == 963 || npc.getNpcId() == 11246 || npc.getNpcId() == 11299 || npc.getNpcId() == 965 || npc.getNpcId() == 8349
                                         || npc.getNpcId() == 8133 || npc.getNpcId() == 6342 || npc.getNpcId() == 2054
                                         || npc.getNpcId() == 239 || npc.getNpcId() == 998 || npc.getNpcId() == 999 ||
                                         npc.getNpcId() == 1000 || npc.getNpcId() == 7554 || npc.getNpcId() == 319
@@ -811,12 +811,40 @@ public class NPCHitPlayer {
                             }
                         }
                     }
-                    if (npc.getNpcId() == 6617 || npc.getNpcId() == 6616 || npc.getNpcId() == 6615) {
+                    if (npc.getNpcId() == 10402 || npc.getNpcId() == 11670) {
                         int distanceFromTarget = c.distanceToPoint(npc.getX(), npc.getY());
 
                         List<NPC> healer = Arrays.asList(NPCHandler.npcs);
 
                         if (distanceFromTarget <= 1 && Scorpia.stage > 0 && healer.stream().filter(Objects::nonNull)
+                                .anyMatch(n -> n.getNpcId() == 11294 && !n.isDead() && n.getHealth().getCurrentHealth() > 0)) {
+                            NPC scorpia = NPCHandler.getNpc(11670);
+                            Damage heal = new Damage(
+                                    damage + Misc.random(45 + 5) + (secondDamage > 0 ? secondDamage : 0));
+                            if (scorpia != null && scorpia.getHealth().getCurrentHealth() < 150) {
+                                scorpia.getHealth().increase(heal.getAmount());
+                            }
+                        }
+                    }
+                    int distanceFromTarget = c.distanceToPoint(npc.getX(), npc.getY());
+
+                    List<NPC> healer = Arrays.asList(NPCHandler.npcs);
+
+                    if (distanceFromTarget <= 1 && Scorpia.stage > 0 && healer.stream().filter(Objects::nonNull)
+                            .anyMatch(n -> n.getNpcId() == 11294 && !n.isDead() && n.getHealth().getCurrentHealth() > 0)) {
+                        NPC scorpia = NPCHandler.getNpc(11246);
+                        Damage heal = new Damage(
+                                damage + Misc.random(45 + 5) + (secondDamage > 0 ? secondDamage : 0));
+                        if (scorpia != null && scorpia.getHealth().getCurrentHealth() < 150) {
+                            scorpia.getHealth().increase(heal.getAmount());
+                        }
+                    }
+                    if (npc.getNpcId() == 6617 || npc.getNpcId() == 6616 || npc.getNpcId() == 6615) {
+                        int distanceFromTarget2 = c.distanceToPoint(npc.getX(), npc.getY());
+
+                        List<NPC> healer2 = Arrays.asList(NPCHandler.npcs);
+
+                        if (distanceFromTarget2 <= 1 && Scorpia.stage > 0 && healer2.stream().filter(Objects::nonNull)
                                 .anyMatch(n -> n.getNpcId() == 6617 && !n.isDead() && n.getHealth().getCurrentHealth() > 0)) {
                             NPC scorpia = NPCHandler.getNpc(6615);
                             Damage heal = new Damage(
