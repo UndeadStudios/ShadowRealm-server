@@ -3,31 +3,26 @@ package io.exilius.model.collisionmap;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.exilius.Server;
-import io.exilius.content.skills.construction.Room;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.player.Boundary;
-import io.exilius.model.entity.player.Player;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.discord.Discord;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.zip.GZIPInputStream;
 
 public class Region {
 
     private static final java.util.logging.Logger log = java.util.logging.Logger.getLogger(Region.class.getName());
-    private static final String CUSTOM_MAPS_DIR = Server.getDataDirectory() + "/mapdata/custom_maps/";
     private final int id;
     private int[][][] clips = new int[4][][];
     private int[][][] shootable = new int[4][][];
     private final boolean members;
     private final ArrayList<WorldObject> worldObjects = new ArrayList<>();
     private final RegionProvider provider;
-    private static int customMapFiles;
     private static final ArrayList<Integer> errors = Lists.newArrayList();
 
     public Region(RegionProvider provider, int id, boolean members) {
@@ -83,9 +78,9 @@ public class Region {
     }
 
 
-    public int[][][] getClips() {
-        return clips;
-    }
+//    public int[][][] getClips() {
+//        return clips;
+//    }
 
     /**
      * Determines if an object is real or not. If the Collection of regions and real objects contains the properties passed in the parameters then the object will be determined
@@ -95,7 +90,7 @@ public class Region {
      * @param x the x coordinate of the object
      * @param y the y coordinate of the object
      * @param height the height of the object
-     * @return
+     * @ return
      */
     public boolean isWorldObject(int id, int x, int y, int height) {
         int z = height % 4;
@@ -107,10 +102,10 @@ public class Region {
         return worldObjects.stream().filter(object -> object.id == id && object.x == x && object.y == y && object.height == z).findFirst();
     }
 
-    public Optional<WorldObject> getWorldObject2(int[] id, int x, int y, int height) {
-        final int z = height % 4;
-        return worldObjects.stream().filter(object -> false).findFirst();
-    }
+//    public Optional<WorldObject> getWorldObject2(int[] id, int x, int y, int height) {
+//        final int z = height % 4;
+//        return worldObjects.stream().filter(object -> false).findFirst();
+//    }
 
     /**
      * Adds a {@link WorldObject} to the {@link WorldObject} map based on the x, y, height, and identification of the object.
@@ -267,33 +262,33 @@ public class Region {
 //		
 //		return false;
 //	}
-public static void dumpDoorobject(int objectId, int x, int y, int h, int type, int face) {
-    //x	y	height	walk	maxhit	attack	defence	desc
-    //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
-    try {
-        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Doordump.cfg", true));
-        try {
-            out.write("  {");
-            out.newLine();
-            out.write("      \"id\":"+objectId+",");
-            out.newLine();
-            out.write("      \"x\":"+x+",");
-            out.newLine();
-            out.write("      \"y\":"+y+",");
-            out.newLine();
-            out.write("      \"h\":"+h+",");
-            out.newLine();
-            out.write("      \"face\":"+face+"");
-            out.newLine();
-            out.write("    },");;
-            out.newLine();
-        } finally {
-            out.close();
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
+//public static void dumpDoorobject(int objectId, int x, int y, int h, int type, int face) {
+//    //x	y	height	walk	maxhit	attack	defence	desc
+//    //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
+//    try {
+//        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Doordump.cfg", true));
+//        try {
+//            out.write("  {");
+//            out.newLine();
+//            out.write("      \"id\":"+objectId+",");
+//            out.newLine();
+//            out.write("      \"x\":"+x+",");
+//            out.newLine();
+//            out.write("      \"y\":"+y+",");
+//            out.newLine();
+//            out.write("      \"h\":"+h+",");
+//            out.newLine();
+//            out.write("      \"face\":"+face+"");
+//            out.newLine();
+//            out.write("    },");;
+//            out.newLine();
+//        } finally {
+//            out.close();
+//        }
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+//}
     public void addObject(int objectId, int x, int y, int height, int type, int direction) {
         ObjectDef def = ObjectDef.getObjectDef(objectId);
         if (def == null) {
@@ -585,6 +580,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
                 return;
             }
             loadMaps(regionData.getRegionHash(), new ByteStream(file1), new ByteStream(file2));
+            loadMapsold(regionData.getRegionHash(), new ByteStream(file1), new ByteStream(file2));
         } catch (Exception e) {
             errors.add(regionData.getLandscape());
             errors.add(regionData.getObjects());
@@ -627,7 +623,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
                         if (height >= 0 && height <= 3) {
                             int x = absX + i2;
                             int y = absY + i3;
-                                RegionProvider.getGlobal().get(x, y).addClipping(x, y, height, 2097152);
+                            RegionProvider.getGlobal().get(x, y).addClipping(x, y, height, 2097152);
                         }
                     }
                 }
@@ -640,6 +636,76 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             int location = 0;
             int incr2;
             while ((incr2 = str1.get_unsignedsmart_byteorshort()) != 0) {
+                location += incr2 - 1;
+                int localX = (location >> 6 & 63);
+                int localY = (location & 63);
+                int height = location >> 12;
+                int objectData = str1.getUByte();
+                int type = objectData >> 2;
+                int direction = objectData & 3;
+                if (localX < 0 || localX >= 64 || localY < 0 || localY >= 64) {
+                    continue;
+                }
+                if ((someArray[1][localX][localY] & 2) == 2) {
+                    height--;
+                }
+                if (height >= 0 && height <= 3) {
+                    int x = absX + localX;
+                    int y = absY + localY;
+                    Region region = RegionProvider.getGlobal().get(x, y);
+                    region.addObject(objectId, x, y, height, type, direction);
+                    region.addWorldObject(objectId, absX + localX, absY + localY, height, type, direction);
+                }
+            }
+        }
+    }
+    private static void loadMapsold(int regionId, ByteStream str1, ByteStream str2) {
+        int absX = (regionId >> 8) * 64;
+        int absY = (regionId & 255) * 64;
+        int[][][] someArray = new int[4][64][64];
+        for (int i = 0; i < 4; i++) {
+            for (int i2 = 0; i2 < 64; i2++) {
+                for (int i3 = 0; i3 < 64; i3++) {
+                    while (true) {
+                        int v = str2.getUByte();
+                        if (v == 0) {
+                            break;
+                        } else if (v == 1) {
+                            str2.skip(1);
+                            break;
+                        } else if (v <= 49) {
+                            str2.skip(1);
+                        } else if (v <= 81) {
+                            someArray[i][i2][i3] = v - 49;
+                        }
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+            for (int i2 = 0; i2 < 64; i2++) {
+                for (int i3 = 0; i3 < 64; i3++) {
+                    if ((someArray[i][i2][i3] & 1) == 1) {
+                        int height = i;
+                        if ((someArray[1][i2][i3] & 2) == 2) {
+                            height--;
+                        }
+                        if (height >= 0 && height <= 3) {
+                            int x = absX + i2;
+                            int y = absY + i3;
+                            RegionProvider.getGlobal().get(x, y).addClipping(x, y, height, 2097152);
+                        }
+                    }
+                }
+            }
+        }
+        int objectId = -1;
+        int incr;
+        while ((incr = str1.readUnsignedIntSmartShortCompat()) != 0) {
+            objectId += incr;
+            int location = 0;
+            int incr2;
+            while ((incr2 = str1.getUSmart()) != 0) {
                 location += incr2 - 1;
                 int localX = (location >> 6 & 63);
                 int localY = (location & 63);
@@ -1024,5 +1090,9 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
 
     public int id() {
         return id;
+    }
+
+    public boolean isMembers() {
+        return members;
     }
 }
