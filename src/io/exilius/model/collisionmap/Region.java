@@ -639,7 +639,7 @@ public static void dumpDoorobject(int objectId, int x, int y, int h, int type, i
             objectId += incr;
             int location = 0;
             int incr2;
-            while ((incr2 = str1.getUSmart()) != 0) {
+            while ((incr2 = str1.get_unsignedsmart_byteorshort()) != 0) {
                 location += incr2 - 1;
                 int localX = (location >> 6 & 63);
                 int localY = (location & 63);
