@@ -580,7 +580,7 @@ public class Region {
                 return;
             }
             loadMaps(regionData.getRegionHash(), new ByteStream(file1), new ByteStream(file2));
-            loadMapsold(regionData.getRegionHash(), new ByteStream(file1), new ByteStream(file2));
+           // loadMapsold(regionData.getRegionHash(), new ByteStream(file1), new ByteStream(file2));
         } catch (Exception e) {
             errors.add(regionData.getLandscape());
             errors.add(regionData.getObjects());
@@ -597,14 +597,14 @@ public class Region {
             for (int i2 = 0; i2 < 64; i2++) {
                 for (int i3 = 0; i3 < 64; i3++) {
                     while (true) {
-                        int v = str2.getUByte();
+                        int v = str2.getUShort();
                         if (v == 0) {
                             break;
                         } else if (v == 1) {
                             str2.skip(1);
                             break;
                         } else if (v <= 49) {
-                            str2.skip(1);
+                            str2.skip(2);
                         } else if (v <= 81) {
                             someArray[i][i2][i3] = v - 49;
                         }

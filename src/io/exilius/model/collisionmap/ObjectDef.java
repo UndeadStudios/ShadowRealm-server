@@ -8,6 +8,7 @@ public final class ObjectDef {
 
 	private short[] originalTexture;
 	private short[] modifiedTexture;
+	private boolean boolean3;
 
 	public static ObjectDef getObjectDef(int id) {
 		if (id > streamIndices.length) {
@@ -667,6 +668,8 @@ public final class ObjectDef {
 					clipType = (buffer.readUnsignedByte() * 256);
 				} else if(opcode == 82) {
 				mapFunctionId = buffer.readUnsignedWord();
+				} else if (opcode == 89) {
+					this.boolean3 = false;
 				}
 		} while (true);
 		if (i == -1) {
