@@ -684,15 +684,15 @@
                 "locations": [ "lizardman canyon" ],
                 "teleport": [1558, 3696, 0]
             },
-            {
-                "names": [ "black demon", "demonic gorilla" ],
-                "level": 1,
-                "experience": 250,
-                "minimum": 20,
-                "maximum": 70,
-                "locations": [ "demonic gorilla dungeon" ],
-                "teleport": [2119, 5660, 0]
-            },
+          {
+            "names": [ "black demon", "demonic gorilla" ],
+            "level": 1,
+            "experience": 275,
+            "minimum": 30,
+            "maximum": 70,
+            "locations": [ "taverley dungeon","demonic gorilla dungeon", "edgeville dungeon", "brimhaven dungeon" ],
+            "teleport": [2119, 5660, 0]
+          },
             {
                 "names": [ "kalphite queen" ],
                 "level": 1,
