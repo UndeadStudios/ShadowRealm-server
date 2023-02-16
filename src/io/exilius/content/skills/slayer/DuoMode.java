@@ -99,8 +99,8 @@ public class DuoMode {
                         p.slayerPartner = player.getDisplayName();
                         player.slayerPartner = p.getDisplayName();
 
-                        p.sendMessage("You and " + plr1.getDisplayName() + " are now slayer partner!");
-                        plr1.sendMessage("You and " + p.getDisplayName() + " are now slayer partner!");
+                        p.sendMessage("You and " + plr1.getDisplayName() + " are now slayer partners!");
+                        plr1.sendMessage("You and " + p.getDisplayName() + " are now slayer partner!s");
                     }
                     plr1.getPA().closeAllWindows();
                 }
