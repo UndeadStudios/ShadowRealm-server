@@ -1,12 +1,11 @@
 package io.exilius.content.skills.slayer;
 
-import java.util.Arrays;
-import java.util.function.Consumer;
-
 import com.google.common.base.Preconditions;
 import io.exilius.model.entity.player.Player;
-import io.exilius.model.entity.player.Right;
 import io.exilius.util.Misc;
+
+import java.util.Arrays;
+import java.util.function.Consumer;
 
 
 public class SlayerRewardsInterface {
@@ -27,14 +26,18 @@ public class SlayerRewardsInterface {
                 return;
             case TASK:
                 // Blocked tasks
+                int count = 0;
+                for (String s : player.getSlayer().getRemoved()) {
+                    if (s != null && !s.isEmpty()) {
+                        count++;
+                    }
+                }
+                player.sendMessage("You're currently blocking a total of " + count +".");
+
                 for (int index = 0; index < SlayerRewardsInterfaceData.BLOCKED_TASK_STRINGS.length; index++) {
                     String blocked = player.getSlayer().getRemoved()[index];
                     if (blocked == null || blocked.length() == 0) {
-                        if (index > 2 && !player.getRights().isOrInherits(Right.REGULAR_DONATOR)) {
-                            blocked = "@red@Donator rank required for this slot.";
-                        } else {
-                            blocked = "Empty";
-                        }
+                        blocked = "Empty";
                     } else {
                         blocked = Misc.formatPlayerName(blocked);
                     }

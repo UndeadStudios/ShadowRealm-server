@@ -11,6 +11,8 @@ import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.player.Player;
 import io.exilius.util.Misc;
 
+import java.util.Calendar;
+
 public class LarrensKey {
 
     private static final int LARGE_CHEST_OBJECT = 34_832;
@@ -19,14 +21,14 @@ public class LarrensKey {
 
     public static void roll(Player player, NPC npc) {
         int rewardAmount = 1;
-        if (Hespori.activeKeldaSeed) {
+        if (Hespori.activeKeldaSeed || Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
             rewardAmount = 2;
         }
-        if (Misc.trueRand(110) == 0) {
+        if (Misc.random(1,40) == 1) {
             player.getEventCalendar().progress(EventChallenge.OBTAIN_X_LARRENS_KEYS, 1);
             Server.itemHandler.createGroundItem(player, Items.LARRANS_KEY, npc.getX(), npc.getY(), npc.getHeight(), rewardAmount);
             //PlayerHandler.executeGlobalMessage("@cr21@ @pur@" + player.playerName + " received a drop: Larran's key from wildy slayer.");
-            player.sendMessage("@red@A " + ItemDef.forId(Items.LARRANS_KEY).getName() + " has has dropped.");
+            player.sendMessage("@red@A " + ItemDef.forId(Items.LARRANS_KEY).getName() + " has dropped.");
         }
     }
 

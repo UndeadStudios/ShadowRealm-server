@@ -20,6 +20,7 @@ import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCSpawning;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
@@ -102,7 +103,7 @@ public class Slayer {
 	/**
 	 * The task master names that the player has decided to remove
 	 */
-	private final String[] removed = Misc.nullToEmpty(6);
+	private final String[] removed = Misc.nullToEmpty(99);
 
 	/**
 	 * Task extensions.
@@ -135,6 +136,17 @@ public class Slayer {
 	//@SuppressWarnings("unlikely-arg-type")
 	public void createNewTask(int masterId, boolean override) {
 		SlayerMaster.get(masterId).ifPresent(m -> {
+			if (player.slayerParty && !player.slayerPartner.isEmpty()) {
+				Player p = PlayerHandler.getPlayerByDisplayName(player.slayerPartner);
+				 if (p != null && p.calculateCombatLevel() < m.getLevel() && !override) {
+					player.getDH().sendNpcChat(p.getDisplayName()+ " needs a combat level of " + m.getLevel() + " to receive tasks from me.", "Please come back when they have this combat level.");
+					return;
+				} else if (p != null && p.getSlayer().getTaskAmount() > 0) {
+					player.getDH().sendNpcChat(p.getDisplayName() + " already has a task they need to cancel this task first.");
+					return;
+				}
+			}
+
 			if (player.calculateCombatLevel() < m.getLevel() && !override) {
 				player.getDH().sendNpcChat("You need a combat level of " + m.getLevel() + " to receive tasks from me.", "Please come back when you have this combat level.");
 				return;
@@ -184,6 +196,11 @@ public class Slayer {
 			}
 
 			taskAmount = Misc.random(Range.between(minimum, maximum));
+
+//			if (player.getPerkSytem().gameItems.stream().anyMatch(item -> item.getId() == 33124)) {
+//				taskAmount *= 2;
+//			}
+
 			master = m.getId();
 
 			if (masterId == 8623) {
@@ -196,18 +213,37 @@ public class Slayer {
 				player.getDH().sendNpcChat("You have been assigned " + taskAmount + " " + task.get().getFormattedName() + ".", "It costs 30 points to cancel task in the Rewards tab!", "Or choose an easier task and lose your streak.");
 				player.nextChat = -1;
 			}
+
+			if (player.slayerParty && !player.slayerPartner.equalsIgnoreCase("")) {
+				for (Player p : PlayerHandler.getPlayers()) {
+					if (p.getDisplayName().equalsIgnoreCase(player.slayerPartner)) {
+						setPartnersTask(p, task, taskAmount, master);
+					}
+				}
+			}
 		});
+		displayInterface();
 	}
 
 	/**
 	 * Set amount to slay, used for boss task length selection.
 	 */
 	protected void setAmountToSlay(int amount) {
-		if (task.isPresent() && master == BOSS_TASK_NPC_ID) {
+		if (task.isPresent()) {
 			taskAmount = amount;
 			player.lastTask = task.get().getFormattedName();
 			player.start(new DialogueBuilder(player).setNpcId(Npcs.NIEVE).npc("You've been assigned x" + amount + " " + task.get().getFormattedName() + "."));
+		}
+	}
 
+	public void setPartnersTask(Player player, Optional<Task> task, int amount, int master) {
+		if (task.isPresent()) {
+			player.getSlayer().setMaster(master);
+			player.getSlayer().setTask(task);
+			player.getSlayer().setTaskAmount(amount);
+			player.start(new DialogueBuilder(player).setNpcId(Npcs.NIEVE).npc("You've been assigned x" + amount + " " + task.get().getFormattedName() + "."));
+		} else {
+			System.out.println("There was an error linking the slayer tasks!");
 		}
 	}
 
@@ -266,6 +302,7 @@ public class Slayer {
 		} else {
 			taskAmount--;
 		}
+		displayInterface();
 	}
 	/**
 	 * A function referenced when a monster is killed. We manage
@@ -285,6 +322,7 @@ public class Slayer {
 		if (npc.getNpcId() >= 7388 && npc.getNpcId() <= 7411) {
 			handleSuperiorExp(npc);
 		}
+
 		task.ifPresent(task -> {
 			if (isTaskNpc(npc)) {
 				Optional<SlayerMaster> master = SlayerMaster.get(this.master);
@@ -354,7 +392,7 @@ public class Slayer {
 					}
 					if (taskAmount == 0) {
 						if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
-						player.getEventCalendar().progress(EventChallenge.COMPLETE_X_HARD_SLAYER_ASSIGNMENTS);
+							player.getEventCalendar().progress(EventChallenge.COMPLETE_X_HARD_SLAYER_ASSIGNMENTS);
 						}
 						int multiplier = 1;
 						boolean scrollDoublePoints = player.getItems().playerHasItem(7629);
@@ -366,6 +404,12 @@ public class Slayer {
 						if (Hespori.activeNoxiferSeed) {
 							multiplier = 2;
 						}
+//						if (player.getPerkSytem().gameItems.stream().anyMatch(item -> item.getId() == 33078)) {
+//							multiplier = 2;
+//						}
+//						if (player.getPerkSytem().gameItems.stream().anyMatch(item -> item.getId() == 33075) && player.wildLevel > 0) {
+//							multiplier = 2;
+//						}
 						int consecutive = consecutiveTasks + 1;
 						this.consecutiveTasks++;
 						this.points += (m.getPointReward(0) * multiplier);
@@ -373,6 +417,7 @@ public class Slayer {
 						player.sendMessage("<col=9a35ff>You have completed your slayer task, talk to a slayer master to receive another.");
 						player.sendMessage("You have completed " + consecutiveTasks + " in a row!");
 						player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.TEN_CONSECUTIVE);
+						player.TaskExtended = false;
 
 
 						if (consecutiveTasks == 10) {
@@ -488,28 +533,38 @@ public class Slayer {
 								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@1000@blu@ additional points.");
 							}
 						}
-							if (player.amDonated < 50) {
-								points += 0;
 
-							} else if (player.amDonated >= 50 && player.amDonated < 100) {
+						if (player.getSlayer().getMaster() != 401 || player.getSlayer().getMaster() != 402) {
+							if (player.amDonated >= 20 && player.amDonated < 50) {
 								points += 3;
 								player.sendMessage("You have received an additonal@red@ 3@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 100 && player.amDonated < 250) {
+							} else if (player.amDonated >= 50 && player.amDonated < 100) {
 								points += 5;
 								player.sendMessage("You have received an additonal@red@ 5@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 250 && player.amDonated < 500) {
+							} else if (player.amDonated >= 100 && player.amDonated < 250) {
 								points += 8;
 								player.sendMessage("You have received an additonal@red@ 8@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 500 && player.amDonated < 1000) {
+							} else if (player.amDonated >= 250 && player.amDonated < 500) {
 								points += 10;
 								player.sendMessage("You have received an additonal@red@ 10@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 1000 && player.amDonated < 2499) {
+							} else if (player.amDonated >= 500 && player.amDonated < 750) {
 								points += 12;
 								player.sendMessage("You have received an additonal@red@ 12@bla@ points for your donator rank.");
-							} else if (player.amDonated >= 2500) {
+							} else if (player.amDonated >= 750 && player.amDonated < 1000) {
 								points += 15;
-								player.sendMessage("You have received an additonal@red@ 12@bla@ points for your donator rank.");
+								player.sendMessage("You have received an additonal@red@ 15@bla@ points for your donator rank.");
+							} else if (player.amDonated >= 1000 && player.amDonated < 1500) {
+								points += 18;
+								player.sendMessage("You have received an additonal@red@ 18@bla@ points for your donator rank.");
+							} else if (player.amDonated >= 1500 && player.amDonated < 2000) {
+								points += 21;
+								player.sendMessage("You have received an additonal@red@ 21@bla@ points for your donator rank.");
+							} else if (player.amDonated >= 2000) {
+								points += 23;
+								player.sendMessage("You have received an additonal@red@ 23@bla@ points for your donator rank.");
 							}
+						}
+
 						player.getQuestTab().updateInformationTab();
 						player.getQuestTab().updateInformationTab();
 						if (consecutive == 10) {
@@ -676,7 +731,7 @@ public class Slayer {
 				}
 				if (isSuperiorNpc()) {
 					player.getPA().addSkillXPMultiplied(player.getRechargeItems().hasAnyItem(13113, 13114, 13115) && Boundary.isIn(player, Boundary.SLAYER_TOWER_BOUNDARY) ? (int) (task.getExperience() * 1.10)
-									: task.getExperience() * 10, Skill.SLAYER.getId(), true);
+							: task.getExperience() * 10, Skill.SLAYER.getId(), true);
 					superiorSpawned = false;
 					player.sendMessage("You receive bonus xp for killing a superior slayer npc!");
 				}
@@ -712,7 +767,7 @@ public class Slayer {
 		List<String> blocked = new ArrayList<>(Arrays.asList(removed));
 		for (Task task1 : tasks) {
 			if (task1.getLevel()<=player.playerLevel[Skill.SLAYER.getId()]&&!blocked.contains(task1.getPrimaryName())||(Objects.equals(task1.getPrimaryName(), "cerberus")&&learnedCerberusRoute)) {
-					//!task1.getFormattedName().equals(player.lastTask) ||
+				//!task1.getFormattedName().equals(player.lastTask) ||
 				retainable.add(task1);
 			}
 
@@ -722,6 +777,9 @@ public class Slayer {
 	}
 
 	public static boolean hasRequiredLevel(Player player, int levelRequired) {
+		if (Boundary.isIn(player, Boundary.DONATOR_ZONE)) {
+			return true;
+		}
 		int playerSlayerLevel = player.playerLevel[18];
 		if (playerSlayerLevel < levelRequired) {
 			player.getDH().sendStatement("You need a Slayer level of " + levelRequired + " to kill this monster.");
@@ -773,13 +831,15 @@ public class Slayer {
 	}
 
 	public int getCancelTaskCost() {
-			if (player.amDonated >= 2500) {
-			return 10;
-		} else if (player.amDonated >= 500) {
-			return 15;
+		if (player.amDonated >= 500) {
+			return 1;
+		} else if (player.amDonated >= 250) {
+			return 5;
 		} else if (player.amDonated >= 100) {
-			return 20;
-		} else if (player.amDonated >= 10) {
+			return 10;
+		} else if (player.amDonated >= 50) {
+			return 15;
+		} else if (player.amDonated >= 20) {
 			return 25;
 		} else {
 			return 30;
@@ -825,22 +885,20 @@ public class Slayer {
 	 * Gets the cost to block a task.
 	 */
 	public int getBlockTaskCost() {
-		if (player.amDonated >= 5 && player.amDonated <= 49) {
-			return 80;
-		} else if (player.amDonated >= 50 && player.amDonated <= 99) {
-			return 80;
-		} else if (player.amDonated >= 100 && player.amDonated <= 199) {
-			return 70;
-		} else if (player.amDonated >= 200 && player.amDonated <= 299) {
-			return 70;
-		} else if (player.amDonated >= 300 && player.amDonated <= 499) {
-			return 60;
-		} else if (player.amDonated >= 500 && player.amDonated <= 999) {
+		if (player.amDonated >= 20 && player.amDonated < 50) {
 			return 50;
-		} else if (player.amDonated >= 1000 && player.amDonated <= 2499) {
-			return 35;
-		} else if (player.amDonated >= 2500 && player.amDonated <= 99999) {
-			return 0;
+		} else if (player.amDonated >= 50 && player.amDonated < 100) {
+			return 30;
+		} else if (player.amDonated >= 100 && player.amDonated < 250) {
+			return 15;
+		} else if (player.amDonated >= 250 && player.amDonated < 500) {
+			return 7;
+		} else if (player.amDonated >= 500 && player.amDonated < 750) {
+			return 5;
+		} else if (player.amDonated >= 750 && player.amDonated < 1000) {
+			return 3;
+		} else if (player.amDonated >= 1000) {
+			return 1;
 		}
 		return 100;
 	}
@@ -953,7 +1011,11 @@ public class Slayer {
 	}
 
 	public void updateCurrentlyRemoved() {
-		for (int index = 0; index < removed.length; index++) {
+		int count = removed.length;
+		if (count > 6) {
+			count = 6;
+		}
+		for (int index = 0; index < count; index++) {
 			if (removed[index].isEmpty()) {
 				player.getPA().sendFrame126("", 42014 + index);
 			} else {
@@ -1377,5 +1439,14 @@ public class Slayer {
 
 	public List<SlayerUnlock> getUnlocks() {
 		return unlocks;
+	}
+
+	public void displayInterface() {
+		if (player.getSlayer().getTask().isPresent()) {
+			player.getPA().sendString(35425, player.getSlayer().getTask().get().getFormattedName() + " : " + player.getSlayer().getTaskAmount());
+			player.getPA().walkableInterface(35424);
+		} else if (player.getSlayer().getTask().isEmpty() || player.getSlayer().getTaskAmount() <= 0) {
+			player.getPA().removeWalkableInterface();
+		}
 	}
 }

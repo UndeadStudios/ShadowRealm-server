@@ -303,7 +303,7 @@ public class FireOfExchangeBurnPrice {
             case 24517://eldritch orb
             case 24511://harmonised orb
             case 24514://volatile orb
-                return 500_000;
+                return 200_000;
             case 24417://inquisitor mace
             case Items.RING_OF_WEALTH_I:
             case 23995://crystal blade
@@ -326,16 +326,15 @@ public class FireOfExchangeBurnPrice {
                 return 50_000;
             case Items.VESTAS_LONGSWORD:
             case Items.STATIUSS_WARHAMMER:
-                return 1000_000;
+                return 100_000;
             case 12817://ely
 
-                return 250_000;
+                return 150_000;
             case 20997://t bow
             case 26374://zaryte cbow
             case 26235://zaryte vambraces
-                return 750_000;
             case 22325://scythe
-                return 1_200_000;
+                return 250_000;
             case 2399: // FOE KEY
                 return 5_000;
             //SKILLING ARTEFACTS

@@ -4,6 +4,7 @@ import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.model.AmountInput;
 import io.exilius.model.Npcs;
 import io.exilius.model.entity.player.Player;
+import io.exilius.model.entity.player.PlayerHandler;
 
 public class SelectTaskLengthDialogue extends DialogueBuilder {
 
@@ -21,6 +22,14 @@ public class SelectTaskLengthDialogue extends DialogueBuilder {
         return (player, amount) -> {
             if (amount >= 5 && amount <= 35) {
                 player.getSlayer().setAmountToSlay(amount);
+                if (player.slayerParty && !player.slayerPartner.isEmpty()) {
+                    for (Player p : PlayerHandler.getPlayers()) {
+                        if (p.getDisplayName().equalsIgnoreCase(player.slayerPartner)) {
+                            p.getSlayer().setTask(player.getSlayer().getTask());
+                            p.getSlayer().setAmountToSlay(amount);
+                        }
+                    }
+                }
             } else {
                 player.start(new DialogueBuilder(player).setNpcId(Npcs.NIEVE).npc("You have to choose between 5 and 35.").exit(plr -> plr.start(new SelectTaskLengthDialogue(plr, task))));
             }

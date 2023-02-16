@@ -1,14 +1,14 @@
 package io.exilius.content.skills.slayer;
 
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
 import com.google.common.base.Preconditions;
 import io.exilius.Configuration;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.util.Misc;
+
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 public class SlayerMaster {
 

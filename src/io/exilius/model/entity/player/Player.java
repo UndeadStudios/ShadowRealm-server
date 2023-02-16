@@ -199,6 +199,16 @@ public class Player extends Entity {
 
     private static Logger logger = LoggerFactory.getLogger(Player.class);
 
+
+
+    public boolean TaskExtended;
+
+
+    @Getter @Setter
+    public int collectionLogNPC = 0;
+
+    @Getter
+    private final ArrayList<Integer> claimedLog = new ArrayList<>();
     @Getter
     @Setter
     public int battlePassSeason = 0;
@@ -6147,6 +6157,9 @@ public MoneyBox getMoneyBoxInterface() {
         }
         return false;
     }
+
+    public String slayerPartner = "";
+    public boolean slayerParty = false;
 
     public RealRunecrafting getRC() {
         return realrcing;

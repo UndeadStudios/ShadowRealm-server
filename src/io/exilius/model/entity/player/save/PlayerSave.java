@@ -847,6 +847,10 @@ public class PlayerSave {
                                 p.setKonarSlayerLocation(token2);
                             } else if (token.equals("last-task")) {
                                 p.setLastTask(token2);
+                            } else if (token.equals("slayerPartner")) {
+                                p.slayerPartner = token2;
+                            } else if (token.equals("slayerParty")) {
+                                p.slayerParty = Boolean.parseBoolean(token2);
                             } else if (token.equals("run-toggled")) {
                                 p.setRunningToggled(Boolean.parseBoolean(token2));
                             } else if (token.equals("slayer-master")) {
@@ -1070,6 +1074,12 @@ public class PlayerSave {
                             break;
                         case 58:
                             // Deprecated SafeBox items
+                            break;
+                        case 62:
+                            if (token.equals("collect-log")) {
+                                int id = Integer.parseInt(token3[1]);
+                                p.getClaimedLog().add(id);
+                            }
                             break;
                         case 7:
                             if (token.equals("bank-tab")) {
@@ -2225,6 +2235,10 @@ public class PlayerSave {
             }
             characterfile.write("last-task = " + p.lastTask);
             characterfile.newLine();
+            characterfile.write("slayerPartner = " + p.slayerPartner);
+            characterfile.newLine();
+            characterfile.write("slayerParty = " + p.slayerParty);
+            characterfile.newLine();
             characterfile.write("run-toggled = " + p.isRunningToggled());
             characterfile.newLine();
             characterfile.write("slayer-master = " + p.getSlayer().getMaster());
@@ -2252,9 +2266,9 @@ public class PlayerSave {
             characterfile.write("battle-pass-premium-unlocked = ",0,31);
             characterfile.write(Boolean.toString(p.isBattlePassPremiumUnlocked()));
             characterfile.newLine();
-			
-			
-			
+
+
+
             // FREE BATTLEPASS SAVE
             StringBuilder freeBpRewads = new StringBuilder();
             for (int i = 0; i < p.getBattlePassFreeRwdsClaimed().length; i++) {
@@ -2270,9 +2284,9 @@ public class PlayerSave {
             for (int i = 0; i < p.getBattlePassPremiumRwdsClaimed().length; i++) {
                 premiumBpRewards.append(p.getBattlePassPremiumRwdsClaimed()[i]).append("\t");
             }
-			
-			
-			
+
+
+
             characterfile.write("battle-pass-premium-rwds-claimed = ");
             characterfile.write(premiumBpRewards.toString());
             characterfile.newLine();
@@ -2510,6 +2524,19 @@ public class PlayerSave {
                     characterfile.write(Integer.toString(amt), 0, Integer.toString(amt).length());
                     characterfile.newLine();
                 }
+            }
+            characterfile.newLine();
+
+            /* Collection Log Claims */
+            characterfile.write("[COLLOGCLAIMS]");
+            characterfile.newLine();
+            for (int i = 0; i < p.getClaimedLog().size(); i++) {
+                characterfile.write("collect-log = ", 0, 14);
+                characterfile.write(Integer.toString(i), 0, Integer.toString(i).length());
+                characterfile.write("\t",0,1);
+                int id = p.getClaimedLog().get(i);
+                characterfile.write(Integer.toString(id),0,Integer.toString(id).length());
+                characterfile.newLine();
             }
             characterfile.newLine();
 

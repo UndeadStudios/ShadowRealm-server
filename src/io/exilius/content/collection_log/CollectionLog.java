@@ -13,7 +13,6 @@ import io.exilius.content.achievement.Achievements;
 import io.exilius.content.bosses.Vorkath;
 import io.exilius.content.item.lootable.impl.RaidsChestRare;
 import io.exilius.content.item.lootable.impl.TheatreOfBloodChest;
-import io.exilius.content.trails.ClueScroll;
 import io.exilius.content.trails.RewardLevel;
 import io.exilius.content.trails.TreasureTrailsRewardItem;
 import io.exilius.content.trails.TreasureTrailsRewards;
@@ -38,7 +37,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 /**
- * 
+ *
  * @author Grant_ | www.rune-server.ee/members/grant_ | 10/7/19
  *
  */
@@ -54,8 +53,8 @@ public class CollectionLog {
 	 */
 	public enum CollectionTabType {
 		BOSSES, WILDERNESS, RAIDS, MINIGAMES, OTHER
-    }
-	
+	}
+
 	/* Variables */
 	private static HashMap<CollectionTabType, ArrayList<Integer>> collectionNPCS;
 	private static final int INTERFACE_ID = 23110;
@@ -80,7 +79,7 @@ public class CollectionLog {
 	public HashMap<String, ArrayList<GameItem>> getCollections() {
 		return collections;
 	}
-	
+
 	/**
 	 * Initializes the default npcs to be collecting for
 	 */
@@ -106,7 +105,7 @@ public class CollectionLog {
 			collectionNPCS = new HashMap<>();
 		}
 	}
-	
+
 	/**
 	 * Opens the interface for a player
 	 */
@@ -116,7 +115,14 @@ public class CollectionLog {
 		selectTab(player, CollectionTabType.BOSSES);
 		//selectCell(0, CollectionTabType.BOSSES);
 	}
-	
+
+	public void openInterfaceOther(Player player, Player c2) {
+		player.setViewingCollectionLog(c2.getCollectionLog());
+		resetInterface(player);
+		selectTab(player, CollectionTabType.BOSSES);
+		//selectCell(0, CollectionTabType.BOSSES);
+	}
+
 	/**
 	 * Clears the interface
 	 */
@@ -130,7 +136,7 @@ public class CollectionLog {
 			player.getPA().sendConfig(571 + i, 0);
 		}
 	}
-	
+
 	/**
 	 * Selects a tab within the interface
 	 * @param type
@@ -139,7 +145,7 @@ public class CollectionLog {
 		if (collectionNPCS == null || collectionNPCS.isEmpty()) {
 			return;
 		}
-		
+
 		ArrayList<Integer> npcs = collectionNPCS.get(type);
 		if (npcs != null) {
 			resetInterface(player);
@@ -169,12 +175,31 @@ public class CollectionLog {
 
 						if (drops != null && drops.size() == itemsObtained.size()) {
 							found = true;
-							String name = (type == CollectionTabType.OTHER ? Misc.optimizeText(RewardLevel.VALUES.get(npcs.get(i)).name().toLowerCase()) : Misc.optimizeText(NpcDef.forId(npcs.get(i)).getName()));
+							String name = (type == CollectionTabType.OTHER && i <= 5 ?
+									Misc.optimizeText(RewardLevel.VALUES.get(npcs.get(i)).name().toLowerCase())
+									: Misc.optimizeText(NpcDef.forId(npcs.get(i)).getName()));
 							if (npcs.get(i) == Npcs.THE_MAIDEN_OF_SUGADINTI) {
 								name = "Theatre of Blood";
 							} else if (npcs.get(i) == Npcs.DUSK_9) {
 								name = "Grotesque Guardians";
+							} else if (npcs.get(i) == PETS_ID) {
+								name = "Pets";
+							} else if (npcs.get(i) == 6) {
+								name = "Weapon Upgrades";
+							} else if (npcs.get(i) == 7) {
+								name = "Armor Upgrades";
+							} else if (npcs.get(i) == 8) {
+								name = "Accessory Upgrades";
+							} else if (npcs.get(i) == 9) {
+								name = "Misc Upgrades";
+							} else if (npcs.get(i) == 10) {
+								name = "Aoe Weapons";
 							}
+/*							if (!player.getCollogrewards().containsValue(i)) {
+								player.getCollogrewards().put(type, i);
+								player.setCollectionPoints(player.getCollectionPoints() + getPoints(type,i));
+								player.sendMessage("You have completed a log and earned " + getPoints(type,i) + "collog points.");
+							}*/
 							player.getPA().sendFrame126("@gre@" + name, 23123 + (i * 2));
 						}
 					}
@@ -182,6 +207,16 @@ public class CollectionLog {
 				if (!found) {
 					if (npcs.get(i) == PETS_ID) {
 						player.getPA().sendFrame126("Pets", 23123 + (i * 2));
+					} else if (npcs.get(i) == 6) {
+						player.getPA().sendFrame126("Weapon Upgrades", 23123 + (i * 2));
+					} else if (npcs.get(i) == 7) {
+						player.getPA().sendFrame126("Armor Upgrades", 23123 + (i * 2));
+					} else if (npcs.get(i) == 8) {
+						player.getPA().sendFrame126("Accessory Upgrades", 23123 + (i * 2));
+					} else if (npcs.get(i) == 9) {
+						player.getPA().sendFrame126("Misc Upgrades", 23123 + (i * 2));
+					} else if (npcs.get(i) == 10) {
+						player.getPA().sendFrame126("Aoe Weapons", 23123 + (i * 2));
 					} else {
 						String name = type == CollectionTabType.OTHER ? RewardLevel.VALUES.get(npcs.get(i)).getFormattedName() + " clue scroll"
 								: Misc.optimizeText(NpcDef.forId(npcs.get(i)).getName());
@@ -199,7 +234,7 @@ public class CollectionLog {
 			player.sendMessage("There are no collection logs for this type yet.");
 		}
 	}
-	
+
 	/**
 	 * Selects a cell from a tab type
 	 * @param index
@@ -209,13 +244,13 @@ public class CollectionLog {
 		if (collectionNPCS == null || collectionNPCS.isEmpty()) {
 			return;
 		}
-		
+
 		ArrayList<Integer> npcs = collectionNPCS.get(type);
 		if (npcs != null) {
 			if (index >= npcs.size()) {
 				return;
 			}
-			
+
 			player.getPA().sendConfig(520 + player.previousSelectedCell, 0);
 			player.previousSelectedCell = index;
 			player.getPA().sendConfig(520 + index , 1);
@@ -239,7 +274,7 @@ public class CollectionLog {
 			populateInterface(player, npcs.get(index));
 		}
 	}
-	
+
 	/**
 	 * Populates the interface with data
 	 * @param npcId
@@ -249,13 +284,30 @@ public class CollectionLog {
 			getCollections().put("" + npcId, new ArrayList<>());
 			saveToJSON();
 		}
-		
+
+		player.setCollectionLogNPC(npcId);
+
 		String npcName = NpcDef.forId(npcId).getName();
 		if (npcId >= 1 && npcId <= 4) {
 			npcName = Misc.optimizeText(RewardLevel.VALUES.get(npcId).name().toLowerCase());
 		}
 		if (npcId == PETS_ID) {
 			npcName = "Pets";
+		}
+		if (npcId == 6) {
+			npcName = "Weapon Upgrades";
+		}
+		if (npcId == 7) {
+			npcName = "Armor Upgrades";
+		}
+		if (npcId == 8) {
+			npcName = "Accessory Upgrades";
+		}
+		if (npcId == 9) {
+			npcName = "Misc Upgrades";
+		}
+		if (npcId == 10) {
+			npcName = "Aoe Weapons";
 		}
 		if (npcId == Npcs.THE_MAIDEN_OF_SUGADINTI) {
 			npcName = "Theatre of Blood";
@@ -265,15 +317,21 @@ public class CollectionLog {
 		}
 
 		player.getPA().sendFrame126(getSaveName() + "'s Collection Log", 23112);
-		player.getPA().sendFrame126(Misc.optimizeText(npcName), 23118);
+		player.getPA().sendFrame126(Misc.optimizeText(npcName) /*+ "@gre@("+getPoints(npcId)+" Credits)"*/, 23118);
 		player.getPA().sendFrame126(Misc.optimizeText(npcName) + ": @whi@" + player.getNpcDeathTracker().getKc(npcName), 23120);
-		
+
 		//Clear items
 		for(int i = 0; i < 198; i++) {
-			player.getPA().sendItemToSlotWithOpacity(23231, -1, i, 0, false);
+			player.getPA().itemOnInterface(-1, 0, 23231, i);
 		}
-		
+
+		for (int i = 0; i < CollectionRewards.getForNpcID(npcId).size(); i++) {
+			player.getPA().itemOnInterface(new GameItem(CollectionRewards.getForNpcID(npcId).get(i).getId(),CollectionRewards.getForNpcID(npcId).get(i).getAmount()), 23235, i);
+		}
+
 		ArrayList<GameItem> items = getCollections().get(npcId + "");
+
+
 		Server.getDropManager().getDrops(player, npcId);
 		if (npcId == 8028) {
 			player.dropItems = Vorkath.getVeryRareDrops();
@@ -289,6 +347,13 @@ public class CollectionLog {
 			player.dropItems = PetHandler.getPetIds(true);
 			player.getPA().sendFrame126(Misc.optimizeText(npcName) + ": @whi@" + items.size(), 23120);
 		}
+
+		if (npcId == 10) {
+			if (!player.dropItems.isEmpty()) {
+				player.dropItems.clear();
+			}
+			player.getPA().sendFrame126(Misc.optimizeText(npcName) + ": @whi@" + items.size(), 23120);
+		}
 		if (npcId == Npcs.THE_MAIDEN_OF_SUGADINTI) {
 			player.dropItems = TheatreOfBloodChest.getRareDrops();
 			player.getPA().sendFrame126(Misc.optimizeText(npcName) + ": @whi@" + player.tobCompletions, 23120);
@@ -299,14 +364,14 @@ public class CollectionLog {
 			boolean found = false;
 			for(int j = 0; j < items.size(); j++) {
 				if (items.get(j).getId() == player.dropItems.get(i).getId()) {
-					player.getPA().sendItemToSlotWithOpacity(23231, items.get(j).getId(), i, items.get(j).getAmount(), false);
+					player.getPA().itemOnInterface(items.get(j).getId(),items.get(j).getAmount(),23231,i);
 					foundCount++;
 					found = true;
 					break;
 				}
 			}
 			if (!found) {
-				player.getPA().sendItemToSlotWithOpacity(23231, player.dropItems.get(i).getId(), i, 0, false);
+				player.getPA().itemOnInterface(player.dropItems.get(i).getId(),0,23231,i);
 			}
 		}
 		player.getPA().sendFrame126("Obtained: " + (foundCount == player.dropItems.size() ? "@gre@" : "@red@") + foundCount + "/" + player.dropItems.size(), 23119);
@@ -340,16 +405,16 @@ public class CollectionLog {
 		if (npcId == 7144  || npcId == 7146) {
 			npcId = 7145;
 		}
-		
+
 		if (npcId == 8615 || npcId == 8619 || npcId == 8620 || npcId == 8622) {
 			npcId = 8621;
 		}
 
 		//Pets
 		if (npcId == PETS_ID) {
-		    dropId = PetHandler.getPetForParentId(PetHandler.forItem(dropId)).getItemId();
-        }
-		
+			dropId = PetHandler.getPetForParentId(PetHandler.forItem(dropId)).getItemId();
+		}
+
 		if (!isCollectionNPC(npcId)) {
 			return;
 		}
@@ -371,18 +436,24 @@ public class CollectionLog {
 					break;
 				}
 			}
-			
+
 			if (!found) {
 				currentItems.add(new GameItem(dropId, dropAmount));
-				if (message)
+				if (message) {
 					player.sendMessage("You have unlocked another item in your collection log!");
+				}
+				List<GameItem> drops = Server.getDropManager().getNPCdrops(npcId);
+				if (currentItems.size() == drops.size()) {
+					player.sendMessage("@gre@You have completed a collection log!");
+				}
+
 			}
 		}
 		getCollections().put("" + npcId, currentItems);
 		//As soon as it gets a drop it saves Kraken has been getting the most complaints
 		saveToJSON();
 	}
-	
+
 	/**
 	 * Checks if an NPC is in fact a collection NPC
 	 * @param npcId
@@ -390,11 +461,11 @@ public class CollectionLog {
 	 */
 	public boolean isCollectionNPC(int npcId) {
 		for (Map.Entry<CollectionTabType, ArrayList<Integer>> entry : collectionNPCS.entrySet()) {
-		    for(int i = 0; i < entry.getValue().size(); i++) {
-		    	if (entry.getValue().get(i) == npcId) {
-		    		return true;
-		    	}
-		    }
+			for(int i = 0; i < entry.getValue().size(); i++) {
+				if (entry.getValue().get(i) == npcId) {
+					return true;
+				}
+			}
 		}
 		return false;
 	}
@@ -431,24 +502,24 @@ public class CollectionLog {
 			return true;
 		}
 		switch(buttonId) {
-		case 90076:
-			player.getViewingCollectionLog().selectTab(player, CollectionTabType.BOSSES);
-			return true;
-		case 90182:
-			player.getViewingCollectionLog().selectTab(player, CollectionTabType.WILDERNESS);
-			return true;
-		case 90184:
-			player.getViewingCollectionLog().selectTab(player, CollectionTabType.RAIDS);
-			return true;
-		case 90186:
-			player.getViewingCollectionLog().selectTab(player, CollectionTabType.MINIGAMES);
-			return true;
-		case 90188:
-			player.getViewingCollectionLog().selectTab(player, CollectionTabType.OTHER);
-			return true;
-		case 90073:
-			player.getPA().closeAllWindows();
-			return true;
+			case 90076:
+				player.getViewingCollectionLog().selectTab(player, CollectionTabType.BOSSES);
+				return true;
+			case 90182:
+				player.getViewingCollectionLog().selectTab(player, CollectionTabType.WILDERNESS);
+				return true;
+			case 90184:
+				player.getViewingCollectionLog().selectTab(player, CollectionTabType.RAIDS);
+				return true;
+			case 90186:
+				player.getViewingCollectionLog().selectTab(player, CollectionTabType.MINIGAMES);
+				return true;
+			case 90188:
+				player.getViewingCollectionLog().selectTab(player, CollectionTabType.OTHER);
+				return true;
+			case 90073:
+				player.getPA().closeAllWindows();
+				return true;
 		}
 		return false;
 	}

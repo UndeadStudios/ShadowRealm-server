@@ -12,7 +12,6 @@ import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
 import io.exilius.model.definitions.NpcStats;
-import io.exilius.model.entity.Entity;
 import io.exilius.model.entity.npc.NPC;
 import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.npc.NPCSpawning;
@@ -268,6 +267,7 @@ public class Raids {
 
     /**
      * Leaves the raid.
+     * @param player
      */
     public void leaveGame(Player player) {
         if (System.currentTimeMillis() - player.infernoLeaveTimer < 15000) {
@@ -331,49 +331,47 @@ public class Raids {
             myRank = 24;
         }
 
-        int chance = Misc.random(100);
-        int rareChance = 88 + myRank;
+        int chance = Misc.random(200);
+        int rareChance = 195 + myRank;
         if (player.getItems().playerHasItem(21046)) {
-            rareChance = 83 + myRank;
+            rareChance = 190 + myRank;
             player.getItems().deleteItem(21046, 1);
             player.sendMessage("@red@You sacrifice your @cya@tablet @red@for an increased drop rate.");
             player.getEventCalendar().progress(EventChallenge.USE_X_CHEST_RATE_INCREASE_TABLETS, 1);
         }
-        if (chance >= 0 && chance <= rareChance) {
-            player.getItems().addItemorDrop(COMMON_KEY, 1);
+        if (chance > 0 && chance < rareChance) {
+            player.getItems().addItemUnderAnyCircumstance(COMMON_KEY, 1);
             player.getEventCalendar().progress(EventChallenge.COMPLETE_X_RAIDS);
 //            LeaderboardUtils.addCount(LeaderboardType.COX, player, 1);
             Achievements.increase(player, AchievementType.COX, 1);
             player.sendMessage("@red@You have just received a @bla@Common Key.");
-        } else if (chance >= rareChance) {
-            player.getItems().addItemorDrop(RARE_KEY, 1);
+        } else if (chance > rareChance) {
+            player.getItems().addItemUnderAnyCircumstance(RARE_KEY, 1);
             player.getEventCalendar().progress(EventChallenge.COMPLETE_X_RAIDS);
 //            LeaderboardUtils.addCount(LeaderboardType.COX, player, 1);
             Achievements.increase(player, AchievementType.COX, 1);
             player.sendMessage("@red@You have just received a @pur@Rare Key.");
-            if (player.getRights().isNotAdmin()) {
-                PlayerHandler.executeGlobalMessage("@bla@[@blu@RAIDS@bla@] " + player.getDisplayName() + "@pur@ has just received a @bla@Rare Raids Key!");
-            }
+            PlayerHandler.executeGlobalMessage("@bla@[@blu@RAIDS@bla@] " + player.getDisplayName() + "@pur@ has just received a @bla@Rare Raids Key!");
         }
         if (!kronosReward) {
             if (player.raidCount == 25) {
-                player.getItems().addItemorDrop(22388, 1);
+                player.getItems().addItemUnderAnyCircumstance(22388, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 25 Raids and obtained the Xeric's Guard Cape!");
             }
             if (player.raidCount == 50) {
-                player.getItems().addItemorDrop(22390, 1);
+                player.getItems().addItemUnderAnyCircumstance(22390, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 50 Raids and obtained the Xeric's Warrior Cape!");
             }
             if (player.raidCount == 100) {
-                player.getItems().addItemorDrop(22392, 1);
+                player.getItems().addItemUnderAnyCircumstance(22392, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 100 Raids and obtained the Xeric's Sentinel Cape!");
             }
             if (player.raidCount == 250) {
-                player.getItems().addItemorDrop(22394, 1);
+                player.getItems().addItemUnderAnyCircumstance(22394, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 250 Raids and obtained the Xeric's General Cape!");
             }
             if (player.raidCount == 500) {
-                player.getItems().addItemorDrop(22396, 1);
+                player.getItems().addItemUnderAnyCircumstance(22396, 1);
                 PlayerHandler.executeGlobalMessage("@blu@[@pur@" + player.getDisplayName() + "@blu@] has completed 500 Raids and obtained the Xeric's Champions Cape!");
             }
         }
@@ -400,7 +398,7 @@ public class Raids {
 //			Server.getGlobalObjects().add(new GlobalObject(-1, 3233, 5750, currentHeight, 3, 10).setInstance(instance));
 //			Server.getGlobalObjects().remove(new GlobalObject(29881, 3220, 5738, currentHeight, 3, 10).setInstance(instance));
 
-			getPlayers().forEach(player -> {
+			getPlayers().stream().forEach(player -> {
 				player.getPA().sendPlayerObjectAnimation(3220, 5738, 7348, 10, 3);
 				player.sendMessage("@red@Congratulations you have defeated The Great Olm and completed the raid!");
 				player.sendMessage("@red@Please go up the stairs beyond the Crystals to get your reward " );
@@ -410,15 +408,15 @@ public class Raids {
 		case OLM_RIGHT_HAND:
 			rightHand = true;
 			if(leftHand) {
-				getPlayers().forEach(player ->	player.sendMessage("@red@ You have defeated both of The Great Olm's hands he is now vulnerable."));
+				getPlayers().stream().forEach(player ->	player.sendMessage("@red@ You have defeated both of The Great Olm's hands he is now vulnerable."));
 				Server.getGlobalObjects().add(new GlobalObject(29888, 3220, 5733, currentHeight, 3, 10));
 			}else {
-				getPlayers().forEach(player ->	player.sendMessage("@red@ You have defeated one of The Great Olm's hands destroy the other one quickly!"));
+				getPlayers().stream().forEach(player ->	player.sendMessage("@red@ You have defeated one of The Great Olm's hands destroy the other one quickly!"));
 			}
 			//Server.getGlobalObjects().remove(new GlobalObject(29887, 3220, 5733, currentHeight, 3, 10).setInstance(instance));
 
 			//Server.getGlobalObjects().add(new GlobalObject(29888, 3220, 5733, currentHeight, 3, 10).setInstance(instance));
-			getPlayers()
+			getPlayers().stream()
 			.forEach(otherPlr -> {
 				otherPlr.getPA().sendPlayerObjectAnimation(3220, 5733, 7352, 10, 3);
 				if(leftHand) {
@@ -433,7 +431,7 @@ public class Raids {
 			leftHand = true;
 			Server.getGlobalObjects().remove(new GlobalObject(29884, 3220, 5743, currentHeight, 3, 10));
 			Server.getGlobalObjects().add(new GlobalObject(29885, 3220, 5743, currentHeight, 3, 10));
-			getPlayers()
+			getPlayers().stream()
 			.forEach(otherPlr -> {
 				otherPlr.getPA().sendPlayerObjectAnimation(3220, 5743, 7360, 10, 3);
 				if(rightHand) {
@@ -446,9 +444,9 @@ public class Raids {
 			if(rightHand) {
 				Server.getGlobalObjects().remove(new GlobalObject(29884, 3220, 5743, currentHeight, 3, 10));
 				Server.getGlobalObjects().add(new GlobalObject(29885, 3220, 5743, currentHeight, 3, 10));
-				getPlayers().forEach(player ->	player.sendMessage("@red@ You have defeated both of The Great Olm's hands he is now vulnerable."));
+				getPlayers().stream().forEach(player ->	player.sendMessage("@red@ You have defeated both of The Great Olm's hands he is now vulnerable."));
 			}else {
-				getPlayers().forEach(player ->	player.sendMessage("@red@ You have defeated one of The Great Olm's hands destroy the other one quickly!"));
+				getPlayers().stream().forEach(player ->	player.sendMessage("@red@ You have defeated one of The Great Olm's hands destroy the other one quickly!"));
 			}
 			return;
 		}
@@ -460,10 +458,10 @@ public class Raids {
 			killer.sendMessage("@red@You now have "+ newPoints +" points.");
 		}
 		if(mobAmount <= 0) {
-			getPlayers().forEach(player ->	player.sendMessage("@red@The room has been cleared and you are free to pass."));
+			getPlayers().stream().forEach(player ->	player.sendMessage("@red@The room has been cleared and you are free to pass."));
 			roomSpawned = false;
 		}else {
-			getPlayers().forEach(player ->	player.sendMessage("@red@There are "+ mobAmount+" enemies remaining."));
+			getPlayers().stream().forEach(player ->	player.sendMessage("@red@There are "+ mobAmount+" enemies remaining."));
 		}
 	}
 
@@ -474,9 +472,8 @@ public class Raids {
         HP = stats[2];
 		NPC npc = NPCSpawning.spawn(npcType, x, y, heightLevel, WalkingType, maxHit, attackPlayer,
 				NpcStats.builder().setAttackLevel(attack).setHitpoints(HP).setDefenceLevel(defence).createNpcStats());
-        assert npc != null;
-        npc.setRaidsInstance(this);
-        npc.getBehaviour().setRespawn(false);
+		npc.setRaidsInstance(this);
+		npc.getBehaviour().setRespawn(false);
 		//System.out.println(modifier + " | "  + lowModifier);
 	}
 
@@ -612,9 +609,9 @@ public class Raids {
 				return;
 			}
 			if(path == 0) {
-				spawnRaidsNpc(7563, 3276,5331, height + 1, 1, 300, 25, 400, 60,true);
+				spawnRaidsNpc(7563, 3276,5331, height + 1, 1, 300, 25, 400, 220,true);
 			}else {
-				spawnRaidsNpc(7563, 3308,5331, height + 1, 1, 300, 25, 400, 60,true);
+				spawnRaidsNpc(7563, 3308,5331, height + 1, 1, 300, 25, 400, 220,true);
 			}
 			mobAmount+=1;
 			mutta = true;
@@ -656,7 +653,7 @@ public class Raids {
 			Server.getGlobalObjects().add(new GlobalObject(29884, 3220, 5743, currentHeight, 3, 10));
 			Server.getGlobalObjects().add(new GlobalObject(29887, 3220, 5733, currentHeight, 3, 10));
 			Server.getGlobalObjects().add(new GlobalObject(29881, 3220, 5738, currentHeight, 3, 10));
-			getPlayers()
+			getPlayers().stream()
 			.forEach(otherPlr -> {
 				otherPlr.getPA().sendPlayerObjectAnimation(3220, 5733, 7350, 10, 3);
 				otherPlr.getPA().sendPlayerObjectAnimation(3220, 5743, 7354, 10, 3);
@@ -680,6 +677,9 @@ public class Raids {
 	 * Handles object clicking for raid objects
 	 * @param player The player
 	 * @param objectId The object id
+	 * @param x
+	 * @param y
+	 * @return
 	 */
 	public boolean handleObjectClick(Player player, int objectId, int x, int y) {
 		player.objectDistance = 3;
@@ -716,8 +716,9 @@ public class Raids {
 				}
 				return true;
 		case 29789://First entrance
+			player.objectDistance = 3;
 		case 29734:
-			player.objectDistance = 2;
+			player.objectDistance = 3;
 		case 29879:
 			if (roomNames.get(getRoomForPlayer(player)).equalsIgnoreCase("chest") && !chestRoomDoorOpen) {
 				player.sendMessage("This passage way is blocked, you must search the boxes to find the lever to open it.");
@@ -727,11 +728,12 @@ public class Raids {
 			}
 			return true;
 		case 30066:
-			player.objectDistance = 4;
+			player.objectDistance = 3;
 			return true;
 		case 29777:
+			player.objectDistance = 3;
 		case 29778:
-			player.objectDistance = 4;
+			player.objectDistance = 3;
 			if(!olmDead) {
 				if(player.objectX == 3298 && player.objectY == 5185) {
 					player.getDH().sendDialogues(10000, -1);
@@ -761,7 +763,7 @@ public class Raids {
 			break;
 
 		case 30028:
-            player.objectDistance = 2;
+			player.objectDistance = 3;
 			player.getPA().showInterface(57000);
 
 			return true;
