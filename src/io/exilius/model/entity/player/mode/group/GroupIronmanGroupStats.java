@@ -33,7 +33,7 @@ public class GroupIronmanGroupStats {
                 totalLevel += groupPlayer.totalLevel;
                 totalXp += groupPlayer.getTotalXp();
                 totalGp += groupPlayer.getItems().getItemCount(Items.COINS, false) + group.getBank().getInventory().getAmount(Items.COINS);
-                totalExchangePoints += groupPlayer.exchangePoints;
+                //totalExchangePoints += groupPlayer.foundryPoints;
                 totalBossPoints += groupPlayer.bossPoints;
                 totalSlayerPoints += groupPlayer.getSlayer().getPoints();
                 totalPkp += groupPlayer.pkp;

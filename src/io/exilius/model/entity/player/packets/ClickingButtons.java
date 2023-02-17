@@ -9,6 +9,7 @@ import io.exilius.content.UimStorageChest;
 import io.exilius.content.battle_pass.BattlePassInterface;
 import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.cheatprevention.CheatEngineBlock;
+import io.exilius.content.collection_log.CollectionRewards;
 import io.exilius.content.combat.magic.CombatSpellData;
 import io.exilius.content.combat.magic.MagicRequirements;
 import io.exilius.content.combat.magic.NonCombatSpellData;
@@ -125,6 +126,9 @@ public class ClickingButtons implements PacketType {
 			return;
 		}
 		if (c.getTeleportInter().handleInterfaceButtons(actionButtonId)) {
+			return;
+		}
+		if (CollectionRewards.handleButton(c,realButtonId)){
 			return;
 		}
 		if (c.getRunePouch().handleButton(actionButtonId)) {

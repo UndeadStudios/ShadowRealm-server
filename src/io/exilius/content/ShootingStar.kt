@@ -44,7 +44,7 @@ object ShootingStar {
                 eb.setDescription(locationData.clue)
                 eb.setImage("https://oldschool.runescape.wiki/images/Shooting_Star_crashing.gif?2f51a")
                 eb.setColor(Color(0xB00D03))
-                Discord.getJDA().getTextChannelById("1064970750408265878")!!.sendMessageEmbeds(eb.build()).queue()
+                Discord.jda.getTextChannelById("1064970750408265878")!!.sendMessageEmbeds(eb.build()).queue()
                 location = locationData
                 CRASHED_STAR = CrashedStar(GlobalObject(STAR_IDS+Misc.random(6), locationData.spawnPos), locationData)
                 Server.getGlobalObjects().add(CRASHED_STAR!!.starObject)

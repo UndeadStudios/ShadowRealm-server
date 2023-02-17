@@ -16,7 +16,7 @@ public enum DiscordCommands {
     JAIL("jail", "jail's a player", new Jail(), new String[]{Discord.OWNER_ROLE, Discord.DEVELOPER_ROLE, Discord.MANAGER_ROLE, Discord.MANAGER_ROLE, Discord.ADMIN_ROLE, Discord.GLOBAL_MOD_ROLE, Discord.SUPPORT_ROLE}),
     UNMUTE("unmute", "unmute's a player", new UnMute(), new String[]{Discord.OWNER_ROLE, Discord.DEVELOPER_ROLE, Discord.MANAGER_ROLE, Discord.MANAGER_ROLE, Discord.ADMIN_ROLE, Discord.GLOBAL_MOD_ROLE}),
     UNJAIL("unjail", "unjail's a player", new UnJail(), new String[]{Discord.OWNER_ROLE, Discord.DEVELOPER_ROLE, Discord.MANAGER_ROLE, Discord.MANAGER_ROLE, Discord.ADMIN_ROLE, Discord.GLOBAL_MOD_ROLE}),
-    XMAS("xmas", "xmas check for player", new xmas(), new String[]{Discord.OWNER_ROLE, Discord.DEVELOPER_ROLE, Discord.MANAGER_ROLE, Discord.MANAGER_ROLE, Discord.ADMIN_ROLE, Discord.GLOBAL_MOD_ROLE}),
+    //XMAS("xmas", "xmas check for player", new xmas(), new String[]{Discord.OWNER_ROLE, Discord.DEVELOPER_ROLE, Discord.MANAGER_ROLE, Discord.MANAGER_ROLE, Discord.ADMIN_ROLE, Discord.GLOBAL_MOD_ROLE}),
     ;
 
     private final String command, description;

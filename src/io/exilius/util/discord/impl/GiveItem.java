@@ -33,7 +33,7 @@ public class GiveItem extends ListenerAdapter {
 
             target.sendMessage(user.getName() + " Gave you " + ItemDef.forId(id).getName() + " x " + amount);
 
-            Discord.writeGiveLog("[Give-Log] " + user.getName() + " gave " + Misc.capitalizeJustFirst(name) + " Item: " + ItemDef.forId(id).getName() + " x " + amount + " (" + id +")");
+            Discord.writepunishments("[Give-Log] " + user.getName() + " gave " + Misc.capitalizeJustFirst(name) + " Item: " + ItemDef.forId(id).getName() + " x " + amount + " (" + id +")");
         }
     }
 

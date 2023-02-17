@@ -41,7 +41,7 @@ public class GroupIronmanGroup {
 
     public boolean canJoin(Player checking, Player joining) {
         if (joined >= 8) {
-            checking.sendMessage("That group has already had the maximum number of joins, which is 5.");
+            checking.sendMessage("That group has already had the maximum number of joins, which is 8.");
             return false;
         }
 

@@ -1,8 +1,5 @@
 package io.exilius.model.items.bank;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.model.entity.player.Player;
@@ -12,6 +9,9 @@ import io.exilius.model.multiplayersession.MultiplayerSessionFinalizeType;
 import io.exilius.model.multiplayersession.MultiplayerSessionStage;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Bank {
 
@@ -122,6 +122,9 @@ public class Bank {
 	}
 
 	public boolean withdraw(int interfaceId, int itemId, int amount) {
+		if (player.wildLevel > 0) {
+			return false;
+		}
 		if (amount != -1) {
 			BankTab tab = getBankForInput(interfaceId, itemId);
 			if (tab != null) {
@@ -290,7 +293,7 @@ public class Bank {
 	public int getBankCapacity() {
 		return Configuration.BANK_CAPACITY + (int) (Right.DONATOR_SET.stream().filter(
 				right -> player.getRights().getSet().stream().anyMatch(
-						right2 -> right2.isOrInherits(right))).count() * 15);
+						right2 -> right2.isOrInherits(right))).count() * 50);
 	}
 
 	public boolean hasRoomFor(int id, int amount) {

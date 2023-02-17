@@ -12,6 +12,7 @@ import io.exilius.content.lootbag.LootingBag;
 import io.exilius.content.skills.crafting.BryophytaStaff;
 import io.exilius.content.skills.hunter.impling.Impling;
 import io.exilius.content.skills.runecrafting.Pouches;
+import io.exilius.content.skills.slayer.DuoMode;
 import io.exilius.content.teleportation.TeleportTablets;
 import io.exilius.model.Items;
 import io.exilius.model.Npcs;
@@ -403,9 +404,9 @@ public class ItemOptionTwo implements PacketType {
 		case 11284:
 			player.sendMessage("Your dragonfire shield currently has " + player.getDragonfireShieldCharge() + " charges.");
 			break;
-		case 4155:
-			player.sendMessage("You currently have <col=a30027>" + Misc.insertCommas(player.getSlayer().getPoints()) + " </col>slayer points.");
-			break;
+			case 4155:
+				DuoMode.duoMode(player);
+				break;
 		default:
 			if (player.getRights().isOrInherits(Right.OWNER)) {
 				Misc.println("[DEBUG] Item Option #2-> Item id: " + itemId);

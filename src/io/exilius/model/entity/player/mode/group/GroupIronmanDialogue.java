@@ -358,7 +358,7 @@ public class GroupIronmanDialogue extends DialogueBuilder {
 
         if (isFormed()) {
             npcn("@red@Once you leave you won't be able to join another group.",
-                    "@red@All items you have that have FOE value or coins over 100k", "@red@will be deposited into the GIM bank.",
+                    "@red@All items you have that have foe value or coins over 100k", "@red@will be deposited into the GIM bank.",
                     "Make sure this is what you want!");
             npc("@red@Attempting to go around the item forfeit may", "@red@result in action against your account.");
 

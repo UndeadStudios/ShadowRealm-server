@@ -30,10 +30,10 @@ public class UnMute extends ListenerAdapter {
                 Server.getPunishments().remove(PunishmentType.NET_MUTE, addresses.getMac());
             if (addresses.getUUID() != null && p.getUUID().length() > 0)
                 Server.getPunishments().remove(PunishmentType.NET_MUTE, addresses.getUUID());
-            Discord.writeGiveLog("[Mute-log] " + p.getDisplayName() + " has been unmuted by " + user.getName());
+            Discord.writepunishments("[Mute-log] " + p.getDisplayName() + " has been unmuted by " + user.getName());
             p.sendMessage("You have been unmuted by " + user.getName());
         } else {
-            Discord.writeGiveLog("[Mute-log] Well it's come to my attention that either they don't exist or you have a serious spelling issue, you fucktard.");
+            Discord.writepunishments("[Mute-log] Well it's come to my attention that either they don't exist or you have a serious spelling issue, you fucktard.");
         }
     }
 

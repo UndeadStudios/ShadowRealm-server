@@ -25,9 +25,9 @@ public class UnJail extends ListenerAdapter {
             p.jailEnd = 0;
             p.isStuck = false;
             p.sendMessage("You have been unjailed by " + user.getName() + ". Don't get jailed again!");
-            Discord.writeGiveLog("[JAIL] " + user.getName() + " has unJailed " + p.getLoginName() + "/" + p.getDisplayName());
+            Discord.writepunishments("[JAIL] " + user.getName() + " has unJailed " + p.getLoginName() + "/" + p.getDisplayName());
         } else {
-            Discord.writeGiveLog("[JAIL] " + name + " has clearly fucking logged out, or you're an idiot and can't spell for shit, I'm telling Ark you fucking idiot.");
+            Discord.writepunishments("[JAIL] " + name + " has clearly fucking logged out, or you're an idiot and can't spell for shit, I'm telling Ark you fucking idiot.");
         }
 
     }

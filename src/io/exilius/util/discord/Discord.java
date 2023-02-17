@@ -42,65 +42,96 @@ public class Discord extends ListenerAdapter {
 
     /**
      * Write to a channel that contains misc. types of information about player activity.
-     */
+     *///
     public static void writeServerSyncMessage(String message, Object...args) {
-        sendChannelMessage(1001848628257759333L, message, args);//Server-Logs
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
     }
-
-    public static void writeOnlineNotification(String message, Object...args) {
-        sendChannelMessage(1001848567725555852L, message, args);//Bot-Information
+    public static void writeAddressSwapMessage(String message, Object...args) {
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
+    }
+    public static void writeannounceMessage(String message, Object...args) {
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970750408265878L, message, args);
+        }
     }
 
     public static void writeBugMessage(String message, Object...args) {
-//        sendChannelMessage("report-section", message, args);
+        if(Server.isPublic()) {
+            sendChannelMessage(1064749086688952360L, message, args);
+        }
     }
 
+    public static void writetickets(String message, Object...args) {
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970559227695115L, message, args);
+        }
+    }
+
+    public static void writepunishments(String message, Object...args) {
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970616672891012L, message, args);
+        }
+    }
     public static void writePickupMessage(String message, Object...args) {
-        sendChannelMessage(1002389865507332149L, message, args);//pickup-logs
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
     }
-
-    public static void writeXmasMessage(String message, Object...args) {
-        sendChannelMessage(1055318696375091252L, message, args);//xmas-logs
+    public static void raredropMessage(String message, Object...args) {
+        if(Server.isPublic()) {
+            sendChannelMessage(1064970750408265878L, message, args);
+        }
     }
 
     public static void writeSuggestionMessage(String message, Object...args) {
-//        sendChannelMessage("suggestions", message, args);
+        if(Server.isPublic()) {
+            sendChannelMessage(1064748679149391905L, message, args);
+        }
     }
 
     public static void writeFoeMessage(String message, Object...args) {
-        writeServerSyncMessage(message, args);
-        sendChannelMessage(1001848567725555852L, message, args);//Bot-Information
+        if(Server.isPublic()) {
+            writeServerSyncMessage(message, args);
+
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
     }
 
     public static void writeReferralMessage(String message, Object...args) {
-        writeServerSyncMessage(message, args);
+        if(Server.isPublic()) {
+            writeServerSyncMessage(message, args);
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
     }
 
     public static void writeCheatEngineMessage(String message, Object...args) {
-        writeServerSyncMessage(message, args);
+        if (Server.isPublic()) {
+            writeServerSyncMessage(message, args);
+            sendChannelMessage(1064970793408270367L, message, args);
+        }
     }
+//
+//        /**
+//         * Write to a channel that should not be ignored by staff.
+//         */
+//        public static void writeAddressSwapMessage (String message, Object...args){
+//            writeServerSyncMessage(message, args);
+//       sendChannelMessage(server-bot-notification, message, args);
+//        }
+//    }
+    public static JDA getJDA2() throws LoginException, InterruptedException {
+        if (jda == null) {
+            jda = JDABuilder.createDefault("MTAwNDExNDAyNTA0ODcxNTM4Ng.GX1HBB.RIIPCLrWOrTrDWXP3iUPIqwH_zqe64oms20MEI").build();
+            jda.awaitReady();
+            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
+        }
 
-    public static void writeDeathHandler(String message, Object...args) {
-        sendChannelMessage(1002389817126035477L, message, args);
+        return jda;
     }
-
-    public static void writeDropHandler(String message, Object...args) {
-        sendChannelMessage(1002389976845140068L, message, args);
-    }
-
-    public static void writeGiveLog(String message, Object...args) {
-        sendChannelMessage(1001848628257759333L, message, args);
-    }
-
-    /**
-     * Write to a channel that should not be ignored by staff.
-     */
-    public static void writeAddressSwapMessage(String message, Object...args) {
-        writeServerSyncMessage(message, args);
-//        sendChannelMessage("server-bot-notification", message, args);
-    }
-
-
 
     private static void sendChannelMessage(long channelName, String message, Object...args) {
         if (Configuration.DISABLE_DISCORD_MESSAGING) {
@@ -180,7 +211,7 @@ public class Discord extends ListenerAdapter {
             return;
         }
 
-        if (e.getChannel().getIdLong() == 1046804022583099485L && e.getMessage().getContentDisplay().equalsIgnoreCase("!connect")) {
+        if (e.getChannel().getIdLong() == 1075946590881189918L && e.getMessage().getContentDisplay().equalsIgnoreCase("!connect")) {
                 User user = e.getAuthor();
 
                 if (DiscordIntegration.connectedAccounts.containsValue(user.getIdLong())) {
@@ -215,7 +246,7 @@ public class Discord extends ListenerAdapter {
                 DiscordIntegration.sendPrivateMessage(user, e.getTextChannel(),
                         "Hello! To connect your discord account to your in-game account, enter the following in the discord integration prompt when you click \"sync\":\n"
                                 + code);
-        } else if (e.getChannel().getIdLong() == 1001848632443666552L) {
+        } else if (e.getChannel().getIdLong() == 1075946590881189918L) {
             DiscordCommands command = DiscordCommands.isCommand(e);
 
             if (Objects.isNull(command)) {

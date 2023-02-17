@@ -36,9 +36,9 @@ public class Mute extends ListenerAdapter {
 
             player.sendMessage(player.getDisplayName() + " You have been muted by : " + user.getName());
 
-            Discord.writeGiveLog("[Mute-Log] " + user.getName() + " Muted " + player.getDisplayName());
+            Discord.writepunishments("[Mute-Log] " + user.getName() + " Muted " + player.getDisplayName());
         } else {
-            Discord.writeGiveLog("[Mute-Log] Oh you're a special one aren't you, Either they don't exist or they're offline.");
+            Discord.writepunishments("[Mute-Log] Oh you're a special one aren't you, Either they don't exist or they're offline.");
         }
     }
 

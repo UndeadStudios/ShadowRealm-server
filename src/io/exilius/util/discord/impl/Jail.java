@@ -26,7 +26,7 @@ public class Jail extends ListenerAdapter {
 
         if (p != null) {
             if (Server.getMultiplayerSessionListener().inAnySession(p)) {
-                Discord.writeGiveLog("[JAIL] " +"The player is in a trade, or duel. You cannot do this at this time.");
+                Discord.writepunishments("[JAIL] " +"The player is in a trade, or duel. You cannot do this at this time.");
                 return;
             }
             TimeSpan timeSpan = new TimeSpan(TimeUnit.DAYS, TimeUnit.DAYS.toMinutes(365 * 5));
@@ -36,10 +36,10 @@ public class Jail extends ListenerAdapter {
             p.heightLevel = 0;
             p.jailEnd = (System.currentTimeMillis() + TimeUnit.DAYS.toMillis(365 * 5));
             p.sendMessage("@red@You have been jailed by " + user.getName() + " for a duration of " + timeSpan.toString());
-            Discord.writeGiveLog("[JAIL] " + user.getName() + " has jailed " + p.getLoginName() + "/" + p.getDisplayName() + " for a duration of " + timeSpan.toString());
+            Discord.writepunishments("[JAIL] " + user.getName() + " has jailed " + p.getLoginName() + "/" + p.getDisplayName() + " for a duration of " + timeSpan.toString());
 
         } else {
-            Discord.writeGiveLog("[JAIL] " + name + " has clearly fucking logged out, or you're an idiot and can't spell for shit, I'm telling Ark you fucking idiot.");
+            Discord.writepunishments("[JAIL] " + name + " has clearly fucking logged out, or you're an idiot and can't spell for shit, I'm telling Ark you fucking idiot.");
         }
     }
 

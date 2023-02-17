@@ -18,7 +18,7 @@ import java.util.Optional;
 public class GroupIronman {
 
     /**
-     * Variable to represent the maximum capacity a group can have
+     * Variable to repersent the maximum capacity a group can have
      */
     private static final int MAXIMUM_MEMBERS = 8;
     public static final int GROUP_FORM_NPC = 8973;
@@ -61,7 +61,7 @@ public class GroupIronman {
                 totalXp += p.getTotalXp();
                 totalVotePoints += p.votePoints;
                 totalSlayerPoints += p.getSlayer().getPoints();
-                totalExchangePoints += p.exchangePoints;
+                //totalExchangePoints += p.foundryPoints;
                 totalBossPoints += p.bossPoints;
                 totalPkp += p.pkp;
             }

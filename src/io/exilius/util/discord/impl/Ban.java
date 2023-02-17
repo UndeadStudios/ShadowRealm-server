@@ -34,7 +34,7 @@ public class Ban extends ListenerAdapter {
             Server.getPunishments().add(new Punishment(PunishmentType.NET_BAN, Long.MAX_VALUE, addresses.getIp()));
 
             player.sendMessage(player.getDisplayName() + " You have been Banned by : " + user.getName());
-            Discord.writeGiveLog("[Ban-Log] " + user.getName() + " Banned " + player.getDisplayName());
+            Discord.writepunishments("[Ban-Log] " + user.getName() + " Banned " + player.getDisplayName());
 
             List<Player> clientList = PlayerHandler.nonNullStream().filter(p -> p.connectedFrom.equals(addresses.getIp())).collect(Collectors.toList());
 
@@ -47,7 +47,7 @@ public class Ban extends ListenerAdapter {
                 pz.forceLogout();
             }
         } else {
-            Discord.writeGiveLog("[Ban-Log] " + name + " isn't fucking online, how do you purpose we deal with this situation now??");
+            Discord.writepunishments("[Ban-Log] " + name + " isn't fucking online, how do you purpose we deal with this situation now??");
         }
     }
 

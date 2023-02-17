@@ -27,14 +27,14 @@ public class UnBan extends ListenerAdapter {
             try {
                 File file = PlayerSaveOffline.getCharacterFile(name);
                 if (file == null) {
-                    Discord.writeGiveLog("[UnBan-log] No character file with name " + name);
+                    Discord.writepunishments("[UnBan-log] No character file with name " + name);
                     return;
                 }
 
                 if (!Server.getPunishments().remove(BAN, name)) {
-                    Discord.writeGiveLog("[UnBan-log] "+name+" isn't banned, what the fuck are you doing?.");
+                    Discord.writepunishments("[UnBan-log] "+name+" isn't banned, what the fuck are you doing?.");
                 } else {
-                    Discord.writeGiveLog("[UnBan-log] " + user.getName() + " has unbanned " + name);
+                    Discord.writepunishments("[UnBan-log] " + user.getName() + " has unbanned " + name);
                 }
 
                 PlayerAddresses addresses = PlayerSaveOffline.getAddresses(file);
