@@ -184,7 +184,7 @@ public class Server {
                     db.setDescription("@here Server is now online!");
                     db.setImage("https://endless-os.com/logo.png");
                     db.setColor(new java.awt.Color(0xB00D03));
-                    Discord.getJDA().getTextChannelById("1064974101611040829").sendMessageEmbeds(db.build()).queue();
+                    Discord.jda.getTextChannelById("1064974101611040829").sendMessageEmbeds(db.build()).queue();
                 }
                 long endTime = System.nanoTime();
                 long elapsed = endTime - startTime;

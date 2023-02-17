@@ -574,7 +574,7 @@ public class NPCDeath {
         eb.setFooter("at " + kc + " KC!");
         eb.setImage("https://media.tenor.com/JbLU0gejMa8AAAAC/thumbs-up.gif");
         eb.setColor(new java.awt.Color(0, 255, 255));
-        Discord.getJDA().getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
+        Discord.jda.getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
     }
 
     public static boolean isDoubleDrops() {

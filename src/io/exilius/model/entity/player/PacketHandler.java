@@ -54,7 +54,6 @@ public class PacketHandler {
 
 		if (logout) {
 			c.forceLogout();
-			Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
 
 		}
 	}

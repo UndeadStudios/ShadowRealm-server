@@ -3,6 +3,7 @@ package io.exilius.content;
 
 import io.exilius.Server;
 import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.util.discord.Discord;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -35,7 +36,9 @@ public class DiscordConnection extends ListenerAdapter {
 //		builder.addEventListeners(new PrivateMessageReceived());
         try {
             jda = builder.build();
-            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
+            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1.3)) + " players!"));
+
+            //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
         } catch (LoginException e) {
             e.printStackTrace();
         }
@@ -44,8 +47,7 @@ public class DiscordConnection extends ListenerAdapter {
 
     static {
 //        if (!Server.isPublic()) {
-//                jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(((PlayerHandler.getPlayerCount()) + " players!"));
-
+//
                 /*ChambersOfXeric.confiscateItems(player);*/
 
         }

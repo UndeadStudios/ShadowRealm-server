@@ -82,8 +82,7 @@ public class GameThread extends Thread {
             joiner.add("memory=" + Misc.formatMemory(usedMemory) + "/" + Misc.formatMemory(totalMemory));
 
             logger.info("Status [" + joiner.toString() + "]");
-            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
-        }
+                }
     }
 
     @Override

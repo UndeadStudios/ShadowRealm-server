@@ -249,9 +249,7 @@ public class PlayerHandler {
 					Server.getLogging().batchWrite(new LoginLog("Logged in", playerLoggingIn));
 				}
 			} catch (Exception e) {
-				playerLoggingIn.forceLogout();
-				//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
-				playerLoggingIn.getPA().sendLogout();
+				playerLoggingIn.forceLogout();				playerLoggingIn.getPA().sendLogout();
 				playerLoggingIn.initialized = false;
 				playerLoggingIn.saveCharacter = false;
 				playerLoggingIn.isActive = false;
@@ -278,7 +276,6 @@ public class PlayerHandler {
 				playerLoggingOut.getPlayer().isActive = false;
 				players[playerLoggingOut.getPlayer().getIndex()] = null;
 				playerLoggingOut.getPlayer().setIndex(0);
-				//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
 				if (Server.isTest() && !playerLoggingOut.getPlayer().isBot() || updateRunning) {
 					logger.info("Logged out '{}', {} in queue.", playerLoggingOut.getPlayer().getLoginName(), logoutQueue.size());
 				}
@@ -293,8 +290,6 @@ public class PlayerHandler {
 		processLoginQueue();
 		processLogoutQueue();
 		processQueuedActions();
-		//Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
-
 		nonNullStream().forEach(player -> {
 			if (player.isReadyToLogout() || kickAllPlayers) {
 				player.destruct();
@@ -308,8 +303,6 @@ public class PlayerHandler {
 		});
 
 		updateOnlinePlayers();
-		Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
-
 
 		onlinePlayers.forEach(player -> {
 			try {

@@ -571,6 +571,18 @@ public class PlayerSave {
                                 p.loyaltyPoints = Integer.parseInt(token2);
                             } else if (token.equals("votePoints")) {
                                 p.votePoints = Integer.parseInt(token2);
+                            }  else if (token.equals("discordbooster")) {
+                                p.setDiscordboostlastClaimed(Long.parseLong(token2));
+                            }  else if (token.equals("discordboosting")) {
+                                p.setDiscordlastClaimed(Long.parseLong(token2));
+                            }  else if (token.equals("discord")) {
+                                p.setDiscordlinked(Boolean.parseBoolean(token2));
+                            }  else if (token.equals("discordpoints")) {
+                                p.setDiscordPoints(Integer.parseInt(token2));
+                            }  else if (token.equals("discordtag")) {
+                                p.setDiscordTag(token2);
+                            }  else if (token.equals("discorduser")) {
+                                p.setDiscordUser(Long.parseLong(token2));
                             } else if (token.equals("dayv")) {
                                 p.voteKeyPoints = Integer.parseInt(token2);
                             } else if (token.equals("bloodPoints")) {
@@ -1822,6 +1834,24 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("donA = ", 0, 6);
             characterfile.write(Integer.toString(p.amDonated), 0, Integer.toString(p.amDonated).length());
+            characterfile.newLine();
+            characterfile.write("discordbooster = ", 0, 17);
+            characterfile.write(Long.toString(p.getDiscordboostlastClaimed()), 0, Long.toString(p.getDiscordboostlastClaimed()).length());
+            characterfile.newLine();
+            characterfile.write("discordboosting = ", 0, 18);
+            characterfile.write(Long.toString(p.getDiscordlastClaimed()), 0, Long.toString(p.getDiscordlastClaimed()).length());
+            characterfile.newLine();
+            characterfile.write("discord = ", 0, 10);
+            characterfile.write(Boolean.toString(p.getDiscordlinked()), 0, Boolean.toString(p.getDiscordlinked()).length());
+            characterfile.newLine();
+            characterfile.write("discordpoints = ", 0, 16);
+            characterfile.write(Integer.toString(p.getDiscordPoints()), 0, Integer.toString(p.getDiscordPoints()).length());
+            characterfile.newLine();
+            characterfile.write("discordtag = ", 0, 13);
+            characterfile.write(p.getDiscordTag().toString(), 0, p.getDiscordTag().length());
+            characterfile.newLine();
+            characterfile.write("discorduser = ", 0, 14);
+            characterfile.write(Long.toString(p.getDiscordUser()), 0, Long.toString(p.getDiscordUser()).length());
             characterfile.newLine();
             characterfile.write("prestige-points = ", 0, 18);
             characterfile.write(Integer.toString(p.prestigePoints), 0, Integer.toString(p.prestigePoints).length());
