@@ -8,11 +8,13 @@ public class PlayerMovementState {
 
 	private final boolean allowClickToMove;
 	private final boolean runningEnabled;
+	private final boolean crawlingEnabled;
 	private final boolean locked;
 
-	public PlayerMovementState(boolean allowClickToMove, boolean runningEnabled, boolean locked) {
+	public PlayerMovementState(boolean allowClickToMove, boolean runningEnabled, boolean crawlEnabled, boolean locked) {
 		this.allowClickToMove = allowClickToMove;
 		this.runningEnabled = runningEnabled;
+		this.crawlingEnabled = crawlEnabled;
 		this.locked = locked;
 	}
 
@@ -24,6 +26,9 @@ public class PlayerMovementState {
 		return runningEnabled;
 	}
 
+	public boolean isCrawlingEnabled() {
+		return crawlingEnabled;
+	}
 	public boolean isLocked() {
 		return locked;
 	}

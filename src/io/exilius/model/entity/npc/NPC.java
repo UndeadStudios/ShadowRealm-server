@@ -47,9 +47,9 @@ import java.util.stream.Collectors;
 public class NPC extends Entity {
 
 	private static final Logger logger = LoggerFactory.getLogger(NPC.class);
-    public int parentIndex;
+	public int parentIndex;
 
-    private int npcId;
+	private int npcId;
 	public int summonedBy;
 	public int absX, absY;
 	public int heightLevel;
@@ -62,6 +62,8 @@ public class NPC extends Entity {
 	public int maxHit;
 	public Direction walkDirection = Direction.NONE;
 	public Direction runDirection = Direction.NONE;
+
+	public Direction crawlDirection = Direction.NONE;
 	public int walkingType;
 
 	public int lastX, lastY;
@@ -103,6 +105,7 @@ public class NPC extends Entity {
 	private ForceMovement forceMovement;
 	public String forcedText;
 	public int FocusPointX = -1, FocusPointY = -1;
+	boolean instantFocusPoint = false;//TODO, not yet used by jagex
 	public int face;
 	public int totalAttacks;
 	private boolean facePlayer = true;
@@ -520,7 +523,7 @@ public class NPC extends Entity {
 					return;
 				}*/
 				if (!PathChecker.raycast(this, c, true)
-					&& !PathChecker.raycast(c, this, true))
+						&& !PathChecker.raycast(c, this, true))
 					return;
 			}
 		}
@@ -618,7 +621,7 @@ public class NPC extends Entity {
 
 	/**
 	 * Teleport
-	 * 
+	 *
 	 * @param x
 	 * @param y
 	 * @param z
@@ -646,7 +649,7 @@ public class NPC extends Entity {
 
 	/**
 	 * Makes the npcs either able or unable to face other players
-	 * 
+	 *
 	 * @param facePlayer
 	 *            {@code true} if the npc can face players
 	 */
@@ -682,14 +685,17 @@ public class NPC extends Entity {
 			}
 		} else {
 			str.writeBits(1, 1);
-
+			str.writeBits(2, runDirection == Direction.NONE ? 1 : 2);
 			if (runDirection == Direction.NONE) {
-				str.writeBits(2, 1);
 				str.writeBits(3, walkDirection.toInteger());
 			} else {
-				str.writeBits(2, 2);
-				str.writeBits(3, walkDirection.toInteger());
-				str.writeBits(3, runDirection.toInteger());
+				str.writeBits(1, crawlDirection == Direction.NONE ? 1 : 0);
+				if(crawlDirection == Direction.NONE) {
+					str.writeBits(3, walkDirection.toInteger());
+					str.writeBits(3, runDirection.toInteger());
+				} else {
+					str.writeBits(3, crawlDirection.toInteger());
+				}
 			}
 
 			if (isUpdateRequired()) {
@@ -699,7 +705,7 @@ public class NPC extends Entity {
 			}
 		}
 	}
-	
+
 	/**
 	 * Text update
 	 **/
@@ -753,6 +759,7 @@ public class NPC extends Entity {
 	private void appendSetFocusDestination(Stream str) {
 		str.writeWordBigEndian(FocusPointX);
 		str.writeWordBigEndian(FocusPointY);
+		str.writeByte(instantFocusPoint ? 1 : 0);//instant facing
 	}
 
 	public void facePosition(Position position) {
@@ -1011,7 +1018,7 @@ public class NPC extends Entity {
 	/**
 	 * An object containing specific information about the NPC such as the combat
 	 * level, default maximum health, the name, etcetera.
-	 * 
+	 *
 	 * @return the {@link NpcDef} object associated with this NPC
 	 */
 	public NpcDef getDefinition() {
@@ -1093,18 +1100,18 @@ public class NPC extends Entity {
 	@Override
 	public boolean susceptibleTo(HealthStatus status) {
 		switch (getNpcId()) {
-		case 2042:
-		case 2043:
-		case 2044:
-		case 6720:
-		case 7413:
-		case 7544:
-		case 5129:
-		case FragmentOfSeren.NPC_ID:
-		case 7604:
-		case 7605:
-		case 7606:
-			return false;
+			case 2042:
+			case 2043:
+			case 2044:
+			case 6720:
+			case 7413:
+			case 7544:
+			case 5129:
+			case FragmentOfSeren.NPC_ID:
+			case 7604:
+			case 7605:
+			case 7606:
+				return false;
 		}
 
 		if (status == HealthStatus.POISON) {
