@@ -62,8 +62,6 @@ public class NPC extends Entity {
 	public int maxHit;
 	public Direction walkDirection = Direction.NONE;
 	public Direction runDirection = Direction.NONE;
-
-	public Direction crawlDirection = Direction.NONE;
 	public int walkingType;
 
 	public int lastX, lastY;
@@ -105,7 +103,6 @@ public class NPC extends Entity {
 	private ForceMovement forceMovement;
 	public String forcedText;
 	public int FocusPointX = -1, FocusPointY = -1;
-	boolean instantFocusPoint = false;//TODO, not yet used by jagex
 	public int face;
 	public int totalAttacks;
 	private boolean facePlayer = true;
@@ -685,17 +682,14 @@ public class NPC extends Entity {
 			}
 		} else {
 			str.writeBits(1, 1);
-			str.writeBits(2, runDirection == Direction.NONE ? 1 : 2);
+
 			if (runDirection == Direction.NONE) {
+				str.writeBits(2, 1);
 				str.writeBits(3, walkDirection.toInteger());
 			} else {
-				str.writeBits(1, crawlDirection == Direction.NONE ? 1 : 0);
-				if(crawlDirection == Direction.NONE) {
-					str.writeBits(3, walkDirection.toInteger());
-					str.writeBits(3, runDirection.toInteger());
-				} else {
-					str.writeBits(3, crawlDirection.toInteger());
-				}
+				str.writeBits(2, 2);
+				str.writeBits(3, walkDirection.toInteger());
+				str.writeBits(3, runDirection.toInteger());
 			}
 
 			if (isUpdateRequired()) {
@@ -759,7 +753,6 @@ public class NPC extends Entity {
 	private void appendSetFocusDestination(Stream str) {
 		str.writeWordBigEndian(FocusPointX);
 		str.writeWordBigEndian(FocusPointY);
-		str.writeByte(instantFocusPoint ? 1 : 0);//instant facing
 	}
 
 	public void facePosition(Position position) {

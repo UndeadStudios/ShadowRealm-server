@@ -56,6 +56,7 @@ import io.exilius.model.multiplayersession.flowerpoker.FlowerPokerSession;
 import io.exilius.model.multiplayersession.trade.TradeSession;
 import io.exilius.model.shops.ShopAssistant;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.DiscordIntegration;
 import io.exilius.util.logging.player.ClickButtonLog;
 
 import java.util.Arrays;
@@ -189,6 +190,22 @@ public class ClickingButtons implements PacketType {
 
 		if (actionButtonId == 166027) {
 			c.sendMessage("[@red@Warning@bla@] If using anti-aliasing with fullscreen, you may experience lag.");
+			return;
+		}
+
+
+		if (actionButtonId == 146130) {
+			DiscordIntegration.buttonClick(c);
+			return;
+		}
+
+		if (actionButtonId == 146128) {
+			DiscordIntegration.disconnectUser(c);
+			return;
+		}
+
+		if (actionButtonId == 146129) {
+			DiscordIntegration.syncUser(c);
 			return;
 		}
 		/*

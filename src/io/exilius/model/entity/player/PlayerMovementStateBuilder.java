@@ -3,7 +3,6 @@ package io.exilius.model.entity.player;
 public class PlayerMovementStateBuilder {
     private boolean allowClickToMove = true;
     private boolean runningEnabled = true;
-    private boolean crawlEnabled = true;
     private boolean locked = false;
 
     public PlayerMovementStateBuilder setAllowClickToMove(boolean allowClickToMove) {
@@ -15,16 +14,13 @@ public class PlayerMovementStateBuilder {
         this.runningEnabled = runningEnabled;
         return this;
     }
-    public PlayerMovementStateBuilder setCrawlingEnabled(boolean crawlEnabled) {
-        this.crawlEnabled = crawlEnabled;
-        return this;
-    }
+
     public PlayerMovementStateBuilder setLocked(boolean locked) {
         this.locked = locked;
         return this;
     }
 
     public PlayerMovementState createPlayerMovementState() {
-        return new PlayerMovementState(allowClickToMove, runningEnabled, crawlEnabled, locked);
+        return new PlayerMovementState(allowClickToMove, runningEnabled, locked);
     }
 }

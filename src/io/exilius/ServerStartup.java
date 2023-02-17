@@ -54,6 +54,7 @@ import io.exilius.model.world.GlobalDropsHandler;
 import io.exilius.model.world.ShopHandler;
 import io.exilius.punishments.PunishmentCycleEvent;
 import io.exilius.util.Reflection;
+import io.exilius.util.discord.DiscordIntegration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,6 +88,7 @@ public class ServerStartup {
         ShopHandler.load();
         NpcStats.load();
         ItemStats.load();
+        DiscordIntegration.loadConnectedAccounts();
         NpcDef.load();
         // Npc Combat Definition must be above npc load
         NpcCombatDefinition.load();

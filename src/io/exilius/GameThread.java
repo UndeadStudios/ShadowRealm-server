@@ -11,6 +11,7 @@ import io.exilius.net.ChannelHandler;
 import io.exilius.net.login.RS2LoginProtocol;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
+import io.exilius.util.discord.DiscordIntegration;
 import lombok.SneakyThrows;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
@@ -46,6 +47,7 @@ public class GameThread extends Thread {
         tickables.add(i -> Server.startGlobalvoteCountCounter());
         tickables.add(i -> Server.startvoteCountCounter());
         tickables.add(i -> Highpkarena.process());
+        tickables.add(i -> DiscordIntegration.givePoints());
         tickables.add(i -> Lowpkarena.process());
         tickables.add(i -> Server.getGlobalObjects().pulse());
         tickables.add(i -> CycleEventHandler.getSingleton().process());

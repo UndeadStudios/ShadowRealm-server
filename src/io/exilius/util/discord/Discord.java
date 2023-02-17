@@ -32,6 +32,7 @@ public class Discord extends ListenerAdapter {
     private static final Logger logger = LoggerFactory.getLogger(Discord.class);
     private static final Map<String, TextChannel> channels = new ConcurrentHashMap<>();
     public static JDA jda = null;
+    public static JDA jda2 = null;
     public static String PREFIX = "::";
     public static String OWNER_ROLE = "1074439303981170728";//Currently set to God Tier on beta.
     public static String MANAGER_ROLE = "1074439470943846473";
@@ -123,15 +124,6 @@ public class Discord extends ListenerAdapter {
 //       sendChannelMessage(server-bot-notification, message, args);
 //        }
 //    }
-    public static JDA getJDA2() throws LoginException, InterruptedException {
-        if (jda == null) {
-            jda = JDABuilder.createDefault("MTAwNDExNDAyNTA0ODcxNTM4Ng.GX1HBB.RIIPCLrWOrTrDWXP3iUPIqwH_zqe64oms20MEI").build();
-            jda.awaitReady();
-            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
-        }
-
-        return jda;
-    }
 
     private static void sendChannelMessage(long channelName, String message, Object...args) {
         if (Configuration.DISABLE_DISCORD_MESSAGING) {
@@ -211,7 +203,7 @@ public class Discord extends ListenerAdapter {
             return;
         }
 
-        if (e.getChannel().getIdLong() == 1075946590881189918L && e.getMessage().getContentDisplay().equalsIgnoreCase("!connect")) {
+        if (e.getChannel().getName() == "staff-commands-ingame" && e.getMessage().getContentDisplay().equalsIgnoreCase("!connect")) {
                 User user = e.getAuthor();
 
                 if (DiscordIntegration.connectedAccounts.containsValue(user.getIdLong())) {
@@ -246,7 +238,7 @@ public class Discord extends ListenerAdapter {
                 DiscordIntegration.sendPrivateMessage(user, e.getTextChannel(),
                         "Hello! To connect your discord account to your in-game account, enter the following in the discord integration prompt when you click \"sync\":\n"
                                 + code);
-        } else if (e.getChannel().getIdLong() == 1075946590881189918L) {
+        } else if (e.getChannel().getName() == "staff-commands-ingame") {
             DiscordCommands command = DiscordCommands.isCommand(e);
 
             if (Objects.isNull(command)) {

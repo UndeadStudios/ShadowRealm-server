@@ -69,7 +69,7 @@ public class DiscordIntegration {
         }
         System.out.println("sending discord pms");
 
-        Guild guild = Discord.jda.getGuildById(1001818107343556648L);
+        Guild guild = Discord.jda.getGuildById(1064714201978896434L);
         for (Map.Entry<String, Long> entry : DiscordIntegration.connectedAccounts.entrySet()) {
             Player player = PlayerHandler.getPlayerByLoginName(entry.getKey());
             if (player == null)
@@ -224,7 +224,7 @@ public class DiscordIntegration {
         }
 
         if (Discord.jda != null) {
-            Guild guild = Discord.jda.getGuildById(1001818107343556648L);
+            Guild guild = Discord.jda.getGuildById(1064714201978896434L);
 
             if (guild != null) {
                 for (Member booster : guild.getBoosters()) {
@@ -290,7 +290,7 @@ public class DiscordIntegration {
             return;
         }
         if (Discord.jda != null) {
-            Guild guild = Discord.jda.getGuildById(1001818107343556648L);
+            Guild guild = Discord.jda.getGuildById(1064714201978896434L);
 
             for (Map.Entry<String, Long> entry : DiscordIntegration.connectedAccounts.entrySet()) {
                 Player player = PlayerHandler.getPlayerByLoginName(entry.getKey());

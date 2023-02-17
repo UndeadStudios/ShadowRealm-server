@@ -121,7 +121,7 @@ public class TutorialDialogue extends DialogueBuilder {
         db.setDescription( player.getDisplayName() + " has just joined Exilius-OSRS for the first time please welcome him");
         db.setImage("https://media.tenor.com/nVSmF0rmEOsAAAAd/whats-up-wazzup.gif");
         db.setColor(new java.awt.Color(0xB00D03));
-       Discord.getJDA2().getTextChannelById("1064970750408265878").sendMessageEmbeds(db.build()).queue();
+       Discord.jda.getTextChannelById("1064970750408265878").sendMessageEmbeds(db.build()).queue();
         //Discord.writeannounceMessage("[New Player] " + player.getDisplayName() + " Has just joined Exilius! Please welcome them");
     }
 

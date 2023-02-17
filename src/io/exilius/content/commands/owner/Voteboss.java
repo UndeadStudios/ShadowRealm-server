@@ -21,7 +21,7 @@ public class Voteboss extends Command
         eb.setDescription("Votes: " + Server.getVoteCounter() );
         eb.setImage("https://i.gyazo.com/dfee0f520aa4a48b99345a6c0f1df67e.mp4");
         eb.setColor(new java.awt.Color(0xB00D03));
-       Discord.getJDA2().getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
+       Discord.jda.getTextChannelById("1064970750408265878").sendMessageEmbeds(eb.build()).queue();
 
     }
 }

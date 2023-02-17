@@ -199,38 +199,6 @@ public class Player extends Entity {
 
     private static Logger logger = LoggerFactory.getLogger(Player.class);
 
-
-
-    @Getter @Setter
-    private long discordUser;
-
-    @Getter @Setter
-    private int discordPoints;
-
-    @Getter @Setter
-    private String discordTag = "";
-
-    @Getter @Setter
-    private Boolean discordlinked = false;
-
-    public void increaseDiscordPoints(int amount) {
-        discordPoints += amount;
-    }
-
-    @Getter @Setter
-    public long DiscordlastClaimed;
-
-    @Getter @Setter
-    public long DiscordboostlastClaimed;
-
-    public boolean TaskExtended;
-
-
-    @Getter @Setter
-    public int collectionLogNPC = 0;
-
-    @Getter
-    private final ArrayList<Integer> claimedLog = new ArrayList<>();
     @Getter
     @Setter
     public int battlePassSeason = 0;
@@ -1768,11 +1736,14 @@ public class Player extends Entity {
 
     @SneakyThrows
     public boolean isDisconnected() {
-           return disconnected;
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        return disconnected;
     }
 
     @SneakyThrows
-    public void setDisconnected(boolean disconnected) {        this.disconnected = disconnected;
+    public void setDisconnected(boolean disconnected) {
+       // Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        this.disconnected = disconnected;
     }
 
     public boolean hunllefDead;
@@ -1843,20 +1814,26 @@ public class Player extends Entity {
         if (!isDisconnected() && System.currentTimeMillis() - logoutDelay > 1000) {
             properLogout = true;
             setDisconnected(true);
-            ConnectedFrom.addConnectedFrom(this, connectedFrom);        }
+            ConnectedFrom.addConnectedFrom(this, connectedFrom);
+            //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        }
     }
 
     /**
      * Force the player to immediately disconnect from the game.
      */
     @SneakyThrows
-    public void forceLogout() {        forceLogout = true;
+    public void forceLogout() {
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        forceLogout = true;
     }
 
 
     @SneakyThrows
     public void setDisconnected() {
         setDisconnected(true);
+        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        //Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
         disconnectTime = System.currentTimeMillis();
     }
 
@@ -1875,7 +1852,9 @@ public class Player extends Entity {
     public void destruct() {
         if (destructed)
             return;
-        destructed = true;        getPA().sendLogout();
+        destructed = true;
+        Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        getPA().sendLogout();
 
 
         if (session != null && session.isOpen()) {
@@ -1964,9 +1943,7 @@ public class Player extends Entity {
             boolean debugMessage = true;
             //Right right = rank.rights;
         }
-        if (Discord.jda != null) {
-            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
-        }
+
 
         removeFromInstance();
         if (clan != null) {
@@ -2075,11 +2052,13 @@ public class Player extends Entity {
             sendMessage("@bla@Welcome back to " + Configuration.SERVER_NAME + ", " + getDisplayNameFormatted() + ".");
             sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
             sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
-               } else {
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        } else {
             sendMessage("@bla@Welcome to " + Configuration.SERVER_NAME + ", don't forget to join the <col=255>::discord</col>!");
             sendMessage("@gre@<shad=0>Remember to vote & spawn vote boss we current have " + Server.getVoteCounter() + ", 25 is needed to spawn boss!</shad>");
             sendMessage("@red@<shad=0>Remember to check out the battle pass and claim rewards for levels! use ::bp</shad>");
-             }
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+        }
 
         if (Reclaim.isReclaimPeriod() && Server.isPublic()) {
             sendMessage("The donation reclaim period is open, use ::reclaim to reclaim old donations.");
@@ -2091,9 +2070,6 @@ public class Player extends Entity {
             getPA().sendGameTimer(ClientGameTimer.BONUS_XP, TimeUnit.MINUTES, VotePanelManager.getBonusXPTimeInMinutes(this));
         } else if (xpScrollTicks > 0) {
             getPA().sendGameTimer(ClientGameTimer.BONUS_XP, TimeUnit.MINUTES, (int) (xpScrollTicks / 100));
-        }
-        if (Discord.jda != null) {
-            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
         }
         if (skillingPetRateTicks > 0) {
             getPA().sendGameTimer(ClientGameTimer.BONUS_SKILLING_PET_RATE, TimeUnit.MINUTES, (int) (skillingPetRateTicks / 100));
@@ -2666,7 +2642,9 @@ public class Player extends Entity {
         if (getCannon() != null) {
             getCannon().tick(this);
         }
-        if (logoutTimer.finished()) {            properLogout = true;
+        if (logoutTimer.finished()) {
+          //  Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) (PlayerHandler.getPlayerCount() * 1) + " players!"));
+            properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
             logoutTimer.stop();
@@ -4022,9 +4000,6 @@ public class Player extends Entity {
                 runningDistanceTravelled = 0;
                 return;
             }
-            if(isCrawlingToggled() && getMovementState().isCrawlingEnabled()) {
-                crawlDirection = getNextWalkingDirection();
-            }
             if (isRunningToggled() && getMovementState().isRunningEnabled()) {
                 runDirection = getNextWalkingDirection();
                 runningDistanceTravelled++;
@@ -4143,7 +4118,6 @@ public class Player extends Entity {
                 str.writeBits(2, 2);
                 str.writeBits(1, crawlDirection == -1 ? 1 : 0);
                 if(crawlDirection == -1) {
-                    str.writeBits(3, Misc.xlateDirectionToClient[walkDirection]);
                     str.writeBits(3, Misc.xlateDirectionToClient[runDirection]);
                 } else {
                     str.writeBits(3, Misc.xlateDirectionToClient[crawlDirection]);
@@ -6169,9 +6143,6 @@ public MoneyBox getMoneyBoxInterface() {
         }
         return false;
     }
-
-    public String slayerPartner = "";
-    public boolean slayerParty = false;
 
     public RealRunecrafting getRC() {
         return realrcing;

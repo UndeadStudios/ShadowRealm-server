@@ -29,7 +29,7 @@ public class GambleBan extends OnlinePlayerPCP {
         db.setDescription(staff.getDisplayName()+ " gamble banned "+ player.getDisplayNameFormatted() + " for the time of " + duration);
         db.setImage("https://media.tenor.com/vkDCjozbDksAAAAC/ban-hammer-cinzou.gif");
         db.setColor(new java.awt.Color(0xB00D03));
-       Discord.getJDA2().getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
+       Discord.jda.getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
         staff.sendMessage(player.getDisplayNameFormatted() + " banned from gambling.");
     }
 

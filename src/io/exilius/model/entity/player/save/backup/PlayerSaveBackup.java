@@ -8,6 +8,7 @@ import io.exilius.content.battle_pass.BattlePassHandler;
 import io.exilius.model.entity.player.save.PlayerSave;
 import io.exilius.sql.DatabaseCredentials;
 import io.exilius.util.Misc;
+import io.exilius.util.discord.DiscordIntegration;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -47,6 +48,7 @@ public class PlayerSaveBackup {
             try {
                 ticks++;
                 PlayerSave.saveAll();
+                DiscordIntegration.saveConnectedAccounts();
 
                 if (ticks % ticksBetweenSaveBackup == 0)
                     backup(LocalDateTime.now());
