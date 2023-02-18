@@ -9,6 +9,7 @@ import io.exilius.Configuration;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.entity.player.save.PlayerSave;
+import lombok.SneakyThrows;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.exceptions.ErrorHandler;
 import net.dv8tion.jda.api.requests.ErrorResponse;
@@ -63,13 +64,14 @@ public class DiscordIntegration {
         });
     }
 
+    @SneakyThrows
     public static void sendPMS(String content) {
         if (Configuration.DISABLE_DISCORD_MESSAGING) {
             return;
         }
         System.out.println("sending discord pms");
 
-        Guild guild = Discord.jda.getGuildById(1064714201978896434L);
+        Guild guild = Discord.getJDA().getGuildById(1064714201978896434L);
         for (Map.Entry<String, Long> entry : DiscordIntegration.connectedAccounts.entrySet()) {
             Player player = PlayerHandler.getPlayerByLoginName(entry.getKey());
             if (player == null)
@@ -98,6 +100,7 @@ public class DiscordIntegration {
         }
     }
 
+    @SneakyThrows
     public static void integrateAccount(Player player, String code) {
         if (Configuration.DISABLE_DISCORD_MESSAGING) {
             return;
@@ -122,7 +125,7 @@ public class DiscordIntegration {
             return;
         }
 
-        String name = Discord.jda.getUserById(userId).getAsTag();
+        String name = Discord.getJDA().getUserById(userId).getAsTag();
 
         player.sendMessage("You have connected the discord account '" + name + "'.");
         connectedAccounts.put(player.getLoginName(), userId);
@@ -210,6 +213,7 @@ public class DiscordIntegration {
         }
     }
 
+    @SneakyThrows
     public static void updateDiscordInterface(Player player) {
         if (player.getDiscordUser() <= 0) {
             player.getPA().sendString(37507, "@red@Inactive");
@@ -224,7 +228,7 @@ public class DiscordIntegration {
         }
 
         if (Discord.jda != null) {
-            Guild guild = Discord.jda.getGuildById(1064714201978896434L);
+            Guild guild = Discord.getJDA().getGuildById(1064714201978896434L);
 
             if (guild != null) {
                 for (Member booster : guild.getBoosters()) {
@@ -276,21 +280,23 @@ public class DiscordIntegration {
 
     }
 
+    @SneakyThrows
     public static void sendMessage(String message, long channel) {
         if (Configuration.DISABLE_DISCORD_MESSAGING) {
             return;
         }
-        Discord.jda.getTextChannelById(channel).sendMessage(message).queue();
+        Discord.getJDA().getTextChannelById(channel).sendMessage(message).queue();
     }
 
     public static long delay;
 
+    @SneakyThrows
     public static void givePoints() {
         if (delay > System.currentTimeMillis()) {
             return;
         }
         if (Discord.jda != null) {
-            Guild guild = Discord.jda.getGuildById(1064714201978896434L);
+            Guild guild = Discord.getJDA().getGuildById(1064714201978896434L);
 
             for (Map.Entry<String, Long> entry : DiscordIntegration.connectedAccounts.entrySet()) {
                 Player player = PlayerHandler.getPlayerByLoginName(entry.getKey());

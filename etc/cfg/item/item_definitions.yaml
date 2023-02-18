@@ -75444,4 +75444,21 @@
   noteId: 11806
   noted: true
   stackable: true
+- id: 27235
+  name: "Masori Slayer mask (f)"
+  description: "A fortified mask once worn by a powerful ranger"
+  shopValue: 10000000
+  untradeable: false
+  equipmentModelType: "FULL_MASK"
+- id: 27238
+  name: "Masori Slayer body (f)"
+  description: "Fortified armour once worn by a powerful ranger"
+  shopValue: 10000000
+  untradeable: false
+  equipmentModelType: "FULL_BODY"
+- id: 27241
+  name: "Masori Slayer chaps"
+  description: "Fortified armour once worn by a powerful ranger"
+  shopValue: 10000000
+  untradeable: false
 

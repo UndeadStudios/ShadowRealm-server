@@ -48,6 +48,7 @@ import io.exilius.sql.Votes;
 import io.exilius.sql.eventcalendar.queries.AddWinnerQuery;
 import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
+import io.exilius.util.discord.DiscordIntegration;
 import io.exilius.util.logging.player.ClanChatLog;
 import io.exilius.util.logging.player.CommandLog;
 import org.apache.commons.io.FileUtils;
@@ -691,6 +692,11 @@ public class Commands implements PacketType {
 
             if (playerCommand.equals("forum")) {
                 c.getPA().sendFrame126(Configuration.WEBSITE, 12000);
+            }
+
+            if (playerCommand.toLowerCase().contentEquals("linkdiscord")) {
+                DiscordIntegration.updateDiscordInterface(c);
+                c.getPA().showInterface(37500);
             }
 
             if (playerCommand.toLowerCase().contentEquals("discord")) {

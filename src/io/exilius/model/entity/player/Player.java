@@ -1965,7 +1965,7 @@ public class Player extends Entity {
             //Right right = rank.rights;
         }
         if (Discord.jda != null) {
-            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
         }
 
         removeFromInstance();
@@ -2093,7 +2093,7 @@ public class Player extends Entity {
             getPA().sendGameTimer(ClientGameTimer.BONUS_XP, TimeUnit.MINUTES, (int) (xpScrollTicks / 100));
         }
         if (Discord.jda != null) {
-            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1)) + " players!"));
         }
         if (skillingPetRateTicks > 0) {
             getPA().sendGameTimer(ClientGameTimer.BONUS_SKILLING_PET_RATE, TimeUnit.MINUTES, (int) (skillingPetRateTicks / 100));

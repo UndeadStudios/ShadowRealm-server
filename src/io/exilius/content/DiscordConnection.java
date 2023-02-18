@@ -4,6 +4,7 @@ package io.exilius.content;
 import io.exilius.Server;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.discord.Discord;
+import lombok.SneakyThrows;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -24,6 +25,7 @@ public class DiscordConnection extends ListenerAdapter {
 
     public static final String CHANNEL_OSRS_DONATIONS = "984613576398499895";
 
+    @SneakyThrows
     public void initialize() {
         JDABuilder builder = JDABuilder.createDefault(token).setChunkingFilter(ChunkingFilter.ALL) // enable member chunking for all guilds
                 .setMemberCachePolicy(MemberCachePolicy.ALL) // ignored if chunking enabled
@@ -36,7 +38,7 @@ public class DiscordConnection extends ListenerAdapter {
 //		builder.addEventListeners(new PrivateMessageReceived());
         try {
             jda = builder.build();
-            Discord.jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1.3)) + " players!"));
+            Discord.getJDA().getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing("Exilius with "+ ((int) (PlayerHandler.getPlayerCount() * 1.3)) + " players!"));
 
             //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.playing((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
         } catch (LoginException e) {

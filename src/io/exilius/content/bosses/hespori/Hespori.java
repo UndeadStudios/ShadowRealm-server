@@ -2,6 +2,7 @@ package io.exilius.content.bosses.hespori;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
+import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
@@ -95,7 +96,7 @@ public class Hespori {
 			if (!eventCompleted) {
 				p.sendMessage("@blu@Hespori event was ended before she was killed!");
 				p.canLeaveHespori = true;
-				p.getPA().startTeleport2(3074, 3500, 0);
+				p.getPA().startTeleport(Configuration.hespori_end, "modern", false);
 				p.setHesporiDamageCounter(0);
 				deleteEventItems(p);
 			} else {
@@ -112,7 +113,7 @@ public class Hespori {
 				} else {
 					p.sendMessage("@blu@You were not active enough to receive a reward.");
 					p.canLeaveHespori = true;
-					p.getPA().startTeleport2(3074, 3500, 0);
+					p.getPA().startTeleport(Configuration.hespori_end, "modern", false);
 					p.setHesporiDamageCounter(0);
 					deleteEventItems(p);
 				}

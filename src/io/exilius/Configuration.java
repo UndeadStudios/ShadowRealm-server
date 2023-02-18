@@ -394,6 +394,7 @@ public class Configuration {
 	public static final int BUFFER_SIZE = 512;
 
 	public static final Position ONYX_ZONE_TELEPORT = new Position(2783, 4903, 0);
+	public static final Position hespori_end = new Position(3074, 3500, 0);
 	public static long DOUBLE_DROPS_TIMER;
 
 	public final static int[] COMBAT_RELATED_ITEMS = { 35, 39, 40, 41, 42, 43,

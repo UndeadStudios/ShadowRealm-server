@@ -5,6 +5,7 @@ import io.exilius.Configuration;
 import io.exilius.Server;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.util.Misc;
+import lombok.SneakyThrows;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -146,6 +147,7 @@ public class Discord extends ListenerAdapter {
         });
     }
 
+    @SneakyThrows
     private static TextChannel getChannel(String name) {
         if (Configuration.DISABLE_DISCORD_MESSAGING)
             return null;
@@ -163,7 +165,12 @@ public class Discord extends ListenerAdapter {
         return channels.get(name);
     }
 
-    public static JDA getJDA() {
+    public static JDA getJDA() throws LoginException, InterruptedException  {
+        if (jda == null) {
+            jda = JDABuilder.createDefault("MTAwNDExNDAyNTA0ODcxNTM4Ng.GX1HBB.RIIPCLrWOrTrDWXP3iUPIqwH_zqe64oms20MEI").build();
+            jda.awaitReady();
+            jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching((int) Math.round((PlayerHandler.getPlayerCount() * 1)) + " players!"));
+        }
        return jda;
    }
 

@@ -72,7 +72,7 @@ public class InputField implements PacketType {
 					db.setDescription( player.getDisplayName() + " Needs help get ingame and do ::helpdb to view ticket!");
 					db.setImage("https://media.tenor.com/yi5btxWVAwwAAAAC/help-shouting.gif");
 					db.setColor(new java.awt.Color(0xB00D03));
-					Discord.jda.getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
+					Discord.getJDA().getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
 					//Discord.writetickets("[HelpDB] " + player.getDisplayName() + "" + " is requesting help, type ::helpdb ingame to view their request.", staff);
 				} else {
 					player.sendMessage("@red@There are no staff online to help you at this time, please be patient");
@@ -83,7 +83,7 @@ public class InputField implements PacketType {
 					db.setDescription( player.getDisplayName() + "Needs help get ingame and do ::helpdb to view ticket!");
 					db.setImage("https://media.tenor.com/yi5btxWVAwwAAAAC/help-shouting.gif");
 					db.setColor(new java.awt.Color(0xB00D03));
-					Discord.jda.getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
+					Discord.getJDA().getTextChannelById("1064970559227695115").sendMessageEmbeds(db.build()).queue();
 //					Discord.writetickets( player.getDisplayName() + "**__[HelpDB] __** ** is requesting help, type ::helpdb ingame to view their request. **");
 				}
 			}

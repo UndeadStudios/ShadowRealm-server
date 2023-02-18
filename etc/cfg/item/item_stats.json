@@ -72578,6 +72578,69 @@
       "slot": 2
     }
   },
+  "27235": {
+    "name": "Masori Slayer mask (f)",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 0,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": -1,
+      "arange": 12,
+      "dstab": 8,
+      "dslash": 10,
+      "dcrush": 12,
+      "dmagic": 12,
+      "drange": 9,
+      "prayer": 1,
+      "rstr": 2,
+      "aspeed": 2
+    }
+  },
+  "27238": {
+    "name": "Masori Slayer body (f)",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 4,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": -4,
+      "arange": 43,
+      "dstab": 59,
+      "dslash": 52,
+      "dcrush": 64,
+      "dmagic": 74,
+      "drange": 60,
+      "prayer": 1,
+      "rstr": 4,
+      "aspeed": 2
+    }
+  },
+  "27241": {
+    "name": "Masori Slayer0 chaps (f)",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 7,
+      "astab": 0,
+      "aslash": 0,
+      "acrush": 0,
+      "amagic": -2,
+      "arange": 27,
+      "dstab": 35,
+      "dslash": 30,
+      "dcrush": 39,
+      "dmagic": 46,
+      "drange": 37,
+      "prayer": 1,
+      "rstr": 2,
+      "aspeed": 2
+    }
+  },
   "29375": {
     "name": "Gnome scarf",
     "equipable": true,

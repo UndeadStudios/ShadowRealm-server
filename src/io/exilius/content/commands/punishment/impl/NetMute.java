@@ -37,7 +37,7 @@ public class NetMute extends OnlinePlayerPCP {
         db.setDescription(staff.getDisplayName()+ " Muted all addresses for "+ player.getDisplayNameFormatted() + " for the time of " + duration);
         db.setImage("https://media.tenor.com/vkDCjozbDksAAAAC/ban-hammer-cinzou.gif");
         db.setColor(new java.awt.Color(0xB00D03));
-       Discord.jda.getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
+       Discord.getJDA().getTextChannelById("1064970616672891012").sendMessageEmbeds(db.build()).queue();
 
         //Discord.writepunishments(staff.getDisplayName()+ " Muted all addresses for `" + player.getDisplayNameFormatted() + "` for the time of " + duration);
 
