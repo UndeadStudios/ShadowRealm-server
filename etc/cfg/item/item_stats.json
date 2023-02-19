@@ -72578,7 +72578,7 @@
       "slot": 2
     }
   },
-  "27235": {
+  "29235": {
     "name": "Masori Slayer mask (f)",
     "equipable": true,
     "weight": 3.175,
@@ -72599,7 +72599,7 @@
       "aspeed": 2
     }
   },
-  "27238": {
+  "29238": {
     "name": "Masori Slayer body (f)",
     "equipable": true,
     "weight": 3.175,
@@ -72620,8 +72620,8 @@
       "aspeed": 2
     }
   },
-  "27241": {
-    "name": "Masori Slayer0 chaps (f)",
+  "29241": {
+    "name": "Masori Slayer chaps (f)",
     "equipable": true,
     "weight": 3.175,
     "equipment": {
