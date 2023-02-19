@@ -75450,13 +75450,13 @@
   shopValue: 10000000
   untradeable: false
   equipmentModelType: "FULL_MASK"
-- id: 29238
+- id: 29236
   name: "Masori Slayer body (f)"
   description: "Fortified armour once worn by a powerful ranger"
   shopValue: 10000000
   untradeable: false
   equipmentModelType: "FULL_BODY"
-- id: 29241
+- id: 29237
   name: "Masori Slayer chaps"
   description: "Fortified armour once worn by a powerful ranger"
   shopValue: 10000000
