@@ -1,6 +1,7 @@
 package io.exilius.model.entity.player.packets.objectoptions;
 
 import io.exilius.Server;
+import io.exilius.content.bosses.wintertodt.WintertodtActions;
 import io.exilius.content.dialogue.impl.OutlastLeaderboard;
 import io.exilius.content.objects.Ladders;
 import io.exilius.content.skills.agility.AgilityHandler;
@@ -8,6 +9,7 @@ import io.exilius.content.tradingpost.Listing;
 import io.exilius.model.collisionmap.ObjectDef;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.Right;
+import io.exilius.model.world.objects.GlobalObject;
 
 /*
  * @author Matt
@@ -83,12 +85,14 @@ public class ObjectOptionThree {
 				return;
 			}
 		}
+		GlobalObject object = new GlobalObject(objectType, obX, obY, c.heightLevel);
 		if (c.getRights().isOrInherits(Right.OWNER) && c.debugMessage)
 			c.sendMessage("Clicked Object Option 3:  "+objectType+"");
 
 		if (OutlastLeaderboard.handleInteraction(c, objectType, 3))
 			return;
-
+		if (WintertodtActions.handleObjects(object, c, 3))
+			return;
 		switch (objectType) {
 		case 31858:
 		case 29150:

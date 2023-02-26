@@ -198,7 +198,10 @@ import java.util.function.Consumer;
 public class Player extends Entity {
 
     private static Logger logger = LoggerFactory.getLogger(Player.class);
-
+    public int wintertodtPoints;
+    public int wintertodtstorePoints;
+    public int wintertodtKills;
+    public int wintertodtHighscore;
 
 
     @Getter @Setter
@@ -2688,12 +2691,12 @@ public class Player extends Entity {
                 getPA().sendGameTimer(ClientGameTimer.OVERLOAD, TimeUnit.MINUTES, 0);
             }
         }
-        if (Boundary.isIn(this, Boundary.KARUULM_SLAYER_DUNGEON)) {
-            if (playerEquipment[playerFeet] == 23037 || playerEquipment[playerFeet] == 22951 || playerEquipment[playerFeet] == 21643/*getItems().playerHasEquipped(23037)*/) {
-            } else {
-                appendDamage(4, Hitmark.HIT);
-            }
-        }
+//        if (Boundary.isIn(this, Boundary.KARUULM_SLAYER_DUNGEON)) {
+//            if (playerEquipment[playerFeet] == 23037 || playerEquipment[playerFeet] == 22951 || playerEquipment[playerFeet] == 21643/*getItems().playerHasEquipped(23037)*/) {
+//            } else {
+//                appendDamage(4, Hitmark.HIT);
+//            }
+//        }
         if ((underAttackByPlayer > 0 || underAttackByNpc > 0)) {
             if (this.serpHelmCombatTicks < 8) this.serpHelmCombatTicks++;
             this.getCombatItems().checkCombatTickBasedItems();
@@ -3008,6 +3011,8 @@ public class Player extends Entity {
             getPA().walkableInterface(29230);
         } else if (getPosition().inRaidLobby()) {
             getPA().walkableInterface(6673);
+        } else if (Boundary.isIn(this, Boundary.WINTERTODT)) {
+            getPA().walkableInterface(63000);
         } else if (getInstance() == null || !getInstance().handleInterfaceUpdating(this)) {
             getPA().walkableInterface(-1);
         }

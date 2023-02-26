@@ -460,6 +460,7 @@ public class ItemAssistant {
 					if (player.getCombatItems().usingCrystalBow()
 							|| player.getCombatItems().usingbofa()
 							|| player.getCombatItems().usingBlowPipe()
+							|| player.getCombatItems().usingBlowPipe2()
 							|| weaponIsAmmo) {
 
 						return RangeData.getRangeStr(player, Player.playerArrows);

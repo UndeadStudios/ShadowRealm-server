@@ -690,6 +690,9 @@ public abstract class HitDispatcher {
         if (attacker.playerEquipment[Player.playerWeapon] == 12926) {
             return;
         }
+        if (attacker.playerEquipment[Player.playerWeapon] == 29238) {
+            return;
+        }
         dropArrow(itemId);
         if (type == RangedWeaponType.DOUBLE_SHOT) {
             dropArrow(itemId);
@@ -710,6 +713,9 @@ public abstract class HitDispatcher {
             return;
         }
         if (attacker.playerEquipment[Player.playerWeapon] == 12926) {
+            return;
+        }
+        if (attacker.playerEquipment[Player.playerWeapon] == 29238) {
             return;
         }
         int enemyX = defender.getX();

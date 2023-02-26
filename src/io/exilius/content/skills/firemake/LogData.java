@@ -19,7 +19,9 @@ public enum LogData {
 	BLUE_LOGS(7406, 1, 256),
 	WHITE_LOGS(10328, 1, 256),
 	PURPLE_LOGS(10329, 1, 256),
-	REDWOOD_LOGS(19669, 90, 350);
+	REDWOOD_LOGS(19669, 90, 350),
+	BRUMA_ROOT(20696, 1, 135),
+	BRUMA_LOG(20695, 1, 60);
 
 	private final int logId;
     private final int levelRequirement;

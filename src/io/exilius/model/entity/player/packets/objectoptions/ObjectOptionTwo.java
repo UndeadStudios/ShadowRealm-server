@@ -5,6 +5,7 @@ import io.exilius.content.achievement_diary.impl.FaladorDiaryEntry;
 import io.exilius.content.achievement_diary.impl.VarrockDiaryEntry;
 import io.exilius.content.bosses.grotesqueguardians.GrotesqueInstance;
 import io.exilius.content.bosses.hespori.Hespori;
+import io.exilius.content.bosses.wintertodt.WintertodtActions;
 import io.exilius.content.dialogue.impl.OutlastLeaderboard;
 import io.exilius.content.fireofexchange.FireOfExchangeBurnPrice;
 import io.exilius.content.item.lootable.impl.RaidsChestCommon;
@@ -115,7 +116,8 @@ public class ObjectOptionTwo {
 
 		if (OutlastLeaderboard.handleInteraction(c, objectType, 2))
 			return;
-
+		if (WintertodtActions.handleObjects(object, c, 2))
+			return;
 		switch (objectType) {
 			case 11726:// Open Door @ Magic Hut
 				if (c.getItems().hasItemOnOrInventory(Items.LOCKPICK)) {

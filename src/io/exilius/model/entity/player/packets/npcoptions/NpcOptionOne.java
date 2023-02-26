@@ -654,6 +654,10 @@ public class NpcOptionOne {
 				//Fishing.attemptdata(player, 1);
 				Fishing.startFishing(player, 1, npcType);
 				break;
+			case 3317:
+				//Fishing.attemptdata(player, 1);
+				Fishing.startFishing(player, 16, npcType);
+				break;
 			case 4710:
 				Fishing.startFishing(player, 15, npcType);
 			break;

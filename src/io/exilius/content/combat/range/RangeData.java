@@ -165,7 +165,16 @@ public class RangeData {
 				}
 			}
 		}
-
+		if (c.getItems().isWearingItem(29238)) {
+			Optional<Integer> original = PoisonedWeapon.getOriginal(c.getToxicBlowpipeAmmo());
+			int ammo = original.orElseGet(c::getToxicBlowpipeAmmo);
+			final int[][] DARTS = { { 806, 226 }, { 807, 227 }, { 808, 228 }, { 809, 229 }, { 810, 230 }, { 811, 231 }, { 11230, 231 } };
+			for (int index = 0; index < DARTS.length; index++) {
+				if (DARTS[index][0] == ammo) {
+					return DARTS[index][1];
+				}
+			}
+		}
 		if (c.dbowSpec) {
 			return Arrow.matchesMaterial(c.arrowUsedOnAttack, Arrow.DRAGON) ? 1099 : 1101;
 		}

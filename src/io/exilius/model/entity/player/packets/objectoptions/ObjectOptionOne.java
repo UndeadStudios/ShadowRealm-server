@@ -13,6 +13,8 @@ import io.exilius.content.bosses.hespori.Hespori;
 import io.exilius.content.bosses.hespori.HesporiSpawner;
 import io.exilius.content.bosses.hydra.AlchemicalHydra;
 import io.exilius.content.bosses.nex.Nex;
+import io.exilius.content.bosses.wintertodt.Wintertodt;
+import io.exilius.content.bosses.wintertodt.WintertodtActions;
 import io.exilius.content.combat.Hitmark;
 import io.exilius.content.combat.weapon.WeaponDataConstants;
 import io.exilius.content.dialogue.DialogueBuilder;
@@ -145,7 +147,21 @@ static int fourthFloorsos[][] = {
 			Woodcutting.getInstance().chop(c, objectType, obX, obY);
 			return;
 		}
-
+		if (object.getObjectId() == 29322) {
+			if (c.getY() < obY) {
+				if (c.playerLevel[Skill.FIREMAKING.getId()] < 50) {
+					c.sendMessage("You require 50 firemaking to enter!");
+					return;
+				}
+				c.getPA().movePlayer(1630, 3971);
+			} else {
+				Wintertodt.removeGameItems(c);
+				c.getPA().movePlayer(1630, 3962);
+			}
+			return;
+		}
+		if (WintertodtActions.handleObjects(object, c, 1))
+			return;
 		if (OutlastLeaderboard.handleInteraction(c, objectType, 1))
 			return;
 

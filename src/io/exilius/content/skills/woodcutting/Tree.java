@@ -37,7 +37,8 @@ public enum Tree {
 	REDWOOD5(new int[] { 34288 }, 34288, 19669, 90, 25, 1250, 275, 150, 3000),
 	REDWOOD6(new int[] { 34290 }, 34290, 19669, 90, 25, 1250, 275, 150, 3000),
 	SAPLING(new int[] { 29763 }, 29764, 20799, 65, 13, 799995, 25, 15, 100000),
-	HESPORI(new int[] { 33730 }, 1342, Hespori.KEY, 1, 5, 299990, 1200, 15, 1000);
+	HESPORI(new int[] { 33730 }, 1342, Hespori.KEY, 1, 5, 299990, 1200, 15, 1000),
+	BRUMA_ROOTS(new int[] { 29311 }, 29311, 20695, 1, 5, 799995, 25, 1, 100000);
 
 	private final int[] treeIds;
 	private final int stumpId;

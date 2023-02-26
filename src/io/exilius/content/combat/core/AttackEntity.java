@@ -77,6 +77,9 @@ public class AttackEntity {
         if (attacker.playerAttackingIndex > 0 && attacker.playerEquipment[Player.playerWeapon] == 12926) {
             return attackSpeed + 1;
         }
+        if (attacker.playerAttackingIndex > 0 && attacker.playerEquipment[Player.playerWeapon] == 29238) {
+            return attackSpeed + 1;
+        }
         if (weapon == -1 || attackSpeed <= 0) {
             return 4;
         } else {
@@ -642,6 +645,10 @@ public class AttackEntity {
             attacker.getPA().createPlayersProjectile(pX, pY, offX, offY, 50, RangeData.getProjectileSpeed(attacker),
                     RangeData.getRangeProjectileGFX(attacker), 35, 35,
                     Projectile.getLockon(entity), 45);
+        } else if (attacker.weaponUsedOnAttack == 29238) {
+            attacker.getPA().createPlayersProjectile(pX, pY, offX, offY, 50, RangeData.getProjectileSpeed(attacker),
+                    RangeData.getRangeProjectileGFX(attacker), 35, 35,
+                    Projectile.getLockon(entity), 45);
         } else {
             attacker.getPA().createPlayersProjectile(pX, pY, offX, offY, 50, RangeData.getProjectileSpeed(attacker),
                     RangeData.getRangeProjectileGFX(attacker), 43, 43,
@@ -773,7 +780,10 @@ public class AttackEntity {
                 attacker.usingBow = true;
                 attacker.usingArrows = true;
             }
-
+            if (attacker.getItems().isWearingItem(29238)) {
+                attacker.usingBow = true;
+                attacker.usingArrows = true;
+            }
             if (attacker.playerEquipment[Player.playerWeapon] == 9703) {
                 attacker.sendMessage("The training sword is only meant as a cosmetic.");
                 return false;
@@ -792,7 +802,7 @@ public class AttackEntity {
             }
 
             if (!Bow.canUseArrow(attacker) && Configuration.CORRECT_ARROWS && attacker.usingBow && !attacker.getCombatItems().usingCrystalBow() && !(attacker.playerEquipment[Player.playerWeapon] == 22550) && !(attacker.playerEquipment[Player.playerWeapon] == 25865) && attacker.playerEquipment[Player.playerWeapon] != 9185
-                    && attacker.playerEquipment[Player.playerWeapon] != 4734 && attacker.playerEquipment[Player.playerWeapon] != 26374 && attacker.playerEquipment[Player.playerWeapon] != 11785 && attacker.playerEquipment[Player.playerWeapon] != 21012 && attacker.playerEquipment[Player.playerWeapon] != 25916 && attacker.playerEquipment[Player.playerWeapon] != 12926 && attacker.playerEquipment[Player.playerWeapon] != 19478 && attacker.playerEquipment[Player.playerWeapon] != 19481 && attacker.playerEquipment[Player.playerWeapon] != 21902) {
+                    && attacker.playerEquipment[Player.playerWeapon] != 4734 && attacker.playerEquipment[Player.playerWeapon] != 26374 && attacker.playerEquipment[Player.playerWeapon] != 11785 && attacker.playerEquipment[Player.playerWeapon] != 21012 && attacker.playerEquipment[Player.playerWeapon] != 25916 && attacker.playerEquipment[Player.playerWeapon] != 12926 && attacker.playerEquipment[Player.playerWeapon] != 29238 && attacker.playerEquipment[Player.playerWeapon] != 19478 && attacker.playerEquipment[Player.playerWeapon] != 19481 && attacker.playerEquipment[Player.playerWeapon] != 21902) {
                 attacker.sendMessage("You can't use " + ItemAssistant.getItemName(attacker.playerEquipment[Player.playerArrows]).toLowerCase() + "'s with a "
                         + ItemAssistant.getItemName(attacker.playerEquipment[Player.playerWeapon]).toLowerCase() + ".");
                 return false;

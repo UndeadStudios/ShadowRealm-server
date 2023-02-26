@@ -122,7 +122,11 @@ public class Fishing {
                     int r = random.nextInt(fishing.getFish().length);
 
                     //Achievements.increase(player, AchievementType.FISHING, 1);
-                    player.getItems().addItem(fishing.getFish()[r], 1);
+                    if(fishing.getIdentifier() == 16){
+                        player.getItems().addItem(fishing.getFish()[r], Misc.get(1, 150));
+                    } else {
+                        player.getItems().addItem(fishing.getFish()[r], 1);
+                    }
                     if (player.playerEquipment[player.playerHat] == 13258 && player.playerEquipment[player.playerChest] == 13259 && player.playerEquipment[player.playerLegs] == 13260 && player.playerEquipment[player.playerFeet] == 13261) {
                         player.getPA().addSkillXPMultiplied(fishing.getExperience(), 10, true);
                     } else {

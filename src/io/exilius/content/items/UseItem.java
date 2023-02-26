@@ -8,6 +8,7 @@ import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.ArdougneDiaryEntry;
 import io.exilius.content.bosses.bryophyta.BryophytaNPC;
 import io.exilius.content.bosses.hespori.Hespori;
+import io.exilius.content.bosses.wintertodt.WintertodtActions;
 import io.exilius.content.combat.magic.SanguinestiStaff;
 import io.exilius.content.dialogue.impl.FireOfDestructionDialogue;
 import io.exilius.content.item.lootable.impl.CrystalChest;
@@ -659,6 +660,9 @@ public class UseItem {
 		if (BryophytaStaff.handleItemOnItem(c, itemUsed, useWith))
 			return;
 		if (SanguinestiStaff.useItem(c, itemUsed, useWith)) {
+			return;
+		}
+		if (WintertodtActions.useItemOnItem(c, itemUsed, useWith)) {
 			return;
 		}
 		if (itemUsed == RunePouch.RUNE_POUCH_ID || useWith == RunePouch.RUNE_POUCH_ID) {
@@ -2037,6 +2041,8 @@ public class UseItem {
 		int npcId = npc.getNpcId();
 
 		if (PlatinumTokens.itemOnNpc(player, npc, itemId, slot))
+			return;
+		if (WintertodtActions.useItemOnPyro(player, new GameItem(itemId), npc))
 			return;
 		if (HerbloreDecantCleanUnfNpc.useItemOnNpc(player, npc, itemId))
 			return;

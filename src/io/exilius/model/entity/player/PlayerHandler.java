@@ -440,6 +440,16 @@ public class PlayerHandler {
 			}
 		}
 	}
+
+	public void sendStillGfx(StillGraphic graphic, Position instancedArea) {
+		for (Player player : players) {
+			if (player != null && player.distance(graphic.getPosition()) < 24
+					&& player.getHeightLevel() == graphic.getPosition().getHeight()) {
+				player.getPA().stillGfx(graphic.getId(), graphic.getPosition().getX(), graphic.getPosition().getY(),
+						graphic.getHeight(), graphic.getDelay());
+			}
+		}
+	}
 	public void sendStillGfx(StillGraphic graphic) {
 		for (Player player : players) {
 			if (player != null && player.distance(graphic.getPosition()) < 24

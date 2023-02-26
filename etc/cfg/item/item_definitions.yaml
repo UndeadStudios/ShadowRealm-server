@@ -75445,13 +75445,13 @@
   noted: true
   stackable: true
 - id: 29235
-  name: "Masori Slayer mask (f)"
+  name: "Masori Slayer mask"
   description: "A fortified mask once worn by a powerful ranger"
   shopValue: 10000000
   untradeable: false
   equipmentModelType: "FULL_MASK"
 - id: 29236
-  name: "Masori Slayer body (f)"
+  name: "Masori Slayer body"
   description: "Fortified armour once worn by a powerful ranger"
   shopValue: 10000000
   untradeable: false
@@ -75461,4 +75461,44 @@
   description: "Fortified armour once worn by a powerful ranger"
   shopValue: 10000000
   untradeable: false
+- id: 29238
+  name: "Masori blowpipe"
+  description: "Fires darts while coating them with venom."
+  shopValue: 4001000
+  untradeable: false
+  requirements:
+    - skill: "RANGED"
+      level: 90
+- id: 29239
+  name: "Slayer jordans"
+  description: "o shit its some jordans."
+  shopValue: 500000
+  noteId: 11837
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+- id: 29240
+  name: "Masori Slayer cape"
+  description: "A cape."
+  shopValue: 1
+- id: 29241
+  name: "Masori Slayer Gloves"
+  description: "A pair of very nice gloves."
+  shopValue: 300000
+  untradeable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
+- id: 29242
+  name: "Masori Slayer shield"
+  description: "An ethereal shield with an Masori slayer sigil attached to it."
+  shopValue: 12840000
+  requirements:
+    - skill: "DEFENCE"
+      level: 75
+    - skill: "PRAYER"
+      level: 75
+
+
+
 

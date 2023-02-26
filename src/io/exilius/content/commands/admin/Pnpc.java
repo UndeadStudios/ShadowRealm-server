@@ -17,8 +17,8 @@ public class Pnpc extends Command {
 	public void execute(Player c, String commandName, String input) {
 		int npc = Integer.parseInt(input);
 
-		if (npc > 11463) {
-			c.sendMessage("Max npc id is: 11463");
+		if (npc > 12140) {
+			c.sendMessage("Max npc id is: 12140");
 			return;
 		}
 		c.npcId2 = npc;

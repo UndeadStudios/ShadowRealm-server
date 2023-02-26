@@ -88,7 +88,9 @@ public class RangeMaxHit extends RangeData {
 		if (c.playerEquipment[c.playerWeapon] == 12926) {//blowpipe
 			rangeLevel *= .85;
 		}
-
+		if (c.playerEquipment[c.playerWeapon] == 29238) {//blowpipe
+			rangeLevel *= .85;
+		}
 		rangeLevel = CombatFormula.getPrayerBoostedLevel(rangeLevel, CombatFormula.getPrayerRangedAccuracyBonus(c));
 
 		if (c.npcAttackingIndex > 0 && c.getSlayer().getTask().isPresent()) {

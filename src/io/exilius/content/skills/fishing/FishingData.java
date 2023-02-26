@@ -24,7 +24,8 @@ public class FishingData {
         Angler(12, 82, new int[]{13439}, 307, 13431, 622, 120),
         DARK_CRAB(13, 90, new int[]{11934}, 301, 11940, 619, 130),
         SACRED_EEL(14, 87, new int[]{13339}, 307, 313, 622, 105),
-        karambwanji(15, 5, new int[]{3150}, 303, -1, 621, 5);
+        karambwanji(15, 5, new int[]{3150}, 303, -1, 621, 5),
+        afk(16, 5, new int[]{995}, 303, -1, 621, 5);
 
         public int requirement, itemRequired, baitRequired, animation, experience, fishingIdentifier;
 

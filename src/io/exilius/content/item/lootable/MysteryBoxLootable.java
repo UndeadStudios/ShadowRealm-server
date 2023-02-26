@@ -86,14 +86,14 @@ public abstract class MysteryBoxLootable implements Lootable {
 
         // Send items to interface
         // Move non-prize items client side if you would like to reduce server load
-        System.out.println("Spin number = " + spinNum);
+       // System.out.println("Spin number = " + spinNum);
 
             for (int i = 0; i < 66; i++) {
                 MysteryBoxRarity notPrizeRarity = MysteryBoxRarity.values()[new Random().nextInt(MysteryBoxRarity.values().length)];
                 GameItem NotPrize = Misc.getRandomItem(getLoot().get(notPrizeRarity.getLootRarity()));
                 final int NOT_PRIZE_ID = NotPrize.getId();
                 sendItem(i, 55, mysteryPrize, mysteryAmount, NOT_PRIZE_ID, NotPrize.getAmount());
-                System.out.println("Sent the first mystery prize  Item: " + mysteryPrize + " amount: " + mysteryAmount);
+                //System.out.println("Sent the first mystery prize  Item: " + mysteryPrize + " amount: " + mysteryAmount);
             }
 
 

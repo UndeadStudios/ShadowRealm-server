@@ -72641,6 +72641,16 @@
       "aspeed": 2
     }
   },
+  "29238": {
+    "name": "Masori blowpipe",
+    "equipable": true,
+    "equipment": {
+      "slot": 3,
+      "arange": 60,
+      "rstr": 40,
+      "aspeed": 5
+    }
+  },
   "29375": {
     "name": "Gnome scarf",
     "equipable": true,
@@ -72660,6 +72670,77 @@
       "str": 132,
       "prayer": 8,
       "aspeed": 6
+    }
+  },
+  "29239": {
+    "name": "Slayer jordans",
+    "equipable": true,
+    "weight": 6.0,
+    "equipment": {
+      "slot": 10,
+      "amagic": -5,
+      "arange": -3,
+      "dstab": 17,
+      "dslash": 18,
+      "dcrush": 19,
+      "drange": 15,
+      "prayer": 1
+    }
+  },
+  "29240": {
+    "name": "Masori Slayer cape",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 1,
+      "astab": 24,
+      "aslash": 24,
+      "acrush": 24,
+      "amagic": 21,
+      "arange": 21,
+      "dstab": 22,
+      "dslash": 22,
+      "dcrush": 22,
+      "dmagic": 22,
+      "drange": 22,
+      "str": 17,
+      "rstr": 17,
+      "mdmg": 17,
+      "prayer": 10
+    }
+  },
+  "29241": {
+    "name": "Masori Slayer gloves",
+    "equipable": true,
+    "weight": 0.2,
+    "equipment": {
+      "slot": 9,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 6,
+      "arange": 12,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 6,
+      "drange": 12,
+      "str": 12
+    }
+  },
+
+  "29242": {
+    "name": "Masori Slayer shield",
+    "equipable": true,
+    "weight": 2.0,
+    "equipment": {
+      "slot": 5,
+      "dstab": 63,
+      "dslash": 65,
+      "dcrush": 75,
+      "dmagic": 2,
+      "drange": 57,
+      "prayer": 3
     }
   }
 }

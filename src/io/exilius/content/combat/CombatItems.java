@@ -203,7 +203,9 @@ public class CombatItems {
 	public boolean usingBlowPipe() {
 		return c.playerEquipment[Player.playerWeapon] == Items.TOXIC_BLOWPIPE;
 	}
-
+	public boolean usingBlowPipe2() {
+		return c.playerEquipment[Player.playerWeapon] == 29238;
+	}
 	public boolean usingTwistedBow() {
 		return c.playerEquipment[Player.playerWeapon] == Items.TWISTED_BOW ||c.playerEquipment[Player.playerWeapon] == 8029;
 	}

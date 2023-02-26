@@ -7,6 +7,7 @@ import io.exilius.content.achievement.AchievementType;
 import io.exilius.content.achievement.Achievements;
 import io.exilius.content.achievement_diary.impl.*;
 import io.exilius.content.bosses.hespori.Hespori;
+import io.exilius.content.bosses.wintertodt.Wintertodt;
 import io.exilius.content.dailytasks.DailyTaskData;
 import io.exilius.content.dailytasks.DailyTaskHandler;
 import io.exilius.content.event.eventcalendar.EventChallenge;
@@ -68,7 +69,7 @@ public class WoodcuttingEvent extends Event<Player> {
             int randomTele2 = Misc.random(2);
             plr.canLeaveHespori = true;
             plr.moveTo(new Position(3072 + randomTele2, 3505 + randomTele2, 0));
-            //attachment.getPA().teleport(3072 + randomTele2, 3505 + randomTele2, 0, "modern",false);
+            //plr.getPA().teleport(3072 + randomTele2, 3505 + randomTele2, 0, "modern",false);
             plr.getItems().addItem(tree.getWood(), 1);
             if ((Configuration.DOUBLE_DROPS_TIMER > 0 || Configuration.DOUBLE_DROPS) && Misc.random(2) == 1) {
                 plr.getItems().addItem(tree.getWood(), 1);
@@ -83,6 +84,22 @@ public class WoodcuttingEvent extends Event<Player> {
                 plr.getPA().addSkillXP(3300, 19, true);
             }
             super.stop();
+            return;
+        }
+        if (tree.equals(Tree.BRUMA_ROOTS)) {
+            if ((SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr)) && plr.getItems().freeSlots() < 2 || plr.getItems().freeSlots() < 1) {
+                plr.sendMessage("You have run out of free inventory space.");
+                super.stop();
+                return;
+            }
+            if (!Wintertodt.started) {
+                plr.sendMessage("There's no need to do that at this time.");
+                super.stop();
+                return;
+            }
+            plr.getItems().addItem(tree.getWood(), SkillcapePerks.WOODCUTTING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 2 : 1);
+            plr.getPA().addSkillXP(plr.playerLevel[Skill.WOODCUTTING.getId()] * 4, 8, true);
+            plr.startAnimation(hatchet.getAnimation());
             return;
         }
         if (Misc.random(tree.getChopdownChance()) == 0 && chops >= Misc.random(chopChance)) {

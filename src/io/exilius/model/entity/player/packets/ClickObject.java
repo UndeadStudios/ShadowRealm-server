@@ -10,6 +10,7 @@ import io.exilius.content.bosses.nex.NexNPC;
 import io.exilius.content.bosses.obor.OborInstance;
 import io.exilius.content.bosses.wildypursuit.FragmentOfSeren;
 import io.exilius.content.bosses.wildypursuit.TheUnbearable;
+import io.exilius.content.bosses.wintertodt.Wintertodt;
 import io.exilius.content.dialogue.DialogueBuilder;
 import io.exilius.content.dialogue.DialogueOption;
 import io.exilius.content.dwarfmulticannon.Cannon;
@@ -75,6 +76,15 @@ public class ClickObject implements PacketType {
                 PathFinder.getPathFinder().findRoute(player, object.getX(), object.getY(), true, 1, 1);
                 player.setTickable((container, plr) -> {
                     if (plr.distance(object.getPosition()) < 2.5) {
+                        finishObjectClick(plr, option, object);
+                        container.stop();
+                    }
+                });
+            }else if (object.getId() == Wintertodt.BROKEN_BRAZIER || object.getId() == Wintertodt.BURNING_BRAZIER || object.getId() == Wintertodt.EMPTY_BRAZIER) {
+                player.objectDistance = 3;
+                PathFinder.getPathFinder().findRoute(player, object.getX(), object.getY(), true, 1, 1);
+                player.setTickable((container, plr) -> {
+                    if (plr.distance(object.getPosition()) < 4) {
                         finishObjectClick(plr, option, object);
                         container.stop();
                     }

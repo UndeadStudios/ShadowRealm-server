@@ -165,7 +165,7 @@ public class WeaponDataConstants {
             //Thrownaxe
             Items.BRONZE_THROWNAXE, Items.IRON_THROWNAXE, Items.STEEL_THROWNAXE, Items.MITHRIL_THROWNAXE, Items.ADAMANT_THROWNAXE, Items.RUNE_THROWNAXE, Items.DRAGON_THROWNAXE, Items.MORRIGANS_THROWING_AXE,
             //Special Thrown
-            Items.TOKTZ_XIL_UL, Items.CHINCHOMPA_2, Items.RED_CHINCHOMPA_2, Items.BLACK_CHINCHOMPA, Items.TOXIC_BLOWPIPE
+            Items.TOKTZ_XIL_UL, Items.CHINCHOMPA_2, Items.RED_CHINCHOMPA_2, Items.BLACK_CHINCHOMPA, Items.TOXIC_BLOWPIPE, 29238
 
     };
 }
