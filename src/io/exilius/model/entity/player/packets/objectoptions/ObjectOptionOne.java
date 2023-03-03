@@ -698,6 +698,10 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(3565, 3289, 0);
 					return;
 				}
+				if(obX == 2975 && obY == 9951){
+					c.getPA().movePlayer(3039, 9950, 0);
+					return;
+				}
 				if(c.getY() > 6400 && (c.heightLevel & 3) == 0) {
 					c.getPA().movePlayer(c.getX(), c.getY()-6400, c.heightLevel);
 					return;
@@ -790,6 +794,10 @@ static int fourthFloorsos[][] = {
 					c.getPA().movePlayer(3412, 3540, 1);
 					return;
 				}
+				if(obX == 3039 && obY == 9951){
+				    c.getPA().movePlayer(2975, 9950, 0);
+				    return;
+                }
 				if(obX == 3058 && obY == 3376) { // Dwarf mine stairs
 					c.getPA().movePlayer(c.getX()-3, c.getY()+6400, c.heightLevel);
 					return;
@@ -844,6 +852,13 @@ static int fourthFloorsos[][] = {
 		}
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
 		switch (objectType) {
+			case 31892:
+				if(obX == 3013 && obY == 9951){
+					c.getPA().movePlayer(3037, 3382, 0);
+				} else if (obX == 3066 && obY == 9951){
+					c.getPA().movePlayer(3054, 3382, 0);
+				}
+				break;
 			case 21311:
 				if(c.getX() == 2314 && c.getY() == 3848){
 					c.getPA().walkTo(0, -9);

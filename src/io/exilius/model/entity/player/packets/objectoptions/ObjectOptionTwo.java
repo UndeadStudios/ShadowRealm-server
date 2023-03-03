@@ -102,13 +102,24 @@ public class ObjectOptionTwo {
                     c.getPA().movePlayer(3104, 3161, 2);
                     return;
                 }
-                c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
-                return;
+				if(c.getY() > 6400) {
+
+					c.getPA().movePlayer(c.getX(), c.getY() - 6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer( c.absX, c.absY, c.heightLevel + 1);
+					return;
+				}
 
             }
             if(def.actions[1].equals("Climb-down")) {
-                c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
-                return;
+				if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getX()+6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+					return;
+				}
             }
         }
 		if (c.getRights().isOrInherits(Right.OWNER) && c.debugMessage)

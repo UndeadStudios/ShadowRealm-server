@@ -72,8 +72,14 @@ public class ObjectOptionThree {
 		}
 		if((def!=null ? def.name : null)!= null && def.name.toLowerCase().equals("staircase")) {
 			if(def.actions[2].equals("Climb-up")) {
-				c.getPA().movePlayer(c.absX, c.absY, c.heightLevel+1);
-				return;
+				if(c.getY() > 6400) {
+
+					c.getPA().movePlayer(c.getX(), c.getY() - 6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer( c.absX, c.absY, c.heightLevel + 1);
+					return;
+				}
 
 			}
 			if(def.actions[2].equals("Climb-down")) {
@@ -81,8 +87,21 @@ public class ObjectOptionThree {
 					c.getPA().movePlayer(3104, 3161, 0);
 					return;
 				}
-				c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
-				return;
+				if(obX == 3053 && obY == 3383){
+					c.getPA().movePlayer(3065, 9951, 0);
+					return;
+				}
+				if(obX == 3037 && obY == 3383){
+					c.getPA().movePlayer(3014, 9951, 0);
+					return;
+				}
+				if(c.getX() < 6400 && (c.heightLevel & 3) == 0) {
+					c.getPA().movePlayer(c.getX(), c.getX()+6400, c.heightLevel);
+					return;
+				} else {
+					c.getPA().movePlayer(c.absX, c.absY, c.heightLevel-1);
+					return;
+				}
 			}
 		}
 		GlobalObject object = new GlobalObject(objectType, obX, obY, c.heightLevel);

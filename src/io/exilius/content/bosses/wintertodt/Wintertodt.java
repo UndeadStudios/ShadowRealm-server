@@ -91,7 +91,7 @@ public class Wintertodt {
 
     public static void pulse() {
         if (!started && end < System.currentTimeMillis() && delayRequired) {
-            end = (System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(1));
+            end = (System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(20));
             delayRequired = false;
             System.out.println("Event delayed by 20 minutes!");
             removeGameObjects();

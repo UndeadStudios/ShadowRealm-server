@@ -30,7 +30,7 @@ public class NpcWikiDumper {
      * npcNames.txt
      */
 
-    public static String RSWIKI_URL = "https://oldschoolrunescape.fandom.com/wiki/Old_School_RuneScape_Wiki";
+    public static String RSWIKI_URL = "https://oldschool.runescape.wiki/w/Bestiary";
 
     //public static HashMap<Integer, String> npcs = new HashMap<>();
     public static ArrayList<NpcCombatDefinition> statsList = new ArrayList<>();
@@ -38,7 +38,7 @@ public class NpcWikiDumper {
 
     public static void main(String[] args) {
         NpcWikiDumper.loadNpcList();
-        //dumpNpcCache();
+        dumpNpcCache();
         dumpStats();
     }
 
@@ -87,7 +87,7 @@ public class NpcWikiDumper {
         name = formatNameForWiki(name);
         String filePath = "./data/cfg/wiki/npcs/cached/" + fileName;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath + ".html"))) {
-            Document page = Jsoup.connect("https://oldschool.runescape.wiki/" + name).get();
+            Document page = Jsoup.connect("https://oldschool.runescape.wiki/w/" + name).get();
             writer.write(page.html());
             System.out.println("Cached NPC: " + npcId + " - " + name);
             return true;
@@ -106,7 +106,7 @@ public class NpcWikiDumper {
             }
 
             Document page = Jsoup.parse(file, "UTF-8");
-           // Document page = Jsoup.connect("http://oldschool.runescape.wiki/w/" + name).get();
+             //Document page = Jsoup.connect("http://oldschool.runescape.wiki/w/" + name).get();
 
             Elements infoTable = page.select(".infobox-monster");
 
@@ -251,7 +251,7 @@ public class NpcWikiDumper {
     }
 
     public static void saveNpcStats() {
-        Path path = Paths.get("./data/cfg/npc/", "npc_combat_defs.json");
+        Path path = Paths.get("./etc/cfg/npc/", "npc_combat_defs2.json");
         File file = path.toFile();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
 
@@ -270,7 +270,7 @@ public class NpcWikiDumper {
                 object.addProperty("isImmuneToCannons", stats.isImmuneToCannons());
                 object.addProperty("isImmuneToThralls", stats.isImmuneToThralls());
                 object.add("levels", builder.toJsonTree(stats.getLevels()));
-                object.add("aggressiveBonuses", builder.toJsonTree(stats.getAttackBonuses()));
+                object.add("attackBonuses", builder.toJsonTree(stats.getAttackBonuses()));
                 object.add("defensiveBonuses", builder.toJsonTree(stats.getDefenceBonuses()));
                 writer.write(builder.toJson(object) + ",");
                 writer.newLine();

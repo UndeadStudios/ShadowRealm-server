@@ -9,6 +9,42 @@
     "walkingType": "WALK"
   },
   {
+    "id": 12136,
+    "position": {
+      "x": 3036,
+      "y": 9953,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
+    "id": 8001,
+    "position": {
+      "x": 3035,
+      "y": 9937,
+      "height": 0
+    },
+    "walkingType": "FACE_EAST"
+  },
+  {
+    "id": 8002,
+    "position": {
+      "x": 3035,
+      "y": 9941,
+      "height": 0
+    },
+    "walkingType": "FACE_EAST"
+  },
+  {
+    "id": 7775,
+    "position": {
+      "x": 3036,
+      "y": 9939,
+      "height": 0
+    },
+    "walkingType": "FACE_EAST"
+  },
+  {
     "id": 8193,
     "position": {
       "x": 3078,

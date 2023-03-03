@@ -13179,7 +13179,7 @@
     "size": 1
   },
   "2668": {
-    "name": "\u003ccol\u003d00ffff\u003eCombat dummy\u003c/col\u003e",
+    "name": "Combat dummy",
     "combatLevel": 0,
     "size": 1
   },
@@ -15257,7 +15257,7 @@
     "size": 1
   },
   "3086": {
-    "name": "\u003ccol\u003d00ffff\u003ePortal\u003c/col\u003e",
+    "name": "Portal",
     "combatLevel": 0,
     "size": 1
   },
@@ -15266,7 +15266,7 @@
     "size": 1
   },
   "3088": {
-    "name": "\u003ccol\u003d00efef\u003ePortal\u003c/col\u003e",
+    "name": "\u003ccol\u003d00efef\u003ePortal",
     "combatLevel": 0,
     "size": 1
   },
@@ -20718,7 +20718,7 @@
     "size": 1
   },
   "4187": {
-    "name": "\u003ccol\u003dff9040\u003eOddskull\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003eOddskull",
     "combatLevel": 0,
     "size": 1
   },
@@ -22465,7 +22465,7 @@
     "size": 1
   },
   "4543": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 2
   },
@@ -29229,7 +29229,7 @@
     "size": 2
   },
   "5915": {
-    "name": "\u003ccol\u003d00ffff\u003eVent\u003c/col\u003e",
+    "name": "Vent",
     "combatLevel": 0,
     "size": 2
   },
@@ -29567,7 +29567,7 @@
     "size": 2
   },
   "5983": {
-    "name": "\u003ccol\u003dff9040\u003ePet rock\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003ePet rock",
     "combatLevel": 0,
     "size": 1
   },
@@ -31866,12 +31866,12 @@
     "size": 1
   },
   "6479": {
-    "name": "\u003ccol\u003d00ffff\u003eEye\u003c/col\u003e",
+    "name": "Eye",
     "combatLevel": 0,
     "size": 1
   },
   "6480": {
-    "name": "\u003ccol\u003d00ffff\u003eEye\u003c/col\u003e",
+    "name": "Eye",
     "combatLevel": 0,
     "size": 1
   },
@@ -32252,7 +32252,7 @@
     "size": 1
   },
   "6564": {
-    "name": "\u003ccol\u003dff9040\u003ePay-dirt\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003ePay-dirt",
     "combatLevel": 0,
     "size": 1
   },
@@ -32403,7 +32403,7 @@
     "size": 2
   },
   "6595": {
-    "name": "\u003ccol\u003d00ffff\u003eEnt trunk\u003c/col\u003e",
+    "name": "Ent trunk",
     "combatLevel": 0,
     "size": 2
   },
@@ -32433,7 +32433,7 @@
     "size": 1
   },
   "6601": {
-    "name": "\u003ccol\u003d00ffff\u003eRocks\u003c/col\u003e",
+    "name": "Rocks",
     "combatLevel": 0,
     "size": 1
   },
@@ -32533,7 +32533,7 @@
     "size": 1
   },
   "6621": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 2
   },
@@ -33295,7 +33295,7 @@
     "size": 1
   },
   "6777": {
-    "name": "\u003ccol\u003dff9040\u003eMaze Guardian\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003eMaze Guardian",
     "combatLevel": 0,
     "size": 1
   },
@@ -34012,12 +34012,12 @@
     "size": 1
   },
   "6924": {
-    "name": "\u003ccol\u003d00ffff\u003ePlough\u003c/col\u003e",
+    "name": "Plough",
     "combatLevel": 0,
     "size": 3
   },
   "6925": {
-    "name": "\u003ccol\u003d00ffff\u003ePlough\u003c/col\u003e",
+    "name": "Plough",
     "combatLevel": 0,
     "size": 3
   },
@@ -34761,7 +34761,7 @@
     "size": 1
   },
   "7074": {
-    "name": "\u003ccol\u003dff9040\u003eBlasted ore\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003eBlasted ore",
     "combatLevel": 0,
     "size": 1
   },
@@ -36890,7 +36890,7 @@
     "size": 3
   },
   "7514": {
-    "name": "\u003ccol\u003dff9040\u003eEnergy ball\u003c/col\u003e",
+    "name": "\u003ccol\u003dff9040\u003eEnergy ball",
     "combatLevel": 0,
     "size": 1
   },
@@ -36985,7 +36985,7 @@
     "size": 5
   },
   "7533": {
-    "name": "\u003ccol\u003d00ffff\u003eAbyssal portal\u003c/col\u003e",
+    "name": "Abyssal portal",
     "combatLevel": 0,
     "size": 4
   },
@@ -37107,7 +37107,7 @@
     "size": 5
   },
   "7558": {
-    "name": "\u003ccol\u003d00ffff\u003eFire\u003c/col\u003e",
+    "name": "Fire",
     "combatLevel": 0,
     "size": 1
   },
@@ -37137,12 +37137,12 @@
     "size": 5
   },
   "7564": {
-    "name": "\u003ccol\u003d00ffff\u003eMeat tree\u003c/col\u003e",
+    "name": "Meat tree",
     "combatLevel": 0,
     "size": 2
   },
   "7565": {
-    "name": "\u003ccol\u003d00ffff\u003eRocks\u003c/col\u003e",
+    "name": "Rocks",
     "combatLevel": 0,
     "size": 5
   },
@@ -37157,27 +37157,27 @@
     "size": 5
   },
   "7568": {
-    "name": "\u003ccol\u003d00ffff\u003eGlowing crystal\u003c/col\u003e",
+    "name": "Glowing crystal",
     "combatLevel": 0,
     "size": 4
   },
   "7569": {
-    "name": "\u003ccol\u003d00ffff\u003eGuardian\u003c/col\u003e",
+    "name": "Guardian",
     "combatLevel": 0,
     "size": 2
   },
   "7570": {
-    "name": "\u003ccol\u003d00ffff\u003eGuardian\u003c/col\u003e",
+    "name": "Guardian",
     "combatLevel": 0,
     "size": 2
   },
   "7571": {
-    "name": "\u003ccol\u003d00ffff\u003eGuardian\u003c/col\u003e",
+    "name": "Guardian",
     "combatLevel": 0,
     "size": 2
   },
   "7572": {
-    "name": "\u003ccol\u003d00ffff\u003eGuardian\u003c/col\u003e",
+    "name": "Guardian",
     "combatLevel": 0,
     "size": 2
   },
@@ -37306,7 +37306,7 @@
     "size": 1
   },
   "7598": {
-    "name": "\u003ccol\u003d00ffff\u003eStrange Device\u003c/col\u003e",
+    "name": "Strange Device",
     "combatLevel": 0,
     "size": 2
   },
@@ -37511,12 +37511,12 @@
     "size": 1
   },
   "7640": {
-    "name": "\u003ccol\u003d00ffff\u003eMirror\u003c/col\u003e",
+    "name": "Mirror",
     "combatLevel": 0,
     "size": 1
   },
   "7641": {
-    "name": "\u003ccol\u003d00ffff\u003eMirror\u003c/col\u003e",
+    "name": "Mirror",
     "combatLevel": 0,
     "size": 1
   },
@@ -37845,7 +37845,7 @@
     "size": 7
   },
   "7707": {
-    "name": "\u003ccol\u003d00ffff\u003eAncestral Glyph\u003c/col\u003e",
+    "name": "Ancestral Glyph",
     "combatLevel": 0,
     "size": 3
   },
@@ -37855,12 +37855,12 @@
     "size": 1
   },
   "7709": {
-    "name": "\u003ccol\u003d00ffff\u003eRocky support\u003c/col\u003e",
+    "name": "Rocky support",
     "combatLevel": 1,
     "size": 3
   },
   "7710": {
-    "name": "\u003ccol\u003d00ffff\u003eRocky support\u003c/col\u003e",
+    "name": "Rocky support",
     "combatLevel": 0,
     "size": 3
   },
@@ -37920,7 +37920,7 @@
     "size": 1
   },
   "7722": {
-    "name": "\u003ccol\u003d00ffff\u003eRocks\u003c/col\u003e",
+    "name": "Rocks",
     "combatLevel": 0,
     "size": 1
   },
@@ -38343,52 +38343,52 @@
     "size": 1
   },
   "7807": {
-    "name": "\u003ccol\u003d00ffff\u003eGiant boulder\u003c/col\u003e",
+    "name": "Giant boulder",
     "combatLevel": 0,
     "size": 8
   },
   "7808": {
-    "name": "\u003ccol\u003d00ffff\u003eGiant boulder\u003c/col\u003e",
+    "name": "Giant boulder",
     "combatLevel": 0,
     "size": 8
   },
   "7809": {
-    "name": "\u003ccol\u003d00ffff\u003eGiant boulder\u003c/col\u003e",
+    "name": "Giant boulder",
     "combatLevel": 0,
     "size": 8
   },
   "7810": {
-    "name": "\u003ccol\u003d00ffff\u003eLarge boulder\u003c/col\u003e",
+    "name": "Large boulder",
     "combatLevel": 0,
     "size": 6
   },
   "7811": {
-    "name": "\u003ccol\u003d00ffff\u003eLarge boulder\u003c/col\u003e",
+    "name": "Large boulder",
     "combatLevel": 0,
     "size": 6
   },
   "7812": {
-    "name": "\u003ccol\u003d00ffff\u003eMedium boulder\u003c/col\u003e",
+    "name": "Medium boulder",
     "combatLevel": 0,
     "size": 4
   },
   "7813": {
-    "name": "\u003ccol\u003d00ffff\u003eMedium boulder\u003c/col\u003e",
+    "name": "Medium boulder",
     "combatLevel": 0,
     "size": 4
   },
   "7814": {
-    "name": "\u003ccol\u003d00ffff\u003eSmall boulder\u003c/col\u003e",
+    "name": "Small boulder",
     "combatLevel": 0,
     "size": 2
   },
   "7815": {
-    "name": "\u003ccol\u003d00ffff\u003eSmall boulder\u003c/col\u003e",
+    "name": "Small boulder",
     "combatLevel": 0,
     "size": 2
   },
   "7816": {
-    "name": "\u003ccol\u003d00ffff\u003eSmall boulder\u003c/col\u003e",
+    "name": "Small boulder",
     "combatLevel": 0,
     "size": 1
   },
@@ -39745,7 +39745,7 @@
     "size": 7
   },
   "8099": {
-    "name": "\u003ccol\u003d00ffff\u003eTsunami\u003c/col\u003e",
+    "name": "Tsunami",
     "combatLevel": 0,
     "size": 1
   },
@@ -39957,17 +39957,17 @@
     "size": 1
   },
   "8142": {
-    "name": "\u003ccol\u003d00ffff\u003eStrange Egg\u003c/col\u003e",
+    "name": "Strange Egg",
     "combatLevel": 0,
     "size": 3
   },
   "8143": {
-    "name": "\u003ccol\u003d00ffff\u003eDragon head\u003c/col\u003e",
+    "name": "Dragon head",
     "combatLevel": 0,
     "size": 1
   },
   "8144": {
-    "name": "\u003ccol\u003d00ffff\u003eDragon head\u003c/col\u003e",
+    "name": "Dragon head",
     "combatLevel": 0,
     "size": 1
   },
@@ -40187,7 +40187,7 @@
     "size": 1
   },
   "8188": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 3
   },
@@ -41108,22 +41108,22 @@
     "size": 3
   },
   "8376": {
-    "name": "\u003ccol\u003d00ffff\u003eWeb\u003c/col\u003e",
+    "name": "Web",
     "combatLevel": 0,
     "size": 1
   },
   "8377": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "8378": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "8379": {
-    "name": "\u003ccol\u003d00ffff\u003eSupporting Pillar\u003c/col\u003e",
+    "name": "Supporting Pillar",
     "combatLevel": 0,
     "size": 3
   },
@@ -42108,7 +42108,7 @@
     "size": 1
   },
   "8585": {
-    "name": "\u003ccol\u003d00ffff\u003eFlower\u003c/col\u003e",
+    "name": "Flower",
     "combatLevel": 0,
     "size": 1
   },
@@ -43625,12 +43625,12 @@
     "size": 1
   },
   "8901": {
-    "name": "\u003ccol\u003d00ffff\u003eTree\u003c/col\u003e",
+    "name": "Tree",
     "combatLevel": 0,
     "size": 1
   },
   "8902": {
-    "name": "\u003ccol\u003d00ffff\u003eTree\u003c/col\u003e",
+    "name": "Tree",
     "combatLevel": 0,
     "size": 1
   },
@@ -43871,12 +43871,12 @@
     "size": 1
   },
   "8951": {
-    "name": "\u003ccol\u003d00ffff\u003eBarrier\u003c/col\u003e",
+    "name": "Barrier",
     "combatLevel": 0,
     "size": 2
   },
   "8952": {
-    "name": "\u003ccol\u003d00ffff\u003eBarrier\u003c/col\u003e",
+    "name": "Barrier",
     "combatLevel": 0,
     "size": 2
   },
@@ -46221,62 +46221,62 @@
     "size": 5
   },
   "9434": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9435": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9436": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9437": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9438": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9439": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9440": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9441": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9442": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9443": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9444": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
   "9445": {
-    "name": "\u003ccol\u003d00ffff\u003eTotem\u003c/col\u003e",
+    "name": "Totem",
     "combatLevel": 0,
     "size": 3
   },
@@ -50752,7 +50752,7 @@
     "size": 1
   },
   "10460": {
-    "name": "\u003ccol\u003d00ffff\u003eJack-o\u0027-Lantern\u003c/col\u003e",
+    "name": "Jack-o'-Lantern",
     "combatLevel": 0,
     "size": 1
   },
@@ -50985,32 +50985,32 @@
     "size": 3
   },
   "10507": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate undead combat dummy\u003c/col\u003e",
+    "name": "Ornate undead combat dummy",
     "combatLevel": 0,
     "size": 1
   },
   "10508": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate wilderness combat dummy\u003c/col\u003e",
+    "name": "Ornate wilderness combat dummy",
     "combatLevel": 0,
     "size": 1
   },
   "10509": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate kalphite combat dummy\u003c/col\u003e",
+    "name": "Ornate kalphite combat dummy",
     "combatLevel": 0,
     "size": 1
   },
   "10510": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate kurask combat dummy\u003c/col\u003e",
+    "name": "Ornate kurask combat dummy",
     "combatLevel": 0,
     "size": 1
   },
   "10511": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate undead combat dummy\u003c/col\u003e",
+    "name": "Ornate undead combat dummy",
     "combatLevel": 0,
     "size": 1
   },
   "10512": {
-    "name": "\u003ccol\u003d00ffff\u003eOrnate undead combat dummy\u003c/col\u003e",
+    "name": "Ornate undead combat dummy",
     "combatLevel": 0,
     "size": 1
   },
@@ -51144,12 +51144,12 @@
     "size": 1
   },
   "10539": {
-    "name": "\u003ccol\u003d00ffff\u003eBarricade\u003c/col\u003e",
+    "name": "Barricade",
     "combatLevel": 0,
     "size": 1
   },
   "10540": {
-    "name": "\u003ccol\u003d00ffff\u003eBarricade\u003c/col\u003e",
+    "name": "Barricade",
     "combatLevel": 0,
     "size": 1
   },
@@ -51289,12 +51289,12 @@
     "size": 1
   },
   "10570": {
-    "name": "\u003ccol\u003d00ffff\u003eInactive spirit pool\u003c/col\u003e",
+    "name": "Inactive spirit pool",
     "combatLevel": 0,
     "size": 3
   },
   "10571": {
-    "name": "\u003ccol\u003d00ffff\u003eSpirit pool\u003c/col\u003e",
+    "name": "Spirit pool",
     "combatLevel": 0,
     "size": 3
   },
@@ -51318,27 +51318,27 @@
     "size": 9
   },
   "10576": {
-    "name": "\u003ccol\u003d00ffff\u003eAmmunition crate\u003c/col\u003e",
+    "name": "Ammunition crate",
     "combatLevel": 0,
     "size": 1
   },
   "10577": {
-    "name": "\u003ccol\u003d00ffff\u003eAmmunition crate\u003c/col\u003e",
+    "name": "Ammunition crate",
     "combatLevel": 0,
     "size": 1
   },
   "10578": {
-    "name": "\u003ccol\u003d00ffff\u003eAmmunition crate\u003c/col\u003e",
+    "name": "Ammunition crate",
     "combatLevel": 0,
     "size": 1
   },
   "10579": {
-    "name": "\u003ccol\u003d00ffff\u003eAmmunition crate\u003c/col\u003e",
+    "name": "Ammunition crate",
     "combatLevel": 0,
     "size": 1
   },
   "10580": {
-    "name": "\u003ccol\u003d00ffff\u003eLightning cloud\u003c/col\u003e",
+    "name": "Lightning cloud",
     "combatLevel": 0,
     "size": 4
   },
@@ -51574,7 +51574,7 @@
     "size": 1
   },
   "10628": {
-    "name": "\u003ccol\u003d00ffff\u003eShadow\u003c/col\u003e",
+    "name": "Shadow",
     "combatLevel": 0,
     "size": 2
   },
@@ -51750,12 +51750,12 @@
     "size": 2
   },
   "10666": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 2
   },
   "10667": {
-    "name": "\u003ccol\u003d00ffff\u003eFuse\u003c/col\u003e",
+    "name": "Fuse",
     "combatLevel": 0,
     "size": 1
   },
@@ -51870,7 +51870,7 @@
     "size": 2
   },
   "10690": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 2
   },
@@ -51880,7 +51880,7 @@
     "size": 2
   },
   "10692": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 2
   },
@@ -51890,7 +51890,7 @@
     "size": 2
   },
   "10694": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 2
   },
@@ -51900,7 +51900,7 @@
     "size": 2
   },
   "10696": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 2
   },
@@ -52208,27 +52208,27 @@
     "size": 1
   },
   "10761": {
-    "name": "Lil\u0027 Maiden",
+    "name": "Lil' Maiden",
     "combatLevel": 0,
     "size": 1
   },
   "10762": {
-    "name": "Lil\u0027 Bloat",
+    "name": "Lil' Bloat",
     "combatLevel": 0,
     "size": 1
   },
   "10763": {
-    "name": "Lil\u0027 Nylo",
+    "name": "Lil' Nylo",
     "combatLevel": 0,
     "size": 1
   },
   "10764": {
-    "name": "Lil\u0027 Sot",
+    "name": "Lil' Sot",
     "combatLevel": 0,
     "size": 1
   },
   "10765": {
-    "name": "Lil\u0027 Xarp",
+    "name": "Lil' Xarp",
     "combatLevel": 0,
     "size": 1
   },
@@ -52586,22 +52586,22 @@
     "size": 3
   },
   "10837": {
-    "name": "\u003ccol\u003d00ffff\u003eWeb\u003c/col\u003e",
+    "name": "Web",
     "combatLevel": 0,
     "size": 1
   },
   "10838": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "10839": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "10840": {
-    "name": "\u003ccol\u003d00ffff\u003eSupporting Pillar\u003c/col\u003e",
+    "name": "Supporting Pillar",
     "combatLevel": 0,
     "size": 3
   },
@@ -52670,22 +52670,22 @@
     "size": 3
   },
   "10854": {
-    "name": "\u003ccol\u003d00ffff\u003eWeb\u003c/col\u003e",
+    "name": "Web",
     "combatLevel": 0,
     "size": 1
   },
   "10855": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "10856": {
-    "name": "\u003ccol\u003d00ffff\u003eCollapsing Pillar\u003c/col\u003e",
+    "name": "Collapsing Pillar",
     "combatLevel": 0,
     "size": 5
   },
   "10857": {
-    "name": "\u003ccol\u003d00ffff\u003eSupporting Pillar\u003c/col\u003e",
+    "name": "Supporting Pillar",
     "combatLevel": 0,
     "size": 3
   },
@@ -52747,27 +52747,27 @@
     "size": 3
   },
   "10870": {
-    "name": "Lil\u0027 Maiden",
+    "name": "Lil' Maiden",
     "combatLevel": 0,
     "size": 1
   },
   "10871": {
-    "name": "Lil\u0027 Bloat",
+    "name": "Lil' Bloat",
     "combatLevel": 0,
     "size": 1
   },
   "10872": {
-    "name": "Lil\u0027 Nylo",
+    "name": "Lil' Nylo",
     "combatLevel": 0,
     "size": 1
   },
   "10873": {
-    "name": "Lil\u0027 Sot",
+    "name": "Lil' Sot",
     "combatLevel": 0,
     "size": 1
   },
   "10874": {
-    "name": "Lil\u0027 Xarp",
+    "name": "Lil' Xarp",
     "combatLevel": 0,
     "size": 1
   },
@@ -53082,7 +53082,7 @@
     "size": 4
   },
   "10939": {
-    "name": "\u003ccol\u003d00ffff\u003eFire Wave\u003c/col\u003e",
+    "name": "Fire Wave",
     "combatLevel": 0,
     "size": 1
   },
@@ -53117,7 +53117,7 @@
     "size": 1
   },
   "10946": {
-    "name": "\u003ccol\u003d00ffff\u003eCouncillor Orson\u003c/col\u003e",
+    "name": "Councillor Orson",
     "combatLevel": 0,
     "size": 2
   },
@@ -53526,22 +53526,22 @@
     "size": 1
   },
   "11028": {
-    "name": "\u003ccol\u003d00ffff\u003eIce chunks\u003c/col\u003e",
+    "name": "Ice chunks",
     "combatLevel": 0,
     "size": 1
   },
   "11029": {
-    "name": "\u003ccol\u003d00ffff\u003eIce chunks\u003c/col\u003e",
+    "name": "Ice chunks",
     "combatLevel": 0,
     "size": 1
   },
   "11030": {
-    "name": "\u003ccol\u003d00ffff\u003eIce chunks\u003c/col\u003e",
+    "name": "Ice chunks",
     "combatLevel": 0,
     "size": 1
   },
   "11031": {
-    "name": "\u003ccol\u003d00ffff\u003eIce chunks\u003c/col\u003e",
+    "name": "Ice chunks",
     "combatLevel": 0,
     "size": 1
   },
@@ -53581,7 +53581,7 @@
     "size": 1
   },
   "11039": {
-    "name": "Kaht B\u0027alam",
+    "name": "Kaht B'alam",
     "combatLevel": 0,
     "size": 2
   },
@@ -54112,17 +54112,17 @@
     "size": 1
   },
   "11153": {
-    "name": "Phosani\u0027s Nightmare",
+    "name": "Phosani's Nightmare",
     "combatLevel": 1024,
     "size": 5
   },
   "11154": {
-    "name": "Phosani\u0027s Nightmare",
+    "name": "Phosani's Nightmare",
     "combatLevel": 1024,
     "size": 5
   },
   "11155": {
-    "name": "Phosani\u0027s Nightmare",
+    "name": "Phosani's Nightmare",
     "combatLevel": 1024,
     "size": 5
   },
@@ -54311,7 +54311,7 @@
     "size": 1
   },
   "11194": {
-    "name": "\u003ccol\u003d00ffff\u003eFlower\u003c/col\u003e",
+    "name": "Flower",
     "combatLevel": 0,
     "size": 1
   },
@@ -55716,7 +55716,7 @@
     "size": 1
   },
   "11485": {
-    "name": "\u003ccol\u003d00ffff\u003eShadow Rift\u003c/col\u003e",
+    "name": "Shadow Rift",
     "combatLevel": 0,
     "size": 1
   },
@@ -56505,12 +56505,12 @@
     "size": 1
   },
   "11652": {
-    "name": "Tumeken\u0027s Guardian",
+    "name": "Tumeken's Guardian",
     "combatLevel": 0,
     "size": 1
   },
   "11653": {
-    "name": "Elidinis\u0027 Guardian",
+    "name": "Elidinis' Guardian",
     "combatLevel": 0,
     "size": 1
   },
@@ -56733,37 +56733,37 @@
     "size": 1
   },
   "11698": {
-    "name": "\u003ccol\u003d00ffff\u003eObelisk\u003c/col\u003e",
+    "name": "Obelisk",
     "combatLevel": 0,
     "size": 1
   },
   "11699": {
-    "name": "\u003ccol\u003d00ffff\u003eObelisk\u003c/col\u003e",
+    "name": "Obelisk",
     "combatLevel": 0,
     "size": 1
   },
   "11700": {
-    "name": "\u003ccol\u003d00ffff\u003ePalm of Resourcefulness\u003c/col\u003e",
+    "name": "Palm of Resourcefulness",
     "combatLevel": 0,
     "size": 5
   },
   "11701": {
-    "name": "\u003ccol\u003d00ffff\u003ePalm of Resourcefulness\u003c/col\u003e",
+    "name": "Palm of Resourcefulness",
     "combatLevel": 0,
     "size": 5
   },
   "11702": {
-    "name": "\u003ccol\u003d00ffff\u003ePalm of Resourcefulness\u003c/col\u003e",
+    "name": "Palm of Resourcefulness",
     "combatLevel": 0,
     "size": 5
   },
   "11703": {
-    "name": "\u003ccol\u003d00ffff\u003ePalm of Resourcefulness\u003c/col\u003e",
+    "name": "Palm of Resourcefulness",
     "combatLevel": 0,
     "size": 5
   },
   "11704": {
-    "name": "\u003ccol\u003d00ffff\u003ePalm of Resourcefulness\u003c/col\u003e",
+    "name": "Palm of Resourcefulness",
     "combatLevel": 0,
     "size": 5
   },
@@ -56773,17 +56773,17 @@
     "size": 2
   },
   "11706": {
-    "name": "\u003ccol\u003d00ffff\u003eHet\u0027s Seal (protected)\u003c/col\u003e",
+    "name": "Het's Seal (protected)",
     "combatLevel": 0,
     "size": 3
   },
   "11707": {
-    "name": "\u003ccol\u003d00ffff\u003eHet\u0027s Seal (weakened)\u003c/col\u003e",
+    "name": "Het's Seal (weakened)",
     "combatLevel": 0,
     "size": 3
   },
   "11708": {
-    "name": "\u003ccol\u003d00ffff\u003eOrb of Darkness\u003c/col\u003e",
+    "name": "Orb of Darkness",
     "combatLevel": 0,
     "size": 1
   },
@@ -56883,12 +56883,12 @@
     "size": 1
   },
   "11728": {
-    "name": "\u003ccol\u003d00ffff\u003eEgg\u003c/col\u003e",
+    "name": "Egg",
     "combatLevel": 0,
     "size": 1
   },
   "11729": {
-    "name": "\u003ccol\u003d00ffff\u003eEgg\u003c/col\u003e",
+    "name": "Egg",
     "combatLevel": 0,
     "size": 1
   },
@@ -56898,7 +56898,7 @@
     "size": 9
   },
   "11731": {
-    "name": "Zebak\u0027s Tail",
+    "name": "Zebak's Tail",
     "combatLevel": 0,
     "size": 9
   },
@@ -56913,32 +56913,32 @@
     "size": 9
   },
   "11734": {
-    "name": "Zebak\u0027s Tail",
+    "name": "Zebak's Tail",
     "combatLevel": 0,
     "size": 9
   },
   "11735": {
-    "name": "\u003ccol\u003d00ffff\u003eJug\u003c/col\u003e",
+    "name": "Jug",
     "combatLevel": 0,
     "size": 1
   },
   "11736": {
-    "name": "\u003ccol\u003d00ffff\u003eJug\u003c/col\u003e",
+    "name": "Jug",
     "combatLevel": 0,
     "size": 1
   },
   "11737": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 1
   },
   "11738": {
-    "name": "\u003ccol\u003d00ffff\u003eWave\u003c/col\u003e",
+    "name": "Wave",
     "combatLevel": 0,
     "size": 1
   },
   "11739": {
-    "name": "\u003ccol\u003d00ffff\u003eBloody Wave\u003c/col\u003e",
+    "name": "Bloody Wave",
     "combatLevel": 0,
     "size": 1
   },
@@ -56971,97 +56971,97 @@
     "size": 3
   },
   "11746": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11747": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11748": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11749": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11750": {
-    "name": "\u003ccol\u003d00ffff\u003eObelisk\u003c/col\u003e",
+    "name": "Obelisk",
     "combatLevel": 0,
     "size": 3
   },
   "11751": {
-    "name": "\u003ccol\u003d00ffff\u003eObelisk\u003c/col\u003e",
+    "name": "Obelisk",
     "combatLevel": 0,
     "size": 3
   },
   "11752": {
-    "name": "\u003ccol\u003d00ffff\u003eObelisk\u003c/col\u003e",
+    "name": "Obelisk",
     "combatLevel": 0,
     "size": 3
   },
   "11753": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11754": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11755": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11756": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11757": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11758": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11759": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11760": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 489,
     "size": 5
   },
   "11761": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 544,
     "size": 5
   },
   "11762": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 544,
     "size": 5
   },
   "11763": {
-    "name": "Elidinis\u0027 Warden",
+    "name": "Elidinis' Warden",
     "combatLevel": 544,
     "size": 5
   },
   "11764": {
-    "name": "Tumeken\u0027s Warden",
+    "name": "Tumeken's Warden",
     "combatLevel": 544,
     "size": 5
   },
@@ -57074,12 +57074,12 @@
     "size": 5
   },
   "11767": {
-    "name": "\u003ccol\u003d00ffff\u003ePhantom\u003c/col\u003e",
+    "name": "Phantom",
     "combatLevel": 0,
     "size": 8
   },
   "11768": {
-    "name": "\u003ccol\u003d00ffff\u003ePhantom\u003c/col\u003e",
+    "name": "Phantom",
     "combatLevel": 0,
     "size": 8
   },
@@ -57088,17 +57088,17 @@
     "size": 1
   },
   "11770": {
-    "name": "\u003ccol\u003d00ffff\u003eCore\u003c/col\u003e",
+    "name": "Core",
     "combatLevel": 0,
     "size": 1
   },
   "11771": {
-    "name": "\u003ccol\u003d00ffff\u003eCore\u003c/col\u003e",
+    "name": "Core",
     "combatLevel": 0,
     "size": 1
   },
   "11772": {
-    "name": "\u003ccol\u003d00ffff\u003eEnergy Siphon\u003c/col\u003e",
+    "name": "Energy Siphon",
     "combatLevel": 0,
     "size": 1
   },
@@ -57107,22 +57107,22 @@
     "size": 1
   },
   "11774": {
-    "name": "Zebak\u0027s Phantom",
+    "name": "Zebak's Phantom",
     "combatLevel": 371,
     "size": 5
   },
   "11775": {
-    "name": "Ba-Ba\u0027s Phantom",
+    "name": "Ba-Ba's Phantom",
     "combatLevel": 359,
     "size": 5
   },
   "11776": {
-    "name": "Kephri\u0027s Phantom",
+    "name": "Kephri's Phantom",
     "combatLevel": 341,
     "size": 5
   },
   "11777": {
-    "name": "Akkha\u0027s Phantom",
+    "name": "Akkha's Phantom",
     "combatLevel": 337,
     "size": 5
   },
@@ -57147,32 +57147,32 @@
     "size": 1
   },
   "11782": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 3
   },
   "11783": {
-    "name": "\u003ccol\u003d00ffff\u003eBoulder\u003c/col\u003e",
+    "name": "Boulder",
     "combatLevel": 0,
     "size": 3
   },
   "11784": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 3
   },
   "11785": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 3
   },
   "11786": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 3
   },
   "11787": {
-    "name": "\u003ccol\u003d00ffff\u003eRubble\u003c/col\u003e",
+    "name": "Rubble",
     "combatLevel": 0,
     "size": 3
   },
@@ -57221,42 +57221,42 @@
     "size": 3
   },
   "11797": {
-    "name": "Akkha\u0027s Shadow",
+    "name": "Akkha's Shadow",
     "combatLevel": 108,
     "size": 3
   },
   "11798": {
-    "name": "Akkha\u0027s Shadow",
+    "name": "Akkha's Shadow",
     "combatLevel": 108,
     "size": 3
   },
   "11799": {
-    "name": "Akkha\u0027s Shadow",
+    "name": "Akkha's Shadow",
     "combatLevel": 108,
     "size": 3
   },
   "11800": {
-    "name": "\u003ccol\u003d00ffff\u003eOrb of Lightning\u003c/col\u003e",
+    "name": "Orb of Lightning",
     "combatLevel": 0,
     "size": 1
   },
   "11801": {
-    "name": "\u003ccol\u003d00ffff\u003eOrb of Darkness\u003c/col\u003e",
+    "name": "Orb of Darkness",
     "combatLevel": 0,
     "size": 1
   },
   "11802": {
-    "name": "\u003ccol\u003d00ffff\u003eBurning Orb\u003c/col\u003e",
+    "name": "Burning Orb",
     "combatLevel": 0,
     "size": 1
   },
   "11803": {
-    "name": "\u003ccol\u003d00ffff\u003eFrozen Orb\u003c/col\u003e",
+    "name": "Frozen Orb",
     "combatLevel": 0,
     "size": 1
   },
   "11804": {
-    "name": "\u003ccol\u003d00ffff\u003eUnstable Orb\u003c/col\u003e",
+    "name": "Unstable Orb",
     "combatLevel": 0,
     "size": 1
   },
@@ -57295,12 +57295,12 @@
     "size": 1
   },
   "11812": {
-    "name": "Tumeken\u0027s Guardian",
+    "name": "Tumeken's Guardian",
     "combatLevel": 0,
     "size": 1
   },
   "11813": {
-    "name": "Elidinis\u0027 Guardian",
+    "name": "Elidinis' Guardian",
     "combatLevel": 0,
     "size": 1
   },
@@ -57433,12 +57433,12 @@
     "size": 2
   },
   "11844": {
-    "name": "Tumeken\u0027s Damaged Guardian",
+    "name": "Tumeken's Damaged Guardian",
     "combatLevel": 0,
     "size": 1
   },
   "11845": {
-    "name": "Elidinis\u0027 Damaged Guardian",
+    "name": "Elidinis' Damaged Guardian",
     "combatLevel": 0,
     "size": 1
   },
@@ -57463,12 +57463,12 @@
     "size": 2
   },
   "11850": {
-    "name": "Tumeken\u0027s Damaged Guardian",
+    "name": "Tumeken's Damaged Guardian",
     "combatLevel": 0,
     "size": 1
   },
   "11851": {
-    "name": "Elidinis\u0027 Damaged Guardian",
+    "name": "Elidinis' Damaged Guardian",
     "combatLevel": 0,
     "size": 1
   },

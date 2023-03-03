@@ -1142,6 +1142,16 @@ public class TwoOptions {
 				}
 				break;
 			case 35001:
+				if(c.objectX == 3053 && c.objectY == 3383){
+					c.getPA().movePlayer(3065, 9951, 0);
+					c.getPA().closeAllWindows();
+					return;
+				}
+				if(c.objectX == 3037 && c.objectY == 3383){
+					c.getPA().movePlayer(3014, 9951, 0);
+					c.getPA().closeAllWindows();
+					return;
+				}
 				if(c.getY() < 6400 && (c.heightLevel & 3) == 0) {
 					c.getPA().movePlayer(c.getX(), c.getY()+6400, c.heightLevel);
 					c.getPA().closeAllWindows();
