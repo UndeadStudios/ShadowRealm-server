@@ -82,6 +82,8 @@ import io.exilius.model.lobby.LobbyType;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.multiplayersession.duel.DuelSessionRules.Rule;
+import io.exilius.model.objects.DoubleGates;
+import io.exilius.model.objects.SingleGates;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Location3D;
 import io.exilius.util.Misc;
@@ -851,6 +853,8 @@ static int fourthFloorsos[][] = {
 			return;
 		}
 		Location3D location = new Location3D(obX, obY, c.heightLevel);
+		SingleGates.useSingleGate(c, objectType);
+		DoubleGates.useDoubleGate(c, objectType);
 		switch (objectType) {
 			case 31892:
 				if(obX == 3013 && obY == 9951){

@@ -10,9 +10,7 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.npc.drops.DropManager;
 import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.multiplayersession.MultiplayerSessionListener;
-import io.exilius.model.world.ClanManager;
-import io.exilius.model.world.ItemHandler;
-import io.exilius.model.world.ShopHandler;
+import io.exilius.model.world.*;
 import io.exilius.model.world.event.CyclicEventManager;
 import io.exilius.model.world.objects.GlobalObjects;
 import io.exilius.net.PipelineFactory;
@@ -72,6 +70,8 @@ public class Server {
     private static final MultiplayerSessionListener multiplayerSessionListener = new MultiplayerSessionListener();
     private static final GlobalObjects globalObjects = new GlobalObjects();
     private final CyclicEventManager cyclicEventManager = new CyclicEventManager();
+    public static ObjectManager objectManager = new ObjectManager();
+    public static ObjectHandler objectHandler = new ObjectHandler();
     private static final GameLogging logging = new GameLogging();
     /**
      * ClanChat Added by Valiant
