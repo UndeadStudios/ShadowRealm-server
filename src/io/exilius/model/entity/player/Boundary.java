@@ -228,7 +228,7 @@ public class Boundary {
 			new Boundary(1258, 10162, 1378, 10263, 1),
 			new Boundary(1259, 10177, 1362, 10231, 2)
 	};
-
+public static  final Boundary brithday_room2 = new Boundary(2944, 9920, 3007, 9983);
 	public static final Boundary[] Hosidiuscowpen = {
             new Boundary(1746, 3635, 1757, 3639),
             new Boundary(1758, 3636, 1765, 3639),

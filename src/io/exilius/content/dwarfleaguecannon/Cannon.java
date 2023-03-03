@@ -1,4 +1,4 @@
-package io.exilius.content.dwarfmulticannon;
+package io.exilius.content.dwarfleaguecannon;
 
 import com.google.common.collect.Lists;
 import io.exilius.Server;
@@ -20,27 +20,30 @@ import io.exilius.model.entity.player.Position;
 import io.exilius.model.entity.player.Right;
 import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static io.exilius.content.dwarfmulticannon.CannonConstants.*;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.ALLOWED_REV_AREAS;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.CANNON_PIECES;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.CANNON_SIZE;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.COMPLETE_CANNON_OBJECT_ID;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.MAX_DAMAGE;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.MAX_GRANITE_DAMAGE;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.PLACING_ANIMATION;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.PROHIBITED_CANNON_AREAS;
+import static io.exilius.content.dwarfleaguecannon.CannonConstants.PROJECTILE_ID;
 
+@Slf4j
 public class Cannon {
 
-    private static final Logger logger = LoggerFactory.getLogger(Cannon.class);
-
     private static HashSet<Boundary> BLOCKED_BOUNDARIES = new HashSet<>(Arrays.asList(
-            Boundary.MAGE_ARENA,
-            Boundary.Nex
+            Boundary.MAGE_ARENA
     ));
 
     public static void attemptPlace(Player player) {
         if (Arrays.stream(PROHIBITED_CANNON_AREAS).anyMatch(boundary -> boundary.in(player)) && !Arrays.stream(ALLOWED_REV_AREAS).anyMatch(boundary -> boundary.in(player))) {
-            player.sendMessage("You can't place a cannon in this area.");
-        } else if (Boundary.isIn(player, Boundary.MORT_MYRE_SWAMP)) {
             player.sendMessage("You can't place a cannon in this area.");
         } else if ((player.getInstance() != null || player.getHeight() > 3) && !Boundary.CORPOREAL_BEAST_LAIR.in(player) && !Boundary.CRYSTAL_CAVE_AREA.in(player)) {
             player.sendMessage("You can't place a cannon inside an instance.");
@@ -50,7 +53,7 @@ public class Cannon {
             player.sendMessage("You already have a cannon.");
         } else if (!Arrays.stream(CANNON_PIECES).allMatch(piece -> player.getItems().playerHasItem(piece))) {
             player.sendMessage("Your missing a cannon piece!");
-        } else if (!CannonRepository.hasDistanceFromOtherCannons(player.getPosition())) {
+        } else if (!io.exilius.content.dwarfleaguecannon.CannonRepository.hasDistanceFromOtherCannons(player.getPosition())) {
             player.sendMessage("You can't place your cannon this close to another cannon.");
         } else {
             // Clipping check
@@ -63,31 +66,31 @@ public class Cannon {
             for (int x = player.getPosition().getX(); x < player.getPosition().getX() + 2; x++) {
                 for (int y = player.getPosition().getY(); y < player.getPosition().getY() + 2; y++) {
                     if (player.getRegionProvider().getClipping(x, y, player.getHeight()) != 0
-                        && !player.getRegionProvider().isOccupiedByNpc(x, y, player.getHeight())) {
+                            && !player.getRegionProvider().isOccupiedByNpc(x, y, player.getHeight())) {
                         player.sendMessage("You don't have enough space to place a cannon here.");
                         return;
                     }
                 }
             }
 
-            player.setCannon(new Cannon(player.getPosition()));
-            player.getCannon().place(player);
+            player.setLeagueCannon(new io.exilius.content.dwarfleaguecannon.Cannon(player.getPosition()));
+            player.getLeagueCannon().place(player);
         }
     }
 
     public static boolean clickObject(Player player, int objectId, Position position, int option) {
         if (objectId == COMPLETE_CANNON_OBJECT_ID) {
-            if (!CannonRepository.exists(position)) {
-                logger.error("No cannon exists but is being clicked: " + position);
+            if (!io.exilius.content.dwarfleaguecannon.CannonRepository.exists(position)) {
+                log.error("No cannon exists but is being clicked: " + position);
             }
 
-            if (player.getCannon() != null && player.getCannon().getPosition().equals(position)) {
+            if (player.getLeagueCannon() != null && player.getLeagueCannon().getPosition().equals(position)) {
                 if (option == 1) {
-                    player.getCannon().load(player);
+                    player.getLeagueCannon().load(player);
                 } else if (option == 2) {
-                    player.getCannon().pickup(player, true);
+                    player.getLeagueCannon().pickup(player, true);
                 } else if (option == 3) {
-                    player.getCannon().unload(player);
+                    player.getLeagueCannon().unload(player);
                 }
             } else {
                 player.sendMessage("This isn't your cannon.");
@@ -100,8 +103,8 @@ public class Cannon {
     }
 
     public static boolean clickItem(Player player, int itemId) {
-        if (itemId == Items.CANNON_BASE) {
-            Cannon.attemptPlace(player);
+        if (itemId == 26520) {
+            io.exilius.content.dwarfleaguecannon.Cannon.attemptPlace(player);
             return true;
         }
 
@@ -141,7 +144,7 @@ public class Cannon {
     /**
      * State of the cannon rotation.
      */
-    private CannonRotationState rotationState = CannonRotationState.NORTH;
+    private io.exilius.content.dwarfleaguecannon.CannonRotationState rotationState = io.exilius.content.dwarfleaguecannon.CannonRotationState.NORTH;
 
     public Cannon(Position position) {
         this.position = position;
@@ -163,7 +166,7 @@ public class Cannon {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Cannon cannon = (Cannon) o;
+        io.exilius.content.dwarfleaguecannon.Cannon cannon = (io.exilius.content.dwarfleaguecannon.Cannon) o;
         return identifier == cannon.identifier &&
                 Objects.equals(position, cannon.position);
     }
@@ -174,13 +177,13 @@ public class Cannon {
     }
 
     private void place(Player player) {
-        if (CannonRepository.add(this)) {
+        if (io.exilius.content.dwarfleaguecannon.CannonRepository.add(this)) {
             Arrays.stream(CANNON_PIECES).forEach(piece -> player.getItems().deleteItem(piece, 1));
             player.startAnimation(PLACING_ANIMATION);
             Server.getGlobalObjects().add(getObject());
             load(player);
         } else {
-            player.setCannon(null);
+            player.setLeagueCannon(null);
             player.sendMessage("You can't set a cannon there!");
         }
     }
@@ -263,19 +266,26 @@ public class Cannon {
         CannonRepository.remove(this);
         Server.getGlobalObjects().remove(getObject());
         Server.getGlobalObjects().updateObject(getObject(), -1);
-        player.setCannon(null);
+        player.setLeagueCannon(null);
     }
+
+    private int tickCheck = 1;
 
     public void tick(Player player) {
         if (operating && player.distance(getPosition()) <= 18) {
             rotate();
             shoot(player);
         }
+/*        if (!operating && player.distance(getPosition()) <= 18 && tickCheck <= 0) {
+            Server.playerHandler.sendObjectAnimation(getObject(), 9255);
+            tickCheck = 1;
+        }
+        tickCheck--;*/
     }
 
     private void rotate() {
-        int next = (rotationState.ordinal() + 1) % CannonRotationState.values().length;
-        rotationState = CannonRotationState.values()[next];
+        int next = (rotationState.ordinal() + 1) % io.exilius.content.dwarfleaguecannon.CannonRotationState.values().length;
+        rotationState = io.exilius.content.dwarfleaguecannon.CannonRotationState.values()[next];
         Server.playerHandler.sendObjectAnimation(getObject(), rotationState.getAnimationId());
     }
 
@@ -290,6 +300,9 @@ public class Cannon {
                     }
                     if (npc.getNpcId() == Npcs.CORPOREAL_BEAST) {
                         maxDamage /= 2;
+                    }
+                    if (npc.getNpcId() == 6319) {
+                        maxDamage /= 3;
                     }
                     int damage = Misc.random(maxDamage);
                     player.getPA().addSkillXPMultiplied(damage * 2, Skill.RANGED.getId(), true);
@@ -307,9 +320,13 @@ public class Cannon {
 
                     cannonballsLoaded--;
                     if (cannonballsLoaded == 0) {
-                        break;
+                        break;//TRUE
                     }
                 }
+            } else if (player.itemAssistant.hasItemOnOrInventory(Items.CANNONBALL) && player.amDonated >= 1000 && cannonballsLoaded <= 5 || player.itemAssistant.hasItemOnOrInventory(Items.GRANITE_CANNONBALL) && player.amDonated >= 1000  && cannonballsLoaded <= 5) {
+                load(player);
+            } else if (player.itemAssistant.hasItemOnOrInventory(Items.CANNONBALL) && Misc.random(1,10) == 1 && cannonballsLoaded <= 5 || player.itemAssistant.hasItemOnOrInventory(Items.GRANITE_CANNONBALL) && Misc.random(1,10) == 1 && cannonballsLoaded <= 5) {
+                load(player);
             } else {
                 operating = false;
                 player.sendMessage("Your cannon has run out of ammo.");
@@ -319,13 +336,13 @@ public class Cannon {
 
     public List<NPC> getShootableNpcs(Player player) {
         List<NPC> possibleTargets = Arrays.stream(NPCHandler.npcs).filter(npc -> {
-           return npc != null && !npc.isDead && npc.heightLevel == getPosition().getHeight()
-                   && npc.distance(getPosition()) <= 12
-                   && player.attacking.attackEntityCheck(npc, false)
-                   && PathChecker.raycast(player, npc, true);
+            return npc != null && !npc.isDead && npc.heightLevel == getPosition().getHeight()
+                    && npc.distance(getPosition()) <= 12
+                    && player.attacking.attackEntityCheck(npc, false)
+                    && PathChecker.raycast(player, npc, true);
         }).collect(Collectors.toList());
 
-        int rotationStateIndex = (rotationState.ordinal() + 1) % CannonRotationState.values().length;
+        int rotationStateIndex = (rotationState.ordinal() + 1) % io.exilius.content.dwarfleaguecannon.CannonRotationState.values().length;
         List<NPC> targets = Lists.newArrayList();
         for (NPC local : possibleTargets) {
             int cannonX = getPosition().getX();
@@ -333,7 +350,7 @@ public class Cannon {
             int localX = local.getPosition().getX();
             int localY = local.getPosition().getY();
 
-            switch (CannonRotationState.values()[rotationStateIndex]) {
+            switch (io.exilius.content.dwarfleaguecannon.CannonRotationState.values()[rotationStateIndex]) {
                 case NORTH:
                     if (localY > cannonY && localX >= cannonX - 1 && localX <= cannonX + 1)
                         targets.add(local);
@@ -381,18 +398,16 @@ public class Cannon {
     }
 
     private int getCannonMaxAmmoCount(Player player) {
-            if (player.amDonated >= 2500)
+        if (player.amDonated >= 500)
+            return 100;
+        if (player.amDonated >= 250)
             return 80;
-            if (player.amDonated >= 1000)
-                return 60;
-            if (player.amDonated >= 500)
-                return 50;
-            if (player.amDonated >= 250)
-                return 45;
-            if (player.amDonated >= 100)
-                return 40;
-            if (player.amDonated >= 50)
-                return 35;
+        if (player.amDonated >= 100)
+            return 70;
+        if (player.amDonated >= 50)
+            return 50;
+        if (player.amDonated >= 20)
+            return 40;
         return 30;
     }
 }

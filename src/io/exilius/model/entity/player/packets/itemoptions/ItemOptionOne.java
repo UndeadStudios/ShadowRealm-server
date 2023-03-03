@@ -165,6 +165,9 @@ public class ItemOptionOne implements PacketType {
         if (Cannon.clickItem(c, itemId)) {
             return;
         }
+        if (io.exilius.content.dwarfleaguecannon.Cannon.clickItem(c, itemId)) {
+            return;
+        }
         if (ClaimDonatorScrollDialogue.clickScroll(c, itemId)) {
             return;
         }

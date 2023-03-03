@@ -75498,7 +75498,22 @@
       level: 75
     - skill: "PRAYER"
       level: 75
-
+- id: 26524
+  name: "Cannon barrels (or)"
+  description: "The barrels of the multicannon (or)."
+  shopValue: 100000
+- id: 26520
+  name: "Cannon base (or)"
+  description: "The base of the multicannon (or)."
+  shopValue: 100000
+- id: 26522
+  name: "Cannon stand (or)"
+  description: "The stand of the multicannon (or)."
+  shopValue: 100000
+- id: 26526
+  name: "Cannon barrels (or)"
+  description: "The furnace of the multicannon (or)."
+  shopValue: 100000
 
 
 

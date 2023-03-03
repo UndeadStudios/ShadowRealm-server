@@ -24,7 +24,7 @@ public class NPCCacheDefinition {
     /**
      * Represents the total whole number integer of NPCs.
      */
-    public static int NPC_TOTAL = 11474;
+    public static int NPC_TOTAL = 12140;
     private String opcode112;
     private int[] dialogueModels;
     private boolean onMinimap;

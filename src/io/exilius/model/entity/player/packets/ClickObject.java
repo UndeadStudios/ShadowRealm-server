@@ -223,6 +223,9 @@ public class ClickObject implements PacketType {
                 if (Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 1)) {
                     return;
                 }
+                if (io.exilius.content.dwarfleaguecannon.Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 1)) {
+                    return;
+                }
                 if (OurianaBanker.clickObject(c, c.objectId, option)) {
                     return;
                 }
@@ -1147,6 +1150,9 @@ public class ClickObject implements PacketType {
                 if (Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 2)) {
                     return;
                 }
+                if (io.exilius.content.dwarfleaguecannon.Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 2)) {
+                    return;
+                }
                 if (OurianaBanker.clickObject(c, c.objectId, option)) {
                     return;
                 }
@@ -1222,6 +1228,9 @@ public class ClickObject implements PacketType {
                             + c.objectY + " Xoff: " + (c.getX() - c.objectX) + " Yoff: " + (c.getY() - c.objectY));
                 }
                 if (Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 3)) {
+                    return;
+                }
+                if (io.exilius.content.dwarfleaguecannon.Cannon.clickObject(c, c.objectId, new Position(c.objectX, c.objectY, c.getHeight()), 3)) {
                     return;
                 }
                 c.getFarming().handleObjectClick(c.objectId, c.objectX, c.objectY, 3);

@@ -689,6 +689,7 @@ public class Player extends Entity {
     private final Farming farming = new Farming(this);
     private final DailyRewards dailyRewards = new DailyRewards(this);
     private Cannon cannon;
+    private io.exilius.content.dwarfleaguecannon.Cannon dwarfCannon;
     public final Stopwatch last_trap_layed = new Stopwatch();
     public List<Integer> dropInterfaceSearchList = new ArrayList<>();
     private final QuickPrayers quick = new QuickPrayers();
@@ -1924,6 +1925,9 @@ public class Player extends Entity {
         if (getCannon() != null) {
             getCannon().pickup(this, false);
         }
+        if (getLeagueCannon() != null) {
+            getLeagueCannon().pickup(this, false);
+        }
         if (combatLevel >= 100) {
             if (Highpkarena.getState(this) != null) {
                 Highpkarena.removePlayer(this, true);
@@ -2669,7 +2673,11 @@ public class Player extends Entity {
         if (getCannon() != null) {
             getCannon().tick(this);
         }
-        if (logoutTimer.finished()) {            properLogout = true;
+        if (getLeagueCannon() != null) {
+            getLeagueCannon().tick(this);
+        }
+        if (logoutTimer.finished()) {
+            properLogout = true;
             setDisconnected(true);
             ConnectedFrom.addConnectedFrom(this, connectedFrom);
             logoutTimer.stop();
@@ -5823,7 +5831,12 @@ public MoneyBox getMoneyBoxInterface() {
     public MageArena getMageArena() {
         return mageArena;
     }
-
+    public io.exilius.content.dwarfleaguecannon.Cannon getLeagueCannon() {
+        return dwarfCannon;
+    }
+    public void setLeagueCannon(io.exilius.content.dwarfleaguecannon.Cannon dwarfCannon) {
+        this.dwarfCannon = dwarfCannon;
+    }
     public Cannon getCannon() {
         return cannon;
     }

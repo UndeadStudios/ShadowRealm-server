@@ -224,6 +224,8 @@ public final class Position {
 	public boolean inWild() {
 		if (Boundary.isIn(this, Boundary.BRYOPHYTA_ROOM))
 			return false;
+		if(Boundary.isIn(this, Boundary.brithday_room2))
+			return false;
 		if(Boundary.isIn(this, Boundary.FEROX_ENCLAVE)){
 			return false;
 		}
