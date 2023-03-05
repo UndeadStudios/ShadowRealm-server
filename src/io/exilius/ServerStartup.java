@@ -50,6 +50,8 @@ import io.exilius.model.entity.player.save.PlayerSave;
 import io.exilius.model.entity.player.save.backup.PlayerSaveBackup;
 import io.exilius.model.items.ItemCacheDefinition;
 import io.exilius.model.lobby.LobbyManager;
+import io.exilius.model.objects.Doors;
+import io.exilius.model.objects.DoubleDoors;
 import io.exilius.model.world.GlobalDropsHandler;
 import io.exilius.model.world.ShopHandler;
 import io.exilius.punishments.PunishmentCycleEvent;
@@ -88,6 +90,8 @@ public class ServerStartup {
         ShopHandler.load();
         NpcStats.load();
         ItemStats.load();
+        Doors.getSingleton().load();
+        DoubleDoors.getSingleton().load();
         DiscordIntegration.loadConnectedAccounts();
         NpcDef.load();
         // Npc Combat Definition must be above npc load

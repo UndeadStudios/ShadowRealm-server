@@ -33,7 +33,8 @@ public class RespawnTime {
             case FragmentOfSeren.NPC_ID:
             case TheUnbearable.NPC_ID:
                     return -1;
-
+            case 10435://sourhog
+                return 15;
             case Npcs.SARACHNIS:
                     return 20;
             case 8703:

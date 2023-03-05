@@ -1,6 +1,7 @@
 package io.exilius.model.world;
 
 import io.exilius.Server;
+import io.exilius.model.collisionmap.RegionProvider;
 import io.exilius.model.cycleevent.CycleEvent;
 import io.exilius.model.cycleevent.CycleEventContainer;
 import io.exilius.model.cycleevent.CycleEventHandler;
@@ -9,6 +10,7 @@ import io.exilius.model.entity.player.PlayerHandler;
 import io.exilius.model.objects.DoubleGates;
 import io.exilius.model.objects.Objects;
 import io.exilius.model.objects.Object;
+import io.exilius.model.world.objects.GlobalObject;
 import io.exilius.util.Misc;
 
 import java.util.ArrayList;
@@ -179,8 +181,8 @@ public class ObjectManager {
 					container.stop();
 					return;
 				}
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
+				Server.getGlobalObjects().add(new GlobalObject(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
+				Server.getGlobalObjects().add(new GlobalObject(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
 				container.stop();
 			}
 
@@ -201,9 +203,14 @@ public class ObjectManager {
 					container.stop();
 					return;
 				}
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(-1, oldObjectX2, oldObjectY2, objectH, face, 0, 0));
-				Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
+				Server.getGlobalObjects().add(new GlobalObject(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
+				RegionProvider.getGlobal().get(newObjectX, newObjectY).removeWorldObject(new GlobalObject(-1, oldObjectX, oldObjectY, objectH, face, 0, 0));
+				RegionProvider.getGlobal().get(oldObjectX, oldObjectY).setClipToZero(oldObjectX, oldObjectY, objectH);
+				RegionProvider.getGlobal().get(oldObjectX, oldObjectY).setClipToZero(oldObjectX, oldObjectY, objectH);
+				Server.getGlobalObjects().add(new GlobalObject(-1, oldObjectX2, oldObjectY2, objectH, face, 0, 0));
+				RegionProvider.getGlobal().get(oldObjectX2, oldObjectY2).setClipToZero(oldObjectX2, oldObjectY2, objectH);
+				Server.getGlobalObjects().add(new GlobalObject(objectId, newObjectX, newObjectY, objectH, face, 0, 0));
+				RegionProvider.getGlobal().get(newObjectX, newObjectY).addWorldObject(objectId, newObjectX, newObjectY, objectH, 0, face);
 				container.stop();
 			}
 

@@ -3,8 +3,10 @@ package io.exilius.model.objects;
 
 import io.exilius.Server;
 import io.exilius.model.collisionmap.ObjectDef;
+import io.exilius.model.collisionmap.RegionProvider;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.world.ObjectManager;
+import io.exilius.model.world.objects.GlobalObject;
 
 public class GateHandler {
 public static int gateAmount = 0, gateTicks = 100;
@@ -14,7 +16,7 @@ public static boolean isGate(int objectId) {
 	return objectName.equalsIgnoreCase("gate") || objectName.equalsIgnoreCase("Gate");
 }
 public static void spawnGate(Player player, int objectId, int newObjectX, int newObjectY, int height, int face) {
-	Server.objectHandler.placeObject(new Objects(objectId, newObjectX, newObjectY, height, face, 0, 0));
+	Server.getGlobalObjects().add(new GlobalObject(objectId, newObjectX, newObjectY, height, face, 0, 0));
 }
 public static void openSingleGate(Player player, int objectId, int x1, int y1, int x2, int y2, int walkX, int walkY, int face1, int face2) {
 	if (isGate(objectId) && gateAmount == 0) {
@@ -30,13 +32,13 @@ private static void openDoubleGate(Player player, int objectId, int objectId2, i
 	if (isGate(objectId) && isGate(objectId2) && gateAmount == 0) {
 		spawnGate(player, -1, x3, y3, player.heightLevel, 0);
 		spawnGate(player,-1, x4, y4, player.heightLevel, 0);
-		////Region.removeObject(objectId, x3, y3, player.heightLevel, 0, 0);
-		//Region.removeObject(objectId2, x4, y4, player.heightLevel, 0, 0);
+		RegionProvider.getGlobal().get(x3, y3).setClipToZero(x3, y3, player.heightLevel);
+		RegionProvider.getGlobal().get(x4, y4).setClipToZero(x4, y4, player.heightLevel);
 		spawnGate(player, objectId, x1, y1, player.heightLevel, face1);
-	//	Region.addObject(objectId, x1, y1, player.heightLevel, 0, face1);
+		RegionProvider.getGlobal().get(x1, y1).addWorldObject(objectId, x1, y1, player.heightLevel, 0, face1);
 		gateAmount = 1;
 		spawnGate(player, objectId2, x2, y2, player.heightLevel, face1);
-		//Region.addObject(objectId2, x2, y2, player.heightLevel, 0, face1);
+		RegionProvider.getGlobal().get(x2, y2).addWorldObject(objectId2, x2, y2, player.heightLevel, 0, face2);
 		gateAmount = 2;
 		ObjectManager.doubleGateTicks(player, objectId, x3, y3, x1, y1, x2, y2, player.heightLevel, face2, gateTicks);
 		ObjectManager.doubleGateTicks(player, objectId2, x4, y4, x1, y1, x2, y2, player.heightLevel, face2, gateTicks);

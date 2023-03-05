@@ -115,6 +115,20 @@ public class LoadSpell {
                     }
                 }
                 break;
+            case 10435://sourhog
+                chance = Misc.random(10);
+                if (chance > 1 && chance < 9) {
+                    npc.setAttackType(CombatType.MELEE);
+                    npc.hitDelayTimer = 5;
+                    npc.endGfx = -1;
+                    npc.projectileId = -1;
+                } else {
+                    npc.setAttackType(CombatType.RANGE);
+                    npc.hitDelayTimer = 5;
+                    npc.projectileId = 1817;
+                    npc.endGfx = -1;
+                }
+                break;
             case 8028:
                 if (npc.getAttackType() != null) {
                     switch (npc.getAttackType()) {

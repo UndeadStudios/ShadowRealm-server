@@ -82,6 +82,7 @@ import io.exilius.model.lobby.LobbyType;
 import io.exilius.model.multiplayersession.MultiplayerSessionType;
 import io.exilius.model.multiplayersession.duel.DuelSession;
 import io.exilius.model.multiplayersession.duel.DuelSessionRules.Rule;
+import io.exilius.model.objects.Doors;
 import io.exilius.model.objects.DoubleGates;
 import io.exilius.model.objects.SingleGates;
 import io.exilius.model.world.objects.GlobalObject;
@@ -842,10 +843,9 @@ static int fourthFloorsos[][] = {
 		Runecrafting.execute(c, objectType);
 		Server.castleWars.handleObjects(c, objectType, obX, obY);
 
-		DoorDefinition door = DoorDefinition.forCoordinate(c.objectX, c.objectY, c.getHeight());
-
-		if (door != null && DoorHandler.clickDoor(c, door)) {
-			return;
+		if(c.goodDistance(obX, obY, c.getX(), c.getY(), 1)) {
+			if (Doors.getSingleton().handleDoor(objectType, obX, obY, c.heightLevel)) {
+			}
 		}
 
 		if (c.getRaidsInstance() != null && c.getRaidsInstance().handleObjectClick(c,objectType, obX, obY)) {

@@ -24,6 +24,8 @@ public class DeathAnimation extends NPCHandler {
                 return 6092;
             case 8703:
                 return 5321;
+            case 10435://sourhog
+                return 8772;
             case Npcs.BABY_BLUE_DRAGON:
             case Npcs.BABY_BLUE_DRAGON_2:
             case Npcs.BABY_BLUE_DRAGON_3:

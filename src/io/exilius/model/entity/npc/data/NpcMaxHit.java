@@ -6,6 +6,8 @@ public class NpcMaxHit {
         switch (npcId) {
             case 2145:
                 return 11;
+            case 10435://sourhog
+                return 6;
             case 9756:
             case 9757:
             case 9758:

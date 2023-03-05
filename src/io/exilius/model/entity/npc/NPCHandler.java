@@ -877,6 +877,14 @@ public static void addNPC(int npcType, int x, int y, int h) {
                             boolean isAccurate = accuracy >= HitDispatcher.rand.nextDouble();
 
                             if (isAccurate) {
+                                if(npc.getNpcId() == 10435){
+                                    if(!c.getItems().playerHasEquipped(24942)){
+                                        c.forcedChat("Argh! My eyes!");
+                                        damage = 30;
+                                    } else {
+                                        damage = 6;
+                                    }
+                                }
                                 c.appendDamage(npc, damage, damage > 0 ? Hitmark.HIT : Hitmark.MISS);
                             } else {
                                 c.appendDamage(npc, 0, Hitmark.MISS);
@@ -921,6 +929,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
             case 11285:
             case 11286:
                 return true;
+            case 10435://sourhog
+                return  true;
         case 6611: 
         case 6612: 
         case 6618: 

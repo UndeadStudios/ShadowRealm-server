@@ -31,6 +31,12 @@ public class AttackAnimation extends NPCHandler {
 				} else if (npc.getAttackType() == CombatType.MAGE) {
 					return 9279;
 				}
+			case 10435://sourhog
+				if (npc.getAttackType() == CombatType.MELEE) {
+					return 8769;
+				} else if (npc.getAttackType() == CombatType.RANGE) {
+					return 8770;
+				}
 			case 3019:
 				return 6249;
 			case 8703:
