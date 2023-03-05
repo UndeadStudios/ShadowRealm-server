@@ -2309,6 +2309,9 @@ public class ItemAssistant {
 	public static String getItemName(int itemId) {
 		return ItemDef.forId(itemId).getName();
 	}
+	public static String getItemName2(int[] itemId) {
+		return ItemDef.forId2(itemId).getName();
+	}
 
 	/**
 	 * Gets the item ID from the item.cfg
@@ -2408,6 +2411,15 @@ public class ItemAssistant {
 	}
 
 	public boolean playerHasItem(int itemID) {
+		itemID++;
+		for (int i = 0; i < player.playerItems.length; i++) {
+			if (player.playerItems[i] == itemID)
+				return true;
+		}
+		return false;
+	}
+
+	public boolean playerHasItem2(int itemID) {
 		itemID++;
 		for (int i = 0; i < player.playerItems.length; i++) {
 			if (player.playerItems[i] == itemID)

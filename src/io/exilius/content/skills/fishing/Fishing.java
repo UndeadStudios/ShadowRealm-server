@@ -45,8 +45,7 @@ public class Fishing {
         if (player.playerLevel[10] < fishing.getRequirement()) {
             player.sendMessage("You need a fishing level of " + fishing.getRequirement() + " to fish this fish.");
             return;
-        }
-        if (!player.getItems().playerHasItem(fishing.getItemReq())) {
+        }if (!player.getItems().playerHasItem(fishing.getItemReq())) {
             player.sendMessage("You need a " + player.getItems().getItemName(fishing.getItemReq()) + " to catch this fish!");
             return;
         }

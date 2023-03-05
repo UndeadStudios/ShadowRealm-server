@@ -125,8 +125,8 @@ public class Votes implements Runnable  {
                         Discord.writeannounceMessage(message4);
                         Achievements.increase(player, AchievementType.VOTER, 1);
                         break;
-                    case 5: // example
-                        String message5 = "Vote System:" + player.getLoginName() + " has just voted on TopG";
+                    case 4  : // example
+                        String message5 = "Vote System:" + player.getLoginName() + " has just voted on rsps 100";
                         int petroll4 = Misc.random(100);
                        // player.getInventory().addToInventory(new ImmutableItem(6758, 1));
                         player.getInventory().addAnywhere(new ImmutableItem(1464, 4));

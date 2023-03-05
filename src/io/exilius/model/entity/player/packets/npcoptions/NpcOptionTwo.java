@@ -548,12 +548,12 @@ public class NpcOptionTwo {
 		case 321:
 		case 324:// SWORDIES+TUNA-CAGE+HARPOON
 			case 1510:
-			case 1511:
 			case 1522:
 				Fishing.startFishing(player, 5, npcType);
 			break;
 		case 1520:
 		case 322:
+			case 1511:
 		case 334: // NET+HARPOON
 			Fishing.startFishing(player, 9, npcType);
 			break;

@@ -49,6 +49,10 @@ public class ItemDef {
         Preconditions.checkState(definitions != null, "Item definitions weren\'t loaded.");
         return definitions.getOrDefault(itemId, builder().id(itemId).build());
     }
+    public static ItemDef forId2(int[] itemId) {
+        Preconditions.checkState(definitions != null, "Item definitions weren\'t loaded.");
+        return definitions.getOrDefault(itemId, builder().id2(itemId).build());
+    }
 
     public static ItemDef.ItemDefBuilder builderOf(ItemDef def) {
         ItemDef.ItemDefBuilder builder = new ItemDef.ItemDefBuilder().id(def.id).name(def.name).description(def.description).shopValue(def.shopValue).noteId(def.noteId).noted(def.noted).stackable(def.stackable).untradeable(def.untradeable).checkBeforeDrop(def.checkBeforeDrop).undroppable(def.undroppable).equipmentModelType(def.equipmentModelType).requirements(def.requirements);
@@ -240,6 +244,7 @@ public class ItemDef {
     public static class ItemDefBuilder {
 
         private int id;
+        private int[] id2;
 
         private String name;
 
@@ -272,6 +277,10 @@ public class ItemDef {
 
         public ItemDef.ItemDefBuilder id(final int id) {
             this.id = id;
+            return this;
+        }
+        public ItemDef.ItemDefBuilder id2(final int[] id) {
+            this.id2 = id;
             return this;
         }
 

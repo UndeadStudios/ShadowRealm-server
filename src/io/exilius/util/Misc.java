@@ -345,6 +345,14 @@ public class Misc {
 		}
 		return -1;
 	}
+	public static int linearSearch2(int[] elements) {
+		for (int index = 0; index < elements.length; index++) {
+			if (elements[index] == -1) {
+				return index;
+			}
+		}
+		return -1;
+	}
 
 	/**
 	 * Determines if a given String is a valid IPv4 Address

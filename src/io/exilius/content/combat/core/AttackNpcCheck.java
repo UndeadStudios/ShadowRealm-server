@@ -253,12 +253,12 @@ public class AttackNpcCheck {
                 return false;
             }
         }
-        if (npc.getNpcId() == 7544) {
-            if (!Boundary.isIn(c, Boundary.TEKTON_ATTACK_BOUNDARY) && !Boundary.isIn(c, Boundary.XERIC)) {
-                sendCheckMessage(c, sendMessages, "You must be within tektons territory to attack him.");
-                return false;
-            }
-        }
+//        if (npc.getNpcId() == 7544) {
+//            if (!Boundary.isIn(c, Boundary.XERIC)) {
+//                sendCheckMessage(c, sendMessages, "You must be within tektons territory to attack him.");
+//                return false;
+//            }
+//        }
         if (npc.getNpcId() == 7573) {
             if (!Boundary.isIn(c, Boundary.SHAMAN_BOUNDARY) && !Boundary.isIn(c, Boundary.XERIC)) {
                 sendCheckMessage(c, sendMessages, "You must be within the shaman attack boundries");

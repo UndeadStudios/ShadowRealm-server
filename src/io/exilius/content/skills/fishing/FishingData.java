@@ -8,6 +8,7 @@ import java.util.HashMap;
  */
 
 public class FishingData {
+    public static int[] harpoons = new int[]{311, 21028, 21031};
 
     public enum data {
         Shrimp(1, 1, new int[]{317, 321}, 303, -1, 621, 10),
@@ -39,7 +40,7 @@ public class FishingData {
             }
         }
 
-        private data(int fishingIdentifier, int requirement, int[] fish, int itemRequired, int baitRequired, int animation, int experience) {
+        data(int fishingIdentifier, int requirement, int[] fish, int itemRequired, int baitRequired, int animation, int experience) {
             this.fishingIdentifier = fishingIdentifier;
             this.requirement = requirement;
             this.fish = fish;

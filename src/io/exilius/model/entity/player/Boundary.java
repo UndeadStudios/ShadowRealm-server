@@ -681,7 +681,7 @@ public static  final Boundary brithday_room2 = new Boundary(2944, 9920, 3007, 99
 	public static final Boundary ICE_DEMON = new Boundary(3297, 5343, 3325, 5374);
 	public static final Boundary[] RAIDROOMS = {OLM, RAIDS, RAID_MAIN, RAID_F1, RAID_F2, RAID_F3, TEKTON, TEKTON_ATTACK_BOUNDARY, SKELETAL_MYSTICS, ICE_DEMON};
 	public static final Boundary FULL_RAIDS = new Boundary(3204, 5118, 3379, 5766);
-	public static final Boundary XERIC = new Boundary(2685, 5440, 2743, 5495);
+	public static final Boundary XERIC = new Boundary(3009, 4353, 3069, 4413);
 
 	public static final Boundary EDGEVILLE_EXTENDED = new Boundary(2944, 3436, 3207, 3549);
 	public static final Boundary GODWARS_MAIN_AREA = new Boundary(2811, 5247, 2950, 5347);

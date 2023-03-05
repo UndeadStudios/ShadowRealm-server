@@ -574,12 +574,12 @@ public class ClickObject implements PacketType {
                         c.getPA().sendFrame248(4465, 197);// 197 just because you can't
                         c.getItems().sendInventoryInterface(7423);
                         break;
-                    case 29735:// Basic training
-                        if (c.objectX != 3277 && c.objectY != 5169) {
-                            c.getPA().movePlayer(2634, 5069, 0);
-                            c.sendMessage("Welcome to the Basic training dungeon, you can find basic monsters here!");
-                        }
-                        break;
+//                    case 29735:// Basic training
+//                        if (c.objectX != 3277 && c.objectY != 5169) {
+//                            c.getPA().movePlayer(2634, 5069, 0);
+//                            c.sendMessage("Welcome to the Basic training dungeon, you can find basic monsters here!");
+//                        }
+//                        break;
                     case 6450:// Basic training ladder
                         c.getPA().movePlayer(1644, 3673, 0);
                         break;
