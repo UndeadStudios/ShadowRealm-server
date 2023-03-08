@@ -164,8 +164,8 @@
   {
     "id": 1306,
     "position": {
-      "x": 3084,
-      "y": 3484,
+      "x": 3080,
+      "y": 3487,
       "height": 0
     },
     "walkingType": "FACE_EAST"
@@ -290,8 +290,8 @@
   {
     "id": 311,
     "position": {
-      "x": 3081,
-      "y": 3484,
+      "x": 3078,
+      "y": 3487,
       "height": 0
     },
     "walkingType": "FACE_NORTH"
@@ -308,8 +308,8 @@
   {
     "id":8973,
     "position": {
-      "x": 3142,
-      "y": 3085,
+      "x": 3079,
+      "y": 3489,
       "height": 0
     },
     "walkingType": "FACE_WEST"
@@ -317,8 +317,8 @@
   {
     "id": 7913,
     "position": {
-      "x": 3079,
-      "y": 3484,
+      "x": 3075,
+      "y": 3487,
       "height": 0
     },
     "walkingType": "FACE_NORTH"

@@ -250,10 +250,10 @@ public class Doors {
                 int id = Integer.parseInt(scanner.next());
                 int x = Integer.parseInt(scanner.next());
                 int y = Integer.parseInt(scanner.next());
-                int f = Integer.parseInt(scanner.next());
+                int face = Integer.parseInt(scanner.next());
                 int z = Integer.parseInt(scanner.next());
-                int t = Integer.parseInt(scanner.next());
-                doors.add(new Doors(id,x,y,z,f,t,alreadyOpen(id)?1:0));
+                int type = Integer.parseInt(scanner.next());
+                doors.add(new Doors(id,x,y,z,face,type,alreadyOpen(id)?1:0));
             }
         } finally {
             scanner.close();
@@ -283,12 +283,13 @@ public class Doors {
 
     private static int[] openDoors = {
             1504, 1514, 1517, 1520, 1531,
-            1534, 2033, 2035, 2037, 2998,
+            1534, 1536, 1541, 2033, 2035, 2037, 2998,
             3271, 4468, 4697, 6101,6103,
             6105, 6107, 6109, 6111, 6113,
             6115, 6976, 6978, 8696, 8819,
             10261, 10263,10265,11708,11710,
             11712,11715,11994,12445, 13002,
+            24051, 24055, 37464, 23973
     };
 
 }

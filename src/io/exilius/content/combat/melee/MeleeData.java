@@ -499,11 +499,11 @@ public class MeleeData {
 		if (weaponName.contains("arclight")) {
 			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
 				case ACCURATE:
-					return 451;
+					return 7515;
 				case AGGRESSIVE:
-					return 2067;
+					return 7515;
 				case DEFENSIVE:
-					return 2067;
+					return 7515;
 			}
 		}
 		if (weaponName.contains("sword") && !weaponName.contains("training")) {
@@ -588,7 +588,16 @@ public class MeleeData {
 			return 2075;
 		case 12848:
 		case 4153: // granite maul
-			return 1665;
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:
+					return 1665;
+				case AGGRESSIVE:
+					return 1665;
+				case CONTROLLED:
+					return 1665;
+				case DEFENSIVE:
+					return 1665;
+			}
 //		case 4726: // guthan
 //			return 2081;
 		case 4747: // torag
@@ -611,7 +620,14 @@ public class MeleeData {
 		case 12773:
 		case 12774:
 		case 12006:
-			return 1658;
+			switch (c.getCombatConfigs().getWeaponMode().getAttackStyle()) {
+				case ACCURATE:
+					return 1658;
+				case CONTROLLED:
+					return 1658;
+				case DEFENSIVE:
+					return 1658;
+			}
 		  case 20727:
 	        	return 2614;
 		case 6528:

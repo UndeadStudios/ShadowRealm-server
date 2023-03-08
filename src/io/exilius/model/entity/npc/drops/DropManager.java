@@ -117,7 +117,7 @@ public class DropManager {
 
     private void readFromFile(File file, ItemConstants itemConstants) throws IOException, ParseException {
         try {
-            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            ObjectMapper mapper =new ObjectMapper(new YAMLFactory());
             JsonNode jsonNode = mapper.readTree(file);
 
             List<Integer> npcIds = new ArrayList<>();

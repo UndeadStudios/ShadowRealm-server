@@ -6,6 +6,7 @@ import io.exilius.Server;
 import io.exilius.model.collisionmap.doors.Location;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.world.objects.GlobalObject;
+import io.exilius.util.Misc;
 import io.exilius.util.discord.Discord;
 
 import java.io.*;
@@ -262,33 +263,21 @@ public class Region {
 //		
 //		return false;
 //	}
-//public static void dumpDoorobject(int objectId, int x, int y, int h, int type, int face) {
-//    //x	y	height	walk	maxhit	attack	defence	desc
-//    //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
-//    try {
-//        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Doordump.cfg", true));
-//        try {
-//            out.write("  {");
-//            out.newLine();
-//            out.write("      \"id\":"+objectId+",");
-//            out.newLine();
-//            out.write("      \"x\":"+x+",");
-//            out.newLine();
-//            out.write("      \"y\":"+y+",");
-//            out.newLine();
-//            out.write("      \"h\":"+h+",");
-//            out.newLine();
-//            out.write("      \"face\":"+face+"");
-//            out.newLine();
-//            out.write("    },");;
-//            out.newLine();
-//        } finally {
-//            out.close();
-//        }
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-//}
+public static void dumpDoorobject(int objectId, int x, int y, int face, int h, int type) {
+   //x	y	height	walk	maxhit	attack	defence	desc
+   //Server.npcHandler.spawnNpc(c, npcType, absX, absY, heightLevel, 1, 120, 7, 70, 70, false, false);
+    try {
+        BufferedWriter out = new BufferedWriter(new FileWriter(".//Data/Doordump.cfg", true));
+        try {
+            out.write(objectId+" "+x+" "+y+" "+face+" "+h);
+            out.newLine();
+        } finally {
+            out.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
     public void addObject(int objectId, int x, int y, int height, int type, int direction) {
         ObjectDef def = ObjectDef.getObjectDef(objectId);
         if (def == null) {
@@ -303,9 +292,11 @@ public class Region {
             xLength = def.yLength();
             yLength = def.xLength();
         }
-      //  if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
-      //      dumpDoorobject(objectId, x, y, height,type, direction);
-  //      }
+        if ((def != null ? def.name : null) != null && def.name.toLowerCase().equalsIgnoreCase("Large Door")  && def.actions[0].toLowerCase().equalsIgnoreCase("open")) {
+            if(Misc.goodDistance(x, y, x, y, 3)) {
+                dumpDoorobject(objectId, x, y, direction, height, type);
+            }
+        }
         if (objectId == 29165) {
             return; // Idk why this is popping up in edgeville? Mounted coins.
         }
@@ -631,7 +622,7 @@ public class Region {
         }
         int objectId = -1;
         int incr;
-        while ((incr = str1.readUnsignedIntSmartShortCompat()) != 0) {
+        while ((incr = str1.get_unsignedsmart_byteorshort()) != 0) {
             objectId += incr;
             int location = 0;
             int incr2;
@@ -640,7 +631,7 @@ public class Region {
                 int localX = (location >> 6 & 63);
                 int localY = (location & 63);
                 int height = location >> 12;
-                int objectData = str1.getUByte();
+                int objectData = str1.get_unsignedsmart_byteorshort();
                 int type = objectData >> 2;
                 int direction = objectData & 3;
                 if (localX < 0 || localX >= 64 || localY < 0 || localY >= 64) {

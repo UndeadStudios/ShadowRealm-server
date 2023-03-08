@@ -52,9 +52,9 @@ public class DoubleDoors {
         if (doorClicked == null) {
             return true;
         }
-        if (doorClicked.doorId > 12000) {
-            return true; //nearly all of these are not opened
-        }
+      //  if (doorClicked.doorId > 12000) {
+          //  return true; //nearly all of these are not opened
+      //  }
         if (doorClicked.open == 0) {
             if (doorClicked.originalFace == 0) {
                 DoubleDoors lowerDoor = getDoor(id - 3, x, y -1, z);
@@ -194,6 +194,7 @@ public class DoubleDoors {
                 d.doorId = d.originalId;
             }
         }
+        RegionProvider.getGlobal().get(d.x, d.y).setClipToZero(d.x, d.y, d.z);
      Server.getGlobalObjects().add(new GlobalObject(d.doorId, d.x, d.y, d.z, getNextLeftFace(d), 0, 0));
     }
 
@@ -254,12 +255,14 @@ public class DoubleDoors {
             }
         }
         if (xAdjustment != 0 || yAdjustment != 0) {
+            RegionProvider.getGlobal().get(d.x, d.y).setClipToZero(d.x, d.y, d.z);
             Server.getGlobalObjects().add(new GlobalObject(-1, d.x, d.y, d.z, 0, 0, 0));
         }
         if (d.x == d.originalX && d.y == d.originalY) {
             d.x += xAdjustment;
             d.y += yAdjustment;
         } else {
+            RegionProvider.getGlobal().get(d.x, d.y).setClipToZero(d.x, d.y, d.z);
             Server.getGlobalObjects().add(new GlobalObject(-1, d.x, d.y, d.z, 0, 0, 0));
             d.x = d.originalX;
             d.y = d.originalY;
@@ -279,6 +282,7 @@ public class DoubleDoors {
         }
         //Region.removeClippingForVariableObject(d.x, d.y, d.z, 0, d.originalFace, true);
         //Region.removeObject(d.originalId, d.originalX, d.originalY, d.z, d.originalFace, 0);
+        RegionProvider.getGlobal().get(d.x, d.y).setClipToZero(d.x, d.y, d.z);
         Server.getGlobalObjects().add(new GlobalObject(d.doorId, d.x, d.y, d.z, getNextRightFace(d), 0, 0));
         //Region.addObject(d.doorId, d.x, d.y, d.z, 0, getNextRightFace(d));
     }
@@ -351,7 +355,7 @@ public class DoubleDoors {
     //Have not found any others yet. Maybe only 1 type of double
     //doors exist to operate.
     private static int[] openDoors = {
-            1520, 1517
+            1520, 1517,
     };
 
     public void load() {

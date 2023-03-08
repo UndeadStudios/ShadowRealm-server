@@ -31,10 +31,16 @@ public class VarBitDefinitions {
     }
 
     private void readValues(Stream stream) {
-        stream.readUnsignedByte();
-        configID = stream.readUnsignedWord();
-        lsb = stream.readUnsignedByte();
-        msb = stream.readUnsignedByte();
+        int opcode = stream.readUnsignedByte();
+        if (opcode == 0) {
+            return;
+        } else if (opcode == 1) {
+            configID = stream.readUnsignedWord();
+            lsb = stream.readUnsignedByte();
+            msb = stream.readUnsignedByte();
+        } else {
+            System.out.println("Invalid varbit opcode: " + opcode);
+        }
     }
 
     private static VarBitDefinitions cache[];

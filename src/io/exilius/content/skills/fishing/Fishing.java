@@ -16,6 +16,7 @@ import io.exilius.model.entity.npc.NPCHandler;
 import io.exilius.model.entity.player.Boundary;
 import io.exilius.model.entity.player.Player;
 import io.exilius.model.entity.player.PlayerHandler;
+import io.exilius.model.items.ItemAssistant;
 import io.exilius.util.Misc;
 
 import java.util.Random;
@@ -31,7 +32,26 @@ public class Fishing {
     public static final Random random = new Random();
 
     public static int[] anglerOuftit = { 13258, 13259, 13260, 13261 };
+    private static boolean hasFishingEquipment(Player c, int equipment) {
+        if (!c.getItems().playerHasItem(equipment)) {
 
+            if(equipment == 311 || equipment == 21028) {
+                if(c.getItems().playerHasItem(21028) || c.playerEquipment[3] == 21028) {
+                    return true;
+                }
+                if(c.getItems().playerHasItem(21031) || c.playerEquipment[3] == 21031) {
+                    return true;
+                }
+                if(c.getItems().playerHasItem(10129) || c.playerEquipment[3] == 10129) {
+                    return true;
+                }
+            }
+
+            c.sendMessage("You need a " + ItemAssistant.getItemName(equipment) + " to fish here.");
+            return false;
+        }
+        return true;
+    }
     public static void startFishing(Player c, int npcId, int i) {
         startFishing(c, npcId, i, false);
     }
@@ -45,8 +65,8 @@ public class Fishing {
         if (player.playerLevel[10] < fishing.getRequirement()) {
             player.sendMessage("You need a fishing level of " + fishing.getRequirement() + " to fish this fish.");
             return;
-        }if (!player.getItems().playerHasItem(fishing.getItemReq())) {
-            player.sendMessage("You need a " + player.getItems().getItemName(fishing.getItemReq()) + " to catch this fish!");
+        }
+        if (!hasFishingEquipment(player, fishing.getItemReq())) {
             return;
         }
         if ((!player.getItems().playerHasItem(fishing.getBait()) && fishing.getBait() != 314) ||
@@ -75,6 +95,10 @@ public class Fishing {
                 }
                 if (player.getItems().freeSlots() == 0) {
                     player.getDH().sendStatement("You have no more free slots.");
+                    container.stop();
+                    return;
+                }
+                if (!hasFishingEquipment(player, fishing.getItemReq())) {
                     container.stop();
                     return;
                 }
