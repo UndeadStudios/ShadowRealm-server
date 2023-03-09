@@ -976,8 +976,9 @@ public class ShopAssistant {
 						return 4;
 					case 13438:
 						return 500;
-					case 11887:
+					case 11887://place id and return price.
 						return 10;
+
 				}
 				break;
 			case 117:
