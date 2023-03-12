@@ -145,6 +145,7 @@ public class NpcOptionOne {
 				player.getShops().openShop(250);
 				break;
 		case 1306:
+			case 1307:
 			if (player.getItems().isWearingItems()) {
 				player.sendMessage("You must remove your equipment before changing your appearance.");
 				player.canChangeAppearance = false;

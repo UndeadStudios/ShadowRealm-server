@@ -142,6 +142,24 @@ public class NPCProcess {
                 npc.startAnimation(6865);
             }
         }
+        if(npc.getNpcId() == 1306){
+            if(Misc.random(50) == 2){
+                npc.requestTransform(1307);
+                npc.startAnimation( 1161);
+                npc.forceChat("Ahah!!");
+                npc.isAnimationUpdateRequired();
+                npc.gfx0(110);
+            }
+        }
+        if(npc.getNpcId() == 1307){
+            if(Misc.random(50) == 2){
+                npc.requestTransform(1306);
+                npc.startAnimation(1161);
+                npc.forceChat("Ahah!!");
+                npc.isAnimationUpdateRequired();
+                npc.gfx0(110);
+            }
+        }
         if (npc.getNpcId() == 8583) {
             npc.getBehaviour().isAggressive();
             npc.getBehaviour().setRespawn(false);

@@ -96,6 +96,7 @@ public class NpcOptionThree {
 			player.getPA().c.itemAssistant.openUpBank();
 			break;
 		case 1306:
+			case 1307:
 			if (player.getItems().isWearingItems()) {
 				player.sendMessage("You must remove your equipment before changing your appearance.");
 				player.canChangeAppearance = false;
