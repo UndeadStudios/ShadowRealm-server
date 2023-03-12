@@ -25,7 +25,7 @@ public class Food {
     }
 
     public enum FoodToEat {
-        Easter_Egg(1961, 12, "Easter Egg", 0, "Food", false),
+        Easter_Egg(1961, 12, "Easter Eggg", 0, "Food", false),
         Pumpkin(1959, 14, "Pumpkin", 0, "Food", false),
         Half_Jug_of_Wine(1989, 7, "Half Full Wine Jug", 1935, "Drink", false),
         CUP_OF_TEA(1978, 2 + Misc.random(1), "Cup of Tea", 1980, "Drink", true),
