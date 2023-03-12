@@ -1,6 +1,6 @@
 package db.migration;
 
-import io.exilius.sql.outlast.OutlastLeaderboardTable;
+import io.shadowrealm.sql.outlast.OutlastLeaderboardTable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

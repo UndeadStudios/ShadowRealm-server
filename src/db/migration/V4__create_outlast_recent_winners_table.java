@@ -1,6 +1,6 @@
 package db.migration;
 
-import io.exilius.sql.outlast.OutlastRecentWinnersTable;
+import io.shadowrealm.sql.outlast.OutlastRecentWinnersTable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

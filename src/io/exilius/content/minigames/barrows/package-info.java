@@ -1,1 +1,0 @@
-package io.exilius.content.minigames.barrows;

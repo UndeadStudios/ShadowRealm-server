@@ -1,6 +1,6 @@
 package db.migration;
 
-import io.exilius.Server;
+import io.shadowrealm.Server;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

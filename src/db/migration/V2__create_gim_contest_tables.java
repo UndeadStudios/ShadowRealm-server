@@ -1,7 +1,7 @@
 package db.migration;
 
-import io.exilius.sql.gim.GimContestPlayerTable;
-import io.exilius.sql.gim.GimContestTotalTable;
+import io.shadowrealm.sql.gim.GimContestPlayerTable;
+import io.shadowrealm.sql.gim.GimContestTotalTable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

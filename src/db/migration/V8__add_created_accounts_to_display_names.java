@@ -1,7 +1,7 @@
 package db.migration;
 
-import io.exilius.model.entity.player.save.PlayerSave;
-import io.exilius.util.Misc;
+import io.shadowrealm.model.entity.player.save.PlayerSave;
+import io.shadowrealm.util.Misc;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

@@ -1,9 +1,9 @@
 package db.migration;
 
-import io.exilius.sql.DatabaseTable;
-import io.exilius.sql.eventcalendar.tables.EventCalendarBlacklistTable;
-import io.exilius.sql.eventcalendar.tables.EventCalendarParticipantsTable;
-import io.exilius.sql.eventcalendar.tables.EventCalendarWinnersTable;
+import io.shadowrealm.sql.DatabaseTable;
+import io.shadowrealm.sql.eventcalendar.tables.EventCalendarBlacklistTable;
+import io.shadowrealm.sql.eventcalendar.tables.EventCalendarParticipantsTable;
+import io.shadowrealm.sql.eventcalendar.tables.EventCalendarWinnersTable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

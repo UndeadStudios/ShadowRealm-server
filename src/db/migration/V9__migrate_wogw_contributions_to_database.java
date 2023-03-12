@@ -1,8 +1,8 @@
 package db.migration;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import io.exilius.Server;
-import io.exilius.util.JsonUtil;
+import io.shadowrealm.Server;
+import io.shadowrealm.util.JsonUtil;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 

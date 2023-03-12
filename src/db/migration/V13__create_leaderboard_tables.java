@@ -1,8 +1,8 @@
 package db.migration;
 
-//import io.exilius.sql.leaderboard.LeaderboardsCollectionBoxTable;
-//import io.exilius.sql.leaderboard.LeaderboardsRewardsTable;
-//import io.exilius.sql.leaderboard.LeaderboardsTable;
+//import io.shadowrealm.sql.leaderboard.LeaderboardsCollectionBoxTable;
+//import io.shadowrealm.sql.leaderboard.LeaderboardsRewardsTable;
+//import io.shadowrealm.sql.leaderboard.LeaderboardsTable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
