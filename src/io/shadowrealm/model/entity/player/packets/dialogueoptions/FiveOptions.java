@@ -329,7 +329,7 @@ public class FiveOptions {
 			if (c.getItems().playerHasItem(995, 150000)) {
 				c.getItems().deleteItem(995, 150000);
 				c.getPA().startTeleport(2858, 5354, 2, "modern", false);
-				c.sendMessage("@red@You have teleported to Bandos Enterance for @red@150k");
+				c.sendMessage("@red@You have teleported to Bandos Entrance for @red@150k");
 				break;
 			}
 			c.sendMessage("@red@You need 150k coins to use this teleport.");
@@ -612,7 +612,7 @@ public class FiveOptions {
 			if (c.getItems().playerHasItem(995, 150000)) {
 				c.getItems().deleteItem(995, 150000);
 				c.getPA().startTeleport(2914, 5300, 1, "modern", false);
-				c.sendMessage("@red@You have teleported to Saradomin Enterance for @red@150k");
+				c.sendMessage("@red@You have teleported to Saradomin Entrance for @red@150k");
 				break;
 			}
 			c.sendMessage("@red@You need 150k coins to use this teleport.");
@@ -870,7 +870,7 @@ public class FiveOptions {
 			if (c.getItems().playerHasItem(995, 150000)) {
 				c.getItems().deleteItem(995, 150000);
 				c.getPA().startTeleport(2921, 5339, 2, "modern", false);
-				c.sendMessage("@red@You have teleported to Zamorak Enterance for @red@150k");
+				c.sendMessage("@red@You have teleported to Zamorak Entrance for @red@150k");
 				break;
 			}
 			c.sendMessage("@red@You need 150k coins to use this teleport.");
@@ -1118,7 +1118,7 @@ public class FiveOptions {
 			if (c.getItems().playerHasItem(995, 150000)) {
 				c.getItems().deleteItem(995, 150000);
 				c.getPA().startTeleport(2839, 5292, 2, "modern", false);
-				c.sendMessage("@red@You have teleported to Armadyl Enterance for @red@150k");
+				c.sendMessage("@red@You have teleported to Armadyl Entrance for @red@150k");
 				break;
 			}
 			c.sendMessage("@red@You need 150k coins to use this teleport.");

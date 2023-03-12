@@ -4564,15 +4564,6 @@
     "walkingType": "WALK"
   },
   {
-    "id":2037,
-    "position": {
-      "x":2211,
-      "y":3056,
-      "height":0
-    },
-    "walkingType": "WALK"
-  },
-  {
     "id":3440,
     "position": {
       "x":2282,
@@ -22000,15 +21991,6 @@
       "height": 0
     },
     "walkingType": "FACE_WEST"
-  },
-  {
-    "id": 5514,
-    "position": {
-      "x": 3121,
-      "y": 3516,
-      "height": 0
-    },
-    "walkingType": "WALK"
   },
   {
     "id": 492,

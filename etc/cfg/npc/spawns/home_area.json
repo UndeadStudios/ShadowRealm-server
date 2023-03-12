@@ -2,8 +2,8 @@
   {
     "id": 8208,
     "position": {
-      "x": 3075,
-      "y": 3496,
+      "x": 3077,
+      "y": 3507,
       "height": 0
     },
     "walkingType": "FACE_NORTH"
@@ -200,8 +200,8 @@
   {
     "id": 8819,
     "position": {
-      "x": 3162,
-      "y": 3513,
+      "x": 3076,
+      "y": 3508,
       "height": 0
     },
     "walkingType": "FACE_SOUTH"
