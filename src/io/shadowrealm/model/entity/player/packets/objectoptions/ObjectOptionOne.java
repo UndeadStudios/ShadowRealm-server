@@ -3329,11 +3329,31 @@ c.getDH().sendDialogues(745, 0);
 				c.objectYOffset = 3;
 				new CrystalChest().roll(c);
 				break;
-
+			case 24875:
+				if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
+					c.getItems().addItem(13204, Integer.MAX_VALUE);
+				} else {
+					c.sendMessage("Nothing else happens.");
+				}
+				break;
 			case 4873:
 			case 26761:
-				c.getPA().startLeverTeleport(3153, 3923, 0);
-				c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
+				if(c.getX() == 3092 && c.getY() == 3467) {
+					if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
+						c.getPA().movePlayer(3090, 3475, 1);
+					} else {
+						c.sendMessage("Nothing else happens.");
+					}
+				}else if(c.getX() == 3090 && c.getY() == 3475 && c.getHeight() == 1){
+					if(c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")){
+						c.getPA().movePlayer(3086, 3488, 0);
+					} else {
+						c.sendMessage("Nothing else happens.");
+					}
+				} else {
+					c.getPA().startLeverTeleport(3153, 3923, 0);
+					c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
+				}
 				break;
 			case 2492:
 			case 15638:

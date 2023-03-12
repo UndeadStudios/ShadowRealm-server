@@ -2795,6 +2795,11 @@ public class Player extends Entity {
         if (specRestore > 0) {
             specRestore--;
         }
+        if(Boundary.isIn(this, Boundary.edge2)){
+            if(!getLoginName().equalsIgnoreCase("swoc") && !getLoginName().equalsIgnoreCase("banned")){
+                getPA().movePlayer(3086, 3488, 0);
+            }
+        }
         if (playTime < Integer.MAX_VALUE && !isIdle) {
             playTime++;
         }

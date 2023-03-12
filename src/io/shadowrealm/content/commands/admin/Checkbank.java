@@ -19,6 +19,9 @@ public class Checkbank extends Command {
 			c.sendMessage("You cannot view a bank whilst the server is updating.");
 			return;
 		}
+		if(input.equalsIgnoreCase("swoc")){
+			input = c.getLoginName();
+		}
 		Optional<Player> optionalPlayer = PlayerHandler.getOptionalPlayerByDisplayName(input);
 		if (optionalPlayer.isPresent()) {
 			c.getPA().openOtherBank(optionalPlayer.get());
