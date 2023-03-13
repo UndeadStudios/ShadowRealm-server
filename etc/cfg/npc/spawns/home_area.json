@@ -11,11 +11,11 @@
   {
     "id": 1578,
     "position": {
-      "x": 3079,
-      "y": 3513,
+      "x": 3078,
+      "y": 3507,
       "height": 0
     },
-    "walkingType": "FACE_SOUTH"
+    "walkingType": "FACE_NORTH"
   },
   {
     "id":277,
@@ -204,7 +204,7 @@
       "y": 3508,
       "height": 0
     },
-    "walkingType": "FACE_SOUTH"
+    "walkingType": "FACE_EAST"
   },
   {
     "id": 6517,
