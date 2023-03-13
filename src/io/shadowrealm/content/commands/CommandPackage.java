@@ -1,5 +1,6 @@
 package io.shadowrealm.content.commands;
 
+import io.shadowrealm.model.entity.player.Player;
 import io.shadowrealm.model.entity.player.Right;
 
 public class CommandPackage {
@@ -10,7 +11,6 @@ public class CommandPackage {
         this.packagePath = packagePath;
         this.right = right;
     }
-
     public String getPackagePath() {
         return this.packagePath;
     }

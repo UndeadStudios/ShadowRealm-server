@@ -3329,6 +3329,10 @@ c.getDH().sendDialogues(745, 0);
 				c.objectYOffset = 3;
 				new CrystalChest().roll(c);
 				break;
+            case 3831:
+                Ladders.climbLadder(c, 2900, 4449, 0);
+                break;
+
 			case 24875:
 				if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
 					c.getItems().addItem(13204, Integer.MAX_VALUE);

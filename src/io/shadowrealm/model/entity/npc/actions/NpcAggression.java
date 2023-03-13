@@ -192,6 +192,32 @@ public class NpcAggression {
                 case 5829:
                 case 5830:
                 case 5831:
+                case 9021: // Crystalline Hunllef 674
+                case 9022: // Crystalline Hunllef 674
+                case 9023: // Crystalline Hunllef 674
+                case 9024: // Crystalline Hunllef 674
+                case 9026: // Crystalline Rat 24
+                case 9027: // Crystalline Spider 22
+                case 9028: // Crystalline Bat 33
+                case 9029: // Crystalline Unicorn 48
+                case 9030: // Crystalline Scorpion 64
+                case 9031: // Crystalline Wolf 74
+                case 9032: // Crystalline Bear 172
+                case 9033: // Crystalline Dragon 172
+                case 9034: // Crystalline Dark Beast 172
+                case 9035: // Corrupted Hunllef 894
+                case 9036: // Corrupted Hunllef 894
+                case 9037: // Corrupted Hunllef 894
+                case 9038: // Corrupted Hunllef 894
+                case 9040: // Corrupted Rat 34
+                case 9041: // Corrupted Spider 32
+                case 9042: // Corrupted Bat 48
+                case 9043: // Corrupted Unicorn 64
+                case 9044: // Corrupted Scorpion 89
+                case 9045: // Corrupted Wolf 102
+                case 9046: // Corrupted Bear 258
+                case 9047: // Corrupted Dragon 258
+                case 9048: // Corrupted Dark Beast 258
                     return 8;
             }
         return baseDistance;
@@ -286,6 +312,32 @@ public class NpcAggression {
             case 7874: // Black demon 188
             case 7875: // Black demon 188
             case 7876: // Black demon 188
+            case 9021: // Crystalline Hunllef 674
+            case 9022: // Crystalline Hunllef 674
+            case 9023: // Crystalline Hunllef 674
+            case 9024: // Crystalline Hunllef 674
+            case 9026: // Crystalline Rat 24
+            case 9027: // Crystalline Spider 22
+            case 9028: // Crystalline Bat 33
+            case 9029: // Crystalline Unicorn 48
+            case 9030: // Crystalline Scorpion 64
+            case 9031: // Crystalline Wolf 74
+            case 9032: // Crystalline Bear 172
+            case 9033: // Crystalline Dragon 172
+            case 9034: // Crystalline Dark Beast 172
+            case 9035: // Corrupted Hunllef 894
+            case 9036: // Corrupted Hunllef 894
+            case 9037: // Corrupted Hunllef 894
+            case 9038: // Corrupted Hunllef 894
+            case 9040: // Corrupted Rat 34
+            case 9041: // Corrupted Spider 32
+            case 9042: // Corrupted Bat 48
+            case 9043: // Corrupted Unicorn 64
+            case 9044: // Corrupted Scorpion 89
+            case 9045: // Corrupted Wolf 102
+            case 9046: // Corrupted Bear 258
+            case 9047: // Corrupted Dragon 258
+            case 9048: // Corrupted Dark Beast 258
             case 8703:
             case 2145:
                 return true;
@@ -320,7 +372,6 @@ public class NpcAggression {
             case 9763:
             case 4373:
             case 106:
-            case 9031://wolf
             case 107:
             case 108:
             case 109:

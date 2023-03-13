@@ -284,9 +284,13 @@ public class DropManager {
                         player.sendMessage("@red@You receive a brittle key.");
                         logger.debug("Grotesque guardians key received because server is on debug mode.");
                     }
-                    if(Misc.random(150) == 1){
+                    if(Misc.random(50) == 1){
                         player.sendMessage("@bla@You notice a @blu@slayer casket@bla@ on the floor.");
                         Server.itemHandler.createGroundItem(player, 13438, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
+                    }
+                    if(Misc.random(50) == 1){
+                        player.sendMessage("@bla@You notice a @blu@money box@bla@ on the floor.");
+                        Server.itemHandler.createGroundItem(player, 28827, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
                     }
                     if (npc.getPosition().inWild() && m.getId() == 7663) {
