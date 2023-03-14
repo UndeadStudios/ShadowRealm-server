@@ -16,7 +16,7 @@ public class Configuration {
 	public static final int CLIENT_VERSION = 233;
 	public static final int MAX_NPCS = 11957;
 	public static final boolean DOUBLE_EXP = false;
-	public static final String UPDATE_MESSAGE = "Edgeville has been readded for clues, check teleports";
+	public static final String UPDATE_MESSAGE = "Updated the links to work.";
 	public static String LOGOUT_MESSAGE = "Click here to logout!";
 	public static String DEATH_MESSAGE = "Oh dear you are dead!";
 
@@ -37,17 +37,16 @@ public class Configuration {
 	public static final String PACKAGE = "io.shadowrealm";
 	public static final String DATA_FOLDER = "etc";
 
-	public static final String WEBSITE = "https://www.forums-exilius.com/";
-	public static final String FORUM_TOPIC_URL = "https://www.forums-exilius.com/index.php?/topic/";
-	public static final String VOTE_LINK = "https://exilius-osrs.com/vote";
-	public static final String HISCORES_LINK = "https://exiliusosrs.everythingrs.com/services/hiscores";
-	public static final String STORE_LINK = "https://exiliusosrsps.everythingrs.com/services/store";
-	public static final String DISCORD_INVITE = "https://discord.gg/nSFnY9Zz3x";
-	public static final String RULES_LINK = "https://www.exilius-osrs.com/index.php?/forum/7-forum-and-in-game-rules/&ct=1584132026";
-	public static final String GUIDES_LINK = "https://www.exilius-osrs.com/index.php?/forum/11-guides/";
-	public static final String DONATOR_BENEFITS_LINK = "https://www.exilius-osrs.com/index.php?/topic/14-donator-benefits-guide/";
-	public static final String PRICE_GUIDE = "https://www.exilius-osrs.com/index.php?/topic/238-updated-price-guide-10242020/";
-
+	public static final String WEBSITE = "https://www.shadowrealm-rsps.com/";
+	public static final String FORUM_TOPIC_URL = "https://www.shadowrealm-rsps.com/";
+	public static final String VOTE_LINK = "https://shadowrealm-rsps.com/vote";
+	public static final String HISCORES_LINK = "https://hiscores.shadowrealm-rsps.com/";
+	public static final String STORE_LINK = "https://store.shadowrealm-rsps.com/";
+	public static final String DISCORD_INVITE = "https://discord.shadowrealm-rsps.com/";
+	public static final String RULES_LINK = "https://www.shadowrealm-rsps.com/";
+	public static final String GUIDES_LINK = "https://www.shadowrealm-rsps.com/";
+	public static final String DONATOR_BENEFITS_LINK = "https://www.shadowrealm-rsps.com/";
+	public static final String PRICE_GUIDE = "https://www.shadowrealm-rsps.com/";
 	public static final LocalDate exilius_V1_LAUNCH_DATE = LocalDate.of(2020, Month.MARCH, 13);
 	public static final LocalDate exilius_V2_LAUNCH_DATE = LocalDate.of(2021, Month.MAY, 1);
 	public static final LocalDate RECLAIM_DONATIONS_START_DATE = LocalDate.of(2021, Month.JULY, 12);

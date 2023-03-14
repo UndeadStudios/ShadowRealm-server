@@ -1821,13 +1821,13 @@ public class ClickingButtons implements PacketType {
 			c.getPA().resetAutocast();
 			break;
 		case 166012:
-			c.setSidebarInterface(11, 24543);
+			//c.setSidebarInterface(11, 24543);
 			break;
 			case 95245:
-				c.setSidebarInterface(11, 42500); 
+				//c.setSidebarInterface(11, 42500);
 				break;
 			case 95238:
-				House house;
+				/*House house;
 				if(c.inConstruction()) {
 					if (c.getHouse() == null) {
 						house = House.load(c);
@@ -1837,11 +1837,11 @@ public class ClickingButtons implements PacketType {
 					house.setBuildMode(true);
 					c.setHouse(house);
 					house.enter(c);
-				}
+				}*/
 				c.getPA().sendConfig(261, 1);
 				break;
 			case 95225:
-				if(c.inConstruction()) {
+				/*if(c.inConstruction()) {
 					if (c.getHouse() == null) {
 						house = House.load(c);
 					} else {
@@ -1850,11 +1850,11 @@ public class ClickingButtons implements PacketType {
 					house.setBuildMode(false);
 					c.setHouse(house);
 					house.enter(c);
-				}
+				}*/
 				c.getPA().sendConfig(261, 0);
 				break;
 			case 95239:
-				if(c.inConstruction()) {
+				/*if(c.inConstruction()) {
 					if (c.getHouse() == null) {
 						house = House.load(c);
 					} else {
@@ -1862,10 +1862,10 @@ public class ClickingButtons implements PacketType {
 					}
 					c.setHouse(house);
 					house.kickAllGuests();
-				}
+				}*/
 				break;
 			case 95237:
-				if(c.inConstruction()) {
+				/*if(c.inConstruction()) {
 					if (c.getHouse() == null) {
 						house = House.load(c);
 					} else {
@@ -1874,7 +1874,7 @@ public class ClickingButtons implements PacketType {
 					c.setHouse(house);
 					c.getPA().movePlayer(3080, 3492);
 					house.leave(c);
-				}
+				}*/
 				break;
 		case 166013:
 			c.getPA().sendFrame126(Configuration.STORE_LINK, 12000);

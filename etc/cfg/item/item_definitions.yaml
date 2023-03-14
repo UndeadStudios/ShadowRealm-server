@@ -73116,9 +73116,9 @@
   shopValue: 51200000
   requirements:
     - skill: "DEFENCE"
-      level: 85
+      level: 1
     - skill: "PRAYER"
-      level: 85
+      level: 1
 - id: 28717
   name: "Dr Cape (Red)"
   description: "Trust me im a doctor."

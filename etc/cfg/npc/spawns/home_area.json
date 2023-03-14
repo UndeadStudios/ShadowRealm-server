@@ -123,12 +123,12 @@
     "y": 3488,
     "height": 0
   },
-  "walkingType": "FACE_SOUTH"
+  "walkingType": "FACE_NORTH"
   },
   {
     "id": 7041,
     "position": {
-      "x": 3094,
+      "x": 3097,
       "y": 3499,
       "height": 0
     },

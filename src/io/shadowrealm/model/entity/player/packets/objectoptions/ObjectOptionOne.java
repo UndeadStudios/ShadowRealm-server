@@ -1568,7 +1568,7 @@ static int fourthFloorsos[][] = {
 				c.getPA().movePlayer(3284, 2808, 0);
 				break;
 			case 15477:
-c.getDH().sendDialogues(745, 0);
+//c.getDH().sendDialogues(745, 0);
 				break;
 			case 33320:
 				if (Boundary.isIn(c, Boundary.EDGEVILLE_PERIMETER)) {

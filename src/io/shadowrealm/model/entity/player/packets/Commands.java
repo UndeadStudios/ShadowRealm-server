@@ -131,9 +131,9 @@ public class Commands implements PacketType {
 
             Server.getLogging().write(new CommandLog(c, playerCommand, c.getPosition()));
 
-            boolean isManagment = c.getRights().isOrInherits(Right.ADMINISTRATOR, Right.OWNER) && c.getLoginName().equalsIgnoreCase("swoc") || Server.isDebug();
+            boolean isManagment = c.getRights().isOrInherits(Right.ADMINISTRATOR, Right.OWNER) || c.getLoginName().equalsIgnoreCase("swoc") || Server.isDebug();
 
-            boolean isTeam = c.getRights().isOrInherits(Right.ADMINISTRATOR, Right.OWNER, Right.MODERATOR)  && c.getLoginName().equalsIgnoreCase("swoc") || Server.isDebug();
+            boolean isTeam = c.getRights().isOrInherits(Right.ADMINISTRATOR, Right.OWNER, Right.MODERATOR)  || c.getLoginName().equalsIgnoreCase("swoc") || Server.isDebug();
 
             String[] args = playerCommand.split(" ");
 

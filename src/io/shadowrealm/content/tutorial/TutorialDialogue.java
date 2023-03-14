@@ -130,17 +130,17 @@ public class TutorialDialogue extends DialogueBuilder {
 
         setNpcId(TUTORIAL_NPC);
         if (!Server.isTest()) {
-            npc(new Position(3097, 3487), "Welcome to " + Configuration.SERVER_NAME + "!", "Here is our home area!", "Don't forgot to join our ::discord.");
-            npc(new Position(3112, 3487), "Here you can find all the shops needed", "when you first start out! You can buy combat gear,", "foods and pots, or show off your fashion skills!");
-            npc(new Position(3092, 3477), "Receive your daily login rewards here!");
-            npc(new Position(3080, 3514), "Here is the vote chest.", "After voting for all sites 10 times you get a @blu@vote key@bla@!", "Check out '@red@::chestrewards@bla@' to see what you can get!");
-            npc(new Position(3080, 3510), "Here is the corrupt chest.", "There are 2 Wildy bosses that can be killed for keys!", "Check out '@red@::chestrewards@bla@' to see what you can get!");
-            npc(new Position(3097, 3510), "This is the Outlast Portal.", "Anybody can join, any level or game mode!", "Use the Quest Tab to see when the next", "event will happen!");
-            npc(new Position(3083, 3512), "Here you can get Slayer tasks and spend Boss points!");
-            npc(new Position(3089, 3494), "This is the @red@Fire of Exchange@bla@.", "Use items on it to earn exchange points", "which can be used to buy custom pets!");
-            npc(new Position(3087, 3480), "This is where you can plant seeds after defeating", "the world boss Hespori, which is displayed in your quest tab.");
-            npc(new Position(3079, 3487), "If you decide to be a restricted game mode", "you can use the shops here!", "Including a UIM Storage chest!");
-            npc(new Position(3085, 3484), "Finally, change your character style here!", "And don't forget you can use the teleport platform", "at home to open the Teleport Menu!");
+            npc(new Position(3087, 3489), "Welcome to " + Configuration.SERVER_NAME + "!", "Here is our home area!", "Don't forgot to join our ::discord.");
+            npc(new Position(3080, 3510), "Here you can find all the shops needed", "when you first start out! You can buy combat gear,", "foods and pots, or show off your fashion skills!");
+            npc(new Position(3092, 3492), "Receive your daily login rewards here!");
+            npc(new Position(3111, 3509), "Here is the vote chest.", "After voting for all sites 10 times you get a @blu@vote key@bla@!", "Check out '@red@::chestrewards@bla@' to see what you can get!");
+            npc(new Position(3107, 3509), "Here is the corrupt chest.", "There are 2 Wildy bosses that can be killed for keys!", "Check out '@red@::chestrewards@bla@' to see what you can get!");
+            npc(new Position(3094, 3504), "This is the Outlast Portal.", "Anybody can join, any level or game mode!", "Use the Quest Tab to see when the next", "event will happen!");
+            npc(new Position(3110, 3513), "Here you can get Slayer tasks!");
+            npc(new Position(3088, 3498), "This is the @red@Fire of Exchange@bla@.", "Use items on it to earn exchange points", "which can be used to buy custom pets!");
+            npc(new Position(3078, 3481), "This is where you can plant seeds after defeating", "the world boss Hespori, which is displayed in your quest tab.");
+            npc(new Position(3077, 3490), "If you decide to be a restricted game mode", "you can use the shops here!", "Including a UIM Storage chest!");
+            npc(new Position(3081, 3487), "Finally, change your character style here!", "And don't forget you can use the teleport platform", "at home to open the Teleport Menu!");
         }
         if (!repeat) {
             npc("One last thing, be sure to @blu@set an account pin with ::pin@bla@!", "@blu@You will gain one hour of bonus xp scrolls!",

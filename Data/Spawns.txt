@@ -160,3 +160,30 @@
     },
     "walkingType": "WALK"
   },
+  {
+"id":11246,
+    "position": {
+      "x":3041,
+      "y":3747,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+"id":8633,
+    "position": {
+      "x":2862,
+      "y":5090,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+"id":8633,
+    "position": {
+      "x":2863,
+      "y":5102,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
