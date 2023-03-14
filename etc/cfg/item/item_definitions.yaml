@@ -75601,4 +75601,102 @@
   description: "A powerful tome filled with the knowledge of the magical arts."
   shopValue: 400
   untradeable: true
+- id: 26554
+  name: "Shattered relic hunter (t1) armour set"
+  description: "A set containing Shattered boots (t1), Shattered trousers (t1), Shattered top (t1) and Shattered hood (t1)."
+  shopValue: 50000
+  untradeable: true
+- id: 26557
+  name: "Shattered relic hunter (t2) armour set"
+  description: "A set containing Shattered boots (t2), Shattered trousers (t2), Shattered top (t2) and Shattered hood (t2)."
+  shopValue: 50000
+  untradeable: true
+- id: 265560
+  name: "Shattered relic hunter (t3) armour set"
+  description: "A set containing Shattered boots (t3), Shattered trousers (t3), Shattered top (t3) and Shattered hood (t3)."
+  shopValue: 50000
+  untradeable: true
+- id: 26567
+  name: "White goblin mail"
+  description: "Some white armour designed to fit goblins."
+  shopValue: 40
+  untradeable: true
+- id: 26569
+  name: "Pharmakos berries"
+  description: "These have magical transmogrification properties."
+  shopValue: 30
+  untradeable: true
+- id: 26571
+  name: "Ekeleshuun key"
+  description: "The key you stole from the Ekeleshuun priest."
+  shopValue: 30
+  untradeable: true
+- id: 26572
+  name: "Narogoshuun key"
+  description: "The key you stole from the Narogoshuun priest."
+  shopValue: 30
+  untradeable: true
+- id: 26573
+  name: "Huzamogaarb key"
+  description: "The key you stole from the Huzamogaarb priest."
+  shopValue: 30
+  untradeable: true
+- id: 26574
+  name: "Saragorgak key"
+  description: "The key you stole from the Saragorgak priest."
+  shopValue: 30
+  untradeable: true
+- id: 26575
+  name: "Horogothgar key"
+  description: "The key you stole from the Horogothgar priest."
+  shopValue: 30
+  untradeable: true
+- id: 26576
+  name: "Yurkolgokh key"
+  description: "The key you stole from the Yurkolgokh priest."
+  shopValue: 30
+  untradeable: true
+- id: 26577
+  name: "Plain of mud sphere"
+  description: "Oldak's Marvellous Moving-Over-Distance Sphere."
+  shopValue: 20
+  stackable: true
+  untradeable: true
+- id: 26579
+  name: "Whitefish"
+  description: "An ugly albino fish."
+  shopValue: 30
+  untradeable: true
+- id: 26581
+  name: "Goblin potion(4)"
+  description: "4 doses of Goblin transmogrification potion."
+  shopValue: 200
+  untradeable: true
+- id: 26583
+  name: "Goblin potion(3)"
+  description: "3 doses of Goblin transmogrification potion."
+  shopValue: 200
+  untradeable: true
+- id: 26585
+  name: "Goblin potion(2)"
+  description: "2 doses of Goblin transmogrification potion."
+  shopValue: 200
+  untradeable: true
+- id: 26587
+  name: "Goblin potion(1)"
+  description: "1 doses of Goblin transmogrification potion."
+  shopValue: 200
+  untradeable: true
+
+
+
+
+
+
+
+
+
+
+
+
 
