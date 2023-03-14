@@ -164,11 +164,11 @@
   {
     "id": 555,
     "position": {
-      "x": 3080,
-      "y": 3513,
+      "x": 3084,
+      "y": 3508,
       "height": 0
     },
-    "walkingType": "FACE_SOUTH"
+    "walkingType": "FACE_WEST"
   },
   {
     "id": 1306,
