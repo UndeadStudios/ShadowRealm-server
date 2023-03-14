@@ -75546,4 +75546,59 @@
   name: "Twisted ancestral colour kit"
   description: "Use on ancestral pieces to recolour them!"
   shopValue: 9500
+- id: 26528
+  name: "Shattered cannon ornament kit"
+  description: "An ornamental kit for the Dwarf multicannon in the style of Leagues III - Shattered Relics."
+  shopValue: 25000
+- id: 26531
+  name: "Mystic hat (or)"
+  description: "A magical hat (or)."
+  shopValue: 15000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+    - skill: "MAGIC"
+      level: 40
+- id: 26533
+  name: "Mystic robe top (or)"
+  description: "The upper half of a magical robe (or)."
+  shopValue: 80000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+    - skill: "MAGIC"
+      level: 40
+- id: 26535
+  name: "Mystic robe bottom (or)"
+  description: "The lower half of a magical robe (or)."
+  shopValue: 80000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+    - skill: "MAGIC"
+      level: 40
+- id: 26537
+  name: "Mystic gloves (or)"
+  description: "Magical gloves (or)."
+  shopValue: 10000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+    - skill: "MAGIC"
+      level: 40
+- id: 26539
+  name: "Mystic boots (or)"
+  description: "Magical boots (or)."
+  shopValue: 10000
+  requirements:
+    - skill: "DEFENCE"
+      level: 20
+    - skill: "MAGIC"
+      level: 40
+- id: 26551
+  name: "Arcane grimoire"
+  description: "A powerful tome filled with the knowledge of the magical arts."
+  shopValue: 400
+  untradeable: true
 

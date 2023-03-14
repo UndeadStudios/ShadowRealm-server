@@ -72792,5 +72792,70 @@
       "dmagic": 20,
       "mdmg": 2
     }
+  },
+  "26531": {
+    "name": "Mystic hat (or)",
+    "equipable": true,
+    "weight": 0.4,
+    "equipment": {
+      "slot": 0,
+      "amagic": 4,
+      "dmagic": 4
+    }
+  },
+  "26533": {
+    "name": "Mystic robe top (or)",
+    "equipable": true,
+    "weight": 2.7,
+    "equipment": {
+      "slot": 4,
+      "amagic": 20,
+      "dmagic": 20
+    }
+  },
+  "26535": {
+    "name": "Mystic robe bottom (or)",
+    "equipable": true,
+    "weight": 1.8,
+    "equipment": {
+      "slot": 7,
+      "amagic": 15,
+      "dmagic": 15
+    }
+  },
+  "26537": {
+    "name": "Mystic gloves (or)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 9,
+      "amagic": 3,
+      "dmagic": 3
+    }
+  },
+  "26539": {
+    "name": "Mystic boots (or)",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 10,
+      "amagic": 3,
+      "dmagic": 3
+    }
+  },
+  "26551": {
+    "name": "Arcane grimoire",
+    "equipable": true,
+    "weight": 1.0,
+    "equipment": {
+      "slot": 5,
+      "dstab": 0,
+      "dslash": 0,
+      "dcrush": 0,
+      "dmagic": 0,
+      "drange": 0,
+      "amagic": 6,
+      "prayer": 3
+    }
   }
 }
