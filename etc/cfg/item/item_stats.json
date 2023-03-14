@@ -72857,5 +72857,20 @@
       "amagic": 6,
       "prayer": 3
     }
+  },
+  "26649": {
+    "name": "Skis",
+    "equipable": true,
+    "weight": 3.628,
+    "equipment": {
+      "slot": 3,
+      "astab": -100,
+      "aslash": -100,
+      "acrush": -50,
+      "amagic": 0,
+      "drange": 0,
+      "str": 0,
+      "aspeed": 4
+    }
   }
 }

@@ -75687,9 +75687,126 @@
   description: "1 doses of Goblin transmogrification potion."
   shopValue: 200
   untradeable: true
-
-
-
+- id: 26589
+  name: "Snothead's bone"
+  description: "An ancient goblin bone wrapped in fragments of priestly robes."
+  shopValue: 30
+  untradeable: true
+- id: 26590
+  name: "Snailfeet's bone"
+  description: "An ancient goblin bone wrapped in fragments of priestly robes."
+  shopValue: 30
+  untradeable: true
+- id: 26591
+  name: "Mosschin's bone"
+  description: "An ancient goblin bone wrapped in fragments of priestly robes."
+  shopValue: 30
+  untradeable: true
+- id: 26592
+  name: "Redeyes' bone"
+  description: "An ancient goblin bone wrapped in fragments of priestly robes."
+  shopValue: 30
+  untradeable: true
+- id: 26593
+  name: "Strongbones' bone"
+  description: "An ancient goblin bone wrapped in fragments of priestly robes."
+  shopValue: 30
+  untradeable: true
+- id: 26596
+  name: "Notes"
+  description: "Some helpful notes for me. Sometimes called a to-do list!"
+  shopValue: 0
+  untradeable: true
+- id: 26598
+  name: "Desert bait"
+  description: "Should let me catch the fish in the oasis."
+  shopValue: 30
+  untradeable: true
+- id: 26600
+  name: "Tiny fish"
+  description: "This fish is tiny!"
+  shopValue: 10
+  untradeable: true
+- id: 26602
+  name: "Osman's report"
+  description: "Osman's trade report for Ali Morrisane."
+  shopValue: 10
+  untradeable: true
+- id: 26605
+  name: "Treasure clue one"
+  description: "The first clue in Capt' Arnav's treasure hunt!"
+  shopValue: 0
+  untradeable: true
+- id: 26607
+  name: "Treasure clue two"
+  description: "The second clue in Capt' Arnav's treasure hunt!"
+  shopValue: 0
+  untradeable: true
+- id: 26609
+  name: "Treasure clue three"
+  description: "The third and final clue in Capt' Arnav's treasure hunt!"
+  shopValue: 0
+  untradeable: true
+- id: 26611
+  name: "Zeke's challenge scroll"
+  description: "I should complete the challenge and tell Zeke the answer!"
+  shopValue: 0
+  untradeable: true
+- id: 26613
+  name: "Capt' arnav's chest"
+  description: "The hidden treasure chest! I should return this to Capt' Arnav."
+  shopValue: 0
+  untradeable: true
+- id: 26615
+  name: "Bucket (cookout)"
+  description: "An empty bucket for the cookout."
+  shopValue: 0
+  untradeable: true
+- id: 26617
+  name: "Bucket of water (cookout)"
+  description: "A bucket of water for the cookout."
+  shopValue: 0
+  untradeable: true
+- id: 26619
+  name: "Pot (cookout)"
+  description: "An empty pot for the cookout."
+  shopValue: 0
+  untradeable: true
+- id: 26621
+  name: "Pot of flour (cookout)"
+  description: "A pot of flour for the cookout."
+  shopValue: 10
+  untradeable: true
+- id: 26623
+  name: "Tomato (cookout)"
+  description: "A tomato for the cookout."
+  shopValue: 4
+  untradeable: true
+- id: 26625
+  name: "Cheese (cookout)"
+  description: "Some cheese for the cookout."
+  shopValue: 4
+  untradeable: true
+- id: 26627
+  name: "Banana (cookout)"
+  description: "A banana for the cookout."
+  shopValue: 4
+  untradeable: true
+- id: 26629
+  name: "Pizza base (cookout)"
+  description: "A pizza base, made for the cookout. Needs tomato and cheese."
+  shopValue: 1
+  untradeable: true
+- id: 26631
+  name: "Incomplete pizza (cookout)"
+  description: "An incomplete pizza, made for the cookout. Just needs cheese."
+  shopValue: 1
+  untradeable: true
+- id: 26649
+  name: "Skis"
+  description: "Skis to help people move around the desert."
+  shopValue: 1
+  untradeable: true
 
 
 
