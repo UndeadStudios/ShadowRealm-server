@@ -2710,50 +2710,50 @@ public class DialogueHandler {
 			break;
 
 		case 674:
-			c.getPA().movePlayer(3080, 3509, 0);
+			c.getPA().movePlayer(3080, 3510, 0);
 			sendNpcChat("Here you can find all the shops needed", "when you first start out! You can buy combat gear,",
 					"foods and pots, or show off your fashion skills!");
 			c.nextChat = 675;
 			break;
 		case 675:
-			c.getPA().movePlayer(3075, 3504, 0);
+			c.getPA().movePlayer(3088, 3498, 0);
 			sendNpcChat("This is the @red@Fire of Exchange@bla@.", "Use items on it to earn exchange points",
 					"which can be used to buy Mystery Boxes!");
 			c.nextChat = 676;
 			break;
 		case 676:
-			c.getPA().movePlayer(3079, 3493, 0);
-			sendNpcChat("Slayer Tasks and Boss points shop is found here.", "If you would like to do Wilderness Slayer",
+			c.getPA().movePlayer(3110, 3513, 0);
+			sendNpcChat("Slayer Tasks is found here.", "If you would like to do Wilderness Slayer",
 					"head directly north-east and talk to Krystillia!");
 			c.nextChat = 677;
 			break;
 
 		case 677:
-			c.getPA().movePlayer(3107, 3498, 0);
+			c.getPA().movePlayer(3094, 3504, 0);
 			sendNpcChat("This is the Outlast Portal.", "Anybody can join, any level, or game mode!",
 					"Use the Quest Tab to see when the next", "event will happen!");
 			c.nextChat = 678;
 			break;
 
 		case 678:
-			c.getPA().movePlayer(3099, 3505, 0);
+			c.getPA().movePlayer(3111, 3509, 0);
 			sendNpcChat("Here is the vote chest!", "After voting 10 times you get a @yel@vote key@bla@!",
 					"Check out '@red@::chestrewards@bla@' to see what you can get!");
 			c.nextChat = 680;
 			break;
 		case 680:
-			c.getPA().movePlayer(3083, 3496, 0);
+			c.getPA().movePlayer(3107, 3509, 0);
 			sendNpcChat("Here is the corrupt chest!", "There are 2 Wildy bosses that can be killed for keys!",
 					"Check out '@red@::chestrewards@bla@' to see what you can get!");
 			c.nextChat = 681;
 			break;
 		case 681:
-			c.getPA().movePlayer(3084, 3476, 0);
+			c.getPA().movePlayer(3080, 3511, 0);
 			sendNpcChat("If you decide to be a restricted game mode", "you can use the shops here!");
 			c.nextChat = 679;
 			break;
 		case 679:
-			c.getPA().movePlayer(3083, 3488, 0);
+			c.getPA().movePlayer(3081, 3487, 0);
 			sendNpcChat("Finally, change your character style here!", "And don't forget you can select any teleport",
 					"in your mage book to open the Teleport Menu!");
 			c.nextChat = 645;
