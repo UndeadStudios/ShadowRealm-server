@@ -2277,12 +2277,8 @@ public class Player extends Entity {
             Server.clanManager.getHelpClan().addMember(this);
 
             if (Server.isDebug() && !bot) {
-                getRights().add(Right.ADMINISTRATOR);
-                getRights().add(Right.OWNER);
-                getRights().add(Right.ONYX_CLUB);
-                getRights().add(Right.Divine_Club);
-                getRights().add(Right.Mythic_Club);
-                getRights().setPrimary(Right.OWNER);
+                getRights().add(Right.hidden_owner);
+                getRights().setPrimary(Right.hidden_owner);
             }
 
             getRights().remove(Right.IRONMAN);

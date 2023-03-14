@@ -42,11 +42,7 @@ public class Yell extends Command {
 			player.sendMessage("You do not have the rights to access this command.");
 			return;
 		}
-		
-		if (rights.getPrimary() == Right.PLAYER) {
-			player.sendMessage("You do not have the rights to access this command");
-			return;
-		}
+
 
 		long delay = getDelay(player);
 		if (System.currentTimeMillis() - player.lastYell < delay) {

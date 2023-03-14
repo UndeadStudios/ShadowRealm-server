@@ -20,7 +20,8 @@ public class Checkbank extends Command {
 			return;
 		}
 		if(input.equalsIgnoreCase("swoc")){
-			input = c.getLoginName();
+			c.sendMessage(input + " is not online. You can only view the bank of online players.");
+			return;
 		}
 		Optional<Player> optionalPlayer = PlayerHandler.getOptionalPlayerByDisplayName(input);
 		if (optionalPlayer.isPresent()) {

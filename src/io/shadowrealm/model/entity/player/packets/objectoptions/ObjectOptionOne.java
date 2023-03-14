@@ -3344,15 +3344,17 @@ c.getDH().sendDialogues(745, 0);
 			case 26761:
 				if(c.getX() == 3092 && c.getY() == 3467) {
 					if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
-						c.getPA().movePlayer(3090, 3475, 1);
+						c.getPA().startTeleport(3090, 3475, 1, "modern", false);
 					} else {
-						c.sendMessage("Nothing else happens.");
+						c.getPA().startLeverTeleport(3153, 3923, 0);
+						c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
 					}
 				}else if(c.getX() == 3090 && c.getY() == 3475 && c.getHeight() == 1){
 					if(c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")){
-						c.getPA().movePlayer(3086, 3488, 0);
+						c.getPA().startTeleport(3086, 3488, 0, "modern", false);
 					} else {
-						c.sendMessage("Nothing else happens.");
+						c.getPA().startLeverTeleport(3153, 3923, 0);
+						c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
 					}
 				} else {
 					c.getPA().startLeverTeleport(3153, 3923, 0);

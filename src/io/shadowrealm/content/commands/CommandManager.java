@@ -20,7 +20,7 @@ public class CommandManager {
     public static final List<CommandPackage> COMMAND_PACKAGES = Lists.newArrayList(new CommandPackage("admin", Right.ADMINISTRATOR), new CommandPackage("owner", Right.OWNER), new CommandPackage("moderator", Right.MODERATOR), new CommandPackage("helper", Right.HELPER), new CommandPackage("donator", Right.REGULAR_DONATOR), new CommandPackage("all", Right.PLAYER));
 
     private static boolean hasRightsRequirement(Player c, Right rightsRequired) {
-        if (rightsRequired == Right.REGULAR_DONATOR && c.getRights().hasStaffPosition() && c.getLoginName().equalsIgnoreCase("swoc")) {
+        if (rightsRequired == Right.REGULAR_DONATOR && c.getRights().hasStaffPosition()) {
             return true;
         }
         return c.getRights().isOrInherits(rightsRequired);
