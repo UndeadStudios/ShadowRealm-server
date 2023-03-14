@@ -114,9 +114,39 @@ public enum StallData {
     }, 42, 42, 30, 40000, 634),
     Gold(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 20000+ Misc.random(1000, 200000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1000+ Misc.random(1000, 3000))));
         }
-    }, 90, 50, 1, 40000, 29165);
+    }, 1, 10, 40, 40000, 634),
+    Gold2(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 10000+ Misc.random(1000, 10000))));
+        }
+    }, 5, 16, 40, 40000, 634),
+    Gold3(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 20000+ Misc.random(1000, 20000))));
+        }
+    }, 10, 20, 40, 40000, 634),
+    Gold4(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 25000+ Misc.random(1000, 20000))));
+        }
+    }, 20, 25, 40, 40000, 634),
+    Gold5(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 30000+ Misc.random(1000, 20000))));
+        }
+    }, 30, 30, 40, 40000, 634),
+    Gold6(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 35000+ Misc.random(1000, 20000))));
+        }
+    }, 40, 35, 40, 40000, 634),
+    Gold7(new HashMap<Rarity, List<GameItem>>() {
+        {
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 50000+ Misc.random(1000, 20000))));
+        }
+    }, 50, 40, 40, 40000, 634);
     /**
      * The item received from the stall
      */

@@ -75514,6 +75514,36 @@
   name: "Cannon barrels (or)"
   description: "The furnace of the multicannon (or)."
   shopValue: 100000
-
-
+- id: 24664
+  name: "Twisted Ancestral hat"
+  description: "The hat of a powerful sorceress from a bygone era."
+  shopValue: 10360000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+    - skill: "MAGIC"
+      level: 75
+- id: 24666
+  name: "Twisted Ancestral robe top"
+  description: "The robe top of a powerful sorceress from a bygone era."
+  shopValue: 12000000
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+    - skill: "MAGIC"
+      level: 75
+- id: 24668
+  name: "Twisted Ancestral robe bottom"
+  description: "The robe bottoms of a powerful sorceress from a bygone era."
+  shopValue: 11400000
+  requirements:
+    - skill: "DEFENCE"
+      level: 65
+    - skill: "MAGIC"
+      level: 75
+- id: 24670
+  name: "Twisted ancestral colour kit"
+  description: "Use on ancestral pieces to recolour them!"
+  shopValue: 9500
 

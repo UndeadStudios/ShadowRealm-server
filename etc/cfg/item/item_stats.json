@@ -72747,5 +72747,50 @@
       "rstr": 10,
       "prayer": 10
     }
+  },
+  "24664": {
+    "name": "Twisted Ancestral hat",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 0,
+      "amagic": 8,
+      "arange": -2,
+      "dstab": 12,
+      "dslash": 11,
+      "dcrush": 13,
+      "dmagic": 5,
+      "mdmg": 2
+    }
+  },
+  "24666": {
+    "name": "Twisted Ancestral robe top",
+    "equipable": true,
+    "weight": 2.721,
+    "equipment": {
+      "slot": 4,
+      "amagic": 35,
+      "arange": -8,
+      "dstab": 42,
+      "dslash": 31,
+      "dcrush": 51,
+      "dmagic": 28,
+      "mdmg": 2
+    }
+  },
+  "24668": {
+    "name": "Twisted Ancestral robe bottom",
+    "equipable": true,
+    "weight": 1.814,
+    "equipment": {
+      "slot": 7,
+      "amagic": 26,
+      "arange": -7,
+      "dstab": 27,
+      "dslash": 24,
+      "dcrush": 30,
+      "dmagic": 20,
+      "mdmg": 2
+    }
   }
 }

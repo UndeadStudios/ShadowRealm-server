@@ -14,6 +14,7 @@ import io.shadowrealm.content.minigames.raids.Raids;
 import io.shadowrealm.content.objects.Ladders;
 import io.shadowrealm.content.objects.Pickable;
 import io.shadowrealm.content.skills.FlaxPicking;
+import io.shadowrealm.content.skills.Skill;
 import io.shadowrealm.content.skills.agility.AgilityHandler;
 import io.shadowrealm.content.skills.hunter.Hunter;
 import io.shadowrealm.content.skills.smithing.CannonballSmelting;
@@ -295,7 +296,32 @@ public class ObjectOptionTwo {
 			break;
 			case 4874:
 		case 11730:
-			c.getThieving().steal(StallData.Baker, objectType, location);
+			if(obX == 3091 && obY == 3486){
+				if(c.playerLevel[Skill.THIEVING.getId()] >= 1 && c.playerLevel[Skill.THIEVING.getId()] <= 5){
+					c.getThieving().steal(StallData.Gold, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 5 && c.playerLevel[Skill.THIEVING.getId()] <= 10){
+					c.getThieving().steal(StallData.Gold2, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 10 && c.playerLevel[Skill.THIEVING.getId()] <= 20){
+					c.getThieving().steal(StallData.Gold3, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 20 && c.playerLevel[Skill.THIEVING.getId()] <= 30){
+					c.getThieving().steal(StallData.Gold4, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 30 && c.playerLevel[Skill.THIEVING.getId()] <= 40){
+					c.getThieving().steal(StallData.Gold5, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 40 && c.playerLevel[Skill.THIEVING.getId()] <= 50){
+					c.getThieving().steal(StallData.Gold6, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 50 && c.playerLevel[Skill.THIEVING.getId()] <= 99){
+					c.getThieving().steal(StallData.Gold7, objectType, location);
+					return;
+				}
+			} else {
+				c.getThieving().steal(StallData.Baker, objectType, location);
+			}
 			c.objectDistance = 1;
 			break;
 		//case 4877:
