@@ -66,7 +66,36 @@ public class MeleeData {
 			c.playerRunIndex = 4228;
 			return;
 		}
-
+		if(weaponName.equalsIgnoreCase("giant present")){
+			c.playerStandIndex = 4193;
+			c.playerWalkIndex = 4194;
+			c.playerRunIndex = 7274;
+			c.playerTurnIndex = 4194;
+			c.playerTurn180Index = 4194;
+			c.playerTurn90CWIndex = 4194;
+			c.playerTurn90CCWIndex = 4194;
+			return;
+		}
+		if(weaponName.equalsIgnoreCase("skis")){
+			c.playerStandIndex = 9341;
+			c.playerWalkIndex = 9342;
+			c.playerRunIndex = 9343;
+			c.playerTurnIndex = 9342;
+			c.playerTurn180Index = 9342;
+			c.playerTurn90CWIndex = 9342;
+			c.playerTurn90CCWIndex = 9342;
+			return;
+		}
+		if(weaponName.equalsIgnoreCase("birthday balloons")){
+			c.playerStandIndex = 7538;
+			c.playerWalkIndex = 7539;
+			c.playerRunIndex = 7540;
+			c.playerTurnIndex = 7539;
+			c.playerTurn180Index = 7539;
+			c.playerTurn90CWIndex = 7539;
+			c.playerTurn90CCWIndex = 7539;
+			return;
+		}
 		if (weaponName.contains("hunting knife")) {
 			c.playerStandIndex = 7329;
 			c.playerWalkIndex = 7327;
