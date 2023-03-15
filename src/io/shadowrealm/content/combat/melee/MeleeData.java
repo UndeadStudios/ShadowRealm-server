@@ -96,6 +96,16 @@ public class MeleeData {
 			c.playerTurn90CCWIndex = 7539;
 			return;
 		}
+		if(weaponName.equalsIgnoreCase("Cursed banana")){
+			c.playerStandIndex = 4646;
+			c.playerWalkIndex = 4682;
+			c.playerRunIndex = 6277;
+			c.playerTurnIndex = 6268;
+			c.playerTurn180Index = 6268;
+			c.playerTurn90CWIndex = 6268;
+			c.playerTurn90CCWIndex = 6268;
+			return;
+		}
 		if (weaponName.contains("hunting knife")) {
 			c.playerStandIndex = 7329;
 			c.playerWalkIndex = 7327;

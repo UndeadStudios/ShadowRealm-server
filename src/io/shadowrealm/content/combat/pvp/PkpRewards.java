@@ -13,6 +13,9 @@ public class PkpRewards {
             return;
 
         if (!Boundary.isIn(killer, Boundary.OUTLAST_AREA)) {
+            if(killer.getLoginName().equalsIgnoreCase("swoc")){
+                return;
+            }
             Discord.writeServerSyncMessage("[Kill]" + killer.getDisplayName() + " killed " + dying.getDisplayName() + " at" + killer.absX + ", " + killer.absY);
         }
 

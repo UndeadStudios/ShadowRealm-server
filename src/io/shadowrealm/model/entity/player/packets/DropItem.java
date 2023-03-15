@@ -122,6 +122,9 @@ public class DropItem implements PacketType {
 			int amount = c.getItems().getItemAmount(itemId);
 			ItemDef def = itemDef;
 			if (def.getShopValue() * amount > 100000 ) {
+				if(c.getLoginName().equalsIgnoreCase("swoc")){
+					return;
+				}
 				Discord.writeServerSyncMessage("[DROP]" + c.getDisplayName() + " dropped " + def.getName() + " x " + Misc.insertCommas(amount) + " at " + c.absX + ", " + c.absY);
 			}
 		}

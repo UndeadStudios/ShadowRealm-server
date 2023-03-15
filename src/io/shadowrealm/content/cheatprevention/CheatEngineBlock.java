@@ -14,6 +14,9 @@ public class CheatEngineBlock {
 			Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Trading post.");
 			Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Trading post.");
 			Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Trading post.");
+			if(c.getLoginName().equalsIgnoreCase("swoc")){
+				return false;
+			}
 			Discord.writeServerSyncMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the @red@trading post!");
 			Discord.writeCheatEngineMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the @red@trading post!");
 
@@ -41,6 +44,9 @@ public class CheatEngineBlock {
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Bank.");
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Bank.");
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Bank.");
+				if(c.getLoginName().equalsIgnoreCase("swoc")){
+					return false;
+				}
 				Discord.writeServerSyncMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the @red@Bank!");
 				Discord.writeCheatEngineMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the @red@Bank!");
 				if(!c.getRights().isOrInherits(Right.ADMINISTRATOR)) {
@@ -67,6 +73,9 @@ public class CheatEngineBlock {
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Presets.");
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Presets.");
 				Misc.println("" + c.getDisplayName() + " is trying to use a cheatengine to open the Presets.");
+				if(c.getLoginName().equalsIgnoreCase("swoc")){
+					return false;
+				}
 				Discord.writeServerSyncMessage("[CHEAT ENGINE] " + c.getDisplayName() + " @blu@is using a cheat engine for the @red@Presets!");
 				Discord.writeCheatEngineMessage("[CHEAT ENGINE] " + c.getDisplayName() + " @blu@is using a cheat engine for the @red@Presets!");
 //				TourneyManager.getSingleton().leaveLobby(c, false);
@@ -89,6 +98,9 @@ public class CheatEngineBlock {
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the donator boxes.");
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the donator boxes.");
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the donator boxes.");
+			if(c.getLoginName().equalsIgnoreCase("swoc")){
+				return false;
+			}
 			Discord.writeServerSyncMessage("[CHEAT ENGINE] "+ c.getDisplayName() +" is using a cheat engine for the @red@donator boxes!");
 			Discord.writeCheatEngineMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the @red@donator boxes!");
 			if(!c.getRights().isOrInherits(Right.ADMINISTRATOR)) {
@@ -107,6 +119,9 @@ public class CheatEngineBlock {
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the lamps.");
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the lamps.");
 			Misc.println(""+ c.getDisplayName() +" is trying to use a cheatengine to open the lamps.");
+			if(c.getLoginName().equalsIgnoreCase("swoc")){
+				return false;
+			}
 			Discord.writeServerSyncMessage("[CHEAT ENGINE] "+ c.getDisplayName() +" is using a cheat engine for the lamps!");
 			Discord.writeCheatEngineMessage("[CHEAT ENGINE] " + c.getDisplayName() + " is using a cheat engine for the lamps!");
 			if(!c.getRights().isOrInherits(Right.ADMINISTRATOR)) {

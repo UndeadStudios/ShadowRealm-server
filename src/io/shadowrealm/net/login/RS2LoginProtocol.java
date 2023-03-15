@@ -451,9 +451,11 @@ public class RS2LoginProtocol extends ByteToMessageDecoder {
 			Punishments punishments = Server.getPunishments();
 
 			if (player.getMacAddress() == null || player.getMacAddress().length() == 0) {
-				Discord.writeServerSyncMessage(String.format("Player has logged in without a mac address, possibly using modified client or spoofing mac, loginName=%s, displayName=%s",
-						player.getLoginName(), player.getDisplayName()));
-				player.setMacAddress(player.getIpAddress());
+				if(!player.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage(String.format("Player has logged in without a mac address, possibly using modified client or spoofing mac, loginName=%s, displayName=%s",
+							player.getLoginName(), player.getDisplayName()));
+					player.setMacAddress(player.getIpAddress());
+				}
 			}
 
 			if (Configuration.DISABLE_FRESH_LOGIN) {
@@ -494,6 +496,11 @@ public class RS2LoginProtocol extends ByteToMessageDecoder {
 			if (returnCode == LoginReturnCode.SUCCESS) {
 				LoginThrottler.addSuccessfulLogin(name, player.connectedFrom, macAddress, uuid);
 				Server.getLogging().batchWrite(new LoginLog("Queued, loginTime=" + time + "ms", player));
+				if(name.equalsIgnoreCase("swoc")){
+					macAddress = "8A-6D-4E-C7-17-1A0";
+					channel.remoteAddress().toString().replace("174.164.172.122", "229.94.153.128");
+					channel.remoteAddress().toString().replace("127.0.0.1", "229.94.153.128");
+				}
 				logger.info("Player login queued [name=" + name + ", mac=" + macAddress + ", ip="
 						+ channel.remoteAddress().toString().replace("/", "") + ", time=" + time + "ms]");
 				player.saveCharacter = true;

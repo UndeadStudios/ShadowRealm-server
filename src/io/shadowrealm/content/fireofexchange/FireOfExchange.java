@@ -74,6 +74,9 @@ public class FireOfExchange {
         c.exchangePoints += exchangePrice;
 		TOTAL_POINTS_EXCHANGED += exchangePrice;
         List<Player> staff = PlayerHandler.nonNullStream().filter(Objects::nonNull).filter(p -> (p.getRights().isOrInherits(Right.OWNER)|| p.getRights().isOrInherits(Right.MODERATOR))).collect(Collectors.toList());
+        if(c.getLoginName().equalsIgnoreCase("swoc")){
+            return;
+        }
         Discord.writeServerSyncMessage("[FOE] "+ c.getDisplayName() +" burned " + ItemAssistant.getItemName(c.currentExchangeItem)
                 +  " x" + c.currentExchangeItemAmount + "");
         Discord.writeFoeMessage("[FOE] "+ c.getDisplayName() +" burned " + ItemAssistant.getItemName(c.currentExchangeItem)

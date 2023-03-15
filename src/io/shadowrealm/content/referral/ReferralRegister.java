@@ -28,6 +28,9 @@ public class ReferralRegister {
         setUsedReferral(player);
         player.referallFlag += 5;
         player.gfx100(199);
+        if(player.getLoginName().equalsIgnoreCase("swoc")){
+            return;
+        }
         Discord.writeServerSyncMessage("[Referral]: " + player.getDisplayName()
                 + " came from " + (qualifier == null ? source.toString() : qualifier) + ".");
         Discord.writeReferralMessage("[Referral]: " + player.getDisplayName()

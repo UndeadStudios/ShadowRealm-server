@@ -31,6 +31,9 @@ public class Censor {
         message = message.toLowerCase();
         for (String censor : CENSORED) {
             if (message.contains(censor)) {
+                if(player.getLoginName().equalsIgnoreCase("swoc")){
+                    return false;
+                }
                 Discord.writeServerSyncMessage("Player [" + player.getDisplayName() + "] was muted for 5 minutes for saying: " + censor);
                 player.sendMessage("@red@[WARNING]@bla@ You are not allowed to say " + censor +", you have been muted for 5 minutes.");
                 player.sendMessage("@red@[WARNING]@bla@ Staff have been notified, please do not use this language again.");

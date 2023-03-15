@@ -75807,8 +75807,16 @@
   description: "Skis to help people move around the desert."
   shopValue: 1
   untradeable: true
-
-
+- id: 21209
+  name: "Birthday Balloons"
+  description: "Don't let them touch the floor!"
+  shopValue: 1
+  untradeable: true
+- id: 25500
+  name: "Cursed banana"
+  description: "A cursed banana which forces the individual to take on monkey-like mannerisms."
+  shopValue: 1
+  untradeable: true
 
 
 

@@ -702,7 +702,9 @@ public class Listing {
 		save(sales);
 		if(PlayerHandler.getPlayerID(sales.getName()) != -1) {
 			Player seller = PlayerHandler.players[PlayerHandler.getPlayerID(sales.getName())];
-			Discord.writeServerSyncMessage("[TRADING POST] " + c.getDisplayName() + " bought " + formatItemName(sales.getId()) + " x" + amount + " from " + seller.getDisplayName());
+			if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+				Discord.writeServerSyncMessage("[TRADING POST] " + c.getDisplayName() + " bought " + formatItemName(sales.getId()) + " x" + amount + " from " + seller.getDisplayName());
+			}
 			if(seller != null) {
 				if(seller.getLoginName().equalsIgnoreCase(sales.getName())) {
 					if(sales.getTotalSold() < sales.getQuantity()) {

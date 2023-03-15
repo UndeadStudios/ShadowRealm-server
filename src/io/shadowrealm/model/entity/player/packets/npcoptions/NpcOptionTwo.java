@@ -351,9 +351,7 @@ public class NpcOptionTwo {
 			case 504:
 				player.getShops().openShop(16);
 				break;
-		case 6987:
-			player.getThieving().steal(Thieving.Pickpocket.MAN, npc);
-			break;
+
 		case 3550:
 			player.getThieving().steal(Thieving.Pickpocket.MENAPHITE_THUG, npc);
 			break;
@@ -472,7 +470,33 @@ public class NpcOptionTwo {
 			case 3244: // Farmer 7
 				player.getThieving().steal(Thieving.Pickpocket.FARMER, npc);
 				break;
-		case 3106:
+			case 3106: // Man 2
+			case 3107: // Man 2
+			case 3108: // Man 2
+			case 3109: // Man 2
+			case 3110: // Man 2
+			case 3111: // Woman 2
+			case 3112: // Woman 2
+			case 3113: // Woman 2
+			case 3261: // Man 2
+			case 3264: // Man 2
+			case 3265: // Man 2
+			case 3268: // Woman 2
+			case 3298: // Man 2
+			case 3299: // Woman 2
+			case 6987: // Man 0
+			case 6988: // Man 2
+			case 6989: // Man 2
+			case 6990: // Woman 2
+			case 6991: // Woman 2
+			case 6992: // Woman 2
+			case 6815: // Man 2
+			case 6818: // Man 2
+			case 10728: // Woman 2
+			case 11053: // Woman 2
+			case 11054: // Woman 2
+            case 11057: // Man 2
+            case 11058: // Man 2
 			player.getThieving().steal(Thieving.Pickpocket.MAN, npc);
 			break;
 		case 637:

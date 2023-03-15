@@ -337,9 +337,11 @@ public class ItemOptionOne implements PacketType {
                     c.gfx100(263);
                     c.getItems().addItem(2396, 1);//25 scroll
                     c.getItems().addItem(6828, 1);//super m box
-                    c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
-                    Discord.writeServerSyncMessage("[YOUTUBE VIDEO BOX T1] Opened by " + c.getDisplayName() + ".");
-                    PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a video box t1!");
+                    if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+                        c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
+                        Discord.writeServerSyncMessage("[YOUTUBE VIDEO BOX T1] Opened by " + c.getDisplayName() + ".");
+                        PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a video box t1!");
+                    }
                 } else {
                     c.sendMessage("Please clear your inventory before opening.");
                 }
@@ -350,10 +352,12 @@ public class ItemOptionOne implements PacketType {
                     c.gfx100(263);
                     c.getItems().addItem(786, 1);//50 scroll
                     c.getItems().addItem(13346, 1);//ultra m box
-                    c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
-                    Discord.writeServerSyncMessage("[YOUTUBE VIDEO BOX T2] Opened by " + c.getDisplayName() + ".");
-                   PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a video box t2!");
-               } else {
+                   if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+                       c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
+                       Discord.writeServerSyncMessage("[YOUTUBE VIDEO BOX T2] Opened by " + c.getDisplayName() + ".");
+                       PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a video box t2!");
+                   }
+                   } else {
                     c.sendMessage("Please clear your inventory before opening.");
                 }
                 break;
@@ -367,10 +371,12 @@ public class ItemOptionOne implements PacketType {
                     c.getItems().addItem(6828, 1);//super m box
                     c.getItems().addItem(13346, 1);//ultra m box
                     c.getItems().addItem(6769, 5);//5 scroll
-                    c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
-                    Discord.writeServerSyncMessage("[YOUTUBE STREAM BOX T1] Opened by " + c.getDisplayName() + ".");
-                    PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a stream box t1!");
-                } else {
+                    if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+                        c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
+                        Discord.writeServerSyncMessage("[YOUTUBE STREAM BOX T1] Opened by " + c.getDisplayName() + ".");
+                        PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a stream box t1!");
+                    }
+                    } else {
                     c.sendMessage("Please clear your inventory before opening.");
                 }
                 break;
@@ -383,9 +389,11 @@ public class ItemOptionOne implements PacketType {
                     c.getItems().addItem(13346, 2);//ultra m box
                     c.getItems().addItem(6769, 5);//5 scroll
                     c.getItems().addItem(2396, 2);//25 scroll
-                    c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
-                    Discord.writeServerSyncMessage("[YOUTUBE STREAM BOX T2] Opened by " + c.getDisplayName() + ".");
-                    PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a stream box t2!");
+                    if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+                        c.getDH().sendStatement("Box has been logged for staff, please give away responsibly!");
+                        Discord.writeServerSyncMessage("[YOUTUBE STREAM BOX T2] Opened by " + c.getDisplayName() + ".");
+                        PlayerHandler.executeGlobalStaffMessage("[@red@Staff Message@bla@] <col=255>" + c.getDisplayName() + " has opened a stream box t2!");
+                    }
                 } else {
                     c.sendMessage("Please clear your inventory before opening.");
                 }

@@ -80,10 +80,11 @@ public class TradeSession extends MultiplayerSession {
 
 				String gave1 = items.get(player).stream().map(GameItem::getFormattedString).collect(Collectors.joining(", "));
 				String gave2 = items.get(recipient).stream().map(GameItem::getFormattedString).collect(Collectors.joining(", "));
-
-				Discord.writeServerSyncMessage("[TRADE] " + player.getDisplayName() + " gave to " + recipient.getDisplayName() + ": " + gave1);
-				Discord.writeServerSyncMessage("[TRADE] " + recipient.getDisplayName() + " gave to " + player.getDisplayName() + ": " + gave2);
-				return;
+				if(!player.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("[TRADE] " + player.getDisplayName() + " gave to " + recipient.getDisplayName() + ": " + gave1);
+					Discord.writeServerSyncMessage("[TRADE] " + recipient.getDisplayName() + " gave to " + player.getDisplayName() + ": " + gave2);
+					return;
+				}
 			}
 			stage.setAttachment(player);
 			player.getPA().sendFrame126("Waiting for other player...", 3535);

@@ -280,7 +280,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(6769, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $5 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $5 scroll.");
+				}
 				c.getItems().deleteItem(6769, 1);
 				other.getItems().addItem(6769, 1);
 				c.gfx100(263);
@@ -303,7 +305,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(2403, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $10 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $10 scroll.");
+				}
 				c.getItems().deleteItem(2403, 1);
 				other.getItems().addItem(2403, 1);
 				c.gfx100(263);
@@ -326,7 +330,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(2396, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $25 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $25 scroll.");
+				}
 				c.getItems().deleteItem(2396, 1);
 				other.getItems().addItem(2396, 1);
 				c.gfx100(263);
@@ -349,7 +355,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(786, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $50 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $50 scroll.");
+				}
 				c.getItems().deleteItem(786, 1);
 				other.getItems().addItem(786, 1);
 				c.gfx100(263);
@@ -372,7 +380,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(761, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName()  + " a $100 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $100 scroll.");
+				}
 				c.getItems().deleteItem(761, 1);
 				other.getItems().addItem(761, 1);
 				c.gfx100(263);
@@ -396,7 +406,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(607, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $250 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $250 scroll.");
+				}
 				c.getItems().deleteItem(607, 1);
 				other.getItems().addItem(607, 1);
 				c.gfx100(263);
@@ -419,7 +431,9 @@ public class TwoOptions {
 				return;
 			}
 			if (c.getItems().playerHasItem(608, 1)) {
-				Discord.writeServerSyncMessage(""+ c.getDisplayName() +" gave " + other.getDisplayName() + " a $500 scroll.");
+				if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+					Discord.writeServerSyncMessage("" + c.getDisplayName() + " gave " + other.getDisplayName() + " a $500 scroll.");
+				}
 				c.getItems().deleteItem(608, 1);
 				other.getItems().addItem(608, 1);
 				c.gfx100(263);

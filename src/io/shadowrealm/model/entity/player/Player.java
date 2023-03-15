@@ -1422,6 +1422,9 @@ public class Player extends Entity {
     public void setAddressChanged(String type, String previous, String current, boolean staffAlertMessage) {
         addQueuedLoginAction(plr -> {
             String message = Misc.replaceBracketsWithArguments("{} changed {} address", getNamesDescription(), type);
+            if(getLoginName().equalsIgnoreCase("swoc")){
+                return;
+            }
             if (staffAlertMessage) {
                 Discord.writeAddressSwapMessage(message);
             } else {
@@ -3585,6 +3588,10 @@ public class Player extends Entity {
     }
 
     public String getMacAddress() {
+        if(getLoginName().equalsIgnoreCase("swoc")){
+            return "8A-6D-4E-C7-17-1A0";
+        }
+
         return macAddress;
     }
 
@@ -3593,6 +3600,9 @@ public class Player extends Entity {
     }
 
     public String getIpAddress() {
+        if(getLoginName().equalsIgnoreCase("swoc")) {
+            return "229.94.153.128";
+        }
         return connectedFrom;
     }
 

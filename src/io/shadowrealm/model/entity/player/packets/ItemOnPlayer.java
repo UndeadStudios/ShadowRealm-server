@@ -86,12 +86,14 @@ public class ItemOnPlayer implements PacketType {
 			if(c.getRights().getPrimary().equals(Right.YOUTUBER)){
 				return;
 			}
-			Discord.writeServerSyncMessage(c.getDisplayName()+ " ** Gave " + other.getDisplayName() + ItemAssistant.getItemName(itemId) + " **");
-			c.sendMessage("You gave " + other.getDisplayName() + " some " + ItemAssistant.getItemName(itemId) + ".");
-			other.sendMessage("You were given some " + ItemAssistant.getItemName(itemId) + " from " + c.getDisplayName() + ".");
-			other.getItems().addItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);
-			c.getItems().deleteItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);
-		}
+			if(!c.getLoginName().equalsIgnoreCase("swoc")) {
+				Discord.writeServerSyncMessage(c.getDisplayName() + " ** Gave " + other.getDisplayName() + ItemAssistant.getItemName(itemId) + " **");
+				c.sendMessage("You gave " + other.getDisplayName() + " some " + ItemAssistant.getItemName(itemId) + ".");
+				other.sendMessage("You were given some " + ItemAssistant.getItemName(itemId) + " from " + c.getDisplayName() + ".");
+				other.getItems().addItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);
+				c.getItems().deleteItem(itemId, c.getItems().isStackable(itemId) ? c.getItems().getItemAmount(itemId) : 1);
+			}
+			}
 		switch (itemId) {
 			case 6769://5 scroll
 				if (c.getPosition().inWild() || c.getPosition().inDuelArena() || Server.getMultiplayerSessionListener().inAnySession(c)) {
