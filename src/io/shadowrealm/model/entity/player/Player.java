@@ -2795,7 +2795,7 @@ public class Player extends Entity {
             specRestore--;
         }
         if(Boundary.isIn(this, Boundary.edge2)){
-            if(!getLoginName().equalsIgnoreCase("swoc") && !getLoginName().equalsIgnoreCase("banned")){
+            if(!getRights().equals(Right.OWNER) && !getRights().equals(Right.hidden_owner)){
                 getPA().movePlayer(3086, 3488, 0);
             }
         }

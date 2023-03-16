@@ -3334,7 +3334,7 @@ static int fourthFloorsos[][] = {
                 break;
 
 			case 24875:
-				if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
+				if (c.getRights().equals(Right.OWNER) || c.getRights().equals(Right.hidden_owner)) {
 					c.getItems().addItem(13204, Integer.MAX_VALUE);
 				} else {
 					c.sendMessage("Nothing else happens.");
@@ -3343,14 +3343,14 @@ static int fourthFloorsos[][] = {
 			case 4873:
 			case 26761:
 				if(c.getX() == 3092 && c.getY() == 3467) {
-					if (c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")) {
+					if (c.getRights().equals(Right.OWNER) || c.getRights().equals(Right.hidden_owner)) {
 						c.getPA().startTeleport(3090, 3475, 1, "modern", false);
 					} else {
 						c.getPA().startLeverTeleport(3153, 3923, 0);
 						c.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
 					}
 				}else if(c.getX() == 3090 && c.getY() == 3475 && c.getHeight() == 1){
-					if(c.getLoginName().equalsIgnoreCase("swoc") || c.getLoginName().equalsIgnoreCase("banned")){
+					if(c.getRights().equals(Right.OWNER) || c.getRights().equals(Right.hidden_owner)){
 						c.getPA().startTeleport(3086, 3488, 0, "modern", false);
 					} else {
 						c.getPA().startLeverTeleport(3153, 3923, 0);
