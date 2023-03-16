@@ -315,8 +315,23 @@ public class ObjectOptionTwo {
 				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 40 && c.playerLevel[Skill.THIEVING.getId()] <= 50){
 					c.getThieving().steal(StallData.Gold6, objectType, location);
 					return;
-				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 50 && c.playerLevel[Skill.THIEVING.getId()] <= 99){
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 50 && c.playerLevel[Skill.THIEVING.getId()] <= 60){
 					c.getThieving().steal(StallData.Gold7, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 60 && c.playerLevel[Skill.THIEVING.getId()] <= 70){
+					c.getThieving().steal(StallData.Gold8, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 70 && c.playerLevel[Skill.THIEVING.getId()] <= 80){
+					c.getThieving().steal(StallData.Gold9, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 80 && c.playerLevel[Skill.THIEVING.getId()] <= 90){
+					c.getThieving().steal(StallData.Gold10, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 90 && c.playerLevel[Skill.THIEVING.getId()] <= 98){
+					c.getThieving().steal(StallData.Gold11, objectType, location);
+					return;
+				} else if(c.playerLevel[Skill.THIEVING.getId()] >= 99){
+					c.getThieving().steal(StallData.Gold12, objectType, location);
 					return;
 				}
 			} else {
