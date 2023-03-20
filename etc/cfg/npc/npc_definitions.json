@@ -14866,21 +14866,6 @@
     "combatLevel": 21,
     "size": 1
   },
-  "11913": {
-    "name": "Guard",
-    "combatLevel": 21,
-    "size": 1
-  },
-  "11914": {
-    "name": "Guard",
-    "combatLevel": 21,
-    "size": 1
-  },
-  "11917": {
-    "name": "Guard",
-    "combatLevel": 21,
-    "size": 1
-  },
   "3011": {
     "name": "Guard",
     "combatLevel": 21,
@@ -57492,502 +57477,514 @@
     "size": 1
   },
   "11856": {
-    "name": "Tool Leprechaun",
+    "name": "Costumed child",
     "combatLevel": 0,
     "size": 1
   },
   "11857": {
-    "name": "Tool Leprechaun",
+    "name": "Costumed child",
     "combatLevel": 0,
     "size": 1
   },
   "11858": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "combatLevel": 1,
     "size": 1
   },
   "11859": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11860": {
-    "name": "Tool Leprechaun",
+    "name": "Ghost",
     "combatLevel": 0,
     "size": 1
   },
   "11861": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11862": {
-    "name": "Tool Leprechaun",
+    "name": "Ghost",
     "combatLevel": 0,
     "size": 1
   },
   "11863": {
-    "name": "Tool Leprechaun",
+    "name": "Generous Treater",
     "combatLevel": 0,
     "size": 1
   },
   "11864": {
-    "name": "Tool Leprechaun",
+    "name": "Generous Treater",
     "combatLevel": 0,
     "size": 1
   },
   "11865": {
-    "name": "Tool Leprechaun",
+    "name": "Generous Treater",
     "combatLevel": 0,
     "size": 1
   },
   "11866": {
-    "name": "Tool Leprechaun",
+    "name": "Generous Treater",
     "combatLevel": 0,
     "size": 1
   },
   "11867": {
-    "name": "Tool Leprechaun",
+    "name": "Spooky dog",
     "combatLevel": 0,
     "size": 1
   },
   "11868": {
-    "name": "Tool Leprechaun",
+    "name": "Aris",
     "combatLevel": 0,
     "size": 1
   },
   "11869": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "combatLevel": 1,
     "size": 1
   },
   "11870": {
-    "name": "Tool Leprechaun",
+    "name": "Rana the Dyer",
     "combatLevel": 0,
     "size": 1
   },
   "11871": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "combatLevel": 1,
     "size": 1
   },
   "11872": {
-    "name": "Tool Leprechaun",
+    "name": "Jalal the Drunk",
     "combatLevel": 0,
     "size": 1
   },
   "11873": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11874": {
-    "name": "Tool Leprechaun",
+    "name": "Faisal the Barman",
     "combatLevel": 0,
     "size": 1
   },
   "11875": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "combatLevel": 1,
     "size": 1
   },
   "11876": {
-    "name": "Tool Leprechaun",
+    "name": "Isma\u0027il The Kebab Seller",
     "combatLevel": 0,
     "size": 1
   },
   "11877": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11878": {
-    "name": "Tool Leprechaun",
+    "name": "Sami the Camel Man",
     "combatLevel": 0,
     "size": 1
   },
   "11879": {
-    "name": "Tool Leprechaun",
+    "name": "Hakeem the Mayor",
     "combatLevel": 0,
     "size": 1
   },
   "11880": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11881": {
-    "name": "Tool Leprechaun",
+    "name": "Alisha the Hag",
     "combatLevel": 0,
     "size": 1
   },
   "11882": {
-    "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1
   },
   "11883": {
-    "name": "Tool Leprechaun",
+    "name": "Badir the Snake Charmer",
     "combatLevel": 0,
     "size": 1
   },
   "11884": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
+    "combatLevel": 1,
+    "size": 2
   },
   "11885": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
-    "size": 1
+    "combatLevel": 1,
+    "size": 2
   },
   "11886": {
-    "name": "Tool Leprechaun",
+    "name": "Jasim the Camel",
     "combatLevel": 0,
-    "size": 1
+    "size": 2
   },
   "11887": {
-    "name": "Tool Leprechaun",
+    "name": "Ibil the Camel",
     "combatLevel": 0,
-    "size": 1
+    "size": 2
   },
   "11888": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "combatLevel": 1,
     "size": 1
   },
   "11889": {
-    "name": "Tool Leprechaun",
+    "name": "Rashid the Operator",
     "combatLevel": 0,
     "size": 1
   },
   "11890": {
-    "name": "Tool Leprechaun",
+    "name": "Aris",
     "combatLevel": 0,
     "size": 1
   },
   "11891": {
-    "name": "Tool Leprechaun",
+    "name": "Aris",
     "combatLevel": 0,
     "size": 1
   },
   "11892": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "White Knight",
+    "combatLevel": 36,
     "size": 1
   },
   "11893": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11894": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11895": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11896": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11897": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11898": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11899": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11900": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Soldier",
+    "combatLevel": 26,
     "size": 1
   },
   "11901": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11902": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Knight of Ardougne",
+    "combatLevel": 46,
     "size": 1
   },
   "11903": {
-    "name": "Tool Leprechaun",
+    "name": "Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11904": {
-    "name": "Tool Leprechaun",
+    "name": "Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11905": {
-    "name": "Tool Leprechaun",
+    "name": "Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11906": {
-    "name": "Tool Leprechaun",
+    "name": "Captain",
     "combatLevel": 0,
     "size": 1
   },
   "11907": {
-    "name": "Tool Leprechaun",
+    "name": "Trainee Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11908": {
-    "name": "Tool Leprechaun",
+    "name": "Trainee Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11909": {
-    "name": "Tool Leprechaun",
+    "name": "Trainee Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11910": {
-    "name": "Tool Leprechaun",
+    "name": "Trainee Guard",
     "combatLevel": 0,
     "size": 1
   },
   "11911": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11912": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11913": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11914": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11915": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11916": {
+    "name": "Guard",
+    "combatLevel": 21,
+    "size": 1
+  },
+  "11917": {
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11918": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Farmer",
+    "combatLevel": 7,
     "size": 1
   },
   "11919": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Farmer",
+    "combatLevel": 7,
     "size": 1
   },
   "11920": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Farmer",
+    "combatLevel": 7,
     "size": 1
   },
   "11921": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Farmer",
+    "combatLevel": 7,
     "size": 1
   },
   "11922": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11923": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11924": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11925": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Warrior",
+    "combatLevel": 24,
     "size": 1
   },
   "11926": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Warrior",
+    "combatLevel": 24,
     "size": 1
   },
   "11927": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Warrior",
+    "combatLevel": 24,
     "size": 1
   },
   "11928": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Warrior",
+    "combatLevel": 24,
     "size": 1
   },
   "11929": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Warrior",
+    "combatLevel": 24,
     "size": 1
   },
   "11930": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11931": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11932": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11933": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Paladin",
+    "combatLevel": 62,
     "size": 1
   },
   "11934": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Hero",
+    "combatLevel": 69,
     "size": 1
   },
   "11935": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Hero",
+    "combatLevel": 69,
     "size": 1
   },
   "11936": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Knight of Ardougne",
+    "combatLevel": 46,
     "size": 1
   },
   "11937": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 20,
     "size": 1
   },
   "11938": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 20,
     "size": 1
   },
   "11939": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 20,
     "size": 1
   },
   "11940": {
-    "name": "Tool Leprechaun",
+    "name": "Master Farmer",
     "combatLevel": 0,
     "size": 1
   },
   "11941": {
-    "name": "Tool Leprechaun",
+    "name": "Master Farmer",
     "combatLevel": 0,
     "size": 1
   },
   "11942": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11943": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11944": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 21,
     "size": 1
   },
   "11945": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 22,
     "size": 1
   },
   "11946": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 19,
     "size": 1
   },
   "11947": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Guard",
+    "combatLevel": 22,
     "size": 1
   },
   "11948": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "White Knight",
+    "combatLevel": 36,
     "size": 1
   },
   "11949": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "White Knight",
+    "combatLevel": 38,
     "size": 1
   },
   "11950": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "White Knight",
+    "combatLevel": 39,
     "size": 1
   },
   "11951": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "White Knight",
+    "combatLevel": 42,
     "size": 1
   },
   "11952": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Black Knight",
+    "combatLevel": 33,
     "size": 1
   },
   "11953": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Black Knight",
+    "combatLevel": 33,
     "size": 1
   },
   "11954": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Tribesman",
+    "combatLevel": 32,
     "size": 1
   },
   "11955": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Tribeswoman",
+    "combatLevel": 32,
     "size": 1
   },
   "11956": {
-    "name": "Tool Leprechaun",
-    "combatLevel": 0,
+    "name": "Tribeswoman",
+    "combatLevel": 32,
     "size": 1
   },
   "11957": {
-    "name": "Tool Leprechaun",
+    "name": "Treznor",
     "combatLevel": 0,
     "size": 1
   },
   "11958": {
-    "name": "Vote Boss",
+    "name": "Vote boss",
     "combatLevel": 1000,
     "size": 2
   },
   "11959": {
-    "name": "Vote Boss jr",
-    "combatLevel": 0,
-    "size": 1
+    "name": "Legendary boss",
+    "combatLevel": 1000,
+    "size": 5
   },
   "11960": {
-    "name": "Tool Leprechaun",
+    "name": "Donation Shop 2",
     "combatLevel": 0,
     "size": 1
   },
@@ -59957,6 +59954,521 @@
     "size": 1
   },
   "12354": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12355": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12356": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12357": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12358": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12359": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12360": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12361": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12362": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12363": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12364": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12365": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12366": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12367": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12368": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12369": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12370": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12371": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12372": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12373": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12374": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12375": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12376": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12377": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12378": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12379": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12380": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12381": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12382": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12383": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12384": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12385": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12386": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12387": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12388": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12389": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12390": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12391": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12392": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12393": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12394": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12395": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12396": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12397": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12398": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12399": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12400": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12401": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12402": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12403": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12404": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12405": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12406": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12407": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12408": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12409": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12410": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12411": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12412": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12413": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12414": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12415": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12416": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12417": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12418": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12419": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12420": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12421": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12422": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12423": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12424": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12425": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12426": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12427": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12428": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12429": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12430": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12431": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12432": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12433": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12434": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12435": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12436": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12437": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12438": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12439": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12440": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12441": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12442": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12443": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12444": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12445": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12446": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12447": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12448": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12449": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12450": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12451": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12452": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12453": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12454": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12455": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12456": {
+    "name": "Tool Leprechaun",
+    "combatLevel": 0,
+    "size": 1
+  },
+  "12457": {
     "name": "Tool Leprechaun",
     "combatLevel": 0,
     "size": 1

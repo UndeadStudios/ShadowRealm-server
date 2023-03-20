@@ -428,8 +428,8 @@ public class NpcAggression {
             case 2563:
             case 2564:
             case 2565:
-            case 2892:
-            case 2894:
+            case 5947:
+            case 5961:
             case 2265:
             case 2266:
             case 2267:

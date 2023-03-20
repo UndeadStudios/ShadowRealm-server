@@ -529,9 +529,9 @@ public class BlockAnimation {
                 return 2953;
             case 3060:
                 return 2964;
-            case 2892: // Spinolyp
-            case 2894: // Spinolyp
-            case 2896: // Spinolyp
+            case 5947: // Spinolyp
+            case 5961: // Spinolyp
+            case 5963: // Spinolyp
                 return 2869;
             case 423: // Dust Devil
             case 7404:

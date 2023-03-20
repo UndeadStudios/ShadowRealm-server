@@ -711,6 +711,10 @@ break;
                 stackable = true;
             } else if (opcode == 12) {
                 value = buffer.readInteger();
+            } else if(opcode == 13) {
+                this.field2142 = buffer.readSignedByte();
+            } else if(opcode == 14){
+                    this.field2157 = buffer.readSignedByte();
             } else if (opcode == 16) {
                 membersObject = true;
             } else if (opcode == 23) {
@@ -723,6 +727,8 @@ break;
                 femaleTranslation = buffer.readSignedByte();
             } else if (opcode == 26) {
                 secondaryFemaleModel = buffer.readUnsignedWord();
+            } else if(opcode == 27) {
+                    this.field2158 = buffer.readSignedByte();
             } else if (opcode >= 30 && opcode < 35) {
                 if (groundActions == null) {
                     groundActions = new String[5];
@@ -990,6 +996,9 @@ break;
     public int[] originalModelColors;
     public short[] modifiedTexture;
     public short[] originalTexture;
+    public int field2142 = -1;
+    public int field2157 = -1;
+    public int field2158 = -1;
     private int ambience;
     private int tertiaryFemaleEquipmentModel;
     private int secondaryMaleHeadPiece;

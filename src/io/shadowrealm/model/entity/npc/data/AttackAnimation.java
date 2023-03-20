@@ -824,8 +824,8 @@ public class AttackAnimation extends NPCHandler {
 		case 5190:// Ogre Shaman
 			return 359;
 
-		case 2892:
-		case 2894:
+		case 5947:
+		case 5961:
 			return 2868;
 		case 3116:
 			return 2621;

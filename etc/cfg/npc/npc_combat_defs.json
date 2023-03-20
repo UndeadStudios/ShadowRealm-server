@@ -114952,5 +114952,107 @@
       "MAGIC_BONUS": 30,
       "STAB_BONUS": 0
     }
+  },
+  {
+    "id": 11922,
+    "attackSpeed": 4,
+    "attackStyle": "Stab",
+    "aggressive": false,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 19,
+      "DEFENCE": 14,
+      "RANGE": 1,
+      "STRENGTH": 18,
+      "HITPOINTS": 22
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 4,
+      "STRENGTH_BONUS": 5,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 25,
+      "STAB_BONUS": 18,
+      "RANGE_BONUS": 20,
+      "MAGIC_BONUS": -4,
+      "CRUSH_BONUS": 19
+    }
+  },
+  {
+    "id": 11923,
+    "attackSpeed": 4,
+    "attackStyle": "Stab",
+    "aggressive": false,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 19,
+      "DEFENCE": 14,
+      "RANGE": 1,
+      "STRENGTH": 18,
+      "HITPOINTS": 22
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 4,
+      "STRENGTH_BONUS": 5,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 25,
+      "STAB_BONUS": 18,
+      "RANGE_BONUS": 20,
+      "MAGIC_BONUS": -4,
+      "CRUSH_BONUS": 19
+    }
+  },
+  {
+    "id": 11924,
+    "attackSpeed": 4,
+    "attackStyle": "Stab",
+    "aggressive": false,
+    "isPoisonous": false,
+    "isImmuneToPoison": false,
+    "isImmuneToVenom": false,
+    "isImmuneToCannons": false,
+    "isImmuneToThralls": false,
+    "levels": {
+      "MAGIC": 1,
+      "ATTACK": 19,
+      "DEFENCE": 14,
+      "RANGE": 1,
+      "STRENGTH": 18,
+      "HITPOINTS": 22
+    },
+    "attackBonuses": {
+      "ATTACK_MAGIC_BONUS": 0,
+      "ATTACK_BONUS": 4,
+      "STRENGTH_BONUS": 5,
+      "MAGIC_STRENGTH_BONUS": 0,
+      "ATTACK_RANGE_BONUS": 0,
+      "RANGE_STRENGTH_BONUS": 0
+    },
+    "defensiveBonuses": {
+      "SLASH_BONUS": 25,
+      "STAB_BONUS": 18,
+      "RANGE_BONUS": 20,
+      "MAGIC_BONUS": -4,
+      "CRUSH_BONUS": 19
+    }
   }
 ]

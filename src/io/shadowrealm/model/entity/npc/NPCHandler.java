@@ -238,8 +238,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 2563: 
         case 2564: 
         case 2565: 
-        case 2892: 
-        case 2894: 
+        case 5947:
+        case 5961:
         case 1046: 
         case 6615: 
         case 6616: 
@@ -537,8 +537,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 2265: 
         case 2266: 
         case 2054: 
-        case 2892: 
-        case 2894: 
+        case 5947:
+        case 5961:
         case 3125: 
         case 3121: 
         case 2167: 
@@ -1513,8 +1513,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 2565: 
             return 9;
         // things around dags
-        case 2892: 
-        case 2894: 
+        case 5947:
+        case 5961:
             return 10;
         default: 
             return 1;
@@ -2050,7 +2050,7 @@ public static void addNPC(int npcType, int x, int y, int h) {
     }
 
     public void handleSpecialEffects(Player c, NPC npc, int damage) {
-        if (npc.getNpcId() == 2892 || npc.getNpcId() == 2894) {
+        if (npc.getNpcId() == 5947 || npc.getNpcId() == 5961) {
             if (damage > 0) {
                 if (c != null) {
                     if (c.playerLevel[5] > 0) {

@@ -1097,12 +1097,12 @@ public class LoadSpell {
                     npc.endGfx = 157;
                 }
                 break;
-            case 2892:
+            case 5947:
                 npc.projectileId = 94;
                 npc.setAttackType(CombatType.MAGE);
                 npc.endGfx = 95;
                 break;
-            case 2894:
+            case 5961:
                 npc.projectileId = 298;
                 npc.setAttackType(CombatType.RANGE);
                 break;
