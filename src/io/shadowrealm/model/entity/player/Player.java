@@ -257,6 +257,8 @@ public class Player extends Entity {
     @Setter
     public int battlePassPage = 0;
 
+    @Getter @Setter
+    public int zalcanoDamage = 0;
 
     @Getter
     @Setter

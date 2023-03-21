@@ -103915,11 +103915,11 @@
   "isImmuneToCannons": false,
   "isImmuneToThralls": false,
   "levels": {
-    "MAGIC": 1,
-    "ATTACK": 1,
-    "DEFENCE": 1,
-    "RANGE": 1,
-    "STRENGTH": 1,
+    "MAGIC": 10,
+    "ATTACK": 10,
+    "DEFENCE": 10,
+    "RANGE": 10,
+    "STRENGTH": 10,
     "HITPOINTS": 300
   },
   "attackBonuses": {

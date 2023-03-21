@@ -293,7 +293,7 @@ public class ClickNPC implements PacketType {
 						|| c.npcType >= 7354 && c.npcType <= 7367 || c.npcType == 5559 || c.npcType == 5560
 						|| c.npcType == 326 || c.npcType == 327 || c.npcType == 8737 || c.npcType == 8738
 						|| c.npcType == 7674 || c.npcType == 8009 || c.npcType == 388 || c.npcType == 8010
-						|| c.npcType == 762 || c.npcType == 763 || c.npcType == 30023) {
+						|| c.npcType == 762 || c.npcType == 763 || c.npcType == 30023 || c.npcType == 9049) {
 					PetHandler.metamorphosis(c, c.npcType);
 					
 				}
