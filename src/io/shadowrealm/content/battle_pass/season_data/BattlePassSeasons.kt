@@ -261,133 +261,133 @@ enum class BattlePassSeasons(
 //            ),
 //        )
 //    ),
-    SEASON_THREE( //banned do this season
-        startDate = LocalDateTime.of(2023, 2, 14, 0,0,0),
-        freeRewards = arrayListOf(
-            GameItem(//edit here banned change all ids and amounts this is the free rewards
-                990, 10
-            ),
-            GameItem(
-                995, 20000000
-            ),
-            GameItem(
-                6686, 50
-            ),
-            GameItem(
-                3025, 50
-            ),
-            GameItem(
-                6199, 1
-            ),
-            GameItem(
-                406, 10
-            ),
-            GameItem(
-                23951, 3
-            ),
-            GameItem(
-                12696, 100
-            ),
-            GameItem(
-                693, 1
-            ),
-            GameItem(
-                6828, 1
-            ),
-            GameItem(
-                995, 20000000
-            ),
-            GameItem(
-                8167, 1
-            ),
-            GameItem(
-                23933, 25
-            ),
-            GameItem(
-                12789, 1
-            ),
-            GameItem(
-                22374, 5
-            ),
-            GameItem(
-                21046, 25
-            ),
-            GameItem(
-                693, 2
-            ),
-            GameItem(
-                995, 30000000
-            ),
-            GameItem(
-                13346, 2
-            ),
-            GameItem(
-                2403, 1
-            ),
+SEASON_THREE( //banned do this season
+    startDate = LocalDateTime.of(2023, 3, 14, 0,0,0),
+    freeRewards = arrayListOf(
+        GameItem(//edit here banned change all ids and amounts this is the free rewards
+            990, 10
         ),
-        premiumRewards = arrayListOf(
-            GameItem(//baned changes these ids this is premium rewards
-                990, 20
-            ),
-            GameItem(
-                995, 50000000
-            ),
-            GameItem(
-                6686, 250
-            ),
-            GameItem(
-                3025, 250
-            ),
-            GameItem(
-                6828, 1
-            ),
-            GameItem(
-                13438, 5
-            ),
-            GameItem(
-                23951, 7
-            ),
-            GameItem(
-                23686, 150
-            ),
-            GameItem(
-                693, 3
-            ),
-            GameItem(
-                10025, 1
-            ),
-            GameItem(
-                995, 50000000
-            ),
-            GameItem(
-                8167, 2
-            ),
-            GameItem(
-                23933, 75
-            ),
-            GameItem(
-                12789, 2
-            ),
-            GameItem(
-                22374, 5
-            ),
-            GameItem(
-                21046, 50
-            ),
-            GameItem(
-                693, 3
-            ),
-            GameItem(
-                995, 100000000
-            ),
-            GameItem(
-                13346, 2
-            ),
-            GameItem(
-                6830, 1
-            ),
-        )
+        GameItem(
+            995, 20000000
+        ),
+        GameItem(
+            6686, 50
+        ),
+        GameItem(
+            3025, 50
+        ),
+        GameItem(
+            6199, 1
+        ),
+        GameItem(
+            406, 10
+        ),
+        GameItem(
+            23951, 3
+        ),
+        GameItem(
+            12696, 100
+        ),
+        GameItem(
+            693, 1
+        ),
+        GameItem(
+            6828, 1
+        ),
+        GameItem(
+            995, 20000000
+        ),
+        GameItem(
+            8167, 1
+        ),
+        GameItem(
+            23933, 25
+        ),
+        GameItem(
+            12789, 1
+        ),
+        GameItem(
+            22374, 5
+        ),
+        GameItem(
+            21046, 25
+        ),
+        GameItem(
+            693, 2
+        ),
+        GameItem(
+            995, 30000000
+        ),
+        GameItem(
+            13346, 2
+        ),
+        GameItem(
+            2403, 1
+        ),
     ),
+    premiumRewards = arrayListOf(
+        GameItem(//baned changes these ids this is premium rewards
+            990, 20
+        ),
+        GameItem(
+            995, 50000000
+        ),
+        GameItem(
+            6686, 250
+        ),
+        GameItem(
+            3025, 250
+        ),
+        GameItem(
+            6828, 1
+        ),
+        GameItem(
+            13438, 5
+        ),
+        GameItem(
+            23951, 7
+        ),
+        GameItem(
+            23686, 150
+        ),
+        GameItem(
+            693, 3
+        ),
+        GameItem(
+            10025, 1
+        ),
+        GameItem(
+            995, 50000000
+        ),
+        GameItem(
+            8167, 2
+        ),
+        GameItem(
+            23933, 75
+        ),
+        GameItem(
+            12789, 2
+        ),
+        GameItem(
+            22374, 5
+        ),
+        GameItem(
+            21046, 50
+        ),
+        GameItem(
+            693, 3
+        ),
+        GameItem(
+            995, 100000000
+        ),
+        GameItem(
+            13346, 2
+        ),
+        GameItem(
+            6830, 1
+        ),
+    )
+),
 //    SEASON_FOUR(
 //    startDate = LocalDateTime.of(2023, 4, 15, 0,0,0),
 //    freeRewards = arrayListOf(

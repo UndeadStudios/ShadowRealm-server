@@ -38986,5 +38986,27 @@
     "rangeDef": 20,
     "bonusAttack": 4,
     "bonusStrength": 5
+  },
+  "11246": {
+    "name": "Revenant maledictus",
+    "hitpoints": 2000,
+    "combatLevel": 397,
+    "attackSpeed": 3,
+    "attackLevel": 106,
+    "strengthLevel": 126,
+    "defenceLevel": 1,
+    "rangeLevel": 130,
+    "magicLevel": 130,
+    "range": 60,
+    "magic": 60,
+    "stabDef": 1,
+    "slashDef": 1,
+    "crushDef": 1,
+    "rangeDef": 999,
+    "magicDef": 1,
+    "bonusAttack": 72,
+    "bonusStrength": 78,
+    "bonusRangeStrength": 265,
+    "bonusMagicDamage": 60
   }
 }

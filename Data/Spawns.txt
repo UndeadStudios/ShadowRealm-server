@@ -196,3 +196,21 @@
     },
     "walkingType": "WALK"
   },
+  {
+"id":11246,
+    "position": {
+      "x":3227,
+      "y":3751,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+"id":11246,
+    "position": {
+      "x":2862,
+      "y":5090,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
