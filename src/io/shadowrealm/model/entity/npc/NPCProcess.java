@@ -25,6 +25,7 @@ import io.shadowrealm.model.entity.npc.actions.NpcAggression;
 import io.shadowrealm.model.entity.npc.data.RespawnTime;
 import io.shadowrealm.model.entity.player.*;
 import io.shadowrealm.model.world.objects.GlobalObject;
+import io.shadowrealm.sql.RandomQuote;
 import io.shadowrealm.sql.Votes;
 import io.shadowrealm.util.Misc;
 import io.shadowrealm.util.discord.Discord;
@@ -138,7 +139,12 @@ public class NPCProcess {
                 || npc.getNpcId() == Npcs.TOWN_CRIER_5 
                 || npc.getNpcId() == Npcs.TOWN_CRIER_6) {
             if (Misc.random(50) == 2) {
-                npc.forceChat(Configuration.UPDATE_MESSAGE);
+                //npc.forceChat(Configuration.UPDATE_MESSAGE);
+
+                Thread RQ = new Thread(new RandomQuote(npc));
+                RQ.start();
+
+
                 npc.startAnimation(6865);
             }
         }
