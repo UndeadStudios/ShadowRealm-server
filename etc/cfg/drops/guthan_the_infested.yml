@@ -36,3 +36,6 @@ very_rare:
   - name: "amulet of the damned"
     minimum: 1
     maximum: 1
+  - name: "barrows defender"
+    minimum: 1
+    maximum: 1
