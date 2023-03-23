@@ -25,7 +25,6 @@ import io.shadowrealm.model.entity.npc.actions.NpcAggression;
 import io.shadowrealm.model.entity.npc.data.RespawnTime;
 import io.shadowrealm.model.entity.player.*;
 import io.shadowrealm.model.world.objects.GlobalObject;
-import io.shadowrealm.sql.RandomQuote;
 import io.shadowrealm.sql.Votes;
 import io.shadowrealm.util.Misc;
 import io.shadowrealm.util.discord.Discord;
@@ -53,7 +52,7 @@ public class NPCProcess {
     private int type;
     private AlchemicalHydra hydraInstance;
 
-    public static final String HOST = "199.127.61.40";
+    public static final String HOST = "localhost";
     public static final String USER = "votes";
     public static final String PASS = "zazu";
     public static final String DATABASE = "exilius";
