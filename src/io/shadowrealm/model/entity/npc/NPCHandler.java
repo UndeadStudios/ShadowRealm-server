@@ -1,6 +1,7 @@
 package io.shadowrealm.model.entity.npc;
 
 import com.google.common.base.Preconditions;
+import io.shadowrealm.Server;
 import io.shadowrealm.content.SkillcapePerks;
 import io.shadowrealm.content.achievement.AchievementType;
 import io.shadowrealm.content.achievement.Achievements;
@@ -20,6 +21,7 @@ import io.shadowrealm.content.combat.core.HitDispatcher;
 import io.shadowrealm.content.combat.formula.rework.MagicCombatFormula;
 import io.shadowrealm.content.combat.formula.rework.RangeCombatFormula;
 import io.shadowrealm.content.combat.melee.MeleeExtras;
+import io.shadowrealm.content.combat.npc.NPCCombatAttack;
 import io.shadowrealm.content.instances.InstancedArea;
 import io.shadowrealm.content.minigames.barrows.brothers.Brother;
 import io.shadowrealm.content.minigames.fight_cave.Wave;
@@ -2316,13 +2318,41 @@ public static void addNPC(int npcType, int x, int y, int h) {
                         player.getPA().createPlayersStillGfx(endGfx, x2, y2, player.heightLevel, 5);
                     }
                     if (Objects.equals(coords, "cerberus")) {
-                        player.getPA().createPlayersStillGfx(1247, x2, y2, player.heightLevel, 5);
+//                        player.getPA().createPlayersStillGfx(1247, x2, y2, player.heightLevel, 5);
+                        burnGFX(player, npc);
                     }
                 }
                 player.coordinates.clear();
                 container.stop();
             }
         }, time);
+    }
+
+    public static void burnGFX(Player c, NPC npc) {
+        NPCCombatAttack npcCombatAttack = new NPCCombatAttack(npc, c);
+        Position position = npcCombatAttack.getVictim().getPosition();
+
+        // Cycle event to handle pool damage
+        CycleEventHandler.getSingleton().addEvent(new Object(), new CycleEvent() {
+            @Override
+            public void execute(CycleEventContainer container) {
+                if (npc.isDead() || !npc.isRegistered()) {
+                    container.stop();
+                    return;
+                }
+
+                if (container.getTotalExecutions() % 2 == 0) {
+                    Server.playerHandler.sendStillGfx(new StillGraphic(1246, 0, position), position);
+                }
+
+                if (container.getTotalExecutions() == 72) {
+                    container.stop();
+                } else if (container.getTotalExecutions() >= 2) {
+                    PlayerHandler.getPlayers().stream().filter(plr -> plr.getPosition().equals(position)).forEach(plr ->
+                            plr.appendDamage(6 + Misc.random(10), Hitmark.HIT));
+                }
+            }
+        }, 1);
     }
 
     public ArrayList<int[]> gorillaBoulder = new ArrayList<>(1);

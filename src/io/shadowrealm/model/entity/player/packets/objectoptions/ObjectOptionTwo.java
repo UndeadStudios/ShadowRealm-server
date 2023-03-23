@@ -175,9 +175,9 @@ public class ObjectOptionTwo {
 //			case 42487:
 //				c.getPA().movePlayer(2532, 3546, 0);
 //				break;
-			case 31681:
+/*			case 31681:
 				if (!c.gargoyleStairsUnlocked) {
-					int[] keys = {275 /* old key */, GrotesqueInstance.GROTESQUE_GUARDIANS_KEY};
+					int[] keys = {275 *//* old key *//*, GrotesqueInstance.GROTESQUE_GUARDIANS_KEY};
 					OptionalInt heldKey = Arrays.stream(keys).filter(key -> c.getItems().playerHasItem(key)).findFirst();
 					heldKey.ifPresentOrElse(key -> {
 						c.getItems().deleteItem(key, 1);
@@ -188,7 +188,7 @@ public class ObjectOptionTwo {
 				}
 
 				new GrotesqueInstance().enter(c);
-				break;
+				break;*/
 			case 721:
 				Hunter.resetTrap(c, object);
 				break;

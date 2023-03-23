@@ -67,6 +67,17 @@ public class HitDispatcherNpc extends HitDispatcher {
             }
         }
 
+        if (npcId == 963) { // First Phase Kalphite Queen MAGIC & RANGE
+            if (type == CombatType.RANGE || type == CombatType.MAGE) {
+                maximumDamage = 0;
+            }
+        }
+        if (npcId == 965) { // Second Phase Kalphite Queen Melee
+            if (type == CombatType.MELEE) {
+                maximumDamage = 0;
+            }
+        }
+
         // Demonic gorilla
         if (type == CombatType.MELEE && npcId == Npcs.DEMONIC_GORILLA
                 || type == CombatType.RANGE && npcId == Npcs.DEMONIC_GORILLA_2

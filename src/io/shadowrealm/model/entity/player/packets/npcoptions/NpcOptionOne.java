@@ -675,6 +675,7 @@ public class NpcOptionOne {
 				break;
 			case 3657:
 			case 1522:
+			case 6991:
 				Fishing.startFishing(player, 6, npcType);
 				break;
 			case 635:

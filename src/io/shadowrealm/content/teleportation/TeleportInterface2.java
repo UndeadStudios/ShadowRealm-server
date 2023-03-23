@@ -377,7 +377,7 @@ public class TeleportInterface2 {
         Kalphite_Queen(4, 102234, true, "Teleports you to the Kalphite Queen", new Position(3508, 9492, 0)),
         Lizardman_Shaman(4, 102239, true, "Teleports you to the Lizardman Shaman", new Position(1453,3692,0)),
         Sarachnis(4, 102244, true, "Teleports you to the Sarachnis", new Position(1842, 9926, 0)),
-        Grotesque_Guardians(4, 102249, true, "Teleports you to the Grotesque Guardians", new Position(3428, 3541, 2)),
+//        Grotesque_Guardians(4, 102249, true, "Teleports you to the Grotesque Guardians", new Position(3428, 3541, 2)),
         Thermonuclear_Smoke_Devil(4, 102254, true, "Teleports you to the Thermonuclear Smoke Devil", new Position(2404, 9415, 0)),
         Kraken(4, 103003, true, "Teleports you to the Kraken", new Position(2280, 10016, 0)),
         Godwars(4, 103008, true, "Teleports you to the Godwars.", new Position(2948, 3147, 0)),

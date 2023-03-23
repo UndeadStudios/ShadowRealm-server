@@ -45,7 +45,7 @@ public class Configuration {
 	public static final String DISCORD_INVITE = "https://discord.shadowrealm-rsps.com/";
 	public static final String RULES_LINK = "https://www.shadowrealm-rsps.com/";
 	public static final String GUIDES_LINK = "https://www.shadowrealm-rsps.com/";
-	public static final String DONATOR_BENEFITS_LINK = "https://www.shadowrealm-rsps.com/";
+	public static final String DONATOR_BENEFITS_LINK = "https://shadowrealmrsps.everythingrs.com/services/store";
 	public static final String PRICE_GUIDE = "https://www.shadowrealm-rsps.com/";
 	public static final LocalDate exilius_V1_LAUNCH_DATE = LocalDate.of(2020, Month.MARCH, 13);
 	public static final LocalDate exilius_V2_LAUNCH_DATE = LocalDate.of(2021, Month.MAY, 1);

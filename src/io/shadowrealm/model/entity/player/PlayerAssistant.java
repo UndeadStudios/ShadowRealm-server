@@ -2536,7 +2536,7 @@ public class PlayerAssistant {
 							c.sendMessage("Path found to : " + lowX + ", " + lowY);
 						}
 					} else {
-						PathFinder.getPathFinder().findRoute(c, npc.absX, npc.absY, true, 18, 18);
+						PathFinder.getPathFinder().findRoute(c, npc.absX, npc.absY, true, 18, 18, true);
 						if (c.debugMessage) {
 							c.sendMessage("No path found, reverting to npc position.");
 						}
