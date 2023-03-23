@@ -44,8 +44,8 @@ class BattlePassInterface(val player: Player) {
         fun sendData(player: Player, pageSent: Int) {
            // println("page send: $pageSent")
             var page = pageSent
-            if (page > 4) {
-                page = 4
+            if (page > 14) {
+                page = 14
                 return
             }
             if (page < 0) {
@@ -102,7 +102,7 @@ class BattlePassInterface(val player: Player) {
             var rewardIndex = (buttonID - 108083) / 3
             //println("player.battlePassPage = ${player.battlePassPage}")
             if (freeLevelBtns.contains(buttonID)) {
-                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
+                val modifiedIndex = rewardIndex + (player.battlePassPage * 14)
                 //println("mod index = $modifiedIndex")
                 xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
                // println("XP REQ = $xpReq")
@@ -130,7 +130,7 @@ class BattlePassInterface(val player: Player) {
                     return
                 }
                 rewardIndex-=4
-                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
+                val modifiedIndex = rewardIndex + (player.battlePassPage * 14)
                // println("Prem mod index: $modifiedIndex")
                 xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
                 //println("Prem XP req: $xpReq")

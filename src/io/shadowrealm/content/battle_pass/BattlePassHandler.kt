@@ -124,13 +124,13 @@ class BattlePassHandler {
             player.battlePassXP = 0
             player.battlePassLevel = 0
             player.battlePassSeason = getBattlePassSeason()
-            player.battlePassFreeRwdsClaimed = BooleanArray(20)
-            player.battlePassPremiumRwdsClaimed = BooleanArray(20)
+            player.battlePassFreeRwdsClaimed = BooleanArray(60)
+            player.battlePassPremiumRwdsClaimed = BooleanArray(60)
             player.battlePassPremiumUnlocked = false
             println("BATTLE PASS RESET FOR ${player.loginName}")
         }
         fun resetPlayerBattlePassPremium(player: Player) {
-            player.battlePassPremiumRwdsClaimed = BooleanArray(20)
+            player.battlePassPremiumRwdsClaimed = BooleanArray(60)
             println("BATTLE PASS Premium RESET FOR ${player.loginName}")
         }
 

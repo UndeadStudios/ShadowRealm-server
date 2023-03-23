@@ -245,10 +245,10 @@ public class Player extends Entity {
     public int battlePassLevel = 0;
     @Getter
     @Setter
-    public boolean[] battlePassFreeRwdsClaimed = new boolean[20];
+    public boolean[] battlePassFreeRwdsClaimed = new boolean[60];
     @Getter
     @Setter
-    public boolean[] battlePassPremiumRwdsClaimed = new boolean[20];
+    public boolean[] battlePassPremiumRwdsClaimed = new boolean[60];
     @Getter
     @Setter
     public boolean battlePassPremiumUnlocked = false;

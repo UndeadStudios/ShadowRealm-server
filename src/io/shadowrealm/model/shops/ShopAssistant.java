@@ -320,13 +320,13 @@ public class ShopAssistant {
 		c.sendMessage(itemName + ": currently costs " + Misc.insertCommas(ShopValue) + " coins (" + Misc.formatCoins(ShopValue) + ")");
 	}
 
-	public int getSpecialItemValue(int id) {
+	public int getSpecialItemValue(int id) { //special money costs
 		ShopDef shopDef = ShopDef.getDefinitions().get(c.myShopId);
 		switch (c.myShopId) {
-			case 65:
+			case 65:// shop id banned
 				switch(id) {
-					case 25539:
-						return 2000;
+					case 25539: //items under switch(id)
+						return 2000;// value of item
 					case 25547:
 						return 3000;
 					case 25537:

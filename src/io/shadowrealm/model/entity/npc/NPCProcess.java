@@ -139,10 +139,10 @@ public class NPCProcess {
                 || npc.getNpcId() == Npcs.TOWN_CRIER_5 
                 || npc.getNpcId() == Npcs.TOWN_CRIER_6) {
             if (Misc.random(3) == 2) {
-                //npc.forceChat(Configuration.UPDATE_MESSAGE);
+                npc.forceChat(Configuration.UPDATE_MESSAGE);
 
-                Thread RQ = new Thread(new RandomQuote(npc));
-                RQ.start();
+//                Thread RQ = new Thread(new RandomQuote(npc));
+//                RQ.start();
 
 
                 npc.startAnimation(6865);
