@@ -42,7 +42,7 @@ class BattlePassInterface(val player: Player) {
         }
 
         fun sendData(player: Player, pageSent: Int) {
-           // println("page send: $pageSent")
+            println("page send: $pageSent")
             var page = pageSent
             if (page > 14) {
                 page = 14
@@ -52,7 +52,7 @@ class BattlePassInterface(val player: Player) {
                 page = 0
                 return
             }
-           // println("new page: $page")
+            //println("new page: $page")
             player.battlePassPage = page
             player.pa.sendString(pageStr, "Page ${page + 1}")
             player.pa.sendString(timeStr, getDaysUntilEndDate())
@@ -102,10 +102,10 @@ class BattlePassInterface(val player: Player) {
             var rewardIndex = (buttonID - 108083) / 3
             //println("player.battlePassPage = ${player.battlePassPage}")
             if (freeLevelBtns.contains(buttonID)) {
-                val modifiedIndex = rewardIndex + (player.battlePassPage * 14)
+                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
                 //println("mod index = $modifiedIndex")
                 xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
-               // println("XP REQ = $xpReq")
+                //println("XP REQ = $xpReq")
                 if (player.battlePassXP < xpReq) {
                     player.sendMessage("You haven't got enough XP yet!")
                     return
@@ -130,7 +130,7 @@ class BattlePassInterface(val player: Player) {
                     return
                 }
                 rewardIndex-=4
-                val modifiedIndex = rewardIndex + (player.battlePassPage * 14)
+                val modifiedIndex = rewardIndex + (player.battlePassPage * 4)
                // println("Prem mod index: $modifiedIndex")
                 xpReq = BattlePassConfig.XP_FOR_LEVELS[modifiedIndex]
                 //println("Prem XP req: $xpReq")

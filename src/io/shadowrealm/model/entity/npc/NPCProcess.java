@@ -141,7 +141,7 @@ public class NPCProcess {
             if (Misc.random(3) == 2) {
                 npc.forceChat(Configuration.UPDATE_MESSAGE);
 
-//                Thread RQ = new Thread(new RandomQuote(npc));
+  //              Thread RQ = new Thread(new RandomQuote(npc));
 //                RQ.start();
 
 

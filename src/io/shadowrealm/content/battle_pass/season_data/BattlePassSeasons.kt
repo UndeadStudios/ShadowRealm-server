@@ -343,7 +343,7 @@ SEASON_THREE( //banned do this season
             454, 1000
         ),
         GameItem(
-            9005, 9005
+            9005, 1
         ),
         GameItem(
             406, 5
