@@ -52,14 +52,6 @@ public class NPCProcess {
     private int type;
     private AlchemicalHydra hydraInstance;
 
-    public static final String HOST = "localhost";
-    public static final String USER = "votes";
-    public static final String PASS = "zazu";
-    public static final String DATABASE = "exilius";
-
-    private Connection conn;
-    private Statement stmt;
-
     private boolean doStop = false;
     public void process(int i) {
         this.i = i;
@@ -150,20 +142,7 @@ public class NPCProcess {
             if (Misc.random(30) == 2) {
                 npc.forceChat(Configuration.UPDATE_MESSAGE);
 
-                try {
-                    if (!connect(HOST, DATABASE, USER, PASS)) {
-                        return;
-                    }
 
-
-                    ResultSet rs = executeQuery("SELECT quote FROM randomquotes ORDER BY RAND() LIMIT 1");
-                    rs.next();
-                    String RandomQuote = rs.getString("quote");
-                    npc.forceChat(RandomQuote);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
 
                 npc.startAnimation(6865);
             }
@@ -451,25 +430,6 @@ public class NPCProcess {
         } else {
             npc.processMovement();
         }
-    }
-    public boolean connect(String host, String database, String user, String pass) {
-        try {
-            this.conn = DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+database, user, pass);
-            return true;
-        } catch (SQLException e) {
-            System.out.println("Failing connecting to database!");
-            return false;
-        }
-    }
-    public ResultSet executeQuery(String query) {
-        try {
-            this.stmt = this.conn.createStatement(1005, 1008);
-            ResultSet results = stmt.executeQuery(query);
-            return results;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return null;
     }
     private void processDeath() {
         if (npc.isDead()) {
