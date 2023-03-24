@@ -34,7 +34,8 @@ public class Cannon {
 
     private static HashSet<Boundary> BLOCKED_BOUNDARIES = new HashSet<>(Arrays.asList(
             Boundary.MAGE_ARENA,
-            Boundary.Nex
+            Boundary.Nex,
+            Boundary.maledictus1
     ));
 
     public static void attemptPlace(Player player) {

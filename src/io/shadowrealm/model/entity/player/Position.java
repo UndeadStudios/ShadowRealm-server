@@ -318,6 +318,7 @@ public final class Position {
 		if (Boundary.isIn(this, Boundary.ZULRAH)
 				|| Boundary.isIn(this, Boundary.ABYSSAL_SIRE)
 				|| Boundary.isIn(this, Boundary.Nex)
+				|| Boundary.isIn(this, Boundary.maledictus1)
 				|| Boundary.isIn(this, Boundary.CORPOREAL_BEAST_LAIR)
 				|| Boundary.isIn(this, Boundary.KRAKEN_CAVE)
 				|| Boundary.isIn(this, Boundary.SCORPIA_LAIR)

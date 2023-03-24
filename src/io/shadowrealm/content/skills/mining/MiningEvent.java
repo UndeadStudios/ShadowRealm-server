@@ -352,7 +352,7 @@ public class MiningEvent extends Event<Player> {
                 break;
 
         }
-        int amount = SkillcapePerks.MINING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 5 : 1;
+        int amount = SkillcapePerks.MINING.isWearing(plr) || SkillcapePerks.isWearingMaxCape(plr) ? 1 : 2;
         if (!(mineral.getBarName().contains("star"))) {
             plr.getItems().addItem(mineral.getMineralReturn().generate(), amount);
             plr.sendMessage("You manage to mine some " + ItemCacheDefinition.forID(mineral.getMineralReturn().generate()).getName().toLowerCase() + ".");
@@ -367,12 +367,8 @@ public class MiningEvent extends Event<Player> {
                     return;
                 }
             if (plr.getItems().isWearingItem(Items.MINING_CAPE)) {
-                plr.getItems().addItem(25527, 2);
-            } else if (plr.getItems().isWearingItem(Items.MINING_CAPE)) {
-                    plr.getItems().addItem(25527, 2);
-                } else if (!plr.getItems().isWearingItem(Items.MINING_CAPE)) {
-                    plr.getItems().addItem(25527, 1);
-                }
+                plr.getItems().addItem(25527, Misc.random(1, 2));
+            }
                 ShootingStar.MAXIMUM_MINING_AMOUNT -= 1;
                 //plr.sendMessage(""+ShootingStar.MAXIMUM_MINING_AMOUNT);
                 if (Misc.random(200) == 5) {

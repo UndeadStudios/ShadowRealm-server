@@ -109363,19 +109363,19 @@
       "HITPOINTS": 2000
     },
     "attackBonuses": {
-      "ATTACK_MAGIC_BONUS": 60,
-      "ATTACK_BONUS": 72,
-      "STRENGTH_BONUS": 78,
-      "MAGIC_STRENGTH_BONUS": 60,
+      "ATTACK_MAGIC_BONUS": 160,
+      "ATTACK_BONUS": 172,
+      "STRENGTH_BONUS": 178,
+      "MAGIC_STRENGTH_BONUS": 160,
       "ATTACK_RANGE_BONUS": 265,
-      "RANGE_STRENGTH_BONUS": 60
+      "RANGE_STRENGTH_BONUS": 160
     },
     "defensiveBonuses": {
-      "SLASH_BONUS": 1,
-      "STAB_BONUS": 1,
-      "RANGE_BONUS": 1,
-      "MAGIC_BONUS": 1,
-      "CRUSH_BONUS": 1
+      "SLASH_BONUS": 145,
+      "STAB_BONUS": 155,
+      "RANGE_BONUS": 165,
+      "MAGIC_BONUS": 116,
+      "CRUSH_BONUS": 125
     }
   },
   {

@@ -97,7 +97,7 @@ public class NPCProcess {
             npc.heightLevel = slaveOwner.heightLevel;
 
         }
-        if(Server.getVoteCounter() >= 24){
+        if(Server.getVoteCounter() >= 24){//votes needed to spawn voteboss
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
             PlayerHandler.executeGlobalMessage("@dre@[Vote System] Vote Boss Has spawned");
             new io.shadowrealm.model.entity.player.broadcasts.Broadcast("[Vote System] Vote Boss Has spawned at " + Server.getVoteCounter() + " Votes!").submit();
@@ -141,33 +141,33 @@ public class NPCProcess {
                 npc.forceChat("Sell your PvM items here for a limited time!"); //npc forced text example
             }
         }
-        if (npc.getNpcId() == Npcs.TOWN_CRIER 
-                || npc.getNpcId() == Npcs.TOWN_CRIER_2  
-                || npc.getNpcId() == Npcs.TOWN_CRIER_3 
-                || npc.getNpcId() == Npcs.TOWN_CRIER_4 
-                || npc.getNpcId() == Npcs.TOWN_CRIER_5 
-                || npc.getNpcId() == Npcs.TOWN_CRIER_6) {
-            if (Misc.random(30) == 2) {
-                npc.forceChat(Configuration.UPDATE_MESSAGE);
-
-                try {
-                    if (!connect(HOST, DATABASE, USER, PASS)) {
-                        return;
-                    }
-
-
-                    ResultSet rs = executeQuery("SELECT quote FROM randomquotes ORDER BY RAND() LIMIT 1");
-                    rs.next();
-                    String RandomQuote = rs.getString("quote");
-                    npc.forceChat(RandomQuote);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                npc.startAnimation(6865);
-            }
-        }
+//        if (npc.getNpcId() == Npcs.TOWN_CRIER
+//                || npc.getNpcId() == Npcs.TOWN_CRIER_2
+//                || npc.getNpcId() == Npcs.TOWN_CRIER_3
+//                || npc.getNpcId() == Npcs.TOWN_CRIER_4
+//                || npc.getNpcId() == Npcs.TOWN_CRIER_5
+//                || npc.getNpcId() == Npcs.TOWN_CRIER_6) {
+//            if (Misc.random(75) == 2) {
+//               // npc.forceChat(Configuration.UPDATE_MESSAGE);
+//
+//                try {
+//                    if (!connect(HOST, DATABASE, USER, PASS)) {
+//                        System.out.println("Randomquotes failed connect to database");
+//                        return;
+//                    }
+//                    ResultSet rs = executeQuery("SELECT quote FROM randomquotes ORDER BY RAND() LIMIT 1");
+//                    rs.next();
+//                    String RandomQuote = rs.getString("quote");
+//                    npc.forceChat(RandomQuote);
+//                   // System.out.println("Town crier: "+ RandomQuote);
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//                npc.startAnimation(6865);
+//            }
+//        }
         if(npc.getNpcId() == 1306){
             if(Misc.random(50) == 2){
                 npc.requestTransform(1307);

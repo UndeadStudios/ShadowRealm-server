@@ -704,6 +704,7 @@ public static  final Boundary brithday_room2 = new Boundary(2944, 9920, 3007, 99
 	public static final Boundary OURIANA_ALTAR = new Boundary(2995, 5559, 3092, 5645);
 	public static final Boundary OURIANA_ALTAR_BANK = new Boundary(3010, 5618, 3026, 5630);
 	public static final Boundary REVENANT_MALEDICTUS = new Boundary(3225, 10191, 3249, 10212);
+	public static final Boundary maledictus1 = new Boundary(3032, 3752, 3059, 3772);
 	public static final Boundary GROUP_IRONMAN_FORMING = new Boundary(new Position(3059, 3032, 0), new Position(3179, 3134, 0));
 	public static final Boundary wild_slayer_save = new Boundary(3320, 10029, 3473, 10192);
 	public static Location centerAsLocation(Boundary boundary) {

@@ -9,6 +9,15 @@
     "walkingType": "WALK"
   },
   {
+    "id": 11246,
+    "position": {
+      "x": 3044,
+      "y": 3762,
+      "height": 0
+    },
+    "walkingType": "WALK"
+  },
+  {
     "id": 7935,
     "position": {
       "x": 3253,
