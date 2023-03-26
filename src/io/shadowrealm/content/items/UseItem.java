@@ -514,7 +514,25 @@ public class UseItem {
 
 			}
 			break;
-
+			case 26520:
+				if (itemId == 26528) {
+					if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(12) && c.getItems().playerHasItem(6) && c.getItems().playerHasItem(8) && c.getItems().playerHasItem(10)) {
+						c.getItems().deleteItem(26528, 1);
+						c.getItems().deleteItem(10, 1);
+						c.getItems().deleteItem(8, 1);
+						c.getItems().deleteItem(12, 1);
+						c.getItems().deleteItem(6, 1);
+						c.getItems().addItem(26520, 1);
+						c.getItems().addItem(26522, 1);
+						c.getItems().addItem(26524, 1);
+						c.getItems().addItem(26526, 1);
+						c.sendMessage("You successfully bind the parts together into the new cannon(or).");
+					} else {
+						c.sendMessage("You need all required items to combine them.");
+						return;
+					}
+				}
+				break;
 		case 14888:
 			if (itemId == 19529) {
 				if (c.getItems().playerHasItem(6571)) {
@@ -530,21 +548,6 @@ public class UseItem {
 				BraceletMaking.craftBraceletDialogue(c);
 			}
 			break;
-			case 26250:
-				if (itemId == 26250) {
-					if (c.getItems().playerHasItem(26258)) {
-						c.getItems().deleteItem(19529, 1);
-						c.getItems().deleteItem(6571, 1);
-						c.getItems().addItem(19496, 1);
-						c.sendMessage("You successfully bind the two parts together into an uncut zenyte.");
-					} else {
-						c.sendMessage("You need an uncut onyx to do this.");
-						return;
-					}
-				} else {
-					BraceletMaking.craftBraceletDialogue(c);
-				}
-				break;
 
 		case 25824:
 			c.facePosition(objectX, objectY);
@@ -704,13 +707,49 @@ public class UseItem {
 				c.sendMessage("You do not have the required items");
 			}
 		}
-		/*if(itemUsed == 1733 && useWith == 3470 || itemUsed == 3470 && useWith == 1733){
-			if (c.getItems().playerHasItem(1733) && c.getItems().playerHasItem(3470)) {
-				SplitbarkCrafting.OpenInterface(c);
-			}
-		}*/
+		if (itemUsed == 26528 && useWith == 10 || itemUsed == 10 && useWith == 26528) {
+			if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(10)) {
+				c.getItems().deleteItem(26528, 1);
+				c.getItems().deleteItem(10, 1);
+				c.getItems().addItem(26524, 1);
 
-        if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
+				c.sendMessage("You have combined the kit to make the Cannon Barrels(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 26528 && useWith == 12 || itemUsed == 12 && useWith == 26528) {
+			if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(12)) {
+				c.getItems().deleteItem(26528, 1);
+				c.getItems().deleteItem(12, 1);
+				c.getItems().addItem(26526, 1);
+				c.sendMessage("You have combined the kit to make the Cannon Furnace(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 26528 && useWith == 8 || itemUsed == 8 && useWith == 26528) {
+			if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(8)) {
+				c.getItems().deleteItem(26528, 1);
+				c.getItems().deleteItem(8, 1);
+				c.getItems().addItem(26522, 1);
+				c.sendMessage("You have combined the kit to make the Cannon stand(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 26528 && useWith == 6 || itemUsed == 6 && useWith == 26528) {
+			if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(6)) {
+				c.getItems().deleteItem(26528, 1);
+				c.getItems().deleteItem(6, 1);
+				c.getItems().addItem(26520, 1);
+				c.sendMessage("You have combined the kit to make the Cannon base(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+
+		if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
             if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
                 c.getItems().deleteItem(26713, 1);
                 c.getItems().deleteItem(11826, 1);

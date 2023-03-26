@@ -38,13 +38,4 @@ public class Zalcano {
             }
         }
     }
-
-    public void mine() {
-
-    }
-
-    public void useItemOnNPC() {
-
-    }
-
 }
