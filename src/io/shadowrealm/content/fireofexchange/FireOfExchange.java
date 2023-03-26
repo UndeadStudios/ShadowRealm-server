@@ -165,7 +165,7 @@ public class FireOfExchange {
             case 8868://perm uim key
                 return 10000;
             case 7629://double slayer points
-                return 1250;
+                return 12500;
             case 24460://double clues
                 return 2500;
             case 7968://pet rate increase

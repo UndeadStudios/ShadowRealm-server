@@ -42,8 +42,6 @@ public class VoteMysteryBox implements Lootable {
 				Arrays.asList(
 						new GameItem(20199),//monk g top
 						new GameItem(20202),//monk g bottom
-						new GameItem(20205),//gold chef hat
-						new GameItem(20208),//gold apron
 						new GameItem(20169),//steel g
 						new GameItem(20172),
 						new GameItem(20175),
@@ -237,18 +235,6 @@ public class VoteMysteryBox implements Lootable {
 						new GameItem(12365),//iron drag mask
 						new GameItem(12363),//bronze dragon mask
 						new GameItem(12361),//cat mask
-						new GameItem(3481),//gold plate
-						new GameItem(3483),//gold legs
-						new GameItem(3485),//gold skirt
-						new GameItem(3486),//gold full helm
-						new GameItem(3488),//gold kite
-						new GameItem(12389),//gold scimi
-						new GameItem(12391),//gold boots
-						new GameItem(20146),//gold med
-						new GameItem(20149),//gold chain
-						new GameItem(20152),//gold sq
-						new GameItem(20155),//gold 2h
-						new GameItem(20161),//gilded hasta
 						new GameItem(12359),//leprachon hat
 						new GameItem(20026, 1),
 						new GameItem(24315),//spooky costume start

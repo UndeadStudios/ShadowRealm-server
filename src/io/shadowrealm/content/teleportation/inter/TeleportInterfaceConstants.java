@@ -85,7 +85,7 @@ public class TeleportInterfaceConstants {
             ));
 
     private static final TeleportContainer SKILLING = new TeleportContainer(Lists.newArrayList(
-            new TeleportButtonStandard("Slayer Masters", new Position(3083, 3499, 0)),
+            new TeleportButtonStandard("Slayer Masters", new Position(3112, 3514, 0)),
             new TeleportButtonStandard("Mount Karuulm (Slayer)", new Position(1311, 3795, 0)),
             new TeleportButtonStandard("Skilling Island", new Position(3803, 3538, 0)),
             new TeleportButtonStandard("Agility", new Position(3091, 3478, 0)),

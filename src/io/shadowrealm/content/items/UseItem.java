@@ -530,6 +530,21 @@ public class UseItem {
 				BraceletMaking.craftBraceletDialogue(c);
 			}
 			break;
+			case 26250:
+				if (itemId == 26250) {
+					if (c.getItems().playerHasItem(26258)) {
+						c.getItems().deleteItem(19529, 1);
+						c.getItems().deleteItem(6571, 1);
+						c.getItems().addItem(19496, 1);
+						c.sendMessage("You successfully bind the two parts together into an uncut zenyte.");
+					} else {
+						c.sendMessage("You need an uncut onyx to do this.");
+						return;
+					}
+				} else {
+					BraceletMaking.craftBraceletDialogue(c);
+				}
+				break;
 
 		case 25824:
 			c.facePosition(objectX, objectY);

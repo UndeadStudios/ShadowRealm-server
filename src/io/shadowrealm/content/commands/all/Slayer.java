@@ -19,7 +19,7 @@ public class Slayer extends Command {
 			c.sendMessage("You can only use this command outside the wilderness.");
 			return;
 		}
-		c.getPA().startTeleport(3082, 3499, 0, "modern", false);
+		c.getPA().startTeleport(3112, 3514, 0, "modern", false);
 		c.stopAnimation();
 	}
 
