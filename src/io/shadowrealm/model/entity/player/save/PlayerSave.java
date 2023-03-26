@@ -1698,6 +1698,8 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("sang-staff-charge = " + p.getSangStaffCharge());
             characterfile.newLine();
+            characterfile.write("Holy-sang-staff-charge = " + p.getHolySangStaffCharge());
+            characterfile.newLine();
 
             characterfile.write("bryophyta-charge = " + p.bryophytaStaffCharges);
             characterfile.newLine();

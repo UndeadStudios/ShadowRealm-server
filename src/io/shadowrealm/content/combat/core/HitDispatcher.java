@@ -16,6 +16,8 @@ import io.shadowrealm.content.combat.effects.damageeffect.impl.amuletofthedamned
 import io.shadowrealm.content.combat.effects.special.impl.LavaScythe;
 import io.shadowrealm.content.combat.effects.special.impl.ScytheOfOsiris;
 import io.shadowrealm.content.combat.effects.special.impl.ScytheOfVitur;
+import io.shadowrealm.content.combat.effects.special.impl.HolyScytheOfVitur;
+import io.shadowrealm.content.combat.effects.special.impl.SangScytheOfVitur;
 import io.shadowrealm.content.combat.formula.rework.MagicCombatFormula;
 import io.shadowrealm.content.combat.formula.rework.MeleeCombatFormula;
 import io.shadowrealm.content.combat.formula.rework.RangeCombatFormula;
@@ -113,6 +115,8 @@ public abstract class HitDispatcher {
 
         boolean usingSythe = false;
         boolean usingScythe = false;
+        boolean usingSScythe = false;
+        boolean usingHScythe = false;
         boolean usingLScythe = false;
 
         if (combatType.equals(CombatType.MELEE)) {
@@ -142,6 +146,8 @@ public abstract class HitDispatcher {
 
             usingSythe = ScytheOfVitur.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
             usingScythe = ScytheOfOsiris.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
+            usingHScythe = HolyScytheOfVitur.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
+            usingSScythe = SangScytheOfVitur.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
             usingLScythe = LavaScythe.SCYTHE_EFFECT.activateSpecialEffect(attacker, defender);
 
             damage = isMaxHitDummy ? maximumDamage : Misc.random((int) maximumDamage);
@@ -172,6 +178,30 @@ public abstract class HitDispatcher {
                 }
             }
             if (usingLScythe) {
+
+                double roll = rand.nextDouble();
+                double roll2 = rand.nextDouble();
+
+                if (defender.getEntitySize() > 1 || isMaxHitDummy) {
+                    if (maximumAccuracy >= roll || isMaxHitDummy)
+                        damage2 = (isMaxHitDummy ? damage / 2 : Misc.random(maximumDamage / 3));
+                    if (maximumAccuracy >= roll2 || isMaxHitDummy)
+                        damage3 = (isMaxHitDummy ? damage / 4 : Misc.random(maximumDamage / 5));
+                }
+            }
+            if (usingHScythe) {
+
+                double roll = rand.nextDouble();
+                double roll2 = rand.nextDouble();
+
+                if (defender.getEntitySize() > 1 || isMaxHitDummy) {
+                    if (maximumAccuracy >= roll || isMaxHitDummy)
+                        damage2 = (isMaxHitDummy ? damage / 2 : Misc.random(maximumDamage / 3));
+                    if (maximumAccuracy >= roll2 || isMaxHitDummy)
+                        damage3 = (isMaxHitDummy ? damage / 4 : Misc.random(maximumDamage / 5));
+                }
+            }
+            if (usingSScythe) {
 
                 double roll = rand.nextDouble();
                 double roll2 = rand.nextDouble();
@@ -538,7 +568,14 @@ public abstract class HitDispatcher {
             attacker.getDamageQueue().add(new Damage(defender, usingLScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
                     hitmark2, combatType));
         }
-
+        if (damage2 > -1 || usingHScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingHScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
+                    hitmark2, combatType));
+        }
+        if (damage2 > -1 || usingSScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingSScythe ? damage2 : Math.max(0, damage2), delay, attacker.playerEquipment,
+                    hitmark2, combatType));
+        }
         if (damage3 > -1 || usingSythe && defender.getEntitySize() > 1) {
             attacker.getDamageQueue().add(new Damage(defender, usingSythe ? damage3 : Math.max(0, damage3), delay + 1,
                     attacker.playerEquipment, hitmark3, combatType));
@@ -549,6 +586,14 @@ public abstract class HitDispatcher {
         }
         if (damage3 > -1 || usingLScythe && defender.getEntitySize() > 1) {
             attacker.getDamageQueue().add(new Damage(defender, usingLScythe ? damage3 : Math.max(0, damage3), delay + 1,
+                    attacker.playerEquipment, hitmark3, combatType));
+        }
+        if (damage3 > -1 || usingHScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingHScythe ? damage3 : Math.max(0, damage3), delay + 1,
+                    attacker.playerEquipment, hitmark3, combatType));
+        }
+        if (damage3 > -1 || usingHScythe && defender.getEntitySize() > 1) {
+            attacker.getDamageQueue().add(new Damage(defender, usingHScythe ? damage3 : Math.max(0, damage3), delay + 1,
                     attacker.playerEquipment, hitmark3, combatType));
         }
 
@@ -569,6 +614,8 @@ public abstract class HitDispatcher {
                 List<Entity> multiHitEntities2 = getMultiHitEntities(MeleeData.usingScytheOfOsiris(attacker));
                 List<Entity> multiHitEntities3 = getMultiHitEntities(MeleeData.usingLavaScythe(attacker));
                 List<Entity> multiHitEntities4 = getMultiHitEntities(MeleeData.usingIceScythe(attacker));
+                List<Entity> multiHitEntities5 = getMultiHitEntities(MeleeData.usingHolyScythe(attacker));
+                List<Entity> multiHitEntities6 = getMultiHitEntities(MeleeData.usingSangScythe(attacker));
                 if (attacker.isPrintAttackStats()) {
                     attacker.sendMessage("Using multi-attack, " + multiHitEntities.size() + " possible targets.");
                 }
@@ -641,11 +688,42 @@ public abstract class HitDispatcher {
                     }
                     getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
                 });
+                multiHitEntities5.forEach(entity -> {
+                    if (defender.isNPC()) {
+                        if (entity.isPlayer()) {
+                            Player target = entity.asPlayer();
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                                if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
+                                    attacker.attackedPlayers.add(target.getIndex());
+                                    attacker.isSkulled = true;
+                                    attacker.skullTimer = Configuration.SKULL_TIMER;
+                                    attacker.headIconPk = 0;
+                                    attacker.getPA().requestUpdates();
+                                }
+                            }
+                        }
+                    }
+                    getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
+                });
+                multiHitEntities6.forEach(entity -> {
+                    if (defender.isNPC()) {
+                        if (entity.isPlayer()) {
+                            Player target = entity.asPlayer();
+                            if (!Boundary.isIn(attacker, Boundary.DUEL_ARENA) && !Boundary.isIn(attacker, Boundary.CLAN_WARS_FREE_FOR_ALL) && !TourneyManager.getSingleton().isInArena(attacker)) {
+                                if (!attacker.attackedPlayers.contains(target.getIndex()) && !PlayerHandler.players[target.getIndex()].attackedPlayers.contains(attacker.getIndex())) {
+                                    attacker.attackedPlayers.add(target.getIndex());
+                                    attacker.isSkulled = true;
+                                    attacker.skullTimer = Configuration.SKULL_TIMER;
+                                    attacker.headIconPk = 0;
+                                    attacker.getPA().requestUpdates();
+                                }
+                            }
+                        }
+                    }
+                    getHitEntity(attacker, entity).playerHitEntity(combatType, special, true);
+                });
             }
         }
-
-
-
 
         if (attacker.rubyBoltSpecial)
             attacker.rubyBoltSpecial = false;

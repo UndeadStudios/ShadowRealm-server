@@ -52,8 +52,6 @@ import io.shadowrealm.content.skills.woodcutting.Tree;
 import io.shadowrealm.content.skills.woodcutting.Woodcutting;
 import io.shadowrealm.content.tournaments.ViewingOrb;
 import io.shadowrealm.content.tradingpost.Listing;
-import io.shadowrealm.content.trails.MapScrolls;
-import io.shadowrealm.content.trails.SearchScrolls;
 import io.shadowrealm.content.traveling.Sailing;
 import io.shadowrealm.content.wilderness.SpiderWeb;
 import io.shadowrealm.model.Items;
@@ -817,12 +815,6 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 			}
-		}
-		if (MapScrolls.handleCrate(c, obX, obY)) {
-			return;
-		}
-		if (SearchScrolls.handleObject(c, object)) {
-			return;
 		}
 		final int[] HUNTER_OBJECTS = { 9373, 9377, 9379, 9375, 9348, 9380, 9385, 9344, 9345, 9383, 721, 9158, 9004 };
 		if (IntStream.of(HUNTER_OBJECTS).anyMatch(id -> objectType == id)) {

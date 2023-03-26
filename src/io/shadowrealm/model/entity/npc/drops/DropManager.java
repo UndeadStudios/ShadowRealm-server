@@ -15,8 +15,6 @@ import io.shadowrealm.content.bosses.hespori.Hespori;
 import io.shadowrealm.content.lootbag.LootingBag;
 import io.shadowrealm.content.skills.slayer.SlayerMaster;
 import io.shadowrealm.content.skills.slayer.Task;
-import io.shadowrealm.content.trails.ClueScroll;
-import io.shadowrealm.content.trails.KeyToClue;
 import io.shadowrealm.content.trails.RewardLevel;
 import io.shadowrealm.content.vote_panel.VotePanelManager;
 import io.shadowrealm.content.wogw.Wogw;
@@ -326,8 +324,6 @@ public class DropManager {
         if (Hespori.activeGolparSeed) {
             clueAmount = 2;
         }
-        ClueScroll.dropClue(player, npc, location);
-KeyToClue.dropKey(player, npc, location);
         /**
          * Coin Bags and resource boxes
          */

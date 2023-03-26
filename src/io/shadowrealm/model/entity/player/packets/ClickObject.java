@@ -420,7 +420,7 @@ public class ClickObject implements PacketType {
                         c.getDH().sendStatement("@red@You need at least 3 free slot to open this.");
                         return;
                     }
-                        if (c.getItems().playerHasItem(NexNPC.Loot_KEY, 1)) {
+                        if (c.getItems().playerHasItem(3460, 1)) {
                             c.objectDistance = 3;
                             c.getEventCalendar().progress(EventChallenge.OPEN_X_WILDY_CHESTS);
                             new NexChest().roll(c);

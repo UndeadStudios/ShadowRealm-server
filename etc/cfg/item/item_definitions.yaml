@@ -47776,7 +47776,7 @@
     - skill: "RANGED"
       level: 55
     - skill: "ATTACK"
-      level: 55  
+      level: 55
 - id: 9978
   name: "Raw bird meat"
   description: "Null"
@@ -70452,7 +70452,7 @@
 - id: 22263
   name: "Magic shield"
   noted: false
-  stackable: false  
+  stackable: false
 - id: 22249
   name: "Necklace of anguish (or)"
   description: "A deep sense of anguish burns within this powerful necklace."
@@ -75817,11 +75817,19 @@
   description: "A cursed banana which forces the individual to take on monkey-like mannerisms."
   shopValue: 1
   untradeable: true
-
-
-
-
-
-
-
-
+- id: 25731
+  name: "Holy Sanguinesti"
+  description: "The Holy Sanguinesti."
+  shopValue: 20000000
+- id: 25736
+  name: "Holy Scythe of Vitur"
+  description: "The Holy Scythe of Vitur."
+  shopValue: 20000000
+- id: 25734
+  name: "Holy Ghrazi"
+  description: "The Holy Ghrazi."
+  shopValue: 20000000
+- id: 25734
+  name: "sanguine Scythe of Vitur"
+  description: "The Holy Ghrazi."
+  shopValue: 20000000

@@ -6,6 +6,7 @@ import io.shadowrealm.content.combat.CombatItems;
 import io.shadowrealm.content.combat.Damage;
 import io.shadowrealm.content.combat.effects.damageeffect.impl.DragonfireShieldEffect;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.items.Degrade;
 import io.shadowrealm.content.skills.crafting.BryophytaStaff;
 import io.shadowrealm.model.Items;
@@ -96,6 +97,9 @@ public class OperateItem implements PacketType {
 			switch (itemId) {
 			case Items.SANGUINESTI_STAFF:
 				SanguinestiStaff.checkChargesRemaining(c);
+				break;
+			case Items.HOLY_SANGUINESTI_STAFF:
+				HolySanguinestiStaff.checkChargesRemaining(c);
 				break;
 			case 2550:
 				c.sendMessage("You have @red@"+ (40 - c.recoilHits) +"@bla@ recoil charges left.");

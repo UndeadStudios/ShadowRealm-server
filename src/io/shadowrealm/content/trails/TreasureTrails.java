@@ -1,23 +1,27 @@
 package io.shadowrealm.content.trails;
 
+import java.util.Arrays;
+import java.util.List;
+
+import io.shadowrealm.Server;
 import io.shadowrealm.content.achievement.AchievementType;
 import io.shadowrealm.content.achievement.Achievements;
+import io.shadowrealm.content.skills.hunter.impling.ItemRarity;
 import io.shadowrealm.model.Items;
 import io.shadowrealm.model.definitions.ItemDef;
 import io.shadowrealm.model.entity.npc.pets.PetHandler;
 import io.shadowrealm.model.entity.player.Player;
 import io.shadowrealm.model.entity.player.PlayerHandler;
 import io.shadowrealm.model.items.GameItem;
+import io.shadowrealm.model.items.ImmutableItem;
 import io.shadowrealm.util.Misc;
-
-import java.util.List;
 
 public class TreasureTrails {
 
-	public static final int EASY_CASKET = 20546;
-	public static final int MEDIUM_CASKET = 20545;
-	public static final int HARD_CASKET = 20544;
-	public static final int MASTER_CASKET = 19836;
+	public static final int EASY_CASKET = 2714;
+	public static final int MEDIUM_CASKET = 2802;
+	public static final int HARD_CASKET = 2775;
+	public static final int MASTER_CASKET = 19841;
 
 	public static final int EASY_CLUE_SCROLL = 2677;
 	public static final int MEDIUM_CLUE_SCROLL = 2801;
@@ -35,6 +39,12 @@ public class TreasureTrails {
 
 	private static int getCluesCompleted(Player player, RewardLevel difficulty) {
 		switch (difficulty) {
+			case EASY:
+				return player.getEasyClueCounter();
+			case MEDIUM:
+				return player.getMediumClueCounter();
+			case HARD:
+				return player.getHardClueCounter();
 			case MASTER:
 				return player.getMasterClueCounter();
 		}
@@ -49,7 +59,8 @@ public class TreasureTrails {
 	}
 
 	public static boolean rollMimicCasket(RewardLevel rewardLevel) {
-		int roll = rewardLevel == RewardLevel.MASTER ? 10 : 0;
+		int roll = rewardLevel == RewardLevel.MASTER ? 10
+				: rewardLevel == RewardLevel.HARD ? 25 : 0;
 		return roll != 0 && Misc.trueRand(roll) == 0;
 	}
 
@@ -81,7 +92,7 @@ public class TreasureTrails {
 			}
 		}
 
-		if (rewardLevel == RewardLevel.MASTER) {
+		if (rewardLevel == RewardLevel.MASTER || rewardLevel == RewardLevel.HARD) {
 			int rand = Misc.trueRand(rewardLevel == RewardLevel.MASTER ? 512 : 1024);
 			int item = CLUE_HUNTER[Misc.trueRand(CLUE_HUNTER.length)];
 			if (rand == 0) {
@@ -131,6 +142,18 @@ public class TreasureTrails {
 		player.getTrails().addRewards(rewardLevel);
 
 		switch (rewardLevel) {
+			case EASY:
+				player.setEasyClueCounter(player.getEasyClueCounter() + 1);
+				player.sendMessage("<col=2d256d>You have completed " + player.getEasyClueCounter() + " Easy Treasure Trails.");
+				break;
+			case MEDIUM:
+				player.setMediumClueCounter(player.getMediumClueCounter() + 1);
+				player.sendMessage("<col=2d256d>You have completed " + player.getMediumClueCounter() + " medium Treasure Trails.");
+				break;
+			case HARD:
+				player.setHardClueCounter(player.getHardClueCounter() + 1);
+				player.sendMessage("<col=2d256d>You have completed " + player.getHardClueCounter() + " hard Treasure Trails.");
+				break;
 			case MASTER:
 				player.setMasterClueCounter(player.getMasterClueCounter() + 1);
 				player.sendMessage("<col=2d256d>You have completed " + player.getMasterClueCounter() + " master Treasure Trails.");

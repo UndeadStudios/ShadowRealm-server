@@ -251,11 +251,11 @@ public class Fishing {
         if (Misc.random(chance) == 1) {
             player.sendMessage("You catch a clue bottle!");
             if (bottleRoll < easyChance) {
-                player.getItems().addItemUnderAnyCircumstance(13648, rewardAmount);
+                player.getItems().addItemUnderAnyCircumstance(2677, rewardAmount);
             } else if (bottleRoll >= easyChance && bottleRoll < medChance) {
-                player.getItems().addItemUnderAnyCircumstance(13649, rewardAmount);
+                player.getItems().addItemUnderAnyCircumstance(2801, rewardAmount);
             } else {
-                player.getItems().addItemUnderAnyCircumstance(13650, rewardAmount);
+                player.getItems().addItemUnderAnyCircumstance(2722, rewardAmount);
             }
         }
     }

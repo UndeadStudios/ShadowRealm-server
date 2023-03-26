@@ -33,7 +33,6 @@ import io.shadowrealm.content.skills.slayer.SlayerRewardsInterface;
 import io.shadowrealm.content.skills.smithing.Smelting;
 import io.shadowrealm.content.tournaments.TourneyManager;
 import io.shadowrealm.content.tradingpost.Listing;
-import io.shadowrealm.content.trails.Sextant;
 import io.shadowrealm.content.tutorial.TutorialDialogue;
 import io.shadowrealm.content.vote_panel.VotePanelInterface;
 import io.shadowrealm.model.Items;
@@ -112,9 +111,6 @@ public class ClickingButtons implements PacketType {
 			return;
 		}
 		if (c.getPrestige().prestigeClicking(actionButtonId)) {
-			return;
-		}
-		if (Sextant.handleSextantButtons(c, actionButtonId)) {
 			return;
 		}
 		if (TourneyManager.getSingleton().handleActionButtons(c, actionButtonId)) {

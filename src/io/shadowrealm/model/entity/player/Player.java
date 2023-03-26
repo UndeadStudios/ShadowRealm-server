@@ -112,7 +112,6 @@ import io.shadowrealm.content.teleportation.TeleportInterface2;
 import io.shadowrealm.content.teleportation.inter.TeleportInterface;
 import io.shadowrealm.content.titles.Titles;
 import io.shadowrealm.content.tournaments.TourneyManager;
-import io.shadowrealm.content.trails.ClueScroll;
 import io.shadowrealm.content.trails.TreasureTrails;
 import io.shadowrealm.content.tutorial.ModeSelection;
 import io.shadowrealm.content.tutorial.TutorialDialogue;
@@ -309,7 +308,6 @@ public class Player extends Entity {
     public static final int playerSlayer = 18;
     public static final int playerFarming = 19;
     public static final int playerRunecrafting = 20;
-    public GameItem[] puzzleStoredItems = new GameItem[ClueScroll.PUZZLE_LENGTH];
     public double sextantBarDegree;
     public int sextantSunCoords;
     public int rotationFactor;
@@ -968,6 +966,7 @@ public class Player extends Entity {
     private int toxicTridentCharge;
     private int arcLightCharge;
     private int sangStaffCharge;
+    private int HolysangStaffCharge;
 
     public int getRunningDistanceTravelled() {
         return runningDistanceTravelled;
@@ -5457,9 +5456,14 @@ public MoneyBox getMoneyBoxInterface() {
     public int getSangStaffCharge() {
         return sangStaffCharge;
     }
-
+    public int getHolySangStaffCharge() {
+        return HolysangStaffCharge;
+    }
     public void setSangStaffCharge(int sangStaffCharge) {
         this.sangStaffCharge = sangStaffCharge;
+    }
+    public void setHolySangStaffCharge(int HolysangStaffCharge) {
+        this.HolysangStaffCharge = HolysangStaffCharge;
     }
 
     public Fletching getFletching() {

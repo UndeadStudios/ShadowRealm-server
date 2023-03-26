@@ -72887,5 +72887,65 @@
       "str": 0,
       "aspeed": 4
     }
+  },
+  "25734": {
+    "name": "Holy Ghrazi rapier",
+    "equipable": true,
+    "weight": 1.814,
+    "equipment": {
+      "slot": 3,
+      "astab": 104,
+      "aslash": 65,
+      "str": 100,
+      "aspeed": 3
+    }
+  },
+  "25736": {
+    "name": "Holy Scythe of vitur",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "astab": 185,
+      "aslash": 165,
+      "acrush": 40,
+      "amagic": -16,
+      "dstab": -12,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 230,
+      "aspeed": 4
+    }
+  },
+  "25739": {
+    "name": "Sanguine Scythe of vitur",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 3,
+      "astab": 185,
+      "aslash": 165,
+      "acrush": 40,
+      "amagic": -16,
+      "dstab": -12,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 230,
+      "aspeed": 4
+    }
+  },
+  "25731": {
+    "name": "Holy Sanguinesti staff",
+    "equipable": true,
+    "weight": 1.5,
+    "equipment": {
+      "slot": 3,
+      "amagic": 75,
+      "arange": -8,
+      "dstab": 12,
+      "dslash": 13,
+      "dcrush": 11,
+      "dmagic": 65,
+      "aspeed": 3
+    }
   }
 }

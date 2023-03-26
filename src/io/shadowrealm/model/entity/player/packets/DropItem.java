@@ -6,10 +6,10 @@ import java.util.Optional;
 import io.shadowrealm.Configuration;
 import io.shadowrealm.Server;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.items.ItemCombinations;
 import io.shadowrealm.content.miniquests.magearenaii.MageArenaII;
 import io.shadowrealm.content.tournaments.TourneyManager;
-import io.shadowrealm.content.trails.Puzzle;
 import io.shadowrealm.model.Items;
 import io.shadowrealm.model.definitions.ItemDef;
 import io.shadowrealm.model.entity.npc.pets.PetHandler;
@@ -46,8 +46,6 @@ public class DropItem implements PacketType {
 		c.getInStream().readUnsignedByte();
 		c.getInStream().readUnsignedByte();
 		int slot = c.getInStream().readUnsignedWordA();
-		if(Puzzle.moveSlidingPiece(c, itemId))
-			return;
 		if (c.debugMessage) {
 			c.sendMessage(String.format("DropItem[item=%d, slot=%d]", itemId, slot));
 		}
@@ -79,6 +77,10 @@ public class DropItem implements PacketType {
 		}
 		if (itemId == Items.SANGUINESTI_STAFF) {
 			SanguinestiStaff.clickItem(c, itemId, 5);
+			return;
+		}
+		if (itemId == Items.HOLY_SANGUINESTI_STAFF) {
+			HolySanguinestiStaff.clickItem(c, itemId, 5);
 			return;
 		}
 		if (Boundary.isIn(c, Boundary.OUTLAST_HUT)) {

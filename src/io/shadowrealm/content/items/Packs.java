@@ -1,6 +1,5 @@
 package io.shadowrealm.content.items;
 
-import io.shadowrealm.content.trails.ClueScroll;
 import io.shadowrealm.model.Items;
 import io.shadowrealm.model.entity.player.Player;
 import io.shadowrealm.model.items.ImmutableItem;
@@ -39,16 +38,7 @@ public enum Packs {
 	BOX_TRAP_PACK(12742, 10009, 50),
 		MAGIC_IMP_PACK(12744, -1, -1),
 		AMYLASE_PACK(12641, 12640, 100),
-		EASY_CLUE_BOTTLE(13648, ClueScroll.getRandomClue(1), 1),
-		MEDIUM_CLUE_BOTTLE(13649, ClueScroll.getRandomClue(2), 1),
-		HARD_CLUE_BOTTLE(13650, ClueScroll.getRandomClue(3), 1),
-		EASY_CLUE_GEODE(20358, ClueScroll.getRandomClue(1), 1),
-		MEDIUM_CLUE_GEODE(20360, ClueScroll.getRandomClue(2), 1),
-		HARD_CLUE_GEODE(20362, ClueScroll.getRandomClue(3), 1),
-		EASY_CLUE_NEST(19712, ClueScroll.getRandomClue(1), 1),
-		MEDIUM_CLUE_NEST(19714, ClueScroll.getRandomClue(2), 1),
-		HARD_CLUE_NEST(19716, ClueScroll.getRandomClue(3), 1),
-		UNFINISIHED_BROAD_BOLT_PACK(11887, 11876, 100);
+	UNFINISIHED_BROAD_BOLT_PACK(11887, 11876, 100);
 
 		private final int packId;
 		private final int itemId;
@@ -79,9 +69,6 @@ public enum Packs {
 				if (player.getItems().playerHasItem(item)) {
 					player.getItems().deleteItem(pack.getPackId(), 1);
 					player.getItems().addItem(pack.getItemId(), pack.getItemAmount());
-					if (pack == Packs.EASY_CLUE_NEST || pack == Packs.MEDIUM_CLUE_NEST || pack == Packs.HARD_CLUE_NEST)
-						player.getInventory().addOrDrop(new ImmutableItem(Items.BIRD_NEST, 1));
-					player.sendMessage("You opened the " + name + ".");
 				}
 			}
 		}

@@ -10,6 +10,7 @@ import io.shadowrealm.content.bosses.bryophyta.BryophytaNPC;
 import io.shadowrealm.content.bosses.hespori.Hespori;
 import io.shadowrealm.content.bosses.wintertodt.WintertodtActions;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.dialogue.impl.FireOfDestructionDialogue;
 import io.shadowrealm.content.item.lootable.impl.CrystalChest;
 import io.shadowrealm.content.item.lootable.impl.FoeMysteryBox;
@@ -680,6 +681,9 @@ public class UseItem {
 		if (SanguinestiStaff.useItem(c, itemUsed, useWith)) {
 			return;
 		}
+		if (HolySanguinestiStaff.useItem(c, itemUsed, useWith)) {
+			return;
+		}
 		if (WintertodtActions.useItemOnItem(c, itemUsed, useWith)) {
 			return;
 		}
@@ -748,7 +752,76 @@ public class UseItem {
 				c.sendMessage("You need the required items for this kit");
 			}
 		}
-
+		if (itemUsed == 24670 && useWith == 21018 || itemUsed == 21018 && useWith == 24670) {
+			if (c.getItems().playerHasItem(24670) && c.getItems().playerHasItem(21018)) {
+				c.getItems().deleteItem(24670, 1);
+				c.getItems().deleteItem(21018, 1);
+				c.getItems().addItem(24664, 1);
+				c.sendMessage("You have combined the kit to make the Twisted Ancestral Hat");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 24670 && useWith == 21021 || itemUsed == 21021 && useWith == 24670) {
+			if (c.getItems().playerHasItem(24670) && c.getItems().playerHasItem(21021)) {
+				c.getItems().deleteItem(24670, 1);
+				c.getItems().deleteItem(21021, 1);
+				c.getItems().addItem(24666, 1);
+				c.sendMessage("You have combined the kit to make the Twisted Ancestral Top");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 24670 && useWith == 21024 || itemUsed == 21024 && useWith == 24670) {
+			if (c.getItems().playerHasItem(24670) && c.getItems().playerHasItem(21024)) {
+				c.getItems().deleteItem(24670, 1);
+				c.getItems().deleteItem(21024, 1);
+				c.getItems().addItem(24668, 1);
+				c.sendMessage("You have combined the kit to make the Twisted Ancestral Top");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 25742 && useWith == 22323 || itemUsed == 22323 && useWith == 25742) {
+			if (c.getItems().playerHasItem(22323) && c.getItems().playerHasItem(25742, 2)) {
+				c.getItems().deleteItem(25742, 2);
+				c.getItems().deleteItem(22323, 1);
+				c.getItems().addItem(25731, 1);
+				c.sendMessage("You have combined the kit to make the Holy Sang Staff");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 25742 && useWith == 22324 || itemUsed == 22324 && useWith == 25742) {
+			if (c.getItems().playerHasItem(22324) && c.getItems().playerHasItem(25742)) {
+				c.getItems().deleteItem(25742, 1);
+				c.getItems().deleteItem(22324, 1);
+				c.getItems().addItem(25734, 1);
+				c.sendMessage("You have combined the kit to make the Holy Ghrazi Rapier");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 25742 && useWith == 22325 || itemUsed == 22325 && useWith == 25742) {
+			if (c.getItems().playerHasItem(22325) && c.getItems().playerHasItem(25742, 3)) {
+				c.getItems().deleteItem(25742, 3);
+				c.getItems().deleteItem(22325, 1);
+				c.getItems().addItem(25736, 1);
+				c.sendMessage("You have combined the kit to make the Holy Scythe of Vitur");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 25744 && useWith == 22325 || itemUsed == 22325 && useWith == 25744) {
+			if (c.getItems().playerHasItem(22325) && c.getItems().playerHasItem(25744, 3)) {
+				c.getItems().deleteItem(25744, 3);
+				c.getItems().deleteItem(22325, 1);
+				c.getItems().addItem(25739, 1);
+				c.sendMessage("You have combined the kit to make the Sanguine Scythe of Vitur");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
 		if (itemUsed == 26713 && useWith == 11826 || itemUsed == 11826 && useWith == 26713) {
             if (c.getItems().playerHasItem(26713) && c.getItems().playerHasItem(11826)) {
                 c.getItems().deleteItem(26713, 1);

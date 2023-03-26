@@ -919,7 +919,7 @@ public class NexNPC extends NPC {
 
         for (Player player : instance.getPlayers()) {
             getReward(player);
-            player.moveTo(new Position(2904, 5206, 0));
+            player.moveTo(new Position(2904, 5205, 0));
         }
     }
     @Override

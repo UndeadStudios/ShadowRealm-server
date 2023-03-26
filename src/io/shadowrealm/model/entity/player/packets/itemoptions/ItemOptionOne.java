@@ -9,6 +9,7 @@ import io.shadowrealm.content.bosses.mimic.MimicCasket;
 import io.shadowrealm.content.combat.Hitmark;
 import io.shadowrealm.content.combat.magic.NonCombatSpellData;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.dialogue.DialogueBuilder;
 import io.shadowrealm.content.dialogue.impl.ClaimDonatorScrollDialogue;
 import io.shadowrealm.content.dwarfmulticannon.Cannon;
@@ -118,30 +119,6 @@ public class ItemOptionOne implements PacketType {
             c.getPotions().handlePotion(itemId, itemSlot);
             return;
         }
-        ClueScroll.handleCasket(c, itemId);
-        if (ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("clue scroll") || ItemCacheDefinition.forID(itemId).getName().toLowerCase().contains("challenge scroll")) {
-            ClueScroll.cleanClueInterface(c);
-        }
-        if (Puzzle.loadClueInterface(c, itemId)) {
-           // c.sendMessage("clue id: "+itemId);
-            return;
-        }
-        if (MapScrolls.loadClueInterface(c, itemId)) {
-         //   c.sendMessage("clue id: "+itemId);
-            return;
-        }
-        if (SearchScrolls.loadClueInterface(c, itemId)) {
-         //   c.sendMessage("clue id: "+itemId);
-            return;
-        }
-        if (CoordinateScrolls.loadClueInterface(c, itemId)) {
-        //    c.sendMessage("clue id: "+itemId);
-            return;
-        }
-        if (DiggingScrolls.loadClueInterface(c, itemId)) {
-           // c.sendMessage("clue id: "+itemId);
-            return;
-        }
         if (c.getQuesting().handleItemClick(itemId)) {
             return;
         }
@@ -172,6 +149,9 @@ public class ItemOptionOne implements PacketType {
             return;
         }
         if (SanguinestiStaff.clickItem(c, itemId, 1)) {
+            return;
+        }
+        if (HolySanguinestiStaff.clickItem(c, itemId, 1)) {
             return;
         }
         if (TreasureTrails.firstClickItem(c, itemId)) {
@@ -222,9 +202,6 @@ public class ItemOptionOne implements PacketType {
                 } else {
                     c.sendMessage("You need a knife to open this.");
                 }
-                break;
-            case 2574 : // sextant
-                Sextant.initializeRandomSextantInterface(c);
                 break;
         case ResourceBoxSmall.BOX_ITEM:
             new ResourceBoxSmall().roll(c);
@@ -819,11 +796,10 @@ public class ItemOptionOne implements PacketType {
                 CycleEventHandler.getSingleton().addEvent(c, new CycleEvent() {
                     @Override
                     public void execute(CycleEventContainer container) {
-                        if (!MapScrolls.digClue(c) && !DiggingScrolls.digClue(c) &&  !CoordinateScrolls.digClue(c)) {
                             c.sendMessage("but do not find anything.");
                             container.stop();
                         }
-                    }
+
                     public void onStopped() {
                         c.stopAnimation();
                     }

@@ -5,6 +5,7 @@ import io.shadowrealm.Server;
 import io.shadowrealm.content.bosspoints.JarsToPoints;
 import io.shadowrealm.content.combat.Hitmark;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.displayname.ChangeDisplayName;
 import io.shadowrealm.content.items.PvpWeapons;
 import io.shadowrealm.content.items.item_combinations.Godswords;
@@ -83,6 +84,9 @@ public class ItemOptionTwo implements PacketType {
 			return;
 
 		if (SanguinestiStaff.clickItem(player, itemId, 2)) {
+			return;
+		}
+		if (HolySanguinestiStaff.clickItem(player, itemId, 2)) {
 			return;
 		}
 

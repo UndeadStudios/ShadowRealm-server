@@ -2,6 +2,7 @@ package io.shadowrealm.model.entity.player.packets.itemoptions;
 
 import io.shadowrealm.Server;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.dialogue.DialogueBuilder;
 import io.shadowrealm.content.dialogue.DialogueOption;
 import io.shadowrealm.content.dialogue.impl.AmethystChiselDialogue;
@@ -86,6 +87,9 @@ public class ItemOptionThree implements PacketType {
             return;
         }
         if (SanguinestiStaff.clickItem(c, itemId, 3)) {
+            return;
+        }
+        if (HolySanguinestiStaff.clickItem(c, itemId, 3)) {
             return;
         }
 

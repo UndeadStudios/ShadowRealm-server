@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import io.shadowrealm.Server;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.items.Degrade;
 import io.shadowrealm.content.items.Degrade.DegradableItem;
 import io.shadowrealm.content.items.pouch.RunePouch;
@@ -74,6 +75,9 @@ public class ItemOptionFour implements PacketType {
 			return;
 		}
 		if (SanguinestiStaff.clickItem(c, itemId, 4)) {
+			return;
+		}
+		if (HolySanguinestiStaff.clickItem(c, itemId, 4)) {
 			return;
 		}
 		switch (itemId) {

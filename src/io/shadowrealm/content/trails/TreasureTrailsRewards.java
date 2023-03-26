@@ -1,10 +1,11 @@
 package io.shadowrealm.content.trails;
 
+import java.util.*;
+
+import com.google.common.collect.Lists;
 import io.shadowrealm.model.Items;
 import io.shadowrealm.model.items.GameItem;
 import io.shadowrealm.util.Misc;
-
-import java.util.*;
 
 public class TreasureTrailsRewards {
 
@@ -30,11 +31,11 @@ public class TreasureTrailsRewards {
 		List<TreasureTrailsRewardItem> result =new ArrayList<>();
 
 		if (difficulty == RewardLevel.MEDIUM) {
-			rolls += 2;
+			rolls += 1;
 		} else if (difficulty == RewardLevel.HARD) {
-			rolls += 3;
+			rolls += 2;
 		} else if (difficulty == RewardLevel.MASTER) {
-			rolls += 5;
+			rolls += 2;
 		}
 
 		double random = Math.random();

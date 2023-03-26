@@ -23475,7 +23475,7 @@ public class Items {
     public static final int HOLY_SCYTHE_OF_VITUR = 25_736;
     public static final int HOLY_SCYTHE_OF_VITUR_2 = 25_737;
     public static final int HOLY_SCYTHE_OF_VITUR_UNCHARGED = 25_738;
-    public static final int SANGUINE_SCYTHE_OF_VITUR = 25_739;
+    public static final int SANG_SCYTHE_OF_VITUR = 25_739;
     public static final int SANGUINE_SCYTHE_OF_VITUR_2 = 25_740;
     public static final int SANGUINE_SCYTHE_OF_VITUR_UNCHARGED = 25_741;
     public static final int HOLY_ORNAMENT_KIT = 25_742;

@@ -9,6 +9,7 @@ import io.shadowrealm.content.combat.death.kill_limiter.KillLimitHandler;
 import io.shadowrealm.content.combat.magic.CombatSpellData;
 import io.shadowrealm.content.combat.magic.MagicRequirements;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.combat.melee.MeleeData;
 import io.shadowrealm.content.combat.range.Bow;
 import io.shadowrealm.content.combat.range.RangeData;
@@ -278,6 +279,11 @@ public class AttackEntity {
                 attacker.usingMagic = true;
                 attacker.autocasting = true;
                 attacker.setSpellId(SanguinestiStaff.COMBAT_SPELL_INDEX);
+            }
+            if (attacker.playerEquipment[Player.playerWeapon] == Items.HOLY_SANGUINESTI_STAFF) {
+                attacker.usingMagic = true;
+                attacker.autocasting = true;
+                attacker.setSpellId(HolySanguinestiStaff.COMBAT_SPELL_INDEX);
             }
         }
 
@@ -569,6 +575,11 @@ public class AttackEntity {
                     if (attacker.getSangStaffCharge() < 0) {
                         attacker.setSangStaffCharge(0);
                     }
+                } else if (attacker.playerEquipment[Player.playerWeapon] == Items.HOLY_SANGUINESTI_STAFF) {
+                    attacker.setHolySangStaffCharge(attacker.getHolySangStaffCharge() - 3);
+                    if (attacker.getHolySangStaffCharge() < 0) {
+                        attacker.setHolySangStaffCharge(0);
+                    }
                 }
             }
 
@@ -675,6 +686,18 @@ public class AttackEntity {
                     attacker.usingMagic = true;
                     attacker.autocasting = true;
                     attacker.autocastId = SanguinestiStaff.COMBAT_SPELL_INDEX;
+                }
+                return true;
+            case Items.HOLY_SANGUINESTI_STAFF:
+                if (attacker.getSangStaffCharge() <= 0) {
+                    attacker.sendMessage("Your Holy Sanguinesti staff has no more charges.");
+                    attacker.attacking.reset();
+                    return false;
+                }
+                if (!attacker.usingClickCast) {
+                    attacker.usingMagic = true;
+                    attacker.autocasting = true;
+                    attacker.autocastId = HolySanguinestiStaff.COMBAT_SPELL_INDEX;
                 }
                 return true;
             case Items.TRIDENT_OF_THE_SEAS:

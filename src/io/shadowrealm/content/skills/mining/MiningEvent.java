@@ -440,14 +440,14 @@ public class MiningEvent extends Event<Player> {
         if (Misc.random(mineral.getPetChance() / dropRate) == 10) {
             switch (Misc.random(2)) {
                 case 0:
-                    plr.getItems().addItemUnderAnyCircumstance(20358, clueAmount);
+                    plr.getItems().addItemUnderAnyCircumstance(2677, clueAmount);
                     break;
 
                 case 1:
-                    plr.getItems().addItemUnderAnyCircumstance(20360, clueAmount);
+                    plr.getItems().addItemUnderAnyCircumstance(2801, clueAmount);
                     break;
                 case 2:
-                    plr.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
+                    plr.getItems().addItemUnderAnyCircumstance(2722, clueAmount);
                     break;
 
             }

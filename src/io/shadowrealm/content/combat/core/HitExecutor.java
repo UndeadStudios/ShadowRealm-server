@@ -7,6 +7,7 @@ import io.shadowrealm.content.combat.effects.damageeffect.DamageEffect;
 import io.shadowrealm.content.combat.effects.damageeffect.impl.TridentOfTheSwampEffect;
 import io.shadowrealm.content.combat.magic.CombatSpellData;
 import io.shadowrealm.content.combat.magic.SanguinestiStaff;
+import io.shadowrealm.content.combat.magic.HolySanguinestiStaff;
 import io.shadowrealm.content.combat.range.RangeData;
 import io.shadowrealm.content.skills.herblore.PoisonedWeapon;
 import io.shadowrealm.model.Graphic;
@@ -185,6 +186,10 @@ public abstract class HitExecutor {
                             }
 
                             if (attacker.getSpellId() == SanguinestiStaff.COMBAT_SPELL_INDEX && Misc.trueRand(6) == 0) {
+                                attacker.getHealth().increase(damage.getAmount() / 2);
+                                attacker.startGraphic(new Graphic(1542));
+                            }
+                            if (attacker.getSpellId() == HolySanguinestiStaff.COMBAT_SPELL_INDEX && Misc.trueRand(6) == 0) {
                                 attacker.getHealth().increase(damage.getAmount() / 2);
                                 attacker.startGraphic(new Graphic(1542));
                             }

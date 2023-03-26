@@ -5,6 +5,8 @@ import io.shadowrealm.content.combat.effects.damageeffect.impl.amuletofthedamned
 import io.shadowrealm.content.combat.effects.special.impl.LavaScythe;
 import io.shadowrealm.content.combat.effects.special.impl.ScytheOfOsiris;
 import io.shadowrealm.content.combat.effects.special.impl.ScytheOfVitur;
+import io.shadowrealm.content.combat.effects.special.impl.HolyScytheOfVitur;
+import io.shadowrealm.content.combat.effects.special.impl.SangScytheOfVitur;
 import io.shadowrealm.content.combat.formula.MeleeMaxHit;
 import io.shadowrealm.content.combat.melee.CombatPrayer;
 import io.shadowrealm.content.combat.weapon.AttackStyle;
@@ -295,6 +297,12 @@ public class MeleeCombatFormula implements CombatFormula {
             effectiveAttackLevel += SetAccuracyBonus.MELEE_ATTACK - 8;
 
             if (ScytheOfVitur.usingScythe(attacker.asPlayer())) {
+                effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
+            }
+            if (HolyScytheOfVitur.usingScythe(attacker.asPlayer())) {
+                effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
+            }
+            if (SangScytheOfVitur.usingScythe(attacker.asPlayer())) {
                 effectiveAttackLevel += SetAccuracyBonus.SCYTHE_ATTACK_BONUS;
             }
             if (ScytheOfOsiris.usingScythe(attacker.asPlayer())) {
