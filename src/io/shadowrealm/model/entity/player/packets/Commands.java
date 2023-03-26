@@ -683,12 +683,43 @@ public class Commands implements PacketType {
             if (playerCommand.toLowerCase().contentEquals("store")) { //extra command not needed for interaces
                 c.getPA().sendFrame126(Configuration.STORE_LINK, 12000);
             }
+//
+//            if (playerCommand.toLowerCase().contentEquals("claimvote")) {
+//                Thread votes = new Thread(new Votes(c));
+//                votes.start();
+//                }
 
-            if (playerCommand.toLowerCase().contentEquals("claimvote")) {
-                Thread votes = new Thread(new Votes(c));
-                votes.start();
+            if (playerCommand.startsWith("reward")) {
+                String[] argu = playerCommand.split(" ");
+                if (argu.length == 1) {
+                    c.sendMessage("Please use [::reward id], [::reward id amount], or [::reward id all].");
+                    return;
                 }
+                final String playerName = c.getLoginName();
+                final String id = argu[1];
+                final String amount = argu.length == 3 ? argu[2] : "1";
 
+                com.everythingrs.vote.Vote.service.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            com.everythingrs.vote.Vote[] reward = com.everythingrs.vote.Vote.reward("PrpOhHeC9zIgt5XFnRTgaN6FNfUXQLIODBSp9M7U53HXkTB8cV1psR5oWvvEssU7oDKAwLga",
+                                    playerName, id, amount);
+                            if (reward[0].message != null) {
+                                c.sendMessage(reward[0].message);
+                                return;
+                            }
+                            c.getItems().addItem(reward[0].reward_id, reward[0].give_amount);
+                            c.sendMessage(
+                                    "Thank you for voting! You now have " + reward[0].vote_points + " vote points.");
+                        } catch (Exception e) {
+                            c.sendMessage("Api Services are currently offline. Please check back shortly");
+                            e.printStackTrace();
+                        }
+                    }
+
+                });
+            }
 
             if (playerCommand.equals("forum")) {
                 c.getPA().sendFrame126(Configuration.WEBSITE, 12000);
