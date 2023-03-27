@@ -65,7 +65,7 @@ public class Configuration {
 
 	public static final boolean LOWERCASE_CAPTCHA = true;
 
-	public static boolean DISABLE_DISCORD_MESSAGING = true;
+	public static boolean DISABLE_DISCORD_MESSAGING = false;
 
 	public static boolean DISABLE_CONNECTION_REQUEST_LIMIT = false;
 	public static boolean DISABLE_CAPTCHA_EVERY_LOGIN = true;

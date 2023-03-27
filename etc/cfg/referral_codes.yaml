@@ -15,9 +15,7 @@
   rewards:
     - name: coins
       amount: 2000000
-    - id: 8467 #foe box
-      amount: 1
     - name: youtube mystery box
       amount: 1
-    - id: 2528 # lamp
+    - id: 2528
       amount: 3
