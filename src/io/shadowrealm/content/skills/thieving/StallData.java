@@ -114,62 +114,62 @@ public enum StallData {
     }, 42, 42, 30, 40000, 634),
     Gold(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1000+ Misc.random(100, 1500))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(100, 1_500))));
         }
     }, 1, 10, 40, 40000, 634),
     Gold2(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 10000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1000, 5_000))));
         }
     }, 5, 16, 40, 40000, 634),
     Gold3(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 15000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 10, 20, 40, 40000, 634),
     Gold4(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 25000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 20, 25, 40, 40000, 634),
     Gold5(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 30000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 30, 30, 40, 40000, 634),
     Gold6(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 35000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 40, 35, 40, 40000, 634),
     Gold7(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 50000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 50, 40, 40, 40000, 634),
     Gold8(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 60000+ Misc.random(1000, 5000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 5_000))));
         }
     }, 60, 60, 40, 40000, 634),
     Gold9(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 80000+ Misc.random(1000, 20000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 20_000))));
         }
     }, 70, 60, 40, 40000, 634),
     Gold10(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 90000+ Misc.random(1000, 50000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1000, 50_000))));
         }
     }, 80, 60, 40, 40000, 634),
     Gold11(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 100000+ Misc.random(1000, 70000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(1_000, 70_000))));
         }
     }, 90, 60, 40, 40000, 634),
     Gold12(new HashMap<Rarity, List<GameItem>>() {
         {
-            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, 1000000+ Misc.random(500000, 1000000))));
+            put(Rarity.ALWAYS, Arrays.asList(new GameItem(995, Misc.random(20_000, 45_000))));
         }
     }, 99, 60, 40, 40000, 634);
     /**

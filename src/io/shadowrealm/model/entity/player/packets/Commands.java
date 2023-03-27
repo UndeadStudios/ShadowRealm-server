@@ -5,6 +5,8 @@ import com.google.common.collect.Lists;
 import io.shadowrealm.Configuration;
 import io.shadowrealm.Server;
 import io.shadowrealm.content.Censor;
+import io.shadowrealm.content.achievement.AchievementType;
+import io.shadowrealm.content.achievement.Achievements;
 import io.shadowrealm.content.bosses.grotesqueguardians.GrotesqueInstance;
 import io.shadowrealm.content.bosses.hespori.*;
 import io.shadowrealm.content.bosses.nightmare.Nightmare;
@@ -710,6 +712,7 @@ public class Commands implements PacketType {
                                 return;
                             }
                             c.getItems().addItem(reward[0].reward_id, reward[0].give_amount);
+                            Achievements.increase(c, AchievementType.VOTER, 1);
                             c.sendMessage(
                                     "Thank you for voting! You now have " + reward[0].vote_points + " vote points.");
                         } catch (Exception e) {

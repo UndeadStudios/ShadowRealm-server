@@ -18964,6 +18964,9 @@
   description: "This helmet is worn by warriors."
   shopValue: 60000
   noteId: 3754
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
   equipmentModelType: "FULL_HELMET"
 - id: 3754
   name: "Warrior helm"
