@@ -2125,18 +2125,12 @@ public class Player extends Entity {
             PlayerHandler.executeGlobalMessage("[@yel@<shad=0>Admin</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("epic")) {
             PlayerHandler.executeGlobalMessage("[@cya@<shad=0>Owner & Main Dev</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equals("fearful")) {
-            PlayerHandler.executeGlobalMessage("[@pur@<shad=0>Owner</shad>@bla@] @pur@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equalsIgnoreCase("rico")) {
             PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Security manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equalsIgnoreCase("junior")) {
-            PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Shadow Realm manager</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("banned")) {
             PlayerHandler.executeGlobalMessage("[@red@<shad=0>Owner</shad>@bla@] @red@" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("fennix")) {
             PlayerHandler.executeGlobalMessage("[<col=212><shad=0>Owner & Dev</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
-        } else if (getLoginName().equals("sgsrocks")) {
-            PlayerHandler.executeGlobalMessage("[<col=000049><shad=B4B400>Co-Owner & Dev</col></shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         } else if (getLoginName().equals("198078")) {
             PlayerHandler.executeGlobalMessage("[@blu@<shad=0>Developer</shad>@bla@] <col=255>" + getDisplayNameFormatted() + "@bla@ has just logged in!");
         }

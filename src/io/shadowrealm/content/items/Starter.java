@@ -36,7 +36,7 @@ public class Starter {
         }
 
         c.receivedStarter = true;
-        if (occurances >= 5 && !Server.isDebug()) {
+        if (occurances >= 10 && !Server.isDebug()) {
             c.sendMessage("@red@You have already received 5 starters.");
             return;
         }

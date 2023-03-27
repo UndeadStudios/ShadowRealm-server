@@ -360,15 +360,6 @@
     "walkingType": "FACE_SOUTH"
   },
   {
-    "id":0,
-    "position": {
-      "x":3082,
-      "y":3513,
-      "height":0
-    },
-    "walkingType": "FACE_SOUTH"
-  },
-  {
   "id":6945,
   "position": {
   "x":3091,

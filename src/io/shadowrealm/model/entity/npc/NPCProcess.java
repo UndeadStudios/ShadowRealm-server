@@ -89,7 +89,7 @@ public class NPCProcess {
             npc.heightLevel = slaveOwner.heightLevel;
 
         }
-        if(Server.getVoteCounter() >= 24){//votes needed to spawn voteboss
+        if(Server.getVoteCounter() >= 15){//votes needed to spawn voteboss
             NPCSpawning.spawn(11958, 1885, 9308, 0, 1, 10, true);
             PlayerHandler.executeGlobalMessage("@dre@[Vote System] Vote Boss Has spawned");
             new io.shadowrealm.model.entity.player.broadcasts.Broadcast("[Vote System] Vote Boss Has spawned at " + Server.getVoteCounter() + " Votes!").submit();
