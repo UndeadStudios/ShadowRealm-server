@@ -79,6 +79,11 @@ public class NPCDeath {
                 }
                 break;
 
+            case 2084:
+                if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_FIRE_GIANTS.getDailyTask().getTaskName())) {
+                    DailyTaskHandler.Companion.handleProgress(player, 1);
+                }
+                break;
             case 7781:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_REV_IMP.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);

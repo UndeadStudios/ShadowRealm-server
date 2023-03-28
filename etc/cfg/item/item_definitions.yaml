@@ -4936,6 +4936,7 @@
   description: "A very rare and mysterious key."
   shopValue: 1
   noteId: 990
+  stackable: true
 - id: 990
   name: "Crystal key"
   description: "Swap this note at any bank for the equivalent item."
@@ -68635,6 +68636,7 @@
   description: "An extraordinarily large brass key (used to access the Hill Titan's\
     \ lair)."
   shopValue: 1
+  stackable: true
 - id: 20756
   name: "Hill giant club"
   description: "A brutal weapon popular among giants."

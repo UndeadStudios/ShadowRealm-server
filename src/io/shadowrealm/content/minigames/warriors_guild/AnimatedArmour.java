@@ -104,11 +104,6 @@ public class AnimatedArmour {
 
 	public static void itemOnAnimator(final Player player, int itemId) {
 		int x = player.absX, y = player.absY;
-		
-		if (y != 3537) {
-			player.sendMessage("You need to move closer.");
-			return;
-		}
         animator_west = x == 2851;
 		if (player.isAnimatedArmourSpawned) {
 			player.sendMessage("An Animated Armour npc is already spawned.");

@@ -9,11 +9,6 @@ import java.util.Optional;
 public class NetBan extends Command {
     @Override
     public void execute(Player player, String commandName, String input) {
-        if(player.getRights().getPrimary().isOwner()){
-            player.sendMessage("ERROR: Can't netban this person.");
-            return;
-        }
-
         new PunishmentCommand(commandName, input).parse(player);
     }
 

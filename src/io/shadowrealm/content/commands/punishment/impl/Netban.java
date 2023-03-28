@@ -31,10 +31,7 @@ public class Netban implements PunishmentCommandParser {
         Player player = args.getPlayerForDisplayName();
         TimeSpan duration = args.getDuration();
         PlayerAddresses addresses = player.getValidAddresses();
-        if(player.getRights().getPrimary().isOwner()){
-            player.sendMessage("ERROR: Can't netban this person.");
-            return;
-        }
+
         if (addresses.getIp() != null)
             Server.getPunishments().add(NET_BAN, duration, addresses.getIp());
         if (addresses.getMac() != null)

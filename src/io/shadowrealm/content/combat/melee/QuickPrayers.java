@@ -117,7 +117,7 @@ public class QuickPrayers {
 			}
 		}
 		if (prayer == 25) {
-			if (player.playerLevel[1] < 70) {
+			if (player.playerLevel[1] < 65) {
 				player.sendMessage("You must have a defence level of 70 to use this prayer.");
 				for (int i = 0; i < CombatPrayer.getTurnOff(prayer).length; i++) {
 					player.getQuick().getNormal()[CombatPrayer.getTurnOff(prayer)[i]] = false;

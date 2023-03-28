@@ -158,6 +158,15 @@ public class HitDispatcherNpc extends HitDispatcher {
         if (npcId == Hunllef.MELEE_PROTECT && type == CombatType.MELEE
                 || npcId == Hunllef.MAGE_PROTECT && type == CombatType.MAGE
                 || npcId == Hunllef.RANGED_PROTECT && type == CombatType.RANGE) {
+            if (npcId == Hunllef.MELEE_PROTECT && type == CombatType.MELEE) {
+                attacker.sendMessage("@dre@ hmm seems to be protecting from melee");
+            }
+            if (npcId == Hunllef.MAGE_PROTECT && type == CombatType.MAGE) {
+                attacker.sendMessage("@dre@ hmm seems to be protecting from magic");
+            }
+            if (npcId == Hunllef.RANGED_PROTECT && type == CombatType.RANGE) {
+                attacker.sendMessage("@dre@ hmm seems to be protecting from Range");
+            }
             maximumDamage = 0;
             maximumAccuracy = 0;
         }
