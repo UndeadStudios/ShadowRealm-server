@@ -70,6 +70,8 @@ public class Commands implements PacketType {
 
     public final String NO_ACCESS = "You do not have the right.";
 
+    public static int voteCount;
+    public static int globalvoteCount;
 
     /**
      * DO NOT ADD NEW COMMANDS IN HERE
@@ -702,8 +704,12 @@ public class Commands implements PacketType {
                 final String amount = argu.length == 3 ? argu[2] : "1";
 
                 com.everythingrs.vote.Vote.service.execute(new Runnable() {
+
+
                     @Override
                     public void run() {
+                        int voteCount = Server.getVoteCounter();
+                        int globalvoteCount = Server.getGlobalVoteCounter();
                         try {
                             com.everythingrs.vote.Vote[] reward = com.everythingrs.vote.Vote.reward("PrpOhHeC9zIgt5XFnRTgaN6FNfUXQLIODBSp9M7U53HXkTB8cV1psR5oWvvEssU7oDKAwLga",
                                     playerName, id, amount);
@@ -712,6 +718,10 @@ public class Commands implements PacketType {
                                 return;
                             }
                             c.getItems().addItem(reward[0].reward_id, reward[0].give_amount);
+                            voteCount += 1;
+                            globalvoteCount += 1;
+                            Server.setvoteCountCounter(voteCount);
+                            Server.setGlobalvoteCountCounter(globalvoteCount);
                             Achievements.increase(c, AchievementType.VOTER, 1);
                             c.sendMessage(
                                     "Thank you for voting! You now have " + reward[0].vote_points + " vote points.");
