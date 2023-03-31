@@ -1176,6 +1176,14 @@ public class DropManager {
 				player.sendMessage("@red@The ring of wealth has collected some coins for you.");
 			}
 		}
+
+        if (item.getId() == 23877 && player.collectshard== true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(23877))) {
+            if ((player.getItems().isWearingItem(23943)) || (player.getItems().isWearingItem(23943))) {
+                player.getItems().addItem(23877, item.getAmount());
+                item.changeDrop(-1, item.getAmount());
+                player.sendMessage("@red@The Elven Signet has collected some shards for you.");
+            }
+        }
 		if (item.getId() == 6529 && player.collectCoins == true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(6529))) {
 			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572))) {
 				player.getItems().addItem(6529, item.getAmount());

@@ -304,15 +304,6 @@ public class WoodcuttingEvent extends Event<Player> {
             }
             plr.sendMessage("@blu@You appear to see a clue nest fall from the tree, and pick it up.");
         }
-        if (Misc.random(500) == 1) {
-            plr.getItems().addItemUnderAnyCircumstance(lumberjackOutfit[Misc.random(lumberjackOutfit.length - 1)], 1);
-            plr.sendMessage("You notice a lumberjack piece falling from the tree and pick it up.");
-        }
-        if (Misc.random(175) == 1) {
-            plr.getItems().addItemUnderAnyCircumstance(birdnests[Misc.random(birdnests.length - 1)], 1);
-            plr.sendMessage("You notice a Bird's nest falling from the tree and pick it up.");
-        }
-
         int petRate = plr.skillingPetRateScroll ? (int) (tree.getPetChance() * .75) : tree.getPetChance();
         if (Misc.random(petRate) == 2 && plr.getItems().getItemCount(13322, false) == 0 && plr.petSummonId != 13322) {
             PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr20@ <col=255>" + plr.getDisplayName() + "</col> chopped down a tree for the <col=CC0000>Beaver</col> pet!");

@@ -238,6 +238,14 @@ public class OperateItem implements PacketType {
 					c.collectCoins = true;
 					c.sendMessage("@blu@You have now @gre@Enabled@blu@ your coin collecting.");
 			}
+			case 23943:
+				if (c.collectshard == true) {
+					c.collectshard = false;
+					c.sendMessage("@blu@You have now @red@Disabled@blu@ your Shard collecting.");
+			} else if (c.collectshard == false) {
+					c.collectshard = true;
+					c.sendMessage("@blu@You have now @gre@Enabled@blu@ your Shard collecting.");
+			}
 			break;
 			case 4212:
 			case 4214:

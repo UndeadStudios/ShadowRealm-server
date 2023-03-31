@@ -451,13 +451,9 @@ public class MiningEvent extends Event<Player> {
                     break;
 
             }
-            plr.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
+            plr.sendMessage("@blu@You appear to see a clue fall within the rock, and pick it up.");
         }
 
-        if (Misc.random(mineral.getPetChance()) / dropRate == 10) {
-            plr.getItems().addItemUnderAnyCircumstance(20362, clueAmount);
-            plr.sendMessage("@blu@You appear to see a clue geode fall within the rock, and pick it up.");
-        }
 
         int petRate = plr.skillingPetRateScroll ? (int) (mineral.getPetChance() * .75) : mineral.getPetChance();
         if (Misc.random(petRate) == 2 && plr.getItems().getItemCount(13321, false) == 0
