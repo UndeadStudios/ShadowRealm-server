@@ -718,8 +718,8 @@ public class Commands implements PacketType {
                                 return;
                             }
                             c.getItems().addItem(reward[0].reward_id, reward[0].give_amount);
-                            voteCount += 1;
-                            globalvoteCount += 1;
+                            voteCount += reward[0].give_amount;
+                            globalvoteCount += reward[0].give_amount;
                             Server.setvoteCountCounter(voteCount);
                             Server.setGlobalvoteCountCounter(globalvoteCount);
                             Achievements.increase(c, AchievementType.VOTER, 1);
