@@ -4912,6 +4912,7 @@
   description: "The tooth end of the mysterious Crystal Key. Can you find the other\
     \ half?"
   shopValue: 1
+  stackable: true
   noteId: 986
 - id: 986
   name: "Tooth half of a key"
@@ -4925,6 +4926,7 @@
     \ half?"
   shopValue: 1
   noteId: 988
+  stackable: true
 - id: 988
   name: "Loop half of a key"
   description: "Swap this note at any bank for the equivalent item."
@@ -18975,6 +18977,9 @@
   noteId: 3753
   noted: true
   stackable: true
+  requirements:
+    - skill: "DEFENCE"
+      level: 40
 - id: 3755
   name: "Farseer helm"
   description: "This helmet is worn by farseers."
@@ -71791,6 +71796,7 @@
 - id: 23951
   name: "Crystalline Key"
   shopValue: 1
+  stackable: true
 - id: 23971
   name: "Crystal Helm"
   description: "Crystal Helm."

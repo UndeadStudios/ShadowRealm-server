@@ -606,6 +606,7 @@ public class Player extends Entity {
     public boolean barbarian;
     public boolean breakVials;
     public boolean collectCoins;
+    public boolean collectshard;
     private boolean runningToggled = true;
     private boolean crawlToggled = false;
     // Trading post.

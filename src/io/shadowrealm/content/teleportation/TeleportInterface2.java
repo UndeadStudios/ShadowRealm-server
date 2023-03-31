@@ -362,7 +362,7 @@ public class TeleportInterface2 {
         Jormungands_Prison(3, 102229, true, "Teleports you to Jormungand's Prison", new Position(2471, 10420, 0)),
         all_giants(3, 102234, true, "Teleports you to All Giants.", new Position(1432, 9911, 0)),
         Elf_Warriors(3, 102239, true, "Teleports you to Elf Warriors", new Position(2897, 2725,0)),
-        Ogers(3, 102244, true, "Teleports you to Ogers", new Position(2528, 3376,0)),
+        Ogres(3, 102244, true, "Teleports you to Ogres", new Position(2528, 3376,0)),
         Dagannoths(3, 102249, true, "Teleports you to Dagannoths", new Position(2442, 10147, 0)),
         SLAYER_TOWER(3, 102254, true, "Teleports you to Slayer Tower", new Position(3428, 3538, 0)),
         Mount_Karuulm(3, 103003, true, "Teleports you to Mount Karuulm", new Position(1311, 3795, 0)),
@@ -442,7 +442,7 @@ public class TeleportInterface2 {
 
         WOODCUTTING_GUILD(8, 102209, true, "Teleports you to Woodcutting guild", new Position(1658, 3505,0)),
         GNOME_AGILITY_COURSE(8, 102214, true, "Teleports you to Gnome agility course", new Position(2477, 3438, 0)),
-        BARBARIAN_AGILITY_COURSE(8, 102219, true, "Teleports you to barbarian agility course", new Position(2552, 3562, 0)),
+        BARBARIAN_AGILITY_COURSE(8, 102219, true, "Teleports you to barbarian agility course", new Position(2552, 3557, 0)),
         MINING_GUILD(8, 102224, true, "Teleports you to Mining guild.", new Position(3056,9777,0)),
         CRAFTING_GUILD(8, 102229, true, "Teleports you to Crafting Zone", new Position(2933, 3287,0)),
         FARMING(8,102234, true,"Teleports you to Farming", new Position(3053, 3301, 0)),

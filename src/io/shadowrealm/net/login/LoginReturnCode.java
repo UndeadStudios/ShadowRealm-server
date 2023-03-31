@@ -18,6 +18,7 @@ public enum LoginReturnCode {
     ERROR_OCCURRED_ON_PLAYER_LOAD(26),
     CAPTCHA_REQUIRED(27),
     CAPTCHA_INCORRECT(28),
+
     ;
 
     private final int code;

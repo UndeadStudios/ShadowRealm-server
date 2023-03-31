@@ -276,6 +276,8 @@ public class PlayerSave {
                                 p.setPrintDefenceStats(Boolean.parseBoolean(token2));
                             } else if (token.equals("collectCoins")) {
                                 p.collectCoins = Boolean.parseBoolean(token2);
+                            } else if (token.equals("collectshards")) {
+                                p.collectshard = Boolean.parseBoolean(token2);
                             } else if (token.equals("horror-from-deep")) {
                                 p.horrorFromDeep = Integer.parseInt(token2);
                             } else if (token.equals("breakVials")) {
@@ -1523,6 +1525,8 @@ public class PlayerSave {
             characterfile.newLine();
             characterfile.write("collectCoins = ", 0, 15);
             characterfile.write(Boolean.toString(p.collectCoins), 0, Boolean.toString(p.collectCoins).length());
+            characterfile.newLine();
+            characterfile.write(Boolean.toString(p.collectshard), 0, Boolean.toString(p.collectshard).length());
             characterfile.newLine();
             characterfile.write("printAttackStats = " + p.isPrintAttackStats());
             characterfile.newLine();
