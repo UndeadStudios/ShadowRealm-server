@@ -1,7 +1,7 @@
 package io.shadowrealm.content.skills.crafting;
 
 enum Gem {
-    TOXIC_GEM(23778, 23783, 50, 5, 885),
+    TOXIC_GEM(23778, 23783, 1, 5, 885),
     DIAMOND(1617, 1601, 43, 107, 886),
     RUBY(1619, 1603, 34, 85, 887),
     EMERALD(1621, 1605, 27, 68, 889),

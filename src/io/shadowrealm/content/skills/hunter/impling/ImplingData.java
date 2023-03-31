@@ -1,7 +1,7 @@
 package io.shadowrealm.content.skills.hunter.impling;
 
 public enum ImplingData {
-	
+
 	/**
 	 * Baby Impling.
 	 */
@@ -37,17 +37,16 @@ public enum ImplingData {
 	/**
 	 * Ninja Impling.
 	 */
-	NINJA("Ninja Impling", 11254, 100, 74, 1643), 
+	NINJA("Ninja Impling", 11254, 100, 74, 1643),
 	/**
 	 * Dragon Impling.
 	 */
-	DRAGON("Dragon Impling", 11256, 120, 83, 1654), 
+	DRAGON("Dragon Impling", 11256, 120, 83, 1654),
 	/**
 	 * Dragon Impling.
 	 */
-	LUCKY("Lucky Impling", 19732, 80, 89, 7302),
-	CRYSTAL("Crystal Impling", 23768, 280, 80, 8748);
-	
+	LUCKY("Lucky Impling", 19732, 80, 89, 7302);
+
 	/**
 	 * Variables.
 	 */
@@ -69,7 +68,7 @@ public enum ImplingData {
 		this.requirement = requirement;
 		this.npcId = npcId;
 	}
-	
+
 	public static ImplingData forId(int npcId) {
 		for(ImplingData impling : values()) {
 			if(impling.npcId == npcId) {

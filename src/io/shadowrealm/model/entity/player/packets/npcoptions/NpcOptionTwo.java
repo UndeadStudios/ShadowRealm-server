@@ -59,13 +59,6 @@ public class NpcOptionTwo {
 
 		NPC npc = NPCHandler.npcs[player.clickedNpcIndex];
 		switch (npcType) {
-			case 0 :
-				if(player.getRights().getPrimary().isOwner()) {
-					player.getFarmingTools().loadInterfaces();
-				} else {
-					player.sendMessage("This is being worked on. u can note items tho.");
-				}
-				break;
 			case 3098:
 				player.getShops().openShop(46);
 				break;

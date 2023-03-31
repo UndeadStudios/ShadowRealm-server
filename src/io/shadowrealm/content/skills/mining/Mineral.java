@@ -15,8 +15,8 @@ import org.apache.commons.lang3.RandomUtils;
  * @date Feb 18, 2015, 5:14:50 PM
  */
 public enum Mineral {
-			ENCHANTED_STONE(new int[] { 33223 }, "enchanted stone", 50, 5, 1000, 1, 15, 15000, true, generateExclusive(23778), 11390),
-			BURNING_ORE(new int[] { 33222 }, "burning ore", 50, 5, 10000, 1, 15, 15000, true, generateExclusive(9698), 11390),
+			ENCHANTED_STONE(new int[] { 33223 }, "enchanted stone", 1, 5, 1000, 1, 15, 15000, true, generateExclusive(23778), 11390),
+			BURNING_ORE(new int[] { 33222 }, "burning ore", 1, 5, 10000, 1, 15, 15000, true, generateExclusive(9698), 11390),
 			CLAY(new int[] { 11363, }, "none", 1, 18, 0, 3, 15, 30000, true, generateExclusive(434), 11391),
 			CLAY2(new int[] {  11362 }, "none", 1, 18, 0, 3, 15, 30000, true, generateExclusive(434), 11390),
 			COPPER(new int[] { 11161 }, "bronze", 1, 18, 5, 5, 15, 15000, true, generateExclusive(436), 11391),

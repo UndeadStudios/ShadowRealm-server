@@ -91,13 +91,7 @@ public class ContainerAction1 implements PacketType {
 
 		switch (interfaceId) {
 			case 15594:
-			case 15595:
-				c.getFarmingTools().storeItems(removeId,1);
-				break;
 			case 15682:
-			case 15683:
-				c.getFarmingTools().withdrawItems(removeId, 1);
-				break;
 			case 25928:
 				c.getItemUpgradeSystem().selectItem(removeId);
 				break;

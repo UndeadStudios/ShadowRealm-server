@@ -56,7 +56,7 @@ public final class TrapTask extends CycleEvent {
 		}
 
 	}
-	
+
 	@Override
 	public void execute(CycleEventContainer container) {
 		if (Hunter.GLOBAL_TRAPS.get(player) == null)

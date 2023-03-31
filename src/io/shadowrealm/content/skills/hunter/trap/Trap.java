@@ -23,12 +23,12 @@ import java.util.stream.IntStream;
 public abstract class Trap {
 
 	public final RandomGen random = new RandomGen();
-	
+
 	/**
 	 * The owner of this trap.
 	 */
 	protected final Player player;
-	
+
 	/**
 	 * The type of this trap.
 	 */
@@ -38,29 +38,17 @@ public abstract class Trap {
 	 * The state of this trap.
 	 */
 	private TrapState state;
-	
+
 	/**
 	 * The global object spawned on the world.
 	 */
-	public GlobalObject object;
-	
+	private GlobalObject object;
+
 	/**
 	 * Determines if this trap is abandoned.
 	 */
 	private boolean abandoned;
-	
-	/**
-	 * Constructs a new {@link Trap}.
-	 * @param player	{@link #player}.
-	 * @param type		{@link #type}.
-	 */
-	public Trap(Player player, TrapType type, GlobalObject obj, Location3D location) {//idk if this i right lol
-		this.player = player;
-		this.type = type;
-		this.state = TrapState.PENDING;
-		Optional<WorldObject> worldObject = player.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(obj.getObjectId(), location.getX(), location.getY(), 0);
-			this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel, worldObject.get().getFace(), worldObject.get().getType());
-	}
+
 	/**
 	 * Constructs a new {@link Trap}.
 	 * @param player	{@link #player}.
@@ -70,17 +58,18 @@ public abstract class Trap {
 		this.player = player;
 		this.type = type;
 		this.state = TrapState.PENDING;
-			this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel);
+		this.object = new GlobalObject(type.objectId, player.absX, player.absY, player.heightLevel);
 	}
+
 	/**
 	 * Submits the trap task for this trap.
 	 */
 	public void submit() {
 		this.onSetup();
 	}
-	
+
 	/**
-	 * Attempts to trap the specified {@code npc} by checking the prerequisites and initiating the 
+	 * Attempts to trap the specified {@code npc} by checking the prerequisites and initiating the
 	 * abstract {@link #onCatch} method.
 	 * @param npc	the npc to trap.
 	 */
@@ -91,12 +80,12 @@ public abstract class Trap {
 		this.setState(TrapState.TRIGGERED);
 		onCatch(npc);
 	}
-	
+
 	/**
 	 * The array containing every larupia item set.
 	 */
 	private static final int[] LARUPIA_SET = {10041, 10043, 10045};
-	
+
 	/**
 	 * Determines fi the player has equiped any set that boosts the success formula.
 	 * @return the amount of items the player is wearing.
@@ -104,7 +93,7 @@ public abstract class Trap {
 	public boolean hasLarupiaSetEquipped() {
 		return IntStream.range(0, LARUPIA_SET.length).allMatch(id -> player.getItems().isWearingItem(id));
 	}
-	
+
 	/**
 	 * Calculates the chance for the bird to be lured <b>or</b> trapped.
 	 * @param npc		the npc being caught.
@@ -124,68 +113,68 @@ public abstract class Trap {
 
 		if(hunterLevel <= 25) {
 			chance = (int) (chance * 1.2);
-		} else if(hunterLevel <= 40 && hunterLevel > 25) {
+		} else if(hunterLevel >= 40 && hunterLevel < 50) {
 			chance = (int) (chance * 1.25);
-		} else if(hunterLevel <= 50 && hunterLevel > 40) {
+		} else if(hunterLevel >= 50 && hunterLevel < 65) {
 			chance = (int) (chance * 1.30);
-		} else if(hunterLevel <= 65 && hunterLevel > 50) {
+		} else if(hunterLevel >= 65 && hunterLevel < 75) {
 			chance = (int) (chance * 1.45);
-		} else if(hunterLevel <= 75 && hunterLevel > 65) {
+		} else if(hunterLevel >= 75 && hunterLevel < 85) {
 			chance = (int) (chance * 1.55);
-		} else if(hunterLevel <= 85) {
+		} else if(hunterLevel >= 85) {
 			chance = (int) (chance * 1.8);
 		}
 		return chance;
 	}
-	
+
 	/**
 	 * Determines if the trap can catch.
 	 * @param npc		the npc to check.
 	 * @return {@code true} if the player can, {@code false} otherwise.
 	 */
 	public abstract boolean canCatch(NPC npc);
-	
+
 	/**
 	 * The functionality that should be handled when the trap is picked up.
 	 */
 	public abstract void onPickUp();
-	
+
 	/**
 	 * The functionality that should be handled when the trap is being set-up.
 	 */
 	public abstract void onSetup();
-	
+
 	/**
 	 * The functionality that should be handled when the trap has catched.
 	 * @param npc	the npc that was catched.
 	 */
 	public abstract void onCatch(NPC npc);
-	
+
 	/**
 	 * The functionality that should be handled every 600ms.
 	 * @param container		the container this method is dependant of.
 	 */
 	public abstract void onSequence(CycleEventContainer container);
-	
+
 	/**
 	 * The reward for this player.
 	 * return an array of items defining the reward.
 	 */
 	public abstract GameItem[] reward();
-	
+
 	/**
 	 * The experience gained for catching this npc.
 	 * @return a numerical value defining the amount of experience gained.
 	 */
 	public abstract double experience();
-	
+
 	/**
 	 * Determines if the trap can be claimed.
 	 * @param object		the object that was interacted with.
 	 * @return {@code true} if the trap can, {@code false} otherwise.
 	 */
 	public abstract boolean canClaim(GlobalObject object);
-	
+
 	/**
 	 * @return the player
 	 */
@@ -213,26 +202,14 @@ public abstract class Trap {
 	public void setState(TrapState state) {
 		this.state = state;
 	}
-	
+
 	/**
 	 * @return the object
 	 */
 	public GlobalObject getObject() {
 		return object;
 	}
-	
-	/**
-	 * Sets the object id.
-	 * @param id	the id to set.
-	 */
-	public void setObject(int id, Location3D location) {
-		if(!Server.getGlobalObjects().anyExists(getObject().getX(), getObject().getY(), getObject().getHeight())) {
-			//System.out.println("Hunter; No trap existed while attempting to catch");
-			return;
-		}
-		Optional<WorldObject> worldObject = player.getRegionProvider().get(location.getX(), location.getY()).getWorldObject(id, location.getX(), location.getY(), 0);
-		this.object = new GlobalObject(id, location.getX(), location.getY(), location.getZ(), worldObject.get().getFace(), worldObject.get().getType());
-	}
+
 	/**
 	 * Sets the object id.
 	 * @param id	the id to set.
@@ -242,7 +219,7 @@ public abstract class Trap {
 			//System.out.println("Hunter; No trap existed while attempting to catch");
 			return;
 		}
-		this.object = new GlobalObject(id, getObject().getX(), getObject().getY(), getObject().getHeight(), getObject().getFace(), getObject().getType());
+		this.object = new GlobalObject(id, this.getObject().getX(), this.getObject().getY(), this.getObject().getHeight());
 	}
 
 	/**
@@ -265,52 +242,41 @@ public abstract class Trap {
 	 * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
 	 */
 	public enum TrapType {
-		BOX_TRAP(9380, -1, 10008, -1),
-		NET_TRAP(9343,9004, 303, 954),
-		DISMANTLED_BOX_TRAP(9385, -1,10008, -1),
-		DISMANTLED_BIRD_SNARE(9344, -1,10006, -1),
-		BIRD_SNARE(9345, -1, 10006, -1);
-		
+		BOX_TRAP(9380, 10008),
+		DISMANTLED_BOX_TRAP(9385, 10008),
+		DISMANTLED_BIRD_SNARE(9344, 10006),
+		BIRD_SNARE(9345, 10006);
+
 		/**
 		 * Caches our enum values.
 		 */
 		private static final ImmutableSet<TrapType> VALUES = Sets.immutableEnumSet(EnumSet.allOf(TrapType.class));
-		
+
 		/**
 		 * The object id for this trap.
 		 */
 		private final int objectId;
-		private final int objectId2;
-		
+
 		/**
 		 * The item id for this trap.
 		 */
 		private final int itemId;
-		private final int itemId2;
-		
+
 		/**
 		 * Constructs a new {@link TrapType}.
 		 * @param objectId	{@link #objectId}.
 		 * @param itemId	{@link #itemId}.
 		 */
-		TrapType(int objectId, int objectId2, int itemId, int itemId2) {
+		TrapType(int objectId, int itemId) {
 			this.objectId = objectId;
-			this.objectId2 = objectId2;
 			this.itemId = itemId;
-			this.itemId2 = itemId2;
 		}
-		
+
 		/**
 		 * @return the object id
 		 */
 		public int getObjectId() {
 			return objectId;
-		}
-		/**
-		 * @return the object id
-		 */
-		public int getObjectId2() {
-			return objectId2;
 		}
 
 		/**
@@ -318,12 +284,6 @@ public abstract class Trap {
 		 */
 		public int getItemId() {
 			return itemId;
-		}
-		/**
-		 * @return the item id
-		 */
-		public int getItemId2() {
-			return itemId2;
 		}
 
 		/**
@@ -334,9 +294,7 @@ public abstract class Trap {
 		public static Optional<TrapType> getTrapByObjectId(int objectId) {
 			return VALUES.stream().filter(trap -> trap.objectId == objectId).findAny();
 		}
-		public static Optional<TrapType> getTrapByObjectId2(int objectId) {
-			return VALUES.stream().filter(trap -> trap.objectId2 == objectId).findAny();
-		}
+
 		/**
 		 * Gets a trap dependent of the specified {@code itemId}.
 		 * @param itemId	the id to get the trap type enumerator from.
@@ -346,7 +304,7 @@ public abstract class Trap {
 			return VALUES.stream().filter(trap -> trap.itemId == itemId).findAny();
 		}
 	}
-	
+
 	/**
 	 * The enumerated type whose elements represent a set of constants
 	 * used to define the state of a trap.
@@ -358,5 +316,5 @@ public abstract class Trap {
 		CAUGHT,
 		FALLEN
 	}
-	
+
 }

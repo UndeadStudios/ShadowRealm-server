@@ -39,11 +39,9 @@ import io.shadowrealm.content.skills.agility.AgilityHandler;
 import io.shadowrealm.content.skills.agility.impl.rooftop.RooftopArdougne;
 import io.shadowrealm.content.skills.agility.impl.rooftop.RooftopSeers;
 import io.shadowrealm.content.skills.agility.impl.rooftop.RooftopVarrock;
-import io.shadowrealm.content.skills.construction.House;
 import io.shadowrealm.content.skills.crafting.BraceletMaking;
 import io.shadowrealm.content.skills.crafting.JewelryMaking;
 import io.shadowrealm.content.skills.hunter.Hunter;
-import io.shadowrealm.content.skills.hunter.trap.impl.NetTrap;
 import io.shadowrealm.content.skills.runecrafting.RuneCraftingActions;
 import io.shadowrealm.content.skills.runecrafting.Runecrafting;
 import io.shadowrealm.content.skills.smithing.CannonballSmelting;
@@ -57,8 +55,6 @@ import io.shadowrealm.content.wilderness.SpiderWeb;
 import io.shadowrealm.model.Items;
 import io.shadowrealm.model.Npcs;
 import io.shadowrealm.model.collisionmap.ObjectDef;
-import io.shadowrealm.model.collisionmap.doors.DoorDefinition;
-import io.shadowrealm.model.collisionmap.doors.DoorHandler;
 import io.shadowrealm.model.cycleevent.CycleEvent;
 import io.shadowrealm.model.cycleevent.CycleEventContainer;
 import io.shadowrealm.model.cycleevent.CycleEventHandler;
@@ -1683,13 +1679,6 @@ static int fourthFloorsos[][] = {
 						c.canEnterHespori = true;
 						return;
 					}
-					if (Boundary.isIn(c, Boundary.HESPORI_ENTRANCE)) {
-						if (c.playerLevel[19] < 50 || c.playerLevel[8] < 50 || c.playerLevel[14] < 50
-								|| c.playerLevel[20] < 50 || c.playerLevel[12] < 50) {
-							c.sendMessage("You need a level of 50 in Farming, Crafting, Firemaking, Runecrafting, Mining,");
-							c.sendMessage("& Woodcutting to participate in this event. Use @red@::hespori @bla@to open the guide.");
-							return;
-						}
 						if (HesporiSpawner.isSpawned()) {
 							c.canLeaveHespori = false;
 							if (c.getRights().isOrInherits(Right.HC_IRONMAN)) {
@@ -1717,8 +1706,6 @@ static int fourthFloorsos[][] = {
 							c.sendMessage("The Hespori World Event is currently not active.");
 							return;
 						}
-					}
-				break;
 			case 34435:
 				if (obX == 3802 && obY == 7786) {
 					if (c.getItems().playerHasItem(9698) || c.getItems().playerHasItem(9699)
@@ -2184,7 +2171,6 @@ static int fourthFloorsos[][] = {
 			case 9341:
 				c.trapX = obX;
 				c.trapY =  obY;
-					Hunter.lay(c, new NetTrap(c, object, location));
 				break;
 			case 26646:
 				if(obX == 3326 && obY == 4749) {
@@ -2209,7 +2195,7 @@ static int fourthFloorsos[][] = {
 					return;
 				}
 				c.facePosition(obX, obY);
-				if (c.getLevelForXP(c.playerXP[19]) < 50) {
+				if (c.getLevelForXP(c.playerXP[19]) < 1) {
 					c.sendMessage("You need a Farming level of 50 to pick these.");
 					return;
 				}

@@ -42,34 +42,34 @@ public class BankPin {
 	public void open(int state) {
 		player.getPA().sendFrame126("", 59507);
 		switch (state) {
-		case 1:
-			pinState = PinState.CREATE_NEW;
-			player.getPA().sendFrame126("You do not have a pin set.", 59503);
-			player.getPA().sendFrame126("Choose any 4-8 character combination.", 59504);
-			player.getPA().sendFrame126("Make sure caps lock isn't enabled.", 59505);
-			player.getPA().sendFrame126("Press enter to continue", 59506);
-			break;
-		case 2:
-			pinState = PinState.UNLOCK;
-			player.getPA().sendFrame126("You currently have a pin set.", 59503);
-			player.getPA().sendFrame126("Type in your 4-8 character combination.", 59504);
-			player.getPA().sendFrame126("Hit enter after you've typed your pin.", 59505);
-			player.getPA().sendFrame126("Press the button to continue", 59506);
-			break;
-		case 3:
-			pinState = PinState.CANCEL_PIN;
-			player.getPA().sendFrame126("If you wish to cancel your pin, ", 59503);
-			player.getPA().sendFrame126("click the button below. If not", 59504);
-			player.getPA().sendFrame126("click the x button in the corner.", 59505);
-			player.getPA().sendFrame126("Press the button to continue", 59506);
-			break;
-		case 4:
-			pinState = PinState.CANCEL_REQUEST;
-			player.getPA().sendFrame126("Your current pin cancellation is", 59503);
-			player.getPA().sendFrame126("pending. Press continue to cancel", 59504);
-			player.getPA().sendFrame126("this and keep your bank pin.", 59505);
-			player.getPA().sendFrame126("Press the button to continue", 59506);
-			break;
+			case 1:
+				pinState = PinState.CREATE_NEW;
+				player.getPA().sendFrame126("You do not have a pin set.", 59503);
+				player.getPA().sendFrame126("Choose any 4-8 character combination.", 59504);
+				player.getPA().sendFrame126("Make sure caps lock isn't enabled.", 59505);
+				player.getPA().sendFrame126("Press enter to continue", 59506);
+				break;
+			case 2:
+				pinState = PinState.UNLOCK;
+				player.getPA().sendFrame126("You currently have a pin set.", 59503);
+				player.getPA().sendFrame126("Type in your 4-8 character combination.", 59504);
+				player.getPA().sendFrame126("Hit enter after you've typed your pin.", 59505);
+				player.getPA().sendFrame126("Press the button to continue", 59506);
+				break;
+			case 3:
+				pinState = PinState.CANCEL_PIN;
+				player.getPA().sendFrame126("If you wish to cancel your pin, ", 59503);
+				player.getPA().sendFrame126("click the button below. If not", 59504);
+				player.getPA().sendFrame126("click the x button in the corner.", 59505);
+				player.getPA().sendFrame126("Press the button to continue", 59506);
+				break;
+			case 4:
+				pinState = PinState.CANCEL_REQUEST;
+				player.getPA().sendFrame126("Your current pin cancellation is", 59503);
+				player.getPA().sendFrame126("pending. Press continue to cancel", 59504);
+				player.getPA().sendFrame126("this and keep your bank pin.", 59505);
+				player.getPA().sendFrame126("Press the button to continue", 59506);
+				break;
 		}
 		player.getDH().sendStatement("Please enter your bank pin.");
 		player.getPA().showInterface(59500);

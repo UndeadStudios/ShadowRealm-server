@@ -30,7 +30,7 @@ public final class BoxTrap extends Trap {
 	public BoxTrap(Player player) {
 		super(player, TrapType.BOX_TRAP);
 	}
-	
+
 	/**
 	 * The npc trapped inside this box.
 	 */
@@ -40,28 +40,28 @@ public final class BoxTrap extends Trap {
 	 * Determines if an animal is going to the trap.
 	 */
 	private Optional<CycleEvent> event = Optional.empty();
-	
+
 	/**
 	 * The object identification for a dismantled failed box trap.
 	 */
 	private static final int FAILED_ID = 9385;
-	
+
 	/**
 	 * The object identification for a caught box trap.
 	 */
 	private static final int CAUGHT_ID = 721;
-	
+
 	/**
 	 * The distance the npc has to have from the box trap before it gets triggered.
 	 */
-	private static final int DISTANCE_PORT = 3;
-	
+	private static final int DISTANCE_PORT = 1;
+
 	/**
 	 * A collection of all the npcs that can be caught with a box trap.
 	 */
 	public static final ImmutableSet<Integer> NPC_IDS = ImmutableSet.of(BoxTrapData.FERRET.npcId, BoxTrapData.CHINCHOMPA.npcId,
 			BoxTrapData.CARNIVOROUS_CHINCHOMPA.npcId, BoxTrapData.BLACK_CHINCHOMPA.npcId);
-	
+
 	/**
 	 * Kills the specified {@code npc}.
 	 * @param npc	the npc to kill.
@@ -74,13 +74,13 @@ public final class BoxTrap extends Trap {
 	@Override
 	public boolean canCatch(NPC npc) {
 		Optional<BoxTrapData> data = BoxTrapData.getBoxTrapDataByNpcId(npc.getNpcId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid box trap id.");
 		}
 		if (System.currentTimeMillis() - player.lastPickup < 2500)
-			return false;	
-		
+			return false;
+
 		if(player.playerLevel[21] < data.get().requirement) {//(player.playerLevel[player.playerHunter] < data.get().requirement)FIXME
 			player.lastPickup = System.currentTimeMillis();
 			player.sendMessage("You do not have the required level to catch these.");
@@ -92,7 +92,7 @@ public final class BoxTrap extends Trap {
 
 	@Override
 	public void onPickUp() {
-		player.sendMessage("You pick up your box trap.");		
+		player.sendMessage("You pick up your box trap.");
 	}
 
 	@Override
@@ -111,7 +111,7 @@ public final class BoxTrap extends Trap {
 		}
 
 		npc.randomWalk = false;
-		
+
 		event = Optional.of(new CycleEvent() {
 
 			@Override
@@ -125,7 +125,7 @@ public final class BoxTrap extends Trap {
 
 				if(npc.absX == getObject().getX() && npc.absY == getObject().getY()) {
 					npc.randomWalk = true;
-					
+
 					if(!Server.getGlobalObjects().anyExists(getObject().getX(), getObject().getY(), getObject().getHeight())) {
 						//System.out.println("Hunter; No trap existed while attempting to catch");
 						return;
@@ -154,7 +154,7 @@ public final class BoxTrap extends Trap {
 				event = Optional.empty();
 			}
 		});
-		
+
 		CycleEventHandler.getSingleton().addEvent(player, event.get(), 1);
 	}
 
@@ -169,9 +169,9 @@ public final class BoxTrap extends Trap {
 			}
 
 			if(this.getObject().getHeight() == npc.heightLevel && Math.abs(this.getObject().getX() - npc.absX) <= DISTANCE_PORT && Math.abs(this.getObject().getY() - npc.absY) <= DISTANCE_PORT) {
-				if(random.inclusive(100) < 20) {
+/*				if(random.inclusive(100) < 50) {
 					return;
-				}
+				}*/
 				if(this.isAbandoned()) {
 					return;
 				}
@@ -185,13 +185,13 @@ public final class BoxTrap extends Trap {
 		if(!trapped.isPresent()) {
 			throw new IllegalStateException("No npc is trapped.");
 		}
-		
+
 		Optional<BoxTrapData> data = BoxTrapData.getBoxTrapDataByNpcId(trapped.get().getNpcId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid object id.");
 		}
-		
+
 		return data.get().reward;
 	}
 
@@ -200,9 +200,9 @@ public final class BoxTrap extends Trap {
 		if(!trapped.isPresent()) {
 			throw new IllegalStateException("No npc is trapped.");
 		}
-		
+
 		Optional<BoxTrapData> data = BoxTrapData.getBoxTrapDataByNpcId(trapped.get().getNpcId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid object id.");
 		}
@@ -215,11 +215,11 @@ public final class BoxTrap extends Trap {
 		if(!trapped.isPresent()) {
 			return false;
 		}
-		
+
 		Optional<BoxTrapData> data = BoxTrapData.getBoxTrapDataByNpcId(trapped.get().getNpcId());
 
-        return data != null;
-    }
+		return data != null;
+	}
 
 	@Override
 	public void setState(TrapState state) {
@@ -237,23 +237,23 @@ public final class BoxTrap extends Trap {
 		}
 		super.setState(state);
 	}
-	
+
 	/**
 	 * The enumerated type whose elements represent a set of constants
 	 * used for box trapping.
 	 * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
 	 */
 	public enum BoxTrapData {
-		FERRET(1505, 27, 115, 10, new GameItem(10092, 2)),
-		CHINCHOMPA(2910, 53, 198.25, 12, new GameItem(10033, 2)),
-		CARNIVOROUS_CHINCHOMPA(2911, 63, 265, 14, new GameItem(10034, 2)),
-		BLACK_CHINCHOMPA(2912, 73, 335, 25, new GameItem (11959, 2));
-		
+		FERRET(1505, 27, 500, 10, new GameItem(10092, 2)),
+		CHINCHOMPA(2910, 53, 500, 12, new GameItem(10033, 2)),
+		CARNIVOROUS_CHINCHOMPA(2911, 63, 500, 14, new GameItem(10034, 2)),
+		BLACK_CHINCHOMPA(2912, 73, 500, 25, new GameItem (11959, 2));
+
 		/**
 		 * Caches our enum values.
 		 */
 		private static final ImmutableSet<BoxTrapData> VALUES = Sets.immutableEnumSet(EnumSet.allOf(BoxTrapData.class));
-		
+
 		/**
 		 * The npc id for this box trap.
 		 */
@@ -283,7 +283,7 @@ public final class BoxTrap extends Trap {
 		 * @param experience	{@link #experience}.
 		 * @param reward		{@link #reward}.
 		 */
-        BoxTrapData(int npcId, int requirement, double experience, int respawn, GameItem... reward) {
+		BoxTrapData(int npcId, int requirement, double experience, int respawn, GameItem... reward) {
 			this.npcId = npcId;
 			this.requirement = requirement;
 			this.experience = experience;

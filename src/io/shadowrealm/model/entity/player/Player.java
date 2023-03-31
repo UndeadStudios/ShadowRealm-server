@@ -18,7 +18,6 @@ import io.shadowrealm.content.bosses.godwars.God;
 import io.shadowrealm.content.bosses.godwars.Godwars;
 import io.shadowrealm.content.bosses.godwars.GodwarsEquipment;
 import io.shadowrealm.content.bosses.hespori.Hespori;
-import io.shadowrealm.content.bosses.nex.Nex;
 import io.shadowrealm.content.bosses.nightmare.NightmareConstants;
 import io.shadowrealm.content.bosses.zulrah.Zulrah;
 import io.shadowrealm.content.bosspoints.BossPoints;
@@ -96,7 +95,6 @@ import io.shadowrealm.content.skills.construction.House;
 import io.shadowrealm.content.skills.construction.Room;
 import io.shadowrealm.content.skills.farming.Farming;
 import io.shadowrealm.content.skills.farming.Seedling;
-import io.shadowrealm.content.skills.farming.ToolLeprechaun;
 import io.shadowrealm.content.skills.fletching.Fletching;
 import io.shadowrealm.content.skills.herblore.Herblore;
 import io.shadowrealm.content.skills.hunter.Hunter;
@@ -499,7 +497,7 @@ public class Player extends Entity {
     private Controller loadedController;
     private boolean joinedIronmanGroup;
     private long lastDatabaseAccess;
-    private ToolLeprechaun toolLeprechaun = new ToolLeprechaun(this);
+
     private PlayerLock lock = new Unlocked();
 
     /**
@@ -6149,9 +6147,7 @@ public MoneyBox getMoneyBoxInterface() {
         return pvpWeapons;
     }
 
-    public ToolLeprechaun getFarmingTools() {
-        return toolLeprechaun;
-    }
+
 
     @Override
     public int getBonus(Bonus bonus) {

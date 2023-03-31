@@ -30,12 +30,12 @@ public final class BirdSnare extends Trap {
 	public BirdSnare(Player player) {
 		super(player, TrapType.BIRD_SNARE);
 	}
-	
+
 	/**
 	 * The npc trapped inside this box.
 	 */
 	private Optional<NPC> trapped = Optional.empty();
-	
+
 	/**
 	 * Determines if a bird is going to the trap.
 	 */
@@ -49,7 +49,7 @@ public final class BirdSnare extends Trap {
 	/**
 	 * The distance the npc has to have from the snare before it gets triggered.
 	 */
-	private static final int DISTANCE_PORT = 3;
+	private static final int DISTANCE_PORT = 1;
 
 	/**
 	 * A collection of all the npcs that can be caught with a bird snare.
@@ -70,13 +70,13 @@ public final class BirdSnare extends Trap {
 	@Override
 	public boolean canCatch(NPC npc) {
 		Optional<BirdData> data = BirdData.getBirdDataByNpcId(npc.getNpcId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid bird id.");
 		}
 		if (System.currentTimeMillis() - player.lastPickup < 2500)
-			return false;	
-		
+			return false;
+
 		if(player.playerLevel[21] < data.get().requirement) {//(player.playerLevel[player.playerHunter] < data.get().requirement)FIXME
 			player.lastPickup = System.currentTimeMillis();
 			player.sendMessage("You do not have the required level to catch these.");
@@ -99,15 +99,15 @@ public final class BirdSnare extends Trap {
 	@Override
 	public void onCatch(NPC npc) {
 		Optional<BirdData> data = BirdData.getBirdDataByNpcId(npc.getNpcId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid bird id.");
 		}
-		
+
 		if(event.isPresent()) {
 			return;
 		}
-		
+
 		BirdData bird = data.get();
 
 		npc.randomWalk = false;
@@ -130,7 +130,7 @@ public final class BirdSnare extends Trap {
 						container.stop();
 						return;
 					}
-					
+
 					kill(npc);
 					Server.getGlobalObjects().remove(getObject());
 					Server.getGlobalObjects().remove(getObject().getObjectId(), getObject().getX(), getObject().getY(), getObject().getHeight());
@@ -146,7 +146,7 @@ public final class BirdSnare extends Trap {
 				event = Optional.empty();
 			}
 		});
-		
+
 		CycleEventHandler.getSingleton().addEvent(player, event.get(), 1);
 	}
 
@@ -160,9 +160,9 @@ public final class BirdSnare extends Trap {
 				continue;
 			}
 			if(this.getObject().getHeight() == npc.heightLevel && Math.abs(this.getObject().getX() - npc.absX) <= DISTANCE_PORT && Math.abs(this.getObject().getY() - npc.absY) <= DISTANCE_PORT) {
-				if(random.inclusive(100) < 20) {
+/*				if(random.inclusive(100) < 50) {
 					return;
-				}
+				}*/
 				if(this.isAbandoned()) {
 					return;
 				}
@@ -177,11 +177,11 @@ public final class BirdSnare extends Trap {
 			throw new IllegalStateException("No npc is trapped.");
 		}
 		Optional<BirdData> data = BirdData.getBirdDataByObjectId(getObject().getObjectId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid object id.");
 		}
-		
+
 		return data.get().reward;
 	}
 
@@ -191,11 +191,11 @@ public final class BirdSnare extends Trap {
 			throw new IllegalStateException("No npc is trapped.");
 		}
 		Optional<BirdData> data = BirdData.getBirdDataByObjectId(getObject().getObjectId());
-		
+
 		if(!data.isPresent()) {
 			throw new IllegalStateException("Invalid object id.");
 		}
-		
+
 		return data.get().experience;
 	}
 
@@ -206,8 +206,8 @@ public final class BirdSnare extends Trap {
 		}
 		BirdData data = BirdData.getBirdDataByObjectId(object.getObjectId()).orElse(null);
 
-        return data != null;
-    }
+		return data != null;
+	}
 
 	@Override
 	public void setState(TrapState state) {
@@ -232,17 +232,17 @@ public final class BirdSnare extends Trap {
 	 * @author <a href="http://www.rune-server.org/members/stand+up/">Stand Up</a>
 	 */
 	public enum BirdData {
-		CRIMSON_SWIFT(5549, 9373, 1, 34, 10, new GameItem(526), new GameItem(10088), new GameItem(9978)),
-		GOLDEN_WARBLER(5551, 9377, 5, 47, 12, new GameItem(526), new GameItem(10090), new GameItem(9978)),
-		COPPER_LONGTAIL(5552, 9379, 9, 61, 16, new GameItem(526), new GameItem(10091), new GameItem(9978)),
-		CERULEAN_TWITCH(5550, 9375, 11, 64.5, 18, new GameItem(526), new GameItem(10089), new GameItem(9978)),
-		TROPICAL_WAGTAIL(5548, 9348, 19, 95, 20, new GameItem(526), new GameItem(10087), new GameItem(9978));
+		CRIMSON_SWIFT(5549, 9373, 1, 500, 10, new GameItem(526), new GameItem(10088), new GameItem(9978)),
+		GOLDEN_WARBLER(5551, 9377, 5, 500, 12, new GameItem(526), new GameItem(10090), new GameItem(9978)),
+		COPPER_LONGTAIL(5552, 9379, 9, 500, 16, new GameItem(526), new GameItem(10091), new GameItem(9978)),
+		CERULEAN_TWITCH(5550, 9375, 11, 500, 18, new GameItem(526), new GameItem(10089), new GameItem(9978)),
+		TROPICAL_WAGTAIL(5548, 9348, 19, 500, 20, new GameItem(526), new GameItem(10087), new GameItem(9978));
 
 		/**
 		 * Caches our enum values.
 		 */
 		private static final ImmutableSet<BirdData> VALUES = Sets.immutableEnumSet(EnumSet.allOf(BirdData.class));
-		
+
 		/**
 		 * The npc id for this bird.
 		 */
@@ -278,7 +278,7 @@ public final class BirdSnare extends Trap {
 		 * @param experience	{@link #experience}.
 		 * @param reward		{@link #reward}.
 		 */
-        BirdData(int npcId, int objectId, int requirement, double experience, int respawn, GameItem... reward) {
+		BirdData(int npcId, int objectId, int requirement, double experience, int respawn, GameItem... reward) {
 			this.npcId = npcId;
 			this.objectId = objectId;
 			this.requirement = requirement;
@@ -286,7 +286,7 @@ public final class BirdSnare extends Trap {
 			this.reward = reward;
 			this.respawn = respawn;
 		}
-		
+
 		/**
 		 * @return the npc id.
 		 */
@@ -306,7 +306,7 @@ public final class BirdSnare extends Trap {
 		public static Optional<BirdData> getBirdDataByNpcId(int id) {
 			return VALUES.stream().filter(bird -> bird.npcId == id).findAny();
 		}
-		
+
 		/**
 		 * Retrieves a {@link BirdData} enumerator dependant on the specified {@code id}.
 		 * @param id	the object id to return an enumerator from.

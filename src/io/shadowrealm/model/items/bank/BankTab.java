@@ -18,7 +18,7 @@ public class BankTab {
 	private final Bank bank;
 
 	/**
-	 * 
+	 *
 	 * @param tabId The bank tab id
 	 */
 	public BankTab(int tabId, Bank bank) {
@@ -46,7 +46,7 @@ public class BankTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param bankItem Removes the BankItem object from the ArrayList
 	 */
 	public void remove(BankItem bankItem, int type, boolean placeHolder) {
@@ -58,7 +58,7 @@ public class BankTab {
 						item.setAmount(0);
 					}
 					else
-					items.add(item); 
+						items.add(item);
 				} else {
 					//Stil some item amount left
 					item.setAmount(item.getAmount() - bankItem.getAmount());
@@ -73,7 +73,7 @@ public class BankTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The current amount of items in the bank tab
 	 */
 	public int size() {
@@ -81,7 +81,7 @@ public class BankTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The amount of free slots remaining in this tab
 	 */
 	public int freeSlots() {

@@ -124,7 +124,7 @@ public class Seedling {
         player.getItems().deleteItem(seedlingData.getSeedId(), 1);
         player.getItems().replaceItem(player, 5354, (seedlingData.getUnwateredSeedlingId()));
         player.sendMessage(
-                "You sow some "+ ItemCacheDefinition.forID(seedlingData.seedId).getName()+" in the plant pot.");
+                "You sow some " + ItemCacheDefinition.forID(seedlingData.seedId).getName() + " in the plant pot.");
         player.sendMessage("They need watering before they will grow.");
         return true;
     }
@@ -132,15 +132,6 @@ public class Seedling {
     public boolean fillPotWithSoil(int itemId, int objectX, int objectY) {
         if (itemId != 5350)
             return false;
-        if (!player.getItems().playerHasItem(FarmingConstants.TROWEL)) {
-            player.sendMessage(
-                    "You need a gardening trowel to fill this pot with soil.");
-            return true;
-        }
-        player.getItems().deleteItem(itemId, 1);
-        player.startAnimation(FarmingConstants.FILLING_POT_ANIM);
-        player.sendMessage("You fill the empty plant pot with soil.");
-        player.getItems().addItem(5354, 1);
-        return true;
+        return false;
     }
 }

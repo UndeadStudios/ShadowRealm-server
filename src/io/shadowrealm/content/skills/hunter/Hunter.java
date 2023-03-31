@@ -8,6 +8,7 @@ import io.shadowrealm.model.cycleevent.CycleEventHandler;
 import io.shadowrealm.model.entity.player.Boundary;
 import io.shadowrealm.model.entity.player.Player;
 import io.shadowrealm.model.entity.player.PlayerHandler;
+import io.shadowrealm.model.entity.player.Right;
 import io.shadowrealm.model.world.objects.GlobalObject;
 import io.shadowrealm.util.Misc;
 
@@ -46,7 +47,7 @@ public final class Hunter {
 		if(GLOBAL_TRAPS.get(player) == null) {
 			return;
 		}
-		
+
 		if(logout) {
 			GLOBAL_TRAPS.get(player).getTraps().forEach(t -> {
 				t.setAbandoned(true);
@@ -82,8 +83,8 @@ public final class Hunter {
 		}
 
 		player.last_trap_layed.reset();
-		
-		if (!Boundary.isIn(player, Boundary.HUNTER_BOUNDARIES) && !Boundary.isIn(player, Boundary.REGULAR_DZ_HUNTER) && !Boundary.isIn(player, Boundary.SOUL_WARS)
+
+		if (!Boundary.isIn(player, Boundary.HUNTER_BOUNDARIES) && !Boundary.isIn(player, Boundary.REGULAR_DZ_HUNTER)
 				&& !Boundary.isIn(player, Boundary.HUNTER_AREA)) {
 			player.sendMessage("This is not a suitable spot to place a trap.");
 			return false;
@@ -93,7 +94,7 @@ public final class Hunter {
 
 		if(!GLOBAL_TRAPS.get(player).getTask().isPresent()) {
 			GLOBAL_TRAPS.get(player).setTask(new TrapTask(player));
-			CycleEventHandler.getSingleton().addEvent(player, GLOBAL_TRAPS.get(player).getTask().get(), 10);
+			CycleEventHandler.getSingleton().addEvent(player, GLOBAL_TRAPS.get(player).getTask().get(), 3);
 		}
 
 		if(GLOBAL_TRAPS.get(player).getTraps().size() >= getMaximumTraps(player)) {
@@ -111,7 +112,6 @@ public final class Hunter {
 		trap.submit();
 		player.startAnimation(827);
 		player.getItems().deleteItem(trap.getType().getItemId(), 1);
-		player.getItems().deleteItem(trap.getType().getItemId2(), 1);
 		Server.getGlobalObjects().add(trap.getObject());
 		//Server.getGlobalObjects().add(trap.getObject());
 		if (player.getRegionProvider().getClipping(player.getX() - 1, player.getY(), player.heightLevel, -1, 0)) {
@@ -152,11 +152,11 @@ public final class Hunter {
 	 */
 	public static boolean pickup(Player player, GlobalObject object) {
 		Optional<Trap.TrapType> type = Trap.TrapType.getTrapByObjectId(object.getObjectId());
-		Optional<Trap.TrapType> type2 = Trap.TrapType.getTrapByObjectId2(object.getObjectId());
-		if (System.currentTimeMillis() - player.lastPickup < 2500)
-			return false;		
 
-		if(!type.isPresent() || !type2.isPresent()) {
+		if (System.currentTimeMillis() - player.lastPickup < 2500)
+			return false;
+
+		if(!type.isPresent()) {
 			return false;
 		}
 
@@ -167,14 +167,20 @@ public final class Hunter {
 		}
 
 		if(trap.getPlayer() == null) {
+			if (player.getRights().isOrInherits(Right.ADMINISTRATOR)) {
+				Server.getGlobalObjects().remove(object);
+				Server.getGlobalObjects().remove(object.getObjectId(), object.getX(), object.getY(), object.getHeight());
+				player.sendMessage("You've removed someone else's trap.");
+				return true;
+			}
 			player.sendMessage("You can't pickup someone elses trap...");
 			return false;
 		}
 
-		if (trap.getState().equals(Trap.TrapState.TRIGGERED)) {
+/*		if (trap.getState().equals(Trap.TrapState.TRIGGERED) && trap.getObject().getObjectId() != 3) {
 			player.sendMessage("You notice an animal moving closer to your trap and don't pick it up.");
 			return false;
-		}
+		}*/
 
 		if(trap.getState().equals(Trap.TrapState.CAUGHT)) {
 			return false;
@@ -190,7 +196,6 @@ public final class Hunter {
 		trap.onPickUp();
 		Server.getGlobalObjects().remove(trap.getObject());
 		Server.getGlobalObjects().remove(trap.getObject().getObjectId(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight());
-		Server.getGlobalObjects().replace(new GlobalObject(9158, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()), new GlobalObject(9341, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()));
 		player.getItems().addItem(trap.getType().getItemId(), 1);
 		player.startAnimation(827);
 		player.lastPickup = System.currentTimeMillis();
@@ -206,11 +211,17 @@ public final class Hunter {
 	 */
 	public static boolean claim(Player player, GlobalObject object) {
 		Trap trap = getTrap(player, object).orElse(null);
-		
+
 		if (System.currentTimeMillis() - player.lastPickup < 2500)
-			return false;		
+			return false;
 
 		if(trap == null) {
+			if (player.getRights().isOrInherits(Right.ADMINISTRATOR)) {
+				Server.getGlobalObjects().remove(object);
+				Server.getGlobalObjects().remove(object.getObjectId(), object.getX(), object.getY(), object.getHeight());
+				player.sendMessage("You've removed someone else's trap.");
+				return true;
+			}
 			player.sendMessage("You can't pickup someone elses trap...");
 			return false;
 		}
@@ -232,53 +243,66 @@ public final class Hunter {
 		Arrays.stream(trap.reward()).forEach(reward -> player.getItems().addItem(reward.getId(), reward.getAmount()));
 		player.getPA().addSkillXPMultiplied((int) ((int) trap.experience() + (player.getItems().isWearingItem(10071) ? percentOfXp : 0)), 21, true);
 		GLOBAL_TRAPS.get(player).getTraps().remove(trap);
-		
+
 		if(GLOBAL_TRAPS.get(player).getTraps().isEmpty()) {
 			GLOBAL_TRAPS.get(player).setTask(Optional.empty());
 			GLOBAL_TRAPS.remove(player);
 		}
-		
+
 		Server.getGlobalObjects().remove(trap.getObject());
 		Server.getGlobalObjects().remove(trap.getObject().getObjectId(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight());
-		Server.getGlobalObjects().replace(new GlobalObject(9004, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()), new GlobalObject(9341, trap.getObject().getX(), trap.getObject().getX(), trap.getObject().getY(), trap.getObject().getHeight(), trap.getObject().getFace(), trap.getObject().getType()));
 		player.getItems().addItem(trap.getType().getItemId(), 1);
 		player.startAnimation(827);
 		player.lastPickup = System.currentTimeMillis();
-		
+
+//		for (Quest quest : player.getQuesting().getQuestList()) {
+//			if (quest.getName().equalsIgnoreCase("Santa's Troubles") && quest.getStage() == 5 && player.getPresentCounter() <= 70) {
+//				if (Misc.isLucky(75)) {
+//					player.sendMessage("@red@You find a christmas present while hunting");
+//					player.setPresentCounter(player.getPresentCounter() + 1);
+//					if (player.getPresentCounter() == 70) {
+//						quest.incrementStage();
+//						player.sendMessage("@red@It looks like you've found all the present in the area, you need to return to santa.");
+//					}
+//				}
+//				break;
+//			}
+//		}
+
 		int randomGray = player.skillingPetRateScroll ? Misc.random(1230) : Misc.random(1500);
 		int randomRed = player.skillingPetRateScroll ? Misc.random(1875) : Misc.random(2500);
 		int randomBlack = player.skillingPetRateScroll ? Misc.random(2700) : Misc.random(3500);
 		int randomGold = player.skillingPetRateScroll ? Misc.random(11300) : Misc.random(15000);
-		
+
 		if (randomGold == 2 && player.getItems().getItemCount(13326, false) == 0 && player.petSummonId != 13326) {
 			PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Golden Chinchompa</col> pet lucky enough!");
 			player.getItems().addItemUnderAnyCircumstance(13326, 1);
 			player.getCollectionLog().handleDrop(player, 5, 13326, 1);
 		}
 		switch (trap.getType().getItemId()) {
-		case 10033:
-			if (randomGray == 25 && player.getItems().getItemCount(13324, false) == 0 && player.petSummonId != 13324) {
-				PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Gray Chinchompa</col> pet!");
-				player.getItems().addItemUnderAnyCircumstance(13324, 1);
-				player.getCollectionLog().handleDrop(player, 5, 13324, 1);
-			}
-			break;
-			
-		case 10008:
-			if (randomRed == 15 && player.getItems().getItemCount(13323, false) == 0 && player.petSummonId != 13323) {
-				PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Red Chinchompa</col> pet!");
-				player.getItems().addItemUnderAnyCircumstance(13323, 1);
-				player.getCollectionLog().handleDrop(player, 5, 13323, 1);
-			}
-			break;
-			
-		case 11959:
-			if (randomBlack == 8 && player.getItems().getItemCount(13325, false) == 0 && player.petSummonId != 13325) {
-				PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Black Chinchompa</col> pet!");
-				player.getItems().addItemUnderAnyCircumstance(13325, 1);
-				player.getCollectionLog().handleDrop(player, 5, 13325, 1);
-			}
-			break;
+			case 10033:
+				if (randomGray == 25 && player.getItems().getItemCount(13324, false) == 0 && player.petSummonId != 13324) {
+					PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Gray Chinchompa</col> pet!");
+					player.getItems().addItemUnderAnyCircumstance(13324, 1);
+					player.getCollectionLog().handleDrop(player, 5, 13324, 1);
+				}
+				break;
+
+			case 10008:
+				if (randomRed == 15 && player.getItems().getItemCount(13323, false) == 0 && player.petSummonId != 13323) {
+					PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Red Chinchompa</col> pet!");
+					player.getItems().addItemUnderAnyCircumstance(13323, 1);
+					player.getCollectionLog().handleDrop(player, 5, 13323, 1);
+				}
+				break;
+
+			case 11959:
+				if (randomBlack == 8 && player.getItems().getItemCount(13325, false) == 0 && player.petSummonId != 13325) {
+					PlayerHandler.executeGlobalMessage("[<col=CC0000>News</col>] @cr18@ <col=255>" + player.getDisplayName() + "</col> caught a <col=CC0000>Black Chinchompa</col> pet!");
+					player.getItems().addItemUnderAnyCircumstance(13325, 1);
+					player.getCollectionLog().handleDrop(player, 5, 13325, 1);
+				}
+				break;
 		}
 		return true;
 	}

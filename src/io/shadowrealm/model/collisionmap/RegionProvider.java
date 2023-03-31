@@ -4,7 +4,6 @@ import io.shadowrealm.content.skills.construction.Room;
 import io.shadowrealm.content.skills.hunter.impling.Impling;
 import io.shadowrealm.content.skills.hunter.trap.impl.BirdSnare;
 import io.shadowrealm.content.skills.hunter.trap.impl.BoxTrap;
-import io.shadowrealm.content.skills.hunter.trap.impl.NetTrap;
 import io.shadowrealm.model.Npcs;
 import io.shadowrealm.model.entity.npc.NPC;
 import io.shadowrealm.model.entity.player.Boundary;
@@ -142,8 +141,7 @@ public class RegionProvider {
 			return true;
 		else if(BirdSnare.NPC_IDS.contains(npc.getNpcId()))
 			return true;
-		else if(NetTrap.NPC_IDS.contains(npc.getNpcId()))
-			return true;
+
 		else if(Impling.isImp(npcId))
 			return true;
 
