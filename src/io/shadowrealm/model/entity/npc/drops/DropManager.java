@@ -282,11 +282,11 @@ public class DropManager {
                         player.sendMessage("@red@You receive a brittle key.");
                         logger.debug("Grotesque guardians key received because server is on debug mode.");
                     }
-                    if(Misc.random(50) == 1){
+                    if(Misc.random(150) == 1){
                         player.sendMessage("@bla@You notice a @blu@slayer casket@bla@ on the floor.");
                         Server.itemHandler.createGroundItem(player, 13438, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
                     }
-                    if(Misc.random(50) == 1){
+                    if(Misc.random(2500) == 1){
                         player.sendMessage("@bla@You notice a @blu@money box@bla@ on the floor.");
                         Server.itemHandler.createGroundItem(player, 28827, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
@@ -1178,9 +1178,8 @@ public class DropManager {
 		}
 
         if (item.getId() == 23877 && player.collectshard== true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(23877))) {
-            if ((player.getItems().isWearingItem(23943)) || (player.getItems().isWearingItem(23943))) {
+            if ((player.getItems().isWearingItem(23943))) {
                 player.getItems().addItem(23877, item.getAmount());
-                item.changeDrop(-1, item.getAmount());
                 player.sendMessage("@red@The Elven Signet has collected some shards for you.");
             }
         }

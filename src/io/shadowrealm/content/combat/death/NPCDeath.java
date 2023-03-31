@@ -78,8 +78,10 @@ public class NPCDeath {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }
                 break;
-
             case 2084:
+            case 7252:
+            case 2085:
+            case 2083:
                 if (player.currentDailyTask.getTaskName().equals(DailyTaskData.KILL_FIRE_GIANTS.getDailyTask().getTaskName())) {
                     DailyTaskHandler.Companion.handleProgress(player, 1);
                 }

@@ -17,7 +17,7 @@ public class PvpWeapons {
     /**
      * The maximum amount of charges a pvp weapon can hold
      */
-    private static final int MAX_CHARGES = 16_000;
+    private static final int MAX_CHARGES = 20_000;
 
     /**
      * All the Pvp Weapons
@@ -383,17 +383,14 @@ public class PvpWeapons {
             // Check if the player can add more charges
             if (chargeSpace > 0) {
                 // Replace uncharged variant with charged variant
-                if (replacementId != -1) {
-                    player.getItems().deleteItem(bofa, 1);
-                    player.getItems().addItem(replacementId, 1);
-                }
+
 
                 // Remove ether add charges
                 int coinstoadd = Math.min(coinsAmount, chargeSpace);
-                player.getItems().deleteItem(coins, coinstoadd);
+                player.getItems().deleteItem(coins, coinstoadd * 10000);
                 PvpWeapons.manipulateCharges(player, replacementId != -1 ? replacementId : bofa, coinstoadd);
 
-                player.sendMessage("You have added " + coinstoadd + " coins  to your " + definition.getName());
+                player.sendMessage("You have added " + coinstoadd * 10000 + " coins  to your " + definition.getName());
 
             } else
                 player.sendMessage("Your " + definition.getName() + " already has the maximum amount of charges.");

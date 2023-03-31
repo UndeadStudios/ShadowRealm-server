@@ -33073,7 +33073,7 @@
   name: "Raids 2 mbox"
   description: "Raids 2 mystery"
   shopValue: 1
-  untradeable: true
+  stackable: true
   undroppable: true
   droppable: false
 - id: 6831
@@ -47996,6 +47996,7 @@
   name: "Raids 1 mbox"
   description: "raids 1 mystery"
   shopValue: 600
+  stackable: true
   noteId: 10026
 - id: 10026
   name: "Magic box"

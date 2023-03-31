@@ -44,10 +44,10 @@ public class Raids {
     private int groupPoints;
 
     public static boolean isMissingRequirements(Player c) {
-/*        if (c.totalLevel < c.getMode().getTotalLevelNeededForRaids()) {
+       if (c.totalLevel < c.getMode().getTotalLevelNeededForRaids()) {
             c.sendMessage("You need a total level of at least " + c.getMode().getTotalLevelNeededForRaids() + " to join this raid!");
             return true;
-        }*/
+        }
 
         return false;
     }

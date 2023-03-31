@@ -58,7 +58,7 @@ public class Degrade {
 		STATIUS_WARHAMMER(Items.STATIUSS_WARHAMMER, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_LONGSWORD(Items.VESTAS_LONGSWORD, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
 		VESTAS_SPEAR(Items.VESTAS_SPEAR, true, CombatType.MELEE, -1, 10_500_000, getPvPHitsToDegrade()),
-		BOW_OF_FAERDHINEN(Items.BOW_OF_FAERDHINEN, true, CombatType.RANGE, 25862, 10_500_000, 10_000),
+		BOW_OF_FAERDHINEN(Items.BOW_OF_FAERDHINEN, true, CombatType.RANGE, 25862, 200_000_000, Integer.MAX_VALUE),
 		TENTACLE_WHIP(Items.ABYSSAL_TENTACLE, true, CombatType.MELEE, 12004, 2_000_000, 10_000);
 
 		private final int itemId;

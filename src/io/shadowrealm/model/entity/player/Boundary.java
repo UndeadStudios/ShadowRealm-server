@@ -353,6 +353,8 @@ public static  final Boundary brithday_room2 = new Boundary(2944, 9920, 3007, 99
 			new Boundary(3155, 3627, 3160, 3633)
 	};
 	public static final Boundary DEMONIC_GORILLAS = new Boundary(2071, 5613, 2192, 5702);
+
+	public static final Boundary DZ_BOSS_AREA = new Boundary(3800, 2839, 3769, 2815);
 	public static final Boundary CRYSTAL_CAVE_STAIRS = new Boundary(3222, 12441, 3229, 12448);
 	public static final Boundary CRYSTAL_CAVE_ENTRANCE = new Boundary(3268, 6050, 3278, 6056);
 	public static final Boundary CRYSTAL_CAVE_AREA = new Boundary(3131, 12346, 3265, 12482);
