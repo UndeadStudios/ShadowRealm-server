@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 class DonorWorldBoss {
     val npcID = 9049 // Change the ID of the boss
     private val pos = Position(1886, 9309, 0) // Change the position of the boss
-    private val respawnMinutes = 1 // Change how many minutes it takes for the boss to respawn
+    private val respawnMinutes = 60 // Change how many minutes it takes for the boss to respawn
     private val spawnMessage = "A Donor World Boss has spawned!"
 
     private var queuedDonations = 0 // Counts the amount of donations received
