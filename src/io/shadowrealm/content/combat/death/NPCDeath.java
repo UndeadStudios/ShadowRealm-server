@@ -65,7 +65,13 @@ public class NPCDeath {
             //+ " Arena Points.");
         }
 
+        // Handles the death of the World Donor Boss
+        if (npcId == Server.getDonorWorldBoss().getNpcID()) {
+            Server.getDonorWorldBoss().handleDeath();
+        }
+
         switch (npcId) {
+
 
             case 2790:
             case 2791:

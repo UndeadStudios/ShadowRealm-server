@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.shadowrealm.content.DiscordConnection;
 import io.shadowrealm.content.minigames.CastleWars;
+import io.shadowrealm.content.worldevent.DonorWorldBoss;
 import io.shadowrealm.model.AttributesSerializable;
 import io.shadowrealm.model.cycleevent.EventHandler;
 import io.shadowrealm.model.entity.npc.NPCHandler;
@@ -28,6 +29,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import org.flywaydb.core.Flyway;
 import org.slf4j.LoggerFactory;
@@ -59,6 +61,8 @@ public class Server {
     private static final Punishments PUNISHMENTS = new Punishments();
     private static final DropManager dropManager = new DropManager();
     private static ServerAttributes serverAttributes;
+    @Getter
+    public static DonorWorldBoss donorWorldBoss = new DonorWorldBoss();
     /**
      * A class that will manage game events
      */
@@ -189,6 +193,7 @@ public class Server {
                 long endTime = System.nanoTime();
                 long elapsed = endTime - startTime;
                 System.out.println(Configuration.SERVER_NAME + " has successfully started up in " + TimeUnit.SECONDS.convert(elapsed, TimeUnit.NANOSECONDS)+ " seconds.");
+                donorWorldBoss.initDonorBoss();
             } catch (Exception e) {
                 logger.error("An error occurred while starting the server.", e);
                 e.printStackTrace();

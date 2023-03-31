@@ -1,5 +1,6 @@
 package io.shadowrealm.content.commands.all;
 
+import io.shadowrealm.Server;
 import io.shadowrealm.content.commands.Command;
 import io.shadowrealm.model.definitions.ItemDef;
 import io.shadowrealm.model.entity.player.Player;
@@ -27,6 +28,7 @@ public class Claim extends Command {
                         Discord.writeannounceMessage(messaged);
                     }
                     player.sendMessage("Thank you for donating!");
+                    Server.getDonorWorldBoss().addDonation();
                 } catch (Exception e) {
                     player.sendMessage("Api Services are currently offline. Please check back shortly");
                     e.printStackTrace();
