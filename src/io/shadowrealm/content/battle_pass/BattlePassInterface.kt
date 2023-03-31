@@ -165,7 +165,7 @@ class BattlePassInterface(val player: Player) {
                 closeBtn -> player.pa.removeAllWindows()
                 nextBtn -> sendData(player, player.battlePassPage + 1)
                 prevBtn -> sendData(player, player.battlePassPage - 1)
-                purchaseBtn -> player.pa.sendFrame126("https://exiliusosrsps.everythingrs.com/services/store/", 12000)
+                purchaseBtn -> player.pa.sendFrame126("https://shadowrealmrsps.everythingrs.com/services/store/", 12000)
                 else -> claimRewards(buttonID, player)
             }
             //println("Button being handled in BattlePass interface: $buttonID")

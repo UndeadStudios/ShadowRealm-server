@@ -94,7 +94,7 @@ public class DiscordIntegration {
                     channel.sendMessage("A new update has just released on Shadow Realm!").queue(null, handler);
                 });
                 user.openPrivateChannel().queue((channel) -> {
-                    channel.sendMessage("https://Exilius-osrs.com/forums/updates.4/").queue(null, handler);
+                    channel.sendMessage("https://shadowrealm-rsps.com/forums/updates.4/").queue(null, handler);
                 });
             }
         }
