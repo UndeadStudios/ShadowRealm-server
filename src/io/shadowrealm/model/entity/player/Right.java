@@ -208,7 +208,9 @@ public enum Right implements Comparator<Right> {
 	public boolean isAdministrator() {
 		return equals(ADMINISTRATOR);
 	}
-	
+	public boolean isDonator() {
+		return equals(DONATOR_SET);
+	}
 	/**
 	 * Determines if the players rights equal that of {@link Right#OWNER}
 	 * @return	true if they are of type owner

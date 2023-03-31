@@ -157,31 +157,31 @@ class DailyTaskHandler {
         fun loadPlayerTaskDataOnLogin(player: Player) {
             if (player.bot) return
             val loadedTask: DailyTask
-            println("LOADING THE PLAYER TASK DATA FOR ${player.loginName}")
+            //println("LOADING THE PLAYER TASK DATA FOR ${player.loginName}")
             try {
                 checkSaveDir()
-                println("REACHED THE TRY LOOP")
+                //println("REACHED THE TRY LOOP")
                 val fr = FileReader(saveDirectory + player.loginName + ".json")
                 val fileParser = JsonParser()
                 val builder = GsonBuilder().create()
                 val reader = fileParser.parse(fr) as JsonObject
                 loadedTask = builder.fromJson(reader["task-data"], DailyTask::class.java)
-                println("Loaded task stuff = ${loadedTask.taskName}, ${loadedTask.progress} / ${loadedTask.actionsRequired}")
-                println("File reader stuff = ${fr.readLines()}")
-                println("Loaded task for ${player.loginName}. Task name loaded was: ${loadedTask.taskName}")
+                //println("Loaded task stuff = ${loadedTask.taskName}, ${loadedTask.progress} / ${loadedTask.actionsRequired}")
+                //println("File reader stuff = ${fr.readLines()}")
+                //println("Loaded task for ${player.loginName}. Task name loaded was: ${loadedTask.taskName}")
                 if (loadedTask.taskName == DailyTaskData.DEFAULT_TASK_DO_NOT_DELETE.dailyTask.taskName) {
-                    println("Task was default - choosing a new one")
+                    //println("Task was default - choosing a new one")
                     assignNewTask(player)
                 } else {
                     player.currentDailyTask = loadedTask
-                    println("Players current task has been set from the loader. Now: ${player.currentDailyTask.taskName} progress: ${loadedTask.progress} / ${loadedTask.actionsRequired}")
+                    //println("Players current task has been set from the loader. Now: ${player.currentDailyTask.taskName} progress: ${loadedTask.progress} / ${loadedTask.actionsRequired}")
                     checkTaskExpiry(player)
                 }
             } catch (exception: Exception) {
-                println("An error occurred when loading daily task file... Error: $exception")
+                //println("An error occurred when loading daily task file... Error: $exception")
                 assignNewTask(player)
             }
-            println("successfully loaded task data for ${player.loginName}... Task: ${player.currentDailyTask.taskName}")
+            //println("successfully loaded task data for ${player.loginName}... Task: ${player.currentDailyTask.taskName}")
         }
 
         fun handleProgress(player: Player, progress: Int) {
@@ -192,13 +192,13 @@ class DailyTaskHandler {
                 println("Task was null ffs")
                 return
             }
-            println("Current task progress is ${task.progress} and we are adding $progress to it.")
+            //println("Current task progress is ${task.progress} and we are adding $progress to it.")
             if (task.progress >= task.actionsRequired) {
                 completeTask(player)
                 return
             }
             player.currentDailyTask.progress += progress
-            println("New task progress is ${player.currentDailyTask.progress}.")
+            //println("New task progress is ${player.currentDailyTask.progress}.")
         }
 
         private fun completeTask(player: Player) {

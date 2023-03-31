@@ -1,6 +1,8 @@
 package io.shadowrealm.net.login;
 
 import io.shadowrealm.Configuration;
+import io.shadowrealm.model.entity.player.Player;
+import io.shadowrealm.model.entity.player.Right;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginThrottler {
 
+    private static Player player;
+    private static Right right;
     private static final Logger logger = LoggerFactory.getLogger(LoginThrottler.class);
     private static final Map<String, CopyOnWriteArrayList<LoginAttempt>> loginAttempts = new ConcurrentHashMap<>();
     private static final Map<String, SuccessfulLogin> successfulLogins = new ConcurrentHashMap<>();
@@ -56,7 +60,9 @@ public class LoginThrottler {
             if (!successfulLogin.getIp().equals(ipAddress)
                     || !successfulLogin.getMac().equals(macAddress)
                     || !successfulLogin.getUuid().equals(uuid)) {
-                if (Configuration.DISABLE_NEW_MAC) {
+                if (player.getRights().hasDonorPosition() && player.getRights().hasStaffPosition()) {
+                    return true;
+                } else if (Configuration.DISABLE_NEW_MAC && !player.getRights().hasDonorPosition() && !player.getRights().hasStaffPosition()) {
                     return false;
                 }
             }

@@ -41,23 +41,23 @@ public class GemCutting {
 					}
 					if (g.equals(Gem.EMERALD) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_EMERALD.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
-						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+						//System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 					if (g.equals(Gem.DIAMOND) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DIAMOND.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
-						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+					//	System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 					if (g.equals(Gem.SAPPHIRE) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_SAPHIRE.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
-						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+					//	System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 					if (g.equals(Gem.DRAGONSTONE) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_DRAGONSTONES.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
-						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+					//	System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 					if (g.equals(Gem.ONYX) || c.currentDailyTask.getTaskName().equals(DailyTaskData.CUTTING_ONYX.getDailyTask().getTaskName())) {
 						DailyTaskHandler.Companion.handleProgress(c, 1);
-						System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
+					///	System.out.println("Player " + c.getLoginName() + " has just progressed on their iron bar task");
 					}
 
 				}

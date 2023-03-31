@@ -72,7 +72,7 @@ public class Configuration {
 	public static boolean DISABLE_CHANGE_ADDRESS_CAPTCHA = false;
 	public static boolean DISABLE_NEW_ACCOUNT_CAPTCHA = false;
 	public static boolean DISABLE_REGISTRATION = false;
-	public static boolean DISABLE_ADDRESS_VERIFICATION = false;
+	public static boolean DISABLE_ADDRESS_VERIFICATION = true;
 	public static boolean DISABLE_FRESH_LOGIN = false;
 	public static boolean DISABLE_NEW_MAC = true;
 

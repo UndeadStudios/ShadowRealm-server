@@ -127,17 +127,17 @@ public class Herblore {
 					case SUPER_STRENGTH:
 						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_STRENGTH.getDailyTask().getTaskName())) {
 							DailyTaskHandler.Companion.handleProgress(player, 1);
-							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+							//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 					case SUPER_ANTIPOISON:
 						if	(player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_ANTIPOISON.getDailyTask().getTaskName())) {
 							DailyTaskHandler.Companion.handleProgress(player, 1);
-							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+							//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 					case SUPER_COMBAT_3:
 						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_COMBAT.getDailyTask().getTaskName())) {
 							DailyTaskHandler.Companion.handleProgress(player, 1);
-							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+							//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 					case SUPER_COMBAT_4:
 						if (Boundary.isIn(player, Boundary.ARDOUGNE_ZOO_BRIDGE_BOUNDARY)) {
@@ -150,18 +150,18 @@ public class Herblore {
 					case SUPER_RESTORE:
 						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_SUPER_RESTORE.getDailyTask().getTaskName())) {
 							DailyTaskHandler.Companion.handleProgress(player, 1);
-							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+							//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 						case STRENGTH:
 							if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_STRENGTH.getDailyTask().getTaskName())) {
 								DailyTaskHandler.Companion.handleProgress(player, 1);
-								System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+								//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 					case ANTI_VENOM_4:
 					case ANTI_VENOM_3:
 						if (player.currentDailyTask.getTaskName().equals(DailyTaskData.MAKE_ANTIVENOM.getDailyTask().getTaskName())) {
 							DailyTaskHandler.Companion.handleProgress(player, 1);
-							System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
+							//System.out.println("Player " + player.getLoginName() + " has just progressed on their iron bar task");
 						}
 					case ANTI_VENOM_2:
 					case ANTI_VENOM_1:

@@ -554,7 +554,7 @@ public class Raids {
     public void spawnNpcs(int currentRoom) {
 
         int height = currentHeight;
-        System.out.println("Raid height = " + height);
+        //System.out.println("Raid height = " + height);
         switch(roomNames.get(currentRoom)) {
             case "lizardmen":
                 if(lizards) {

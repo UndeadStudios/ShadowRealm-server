@@ -37,6 +37,9 @@ public class RightGroup {
 	public boolean hasStaffPosition() {
 		return rights.stream().anyMatch(Right::isStaff);
 	}
+	public boolean hasDonorPosition() {
+		return rights.stream().anyMatch(Right::isDonator);
+	}
 
 	public boolean ignoreNewPlayerRestriction() {
 		return hasStaffPosition() || contains(Right.YOUTUBER);

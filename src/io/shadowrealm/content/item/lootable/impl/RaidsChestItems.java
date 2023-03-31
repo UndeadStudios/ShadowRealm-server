@@ -22,7 +22,7 @@ public class RaidsChestItems {
 
     static {
         items.put(LootRarity.COMMON, Arrays.asList(
-                new GameItem(Raids.RARE_KEY, 1),
+                new GameItem(Raids. RARE_KEY, 1),
                 new GameItemVariableAmount(23686, 1, 3),  //divine combat 4
                 new GameItemVariableAmount(23734, 1, 3),  //divine range 4
                 new GameItemVariableAmount(23746, 1, 3),  //divine mage 4

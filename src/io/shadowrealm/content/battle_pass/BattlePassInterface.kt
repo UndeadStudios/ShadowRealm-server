@@ -42,7 +42,7 @@ class BattlePassInterface(val player: Player) {
         }
 
         fun sendData(player: Player, pageSent: Int) {
-            println("page send: $pageSent")
+           // println("page send: $pageSent")
             var page = pageSent
             if (page > 14) {
                 page = 14

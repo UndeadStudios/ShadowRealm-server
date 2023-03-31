@@ -258,13 +258,13 @@ public class Cooking extends SkillHandler {
 								}
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_LOBSTER.getDailyTask().getTaskName())) {
 									DailyTaskHandler.Companion.handleProgress(player, 1);
-									System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
+									//System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
 								}
 								break;
 							case 335:
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_TROUT.getDailyTask().getTaskName())) {
 									DailyTaskHandler.Companion.handleProgress(player, 1);
-									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
+									//System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
 								}
 							case 317:
 								if (Boundary.isIn(player, Boundary.LUMRIDGE_BOUNDARY)) {
@@ -272,7 +272,7 @@ public class Cooking extends SkillHandler {
 								}
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_SHRIMP.getDailyTask().getTaskName())) {
 									DailyTaskHandler.Companion.handleProgress(player, 1);
-									System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
+									//System.out.println("Player " + player.getLoginName() + " has just progressed on their Cooking Shrimp task");
 								}
 								break;
 							case 11934:
@@ -283,13 +283,13 @@ public class Cooking extends SkillHandler {
 
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_DARKCRAB.getDailyTask().getTaskName())) {
 									DailyTaskHandler.Companion.handleProgress(player, 1);
-									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking Darkcrab task");
+									//System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking Darkcrab task");
 							}
 								break;
 							case 331:
 								if (player.currentDailyTask.getTaskName().equals(DailyTaskData.COOK_SALMON.getDailyTask().getTaskName())) {
 									DailyTaskHandler.Companion.handleProgress(player, 1);
-									System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
+									//System.out.println("Player " + player.getLoginName() + " has just progressed on their cooking trout task");
 								}
 						}
 						player.getPlayerAssistant().addSkillXPMultiplied(item.getXp(), player.playerCooking, true);

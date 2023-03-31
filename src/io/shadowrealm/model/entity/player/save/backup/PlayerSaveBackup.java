@@ -77,8 +77,8 @@ public class PlayerSaveBackup {
         deleteOldDiskBackups(backupFileDirectory);
 
         // Upload new remote backup and deleted expired ones
-        deleteExpiredRemoteBackups();
-        uploadRemoteBackup(created);
+        //deleteExpiredRemoteBackups();
+        //uploadRemoteBackup(created);
         return created;
     }
 
