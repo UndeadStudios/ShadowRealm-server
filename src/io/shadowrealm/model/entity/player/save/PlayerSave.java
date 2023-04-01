@@ -1230,6 +1230,8 @@ public class PlayerSave {
                         ReadMode = 18;
                     } else if (line.equals("[ACHIEVEMENTS-TIER-4]")) {
                         ReadMode = 19;
+                    } else if (line.equals("[COLLOGCLAIMS]")) {
+                        ReadMode = 62;//COLLOGCLAIMS
                     } else if (line.equals("[ACHIEVEMENTS-TIER-5]")) {
                         ReadMode = 20;
                     } else if (line.equals("[EOF]")) {

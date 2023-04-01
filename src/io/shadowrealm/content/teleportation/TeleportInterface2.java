@@ -411,7 +411,7 @@ public class TeleportInterface2 {
         Warriors_guild(6, 102239, true, "Teleports you to Warriors Guild", new Position(2874, 3546, 0)),
         Soul_wars(6, 102244, true, "Teleports you to Soul Wars", new Position(2209, 2858, 0)),
         Pest_Control(6, 102249, true, "Teleports you to Pest Control", new Position(2660, 2648, 0)),
-        Clan_Wars(6, 102254, true, "Teleports you to Clan Wars", new Position(3387, 3158, 0)),
+        Clan_Wars(6, 102254, true, "Teleports you to Clan Wars", new Position(3387, 3152, 0)),
         Outlast(6, 103003, true, "Teleports you to Outlast", new Position(3096, 3509, 0)),
         Mage_Arena(6, 103008, true, "Teleports you to Mage Arena", new Position(2541, 4716, 0)),
         Wintertodt(6, 103013, true, "Teleports you to Wintertodt", new Position(1631,3947,0)),
