@@ -217,7 +217,7 @@ public class Hespori {
 			c.sendMessage("@red@You cannot do this right now.");
 			return;
 		}
-		if (c.getLevelForXP(c.playerXP[20]) < 50 || c.getLevelForXP(c.playerXP[13]) < 50) {
+		if (c.getLevelForXP(c.playerXP[20]) < 1 || c.getLevelForXP(c.playerXP[13]) < 1) {
 			c.sendMessage("You need a Smithing and Runecrafting level of 50 to burn these.");
 			return;
 		}

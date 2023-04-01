@@ -286,7 +286,7 @@ public class DropManager {
                         player.sendMessage("@bla@You notice a @blu@slayer casket@bla@ on the floor.");
                         Server.itemHandler.createGroundItem(player, 13438, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
                     }
-                    if(Misc.random(2500) == 1){
+                    if(Misc.random(250) == 1){
                         player.sendMessage("@bla@You notice a @blu@money box@bla@ on the floor.");
                         Server.itemHandler.createGroundItem(player, 28827, location.getX(), location.getY(), location.getZ(), 1, player.getIndex());
 
