@@ -204,18 +204,6 @@ public class ItemOptionTwo implements PacketType {
         case 10559:
         	player.sendMessage("@red@Collector Icon shares the same effects as guthans.");
         	break;*/
-		case 10832:
-			player.getCoinBagSmall().openall();
-			break;
-		case 10833:
-			player.getCoinBagMedium().openall();
-			break;
-		case 10834:
-			player.getCoinBagLarge().openall();
-			break;
-		case 10835:
-			player.getCoinBagBuldging().openall();
-			break;
 		case 9780:
 			player.getPA().spellTeleport(3810, 3550, 0, false);
 			player.sendMessage("You have teleported to the Crafting Shop.");

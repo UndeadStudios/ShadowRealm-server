@@ -10,8 +10,8 @@ constant:
     minimum: 4000
     maximum: 9000
   - name: "revenant ether"
-    minimum: 6
-    maximum: 12
+    minimum: 150
+    maximum: 220
 common:
   accessibility: 1
   items:

@@ -8,7 +8,7 @@ import io.shadowrealm.model.entity.player.PlayerHandler;
 
 public class Zalcano {
 
-    public int zalcanoID = 9049;
+    public static int zalcanoID = 9049;
     public int stanceID = 8429;
     public int attackID = 8433;
     public int walkID = 8430;

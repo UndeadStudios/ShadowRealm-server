@@ -16,7 +16,7 @@ public class RogueMode extends Mode {
 
     @Override
     public double getDropModifier() {
-        return -0.05;
+        return -0.10;
     }
 
     @Override

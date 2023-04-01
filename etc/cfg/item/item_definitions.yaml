@@ -2224,6 +2224,7 @@
   description: "I hope there's treasure in it."
   shopValue: 10000
   noteId: 406
+  stackable: true
 - id: 406
   name: "Casket"
   description: "Swap this note at any bank for the equivalent item."
@@ -14408,6 +14409,7 @@
   description: "I hope there's treasure in it."
   shopValue: 50
   untradeable: true
+  stackable: true
 - id: 2715
   name: "Casket"
   description: "I hope there's treasure in it."
@@ -14657,6 +14659,7 @@
   name: "Casket"
   description: "I hope there's treasure in it."
   shopValue: 50
+  stackable: true
   untradeable: true
 - id: 2776
   name: "Clue scroll"
@@ -14768,6 +14771,7 @@
   name: "Casket"
   description: "I hope there's treasure in it."
   shopValue: 50
+  stackable: true
   untradeable: true
 - id: 2803
   name: "Clue scroll"
@@ -17700,6 +17704,7 @@
   name: "Nex Key"
   description: "A black key with a blood-red painted eyelet."
   shopValue: 2000000
+  stackable: true
   untradeable: true
 - id: 3461
   name: "Black key brown"
@@ -65768,6 +65773,7 @@
   untradeable: true
   undroppable: true
   droppable: false
+  stackable: true
 - id: 19842
   name: "Clue scroll (hard)"
   description: "A set of instructions to be followed."

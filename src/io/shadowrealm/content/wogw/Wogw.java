@@ -31,9 +31,9 @@ public class Wogw {
 	}
 
 	private static final int LEAST_ACCEPTED_AMOUNT = 1_000_000;
-	public static final int EXPERIENCE_COINS_REQUIRED = 50_000_000;
-	public static final int PC_COINS_REQUIRED = 50_000_000;
-	public static final int DROP_RATE_COINS_REQUIRED = 200_000_000;
+	public static final int EXPERIENCE_COINS_REQUIRED = 200_000_000;
+	public static final int PC_COINS_REQUIRED = 200_000_000;
+	public static final int DROP_RATE_COINS_REQUIRED = 300_000_000;
 
 	public static long EXPERIENCE_TIMER, PC_POINTS_TIMER, _20_PERCENT_DROP_RATE_TIMER;
 	public static long MONEY_TOWARDS_EXPERIENCE, MONEY_TOWARDS_PC_POINTS, MONEY_TOWARDS_DROP_RATE_BOOST;

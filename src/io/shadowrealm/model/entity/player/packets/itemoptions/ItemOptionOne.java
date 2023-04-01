@@ -932,26 +932,6 @@ public class ItemOptionOne implements PacketType {
         }
 
         /*Coin Bags */
-        if (itemId == 10832)
-            if (c.getItems().playerHasItem(10832)) {
-                c.getCoinBagSmall().open();
-                return;
-            }
-        if (itemId == 10833)
-            if (c.getItems().playerHasItem(10833)) {
-                c.getCoinBagMedium().open();
-                return;
-            }
-        if (itemId == 10834)
-            if (c.getItems().playerHasItem(10834)) {
-                c.getCoinBagLarge().open();
-                return;
-            }
-        if (itemId == 10835)
-            if (c.getItems().playerHasItem(10835)) {
-                c.getCoinBagBuldging().open();
-                return;
-            }
         if (itemId == 11739)
             if (c.getItems().playerHasItem(11739)) {
                 c.getVoteMysteryBox().roll(c);

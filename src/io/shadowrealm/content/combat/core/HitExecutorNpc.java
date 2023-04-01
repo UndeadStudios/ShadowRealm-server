@@ -3,6 +3,7 @@ package io.shadowrealm.content.combat.core;
 import io.shadowrealm.content.bosses.Scorpia;
 import io.shadowrealm.content.bosses.Skotizo;
 import io.shadowrealm.content.bosses.Tekton;
+import io.shadowrealm.content.bosses.Zalcano;
 import io.shadowrealm.content.bosses.hespori.Hespori;
 import io.shadowrealm.content.bosses.hydra.AlchemicalHydra;
 import io.shadowrealm.content.bosses.wildypursuit.FragmentOfSeren;
@@ -19,6 +20,8 @@ import io.shadowrealm.util.Misc;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
+import static io.shadowrealm.content.bosses.Zalcano.zalcanoID;
 
 public class HitExecutorNpc extends HitExecutor {
 
@@ -89,6 +92,10 @@ public class HitExecutorNpc extends HitExecutor {
             case 7544: //Tekton
                 attacker.setTektonDamageCounter(attacker.getTektonDamageCounter() + damage.getAmount());
                 Tekton.tektonSpecial(attacker);
+                break;
+            case 9049: //zalcano
+                attacker.setGlodDamageCounter(attacker.getGlodDamageCounter() + damage.getAmount());
+                NPCHandler.glodAttack = "MELEE";
                 break;
 
             case Hespori.NPC_ID:

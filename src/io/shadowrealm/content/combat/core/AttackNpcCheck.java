@@ -52,6 +52,9 @@ public class AttackNpcCheck {
         if (npc.getNpcId() == 7710) {
             return false;
         }
+        if (npc.getNpcId() == 9049) {
+            return true;
+        }
 
         // Unpoked vorkath can't attack
         if (npc.getNpcId() == Vorkath.NPC_IDS[0]) {
@@ -99,6 +102,8 @@ public class AttackNpcCheck {
                 if (!Slayer.hasRequiredLevel(c, levelRequired)) {
                     return false;
                 }
+                break;
+            case 9049:
                 break;
             case 415://abby demon
                 levelRequired = 85;

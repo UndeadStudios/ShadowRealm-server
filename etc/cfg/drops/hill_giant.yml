@@ -91,6 +91,9 @@ rare:
   - name: "grimy dwarf weed"
     minimum: 1
     maximum: 1
+  - name: "Giant key"
+    minimum: 1
+    maximum: 1
 very_rare:
   accessibility: 128
   items:

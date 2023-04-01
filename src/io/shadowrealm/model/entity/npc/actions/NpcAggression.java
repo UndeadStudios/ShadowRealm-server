@@ -217,6 +217,7 @@ public class NpcAggression {
                 case 9045: // Corrupted Wolf 102
                 case 9046: // Corrupted Bear 258
                 case 9047: // Corrupted Dragon 258
+                case 9049:
                 case 9048: // Corrupted Dark Beast 258
                     return 8;
             }

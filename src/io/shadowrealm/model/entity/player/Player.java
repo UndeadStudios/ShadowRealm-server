@@ -646,10 +646,6 @@ public class Player extends Entity {
     private final SuperMysteryBox superMysteryBox = new SuperMysteryBox(this);
     private final FoeMysteryBox foeMysteryBox = new FoeMysteryBox(this);
     private final SlayerMysteryBox slayerMysteryBox = new SlayerMysteryBox(this);
-    private final CoinBagSmall coinBagSmall = new CoinBagSmall(this);
-    private final CoinBagMedium coinBagMedium = new CoinBagMedium(this);
-    private final CoinBagLarge coinBagLarge = new CoinBagLarge(this);
-    private final CoinBagBuldging coinBagBuldging = new CoinBagBuldging(this);
     private final VoteMysteryBox voteMysteryBox = new VoteMysteryBox();
     private final PvmCasket pvmCasket = new PvmCasket();
     private final DailyGearBox dailyGearBox = new DailyGearBox(this);
@@ -3496,22 +3492,6 @@ public class Player extends Entity {
 
     public void setLastContainerSearch(long lastContainerSearch) {
         this.lastContainerSearch = lastContainerSearch;
-    }
-
-    public CoinBagSmall getCoinBagSmall() {
-        return coinBagSmall;
-    }
-
-    public CoinBagMedium getCoinBagMedium() {
-        return coinBagMedium;
-    }
-
-    public CoinBagLarge getCoinBagLarge() {
-        return coinBagLarge;
-    }
-
-    public CoinBagBuldging getCoinBagBuldging() {
-        return coinBagBuldging;
     }
 
     public SuperMysteryBox getSuperMysteryBox() {
