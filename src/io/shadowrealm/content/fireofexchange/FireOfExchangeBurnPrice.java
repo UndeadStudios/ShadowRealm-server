@@ -116,19 +116,6 @@ public class FireOfExchangeBurnPrice {
             case 20520://elder robe
             case 20595://elder hood
                 return 1200;
-            case 10330://3rd age range begin
-            case 10332:
-            case 10334:
-            case 10336://3rd age range finish
-            case 10338://3rd age mage begin
-            case 10340:
-            case 10342:
-            case 10344://3rd age mage finish
-            case 10346://3rd age melee begin
-            case 10348:
-            case 10350:
-            case 10352://3rd age melee finish
-            case Items.THIRD_AGE_PLATESKIRT:
 
             case Items.AMULET_OF_THE_DAMNED:
             case 2577://ranger boots
@@ -147,14 +134,6 @@ public class FireOfExchangeBurnPrice {
             case 12605://treasonaus ring
             case 21902://dragon crossbow
             case Items.RING_OF_THE_GODS:
-            case Items.THIRD_AGE_BOW:
-            case Items.THIRD_AGE_DRUIDIC_ROBE_TOP:
-            case Items.THIRD_AGE_DRUIDIC_CLOAK:
-            case Items.THIRD_AGE_DRUIDIC_ROBE_BOTTOMS:
-            case Items.THIRD_AGE_DRUIDIC_STAFF:
-            case Items.THIRD_AGE_LONGSWORD:
-            case Items.THIRD_AGE_AXE:
-            case Items.THIRD_AGE_PICKAXE:
                 return 2500;
             case 11920://dragon pickaxe
             case 12809://sara blessed
@@ -170,7 +149,6 @@ public class FireOfExchangeBurnPrice {
             case 12806://malediction
             case 12807://odium
             case Items.SARACHNIS_CUDGEL:
-            case Items.RING_OF_THIRD_AGE:
             case Items.BONECRUSHER_NECKLACE:
                 return 5000;
             case 23975://crystal body
@@ -228,16 +206,6 @@ public class FireOfExchangeBurnPrice {
             case 21079://arcane scroll
                 return 11_400;
             case 11832://bcp
-            case 20095://ankou start
-            case 20098:
-            case 20101:
-            case 20104:
-            case 20107://ankou end
-            case 20080://mummy start
-            case 20083:
-            case 20086:
-            case 20089:
-            case 20092://mummy end
                 return 12_500;
             case 12922://tanz fang
             case 13263://bludgon
@@ -259,30 +227,12 @@ public class FireOfExchangeBurnPrice {
             case 21034://dex scroll
             case Items.NEITIZNOT_FACEGUARD:
             case Items.RING_OF_SUFFERING_I:
-            case Items.SLED:
                 return 20_000;
             case 22322://avernic
             case 22477://avernic hilt
-            case 10556://barb icons start
-            case 10557:
-            case 10558:
-            case 10559://barb icons end
-            case 1038://phat
-            case 1040://phat
-            case 1042://phat
-            case 1044://phat
-            case 1046://phat
-            case 1048://phat
-            case 1053://hween mask
-            case 1055://hween mask
-            case 1057://hween mask
-            case Items.SANTA_HAT:
-                return 22_000;
             case 22978://dragon hunter lance
-            case 13343://black santa
-            case 11847://gold h ween mask
-            case 12821://spectral
-            case 12825://arcane
+            case 24466://twisted horns
+
             case 21018://ancestral
             case 21021://ancestral
             case 21024://ancestral
@@ -291,9 +241,6 @@ public class FireOfExchangeBurnPrice {
             case 22328://justiciar
                 return 25_000;
             case 22981://ferocious gloves
-            case 11863://rainbow partyhat
-            case 11862://black phat
-            case 13344://inverted santa
             case 24419://inquisitor helm
             case 24420://inquisitor plate
             case 24421://inquisitor skirt
@@ -305,7 +252,7 @@ public class FireOfExchangeBurnPrice {
             case 24514://volatile orb
                 return 200_000;
             case 24417://inquisitor mace
-            case Items.RING_OF_WEALTH_I:
+
             case 23995://crystal blade
             case Items.GHRAZI_RAPIER:
                 return 125_000;
@@ -317,16 +264,19 @@ public class FireOfExchangeBurnPrice {
             case Items.STATIUSS_PLATELEGS:
                 return 50_000;
             case Items.VESTAS_CHAINBODY:
+            case 12821://spectral
+            case 12825://arcane
             case Items.VESTAS_PLATESKIRT:
             case Items.MORRIGANS_COIF:
             case Items.MORRIGANS_LEATHER_BODY:
             case Items.MORRIGANS_LEATHER_CHAPS:
             case Items.VESTAS_SPEAR:
             case Items.ZURIELS_STAFF:
+            case Items.RING_OF_WEALTH_I:
                 return 50_000;
             case Items.VESTAS_LONGSWORD:
             case Items.STATIUSS_WARHAMMER:
-                return 100_000;
+                return 70_000;
             case 12817://ely
 
                 return 150_000;
@@ -335,8 +285,6 @@ public class FireOfExchangeBurnPrice {
             case 26235://zaryte vambraces
             case 22325://scythe
                 return 250_000;
-            case 2399: // FOE KEY
-                return 5_000;
             //SKILLING ARTEFACTS
             case 11180://ancient coin
                 return 200;
@@ -382,13 +330,16 @@ public class FireOfExchangeBurnPrice {
             //SLAYER HEADS
             case 7980:
             case 7981:
-            case 7979:
+
             case 21275:
             case 23077:
-            case 24466:
-                return 350;
-            case 2425://vorkath head
+
+
+                return 5000;
+            case 7979:
                 return 500;
+            case 2425://vorkath head
+                return 5000;
             //special items
             case 21046://chest rate relic
             case 22316://sword of shadow realm

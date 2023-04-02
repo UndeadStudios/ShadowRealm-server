@@ -10,38 +10,15 @@ common:
   accessibility: 0
   items:
     - item: 995
-      minimum: 1000000
-      maximum: 15000000
+      minimum: 10000
+      maximum: 150000
     - item: 21046
       minimum: 1
       maximum: 3
-    - item: 2577
-      minimum: 1
-      maximum: 1
-    - item: 11840
-      minimum: 1
-      maximum: 1
-    - item: 6920
-      minimum: 1
-      maximum: 1
-    - item: 7462
-      minimum: 1
-      maximum: 1
 uncommon:
   accessibility: 8
   items:
-    - item: 6585
-      minimum: 1
-      maximum: 1
-    - item: 19553
-      minimum: 1
-      maximum: 1
-    - item: 19547
-      minimum: 1
-      maximum: 1
-    - item: 12002
-      minimum: 1
-      maximum: 1
+
     - item: 30002
       minimum: 1
       maximum: 1

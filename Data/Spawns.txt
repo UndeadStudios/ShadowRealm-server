@@ -223,3 +223,21 @@
     },
     "walkingType": "WALK"
   },
+  {
+"id":65,
+    "position": {
+      "x":3082,
+      "y":3507,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
+  {
+"id":10631,
+    "position": {
+      "x":3082,
+      "y":3507,
+      "height":0
+    },
+    "walkingType": "WALK"
+  },
