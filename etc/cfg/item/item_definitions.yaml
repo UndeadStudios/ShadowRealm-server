@@ -75089,18 +75089,6 @@
       level: 65
     - skill: "MAGIC"
       level: 75
-- id: 28026
-  name: "Berserker boots"
-  description: "A pair of upgraded Pegasian boots."
-  shopValue: 10480000
-- id: 28027
-  name: "Galaxy boots"
-  description: "A pair of upgraded Eternal boots."
-  shopValue: 10480000
-- id: 28028
-  name: "Superior boots"
-  description: "A pair of upgraded Pegasian boots."
-  shopValue: 10484000
 - id: 25527
   name: "Stardust"
   description: "Small, shiny bits of rock. Someone at the Mining Guild might find them interesting."
