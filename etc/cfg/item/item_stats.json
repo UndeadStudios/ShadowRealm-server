@@ -56339,8 +56339,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 180,
-      "rstr": 95,
+      "arange": 70,
+      "rstr": 20,
       "prayer": 4,
       "aspeed": 6
     }
@@ -56351,8 +56351,8 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 195,
-      "rstr": 105,
+      "arange": 120,
+      "rstr": 50,
       "prayer": 4,
       "aspeed": 5
     }
@@ -64405,7 +64405,9 @@
       "dcrush": 21,
       "dmagic": 21,
       "drange": 17,
-      "prayer": 3
+      "prayer": 3,
+      "rstr": 8,
+      "str": 3
     }
   },
   "23843": {
@@ -64462,8 +64464,9 @@
       "dcrush": 61,
       "dmagic": 70,
       "drange": 57,
-      "rstr": 25,
-      "prayer": 5
+      "rstr": 10,
+      "prayer": 5,
+      "str": 3
     }
   },
   "23846": {
@@ -64483,6 +64486,7 @@
       "dmagic": 52,
       "drange": 52,
       "prayer": 2
+
     }
   },
   "23847": {
@@ -64520,7 +64524,8 @@
       "dcrush": 38,
       "dmagic": 45,
       "drange": 36,
-      "rstr": 25,
+      "rstr": 8,
+      "str": 3,
       "prayer": 5
     }
   },
@@ -65213,7 +65218,7 @@
       "dcrush": 12,
       "dmagic": 13,
       "drange": 13,
-      "rstr": 10,
+      "rstr": 3,
       "prayer": 1
     }
   },
@@ -65241,7 +65246,7 @@
       "dcrush": 61,
       "dmagic": 70,
       "drange": 57,
-      "rstr": 10,
+      "rstr": 6,
       "prayer": 1
     }
   },
@@ -65269,7 +65274,7 @@
       "dcrush": 34,
       "dmagic": 40,
       "drange": 33,
-      "rstr": 10,
+      "rstr": 4,
       "prayer": 1
     }
   },
@@ -65590,20 +65595,20 @@
     "weight": 0.453,
     "equipment": {
       "slot": 1,
-      "astab": 24,
-      "aslash": 24,
-      "acrush": 24,
-      "amagic": 21,
-      "arange": 21,
-      "dstab": 22,
-      "dslash": 22,
-      "dcrush": 22,
-      "dmagic": 22,
-      "drange": 22,
-      "str": 17,
-      "rstr": 17,
-      "mdmg": 17,
-      "prayer": 10
+      "astab": 6,
+      "aslash": 6,
+      "acrush": 6,
+      "amagic": 15,
+      "arange": 8,
+      "dstab": 12,
+      "dslash": 12,
+      "dcrush": 12,
+      "dmagic": 15,
+      "drange": 12,
+      "str": 8,
+      "rstr": 2,
+      "mdmg": 2,
+      "prayer": 8
     }
   },
   "19480": {
@@ -68564,8 +68569,9 @@
       "dstab": 8,
       "dslash": 8,
       "dcrush": 8,
-      "dmagic": 8,
-      "drange": 10,
+      "dmagic": 5,
+      "drange": 8,
+      "rstr": 2,
       "prayer": 5
     }
   },
@@ -68575,10 +68581,10 @@
     "weight": 1.8,
     "equipment": {
       "slot": 3,
-      "arange": 340,
-      "rstr": 200,
-      "prayer": 14,
-      "aspeed": 5
+      "arange": 110,
+      "rstr": 0,
+      "prayer": 1,
+      "aspeed": 6
     }
   },
   "25916": {
@@ -69865,7 +69871,7 @@
       "dcrush": 43,
       "dmagic": 56,
       "drange": 44,
-      "arange": 45,
+
       "rstr": 20,
       "prayer": 7
     }
@@ -69994,20 +70000,20 @@
   },
   "29180": {
     "name": "Osiris's chainmace",
-      "equipable": true,
-      "weight": 2.0,
-      "equipment": {
-        "slot": 3,
-        "astab": 170,
-        "aslash": 180,
-        "acrush": 130,
-        "amagic": 6,
-        "dstab": 2,
-        "dslash": 18,
-        "dcrush": 20,
-        "str": 225,
-        "aspeed": 2
-      }
+    "equipable": true,
+    "weight": 2.0,
+    "equipment": {
+      "slot": 3,
+      "astab": 170,
+      "aslash": 180,
+      "acrush": 130,
+      "amagic": 6,
+      "dstab": 2,
+      "dslash": 18,
+      "dcrush": 20,
+      "str": 225,
+      "aspeed": 2
+    }
   },
   "27440": {
     "name": "Infinite money bag",
@@ -70022,17 +70028,17 @@
     "weight": 0.4,
     "equipment": {
       "slot": 5,
-      "astab": 30,
-      "aslash": 29,
-      "acrush": 28,
+      "astab": 27,
+      "aslash": 27,
+      "acrush": 27,
       "amagic": -6,
       "arange": -4,
-      "dstab": 30,
-      "dslash": 29,
-      "dcrush": 28,
+      "dstab": 21,
+      "dslash": 21,
+      "dcrush": 21,
       "dmagic": -6,
       "drange": -4,
-      "str": 9
+      "str": 7
     }
   },
   "28243": {
@@ -72031,7 +72037,9 @@
       "dslash": 15,
       "dcrush": 15,
       "dmagic": 18,
-      "drange": 15
+      "drange": 15,
+      "mdmg": 10
+
     }
   },
   "28028": {
@@ -72045,7 +72053,8 @@
       "dslash": 15,
       "dcrush": 15,
       "dmagic": 18,
-      "drange": 15
+      "drange": 15,
+      "rstr": 15
     }
   },
   "25549": {
@@ -72584,15 +72593,19 @@
     "weight": 3.175,
     "equipment": {
       "slot": 0,
-      "amagic": 80,
-      "arange": 80,
-      "dstab": 80,
-      "dslash": 80,
-      "dcrush": 80,
-      "dmagic": 80,
-      "mdmg": 10,
+      "astab": 8,
+      "acrush": 8,
+      "aslash": 8,
+      "amagic": 8,
+      "arange": 8,
+      "dstab": 55,
+      "dslash": 55,
+      "dcrush": 55,
+      "dmagic": 55,
+      "mdmg": 1,
       "rstr": 10,
-      "drange": 100
+      "drange": 55,
+      "str": 6
     }
   },
   "29236": {
@@ -72601,19 +72614,20 @@
     "weight": 3.175,
     "equipment": {
       "slot": 4,
-      "astab": 80,
-      "aslash": 80,
-      "acrush": 80,
-      "amagic": 80,
-      "arange": 80,
-      "dstab": 80,
-      "dslash": 80,
-      "dcrush": 80,
-      "dmagic": 80,
-      "drange": 80,
-      "prayer": 10,
+      "astab": 12,
+      "aslash": 12,
+      "acrush": 12,
+      "amagic": 14,
+      "arange": 14,
+      "dstab": 115,
+      "dslash": 115,
+      "dcrush": 115,
+      "dmagic": 60,
+      "drange": 124,
+      "prayer": 7,
       "rstr": 10,
-      "mdmg": 10,
+      "mdmg": 1,
+      "str": 4,
       "aspeed": 2
     }
   },
@@ -72623,20 +72637,20 @@
     "weight": 3.175,
     "equipment": {
       "slot": 7,
-      "astab": 80,
-      "aslash": 80,
-      "acrush": 80,
-      "amagic": 80,
-      "arange": 80,
+      "astab": 10,
+      "aslash": 10,
+      "acrush": 10,
+      "amagic": 12,
+      "arange": 12,
       "dstab": 80,
       "dslash": 80,
       "dcrush": 80,
-      "dmagic": 80,
+      "dmagic": 40,
       "drange": 80,
-      "prayer": 80,
-      "str": 10,
+      "prayer": 5,
+      "str": 3,
       "rstr": 10,
-      "mdmg": 10,
+      "mdmg": 1,
       "aspeed": 2
     }
   },
@@ -72677,15 +72691,20 @@
     "weight": 6.0,
     "equipment": {
       "slot": 10,
-      "amagic": 100,
-      "arange": 100,
-      "dstab": 100,
-      "dslash": 100,
-      "dcrush": 100,
-      "drange": 100,
-      "mdmg": 10,
+      "astab": 3,
+      "acrush": 3,
+      "aslash": 3,
+      "amagic": 8,
+      "arange": 12,
+      "dstab": 25,
+      "dslash": 25,
+      "dcrush": 25,
+      "drange": 18,
+      "dmagic": 7,
+      "mdmg": 5,
       "rstr": 10,
-      "prayer": 10
+      "prayer": 3,
+      "str": 10
     }
   },
   "29240": {
@@ -72694,19 +72713,19 @@
     "weight": 1.0,
     "equipment": {
       "slot": 1,
-      "astab": 100,
-      "aslash": 100,
-      "acrush": 100,
-      "amagic": 100,
-      "arange": 100,
-      "dstab": 100,
-      "dslash": 100,
-      "dcrush": 100,
-      "dmagic": 100,
-      "drange": 100,
-      "str": 50,
-      "rstr": 50,
-      "mdmg": 50,
+      "astab": 28,
+      "aslash": 28,
+      "acrush": 28,
+      "amagic": 28,
+      "arange": 28,
+      "dstab": 24,
+      "dslash": 24,
+      "dcrush": 24,
+      "dmagic": 24,
+      "drange": 24,
+      "str": 1,
+      "rstr": 17,
+      "mdmg": 17,
       "prayer": 10
     }
   },
@@ -72716,19 +72735,19 @@
     "weight": 0.2,
     "equipment": {
       "slot": 9,
-      "astab": 50,
-      "aslash": 50,
-      "acrush": 50,
-      "amagic": 50,
-      "arange": 50,
-      "dstab": 50,
-      "dslash": 50,
-      "dcrush": 50,
-      "dmagic": 50,
-      "drange": 50,
-      "mdmg": 10,
-      "rstr": 10,
-      "str": 50
+      "astab": 17,
+      "aslash": 17,
+      "acrush": 17,
+      "amagic": 10,
+      "arange": 16,
+      "dstab": 14,
+      "dslash": 14,
+      "dcrush": 14,
+      "dmagic": 8,
+      "drange": 12,
+      "mdmg": 5,
+      "rstr": 1,
+      "str": 14
     }
   },
 
@@ -72737,15 +72756,20 @@
     "equipable": true,
     "weight": 2.0,
     "equipment": {
+      "astab": 28,
+      "acrush": 28,
+      "aslash": 28,
+      "amagic": 18,
+      "arange": 16,
       "slot": 5,
-      "dstab": 100,
-      "dslash": 100,
-      "dcrush": 100,
-      "dmagic": 100,
-      "drange": 100,
-      "mdmg": 10,
+      "dstab": 68,
+      "dslash": 68,
+      "dcrush": 68,
+      "dmagic": 27,
+      "drange": 74,
+      "mdmg": 2,
       "rstr": 10,
-      "prayer": 10
+      "prayer": 5
     }
   },
   "24664": {

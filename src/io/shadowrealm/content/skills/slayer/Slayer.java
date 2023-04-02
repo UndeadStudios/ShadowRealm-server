@@ -536,31 +536,31 @@ public class Slayer {
 
 						if (player.getSlayer().getMaster() != 401 || player.getSlayer().getMaster() != 402) {
 							if (player.amDonated >= 20 && player.amDonated < 50) {
-								points += 3;
+								points += 10;
 								player.sendMessage("You have received an additonal@red@ 3@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 50 && player.amDonated < 100) {
-								points += 5;
+								points += 15;
 								player.sendMessage("You have received an additonal@red@ 5@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 100 && player.amDonated < 250) {
-								points += 8;
+								points += 20;
 								player.sendMessage("You have received an additonal@red@ 8@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 250 && player.amDonated < 500) {
-								points += 10;
+								points += 25;
 								player.sendMessage("You have received an additonal@red@ 10@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 500 && player.amDonated < 750) {
-								points += 12;
+								points += 30;
 								player.sendMessage("You have received an additonal@red@ 12@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 750 && player.amDonated < 1000) {
-								points += 15;
+								points += 35;
 								player.sendMessage("You have received an additonal@red@ 15@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 1000 && player.amDonated < 1500) {
-								points += 18;
+								points += 40;
 								player.sendMessage("You have received an additonal@red@ 18@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 1500 && player.amDonated < 2000) {
-								points += 21;
+								points += 45;
 								player.sendMessage("You have received an additonal@red@ 21@bla@ points for your donator rank.");
 							} else if (player.amDonated >= 2000) {
-								points += 23;
+								points += 50;
 								player.sendMessage("You have received an additonal@red@ 23@bla@ points for your donator rank.");
 							}
 						}
@@ -885,7 +885,7 @@ public class Slayer {
 	 * Gets the cost to block a task.
 	 */
 	public int getBlockTaskCost() {
-		if (player.amDonated >= 20 && player.amDonated < 50) {
+		if (player.amDonated >= 20 && player.amDonated < 20) {
 			return 50;
 		} else if (player.amDonated >= 50 && player.amDonated < 100) {
 			return 30;
