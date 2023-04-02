@@ -584,14 +584,15 @@
 	},
 "walkingType": "FACE_WEST"
 	},
+
 	{
-		"id": 10633,
-	"position": {
-			"x": 3022,
-			"y": 3342,
-			"height": 0
-	},
-"walkingType": "WALK"
+		"id":10633,
+		"position": {
+			"x":3077,
+			"y":3507,
+			"height":0
+		},
+		"walkingType": "FACE_NORTH"
 	},
 	{
 		"id": 1173,

@@ -80,6 +80,7 @@ public class IronmanMode extends Mode {
 		case 80:
 		case 9:
 		case 116:
+			case 65:
 		case 117:
 		case 81:
 		case 120:

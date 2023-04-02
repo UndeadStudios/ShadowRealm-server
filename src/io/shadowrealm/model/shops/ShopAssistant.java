@@ -2195,6 +2195,7 @@ public class ShopAssistant {
 				return false;
 			}
 		}
+
 		/*
 		 * ACHIEVMENT LOST N FOUND AREA ENDING
 		 */

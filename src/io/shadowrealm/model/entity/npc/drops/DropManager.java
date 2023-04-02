@@ -165,41 +165,6 @@ public class DropManager {
     public static int[] wildybossesforgiveaway = { 6611, 6609, 6615, 6609, 6615, 6610, 6619, 2054, 6618, 6607};
     static int[] revs = {7930, 7931, 7932, 7933, 7934, 7935, 7936, 7937, 7938, 7939, 7881, 7940};
 
-    public static void dropCoinBag(Player player, int npcId, int dropX, int dropY, int dropZ) {
-        NpcDef npcDefinition = NpcDef.forId(npcId);
-        boolean smallNpc = npcDefinition.getCombatLevel() > 0 && npcDefinition.getCombatLevel() <= 80;
-        boolean mediumNpc = npcDefinition.getCombatLevel() > 80 && npcDefinition.getCombatLevel() <= 110;
-        boolean largeNpc = npcDefinition.getCombatLevel() > 110 && npcDefinition.getCombatLevel() <= 331;
-        boolean buldgingNpc = npcDefinition.getCombatLevel() > 331;
-        if (Misc.random(8) == 5) {
-            int itemId = 0;
-            int petPerkChance = Misc.random(100);
-            itemId = Items.SMALL_COIN_BAG;
-            int correctPetId = 30013;
-            if (mediumNpc) {
-                itemId = Items.MEDIUM_COIN_BAG;
-            } else if (largeNpc) {
-                itemId = Items.LARGE_COIN_BAG;
-            } else if (buldgingNpc) {
-                itemId = Items.BULDGING_COIN_BAG;
-            }
-            int extraBag = 0;
-            boolean hasDarkVersion = (player.petSummonId == 30113 || player.petSummonId == 30122);
-
-            if (player.hasFollower &&
-                    ((player.petSummonId == correctPetId || player.petSummonId == 30022) && petPerkChance < 80)
-            || (hasDarkVersion)) {
-                if (hasDarkVersion && petPerkChance < 25) {
-                    extraBag = 1;
-                }
-                player.sendMessage("@bla@[@red@Pet@bla@] Your pet found a @blu@coin bag!");
-                player.getItems().addItem(itemId, 1 + extraBag);
-            } else {
-                player.sendMessage("@bla@You notice a @blu@coin bag@bla@ on the floor.");
-                Server.itemHandler.createGroundItem(player, itemId, dropX, dropY, dropZ, 1, player.getIndex());
-            }
-        }
-    }
     public static void dropResourcePack(Player player, int npcId, int dropX, int dropY, int dropZ) {
         int petPerkChance = Misc.random(100);
         int correctPetId = 30012;
@@ -352,8 +317,6 @@ public class DropManager {
         }
         if (Misc.random(1) == 1 || Hespori.activeGolparSeed) {
             dropResourcePack(player, npcId, location.getX(), location.getY(), location.getZ());
-        } else {
-            dropCoinBag(player, npcId, location.getX(), location.getY(), location.getZ());
         }
 //        if (Misc.random(470) < 90) {
 //            smallNpc = npc.getDefinition().getCombatLevel() < 50;

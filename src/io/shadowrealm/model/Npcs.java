@@ -132,6 +132,7 @@ public class Npcs {
     public static final int HELLHOUND = 104;
     public static final int HELLHOUND_2 = 105;
     public static final int WOLF = 106;
+    public static final int Dusuri = 10631;
     public static final int WHITE_WOLF = 107;
     public static final int WHITE_WOLF_2 = 108;
     public static final int BIG_WOLF = 109;
