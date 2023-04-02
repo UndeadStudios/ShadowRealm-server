@@ -1,0 +1,105 @@
+---
+npc_id:
+  - 6120
+constant:
+  accessibility: 0
+  items:
+    - name: "coins"
+      minimum: 100000
+      maximum: 2000000
+common:
+  accessibility: 1
+  items:
+    - name: "runite bar noted"
+      minimum: 300
+      maximum: 400
+    - name: "blood rune"
+      minimum: 700
+      maximum: 1500
+    - item: 21930
+      minimum: 250
+      maximum: 1000
+    - item: 11212
+      minimum: 250
+      maximum: 1000
+    - name: "grimy torstol noted"
+      minimum: 100
+      maximum: 500
+    - name: "magic logs noted"
+      minimum: 500
+      maximum: 1000
+    - name: "coal noted"
+      minimum: 3000
+      maximum: 3000
+    - name: "runite ore noted"
+      minimum: 200
+      maximum: 500
+    - name: "dragon bones noted"
+      minimum: 100
+      maximum: 300
+    - name: "adamantite bar noted"
+      minimum: 300
+      maximum: 600
+uncommon:
+  accessibility: 2
+  items:
+    - name: "death rune"
+      minimum: 500
+      maximum: 1500
+    - name: "chaos rune"
+      minimum: 650
+      maximum: 1650
+    - name: "pure essence noted"
+      minimum: 1500
+      maximum: 2500
+    - name: "zulrahs scales"
+      minimum: 1000
+      maximum: 5000
+    - name: "raw shark noted"
+      minimum: 125
+      maximum: 125
+    - name: "saradomin brew4 noted"
+      minimum: 15
+      maximum: 15
+    - name: "dragon med helm"
+      minimum: 1
+      maximum: 1
+    - name: "grimy toadflax noted"
+      minimum: 30
+      maximum: 30
+    - name: "grimy snapdragon noted"
+      minimum: 30
+      maximum: 30
+    - name: "grimy dwarf weed noted"
+      minimum: 30
+      maximum: 30
+    - name: "grimy torstol noted"
+      minimum: 300
+      maximum: 500
+rare:
+  accessibility: 90
+  items:
+    - name: "tanzanite fang"
+      minimum: 1
+      maximum: 1
+    - item: 25865
+      minimum: 1
+      maximum: 1
+    - name: "uncut onyx"
+      minimum: 1
+      maximum: 3
+    - item: 22978
+      minimum: 1
+      maximum: 1
+very_rare:
+  accessibility: 400
+  items:
+    - item: 8812
+      minimum: 1
+      maximum: 1
+    - item: 8814
+      minimum: 1
+      maximum: 1
+    - item: 8813
+      minimum: 1
+      maximum: 1

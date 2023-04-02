@@ -9,6 +9,7 @@ enum class KillLimits(
     val npcId: Int,
     val killLimit: Int
 ) {
-    QUEEN_LATSYRC(8781, 5)
+    QUEEN_LATSYRC(8781, 5),
+    EVERLASTING(6120, 1)
 
 }

@@ -26081,14 +26081,14 @@
   },
   "6120": {
     "name": "The Everlasting (hard)",
-    "hitpoints": 255,
-    "combatLevel": 365,
-    "attackSpeed": 6,
-    "attackLevel": 374,
+    "hitpoints": 1255,
+    "combatLevel": 5365,
+    "attackSpeed": 4,
+    "attackLevel": 487,
     "strengthLevel": 462,
-    "defenceLevel": 120,
-    "rangeLevel": 1,
-    "magicLevel": 1
+    "defenceLevel": 420,
+    "rangeLevel": 455,
+    "magicLevel": 430
   },
   "6121": {
     "name": "The Untouchable (hard)",

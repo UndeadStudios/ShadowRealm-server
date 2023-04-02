@@ -31,7 +31,7 @@ public class Configuration {
 	public static boolean LOCK_EXPERIENCE = false;
 
 	public static String SERVER_NAME = "Shadow Realm";
-	public static final int PORT_DEFAULT = 52777;
+	public static final int PORT_DEFAULT = 52778;
 	public static final int PORT_TEST = 43595;
 
 	public static final String PACKAGE = "io.shadowrealm";

@@ -733,6 +733,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 8031: 
         case 8030: 
             return 35;
+            case 6120:
+                return 65;
         case 7554: 
             return 30;
         case TheUnbearable.NPC_ID:
@@ -857,7 +859,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
                             case 3162: 
                             case 6610: 
                             case 6611: 
-                            case 6612: 
+                            case 6612:
+                            case 6120:
                             case TheUnbearable.NPC_ID:
                             //Magic 60%,
                             case FragmentOfSeren.NPC_ID: 
@@ -955,7 +958,8 @@ public static void addNPC(int npcType, int x, int y, int h) {
         case 7606: 
         case 8781: 
             return npc.getAttackType() == CombatType.SPECIAL;
-        case 1046: 
+        case 1046:
+            case 6120:
             return npc.getAttackType() == CombatType.MAGE || npc.getAttackType() == CombatType.SPECIAL && Misc.random(3) == 0;
         case 6610: 
             return npc.getAttackType() == CombatType.MAGE;
