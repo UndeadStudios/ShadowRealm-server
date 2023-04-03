@@ -75839,3 +75839,64 @@
   name: "sanguine Scythe of Vitur"
   description: "The Holy Ghrazi."
   shopValue: 20000000
+- id: 26469
+  name: "Elite Void Top(or)"
+  description: "Broken superior Top from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  equipmentModelType: "FULL_BODY"
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26471
+  name: "Elite Void Bottom(or)"
+  description: "Broken superior Bottoms from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26467
+  name: "Elite Void Gloves(or)"
+  description: "Broken superior Gloves from the order of the Void Knights."
+  shopValue: 100000
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26473
+  name: "Elite Void Mage Helm(or)"
+  description: "Broken superior Helmet from the order of the Void Knights."
+  shopValue: 100000
+  equipmentModelType: "FULL_MASK"
+  untradeable: true
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82
+- id: 26477
+  name: "Elite Void Melee helm(or)"
+  untradeable: true
+  equipmentModelType: "FULL_MASK"
+  requirements:
+    - skill: "ATTACK"
+      level: 82
+    - skill: "DEFENCE"
+      level: 82
+    - skill: "STRENGTH"
+      level: 82

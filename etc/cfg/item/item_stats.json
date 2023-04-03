@@ -66339,7 +66339,7 @@
     }
   },
   "26475": {
-    "name": "Eternal Void helm",
+    "name": "Eternal Void range helm",
     "equipable": true,
     "weight": 0.453,
     "equipment": {
@@ -66351,8 +66351,34 @@
       "drange": 86
     }
   },
-  "27005": {
-    "name": "Eternal Void helm",
+  "26467": {
+    "name": "Eternal Void Gloves",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 9,
+      "dstab": 86,
+      "dslash": 86,
+      "dcrush": 86,
+      "dmagic": 86,
+      "drange": 86
+    }
+  },
+  "26473": {
+    "name": "Eternal Void Mage helm",
+    "equipable": true,
+    "weight": 0.453,
+    "equipment": {
+      "slot": 0,
+      "dstab": 46,
+      "dslash": 46,
+      "dcrush": 46,
+      "dmagic": 46,
+      "drange": 46
+    }
+  },
+  "26477": {
+    "name": "Eternal Void Melee helm",
     "equipable": true,
     "weight": 0.453,
     "equipment": {

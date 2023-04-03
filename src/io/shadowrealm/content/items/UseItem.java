@@ -742,16 +742,76 @@ public class UseItem {
 				c.sendMessage("You need the required items for this kit");
 			}
 		}
-		if (itemUsed == 26528 && useWith == 6 || itemUsed == 6 && useWith == 26528) {
-			if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(6)) {
-				c.getItems().deleteItem(26528, 1);
-				c.getItems().deleteItem(6, 1);
-				c.getItems().addItem(26520, 1);
-				c.sendMessage("You have combined the kit to make the Cannon base(or)");
+		if (itemUsed == 11665 && useWith == 26479 || itemUsed == 26479 && useWith == 11665) {
+			if (c.getItems().playerHasItem(11665) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(11665, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26477, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void melee helm(or)");
 			}else {
 				c.sendMessage("You need the required items for this kit");
 			}
 		}
+		if (itemUsed == 11664 && useWith == 26479 || itemUsed == 26479 && useWith == 11664) {
+			if (c.getItems().playerHasItem(11664) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(11664, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26475, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void range helm(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 11663 && useWith == 26479 || itemUsed == 26479 && useWith == 11663) {
+			if (c.getItems().playerHasItem(11663) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(11663, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26473, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void mage helm(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 13072 && useWith == 26479 || itemUsed == 26479 && useWith == 13072) {
+			if (c.getItems().playerHasItem(13072) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(13072, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26469, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void Top(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 13073 && useWith == 26479 || itemUsed == 26479 && useWith == 13073) {
+			if (c.getItems().playerHasItem(13073) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(13073, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26471, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void Top(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+		if (itemUsed == 8842 && useWith == 26479 || itemUsed == 26479 && useWith == 8842) {
+			if (c.getItems().playerHasItem(8842) && c.getItems().playerHasItem(26479)) {
+				c.getItems().deleteItem(8842, 1);
+				c.getItems().deleteItem(26479, 1);
+				c.getItems().addItem(26467, 1);
+				c.sendMessage("You have combined the kit to make the Elite Void Gloves(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
+			if (itemUsed == 26528 && useWith == 12 || itemUsed == 12 && useWith == 26528) {
+				if (c.getItems().playerHasItem(26528) && c.getItems().playerHasItem(12)) {
+				c.getItems().deleteItem(26528, 1);
+				c.getItems().deleteItem(12, 1);
+				c.getItems().addItem(26526, 1);
+				c.sendMessage("You have combined the kit to make the Cannon Furnace(or)");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+		}
+	}
 		if (itemUsed == 24670 && useWith == 21018 || itemUsed == 21018 && useWith == 24670) {
 			if (c.getItems().playerHasItem(24670) && c.getItems().playerHasItem(21018)) {
 				c.getItems().deleteItem(24670, 1);

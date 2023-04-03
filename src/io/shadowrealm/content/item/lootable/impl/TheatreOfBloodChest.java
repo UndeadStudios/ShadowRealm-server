@@ -54,7 +54,8 @@ public class TheatreOfBloodChest implements Lootable {
                 new GameItem(6830, 1),  //raids 2 box
                 new GameItem(2403, 1),  //$10 Scroll
                 new GameItem(786, 1),  //$50 scroll
-
+                new GameItem(25742, 1),//holy kit
+                new GameItem(25744, 1),//sanguine kit
                 new GameItem(Items.JUSTICIAR_CHESTGUARD),
 
                 new GameItem(Items.JUSTICIAR_LEGGUARDS),

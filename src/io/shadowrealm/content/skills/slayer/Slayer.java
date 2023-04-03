@@ -500,6 +500,38 @@ public class Slayer {
 								points += (450 * multiplier);
 								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
 							}
+						} else if (consecutiveTasks == 110) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 120) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 130) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 140) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
 						} else if (consecutiveTasks == 150) {
 							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
 								points += (40 * multiplier);
@@ -507,8 +539,55 @@ public class Slayer {
 							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
 								points += (500 * multiplier);
 								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@500@blu@ additional points.");
+							}} else if (consecutiveTasks == 160) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 170) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 180) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 190) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
 							}
 						} else if (consecutiveTasks == 200) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 210) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 220) {
 							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
 								points += (40 * multiplier);
 								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
@@ -516,6 +595,23 @@ public class Slayer {
 								points += (800 * multiplier);
 								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@800@blu@ additional points.");
 							}
+						} else if (consecutiveTasks == 230) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+						} else if (consecutiveTasks == 240) {
+							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
+								points += (40 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@40@blu@ additional points.");
+							} else if (!(player.getSlayer().getMaster() == 401 && !(player.getSlayer().getMaster() == 402))) {
+								points += (450 * multiplier);
+								player.sendMessage("@blu@You have completed " + consecutive + " tasks in a row and receive @red@450@blu@ additional points.");
+							}
+
 						} else if (consecutiveTasks == 250) {
 							if (player.getSlayer().getMaster() == 401 || player.getSlayer().getMaster() == 402) {
 								points += (40 * multiplier);
