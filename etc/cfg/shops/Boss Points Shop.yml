@@ -45,9 +45,9 @@ items:
 - name: "casket"
   price: 75
 - name: "crystal key"
-  price: 200
+  price: 75
 - name: "overload 4"
-  price: 225
+  price: 15
 - name: "fighter torso"
   price: 500
 - name: "uncut onyx"
@@ -67,23 +67,23 @@ items:
 - name: "ring of wealth scroll"
   price: 5000
 - id: 12881
-  price: 1500
+  price: 500
 - id: 12883
-  price: 1500
+  price: 500
 - id: 12879
-  price: 1500
+  price: 500
 - id: 12873
-  price: 1500
+  price: 500
 - id: 12875
-  price: 1500
+  price: 500
 - id: 12877
-  price: 1500
+  price: 500
 - id: 28242
   price: 2100
 - id: 7462
   price: 500
 - id: 23951
-  price: 900
+  price: 325
 - id: 8167
   price: 5000
 - id: 2841
@@ -99,18 +99,20 @@ items:
 - id: 24268
   price: 2000
 - id: 21326
-  price: 500
+  price: 6
 - id: 11212
-  price: 299
+  price: 3
 - id: 6585
   price: 500
 - id: 11235
-  price: 1000
+  price: 500
 - id: 12829
-  price: 2300
+  price: 500
 - id: 21902
   price: 500
 - id: 11798
   price: 1000
 - id: 4151
   price: 500
+- id: 6920
+  price: 1000

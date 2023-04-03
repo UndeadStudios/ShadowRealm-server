@@ -507,7 +507,7 @@ public class ShopAssistant {
 					case 11920: //dragon pickaxe
 					case 6739://dragon axe
 					case 21028://dragon harpoon
-						return 360;
+						return 60;
 					case 12783:
 						return 360;
 					case 13148:
@@ -527,7 +527,7 @@ public class ShopAssistant {
 					case 13116:
 						return 320;
 					case 13233:
-						return 250;
+						return 50;
 					case 1409:
 					case 12791:
 						return 60;
