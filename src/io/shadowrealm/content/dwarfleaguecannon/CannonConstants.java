@@ -37,7 +37,7 @@ public class CannonConstants {
     };
 
     public static final Boundary[] PROHIBITED_CANNON_AREAS = {
-            DEMONIC_GORILLAS,DZ_BOSS_AREA,DZ_BOSS,
+            DEMONIC_GORILLAS,DZ_BOSS_AREA,DZ_BOSS,DAILY_BOSS_AREA,
             //Agility Courses/City
             SEERS_BOUNDARY, VARROCK_BOUNDARY, ARDOUGNE_BOUNDARY, AL_KHARID_BOUNDARY, EDGEVILLE_EXTENDED, SWAMP_AREA,
             //TZHAAR

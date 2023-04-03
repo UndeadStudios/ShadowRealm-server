@@ -463,7 +463,7 @@ public static  final Boundary brithday_room2 = new Boundary(2944, 9920, 3007, 99
 
 	public static final Boundary DZ_BOSS = new Boundary(3722, 2817, 3798, 2833);
 
-
+	public static final Boundary DAILY_BOSS_AREA = new Boundary(1931, 9424, 1965, 9457);
 	public static final Boundary ALTAR = new Boundary(3223, 3603, 3255, 3633);
 	public static final Boundary FORTRESS = new Boundary(2993, 3615, 3024, 3648);
 	public static final Boundary DEMONIC = new Boundary(3236, 3852, 3275, 3884);
