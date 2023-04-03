@@ -40,6 +40,11 @@ public class Configuration {
 	public static final String WEBSITE = "https://www.shadowrealm-rsps.com/";
 	public static final String FORUM_TOPIC_URL = "https://www.shadowrealm-rsps.com/";
 	public static final String VOTE_LINK = "https://shadowrealm-rsps.com/vote";
+	public static final String JIPY= "https://www.youtube.com/@jipyrsps";
+	public static final String SANDESU= "https://www.youtube.com/@SandesuSRS";
+	public static final String CXRSPS= "https://www.youtube.com/@CXRSPS1";
+	public static final String NOOBS = "https://www.youtube.com/c/noobsown";
+	public static final String MIKE_AP = "https://www.youtube.com/@mikeap_osrs";
 	public static final String HISCORES_LINK = "https://hiscores.shadowrealm-rsps.com/";
 	public static final String STORE_LINK = "https://store.shadowrealm-rsps.com/";
 	public static final String DISCORD_INVITE = "https://discord.shadowrealm-rsps.com/";
