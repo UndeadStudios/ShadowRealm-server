@@ -40,6 +40,9 @@ common:
     - name: "adamantite bar noted"
       minimum: 300
       maximum: 600
+    - item: 691
+      minimum: 1
+      maximum: 1
 uncommon:
   accessibility: 2
   items:
@@ -76,30 +79,66 @@ uncommon:
     - name: "grimy torstol noted"
       minimum: 300
       maximum: 500
+    - item: 6769
+      minimum: 1
+      maximum: 1
 rare:
-  accessibility: 90
+  accessibility: 50
   items:
-    - name: "tanzanite fang"
+    - item: 20095
       minimum: 1
       maximum: 1
-    - item: 25865
+    - item: 20098
       minimum: 1
       maximum: 1
-    - name: "uncut onyx"
+    - item: 20101
       minimum: 1
-      maximum: 3
-    - item: 22978
+      maximum: 1
+    - item: 20104
+      minimum: 1
+      maximum: 1
+    - item: 20107
+      minimum: 1
+      maximum: 1
+    - item: 20080
+      minimum: 1
+      maximum: 1
+    - item: 20083
+      minimum: 1
+      maximum: 1
+    - item: 20086
+      minimum: 1
+      maximum: 1
+    - item: 20089
+      minimum: 1
+      maximum: 1
+    - item: 20092
       minimum: 1
       maximum: 1
 very_rare:
-  accessibility: 400
+  accessibility: 200
   items:
-    - item: 8812
+    - item: 8167
       minimum: 1
       maximum: 1
-    - item: 8814
+    - item: 13346
       minimum: 1
       maximum: 1
-    - item: 8813
+    - item: 10025
+      minimum: 1
+      maximum: 1
+    - item: 6830
+      minimum: 1
+      maximum: 1
+    - item: 26528
+      minimum: 1
+      maximum: 1
+    - item: 25744
+      minimum: 1
+      maximum: 1
+    - item: 24670
+      minimum: 1
+      maximum: 1
+    - item: 25742
       minimum: 1
       maximum: 1

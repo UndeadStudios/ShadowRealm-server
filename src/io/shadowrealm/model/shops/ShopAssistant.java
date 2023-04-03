@@ -873,21 +873,39 @@ public class ShopAssistant {
 						return 5;
 					case 13346:
 						return 50;
-					case 22613:
 					case 22610:
+					case 20784:
+					case 21006:
 						return 25;
+					case 28721:
+						return 75;
 					case 6828:
+					case 21024:
+					case 21021:
+					case 22326:
+					case 22327:
+					case 22328:
 						return 30;
 					case 11283:
 					case 11834:
-					case 11830:
-					case 11828:
-					case 11826:
 					case 11832:
+					case 13271:
+					case 21003:
+
 						return 15;
+					case 20997:
+					case 22325:
+					case 22323:
+						return 75;
+
+					case 22324:
+						return 55;
+
 					case 20517:
 					case 20595:
 					case 20520:
+					case 21000:
+
 						return 10;
 					case 12899:
 						return 15;
@@ -902,11 +920,20 @@ public class ShopAssistant {
 						return 45;
 					case 22978:
 					case 13576:
+					case 26233:
 						return 65;
 					case 13263:
 						return 40;
 					case 11802:
 					case 11804:
+					case 21259:
+					case 22622:
+					case 22613:
+					case 21012:
+					case 21018:
+					case 11826:
+					case 11828:
+					case 11830:
 						return 20;
 					case 11806:
 						return 20;
@@ -936,6 +963,18 @@ public class ShopAssistant {
 					case 27226:
 					case 27229:
 					case 27232:
+					case 26374:
+					case 1038:
+					case 1040:
+					case 1042:
+					case 1044:
+					case 1046:
+					case 1048:
+					case 11862:
+					case 1053:
+					case 1055:
+					case 1057:
+					case 11847:
 						return 100;
 				}
 				break;
@@ -979,19 +1018,19 @@ public class ShopAssistant {
 					case 11887://place id and return price.
 						return 10;
 					case 29235:
-						return 11500;
+						return 5000;
 					case 29236:
-						return 11500;
+						return 5000;
 					case 29237:
-						return 11500;
+						return 5000;
 					case 29239:
-						return 11500;
+						return 5000;
 					case 29240:
-						return 11500;
+						return 8000;
 					case 29241:
-						return 11500;
+						return 5000;
 					case 29242:
-						return 11500;
+						return 8000;
 				}
 				break;
 			case 117:

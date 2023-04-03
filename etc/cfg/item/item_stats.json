@@ -72881,6 +72881,7 @@
     "equipable": true,
     "weight": 3.175,
     "equipment": {
+      "slot": 3,
       "astab": 185,
       "aslash": 165,
       "acrush": 40,

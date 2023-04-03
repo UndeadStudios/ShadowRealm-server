@@ -327,6 +327,7 @@ public class TeleportInterface2 {
         Gambling_Zone(1, 102224, true, "Teleports you to  the Ganbling Zone", new Position(2129, 9489, 0)),
         Skilling_Island(1, 102229, true, "Teleports you to the Skilling Island", new Position(3803, 3538, 0)),
         Vote_boss(1, 102234, true, "The Boss only spawns every 25 votes.", new Position(1886, 9320, 0)),
+        Daily_boss(1, 102239, true, "A Boss That is Kill once a day for amazing loot.", new Position(1949, 9439, 0)),
 
         AL_KHARID(2, 102209, true, "Teleports you to Al Kharid", new Position(3293, 3179, 0)),
         Arceuus(2, 102214, true, "Teleports you to Arceuus", new Position(1679, 3745, 0)),

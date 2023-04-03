@@ -148,8 +148,6 @@ public class FireOfExchange {
                 return 15000;
             case 12783://row i scroll
                 return 100000;
-            case 21259://name change scroll
-                return 35000;
             case 691://10k cert
                 return 10000;
             case 692://25k cert

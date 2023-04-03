@@ -86,3 +86,19 @@ items:
 - name: "feather"
 - name: "harpoon"
 - name: "fly fishing rod"
+- id: 13432
+  price: 5000
+- id: 2415
+  price: 250000
+- id: 2416
+  price: 250000
+- id: 2417
+  price: 250000
+- id: 20431
+  price: 500000
+- id: 9185
+  price: 200000
+- id: 13431
+  price: 999
+- id: 11940
+  price: 1999
