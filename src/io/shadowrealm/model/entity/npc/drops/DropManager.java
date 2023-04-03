@@ -1133,10 +1133,7 @@ public class DropManager {
             player.braceletIncrease(amount);
             player.sendMessage("@red@The bracelet has collected some ether for you.");
         }
-//		if (player.getItems().isWearingItem(21816) && player.absorption == false && item.getId() == 21820 && (IntStream.of(revs).anyMatch(id -> id == npcId))) {
-//			int ether = 6 + Misc.random(6);
-//			item.changeDrop(21820, ether); //basically just changes coins for ether
-//		}
+
 		if (item.getId() == 995 && player.collectCoins == true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(995))) {
 			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572)) || (player.getItems().isWearingItem(24731))) {
 				player.getItems().addItem(995, item.getAmount());
