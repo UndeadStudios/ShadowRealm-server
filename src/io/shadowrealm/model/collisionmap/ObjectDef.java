@@ -34,9 +34,10 @@ public final class ObjectDef {
 			case 36201: // Raids 1 lobby entrance
 				objectDef.actions = new String[]{ "Enter", null, null, null, null};
 				break;
-			case 44295:
+			case 591:
+			case 590:
 				objectDef.name = "Item Upgrades Table";
-				objectDef.actions = new String[]{"Forge", null, null, null, null};
+				objectDef.actions = new String[]{"Upgrade", null, null, null, null};
 				break;
 			case 36062:
 				objectDef.description = "Teleports you anywhere around Shadow Realm.";

@@ -960,7 +960,7 @@ static int fourthFloorsos[][] = {
 			case 24428:
 				c.getPA().movePlayer(1631, 4957, 0);
 				break;
-			case 591:
+			case 590:
 				c.getItemUpgradeSystem().openInterface();
 				break;
 			case 42967:
