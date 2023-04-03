@@ -208,9 +208,13 @@ public enum Right implements Comparator<Right> {
 	public boolean isAdministrator() {
 		return equals(ADMINISTRATOR);
 	}
-	public boolean isDonator() {
-		return equals(DONATOR_SET);
-	}
+	public boolean isodonor() {return equals(ONYX_CLUB);}
+	public boolean isRdonor() {return equals(REGULAR_DONATOR);}
+	public boolean isEdonor() {return equals(EXTREME_DONOR);}
+
+	public boolean isLdonor() {return equals(LEGENDARY_DONATOR);}
+
+	public boolean isDdonor() {return equals(DIAMOND_CLUB);}
 	/**
 	 * Determines if the players rights equal that of {@link Right#OWNER}
 	 * @return	true if they are of type owner
@@ -226,6 +230,9 @@ public enum Right implements Comparator<Right> {
 	 */
 	public boolean isStaff() {
 		return isHelper() || isModerator() || isAdministrator() || isOwner();
+	}
+	public boolean isDonor() {
+		return isodonor() || isLdonor() || isEdonor() || isRdonor() || isDdonor();
 	}
 
 	public boolean isManagment() {

@@ -38,7 +38,7 @@ public class RightGroup {
 		return rights.stream().anyMatch(Right::isStaff);
 	}
 	public boolean hasDonorPosition() {
-		return rights.stream().anyMatch(Right::isDonator);
+		return rights.stream().anyMatch(Right::isDonor);
 	}
 
 	public boolean ignoreNewPlayerRestriction() {
