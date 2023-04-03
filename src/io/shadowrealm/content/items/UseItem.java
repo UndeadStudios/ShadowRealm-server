@@ -845,17 +845,27 @@ public class UseItem {
 		if (itemUsed == 25742 && useWith == 22323 || itemUsed == 22323 && useWith == 25742) {
 			if (c.getItems().playerHasItem(22323) && c.getItems().playerHasItem(25742, 2)) {
 				c.getItems().deleteItem(25742, 2);
-				c.getItems().deleteItem(22323, 1);
+				c.getItems().deleteItem(22323, 2);
 				c.getItems().addItem(25731, 1);
 				c.sendMessage("You have combined the kit to make the Holy Sang Staff");
 			}else {
 				c.sendMessage("You need the required items for this kit");
 			}
 		}
+		if (itemUsed == 25742 && useWith == 20997 || itemUsed == 20997 && useWith == 25742) {
+			if (c.getItems().playerHasItem(20997, 2) && c.getItems().playerHasItem(25742, 2)) {
+				c.getItems().deleteItem(25742, 2);
+				c.getItems().deleteItem(22323, 2);
+				c.getItems().addItem(25731, 1);
+				c.sendMessage("You have combined the kit to make the Holy Twisted Bow");
+			}else {
+				c.sendMessage("You need the required items for this kit");
+			}
+		}
 		if (itemUsed == 25742 && useWith == 22324 || itemUsed == 22324 && useWith == 25742) {
-			if (c.getItems().playerHasItem(22324) && c.getItems().playerHasItem(25742)) {
-				c.getItems().deleteItem(25742, 1);
-				c.getItems().deleteItem(22324, 1);
+			if (c.getItems().playerHasItem(22324, 2) && c.getItems().playerHasItem(25742, 2)) {
+				c.getItems().deleteItem(25742, 2);
+				c.getItems().deleteItem(22324, 2);
 				c.getItems().addItem(25734, 1);
 				c.sendMessage("You have combined the kit to make the Holy Ghrazi Rapier");
 			}else {
@@ -863,9 +873,9 @@ public class UseItem {
 			}
 		}
 		if (itemUsed == 25742 && useWith == 22325 || itemUsed == 22325 && useWith == 25742) {
-			if (c.getItems().playerHasItem(22325) && c.getItems().playerHasItem(25742, 3)) {
-				c.getItems().deleteItem(25742, 3);
-				c.getItems().deleteItem(22325, 1);
+			if (c.getItems().playerHasItem(22325, 2) && c.getItems().playerHasItem(25742, 2)) {
+				c.getItems().deleteItem(25742, 2);
+				c.getItems().deleteItem(22325, 2);
 				c.getItems().addItem(25736, 1);
 				c.sendMessage("You have combined the kit to make the Holy Scythe of Vitur");
 			}else {
@@ -873,9 +883,9 @@ public class UseItem {
 			}
 		}
 		if (itemUsed == 25744 && useWith == 22325 || itemUsed == 22325 && useWith == 25744) {
-			if (c.getItems().playerHasItem(22325) && c.getItems().playerHasItem(25744, 3)) {
+			if (c.getItems().playerHasItem(22325, 2) && c.getItems().playerHasItem(25744, 3)) {
 				c.getItems().deleteItem(25744, 3);
-				c.getItems().deleteItem(22325, 1);
+				c.getItems().deleteItem(22325, 2);
 				c.getItems().addItem(25739, 1);
 				c.sendMessage("You have combined the kit to make the Sanguine Scythe of Vitur");
 			}else {

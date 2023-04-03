@@ -19,3 +19,30 @@
       amount: 1
     - id: 2528
       amount: 3
+
+- code: "noobs own"
+  rewards:
+    - name: coins
+      amount: 2000000
+    - name: youtube mystery box
+      amount: 1
+    - id: 2528
+      amount: 3
+
+- code: "jipy"
+  rewards:
+    - name: coins
+      amount: 2000000
+    - name: youtube mystery box
+      amount: 1
+    - id: 2528
+      amount: 3
+
+- code: "cx"
+  rewards:
+    - name: coins
+      amount: 2000000
+    - name: youtube mystery box
+      amount: 1
+    - id: 2528
+      amount: 3

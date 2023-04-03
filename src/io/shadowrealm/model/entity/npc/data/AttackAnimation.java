@@ -49,6 +49,8 @@ public class AttackAnimation extends NPCHandler {
 				return 6090;
 			case 6120:
 				return 6345;
+			case 29238:
+				return 5061;
 			case 5823:
 			case 5824:
 			case 5825:

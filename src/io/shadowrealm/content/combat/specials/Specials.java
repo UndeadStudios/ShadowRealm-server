@@ -17,6 +17,7 @@ public enum Specials {
 	GRANITE_HAMMER(new GraniteHammerSpecialAttack()),
 	GRANITE_MAUL(new GraniteMaulSpecialAttack()),
 	TOXIC_BLOWPIPE(new ToxicBlowpipe()),
+	MASORIBLOWPIPE(new MasoriBlowpipe()),
 	MAGIC_BOW(new MagicShortBow()),
 	MAGIC_BOW_I(new MagicShortBow(5.0)),
 	DRAGON_DAGGER(new DragonDagger()),

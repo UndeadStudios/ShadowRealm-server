@@ -357,14 +357,14 @@ public abstract class HitDispatcher {
             if (attacker.weaponUsedOnAttack == 11235 || attacker.weaponUsedOnAttack == 12765 || attacker.weaponUsedOnAttack == 12766 || attacker.weaponUsedOnAttack == 12767
                     || attacker.weaponUsedOnAttack == 12768 || attacker.bowSpecShot == 1) {
 
-                int extraDamage = specialAccuracy == 1.5 ? 8 : 5;
-
-                maximumDamage += extraDamage;
-                damage2 = isMaxHitDummy ? maximumDamage : Misc.random(maximumDamage) + extraDamage;
+                int extraDamage = specialAccuracy == .1 ? 1 : 1;
+//
+//                maximumDamage += extraDamage;
+//                damage2 = isMaxHitDummy ? maximumDamage : Misc.random(maximumDamage) + extraDamage;
 
                 if (specialAccuracy == 1.5) {
-                    maximumDamage = Math.min(maximumDamage, 48);
-                    damage2 = Math.min(damage2, 48);
+                    maximumDamage = Math.min(maximumDamage, 24);
+                    damage2 = Math.min(damage2, 24);
                 }
 
                 boolean isAccurate2 = isMaxHitDummy || maximumAccuracy >= rand.nextDouble();
