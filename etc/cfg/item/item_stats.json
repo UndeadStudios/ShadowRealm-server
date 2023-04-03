@@ -72936,6 +72936,17 @@
       "aspeed": 4
     }
   },
+  "27655": {
+    "name": "Webweaver's bow",
+    "equipable": true,
+    "weight": 3.175,
+    "equipment": {
+      "slot": 3,
+      "arange": 75,
+      "rstr": 60,
+      "aspeed": 4
+    }
+  },
   "25731": {
     "name": "Holy Sanguinesti staff",
     "equipable": true,

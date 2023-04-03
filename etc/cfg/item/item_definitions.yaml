@@ -75900,3 +75900,11 @@
       level: 82
     - skill: "STRENGTH"
       level: 82
+- id: 27655
+  name: "Webweaver bow"
+  description: "Upgraded Craw's bow from wildy"
+  shopValue: 1000000
+  untradeable: true
+  requirements:
+    - skill: "RANGED"
+      level: 60
