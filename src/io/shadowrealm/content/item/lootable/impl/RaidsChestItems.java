@@ -101,7 +101,8 @@ public class RaidsChestItems {
                 new GameItem(21024, 1),//ancestral bottom
                 new GameItem(10025, 1),  //raids 1 box
                 new GameItem(2403, 1),  //$10 Scroll
-                new GameItem(20997, 1),  //twisted bow			UNCOMMON
+                new GameItem(20997, 1),  //$10 Scroll
+                new GameItem(24670, 1),  //kit
                 new GameItem(20851, 1)));  //olmlet pet
 
     }

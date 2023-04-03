@@ -40280,7 +40280,7 @@
     - skill: "DEFENCE"
       level: 40
 - id: 29378
-  name: "Godly Torva Fullhelm"
+  name: "Shadow Torva Fullhelm"
   description: "A cape made of ancient, enchanted rocks."
   shopValue: 1
   equipmentModelType: "FULL_MASK"
@@ -40293,7 +40293,7 @@
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
 - id: 29377
-  name: "Godly Torva Platebody"
+  name: "Shadow Torva Platebody"
   description: "Godly Torva Platebody"
   shopValue: 1
   equipmentModelType: "FULL_BODY"
@@ -40306,7 +40306,7 @@
   shopValue: 35200
   equipmentModelType: "FULL_MASK"
 - id: 29376
-  name: "Godly Torva Platelegs"
+  name: "Shadow Torva Platelegs"
   description: "Godly Torva Platelegs"
   shopValue: 1
   requirements:
@@ -64229,8 +64229,8 @@
   noted: true
   stackable: true
 - id: 19480
-  name: "Godly Cape"
-  description: "Godly Cape made by the gods!"
+  name: "Shadow Cape"
+  description: "Shadow Cape made by the gods!"
   shopValue: 1
 - id: 19481
   name: "Heavy ballista"
@@ -75423,16 +75423,16 @@
   description: "A scarf. You feel your upper lip stiffening."
   shopValue: 1000
 - id: 29380
-  name: "Godly Masori Chaps"
+  name: "Shadow Masori Chaps"
   description: "Godly Masori Chaps."
   shopValue: 1000
 - id: 29381
-  name: "Godly Masori Mask"
+  name: "Shadow Masori Mask"
   description: "Godly Masori Mask."
   equipmentModelType: "FULL_MASK"
   shopValue: 1000
 - id: 29382
-  name: "Godly Masori Body"
+  name: "Shadow Masori Body"
   description: "Godly Masori Body."
   equipmentModelType: "FULL_BODY"
   shopValue: 1000

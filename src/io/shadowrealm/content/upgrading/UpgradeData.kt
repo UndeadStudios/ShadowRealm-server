@@ -21,26 +21,28 @@ enum class UpgradeData(
     DRAGON_WARRHAMER(Categories.WEAPON, 13576, GameItem(22622, 1), 50_000_000, 25.0),
     WHIP(Categories.WEAPON, 4151, GameItem(28220, 1), 25_000_000, 25.0),
     DRAGON_CLAWS(Categories.WEAPON, 20784, GameItem(26708, 1), 25_000_000, 35.0),
-    GodlyTBOW(Categories.WEAPON, 20997, GameItem(8029, 1), 75_000_000, 20.0),
+    URSINECHAINMACE(Categories.WEAPON, 22545, GameItem(25486, 1), 100_000_000, 40.0),
+    ACCURSEDSPEPTER(Categories.WEAPON, 22555, GameItem(27665, 1), 100_000_000, 40.0),
+    WEBWEARVER(Categories.WEAPON, 22550, GameItem(27655, 1), 100_000_000, 40.0),
+    ABYSSALWHIPOR(Categories.WEAPON, 26482, GameItem(26484, 1), 500_000_000, 50.0),
 
-    TORVA_PLATELEGS(Categories.ARMOUR, 26386, GameItem(8812, 1), 60_000_000, 30.0),
-    TORVA_PLATEBODY(Categories.ARMOUR, 26384, GameItem(8813, 1), 60_000_000, 30.0),
-    TORVA_FULL_HELM(Categories.ARMOUR, 26382, GameItem(8814, 1), 60_000_000, 30.0),
-    LTORVA_PLATELEGS(Categories.ARMOUR, 8812, GameItem(29376, 1), 70_000_000, 25.0),
-    LTORVA_PLATEBODY(Categories.ARMOUR, 8813, GameItem(29377, 1), 70_000_000, 25.0),
-    LTORVA_FULL_HELM(Categories.ARMOUR, 8814, GameItem(29378, 1), 70_000_000, 25.0),
-    Godly_Cape(Categories.ARMOUR, 28347, GameItem(19480, 1), 75_000_000, 30.0),
+    TORVA_PLATELEGS(Categories.ARMOUR, 26386, GameItem(29376, 1), 160_000_000, 40.0),
+    TORVA_PLATEBODY(Categories.ARMOUR, 26384, GameItem(29377, 1), 160_000_000, 40.0),
+    TORVA_FULL_HELM(Categories.ARMOUR, 26382, GameItem(29378, 1), 160_000_000, 40.0),
+    SHADOW_Cape(Categories.ARMOUR, 28347, GameItem(19480, 1), 105_000_000, 30.0),
     CORRUPTED_HELM_PERFECTED(Categories.ARMOUR, 23842, GameItem(27226, 1), 50_000_000, 30.0),//into masori
     CORRUPTED_BODY_PERFECTED(Categories.ARMOUR, 23845, GameItem(27229, 1), 50_000_000, 30.0),//into masori
     CORRUPTED_LEGS_PERFECTED(Categories.ARMOUR, 23848, GameItem(27232, 1), 50_000_000, 30.0),//into masori
-    GODLYMASORIBODY(Categories.ARMOUR, 27226, GameItem(29381, 1), 80_000_000, 25.0),//into GODLY masori
-    GODLYMASORIHELM(Categories.ARMOUR, 27229, GameItem(29382, 1), 80_000_000, 25.0),//into GODLY masori
-    GODLYMASORICHAPS(Categories.ARMOUR, 27232, GameItem(29380, 1), 80_000_000, 25.0),//into GODLY masori
+    SHADOWMASORIBODY(Categories.ARMOUR, 27226, GameItem(29381, 1), 80_000_000, 25.0),//into GODLY masori
+    SHADOWMASORIHELM(Categories.ARMOUR, 27229, GameItem(29382, 1), 80_000_000, 25.0),//into GODLY masori
+    SHADOWMASORICHAPS(Categories.ARMOUR, 27232, GameItem(29380, 1), 80_000_000, 25.0),//into GODLY masori
     BANDOS_CHESTPLATE(Categories.ARMOUR, 11832, GameItem(29163, 1), 50_000_000, 35.0),//bandos_g
     BANDOS_TASSETS(Categories.ARMOUR, 11834, GameItem(29164, 1), 50_000_000, 35.0),//bandos_g
     BANDOS_BOOTS(Categories.ARMOUR, 11836, GameItem(29165, 1), 50_000_000, 35.0),//bandos_g
 
     RING_OF_WEALTH(Categories.ACCESSORIES, 2572, GameItem(12785, 1), 10_000_000, 20.0),//into rowi
+
+
     RAIDS_1_MBOX(Categories.OTHER,10025, GameItem(6830,1),10_000_000,20.0),//into raids 2 mbox
     RAIDS_2_MBOX(Categories.OTHER,6830, GameItem(28825,1),20_000_000,20.0),//into nex box
     CASKET(Categories.OTHER,406,GameItem(28827,1),5_000_000,20.0),//into money box
