@@ -594,6 +594,8 @@ public class DropManager {
             modifier -= .03;
         } else if (player.getItems().isWearingItem(12785)) {
             modifier -= .08;
+        } else if (player.getItems().isWearingItem(24731)) {
+        modifier -= .25;
         }
         if (player.getItems().playerHasItem(30121) || (player.hasFollower && player.petSummonId == 30121)) {
             modifier -= .20;
@@ -700,6 +702,9 @@ public class DropManager {
             modifier += 3;
         } else if (player.getItems().isWearingItem(12785)) {
             modifier += 8;
+
+        } else if (player.getItems().isWearingItem(24731)) {
+        modifier += 25;
         }
         if (player.getItems().playerHasItem(30121) || (player.hasFollower && player.petSummonId == 30121)) {
             modifier += 20;
@@ -1133,21 +1138,21 @@ public class DropManager {
 //			item.changeDrop(21820, ether); //basically just changes coins for ether
 //		}
 		if (item.getId() == 995 && player.collectCoins == true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(995))) {
-			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572))) {
+			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572)) || (player.getItems().isWearingItem(24731))) {
 				player.getItems().addItem(995, item.getAmount());
 				item.changeDrop(-1, item.getAmount());
 				player.sendMessage("@red@The ring of wealth has collected some coins for you.");
 			}
 		}
 
-        if (item.getId() == 23877 && player.collectshard== true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(23877))) {
+        if (item.getId() == 23877 && player.collectshard== true && (player.getItems().freeSlots() > 0 || (player.getItems().isWearingItem(24731)) || player.getItems().playerHasItem(23877))) {
             if ((player.getItems().isWearingItem(23943))) {
                 player.getItems().addItem(23877, item.getAmount());
                 player.sendMessage("@red@The Elven Signet has collected some shards for you.");
             }
         }
 		if (item.getId() == 6529 && player.collectCoins == true && (player.getItems().freeSlots() > 0 || player.getItems().playerHasItem(6529))) {
-			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572))) {
+			if ((player.getItems().isWearingItem(12785)) || (player.getItems().isWearingItem(2572))|| (player.getItems().isWearingItem(24731))) {
 				player.getItems().addItem(6529, item.getAmount());
 				item.changeDrop(-1, item.getAmount());
 				player.sendMessage("@red@The ring of wealth has collected some tokkul for you.");

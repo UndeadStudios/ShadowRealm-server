@@ -72961,5 +72961,13 @@
       "dmagic": 65,
       "aspeed": 3
     }
+  },
+    "24731": {
+      "name": "Ring of wealth(GRAND)",
+      "equipable": true,
+      "weight": 0.006,
+      "equipment": {
+        "slot": 12
+    }
   }
 }

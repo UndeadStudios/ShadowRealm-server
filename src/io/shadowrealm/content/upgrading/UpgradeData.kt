@@ -38,10 +38,10 @@ enum class UpgradeData(
     SHADOWMASORICHAPS(Categories.ARMOUR, 27232, GameItem(29380, 1), 80_000_000, 25.0),//into GODLY masori
     BANDOS_CHESTPLATE(Categories.ARMOUR, 11832, GameItem(29163, 1), 50_000_000, 35.0),//bandos_g
     BANDOS_TASSETS(Categories.ARMOUR, 11834, GameItem(29164, 1), 50_000_000, 35.0),//bandos_g
-    BANDOS_BOOTS(Categories.ARMOUR, 11836, GameItem(29165, 1), 50_000_000, 35.0),//bandos_g
+    BANDOS_BOOTS(Categories.ARMOUR, 11836, GameItem(29165, 1), 150_000_000, 40.0),//bandos_g
 
     RING_OF_WEALTH(Categories.ACCESSORIES, 2572, GameItem(12785, 1), 10_000_000, 20.0),//into rowi
-
+    MASORIACCUMALATOR(Categories.ACCESSORIES, 22109, GameItem(27374, 1), 10_000_000, 20.0),
 
     RAIDS_1_MBOX(Categories.OTHER,10025, GameItem(6830,1),10_000_000,20.0),//into raids 2 mbox
     RAIDS_2_MBOX(Categories.OTHER,6830, GameItem(28825,1),20_000_000,20.0),//into nex box

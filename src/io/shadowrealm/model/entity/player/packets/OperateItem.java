@@ -231,6 +231,7 @@ public class OperateItem implements PacketType {
 				break;
 			case 2572:
 			case 12785:
+			case 24731:
 				if (c.collectCoins == true) {
 					c.collectCoins = false;
 					c.sendMessage("@blu@You have now @red@Disabled@blu@ your coin collecting.");

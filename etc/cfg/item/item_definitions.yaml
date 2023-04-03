@@ -75908,3 +75908,7 @@
   requirements:
     - skill: "RANGED"
       level: 60
+- id: 24731
+  name: "Ring of Wealth(GRAND)"
+  description: "A mysteriously imbued lucky ring (tier 4)."
+  shopValue: 10500000
