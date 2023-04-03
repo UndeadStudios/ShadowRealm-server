@@ -94,6 +94,9 @@ uncommon:
   - item: 4185
     maximum: 1
     minimum: 1
+  - item: 22557
+    maximum: 1
+    minimum: 1
 rare:
   accessibility: 500
   items:

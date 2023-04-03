@@ -50,3 +50,7 @@ items:
 - name: "zamorak staff"
 - name: "guthix staff"
 - name: "saradomin staff"
+- id: 24144
+  price: 500000
+- id: 22296
+  price: 500000

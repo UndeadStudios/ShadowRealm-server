@@ -105,6 +105,9 @@ rare:
   - item: 2996
     maximum: 100
     minimum: 60
+  - item: 22557
+    maximum: 1
+    minimum: 1
 very_rare:
   accessibility: 1200
   items:
